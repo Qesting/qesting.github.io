@@ -93,3 +93,14 @@ body {
 hr {
 	border-color: black;
 }
+
+.cell {
+    float: left;
+    padding: 5px;
+}
+
+.row::after {
+    content: "";
+    clear: both;
+    display: table;
+}
