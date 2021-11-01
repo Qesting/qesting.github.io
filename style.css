@@ -1,0 +1,95 @@
+body {
+	margin: 25px;
+	font-family: Calibri;
+	font-size: 20px;
+	background-color: #d1ac96;
+}
+
+.main {
+	text-align: center;
+	display: block;
+}
+
+.page {
+	display: block;
+	margin-left: 200px;
+    height: 100%;
+}
+
+.right {
+    float: right;
+    width: 100%;
+}
+
+.left {
+    position: fixed;
+    top: 0px;
+    bottom: 0px;
+    left: 0px;
+    right: calc(100vw - 220px);
+
+    float: left;
+    margin-left: 0px;
+    width: 220 px;
+
+    border-right-style: solid;
+    border-right-width: 2px;
+    border-right-color: black;
+
+    border-bottom-style: solid;
+    border-bottom-width: 2px;
+    border-bottom-color: black;
+
+    padding: 5px;
+    text-align: center;
+
+    height: 100%;
+
+    color: white;
+    background-color: rgb(53, 180, 74);
+
+    font-size: 18px;
+}
+
+.left button {
+	padding: 5px;
+	width: 180px;
+    margin-bottom: 5px;
+    font-size: 15px;
+
+    border: 2px solid black;
+}
+
+.side-list button:hover {
+    color: white;
+    background-color: rgb(53, 180, 74);
+    font-weight: bolder; 
+}
+
+#main {
+    margin-top: 40px;
+}
+
+#main:hover {
+    color: white;
+    background-color: rgb(48, 122, 219);
+    font-weight: bolder;
+}
+
+.clear {
+    clear: both;
+}
+
+.title {
+    margin-top: 40px;
+    font-style: italic;
+}
+
+.main button {
+	padding: 5px;
+	width: 180px;
+}
+
+hr {
+	border-color: black;
+}
