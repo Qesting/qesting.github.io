@@ -49,37 +49,6 @@ body {
     scrollbar-width: none;
 }
 
-.left::-webkit-scrollbar {
-    display: none;
-}
-
-.button {
-    margin-bottom: 5px;
-    font-size: 18px;
-
-    color: white;
-    background-color: rgb(43, 151, 61);
-
-    border: 3px solid rgb(43, 151, 61);
-    border-radius: 12px;
-
-    text-decoration: none;
-    display: inline-block;
-
-    padding: 5px;
-    width: 170px;
-}
-
-.button:hover {
-    background-color: rgb(37, 129, 52);
-    font-weight: bolder; 
-}
-
-#main {
-    margin-top: 40px;
-    margin-bottom: 40px;
-}
-
 .clear {
     clear: both;
 }
@@ -91,15 +60,4 @@ body {
 
 hr {
 	border-color: black;
-}
-
-.cell {
-    float: left;
-    padding: 5px;
-}
-
-.row::after {
-    content: "";
-    clear: both;
-    display: table;
 }
