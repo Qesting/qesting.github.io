@@ -8,3 +8,15 @@
     float: left;
     padding: 5px;
 }
+
+td, th {
+    padding: 5px;
+    width: 15vw;
+    border-collapse: collapse;
+}
+
+th {
+    background-color: rgb(53, 180, 74);
+    border-radius: 12px;
+    color: #FFFFFF;
+}

@@ -29,8 +29,6 @@ body {
     right: 0;
     overflow-y: scroll;
 
-    scrollbar-color: rgb(29, 104, 42) rgb(53, 180, 74);
-
     float: left;
     margin-left: 0px;
     width: 230px;
