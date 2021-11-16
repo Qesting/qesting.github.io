@@ -1,3 +1,14 @@
+h4 {
+    text-align: center;
+    margin-top: 50px;
+}
+
+#int {
+    font-style: italic;
+    font-weight: bold;
+    text-align: center;
+}
+
 table {
     font-size: 16px;
 }
@@ -9,9 +20,9 @@ table {
 }
 
 .cell {
-    margin-top: 50px;
     float: left;
     padding: 5px;
+    max-width: 30vw;
 }
 
 td, th {
@@ -37,4 +48,11 @@ th {
 
 .r {
     text-align: right;
+}
+
+#comment {
+    margin-top: 25px;
+    font-size: 16px;
+    text-align: center;
+    font-style: italic;
 }
