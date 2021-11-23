@@ -1,25 +1,33 @@
-.left::-webkit-scrollbar {
+nav::-webkit-scrollbar {
     display: none;
 }
 
-.button {
+nav {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+
+nav a {
     margin-bottom: 5px;
     font-size: 18px;
 
-    color: white;
-    background-color: rgb(43, 151, 61);
-
-    border: 3px solid rgb(43, 151, 61);
+    border: 3px solid;
     border-radius: 12px;
-
+    
     text-decoration: none;
     display: inline-block;
-
+    
     padding: 5px;
     width: 170px;
+
+    color: white;
+    background-color: rgb(43, 151, 61);
+    
+    border-color: rgb(43, 151, 61);
+
 }
 
-.button:hover {
+nav a:hover {
     background-color: rgb(37, 129, 52);
     font-weight: bolder; 
 }

@@ -1,27 +1,31 @@
 body {
+    --text-color: #000000;
+    --bg-color: #DDDDDD;
+}
+
+body.dark {
+    --text-color: #FFFFFF;
+    --bg-color: #0D1117; 
+}
+
+body {
 	margin: 25px;
 	font-family: Calibri;
 	font-size: 20px;
-	background-color: #DDDDDD;
+
+    color: var(--text-color);
+    background-color: var(--bg-color);
 }
 
-.main {
-	text-align: center;
-	display: block;
+main {
+margin-left: 230px;
 }
 
-.page {
-	display: block;
-	margin-left: 240px;
-    height: 100%;
+section.story p {
+    text-indent: 50px;
 }
 
-.right {
-    float: right;
-    width: 100%;
-}
-
-.left {
+nav {
     position: fixed;
     top: 0px;
     bottom: 0px;
@@ -42,9 +46,10 @@ body {
     background-color: rgb(53, 180, 74);
 
     font-size: 18px;
+}
 
-    -ms-overflow-style: none;
-    scrollbar-width: none;
+footer {
+    position: fixed;
 }
 
 .clear {
