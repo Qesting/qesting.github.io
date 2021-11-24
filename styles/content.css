@@ -1,28 +1,23 @@
 body {
-    --text-color: #000000;
-    --bg-color: #DDDDDD;
-}
-
-body.dark {
-    --text-color: #FFFFFF;
-    --bg-color: #0D1117; 
-}
-
-body {
 	margin: 25px;
 	font-family: Calibri;
 	font-size: 20px;
 
-    color: var(--text-color);
-    background-color: var(--bg-color);
+    color: var(--body-color);
+    background-color: var(--body-bgcolor);
 }
 
 main {
-margin-left: 230px;
+    margin-left: 240px;
+    max-width: 65vw;
 }
 
-section.story p {
+article.story p {
     text-indent: 50px;
+}
+
+article.character figure {
+    min-width: 30vw;
 }
 
 nav {
@@ -42,8 +37,8 @@ nav {
 
     height: 100%;
 
-    color: white;
-    background-color: rgb(53, 180, 74);
+    color: #FFFFFF;
+    background-color: #35B44A;
 
     font-size: 18px;
 }

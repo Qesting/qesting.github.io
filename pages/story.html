@@ -6,12 +6,13 @@
 			<name="viewport" content="width=device-width, initial-scale=1.0">
 
             <link rel="stylesheet" href="../styles/main.css">
+            <script src="../scripts/color-scheme.js"></script>
 
 			<title>Historia</title>
 		</head>
 		<body>
             <main>
-                <article>
+                <article class="story">
                     <section>
                         <a id="st1">
                             <h2 class="title">Część pierwsza: Obóz</h2>
@@ -325,6 +326,7 @@
                 </article>
             </main>
             <nav>
+                <button id="toggle" onclick="themetoggle(0)">Przełącz motyw</button>
                 <h3>Historia: Spis treści</h3>
                 <p style="font-style: italic;">Tak zwane tu "części" są co do długości i jakości bardzo zróżnicowane, proszę nie traktować ich jak rozdziałów.</p>
 
@@ -341,7 +343,7 @@
                 <a href="#st11">Część jedenasta</a>
                 <a href="#st12">Część dwunasta</a>
                 <a href="#st13">Część trzynasta</a>
-                <a href="index.html" id="main">Powrót do strony głównej</a>
+                <a href="../index.html" id="main">Powrót do strony głównej</a>
             </nav>    
             <div class="clear"></div>
         </body>

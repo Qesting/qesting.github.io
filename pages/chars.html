@@ -6,6 +6,7 @@
 			<name="viewport" content="width=device-width, initial-scale=1.0">
 			
             <link rel="stylesheet" href="../styles/main.css">
+            <script src="../scripts/color-scheme.js"></script>
 
 			<title>Spis postaci</title>
 		</head>
@@ -14,14 +15,16 @@
                 <h2 class="title">Spis postaci występujących w historii</h2>
 
                 <h3>Główne</h3>
-                <article>
+                <article class="character">
                     <section>
                         <a id="char-1">
                         <h4>Hiroaki Honda</h4>
                             <div class="row">
     
                                 <div class="cell">
-                                    <img src="../media/replacement.jpg" class="table-img">
+                                    <figure>
+                                        <img src="../media/replacement.png" class="table-img">
+                                    </figure>
                                 </div>
     
                                 <div class="cell">
@@ -97,7 +100,9 @@
                             <div class="row">
     
                                 <div class="cell">
-                                    <img src="../media/replacement.jpg" class="table-img">
+                                    <figure>
+                                        <img src="../media/replacement.png" class="table-img">
+                                    </figure>
                                 </div>
                             
                                 <div class="cell">
@@ -170,14 +175,16 @@
                 </article>
 
                 <h3>Współzawodnicy</h3>
-                <article>
+                <article class="character">
                     <section>
                         <a id="char-3">
                         <h4>Kēji Chiba</h4>
                             <div class="row">
                             
                                 <div class="cell">
-                                    <img src="../media/replacement.jpg" class="table-img">
+                                    <figure>
+                                        <img src="../media/replacement.png" class="table-img">
+                                    </figure>
                                 </div>
                             
                                 <div class="cell">
@@ -253,7 +260,9 @@
                             <div class="row">
                             
                                 <div class="cell">
-                                    <img src="../media/replacement.jpg" class="table-img">
+                                    <figure>
+                                        <img src="../media/replacement.png" class="table-img">
+                                    </figure>
                                 </div>
                             
                                 <div class="cell">
@@ -329,7 +338,9 @@
                             <div class="row">
                             
                                 <div class="cell">
-                                    <img src="../media/replacement.jpg" class="table-img">
+                                    <figure>
+                                        <img src="../media/replacement.png" class="table-img">
+                                    </figure>
                                 </div>
                             
                                 <div class="cell">
@@ -405,7 +416,9 @@
                             <div class="row">
                             
                                 <div class="cell">
-                                    <img src="../media/replacement.jpg" class="table-img">
+                                    <figure>
+                                        <img src="../media/replacement.png" class="table-img">
+                                    </figure>
                                 </div>
                             
                                 <div class="cell">
@@ -481,7 +494,9 @@
                             <div class="row">
                             
                                 <div class="cell">
-                                    <img src="../media/replacement.jpg" class="table-img">
+                                    <figure>
+                                        <img src="../media/replacement.png" class="table-img">
+                                    </figure>
                                 </div>
                             
                                 <div class="cell">
@@ -557,7 +572,9 @@
                             <div class="row">
                             
                                 <div class="cell">
-                                    <img src="../media/replacement.jpg" class="table-img">
+                                    <figure>
+                                        <img src="../media/replacement.png" class="table-img">
+                                    </figure>
                                 </div>
                             
                                 <div class="cell">
@@ -633,7 +650,9 @@
                             <div class="row">
                             
                                 <div class="cell">
-                                    <img src="../media/replacement.jpg" class="table-img">
+                                    <figure>
+                                        <img src="../media/replacement.png" class="table-img">
+                                    </figure>
                                 </div>
                             
                                 <div class="cell">
@@ -709,7 +728,9 @@
                             <div class="row">
                             
                                 <div class="cell">
-                                    <img src="../media/replacement.jpg" class="table-img">
+                                    <figure>
+                                        <img src="../media/replacement.png" class="table-img">
+                                    </figure>
                                 </div>
                             
                                 <div class="cell">
@@ -785,7 +806,9 @@
                             <div class="row">
                             
                                 <div class="cell">
-                                    <img src="../media/replacement.jpg" class="table-img">
+                                    <figure>
+                                        <img src="../media/replacement.png" class="table-img">
+                                    </figure>
                                 </div>
                             
                                 <div class="cell">
@@ -858,6 +881,7 @@
                 </article>
             </main>
             <nav>
+                <button id="toggle" onclick="themetoggle(0)">Przełącz motyw</button>
                 <h3>Postacie: Indeks</h3>
                 <p style="font-style: italic;">Dokument przedstawia informacje o pojawiających się w historii Świętego Turnieju postaciach wymienionych z imienia</p>
                 <p style="font-style: italic;">Wizerunki poglądowe pojawią się w późniejszym terminie</p>
@@ -873,7 +897,7 @@
                 <a href="#char-9">Yui Endo</a>
                 <a href="#char-10">Masaki Nakamura</a>
                 <a href="#char-11">Shuhē Kawada</a>                 
-                <a href="index.html" id="main">Powrót do strony głównej</a>
+                <a href="../index.html" id="main">Powrót do strony głównej</a>
             </nav>
             <div class="clear"></div>
 		</body>

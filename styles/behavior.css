@@ -7,33 +7,21 @@ nav {
     scrollbar-width: none;
 }
 
-nav a {
-    margin-bottom: 5px;
-    font-size: 18px;
+body {
+    --body-color: #000000;
+    --body-bgcolor: #DDDDDD;
 
-    border: 3px solid;
-    border-radius: 12px;
-    
-    text-decoration: none;
-    display: inline-block;
-    
-    padding: 5px;
-    width: 170px;
-
-    color: white;
-    background-color: rgb(43, 151, 61);
-    
-    border-color: rgb(43, 151, 61);
-
+    --tb-color: #000000;
+    --tb-bgcolor: #DDDDDD;
+    --tb-bgcolor-hover: #CCCCCC;
 }
 
-nav a:hover {
-    background-color: rgb(37, 129, 52);
-    font-weight: bolder; 
-}
+body.dark {
+    --body-color: #FFFFFF;
+    --body-bgcolor: #0D1117; 
 
-#main {
-    margin-top: 40px;
-    margin-bottom: 40px;
+    --tb-color: #FFFFFF;
+    --tb-bgcolor: #2B3D97;
+    --tb-bgcolor-hover: #253481;
 }
 
