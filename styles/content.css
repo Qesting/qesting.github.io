@@ -16,6 +16,11 @@ article.story p {
     text-indent: 50px;
 }
 
+article.story h2 {
+    margin-top: 40px;
+    font-style: italic;
+}
+
 article.character figure {
     min-width: 30vw;
 }
@@ -49,9 +54,4 @@ footer {
 
 .clear {
     clear: both;
-}
-
-.title {
-    margin-top: 40px;
-    font-style: italic;
 }
