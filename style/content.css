@@ -1,0 +1,48 @@
+body {
+    font-size: 18px;
+}
+
+article {
+    display: block;
+}
+
+body:not(.overlordsheet) nav {
+    text-align: center;
+}
+
+body.overlordsheet main article {
+    margin-left: 4vw;
+    width: 46vw;
+    float: left;
+}
+
+body.overlordsheet main article:nth-of-type(2) {
+    position: absolute;
+    left: 49vw;
+    width: 44vw;
+}
+
+body.overlordsheet main article .row::after {
+    content: "";
+    clear: both;
+    display: table;
+}
+
+body.overlordsheet main article .cell {
+    float: left;
+    width: 20vw;
+}
+
+body.overlordsheet main article:first-of-type>section>section:not(:last-child) .cell:first-child {
+    font-stretch: narrower;
+    text-transform: uppercase;
+}
+
+body.overlordsheet main article:first-of-type .cell:nth-of-type(3) {
+    width: auto;
+    font-weight: bolder;
+}
+
+body.overlordsheet main article:last-of-type {
+    width: 90vw;
+}

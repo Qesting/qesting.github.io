@@ -1,0 +1,6 @@
+body.overlordsheet {
+    background-image: url(../media/bg.png);
+    background-attachment: scroll;
+
+    background-size: 100vw;
+}
