@@ -34,7 +34,7 @@ body.overlordsheet main article .cell {
     width: 20vw;
 }
 
-body.overlordsheet main article:first-of-type>section>section:not(:last-child) .cell:first-child {
+body.overlordsheet main article .cell:first-child {
     font-stretch: narrower;
     text-transform: uppercase;
 }
