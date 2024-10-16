@@ -1,0 +1,57 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "array",
+  "items": {
+    "type": "object",
+    "properties": {
+      "title": "section",
+      "description": "a subset of data",
+      "name": {
+        "type": "string",
+        "description": "the identifier"
+      },
+      "displayName": {
+        "type": "string",
+        "description": "the actual displayed name; if empty, will be the same as [name]"
+      },
+      "display": {
+        "type": "string",
+        "enum": ["description", "table", "both"],
+        "description": "how the section will be displayed"
+      },
+      "content": {
+        "type": "array",
+        "items": {
+          "oneOf": [
+            {
+              "type": "object",
+              "name": {
+                "type": "string",
+                "description": "the identifier"
+              },
+              "displayName": {
+                "type": "string",
+                "description": "the actual name displayed"
+              },
+              "content": {
+                "type": {
+                  "oneOf": ["string", "array"],
+                  "items": {
+                    "type": "object",
+                    "title": {
+                      "type": "string"
+                    },
+                    "content": {
+                      "type": "string"
+                    }
+                  }
+                },
+                "description": "the text content of the element"
+              }
+            }
+          ]
+        }
+      }
+    }
+  }
+}
