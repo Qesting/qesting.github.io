@@ -21,7 +21,7 @@ export default function Item({data, section, setDiceResult}) {
                         {
                             content?.map((e, i) => (
                                 <p key={i}>
-                                    { e?.title && <strong className="font-bold capitalize inline-block mr-1">{e?.title}.</strong>}{parser(e.content ?? e, setDiceResult, section)}
+                                    { e?.title && <strong className="font-bold capitalize inline-block mr-1">{e?.title}{!e.title.endsWith(':') && '.'}</strong>}{parser(e.content ?? e, setDiceResult, section)}
                                 </p>
                             ))
                         }
