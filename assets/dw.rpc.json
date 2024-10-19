@@ -1930,6 +1930,136 @@
       ]
     },
     {
+      "displayName": "amunicja",
+      "name": "ammo",
+      "display": "both",
+      "table": {
+        "name": "nazwa",
+        "requisition": "pobranie",
+        "renown": "sława"
+      },
+      "content": [
+        "Hordy obcych, z którymi mierzą się Astartes są nieprzeliczone, przez co istnieją całe planety oddane produkcji amunicji wymaganej do prowadzenia tej nieskończonej wojny. Każda broń Pobrana ze zbrojowni Straży wyposażona jest w odpowiedni zapas amunicji. Każdy z typów amunicji może być uzywany tylko z określonymi rodzajami broni, co wyszczególniono w opisach. Nie podano wagi amunicji, jednak jeżeli zajdzie potrzeba jej podania, należy założyć, że masa jednego pełnego magazynka wynosi 10% masy całej broni.",
+        {
+          "displayName": "amunicja boltowa",
+          "name": "bolts",
+          "requisition": null,
+          "renown": 0, 
+          "content": [
+            "Przeciwpancerno-odłamkowy pocisk boltowy to jeden z najniebezpieczniejszych typów amunicji należących do Imperialnego arsenału. Straż korzysta z różnorodności jego wariantów, które powstały na przestrzeni wieków, co zapewnia członkom Szwadronów wiele różnych rodzajów pocisków, które mogą nadal wystrzelić ze swojego standardowego przydziałowego boltera. Zdecydowana większość produkowanych boltów zarezerwowana jest na użytek Adeptus Astartes, przez co dla innych zdobycie takiej amunicji jest trudne i kosztowne, natomiast dla Braci czymś zupełnie normalnym jest standardowy użytek broni, która wypluwa ich dziesiątki w każdej minucie.",
+            {
+              "title": "Używany przez:",
+              "content": "broń Boltową."
+            }
+          ]
+        },
+        {
+          "displayName": "kule",
+          "name": "bullets",
+          "requisition": null,
+          "renown": 0,
+          "content": [
+            "Pełne pociski są w powszechnym użyciu w Imperium, przez co występują w wielu odmianach i kalibrach. Amunicja z broni jednego rodzaju nie może być użyta w innej, chyba że są wyprodukowane bardzo podobnie lub stosują się do jakiegoś rodzaju standardyzacji. Amunicja używana przez @ranged{autopistol|pistolety} i @ranged{autogun|karabiny automatyczne} zwykle jest wymienna, ale ta z której korzystają między innymi @ranged{assaultCannon|działa szturmowe} i @ranged{accelerator|przyspieszające} jest unikalna dla nich.",
+            {
+              "title": "Używany przez:",
+              "content": "karabiny i pistolety automatyczne, a także działa szturmowe i przyspieszające."
+            }
+          ]
+        },
+        {
+          "displayName": "bateria",
+          "name": "chargePack",
+          "requisition": null,
+          "renown": 0,
+          "content": [
+            "Baterie takie to potężne źródła energii używane niemal wyłącznie przez broń laserową. Fizyczny rozmiar baterii zależy od Klasy broni, ale we wszystkich przypadkach w pełni naładowana bateria zapewnia pełny magazynek.",
+            {
+              "title": "Używany przez:",
+              "content": "broń laserową."
+            }
+          ]
+        },
+        {
+          "displayName": "egzotyczna",
+          "name": "exotic",
+          "requisition": null,
+          "renown": "różne",
+          "content": [
+            "W arsenale Straży znaleźć można wiele broni, które używają niepospolitych typów amunicji, poczynając od specjalnych ładunków dla digi-broni, a kończąc na precyzyjnie wykonanych strzałkach do broni igłowej.",
+            {
+              "title": "Używany przez:",
+              "content": "egzotyczną broń dystansową."
+            }
+          ]
+        },
+        {
+          "displayName": "paliwo",
+          "name": "fuel",
+          "requisition": null,
+          "renown": 0,
+          "content": [
+            "Miotacze korzystają z płynnego paliwa, które może mieć różny skład i być różnej jakości. Mieszkańcy najniższych poziomów miast-uli mogą konstruować liche bronie, które używają palnych alkoholi, ale bronie Astartes korzystają wyłącznie z najczystego Prometium. Pełny zbiornik paliwa to ekwiwalent pełnego magazynka.",
+            {
+              "title": "Używany przez:",
+              "content": "miotacze."
+            }
+          ]
+        },
+        {
+          "displayName": "pojemnik melta",
+          "name": "melta",
+          "requisition": null,
+          "renown": 0,
+          "content": [
+            "Broń melta używa specjalnych mieszanek przetworzonych chemikaliów zamkniętych pod wysokim ciśnieniem do dedykowanych pojemników. Wielkość i umiejscowienie pojemnika różnią się w zależności od modelu i Klasy broni. Pełny pojemnik zawsze równoważny jest pełnemu magazynkowi.",
+            {
+              "title": "Używany przez:",
+              "content": "broń melta."
+            }
+          ]
+        },
+        {
+          "displayName": "osadnik igłowy",
+          "name": "precipitator",
+          "requisition": null,
+          "renown": 0,
+          "content": [
+            "Urządzenia te wydawane są zwykle z bronią igłową, często nawet wbudowane w kaburę czy walizkę na taką broń. Osadnik krystalizuje leki i trucizny w gotowe do użycia igły. Jedna dawka zmieniana jest w jedną sztukę amunicji. Jeżeli nie wyszczególniono inaczej każda substancja może być umieszczona w osadniku.",
+            {
+              "title": "Używany przez:",
+              "content": "broń igłową."
+            }
+          ]
+        },
+        {
+          "displayName": "fiolka plazmowa",
+          "name": "plasma",
+          "requisition": null,
+          "renown": 0,
+          "content": [
+            "Surowe paliwo plazmowe to niebezpieczny, lotny fotoniczny wodór, skompresowany i ostrożnie wtłoczony we wzmocnione pojemniki. Niemal pewnym jest, że to właśnie niedopełnienie obrzędów przenoszenia fiolki plazmowej zaskutkowało powstaniem @grenade{plasma|granatu plazmowego}.",
+            {
+              "title": "Używany przez:",
+              "content": "broń plazmową."
+            }
+          ]
+        },
+        {
+          "displayName": "śrut",
+          "name": "shotgunShell",
+          "requisition": null,
+          "renown": 0,
+          "content": [
+            "Amunicja do strzelby zawiera koszyczek z dziesiątkami małych kulek, które mają zostać rozrzucone na dużym obszarze, dzięki czemu jest bardzo przydatna w walce na bliski dystans, gdzie celność nie gra wielkiej roli.",
+            {
+              "title": "Używany przez:",
+              "content": "strzelby."
+            }
+          ]
+        }
+      ]
+    },
+    {
       "displayName": "pancerz",
       "name": "armor",
       "display": "both",
