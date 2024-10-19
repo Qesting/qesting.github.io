@@ -1602,7 +1602,7 @@
             "weight": 18,
             "requisition": 30,
             "renown": 3,
-            "content": "Potężna dawka energii uwalniana przy uderzeniu tego oręża tworzy falę uderzeniową ryczącą niczym grzmot, od czego pochodzi jego nazwa. Wrogowie, którzy przeżyją samo uderzenie"
+            "content": "Potężna dawka energii uwalniana przy uderzeniu tego oręża tworzy falę uderzeniową ryczącą niczym grzmot, od czego pochodzi jego nazwa. Wrogowie, którzy przeżyją samo uderzenie, zostaną zapewne ogłuszeni przez falę. Wielu Braci równoważy słabe możliwości defensywne młota stosując @field{stormShield|tarczę szturmową}; Strażnicy Burzy powobno uwielbiają tę kombinację i niektórzy z nich używają stylu walki zbudowanego wokół niej."
           },
           {
             "displayName": "omnizjański topór (wzór astartes)",
@@ -1619,59 +1619,8 @@
             ],
             "weight": 14,
             "requisition": "30@footnote{1}",
-            "renown": 1
-          }
-        ]
-      },
-      {
-        "displayName": "tradycyjne",
-        "name": "traditional",
-        "display": "none",
-        "content": [
-          {
-            "displayName": "nóż taktyczny",
-            "name": "combatKnife",
-            "class": "melee",
-            "damage": {
-              "formula": "1k10+2",
-              "type": "rending"
-            },
-            "penetration": 2,
-            "weight": 2,
-            "requisition": "3@footnote{2}",
-            "renown": 1
-          },
-          {
-            "displayName": "miecz paradny",
-            "name": "ceremonialSword",
-            "class": "melee",
-            "damage": {
-              "formula": "1k10+3",
-              "type": "rending"
-            },
-            "penetration": 2,
-            "qualities": [
-              "balanced"
-            ],
-            "weight": 5,
-            "requisition": "3@footnote{2}",
-            "renown": 1
-          },
-          {
-            "displayName": "claymore sacris",
-            "name": "sacrisClaymore",
-            "class": "melee",
-            "damage": {
-              "formula": "2k10+2",
-              "type": "rending"
-            },
-            "penetration": 2,
-            "qualities": [
-              "unbalanced"
-            ],
-            "weight": 10,
-            "requisition": "3@footnote{2}",
-            "renown": 1
+            "renown": 1,
+            "content": "Dzierżony zwykle przez Zbrojmistrzów, którzy chcą pokazać swoją wiarę w Omnizjasza. Broń ta ma długie drzewce podobne do laski, na którego końcu znajduje się żeleźce w formie połowy koła zębatego i czaszki, które stanowią symbol Adeptus Mechanicus. Symbol ten tworzy ostrze otoczone polem energetycznym, którego wyładowania skaczą po metalu, rozświetlając oczy czaszki niepokojącym błyskiem, co nie pozostawia wątpliwości, iż broń ta - choć pokryta zdobieniami w formie mikro-obwodów, które jasno wskazują na jej świętość dla Wyznawców Maszyny - jest śmiertelnie niebezpieczna w odpowiednich rękach. Topór ten działa również jako @tool{combiTool}."
           }
         ]
       },
@@ -1680,6 +1629,9 @@
         "name": "force",
         "display": "none",
         "content": [
+          "Obwody siatki psionicznej w tych broniach podobno zostały stworzone przez samego Imperatora w czasach, kiedy jeszcze chodził między śmiertelnikami. Uzbrojenie takie łączy te obwody z psychoreaktywnymi kryształami używanymi w @armor{psychicHood|kapturach psionicznych}, dzięki czemu użytkownik może skupić swoją mentalną moc w pole podobne do tego wytwarzanego przez broń energetyczną. Bron psioniczna przybiera wiele form o różnym stopniu wyspecjalizowania; najbardziej znaną są bronie Nemesis używane przez Szarych Rycerzy. Najłatwiej Kronikarzowi jest zdobyć psioniczny miecz lub kostur.",
+          "Jeżeli broń taka użyta jest przez osobę niebędącą psykerem, liczy się ona jako Zwykła broń wykonana dla rozmiaru Astartes i stosuje się do wszystkich zasad znajdujących się w profilu. Natomiast w rękach kogokolwiek posiadającego Siłę Psychiczną staje się dużo bardziej niebezpieczna. Za każdy punkt Siły Psychicznej Obrażenia i Penetracja broni rosną o 1. Na przykład miecz psioniczny używany przez psykera z SP 3 zadawałby @dice{1k10+5} (plus Siła} Obrażeń z Penetracją 5.",
+          "Dodatkowo za każdym razem, kiedy psyker wyposażony w taką broń zada komuś Obrażenia za jej pomocą, może jako Akcja Darmowa skupić swoją moc i żądzę mordu w ostrzu, czy innej części używanej do uderzenia. Wymaga to testu Skupienia używającego przeciwstawnej Siły Woli. Za każdy Stopień Sukcesu użytkownik zadaje dodatkowe @dice{1k10} Obrażeń, które ignorują Pancerz i Wytrzymałość. Broń psioniczna nie może być zniszczona przez pole energetyczne.",
           {
             "displayName": "kostur psioniczny",
             "name": "forceStaff",
@@ -1694,7 +1646,8 @@
             ],
             "weight": 2,
             "requisition": 25,
-            "renown": 2
+            "renown": 2,
+            "content": "Kostur psioniczny zamyka siatkę w obudowie wykonanej z polerowanego metalu, kości, drewna, czy jakiegokolwiek innego wytrzymałego materiału. Na jego szczycie zwykle znajduje się wyszukana, pokryta obwodami ikona koncentracji, której wygląd jest związany z powstaniem broni. Kostur psioniczny działa jako świetne ognisko psioniczne, co zapewnia premię +15 do testów Inwokacji. Premia ta działa dopóki kostur trzymany jest w przynajmniej jednej ręce, chociaż uderzenie nim wymaga obu rąk."
           },
           {
             "displayName": "miecz psioniczny",
@@ -1710,17 +1663,67 @@
             ],
             "weight": 5,
             "requisition": 25,
-            "renown": 2
+            "renown": 2,
+            "content": "Ostrze miecza psionicznego błyszczy znajdującą się w nim siatką obwodów i świeci jaśniej za każdym razem, kiedy użytkownik aktywuje jego moc. Adamantytowy stop, z którego jest ono wykonane, wyostrzono do monomolekularnej krawędzi. Wspierane przez siłę ciała i umysłu użytkownika, w dłoni Kronikarza jest w stanie przeciąc nawet gruby pancerz z niesamowitą łatwością."
           }
         ]
       },
       {
-        "displayName": "inne",
-        "name": "other",
+        "displayName": "tradycyjne",
+        "name": "traditional",
         "display": "none",
         "content": [
+          "Zwyczajna broń biała jest nadal powszechna w Imperium i poza nim; w większej części targanej wojną galaktyki nie do pomyślenia jest wyruszac gdziekolwiek bez takich środków obrony. Kategoria ta zawiera wszystkie bronie od prymitywnych mieczy używanych przez biednych Zwyczajnych aż do wyrafinowanych ostrzy noży Astartes.",
           {
-            "displayName": "prymitywne",
+            "displayName": "nóż taktyczny",
+            "name": "combatKnife",
+            "class": "melee",
+            "damage": {
+              "formula": "1k10+2",
+              "type": "rending"
+            },
+            "penetration": 2,
+            "weight": 2,
+            "requisition": "3@footnote{2}",
+            "renown": 1,
+            "content": "Gdy Brat rzuci swój ostatni granat i wystrzeli ostatni nabój, zawsze zostaje mu opcja dobycia noża. Każdy Marine ostrzymuje taki nóż jak tylko dojdzie do siebie po ostatniej z operacji implantacji i nosi go z sobą do ostatniego oddechu zaczerpniętego w bitwie. Nóż taki, który rozmiarem odpowiada mieczom Zwykłych, ma monomolekularne ostrze, które nigdy nie tępi się, nawet po wiekach używania. W niektórych Zakonach noże przekazywane są nowym Astartes jako spadek po starych właścicielach, których wielkie czyny wygrawerowane są na głowni; w innych tworzenie noża jest jednoczesne z tworzeniem nowego Brata, więc broń składana jest na odpoczynek razem ze swoim właścicielem."
+          },
+          {
+            "displayName": "miecz paradny",
+            "name": "ceremonialSword",
+            "class": "melee",
+            "damage": {
+              "formula": "1k10+3",
+              "type": "rending"
+            },
+            "penetration": 2,
+            "qualities": [
+              "balanced"
+            ],
+            "weight": 5,
+            "requisition": "3@footnote{2}",
+            "renown": 1,
+            "content": "@trapping{ceremonialSword}"
+          },
+          {
+            "displayName": "claymore sacris",
+            "name": "sacrisClaymore",
+            "class": "melee",
+            "damage": {
+              "formula": "2k10+2",
+              "type": "rending"
+            },
+            "penetration": 2,
+            "qualities": [
+              "unbalanced"
+            ],
+            "weight": 10,
+            "requisition": "3@footnote{2}",
+            "renown": 1,
+            "content": "@trapping{sacrisClaymore}"
+          },
+          {
+            "displayName": "broń prymitywna",
             "name": "primitive",
             "class": "melee",
             "damage": {
@@ -1732,7 +1735,8 @@
               "primitive"
             ],
             "requisition": null,
-            "renown": 1
+            "renown": 1,
+            "content": "Całe katalogi różnych prymitywnych broni znalezionych we wszystkich zakątkach galaktyki zapełniają archiwa Administratum w systemie Prol. Rozróżnienia nie są jednak ważne, kiedy broń @quality{primitive} zostanie postawiona przeciwko pancerzowi i wytrzymałości Astartes. Kije, żelazne noże, porządnie wykonane miecze z feudalnych światów, wielkie młoty bojowe - wszystkie one, jeżeli wykonane ze zwyczajnych materiałów, mają jedynie najmniejszą szansę na zarysowanie pancerza Marine, a zranienie go takową jest praktycznie niemożliwe. Z tego powodu wszystkie takie bronie opisane są jednym profilem. MG może w miarę potrzeby modyfikować go w celu dostosowania do konkretnych egzemplarzy."
           },
           {
             "displayName": "improwizowane",
@@ -1748,7 +1752,8 @@
               "unbalanced"
             ],
             "requisition": null,
-            "renown": 1
+            "renown": 1,
+            "content": "Bronie improwizowane mogą przybierać wiele form, ale zwykle są różnymi poręcznymi obiektami, za które można szybko chwycić. Należą do nich na przykład nogi od stołów, odcięte kończyny, czy łuski po amunicji artyleryjskiej. Uderzenie przeciwnika bronią zasięgową również liczy się jako improwizowane."
           }
         ]
       }

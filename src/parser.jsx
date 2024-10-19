@@ -1,5 +1,5 @@
 import { useContext } from "react";
-import { JsonData } from "./jsonDataContext";
+import { JsonData } from "./JsonDataContext";
 import reactStringReplace from "react-string-replace";
 
 export function scrollButton(elementId, innerText, additionalClasses=null) {

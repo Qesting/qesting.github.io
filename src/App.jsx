@@ -1,9 +1,7 @@
 import { useEffect, useRef, useState, useContext } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
 import './App.css'
 import Section from './Section';
-import { JsonData } from './jsonDataContext';
+import { JsonData } from './JsonDataContext.js';
 import Navbar from './Navbar';
 
 function App() {

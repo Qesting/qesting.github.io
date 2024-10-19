@@ -1,5 +1,5 @@
 import { useContext } from "react";
-import { JsonData } from "./jsonDataContext";
+import { JsonData } from "./JsonDataContext";
 
 export default function Navbar() {
     const data = useContext(JsonData);
