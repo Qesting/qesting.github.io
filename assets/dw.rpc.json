@@ -47,7 +47,7 @@
       {
         "displayName": "stabilizowany żyroskopowo",
         "name": "gyroStabilized",
-        "content": "Broń posiada małą jednostkę samostabilizacji, która zwykle znajduje się blisko wylotu lufy. Nie jest ona tak dokładna jak @rangedAttachment{suspensor}, ale jest w stanie utrzymać broń pod optymalnym kątem. Broń Stabilizowana Żyroskopowo nigdy nie liczy się jako strzelająca do celu poza Długim Zasięgiem (zwyczajny zasięg maksymalny pozostaje bez zmian). Broń Ciężka z tą właściwością powoduje karę za brak przygotowania do strzału do -20."
+        "content": "Broń posiada małą jednostkę samostabilizacji, która zwykle znajduje się blisko wylotu lufy. Nie jest ona tak dokładna jak @attachment{suspensor}, ale jest w stanie utrzymać broń pod optymalnym kątem. Broń Stabilizowana Żyroskopowo nigdy nie liczy się jako strzelająca do celu poza Długim Zasięgiem (zwyczajny zasięg maksymalny pozostaje bez zmian). Broń Ciężka z tą właściwością powoduje karę za brak przygotowania do strzału do -20."
       },
       {
         "displayName": "gmatwający (x)",
@@ -233,7 +233,7 @@
             "weight": 18,
             "requisition": 5,
             "renown": 0,
-            "content": "Bolter, znany też jako karabin boltowy, jest podstawą każdego arsenału Astartes. Boltery różnią się wzorem i wiekiem pomiędzy poszczególnymi egzemplarzami, ale niemal wszystkie używają takiej samej amunicji. Bolter wzoru Straż Śmierci posiada wbudowany @rangedAttachment{selector}. Bracia używający broni ze swoich Zakonów modyfikują swoje boltery, aby dać im tę samą funkcjonalność."
+            "content": "Bolter, znany też jako karabin boltowy, jest podstawą każdego arsenału Astartes. Boltery różnią się wzorem i wiekiem pomiędzy poszczególnymi egzemplarzami, ale niemal wszystkie używają takiej samej amunicji. Bolter wzoru Straż Śmierci posiada wbudowany @attachment{selector}. Bracia używający broni ze swoich Zakonów modyfikują swoje boltery, aby dać im tę samą funkcjonalność."
           },
           {
             "displayName": "karabin boltowy (wzór stalker)",
@@ -1470,7 +1470,7 @@
             ],
             "weight": 10,
             "requisition": 5,
-            "renown": 1,
+            "renown": 0,
             "content": "Broń taka służy niejednemu Bratu odbywającemu swoją służbę w Drużynie Szturmowej. Zwykle prowadnice mieczy łańcuchowych osłonięte są ze wszystkich stron poza przodem, gdzie zęby piły mogą wgryzać się w ciało i kość."
           }
         ]
@@ -1498,7 +1498,7 @@
             ],
             "weight": 48,
             "requisition": 40,
-            "renown": 4,
+            "renown": 3,
             "content": [
               "Pięść łańcuchowa łączy niszczące pancerz pole pięści energetycznej z rozrywającymi adamantytowymi zębami ostrza łańcuchowego. Pole otacza i rękawicę i pędzący łańcuch, tworząc broń zdolną przeciąć pancerz, pojazdy, ciężkie grodzie, czy niemal dowolną substancję, jeżeli dostępna jest odpowiednia ilość czasu. Broń taka jest zbyt ciężka nawet dla Brata w pancerzu wspomaganym i efektywnie używać ich mogą tylko ci zakuci w @armor{terminator|pancerze terminator}. Ma to również sens, ponieważ w walce z przeciwnikiem tak potężnym, że wymagane jest użycie takiej broni, przydatna jest ochrona podobnego kalibru.",
               "Pięść łańcuchowa instalowana jest zamiast normalnej rękawicy Terminatora i nakłada takie same ograniczenia jak @melee{lightningClaw}."
@@ -1520,7 +1520,7 @@
             ],
             "weight": 30,
             "requisition": "30/45",
-            "renown": 3,
+            "renown": 2,
             "content": [
               "Nawet sam fakt posiadania szponów energetycznych mówi wiele o mistrzostwie w walce tego, który je dzierży. By w pełni używać tej broni wymagane jest ciągłe szlifowanie swoich umiejętności walki wręcz, a także zrezygnowanie z łatwego dostępu do uzbrojenia dystansowego. Z tych powodów szponów energetycznych zwykle używają tylko najstarsi rangą Szturmowcy.",
               "Szpon to ciężka rękawica, która instalowana jest zamiast tej właściwej dla pancerza wspomaganego. Jego masywna forma kryje mechanizmy, które zasilają cztery osobne ostrza energetyczne, które wystają z wierchu dłoni niczym trzaskające wyładowaniami pazury. Choć z powodu samej swojej zasady działania szpony mogą ciąć ciężkie pancerze niemal z taką samą łatwością jak ciało, dopiero jako para w rękach specjalisty od walki w zwarciu stają się prawdziwie śmiercionośnymi narzędziami.",
@@ -1542,7 +1542,7 @@
             ],
             "weight": 10,
             "requisition": 20,
-            "renown": 2,
+            "renown": 1,
             "content": "Toporem energetycznym można porządniej się zamachnąć niż mieczem, ale trudniej się nim osłonić. Słabsze możliwości defensywne powodują, że często topór paruje się z tarczą, czy innymi, bardziej wyszukanymi środkami obrony. Nie zmienia to reputacji topora jako brutalnej i niezbyt wyrafinowanej broni; wybór między nim a mieczem jest raczej osobisty niż strategiczny."
           },
           {
@@ -1561,7 +1561,7 @@
             ],
             "weight": 30,
             "requisition": 30,
-            "renown": 3,
+            "renown": 2,
             "content": [
               "Pięść energetyczna generuje pole tak bardzo destabilizujące materię, że znajdująca się w nim broń nie ma większego znaczenia. Z tego powodu zamiast tradycyjnego oręża pole otacza powiększoną i wzmocnioną rękawicę. W połączeniu z siłą Brata pięść energetyczna może rozerwać nawet najcięższy pancerz i rozgnieść kryjące się wewnątrz ciało jak krwawy przejrzały owoc. Ładowanie tych potężnych pól wymaga ciężkich przewodów podłączonych do reaktora znajdującego się w pancerzu. Same generatory są również rzadkie i trudne do utrzymiania, przez co broń taka jest symbolem statusu nawet w Adeptus Astartes.",
               "Pięść energetyczna dodaje mnożnik do Siły użytkownika (każdy Kosmiczny Marine posiada mnożnik Nienaturalnej Siły, więc broń ta po prostu zwiększa go o 1). Jest ona montowana zamiast normalnej rękawicy w pancerzu wspomaganym i nakłada te same ograniczenia co @melee{lightningClaw}."
@@ -1582,7 +1582,7 @@
             ],
             "weight": 5,
             "requisition": 20,
-            "renown": 2,
+            "renown": 1,
             "content": "Produkcja broni energetycznej wymaga sporo czasu i rzadkich zasobów. Z tego powodu miecze energetyczne zwykle używane są przez starszych rangą Astartes. Jako broń eleganckia i efektywna dają wiele możliwości ataku i obrony, więcej niż inne rodzaje broni energetycznej. Te cechy czynią z nich ulubione uzbrojenie oficerów, bez względu na to, czy specjalizują się w walce wręcz, czy też nie."
           },
           {
@@ -1601,7 +1601,7 @@
             ],
             "weight": 18,
             "requisition": 30,
-            "renown": 3,
+            "renown": 2,
             "content": "Potężna dawka energii uwalniana przy uderzeniu tego oręża tworzy falę uderzeniową ryczącą niczym grzmot, od czego pochodzi jego nazwa. Wrogowie, którzy przeżyją samo uderzenie, zostaną zapewne ogłuszeni przez falę. Wielu Braci równoważy słabe możliwości defensywne młota stosując @field{stormShield|tarczę szturmową}; Strażnicy Burzy powobno uwielbiają tę kombinację i niektórzy z nich używają stylu walki zbudowanego wokół niej."
           },
           {
@@ -1619,7 +1619,7 @@
             ],
             "weight": 14,
             "requisition": "30@footnote{1}",
-            "renown": 1,
+            "renown": 2,
             "content": "Dzierżony zwykle przez Zbrojmistrzów, którzy chcą pokazać swoją wiarę w Omnizjasza. Broń ta ma długie drzewce podobne do laski, na którego końcu znajduje się żeleźce w formie połowy koła zębatego i czaszki, które stanowią symbol Adeptus Mechanicus. Symbol ten tworzy ostrze otoczone polem energetycznym, którego wyładowania skaczą po metalu, rozświetlając oczy czaszki niepokojącym błyskiem, co nie pozostawia wątpliwości, iż broń ta - choć pokryta zdobieniami w formie mikro-obwodów, które jasno wskazują na jej świętość dla Wyznawców Maszyny - jest śmiertelnie niebezpieczna w odpowiednich rękach. Topór ten działa również jako @tool{combiTool}."
           }
         ]
@@ -1646,7 +1646,7 @@
             ],
             "weight": 2,
             "requisition": 25,
-            "renown": 2,
+            "renown": 1,
             "content": "Kostur psioniczny zamyka siatkę w obudowie wykonanej z polerowanego metalu, kości, drewna, czy jakiegokolwiek innego wytrzymałego materiału. Na jego szczycie zwykle znajduje się wyszukana, pokryta obwodami ikona koncentracji, której wygląd jest związany z powstaniem broni. Kostur psioniczny działa jako świetne ognisko psioniczne, co zapewnia premię +15 do testów Inwokacji. Premia ta działa dopóki kostur trzymany jest w przynajmniej jednej ręce, chociaż uderzenie nim wymaga obu rąk."
           },
           {
@@ -1657,7 +1657,7 @@
               "formula": "1k10+2",
               "type": "rending"
             },
-            "penetration": 2,
+            "penetration": 1,
             "qualities": [
               "balanced"
             ],
@@ -1685,7 +1685,7 @@
             "penetration": 2,
             "weight": 2,
             "requisition": "3@footnote{2}",
-            "renown": 1,
+            "renown": 0,
             "content": "Gdy Brat rzuci swój ostatni granat i wystrzeli ostatni nabój, zawsze zostaje mu opcja dobycia noża. Każdy Marine ostrzymuje taki nóż jak tylko dojdzie do siebie po ostatniej z operacji implantacji i nosi go z sobą do ostatniego oddechu zaczerpniętego w bitwie. Nóż taki, który rozmiarem odpowiada mieczom Zwykłych, ma monomolekularne ostrze, które nigdy nie tępi się, nawet po wiekach używania. W niektórych Zakonach noże przekazywane są nowym Astartes jako spadek po starych właścicielach, których wielkie czyny wygrawerowane są na głowni; w innych tworzenie noża jest jednoczesne z tworzeniem nowego Brata, więc broń składana jest na odpoczynek razem ze swoim właścicielem."
           },
           {
@@ -1702,7 +1702,7 @@
             ],
             "weight": 5,
             "requisition": "3@footnote{2}",
-            "renown": 1,
+            "renown": 0,
             "content": "@trapping{ceremonialSword}"
           },
           {
@@ -1719,7 +1719,7 @@
             ],
             "weight": 10,
             "requisition": "3@footnote{2}",
-            "renown": 1,
+            "renown": 0,
             "content": "@trapping{sacrisClaymore}"
           },
           {
@@ -1735,7 +1735,7 @@
               "primitive"
             ],
             "requisition": null,
-            "renown": 1,
+            "renown": 0,
             "content": "Całe katalogi różnych prymitywnych broni znalezionych we wszystkich zakątkach galaktyki zapełniają archiwa Administratum w systemie Prol. Rozróżnienia nie są jednak ważne, kiedy broń @quality{primitive} zostanie postawiona przeciwko pancerzowi i wytrzymałości Astartes. Kije, żelazne noże, porządnie wykonane miecze z feudalnych światów, wielkie młoty bojowe - wszystkie one, jeżeli wykonane ze zwyczajnych materiałów, mają jedynie najmniejszą szansę na zarysowanie pancerza Marine, a zranienie go takową jest praktycznie niemożliwe. Z tego powodu wszystkie takie bronie opisane są jednym profilem. MG może w miarę potrzeby modyfikować go w celu dostosowania do konkretnych egzemplarzy."
           },
           {
@@ -1752,8 +1752,176 @@
               "unbalanced"
             ],
             "requisition": null,
-            "renown": 1,
+            "renown": 0,
             "content": "Bronie improwizowane mogą przybierać wiele form, ale zwykle są różnymi poręcznymi obiektami, za które można szybko chwycić. Należą do nich na przykład nogi od stołów, odcięte kończyny, czy łuski po amunicji artyleryjskiej. Uderzenie przeciwnika bronią zasięgową również liczy się jako improwizowane."
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "displayName": "ulepszenia broni",
+    "name": "attachment",
+    "display": "both",
+    "table": {
+      "name": "nazwa",
+      "weight": "masa",
+      "requisition": "pobranie",
+      "renown": "sława"
+    },
+    "content": [
+      "Niemal każdą broń można wyposażyć w różne ulepszenia by zwiększyć jej użyteczność. Każde Ulepszenie zawiera w opisie listę broni, do których może być dołączone. Koszt pobrania zawiera i wartość komponentów i pracę potrzebną do ich zainstalowania. Wielu Zbrojmistrzów robi to samodzielnie, ale takie postępowanie nie zmniejsza kosztu Ulepszenia.",
+      {
+        "displayName": "zaczep naramienny",
+        "name": "armMounting",
+        "weight": "+1,5",
+        "requisition": 10,
+        "renown": 2,
+        "content": [
+          "Ten cięzki zaczep pozwala na zamontowanie wzdłuż ręki pancerza jednej sztuki broni dystansowej, która jest aktywowana przez interfejs MIU lub konkretny ruch dłoni. Pozwala to użytkownikowi na używanie obu rąk do innych zadań, może również zostawić mocne wrażenie na postronnych obserwatorach widzących jak Brat niszczy znajdującego się przed nim przeciwnika pozornie tylko machnięciem dłoni. To ulepszenie zmniejsza zasięg broni o 30%. Broń można zamontować na przedramieniu lub na barku.",
+          {
+            "title": "Dozwolone:",
+            "content": "pistolet @ranged{laspistol|laserowy}, @ranged{autopistol|automatyczny}, @ranged{boltPistol|boltowy} lub @ranged{meltaPistol|melta}, a także @ranged{auxGrenade}."
+          }
+        ]
+      },
+      {
+        "displayName": "bagnet (mono)",
+        "name": "meleeMono",
+        "noDesc": true,
+        "weight": "+2",
+        "requisition": 7,
+        "renown": 0
+      },
+      {
+        "displayName": "bagnet (łańcuch)",
+        "name": "meleeChain",
+        "noDesc": true,
+        "weight": "+8",
+        "requisition": 9,
+        "renown": 0
+      },
+      {
+        "displayName": "bagnet",
+        "name": "melee",
+        "noTable": true,
+        "content": [
+          "Wartość bagnetu lub innego podobnego dodatku do broni dystansowej jest niewątpliwa, ponieważ pozwala on na zajęcie się przeciwnikami znajdującymi się zbyt blisko bez zmieniania broni. Jednakże zwykłe bagnety podobne do włóczni byłyby afrontem zarówno dla samego Marine jak i jego broni. Astartes używają ostrzy monomolekularnych i łańcuchowych, które w walce w zwarciu są prawie tak samo efektywne jak dedykowana broń. Dostępne są dodatki, które w walce wręcz liczą się jako @melee{combatKnife} lub @melee{chainsword}, chociaż w tym drugim przypadku broń nie jest @quality{balanced}.",
+          {
+            "title": "Dozwolone:",
+            "content": "jakakolwiek broń Zwykła."
+          }
+        ]
+      },
+      {
+        "displayName": "suspensor",
+        "name": "suspensor",
+        "weight": "x1/2",
+        "requisition": 25,
+        "renown": 0,
+        "content": [
+          "Ponieważ Szwardony Śmierci często wysyłane są w pole bez wsparcia, potrzebują one dużo większej elastyczności niż inne jednostki. Atygrawitacyjne płyty suspensora dołącza się do broni lub innego elementu wyposażenia, przez co staje się ono łatwiejsze du użycia. Operacja taka zmniejsza masę broni o połowę, dzięki czemu broni Ciężkich można używać w szerszym zakresie sytuacji. Podczas strzelania z broni z suspensorem dzierżący ją Bohater zyskuje Cechę @trait{autoStabilized}, co powoduje, że zawsze liczy się jako Przygotowany, może strzelić Serią lub Ogniem Ciągłym używając Akcji Zwykłej i nigdy nie otrzymuje kar za ruch i strzał.",
+          {
+            "title": "Dozwolone:",
+            "content": "jakakolwiek broń Ciężka."
+          }
+        ]
+      },
+      {
+        "displayName": "selektor",
+        "name": "selector",
+        "weight": "+1",
+        "requisition": 2,
+        "renown": 0,
+        "content": [
+          "Selektor jest narzędziem charakterystycznym dla Straży. Pozwala on na szybkie przełączanie się między magazynkami zawierającymi różne rodzaje amunicji, co daje większą elastyczność w sytuacjach, kiedy parametry misji są niekonkluzywne. Broń z selektorem może mieć podłączone do trzech różnych magazynków. Jej użytkownik może na początku swojej Tury użyć selektora, żeby zmienić rodzaj używanej amunicji.",
+          {
+            "title": "Dozwolone:",
+            "content": "jakakolwiek broń Palna lub Boltowa."
+          }
+        ]
+      },
+      {
+        "displayName": "zaczep dipolowy",
+        "name": "maglock",
+        "requisition": 5,
+        "renown": 0,
+        "content": [
+          "Dla użytkowników pancerzy wspomaganych zaczepy magnetyczne są równie powszechne co zwykłe kabury. Zwykle zaczep składa się się z dwóch elektromagnesów znajdujących się zaraz pod powierzchnią płyty pancernej i na broni. Zaczep dipolowy jest w stanie odwrócić swoje pole magnetyczne, by dosłownie wrzucić broń w dłoń użytkownika. Zwykle osiąga się to przez zainstalowanie w rękawicy przełącznika zbliżeniowego, który powoduje zmianę polarności magnesów. Istnieją też wersje używające wyzwalaczy reagujących na głos lub bardziej skomplikowane sekwencje somatyczne.",
+          "Zaczep Dipolowy daje użytkownikowi Talent @talent{quickDraw} przy korzystaniu z ulepszonej broni. Jeżeli Bohater posiada już ten Talent, może dobyć broni jako część Parowania, co pozwala na przejście od stania bez broni do odbijania ostrza wroga w mgnieniu oka.",
+          {
+            "title": "Dozwolone:",
+            "content": "jakikolwiek Pistolet lub broń Zwykła, a także broń Biała jednoręczna."
+          }
+        ]
+      },
+      {
+        "displayName": "układ prowadzący",
+        "name": "predicator",
+        "weight": "+0,5",
+        "requisition": 20,
+        "renown": 1,
+        "content": [
+          "Kiedy tylko użytkownik wyceluje broń, aktywuje się będący sercem układu złożony kogitator śledzący. Układ przechyla lekko broń przy wystrzale, poprawiając prowadzenie celu przy ogniu automatycznym. Zapewnia on premię +10 do trafienia, ale działa tylko przy Serii lub Ogniu Ciągłym.",
+          {
+            "title": "Dozwolone:",
+            "content": "jakakolwiek nie-@quality{primitive} broń dystansowa, która jest w stanie strzelać serią lub ogniem ciągłym. Element namierzający układu musi być zainstalowany jako celownik, a każda broń może mieć tylko jeden celownik naraz."
+          }
+        ]
+      },
+      {
+        "displayName": "celownik preysense",
+        "name": "preysense",
+        "weight": "+0,5",
+        "requisition": 10,
+        "renown": 0,
+        "content": [
+          "Celownik ten pokazuje obrazy termiczne, odsłaniając chowających się w ciemnościach wrogów. Bohater używający go nie otrzymuje kar za przebywanie w ciemności, a także zyskuje premię +20 do testów Percepcji opartych na wzroku wykonywanych w nocy.",
+          {
+            "title": "Dozwolone:",
+            "content": "jakakolwiek Zwykła broń Palna, Laserowa, Boltowa lub Plazmowa. Każda broń może mieć tylko jeden celownik naraz."
+          }
+        ]
+      },
+      {
+        "displayName": "kolimator laserowy",
+        "name": "redDot",
+        "weight": "+0,5",
+        "requisition": 10,
+        "renown": 0,
+        "content": [
+          "Ten celownik zapewnia premię +10 do trafienia przy strzelaniu Ogniem Pojedynczym.",
+          {
+            "title": "Dozwolone:",
+            "content": "jakikolwiek Pistolet lub Zwykła broń Palna, Laserowa, Boltowa lub Plazmowa. Każda broń może mieć tylko jeden celownik naraz."
+          }
+        ]
+      },
+      {
+        "displayName": "tłumik",
+        "name": "silencer",
+        "weight": "+0,5",
+        "requisition": 3,
+        "renown": 0,
+        "content": [
+          "Tłumiki wygłuszają huk wystrzału z broni, utrudniając wykrycie strzelca. Testy Spostrzegawczości wykonywane by usłyszeć strzały z broni wytłumionej wykonywane są z karą -20. Próbę ich wykonania można podjąć na dystansie o połowę mniejszym niż normalnie.",
+          {
+            "title": "Dozwolone:",
+            "content": "@ranged{autogun}, @ranged{autopistol} i @ranged{needler}."
+          }
+        ]
+      },
+      {
+        "displayName": "celownik teleskopowy",
+        "name": "telescopicSight",
+        "weight": "+1",
+        "requisition": 6,
+        "renown": 0,
+        "content": [
+          "Celownik teleskopowy, zwany też lunetą, przybliża obraz celu. Przydatny jest, kiedy dalekie strzały muszą trafić bardzo precyzyjnie. Broń wyposażona w taki celownik ignoruje kary za strzelania na dystansie Długim i Ekstremalnym, jeżeli strzelec użyje Akcji Podwójnej do Wycelowania.",
+          {
+            "title": "Dozwolone:",
+            "content": "jakakolwiek Zwykła broń Laserowa, Palna, Boltowa lub Plazmowa. Każda broń może mieć tylko jeden celownik naraz."
           }
         ]
       }
@@ -1763,6 +1931,7 @@
     "displayName": "pancerz",
     "name": "armor",
     "display": "both",
+    "noGrid": true,
     "table": {
       "name": "nazwa",
       "covers": "okrywa",
