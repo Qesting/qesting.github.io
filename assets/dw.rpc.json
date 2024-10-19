@@ -1542,7 +1542,8 @@
             ],
             "weight": 10,
             "requisition": 20,
-            "renown": 2
+            "renown": 2,
+            "content": "Toporem energetycznym można porządniej się zamachnąć niż mieczem, ale trudniej się nim osłonić. Słabsze możliwości defensywne powodują, że często topór paruje się z tarczą, czy innymi, bardziej wyszukanymi środkami obrony. Nie zmienia to reputacji topora jako brutalnej i niezbyt wyrafinowanej broni; wybór między nim a mieczem jest raczej osobisty niż strategiczny."
           },
           {
             "displayName": "pięść energetyczna",
@@ -1560,7 +1561,11 @@
             ],
             "weight": 30,
             "requisition": 30,
-            "renown": 3
+            "renown": 3,
+            "content": [
+              "Pięść energetyczna generuje pole tak bardzo destabilizujące materię, że znajdująca się w nim broń nie ma większego znaczenia. Z tego powodu zamiast tradycyjnego oręża pole otacza powiększoną i wzmocnioną rękawicę. W połączeniu z siłą Brata pięść energetyczna może rozerwać nawet najcięższy pancerz i rozgnieść kryjące się wewnątrz ciało jak krwawy przejrzały owoc. Ładowanie tych potężnych pól wymaga ciężkich przewodów podłączonych do reaktora znajdującego się w pancerzu. Same generatory są również rzadkie i trudne do utrzymiania, przez co broń taka jest symbolem statusu nawet w Adeptus Astartes.",
+              "Pięść energetyczna dodaje mnożnik do Siły użytkownika (każdy Kosmiczny Marine posiada mnożnik Nienaturalnej Siły, więc broń ta po prostu zwiększa go o 1). Jest ona montowana zamiast normalnej rękawicy w pancerzu wspomaganym i nakłada te same ograniczenia co @melee{lightningClaw}."
+            ]
           },
           {
             "displayName": "miecz energetyczny",
@@ -1577,7 +1582,8 @@
             ],
             "weight": 5,
             "requisition": 20,
-            "renown": 2
+            "renown": 2,
+            "content": "Produkcja broni energetycznej wymaga sporo czasu i rzadkich zasobów. Z tego powodu miecze energetyczne zwykle używane są przez starszych rangą Astartes. Jako broń eleganckia i efektywna dają wiele możliwości ataku i obrony, więcej niż inne rodzaje broni energetycznej. Te cechy czynią z nich ulubione uzbrojenie oficerów, bez względu na to, czy specjalizują się w walce wręcz, czy też nie."
           },
           {
             "displayName": "młot gromu",
@@ -1595,7 +1601,8 @@
             ],
             "weight": 18,
             "requisition": 30,
-            "renown": 3
+            "renown": 3,
+            "content": "Potężna dawka energii uwalniana przy uderzeniu tego oręża tworzy falę uderzeniową ryczącą niczym grzmot, od czego pochodzi jego nazwa. Wrogowie, którzy przeżyją samo uderzenie"
           },
           {
             "displayName": "omnizjański topór (wzór astartes)",
