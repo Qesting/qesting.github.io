@@ -2060,6 +2060,164 @@
       ]
     },
     {
+      "displayName": "specjalna amunicja",
+      "name": "specialammo",
+      "display": "both",
+      "table": {
+        "name": "nazwa",
+        "requisition": "pobranie",
+        "renown": "sława"
+        
+      },
+      "content": [
+        "Taktyczna elastyczność jest bardzo ważna w nieraz tajemniczych sytuacjach, gdzie wysyłane są Szwadrony Straży. Z tego powodu Bracia należący do tej organizacji często korzystają z różnych wariantów amunicji boltowej, które pozwolą im lepiej zwalczać konkretne rodzaje zagrożeń.",
+        "Podane koszty Pobrania dotyczą jednego magazynka do jakiejkolwiek kwalifikującej się broni poza pistoletami, w których z racji mniejszego magazynka koszt wynosi jedynie połowę podanej wartości. Specjalna amunicja do @ranged{heavyBolter|ciężkiego boltera} kosztuje o 5 punktów więcej niż podano.",
+        {
+          "displayName": "plecak amunicji",
+          "name": "backpack",
+          "requisition": null,
+          "renown": 0,
+          "content": "Wiele broni potrzebuje dużego zapasu amunicji, by działać w trakcie przedłużających się bitew. Plecak z zapasem amunicji doczepiany jest na standardowy plecak zawierający moduł zasilania i systemy pancerza wspomaganego. Dla broni energetycznej zapas jest wielkim ogniwem energetycznym, dla broni plazmowej, melta i miotaczy zestawem zbiorników na paliwo i inne komponenty, a dla każdej innej broni - pojemnikiem zawierającym stos amunicji, która podawana jest do broni za pomocą taśmy z osłoną. Zapas amunicji zawiera wystarczająco na 100 strzałów z broni plazmowej, melta i laserowej, 75 strzałów z miotacza albo 250 sztuk amunicji, czy to konwencjonalnej, czy boltowej. Broń podłączona do plecaka używa go jako swojego zapasu amunicji i ignoruje swój normalny rozmiar magazynka. Plecak taki waży 40 kilogramów i wydawany jest automatycznie z dowolną bronią Ciężką."
+        },
+        {
+          "displayName": "naboje dragonfire",
+          "name": "dragonfire",
+          "requisition": 28,
+          "renown": 1,
+          "content": [
+            "W amunicji dragonfire główny ładunek wybuchowy wymieniony jest na koncentrat, który zapala się w kontakcie z powietrzem i zalewa płynnym ogniem teren wokół celu, podobnie do wystrzału z miotacza.",
+            {
+              "title": "efekt:",
+              "content": "Obrażenia broni zmniejszają się o 2. Wszyscy w promieniu 2 metrów od celu (włącznie z celem) muszą wykonać Test Zręczności lub stanąć w płomieniach. Strzelec może wymierzyć w obszar zamiast w konkretny cel; w tym przypadku trafienie jest Łatwe(+20), a Test Zręczności wykonują wszyscy w promieniu 2 metrów od miejsca trafienia."
+            },
+            {
+              "title": "używane przez:",
+              "content": "broń boltową."
+            }
+          ]
+        },
+        {
+          "displayName": "naboje hellfire",
+          "name": "hellfire",
+          "requisition": 25,
+          "renown": 0,
+          "content": [
+            "Zaprojektowane do walki z zagrożeniem, jakim są Tyranidy, naboje hellfire mają niszczycielskie efekty w starciu z materią organiczną. Ich rdzenie zamienione są na fiolki mutagennego kwasu, który w przerażającym tempie pożera materię ożywioną.",
+            {
+              "title": "efekt:",
+              "content": "broń ignoruje @trait{naturalArmor} i może spowodować aktywację Prawej Furii przy rzutach na Obrażenia wynoszących 9 lub 10. Dodatkowo broń, jeżeli nie miała tej Własności, staje się @quality{tearing}. Jeżeli amunicja ta jest użyta w @ranged{heavyBolter|ciężkim bolterze}, zmienia Szybkostrzelność broni na S/-/- i dodaje Własność @quality{blast||3}. Przeciwko Hordzie taka amunicja zadaje dodatkowy punkt Obrażeń do Rozmiaru każdym trafieniem."
+            },
+            {
+              "title": "używane przez:",
+              "content": "broń boltową."
+            }
+          ]
+        },
+        {
+          "displayName": "naboje implozyjne",
+          "name": "implosion",
+          "requisition": 27,
+          "renown": 1,
+          "content": [
+            "Amunicja ta jest rezultatem dawnych eksperymentów z alternatywami dla technologii krak i podmienia wybuchowy rdzeń na niemożliwie małą ilość antymaterii, która tworzy gwałtownie rozprężającą się próżnię po wystawieniu na kontakt ze zwykłą materią. Tak jak zwykła amunicja boltowa, naboje te są typu przeciwpancerno-odłamkowego, co znaczy, że aktywują się chwilę po wbiciu w cel. Siła tego efektu nie jest więc użyta do przebijania pancerza, a do rozerwania ciała celu od środka z mocą, która jest w stanie zdezorientować nawet Kosmicznego Marine.",
+            {
+              "title": "efekt:",
+              "content": "jeżeli cel otrzyma co najmniej 1 punkt Obrażeń po uwzględnieniu Pancerza i Wytrzymałości, otrzymuje dodatkowo @dice{1k5} Obrażeń do Zręczności."
+            },
+            {
+              "title": "używane przez:",
+              "content": "broń boltową."
+            }
+          ]
+        },
+        {
+          "displayName": "naboje kraken",
+          "name": "kraken",
+          "requisition": 5,
+          "renown": 0,
+          "content": [
+            "Ulepszony materiał pędny używany przez amunicję kraken zapewniają zwiększony zasięg bez konieczności poświęcenia zdolności przebijania, która jest jeszcze zwiększana przez dodatkowo wzmocniony ładunek i ultragęsty adamantytowy penetrator.",
+            {
+              "title": "efekt:",
+              "content": "Penetracja broni zwiększona jest do 8, a Zasięg rośnie o 50%."
+            },
+            {
+              "title": "używane przez:",
+              "content": "broń boltową."
+            }
+          ]
+        },
+        {
+          "displayName": "naboje metalstorm",
+          "name": "metalstorm",
+          "requisition": 15,
+          "renown": 0,
+          "content": [
+            "Naboje metalstorm zawierają wyzwalacz zbliżeniowy, który powoduje detonację jeszcze przed penetracją, przeciwnie do stanadardowej amunicji boltowej. Eksplozja ta powoduje rozsianie odłamków po otoczeniu celu. Amunicja taka użyta w szybkostrzelnej broni jest w stanie zdziesiątkować grupy lekko opancerzonych przeciwników kilkusekundową serią.",
+            {
+              "title": "efekt:",
+              "content": "Obrażenia i Penetracja broni maleją o 2, ale sama broń otrzymuje Własność @quality{blast||2}."
+            },
+            {
+              "title": "używane przez:",
+              "content": "broń boltową."
+            }
+          ]
+        },
+        {
+          "displayName": "naboje stalker",
+          "name": "stalker",
+          "requisition": 5,
+          "renown": 0,
+          "content": [
+            "Naboje stalker przeznaczone są do użytku z @ranged{bolterStalker|bolterem stalker} i właśnie w tym przypadku działają najlepiej, ale można ich użyć w dowolnej broni boltowej, by zmniejszyć ryzyko wykrycia. Rdzeń amunicji stalker jest zastąpiony przez gazowy materiał pędny, a materiał wybuchowy przez zestaloną rtęć.",
+            {
+              "title": "efekt:",
+              "content": "Testy Spostrzegawczości wykonywane w celu wykrycia wystrzałów z amunicją stalker wykonywane są z karą -30 i próbę ich wykonania można podjąć na dystansie o połowę mniejszym niż normalnie. Obrażenia maleją o 2. Kara ta znika, jeżeli amunicja załadowana została do karabinu stalker, dodatkowo w takiej sytuacji nie można wykonać wspomnianego Testu (chociaż w zalezności od sytuacji sam strzelec może musieć wykonać Test Przeciwstawny, by pozostać w ukryciu)."
+            },
+            {
+              "title": "używane przez:",
+              "content": "bronie boltowe."
+            }
+          ]
+        },
+        {
+          "displayName": "naboje zemsty",
+          "name": "vengeance",
+          "requisition": 25,
+          "renown": 3,
+          "content": [
+            "Amunicja ta została stworzona przeciwko najbardziej gorzkim przeciwnikom Astartes: Kosmicznym Marines Chaosu. Zaprojektowane do przebijania pancerzy klasy używanej przez Marines, pociski te zawierają odłamek niestabilnej materii, która przy trafieniu powoduje rozszczepienie i eksplozję. Każdy z tych ostrożnie wytworzonych pocisków wykazuje niesamowitą efektywność w przebijaniu pancerzy i tępieniu nawet nabardziej wytrzymałych przeciwników, ale technologia użyta do nadania takiej mocy zwykłemu boltowi wiąże się z wielkim ryzykiem.",
+            {
+              "title": "efekt:",
+              "content": "broń otrzymuje Własność @quality{felling||1}, a jej Penetracja rośnie do 9. Jeżeli rzut na trafienie wyniesie 91-100, naboje zemsty eksplodują przedwcześnie. W takim wypadku strzelec otrzymuje Obrażenia od Eksplozji równe podstawowym Obrażeniom broni z Penetracją 5 w rękę trzymającą broń (lub losowo wybraną w przypadku broni trzymanej oburącz). Broń Zacina się, a wszystko dzieje się zbyt szybko, by uniknąć obrażeń przez jej upuszczenie, jak w przypadku @quality{overheats|przegrzania}."
+            },
+            {
+              "title": "używane przez:",
+              "content": "bronie boltowe."
+            }
+          ]
+        },
+        {
+          "displayName": "naboje czarnoksięskie",
+          "name": "witch",
+          "requisition": 12,
+          "renown": 2,
+          "content": [
+            "Oparte o technologię używaną przez Czarnych Templariuszy, naboje te rozsiewają substancje, które osłabiają połączenie celu z Osnową.",
+            {
+              "title": "efekt:",
+              "content": "każde trafienie takim nabojem zmniejsza Siłę Psychiczną celu o 1 na @dice{1k10} Rund. W tym czasie nie może on Wysilić swojej mocy. Dodatkowo jeżeli cel posiada cechę @trait{warpInstability}, musi wykonać Test Siły Woli przeciwko zakłóceniom."
+            },
+            {
+              "title": "używane przez:",
+              "content": "broń boltową."
+            }
+          ]
+        }
+      ]
+    },
+    {
       "displayName": "pancerz",
       "name": "armor",
       "display": "both",
