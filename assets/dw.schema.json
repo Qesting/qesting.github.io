@@ -278,15 +278,74 @@
           "description": "whether the item should be omitted in a section's table"
         }
       }
+    },
+    "rollTable": {
+      "type": "object",
+      "properties": {
+        "displayName": {
+          "type": "string",
+          "description": "the actual same displayed"
+        },
+        "name": {
+          "type": "string",
+          "description": "the in-app identifier"
+        },
+        "title": {
+          "type": "string",
+          "description": "the table header"
+        },
+        "content": {
+          "type": "array",
+          "description": "the items in the table",
+          "items": {
+            "type": "object",
+            "description": "an item in a rollable table",
+            "properties": {
+              "range": {
+                "type": "object",
+                "description": "the range of the roll that will result in the item being chosen",
+                "properties": {
+                  "min": {
+                    "type": "number",
+                    "minimum": 1,
+                    "maximum": 100,
+                    "description": "the range start. if not found, will be assumed as 1"
+                  },
+                  "max": {
+                    "type": "number",
+                    "minimum": 1,
+                    "maximum": 100,
+                    "description": "the range end. if not found, will be assumed as 100"
+                  }
+                }
+              },
+              "title": {
+                "type": "string",
+                "description": "the title"
+              },
+              "content": {
+                "type": "string",
+                "description": "the field content"
+              }
+            }
+          }
+        }
+      }
     }
   },
   "type": "object",
   "properties": {
-    "content": {
+    "sections": {
       "type": "array",
       "items": {
         "$ref": "#/$defs/section"
       }
+    }
+  },
+  "tables": {
+    "type": "array",
+    "items": {
+      "$ref": "#/$defs/rollTable"
     }
   }
 }
