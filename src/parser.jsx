@@ -1,47 +1,52 @@
 import { useContext } from "react";
 import { JsonData } from "./JsonDataContext";
+import { StateFunctionsContext } from "./StateFunctionsContext";
 import reactStringReplace from "react-string-replace";
 
 export function scrollButton(elementId, innerText, additionalClasses=null) {
     return (<a href={`#${elementId}`} className={["text-blue-700 underline capitalize"].concat(additionalClasses).join(' ')}>{innerText}</a>)
 }
 
-export function parser(text, setDiceResult, passedSection) {
+export function rollFromString(str, target) {
+    const formula = str.replace(/\s+/, '').match(/(?<number>\d+)?[kd](?<type>\d+)(kh(?<highest>\d+)|kl(?<lowest>\d+))?(?<bonus>[+-]\d+)?/);
+    const {
+        number,
+        type,
+        highest,
+        lowest,
+        bonus
+    } = formula.groups.percent ? {
+        ...formula.groups,
+        number: 1,
+        type: 100
+    } : formula.groups;
+    const result = Array(+(number ?? 1)).fill(0).map(e => ({value: Math.round(Math.random() * (type - 1)) + 1}));
+    for (let i = 0; i < number - (highest ?? lowest); i++) {
+        result.find(e => e.value === (lowest ? Math.max : Math.min)(...result.filter(f => !f?.ignore).map(f => f.value)) && !e?.ignore).ignore = true;
+    }
+    return ({
+        total: result.reduce((total, e) => total + (!e?.ignore && e.value), 0) + +(bonus ?? null),
+        rolls: result,
+        highest: highest ?? null,
+        lowest: lowest ?? null,
+        bonus: bonus ?? null,
+        type: +type,
+        target: +target
+    });
+}
+
+export function parser(text, passedSection) {
     const jsonData = useContext(JsonData);
+    const { setDiceResult, setTableName } = useContext(StateFunctionsContext);
     const replacedDice = reactStringReplace(
         text,
         /@dice\{(?<display>.*?)\}/,
         match => {
-            const formula = match.replace(/\s+/, '').match(/(?<number>\d+)?[kd](?<type>\d+)(kh(?<highest>\d+)|kl(?<lowest>\d+))?(?<bonus>[+-]\d+)?(\|(?<displayAs>[khld\d+-]+))?|(?<percent>\d+)\%/);
-            const {
-                number,
-                type,
-                highest,
-                lowest,
-                bonus,
-                displayAs,
-                percent
-            } = formula.groups.percent ? {
-                ...formula.groups,
-                number: 1,
-                type: 100
-            } : formula.groups;
+            const { formula, displayAs, targetPercent} = match.match(/(?<formula>\d*[kd]\d+(k[hl]\d+)?([+-]\d+))(\|(?<displayAs>[khld\d+-]+))?(\|(?<percent>\d+)\%)?/)?.groups ?? {};
             return (
                 <button className="text-blue-700 underline" onClick={() => {
-                    const result = Array(+(number ?? 1)).fill(0).map(e => ({value: Math.round(Math.random() * (type - 1)) + 1}));
-                    for (let i = 0; i < number - (highest ?? lowest); i++) {
-                        result.find(e => e.value === (lowest ? Math.max : Math.min)(...result.filter(f => !f?.ignore).map(f => f.value)) && !e?.ignore).ignore = true;
-                    }
-                    setDiceResult({
-                        total: result.reduce((total, e) => total + (!e?.ignore && e.value), 0) + +(bonus ?? null),
-                        rolls: result,
-                        highest: highest ?? null,
-                        lowest: lowest ?? null,
-                        bonus: bonus ?? null,
-                        type: +type,
-                        target: +percent
-                    });
-                }}>{displayAs ?? formula[0]}</button>
+                    setDiceResult(rollFromString(formula, targetPercent))
+                }}>{displayAs ?? formula}</button>
             );
         }
     );
@@ -63,25 +68,53 @@ export function parser(text, setDiceResult, passedSection) {
                 displayAs,
                 areaRadius
             } = match.match(/(?<section>[a-z]+)\{(?<item>[a-zA-Z\s]+)(\|(?<displayAs>.*?)(\|(?<areaRadius>\d+))?)?\}/)?.groups ?? {};
-            const foundSection = jsonData.find(e => e.name === section);
+            const foundSection = jsonData.sections.find(e => e.name === section);
             let sectionName = section;
             let foundItem = null;
+            let replacementItem = null;
+            let noDescSkipped = false;
             for (let index = 0; index < foundSection?.content?.length; index++) {
                 if (foundSection.hasSubs) {
                     for (let jndex = 0; jndex < foundSection.content[index].content.length; jndex++) {
-                        if (foundSection.content[index].content[jndex].name === item) {
-                            foundItem = foundSection.content[index].content[jndex];
-                            sectionName += '-'+foundSection.content[index].name;
+                        const testedItem = foundSection.content[index].content[jndex];
+                        if (testedItem.name === item || noDescSkipped) {
+                            if (noDescSkipped) {
+                                if (testedItem.noDesc) {
+                                    continue;
+                                } else {
+                                    replacementItem = testedItem.name;
+                                }
+                            } else {
+                                foundItem = foundSection.content[index].content[jndex];
+                                sectionName += '-'+foundSection.content[index].name;
+                                if (testedItem.noDesc) {
+                                    noDescSkipped = true;
+                                    continue;
+                                }
+                            }
                             break;
                         }
                     }
                     if (foundItem) break;
-                } else if (foundSection.content[index].name === item) {
-                    foundItem = foundSection.content[index];
+                } else if (foundSection.content[index].name === item || noDescSkipped) {
+                    const testedItem = foundSection.content[index];
+                    if (noDescSkipped) {
+                        if (testedItem.noDesc) {
+                            continue;
+                        } else {
+                            replacementItem = testedItem.name;
+                        }
+                    } else {
+                        foundItem = foundSection.content[index];
+                        if (testedItem.noDesc) {
+                            noDescSkipped = true;
+                            continue;
+                        }
+                    }
                     break;
                 }
             }
-            const id = `item-${sectionName}-${item}`;
+            const id = `item-${sectionName}-${replacementItem ?? item}`;
             return foundItem ? scrollButton(id, areaRadius ? foundItem.displayName.replace('(x)', `(${areaRadius})`) : displayAs ?? foundItem.displayName) : match;
         }   
     );

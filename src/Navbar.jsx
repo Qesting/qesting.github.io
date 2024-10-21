@@ -2,7 +2,7 @@ import { useContext } from "react";
 import { JsonData } from "./JsonDataContext";
 
 export default function Navbar() {
-    const data = useContext(JsonData);
+    const data = useContext(JsonData).sections;
     return (
         <nav className="h-20 w-full top-0 left-0 right-0 fixed bg-[white] border-[black] border-b-2 border-solid z-20">
             <div className="w-full h-20">
