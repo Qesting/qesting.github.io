@@ -5,3 +5,11 @@
 p:not(:has(> strong)) {
     @apply indent-4;
 }
+
+tr {
+    @apply even:bg-gray-300 w-full;
+}
+
+th {
+    @apply capitalize;
+}
