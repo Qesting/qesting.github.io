@@ -1,5 +1,5 @@
 {
-  "schema": "https://raw.githubusercontent.com/Qesting/qesting.github.io/refs/heads/main/assets/dw.schema.json",
+  "$schema": "https://raw.githubusercontent.com/Qesting/qesting.github.io/refs/heads/main/assets/dw.schema.json",
   "sections": [
     {
       "name": "implant",
@@ -4938,7 +4938,7 @@
       "rollable": true,
       "title": "Efekt",
       "content": [
-        
+
       ]
     }
   ]

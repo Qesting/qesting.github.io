@@ -77,8 +77,10 @@ export function parser(text, passedSection, replacementContext) {
                 section,
                 item,
                 displayAs,
-                value
-            } = match.match(/@(?<section>[a-z]+)\{(?<item>\<|\>?[a-zA-Z]+)(\|{2}(?<value>.+?)|\|(?<displayAs>.*?)(\|(?<value>.*?))?)?\}/)?.groups ?? {};
+                value1,
+                value2
+            } = match.match(/@(?<section>[a-z]+)\{(?<item>\<|\>?[a-zA-Z]+)(\|{2}(?<value>.+?)|\|(?<displayAs>.*?)(\|(?<value2>.*?))?)?\}/)?.groups ?? {};
+            const value = value2 ?? value1;
             const foundSection = jsonData.sections.find(e => e.name === section);
             if (!foundSection) {
                 return match;
