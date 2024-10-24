@@ -42,7 +42,8 @@ export function parser(text, passedSection, replacementContext) {
         text,
         /@dice\{(?<display>.*?)\}/,
         match => {
-            const { formula, displayAs, targetPercent} = match.match(/(?<formula>\d*[kd]\d+(k[hl]\d+)?([+-]\d+)?)(\|(?<displayAs>[khld\d+-]+))?|(?<targetPercent>\d+)\%(\|(?<displayAs>.+))?/)?.groups ?? {};
+            const { formula, displayAs1, displayAs2, targetPercent} = match.match(/(?<formula>\d*[kd]\d+(k[hl]\d+)?([+-]\d+)?)(\|(?<displayAs1>[khld\d+-]+))?|(?<targetPercent>\d+)\%(\|(?<displayAs2>.+))?/)?.groups ?? {};
+            const displayAs = displayAs2 ?? displayAs1;
             return (
                 <button className="text-blue-700 underline" onClick={() => {
                     setDiceResult(rollFromString(formula, targetPercent))
