@@ -35,15 +35,15 @@
         "type": "array",
         "description": "the content as an array",
         "items": {
-          "oneOf": [
-            {
-              "type": "string"
-            },
+          "anyOf": [
             {
               "$ref": "#/$defs/item"
             },
             {
               "$ref": "#/$defs/section"
+            },
+            {
+              "type": "string"
             }
           ]
         }
@@ -83,6 +83,24 @@
         },
         "image": {
           "type": "string"
+        },
+        "alias": {
+          "type": "array",
+          "description": "alternative names for the same item",
+          "items": {
+            "type": "object",
+            "description": "an alias",
+            "properties": {
+              "name": {
+                "type": "string",
+                "description": "the name that will be used by the parser"
+              },
+              "displayName": {
+                "type": "string",
+                "description": "the name visible to the user"
+              }
+            }
+          }
         },
         "content": {
           "type": ["string", "array"],
@@ -135,7 +153,7 @@
           }
         },
         "damage": {
-          "oneOf": [
+          "anyOf": [
             {
               "type": "object",
                 "description": "the weapon's damage",
@@ -182,7 +200,7 @@
           "description": "how many actions the weapon takes to reload"
         },
         "qualities": {
-          "oneOf": [
+          "anyOf": [
             {
               "type": "string"
             },
@@ -190,7 +208,7 @@
               "type": "array",
               "description": "the array of qualities",
               "items": {
-                "oneOf": [
+                "anyOf": [
                   {
                     "type": "string"
                   },
@@ -402,8 +420,16 @@
   },
   "tables": {
     "type": "array",
+    "description": "a collection of tables, rollable or otherwise, that aren't simply other forms of presenting the section items",
     "items": {
-      "$ref": "#/$defs/rollTable"
+      "anyOf": [
+        {
+          "$ref": "#/$defs/rollTable"
+        },
+        {
+          "$ref": "#/$defs/table"
+        }
+      ]
     }
   }
 }

@@ -3,8 +3,8 @@ import { JsonData } from "./JsonDataContext";
 import { StateFunctionsContext } from "./StateFunctionsContext";
 import reactStringReplace from "react-string-replace";
 
-export function scrollButton(elementId, innerText, additionalClasses=null) {
-    return (<a href={`#${elementId}`} className={["text-blue-700 underline capitalize"].concat(additionalClasses).join(' ')}>{innerText}</a>)
+export function linkButton(elementId, innerText, additionalClasses=null) {
+    return (<a href={`#${elementId}`} className={["btn"].concat(additionalClasses).join(' ')}>{innerText}</a>)
 }
 
 export function rollFromString(str, target) {
@@ -45,7 +45,7 @@ export function parser(text, passedSection, replacementContext) {
             const { formula, displayAs1, displayAs2, targetPercent} = match.match(/(?<formula>\d*[kd]\d+(k[hl]\d+)?([+-]\d+)?)(\|(?<displayAs1>[khld\d+-]+))?|(?<targetPercent>\d+)\%(\|(?<displayAs2>.+))?/)?.groups ?? {};
             const displayAs = displayAs2 ?? displayAs1;
             return (
-                <button className="text-blue-700 underline" onClick={() => {
+                <button className="btn !normal-case" onClick={() => {
                     setDiceResult(rollFromString(formula, targetPercent))
                 }}>{displayAs ?? formula ?? match}</button>
             );
@@ -58,7 +58,7 @@ export function parser(text, passedSection, replacementContext) {
             const [ tableName, displayName ] = match.split('|');
             const foundTable = jsonData.tables.find(table => table.name === tableName);
             return foundTable ? (
-                <button className="text-blue-700 underline capitalize" onClick={() => setTableName(tableName)}>{ displayName ?? foundTable.displayName }</button>
+                <button className="btn" onClick={() => setTableName(tableName)}>{ displayName ?? foundTable.displayName }</button>
             ) : match;
         }
     );
@@ -67,7 +67,7 @@ export function parser(text, passedSection, replacementContext) {
         /@footnote\{(?<footnoteIndex>\d+)\}/,
         match => {
             const footnoteIndex = +match;
-            return scrollButton(`footnote-${passedSection}-${footnoteIndex}`, '\u2020'.repeat(footnoteIndex + 1), ['italic']);
+            return linkButton(`footnote-${passedSection}-${footnoteIndex}`, '\u2020'.repeat(footnoteIndex + 1), ['italic']);
         }
     );
     const replacedSectionLinks = reactStringReplace(
@@ -87,22 +87,28 @@ export function parser(text, passedSection, replacementContext) {
                 return match;
             }
             if (item === '<') {
-                return scrollButton(`section-${section}`, foundSection.displayName);
+                return linkButton(`section-${section}`, foundSection.displayName);
             }
             if (item.startsWith('>') && foundSection.hasSubs) {
                 const subSection = foundSection.content.find(e => e?.name === item.substring(1));
-                return scrollButton(`section-${section}-${subSection.name}`, subSection.displayName);
+                return linkButton(`section-${section}-${subSection.name}`, subSection.displayName);
             }
             let sectionName = section;
             let foundItem = null;
             let replacementItem = null;
             let noDescSkipped = false;
+            let alias = null;
             for (let index = 0; index < foundSection?.content?.length; index++) {
+                alias = foundSection.content[index]?.alias?.find(a => a.name === item)
                 if (foundSection.hasSubs) {
                     for (let jndex = 0; jndex < foundSection.content[index].content.length; jndex++) {
                         const testedItem = foundSection.content[index].content[jndex];
-                        if (testedItem.name === item || noDescSkipped) {
-                            if (noDescSkipped) {
+                        alias = testedItem?.alias?.find(a => a.name === item);
+                        if (testedItem.name === item || noDescSkipped || alias) {
+                            if (alias) {
+                                foundItem = alias;
+                                replacementItem = testedItem.name;
+                            } else if (noDescSkipped) {
                                 if (testedItem.noDesc) {
                                     continue;
                                 } else {
@@ -120,9 +126,12 @@ export function parser(text, passedSection, replacementContext) {
                         }
                     }
                     if (foundItem) break;
-                } else if (foundSection.content[index].name === item || noDescSkipped) {
+                } else if (foundSection.content[index].name === item || noDescSkipped || alias) {
                     const testedItem = foundSection.content[index];
-                    if (noDescSkipped) {
+                    if (alias) {
+                        foundItem = alias;
+                        replacementItem = testedItem.name;
+                    } else if (noDescSkipped) {
                         if (testedItem.noDesc) {
                             continue;
                         } else {
@@ -139,7 +148,7 @@ export function parser(text, passedSection, replacementContext) {
                 }
             }
             const id = `item-${sectionName}-${replacementItem ?? item}`;
-            return foundItem ? scrollButton(id, value ? (foundItem.displayName.endsWith('(x)') ? foundItem.displayName.replace('(x)', `(${value})`) : `${foundItem.displayName}(${value})`) : displayAs ?? foundItem.displayName) : match;
+            return foundItem ? linkButton(id, value ? (foundItem.displayName.endsWith('(x)') ? foundItem.displayName.replace('(x)', `(${value})`) : `${foundItem.displayName}(${value})`) : displayAs ?? foundItem.displayName) : match;
         }   
     );
 

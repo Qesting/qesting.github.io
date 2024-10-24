@@ -1,5 +1,5 @@
 {
-  "$schema": "https://raw.githubusercontent.com/Qesting/qesting.github.io/refs/heads/main/assets/dw.schema.json",
+  "schema": "https://raw.githubusercontent.com/Qesting/qesting.github.io/refs/heads/main/assets/dw.schema.json",
   "sections": [
     {
       "name": "implant",
@@ -16,7 +16,6 @@
           "displayName": "implanty pierworodnych",
           "display": "none",
           "content": [
-
             {
               "name": "secondaryHeart",
               "displayName": "dodatkowe serce",
@@ -849,7 +848,7 @@
           "name": "riteOfSanctioning",
           "displayName": "rytuał zatwierdzenia",
           "prerequsite": "@talent{psyRating}",
-          "shortDesc": "Zmniejsza @table{psychicPhemomenon}."
+          "shortDesc": "Zmniejsza @table{psychicPhenomena}."
         },
         {
           "name": "rival",
@@ -1041,7 +1040,7 @@
           "name": "warpAffinity",
           "displayName": "powinowactwo osnowy",
           "prerequsite": "@talent{psyRating}",
-          "shortDesc": "Pozwala przerzucać @table{psychicPhemomenon}."
+          "shortDesc": "Pozwala przerzucać @table{psychicPhenomena}."
         },
         {
           "name": "warpConduit",
@@ -1205,7 +1204,7 @@
           "shortDesc": "Dodatkowy Punkt Pancerza w każdej z lokacji."
         },
         {
-          "name": "natural weapon",
+          "name": "naturalWeapon",
           "displayName": "naturalna broń",
           "shortDesc": "Ataki bez broni zadają @dice{1k10}+S Obrażeń."
         },
@@ -1289,52 +1288,41 @@
           "displayName": "bezśmiertny",
           "shortDesc": "Stworzenie nie musi oddychać i nie odczuwa efektów chorób, trucizn i toksyn."
         },
-        {
-          "name": "unnaturalStrength",
-          "displayName": "nienaturalna krzepa",
-          "noDesc": true,
-          "noTable": true
-        },
-        {
-          "name": "unnaturalToughness",
-          "displayName": "nienaturalna odporność",
-          "noDesc": true,
-          "noTable": true
-        },
-        {
-          "name": "unnaturalAgility",
-          "displayName": "nienaturalna zręczność",
-          "noDesc": true,
-          "noTable": true
-        },
-        {
-          "name": "unnaturalIntelligence",
-          "displayName": "nienaturalna inteligencja",
-          "noDesc": true,
-          "noTable": true
-        },
-        {
-          "name": "unnaturalPerception",
-          "displayName": "nienaturalna percepcja",
-          "noDesc": true,
-          "noTable": true
-        },
-        {
-          "name": "unnaturalWillpower",
-          "displayName": "nienaturalna siła woli",
-          "noDesc": true,
-          "noTable": true
-        },
-        {
-          "name": "unnaturalFellowship",
-          "displayName": "nienaturalna ogłada",
-          "noDesc": true,
-          "noTable": true
-        },
+        
         {
           "name": "unnaturalCharacteristic",
           "displayName": "nienaturalna charakterystyka",
-          "shortDesc": "Zwiększa premię z charakterystyki (charakterystyka/10)."
+          "shortDesc": "Zwiększa premię z charakterystyki (charakterystyka/10).",
+          "alias": [
+            {
+              "name": "unnaturalStrength",
+              "displayName": "nienaturalna krzepa"
+            },
+            {
+              "name": "unnaturalToughness",
+              "displayName": "nienaturalna odporność"
+            },
+            {
+              "name": "unnaturalAgility",
+              "displayName": "nienaturalna zręczność"
+            },
+            {
+              "name": "unnaturalIntelligence",
+              "displayName": "nienaturalna inteligencja"
+            },
+            {
+              "name": "unnaturalPerception",
+              "displayName": "nienaturalna percepcja"
+            },
+            {
+              "name": "unnaturalWillpower",
+              "displayName": "nienaturalna siła woli"
+            },
+            {
+              "name": "unnaturalFellowship",
+              "displayName": "nienaturalna ogłada"
+            }
+          ]
         },
         {
           "name": "unnaturalSenses",
@@ -4938,7 +4926,146 @@
       "rollable": true,
       "title": "Efekt",
       "content": [
-
+        {
+          "range": {
+            "max": 5
+          },
+          "title": "bełkot",
+          "content": "Psyker krzyczy z bólu, czując wymykające się spod kontroli energie Osnowy wdzierające się w jego umysł. Musi wykonać Przeciętny(+0) Test Siły Woli aby uniknąć otrzymania @dice{1k5+1} Punktów Obłędu i zostania Ogłuszonym na @dice{1k5} Rund."
+        },
+        {
+          "range": {
+            "min": 6,
+            "max": 9
+          },
+          "title": "oparzenie spaczni",
+          "content": "Gwałtowna fala energii wdziera się w umysł psykera, parząc go. Otrzymuje on @dice{1k5} Obrażeń (które nie są redukowane przez Pancerz ani Wytrzymałość) i zostaje Ogłuszony na @dice{1k5} Rund."
+        },
+        {
+          "range": {
+            "min": 10,
+            "max": 13
+          },
+          "title": "wstrząs psychiczny",
+          "content": "W trzasku uwalnianej energii psyker traci przytomność na @dice{1k5} Rund. Wszyscy w promieniu @dice{3k10} metrów muszą wykonać Prosty(+10) Test Siły Woli, by uniknąć Ogłuszenia na @dice{1k5} Rund."
+        },
+        {
+          "range": {
+            "min": 14,
+            "max": 18
+          },
+          "title": "podmuch psychiczny",
+          "content": "Następuje eksplozja mocy, która wyrzuca psykera @dice{1k10} metrów w górę."
+        },
+        {
+          "range": {
+            "min": 19,
+            "max": 24
+          },
+          "title": "przypalenie duszy",
+          "content": "Moc Spaczni płynie przez ciało psykera, jednocześnie paląc jego duszę. Psyker nie może używać żadnych mocy przez 1 godzinę i otrzymuje 5 Punktów Spaczenia."
+        },
+        {
+          "range": {
+            "min": 25,
+            "max": 30
+          },
+          "title": "zamknięty",
+          "content": "Moc zamyka umysł psykera w eterycznym więzieniu. Jego ciało pada na ziemię w stanie wegetatywnym. W każdej kolejnej Rundzie psyker musi zużyć Akcję Podwójną na wykonanie Wymagającego(-10) Testu Siły Woli. Sukces pozwala jego duszy uwolnić się i powrócić do ciała."
+        },
+        {
+          "range": {
+            "min": 31,
+            "max": 38
+          },
+          "title": "nietrzymanie czasu",
+          "content": "Czas zostaje zniekształcony wokół psykera, który znika i pojawia się ponownie po @dice{1k10} Rundach (lub poza walką po 1 minucie). Powoduje to otrzymanie @dice{1k5} Punktów Obłędu i Permanentne @dice{1k5} punktów Obrażeń do Odporności."
+        },
+        {
+          "range": {
+            "min": 39,
+            "max": 46
+          },
+          "title": "psychiczne lustro",
+          "content": "Moc psykera zwraca się przeciwko niemu. Rozwiąż efekty mocy jak zwykle, ale celem staje się sam psyker. Jeżeli efekt mocy jest pożyteczny, zamiast tego zadaje ona @dice{1k10+5} Obrażeń od Energii. Niepoświęcony pancerz nie chroni przez tymi Obrażeniami."
+        },
+        {
+          "range": {
+            "min": 47,
+            "max": 55
+          },
+          "title": "szepty spaczni",
+          "content": "Demoniczne głosy wypełniają przestrzeń w promieniu @dice{4k10} metrów od psykera, szepcząc o okropnych sekretach i zaskakujących prawdach. Wszyscy znajdujący się na podanym obszarze muszą wykonać Trudny(-20) Test Siły Woli by uniknąć otrzymania @dice{1k10} Punktów Spaczenia."
+        },
+        {
+          "range": {
+            "min": 56,
+            "max": 58
+          },
+          "title": "nawzajem",
+          "content": "Umysł psykera zostaje wyrzucony z ciała i wepchnięty w inne pobliskie stworzenie bądź osobę. Psyker i losowo wybrane stworzenie w promieniu 50 metrów od niego (które nie jest Demonem, Pariasem, czy innym \"bezdusznym\") zamieniają się świadomościami na @dice{1k10} Rund. To stworzenie może być sprzymierzeńcem, albo nawet wrogim wojownikiem. Obaj zachowują własne charakterystyki Walki Wręcz, Umiejętności Strzeleckich, Inteligencji, Percepcji, Siły Woli i Ogłady, ale muszą używać Siły i Zręczności drugiego. Jeżeli którekolwiek z ciał zostanie zabite, efekt kończy się natychmiast. Obaj znajdujący się pod wpływem efektu otrzymują @dice{1k5} Punktów Obłędu przez to doświadczenie. Jeżeli nie istnieje zgodne z powyższymi zasadami stworzenie, psyker wykonuje Test Siły Woli, by uniknąć zapadnięcia w śpiączkę na @dice{1k5} Rund, co powoduje, że jego umysł przemierza spacznię. Wędrówka ta powoduje otrzymanie @dice{2k10} Punktów Obłędu."
+        },
+        {
+          "range": {
+            "min": 59,
+            "max": 67
+          },
+          "title": "rozerwanie zasłony",
+          "content": "Powietrze aż trzęsie się od widocznych obrazów śmiejących się Demonów, gdy Spacznia staje się na moment widoczna dla oczu. Wszystkie świadome istoty w promieniu @dice{1k100} metrów od psykera muszą wykonać Test przeciwko @trait{fear|strachowi|3}. Efekt ten utrzymuje się przez @dice{1k5} Rund."
+        },
+        {
+          "range": {
+            "min": 68,
+            "max": 72
+          },
+          "title": "deszcz krwi",
+          "content": "Rozpętuje się psychiczna burza, która powoduje lejące się z nieba potoki krwi na obszarze o promieniu @dice{5k10} metrów od psykera. Każdy w jego zasięgu musi wykonać Przeciętny(+0) Test Siły, by uniknąć przewrócenia się. Dodatkowo każde użycie Mocy Psychicznych na tym obszarze automatycznie powoduje @table{perilsOfTheWarp}. Efekt utrzymuje się przez @dice{1k5} Rund."
+        },
+        {
+          "range": {
+            "min": 73,
+            "max": 78
+          },
+          "title": "kataklizmiczny podmuch",
+          "content": "Moc przeciąża psykera, przez co każdy w promieniu @dice{1k10} metrów od niego otrzymuje @dice{1k10+5} Obrażeń od Energii. Psyker nie może używać swoich mocy przez kolejne @dice{1k5} godzin."
+        },
+        {
+          "range": {
+            "min": 79,
+            "max": 82
+          },
+          "title": "dziura w świecie",
+          "content": "@power{vortexOfDoom} z SP @dice{2k10} pojawia się w losowo wybranym miejscu @dice{1k10} metrów od psykera. Następnie porusza się (rzuć @dice{1d10} by określić dystans, kierunek ustal na podstawie Rozrzutu.), pożerając wszystko na swojej drodze, po czym znika po @dice{1k5} Rundach."
+        },
+        {
+          "range": {
+            "min": 83,
+            "max": 86
+          },
+          "title": "stracony w spaczni",
+          "content": "Psyker natychmiastowo musi wykonać Bardzo Trudny(-30) Test Siły Woli. Jeżeli poniesie porażkę, zostaje natychmiast wciągnięty w Spacznię przez Demona, który opętuje go i używa jego ciała do złowieszczych celów. Psyker pojawia się @dice{1k10} dni później na zamieszkałej planecie z mętnymi wspomnieniami straszliwych czynów, których dopuścił się podczas opętania. Otrzymuje @dice{4k10} Punktów Spaczenia i może doświadczyć powikłań spowodowanych przez te czyny. Może rówież odwiedzić go Inkwizycja, jeżeli dowie się o tym wydarzeniu. Od teraz psyker dodaje +10 do wszystkich rzutów na @table{perilsOfTheWarp}."
+        },
+        {
+          "range": {
+            "min": 87,
+            "max": 90
+          },
+          "title": "trzęsienie rzeczywistości",
+          "content": "Rzeczywistość w promieniu @dice{3k10} metrów od psykera zostaje rozerwana przez moc. Przedmioty na zmianę palą się, zamarzają i gniją, a wszyscy i wszystko na tym obszarze otrzymuje @dice{2k10} Obrażeń Rozrywających. Poświęcone obiekty i Pariasi otrzymują jedynie połowę tych Obrażeń."
+        },
+        {
+          "range": {
+            "min": 91,
+            "max": 99
+          },
+          "title": "coś nadchodzi...",
+          "content": "Z mrożącym krew w żyłach rykiem w rzeczywistość wdziera się Książę Demonów, pojawiając się w promieniu @dice{3k10} metrów od psykera. Atakuje on bez zwłoki głupca, który nieumyślnie go przyzwał. Wysłać go z powrotem do Spaczni może tylko zniszczenie go lub śmierć psykera."
+        },
+        {
+          "match": 100,
+          "title": "zniszczenie",
+          "content": "Psyker zostaje natychmiastowo i nieodwracalnie zniszczony. Może zostać wciągnięty z przerażonym krzykiem w otchłanie Spaczni lub zostać spalonym przez piekielne ognie. MG może zadecydować, że istnieje @dice{50%} szans na pojawienie się w jego miejsce Księcia Demonów."
+        }
       ]
     }
   ]

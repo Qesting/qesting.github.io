@@ -5,10 +5,15 @@ import { JsonData } from './JsonDataContext.js';
 import { StateFunctionsContext } from './StateFunctionsContext.js';
 import Navbar from './Navbar';
 import { parser, rollFromString } from './parser.jsx';
+import { CaretDownFill, XCircleFill, XLg } from 'react-bootstrap-icons';
 
 function App() {
   const [diceResult, setDiceResult] = useState(null);
   const [tableName, setTableName] = useState(null);
+  const [tableNameSearch, setTableNameSearch] = useState(null);
+  const [tableNameSearchExpand, setTableNameSearchExpand] = useState();
+  const [tableVisibility, setTableVisibility] = useState(false);
+  const [darkMode, setDarkMode] = useState(localStorage.getItem('dw-darkmode') === 'true');
   const [rolledOnTable, setRolledOnTable] = useState();
   const diceDialog = useRef(null);
   const rolledItem = useRef(null);
@@ -26,9 +31,25 @@ function App() {
       self.setTimeout(() => currentItem.classList.remove('!bg-amber-500'), 1000);
     }
   }, [rolledOnTable]);
+  useEffect(() => {
+    if (tableVisibility === false) {
+      setTableName(null);
+    }
+  }, [tableVisibility]);
+  useEffect(() => {
+    if (tableName !== null && tableVisibility === false) {
+      setTableVisibility(true);
+    }
+  }, [tableName]);
+  const darkModeSetter = newValue => {
+    localStorage.setItem('dw-darkmode', newValue ?? !darkMode);
+    setDarkMode(newValue ?? !darkMode);
+  }
   const stateFunctions = {
     setDiceResult: setDiceResult,
-    setTableName: setTableName
+    setTableName: setTableName,
+    setDarkMode: darkModeSetter,
+    setTableVisibility: setTableVisibility
   };
 
   const { sections, tables } = useContext(JsonData);
@@ -37,7 +58,7 @@ function App() {
   }, [tableName]);
 
   const rollOnTable = () => {
-    const mod = +self.prompt(`Rzut ${table.formula} w tabeli ${table.displayName}: podaj ewentualne modyfikatory.`)
+    const mod = +self.prompt(`Rzut ${table.formula ?? 'k100'} w tabeli ${table.displayName}: podaj ewentualne modyfikatory.`)
     const roll = rollFromString(table.formula ?? 'd100').total + (isNaN(mod) ? 0 : mod);
     if (rolledItem.current) {
       rolledItem.current.classList.remove('!bg-amber-500');
@@ -45,69 +66,93 @@ function App() {
     setRolledOnTable(table.content.findIndex(item => item?.match ? item.match === roll : (item.range.min ?? -Infinity) <= roll && (item.range.max ?? Infinity) >= roll));
   };
   return (
-    <>
+    <div className={darkMode ? 'dark': ''} id="app-inner-container">
       <StateFunctionsContext.Provider value={stateFunctions}>
         <Navbar/>
-        <div className="fixed top-20 bottom-0 left-0 right-0 overflow-scroll">
-          <main className="my-4 mx-2">
-            {
-              sections.map((e, i) => (
-                <Section key={i} data={e}/>
-              ))
-            }
-          </main>
-        </div>
+        <main className="py-4 px-2 fixed top-20 bottom-0 left-0 right-0 overflow-scroll bg-inherit">
+          {
+            sections.map((e, i) => (
+              <Section key={i} data={e}/>
+            ))
+          }
+        </main>
         {
-          tableName && (
-            <aside className="fixed top-20 bottom-0 left-0 right-0 bg-[#000a]">
-              <div className="fixed top-24 bottom-4 overflow-y-scroll left-1/2 -translate-x-1/2 w-[30rem] md:w-[45rem] lg:w-[60rem]">
-
-              <table className="bg-[white] ">
-                <thead className="sticky top-0 z-10 bg-inherit">
-                  <tr>
-                    {
-                      table.rollable ? (
-                        <>
-                          <th><button className='text-blue-700 underline' onClick={rollOnTable}>{table.formula ?? 'k100'}</button></th>
-                          <th>{table.title}</th>
-                        </>
+          tableVisibility && (
+            <aside>
+              <div className='fixed z-20 top-0 bottom-0 left-0 right-0 z-20 bg-gray-950 opacity-50'></div>
+              <div className="fixed top-24 max-h-[calc(100vh-7rem)] left-1/2 -translate-x-1/2 w-[30rem] md:w-[45rem] lg:w-[60rem] z-30 bg-gray-50 dark:bg-gray-800 flex flex-col rounded-md overflow-auto">
+                <div className="p-2">
+                  <div className='relative mb-2'>
+                    <input placeholder="Zacznij pisać lub naciśnij przycisk po prawej..." className="pr-6 bg-gray-200 dark:bg-gray-700 w-full py-1 px-2 rounded-md !outline-none placeholder:italic" type='text' onInput={evt => { setTableNameSearch(evt.target.value); if (!tableNameSearchExpand) setTableNameSearchExpand(true); }} value={tableNameSearch}/>
+                    <span className='absolute right-2 top-1 bottom-0'>{
+                      !tableNameSearchExpand  ? (
+                        <button onClick={() => setTableNameSearchExpand(true)}><CaretDownFill/></button>
                       ) : (
-                        <>
-                          <th>{table.preTitle}</th>
-                          <th>{table.title}</th>
-                        </>
+                        <button onClick={() => setTableNameSearchExpand(false)}><XCircleFill/></button>
                       )
+                    }</span>
+                  </div>
+                  <div>
+                    {
+                      tables.filter(t => tableNameSearch ? t.displayName.search(tableNameSearch) + 1 : tableNameSearchExpand).map((t, index) => (
+                        <button key={index} className="bg-gray-100 dark:bg-gray-700 rounded-sm px-2 py-1 capitalize m-1" onClick={() => { setTableNameSearchExpand(false); setTableName(t.name); setTableNameSearch(null); }}>{t.displayName}</button>
+                      ))
                     }
-                    <button className="absolute right-2 top-0 text-red-600 font-bold" onClick={() => setTableName(null)}>X</button>
-                  </tr>
-                </thead>
-                <tbody className='overflow-x-scroll' ref={tableItemContainer}>
-                  {
-                    table.content.map((item, index) => (
-                      <tr key={index} ref={rolledOnTable === index ? rolledItem : null} className="scroll-mt-6">
+                  </div>
+                </div>
+                {
+                  tableName && (
+                    <table className="overflow-y-scroll min-h-0 h-0">
+                      <thead className="sticky top-0 z-10 bg-inherit">
+                        <tr>
+                          <th colSpan={table.table ? Object.keys(table.table).length : 2} className="capitalize text-lg text-center bg-gray-50 dark:bg-gray-800">{table.displayName}</th>
+                        </tr>
+                        <tr>
+                          {
+                            table.rollable ? (
+                              <>
+                                <th><button className='btn !normal-case' onClick={rollOnTable}>{table.formula ?? 'k100'}</button></th>
+                                <th>{table.title}</th>
+                              </>
+                            ) : (
+                              <>
+                                <th>{table.preTitle}</th>
+                                <th>{table.title}</th>
+                              </>
+                            )
+                          }
+                          <button className="absolute right-2 top-2 text-red-600 font-bold" onClick={() => { setTableVisibility(false); setTableName(null); }}><XCircleFill/></button>
+                        </tr>
+                      </thead>
+                      <tbody className='overflow-x-scroll' ref={tableItemContainer}>
                         {
-                          table.rollable ? (
-                            <td className='text-center'>{item?.match ?? `${item.range.min ?? 1}-${item.range.max ?? 100}`}</td>
-                          ) : (
-                            <td className='text-center'>{item.pre}</td>
-                          )
+                          table.content.map((item, index) => (
+                            <tr key={index} ref={rolledOnTable === index ? rolledItem : null} className="scroll-mt-14">
+                              {
+                                table.rollable ? (
+                                  <td className='text-center'>{item?.match ?? `${item.range.min ?? 1}-${item.range.max ?? 100}`}</td>
+                                ) : (
+                                  <td className='text-center'>{item.pre}</td>
+                                )
+                              }
+                              <td>
+                                <strong className='text-bold capitalize'>{item.title}</strong>.&nbsp;
+                                <span>{parser(item.content, null, stateFunctions)}</span>
+                              </td>
+                            </tr>
+                          ))
                         }
-                        <td>
-                          <strong className='text-bold capitalize'>{item.title}</strong>.&nbsp;
-                          <span>{parser(item.content, null, stateFunctions)}</span>
-                        </td>
-                      </tr>
-                    ))
-                  }
-                </tbody>
-              </table>
+                      </tbody>
+                    </table>
+                  )
+                }
               </div>
             </aside>
           )
         }
       </StateFunctionsContext.Provider>
-      <dialog ref={diceDialog} className='px-8 py-4'>
-        <h6 className='text-lg font-bold'>Wynik rzutu:</h6>
+      <dialog ref={diceDialog} className='px-8 py-4 bg-inherit text-inherit backdrop:bg-gray-950 backdrop:opacity-50 rounded-md'>
+        <h6 className='text-xl'>Wynik rzutu:</h6>
         <span className={diceResult?.target ? (diceResult?.total <= diceResult?.target ? 'text-green-500' : 'text-red-600') : ''}>{!!diceResult && diceResult?.target ? (diceResult?.total <= diceResult?.target ? 'Sukces' : 'Porażka') : diceResult?.total}</span>
         <div>&#x5b;
           {
@@ -116,7 +161,7 @@ function App() {
         </div>
         <button onClick={() => setDiceResult(null)} className='text-red-600 mt-4'>Zamknij</button>
       </dialog>
-    </>
+    </div>
   )
 }
 

@@ -36,7 +36,7 @@ export default function Table({table, data, section, hasSubs, footnotes}) {
 
     function tableRows(passedData) {
         return passedData?.filter(e => typeof e !== 'string' && !e?.noTable).map(e => (
-            <tr className="even:bg-gray-300">
+            <tr>
                 {
                     keys.map(k => (
                         <td className={(k === 'shortDesc' ? '' : 'capitalize') + " text-center p-0.5"}>
@@ -78,7 +78,7 @@ export default function Table({table, data, section, hasSubs, footnotes}) {
                     hasSubs ? (
                         data.map(f => (
                             <>
-                                <tr className="even:bg-gray-300">
+                                <tr>
                                     <th colSpan={keys.length} className="uppercase">{f.displayName}</th>
                                 </tr>
                                 {
@@ -91,7 +91,7 @@ export default function Table({table, data, section, hasSubs, footnotes}) {
                 }
                 {
                     footnotes?.map((e, i) => (
-                        <tr className="even:bg-gray-300" id={`footnote-${section}-${i}`}>
+                        <tr id={`footnote-${section}-${i}`}>
                             <td colSpan={keys.length} className="italic">{e.startsWith('{no-daggers}') ? ' ' : '\u2020'.repeat(i + 1)+ ' '}{parser(e.replace('{no-daggers}', ''))}</td>
                         </tr>
                     ))

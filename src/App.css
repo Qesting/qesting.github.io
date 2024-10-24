@@ -7,9 +7,25 @@ p:not(:has(> strong)) {
 }
 
 tr {
-    @apply even:bg-gray-300 w-full;
+    @apply even:bg-gray-300 dark:even:bg-gray-700 w-full;
 }
 
 th {
-    @apply capitalize;
+    @apply capitalize px-2;
+}
+
+td {
+    @apply px-2;
+}
+
+#app-inner-container {
+    @apply bg-gray-50 text-gray-950 dark:bg-gray-900 dark:text-gray-200
+}
+
+.btn {
+    @apply text-blue-700 dark:text-blue-500 underline capitalize;
+}
+
+.nav-btn {
+    @apply text-xl mx-1 first:ml-0 last:mr-0 
 }
