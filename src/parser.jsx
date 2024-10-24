@@ -8,7 +8,7 @@ export function scrollButton(elementId, innerText, additionalClasses=null) {
 }
 
 export function rollFromString(str, target) {
-    const formula = str.replace(/\s+/, '').match(/(?<number>\d+)?[kd](?<type>\d+)(kh(?<highest>\d+)|kl(?<lowest>\d+))?(?<bonus>[+-]\d+)?/);
+    const formula = (str ?? '1k100').replace(/\s+/, '').match(/(?<number>\d+)?[kd](?<type>\d+)(kh(?<highest>\d+)|kl(?<lowest>\d+))?(?<bonus>[+-]\d+)?/);
     const {
         number,
         type,
@@ -35,23 +35,34 @@ export function rollFromString(str, target) {
     });
 }
 
-export function parser(text, passedSection) {
+export function parser(text, passedSection, replacementContext) {
     const jsonData = useContext(JsonData);
-    const { setDiceResult, setTableName } = useContext(StateFunctionsContext);
+    const { setDiceResult, setTableName } = replacementContext ?? useContext(StateFunctionsContext);
     const replacedDice = reactStringReplace(
         text,
         /@dice\{(?<display>.*?)\}/,
         match => {
-            const { formula, displayAs, targetPercent} = match.match(/(?<formula>\d*[kd]\d+(k[hl]\d+)?([+-]\d+))(\|(?<displayAs>[khld\d+-]+))?(\|(?<percent>\d+)\%)?/)?.groups ?? {};
+            const { formula, displayAs, targetPercent} = match.match(/(?<formula>\d*[kd]\d+(k[hl]\d+)?([+-]\d+)?)(\|(?<displayAs>[khld\d+-]+))?|(?<targetPercent>\d+)\%(\|(?<displayAs>.+))?/)?.groups ?? {};
             return (
                 <button className="text-blue-700 underline" onClick={() => {
                     setDiceResult(rollFromString(formula, targetPercent))
-                }}>{displayAs ?? formula}</button>
+                }}>{displayAs ?? formula ?? match}</button>
             );
         }
     );
-    const replacedFootnoteLinks = reactStringReplace(
+    const replacedRollables = reactStringReplace(
         replacedDice,
+        /@table\{(?<table>.*?)\}/,
+        match => {
+            const [ tableName, displayName ] = match.split('|');
+            const foundTable = jsonData.tables.find(table => table.name === tableName);
+            return foundTable ? (
+                <button className="text-blue-700 underline capitalize" onClick={() => setTableName(tableName)}>{ displayName ?? foundTable.displayName }</button>
+            ) : match;
+        }
+    );
+    const replacedFootnoteLinks = reactStringReplace(
+        replacedRollables,
         /@footnote\{(?<footnoteIndex>\d+)\}/,
         match => {
             const footnoteIndex = +match;
@@ -60,15 +71,25 @@ export function parser(text, passedSection) {
     );
     const replacedSectionLinks = reactStringReplace(
         replacedFootnoteLinks,
-        /(?<matched>@[a-z]+?\{.*?\})/g,
+        /(?<matched>@[a-z]+\{.*?\})/g,
         match => {
             const {
                 section,
                 item,
                 displayAs,
-                areaRadius
-            } = match.match(/(?<section>[a-z]+)\{(?<item>[a-zA-Z\s]+)(\|(?<displayAs>.*?)(\|(?<areaRadius>\d+))?)?\}/)?.groups ?? {};
+                value
+            } = match.match(/@(?<section>[a-z]+)\{(?<item>\<|\>?[a-zA-Z]+)(\|{2}(?<value>.+?)|\|(?<displayAs>.*?)(\|(?<value>.*?))?)?\}/)?.groups ?? {};
             const foundSection = jsonData.sections.find(e => e.name === section);
+            if (!foundSection) {
+                return match;
+            }
+            if (item === '<') {
+                return scrollButton(`section-${section}`, foundSection.displayName);
+            }
+            if (item.startsWith('>') && foundSection.hasSubs) {
+                const subSection = foundSection.content.find(e => e?.name === item.substring(1));
+                return scrollButton(`section-${section}-${subSection.name}`, subSection.displayName);
+            }
             let sectionName = section;
             let foundItem = null;
             let replacementItem = null;
@@ -115,7 +136,7 @@ export function parser(text, passedSection) {
                 }
             }
             const id = `item-${sectionName}-${replacementItem ?? item}`;
-            return foundItem ? scrollButton(id, areaRadius ? foundItem.displayName.replace('(x)', `(${areaRadius})`) : displayAs ?? foundItem.displayName) : match;
+            return foundItem ? scrollButton(id, value ? (foundItem.displayName.endsWith('(x)') ? foundItem.displayName.replace('(x)', `(${value})`) : `${foundItem.displayName}(${value})`) : displayAs ?? foundItem.displayName) : match;
         }   
     );
 

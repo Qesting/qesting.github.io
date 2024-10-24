@@ -68,6 +68,19 @@
           "type": "string",
           "description": "the actual name displayed"
         },
+        "shortDesc": {
+          "type": "string"
+        },
+        "prerequsite": {
+          "type": "string"
+        },
+        "footnote": {
+          "type": "number"
+        },
+        "displayPost": {
+          "type": "string",
+          "description": "an addition to the display name, will be put in parentheses"
+        },
         "image": {
           "type": "string"
         },
@@ -231,9 +244,9 @@
               "type": "number",
               "description": "the head protection"
             },
-            "torso": {
+            "body": {
               "type": "number",
-              "description": "the torso protection"
+              "description": "the body protection"
             },
             "arms": {
               "type": "number",
@@ -282,6 +295,10 @@
     "rollTable": {
       "type": "object",
       "properties": {
+        "rollable": {
+          "type": "boolean",
+          "const": true
+        },
         "displayName": {
           "type": "string",
           "description": "the actual same displayed"
@@ -301,6 +318,12 @@
             "type": "object",
             "description": "an item in a rollable table",
             "properties": {
+              "match": {
+                "type": "number",
+                "minimum": 1,
+                "maximum": 100,
+                "description": "used if the item corresponds to exactly one roll result"
+              },
               "range": {
                 "type": "object",
                 "description": "the range of the roll that will result in the item being chosen",
@@ -326,6 +349,41 @@
               "content": {
                 "type": "string",
                 "description": "the field content"
+              }
+            }
+          }
+        }
+      }
+    },
+    "table": {
+      "type": "object",
+      "description": "just a table",
+      "properties": {
+        "name": {
+          "type": "string"
+        },
+        "displayName": {
+          "type": "string"
+        },
+        "title": {
+          "type": "string"
+        },
+        "preTitle": {
+          "type": "string"
+        },
+        "content": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "pre": {
+                "type": "string"
+              },
+              "title": {
+                "type": "string"
+              },
+              "content": {
+                "type": "string"
               }
             }
           }

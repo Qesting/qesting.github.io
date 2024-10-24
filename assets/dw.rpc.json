@@ -1,6 +1,1368 @@
 {
-  "$schema": "https://raw.githubusercontent.com/Qesting/qesting.github.io/refs/heads/main/assets/dw.schema.json",
-  "content": [
+  "schema": "https://raw.githubusercontent.com/Qesting/qesting.github.io/refs/heads/main/assets/dw.schema.json",
+  "sections": [
+    {
+      "name": "implant",
+      "displayName": "implanty astartes",
+      "display": "both",
+      "table": {
+        "name": "nazwa",
+        "shortDesc": "opis"
+      },
+      "hasSubs": true,
+      "content": [
+        {
+          "name": "firstborn",
+          "displayName": "implanty pierworodnych",
+          "display": "none",
+          "content": [
+
+            {
+              "name": "secondaryHeart",
+              "displayName": "dodatkowe serce",
+              "shortDesc": "Część @trait{unnaturalStrength|nienaturalnej krzepy} i @trait{unnaturalToughness|nienaturalnej odporności}."
+            },
+            {
+              "name": "ossmodula",
+              "displayName": "ossmodula",
+              "shortDesc": "Część @trait{unnaturalToughness|nienaturalnej odporności}."
+            },
+            {
+              "name": "biscopea",
+              "displayName": "biscopea",
+              "shortDesc": "Część @trait{unnaturalStrength|nienaturalnej krzepy}."
+            },
+            {
+              "name": "haemastamen",
+              "displayName": "haemastamen",
+              "shortDesc": "Część @trait{unnaturalStrength|nienaturalnej krzepy} i @trait{unnaturalToughness|nienaturalnej odporności}."
+            },
+            {
+              "name": "larramansOrgan",
+              "displayName": "organy larramana",
+              "shortDesc": "Brak krwawienia, Talent @talent{trueGrit}."
+            },
+            {
+              "name": "catalepsanNode",
+              "displayName": "węzeł catalepsan",
+              "shortDesc": "Brak kar do Spostrzegawczości za brak snu."
+            },
+            {
+              "name": "preomnor",
+              "displayName": "preomnor",
+              "shortDesc": "+20 do Odporności przeciwko spożytej truciznie."
+            },
+            {
+              "name": "omophagea",
+              "displayName": "omofagea",
+              "shortDesc": "Umożliwia zdobywanie informacji przez spożywanie fragmentów tkanki przeciwników."
+            },
+            {
+              "name": "multilung",
+              "displayName": "multi-płuco",
+              "shortDesc": "Umożliwia przerzucenie nieudanych Testów Odporności przeciwko tonięciu lub duszeniu. Dodatkowo zapewnia +30 do Odporności przeciwko gazom i umożliwia przerzucenie również takich Testów. Umożliwia oddychanie pod wodą."
+            },
+            {
+              "name": "occulobe",
+              "displayName": "occulobe",
+              "shortDesc": "Zapewnia Talent @talent{heightenedSenses||wzrok}."
+            },
+            {
+              "name": "laymansEar",
+              "displayName": "ucho laymana",
+              "shortDesc": "Zapewnia Talent @talent{heightenedSenses||słuch}."
+            },
+            {
+              "name": "susanMembrane",
+              "displayName": "membrana sus-an",
+              "shortDesc": "Umożliwia zapadnięcie w konserwującą ciało śpiączkę poprzez medytację lub otrzymanie niemal śmiertelnych obrażeń."
+            },
+            {
+              "name": "melanochromicOrgan",
+              "displayName": "melanochrom",
+              "shortDesc": "Część @trait{unnaturalToughness|nienaturalnej odporności}. Może zapewniać odporność na promieniowanie."
+            },
+            {
+              "name": "ooliticKidney",
+              "displayName": "nerka oolityczna",
+              "shortDesc": "Umożliwia przerzucanie nieudanych Testów Odporności przeciwko truciznom i toksynom (w tym broni @quality{toxic|toksycznej}."
+            },
+            {
+              "name": "neuroglottis",
+              "displayName": "neuroglottis",
+              "shortDesc": "Umożliwia wykrycie trucizny w spożytej substancji lub w powietrzu. Zapewnia Umiejętność Tropienie."
+            },
+            {
+              "name": "mucranoid",
+              "displayName": "mucranoid",
+              "shortDesc": "Umożliwia przerzucanie nieudanych Testów Odporności przeciwko ekstremalnym temperaturom."
+            },
+            {
+              "name": "betchersGland",
+              "displayName": "gruczoły betchera",
+              "shortDesc": "Umożliwia plucie kwasem."
+            },
+            {
+              "name": "progenoids",
+              "displayName": "progenoidy",
+              "shortDesc": "Kultywują genoziarno."
+            },
+            {
+              "name": "blackCarapace",
+              "displayName": "czarna skorupa",
+              "shortDesc": "Umożliwia dokładną kontrolę nad pancerzem wspomaganym."
+            }
+          ]
+        },
+        {
+          "name": "primaris",
+          "displayName": "implanty primaris",
+          "display": "none",
+          "content": [
+            {
+              "name": "sinewCoils",
+              "displayName": "cewki ścięgna",
+              "shortDesc": "Zwiększa mnożnik @trait{unnaturalStrength|nienaturalnej krzepy} do 3."
+            },
+            {
+              "name": "magnificat",
+              "displayName": "magnificat",
+              "shortDesc": "Zwiększa mnożniki @trait{unnaturalStrength|nienaturalnej krzepy} i @trait{unnaturalToughness|nienaturalnej odporności} do 3."
+            },
+            {
+              "name": "belisarianFurnace",
+              "displayName": "piec belizariański",
+              "shortDesc": "Po otrzymaniu Obrażeń Krytycznych +10 do fizycznych Cech na @dice{1k5} Rund. Przez następny dzień rany goją się dwukrotnie szybciej niż normalnie. Musi upłynąć tydzień, by organ się odnowił."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "talent",
+      "displayName": "talenty",
+      "display": "both",
+      "footnotes": [
+        "Grupa Talentów."
+      ],
+      "table": {
+        "name": "nazwa",
+        "prerequsite": "wymagania",
+        "shortDesc": "opis"
+      },
+      "content": [
+        {
+          "name": "abhorTheWitch",
+          "displayName": "wstręt do czarnoksięstwa",
+          "prerequsite": "Astartes",
+          "shortDesc": "Umożliwia zużycie Punktu Przeznaczenia przed Misją, aby zyskać odporność na moce psioniczne."
+        },
+        {
+          "name": "airOfAuthority",
+          "displayName": "aura autorytetu",
+          "prerequsite": "Ogd 30",
+          "shortDesc": "Testy Ogłady wpływają na więcej celów."
+        },
+        {
+          "name": "ambidextrous",
+          "displayName": "oburęczny",
+          "prerequsite": "Zr 30",
+          "shortDesc": "Możesz używać obu rąk równie sprawnie."
+        },
+        {
+          "name": "armorMonger",
+          "displayName": "płatnerz",
+          "prerequsite": "Zbrojmistrz",
+          "shortDesc": "Możesz wzmacniać pancerz."
+        },
+        {
+          "name": "assassinStrike",
+          "displayName": "zabójczy cios",
+          "prerequsite": "Zr 40, Akrobatyka.",
+          "shortDesc": "Po ataku wręcz możesz wykonać Test Akrobatyki, sukces pozwala wykonać ruch jako Akcję Darmową."
+        },
+        {
+          "name": "astartesWeaponTraining",
+          "displayName": "trening w broni astartes",
+          "prerequsite": "astartes"
+        },
+        {
+          "name": "astartesWeaponSpecialisation",
+          "displayName": "specjalizacja w broni astartes",
+          "prerequsite": "astartes"
+        },
+        {
+          "name": "autosanguine",
+          "displayName": "samokrwisty",
+          "shortDesc": "Leczysz 2 punkty Obrażeń dziennie i zawsze jesteś Lekko Ranny."
+        },
+        {
+          "name": "basicWeaponTraining",
+          "displayName": "trening w broni zwykłej",
+          "footnote": 0,
+          "shortDesc": "Możesz używać broni Zwykłej z danej grupy bez kar."
+        },
+        {
+          "name": "bastionOfIronWill",
+          "displayName": "bastion żelaznej woli",
+          "prerequsite": "@talent{psyRating}, @talent{strongMinded}, SW 40",
+          "shortDesc": "Twoja Defensywna Siła Psychiczna jest podwojona w Testach Przeciwstawnych."
+        },
+        {
+          "name": "battleRage",
+          "displayName": "szał bitewny",
+          "prerequsite": "@talent{frenzy}",
+          "shortDesc": "Umożliwia @action{parry} podczas Szału."
+        },
+        {
+          "name": "berserkCharge",
+          "displayName": "szarża berserka",
+          "shortDesc": "Premia +20 do @action{charge|szarży}."
+        },
+        {
+          "name": "binaryChatter",
+          "displayName": "mowa binarna",
+          "shortDesc": "+10 kontrolowania serwitorów."
+        },
+        {
+          "name": "blademaster",
+          "displayName": "mistrz miecza",
+          "prerequsite": "WW 30, @talent{meleeWeaponTraining||jakikolwiek}",
+          "shortDesc": ""
+        },
+        {
+          "name": "blindFighting",
+          "displayName": "walka na ślepo",
+          "prerequsite": "Per 30",
+          "shortDesc": "Kary za ciemność są o połowę mniejsze."
+        },
+        {
+          "name": "bolterDrill",
+          "displayName": "trening z bolterem",
+          "prerequsite": "Astartes, @talent{astartesWeaponTraining}",
+          "shortDesc": "Dodatkowe trafienie przy strzelaniu @action{semiAuto|serią} lub @action{fullAuto|ogniem automatycznym} z broni boltowej."
+        },
+        {
+          "name": "bulgingBiceps",
+          "displayName": "potężny biceps",
+          "prerequsite": "K 45",
+          "shortDesc": "Nie musisz @action{brace|przygotowywać się} przy strzelaniu z niektórych broni."
+        },
+        {
+          "name": "callToVengeance",
+          "displayName": "wezwanie do zemsty",
+          "prerequsite": "Astartes, Ogd 40",
+          "shortDesc": "Kiedy jeden z Braci padnie, możesz zużyć Akcję Podwójną by odzyskać pełną Spójność."
+        },
+        {
+          "name": "catfall",
+          "displayName": "koci upadek",
+          "prerequsite": "Zr 30",
+          "shortDesc": "Zmniejsza Obrażenia od upadku."
+        },
+        {
+          "name": "chemGeld",
+          "displayName": "chemiczna sterylizacja",
+          "shortDesc": "Niewrażliwość na uwodzenie, odporność na uroki."
+        },
+        {
+          "name": "cleanseAndPurify",
+          "displayName": "oczyszczanie",
+          "prerequsite": "@talent{basicWeaponTraining||płomień}",
+          "shortDesc": "Wzmacnia ataki miotaczami."
+        },
+        {
+          "name": "combatFormation",
+          "displayName": "formacja bojowa",
+          "prerequsite": "Int 40",
+          "shortDesc": "Cała drużyna może użyć do rzutu na Inicjatywę Inteligencji Bohatera."
+        },
+        {
+          "name": "combatMaster",
+          "displayName": "mistrz walki",
+          "prerequsite": "WW 30",
+          "shortDesc": "Przeciwnicy nie otrzymują premii za przewagę liczebną."
+        },
+        {
+          "name": "combatSense",
+          "displayName": "zmysł bojowy",
+          "prerequsite": "Per 40",
+          "shortDesc": "Inicjatywa skaluje się z Percepcji."
+        },
+        {
+          "name": "concealedCavity",
+          "displayName": "ukryta przestrzeń",
+          "shortDesc": "Gdzieś w ciele Bohatera znajduje się tajna skrytka."
+        },
+        {
+          "name": "counterAttack",
+          "displayName": "kontratak",
+          "prerequsite": "WW 40",
+          "shortDesc": "Po udanym @action{parry|parowaniu} możesz zaatakować przeciwnika."
+        },
+        {
+          "name": "crackShot",
+          "displayName": "łamiący strzał",
+          "prerequsite": "US 40",
+          "shortDesc": "+2 Obrażeń Krytycznych z broni dystansowej."
+        },
+        {
+          "name": "cripplingStrike",
+          "displayName": "raniący cios",
+          "prerequsite": "WW 50",
+          "shortDesc": "+4 Obrażeń Krytycznych z broni białej."
+        },
+        {
+          "name": "crushingBlow",
+          "displayName": "miażdżący cios",
+          "prerequsite": "K 40",
+          "shortDesc": "+2 Obrażeń z broni białej."
+        },
+        {
+          "name": "deadeyeShot",
+          "displayName": "celny strzał",
+          "prerequsite": "US 30",
+          "shortDesc": "@action{calledShot} wykonywany jest z karą -10."
+        },
+        {
+          "name": "deathFromAbove",
+          "displayName": "śmierć z niebios",
+          "prerequsite": "Astartes, Pilotaż(Osobiste)",
+          "shortDesc": "Zwiększa Obrażenia przy @action{charge|szarży} lub desancie przy użyciu @item{jumPack|plecaka skokowego}."
+        },
+        {
+          "name": "deathwatchTraining",
+          "displayName": "trening straży śmierci",
+          "prerequsite": "Astartes, członek Straży",
+          "shortDesc": "Marine otrzymuje premie w walce przeciwko obcym."
+        },
+        {
+          "name": "deflectShot",
+          "displayName": "odbicie strzału",
+          "prerequsite": "Zr 50",
+          "shortDesc": "Umożliwia @action{parry} ataków z @quality{primitive|prymitywnej} broni dystansowej."
+        },
+        {
+          "name": "dieHard",
+          "displayName": "trudny do ubicia",
+          "prerequsite": "SW 40",
+          "shortDesc": "Umożliwia przerzucanie Testów przeciwko śmierci z wykrwawienia."
+        },
+        {
+          "name": "disarm",
+          "displayName": "rozbrojenie",
+          "prerequsite": "Zr 30",
+          "shortDesc": "Możesz zmusić przeciwnika do upuszczenia broni."
+        },
+        {
+          "name": "disturbingVoice",
+          "displayName": "niepokojący głos",
+          "shortDesc": "+10 do Zastraszania i Przesłuchiwania, -10 do Ogłady."
+        },
+        {
+          "name": "doubleTeam",
+          "displayName": "atak skoordynowany",
+          "shortDesc": "+10 do trafienia przy atakowaniu tego samego przeciwnika."
+        },
+        {
+          "name": "dualShot",
+          "displayName": "podwójny strzał",
+          "prerequsite": "Zr 40, @talent{twoWeaponWielder}",
+          "shortDesc": "Jeden Test US powoduje dwa trafienia."
+        },
+        {
+          "name": "dualStrike",
+          "displayName": "podwójny cios",
+          "prerequsite": "Zr 40, @talent{twoWeaponWielder}",
+          "shortDesc": "Jeden Test WW powoduje dwa trafienia."
+        },
+        {
+          "name": "dutyUntoDeath",
+          "displayName": "służba do śmierci",
+          "prerequsite": "SW 45"
+        },
+        {
+          "name": "electricalSuccour",
+          "displayName": "elektryczny sukurs",
+          "prerequsite": "Zbrojmistrz lub posiada @trait{mechanicusImplants}",
+          "shortDesc": "+10 do Testów Odporności w celu usunięcia Wyczerpania."
+        },
+        {
+          "name": "electroGraftUse",
+          "displayName": "użycie elektrowszczepów",
+          "shortDesc": "+10 do Plotkowania, Użycia Technologii i Powszechnej Wiedzy."
+        },
+        {
+          "name": "enemy",
+          "displayName": "wróg",
+          "footnote": 0,
+          "shortDesc": "Bohater jest szczególnie nienawidzony przez określoną organizację lub grupę."
+        },
+        {
+          "name": "energyCache",
+          "displayName": "zapas energii",
+          "prerequsite": "Zbrojmistrz lub @trait{mechanicusImplants}.",
+          "shortDesc": "@talent{luminenBlast|podmuch}, @talent{luminenCharge|ładunek} i @talent{luminenShock} nie powodują Wyczerpania."
+        },
+        {
+          "name": "enchancedBionicFrame",
+          "displayName": "wzmocniona bioniczna rama",
+          "prerequsite": "@talent{machinatorArray}"
+        },
+        {
+          "name": "eyeOfVengeance",
+          "displayName": "oko zemsty",
+          "prerequsite": "@talent{astartesWeaponTraining}, US 50",
+          "shortDesc": "Bohater strzela raz z większą penetracją i szansą na aktywację Furii."
+        },
+        {
+          "name": "exemplarOfHonour",
+          "displayName": "przykład honoru",
+          "prerequsite": "Astartes",
+          "shortDesc": "Umożliwia wymianę jednego Punktu Przeznaczenia na 1 punkt Spójności."
+        },
+        {
+          "name": "exoticWeaponTraining",
+          "displayName": "trening w broni egzotycznej",
+          "footnote": 0,
+          "shortDesc": "Bohater jest biegły w jednym typie broni @ranged{>exotic|egzotycznej}."
+        },
+        {
+          "name": "favoredByTheWarp",
+          "displayName": "ulubieniec spaczni",
+          "prerequsite": "SW 35",
+          "shortDesc": "Na @table{psychicPhenomena} rzucasz dwukrotnie i wybierasz lepszy wynik."
+        },
+        {
+          "name": "fearless",
+          "displayName": "nieustraszony",
+          "shortDesc": "Bohater jest niewrażliwy na Strach i Przygwożdżenie."
+        },
+        {
+          "name": "feedbackScreech",
+          "displayName": "sprzężenie zwrotne",
+          "prerequsite": "Zbrojmistrz lub @trait{mechanicusImplants}",
+          "shortDesc": "W zasięgu 30m Test SW, porażka to utrata Akcji Pojedynczej."
+        },
+        {
+          "name": "ferricLure",
+          "displayName": "żelazna przynęta",
+          "prerequsite": "Zbrojmistrz lub @trait{mechanicusImplants}",
+          "shortDesc": "Test SW na przyciągnięcie 1kg/10 SW metalowych przedmiotów."
+        },
+        {
+          "name": "ferricSummons",
+          "displayName": "żelazne przywołanie",
+          "prerequsite": "Zbrojmistrz lub @trait{mechanicusImplants}",
+          "shortDesc": "Test SW na przyciągnięcie 2kg/10 SW metalowych przedmiotów."
+        },
+        {
+          "name": "flameWeaponTraining",
+          "displayName": "trening z miotaczami",
+          "footnote": 0,
+          "shortDesc": "Bohater jest biegły w konkretnym rodzaju miotacza."
+        },
+        {
+          "name": "fleshRender",
+          "displayName": "rozrywacz ciał",
+          "prerequsite": "Astartes",
+          "shortDesc": "Broń @melee{>chain|łańcuchowa} zadaje dodatkowe Obrażenia."
+        },
+        {
+          "name": "foresight",
+          "displayName": "jasnowidzenie",
+          "prerequsite": "Int 30",
+          "shortDesc": "Bohater może medytować, by zyskać premię +10 do następnego Testu."
+        },
+        {
+          "name": "frenzy",
+          "displayName": "szał",
+          "shortDesc": "Bohater może wpaść w szał, by otrzymać różne premie w walce."
+        },
+        {
+          "name": "furiousAssault",
+          "displayName": "wściekła szarża",
+          "prerequsite": "WW 35",
+          "shortDesc": "Udany Test WW pozwala wykonać dodatkowy atak."
+        },
+        {
+          "name": "goodReputation",
+          "displayName": "dobra reputacja",
+          "footnote": 0,
+          "prerequsite": "Ogd 50, @talent{peer}",
+          "shortDesc": "Bohater ma dobrą reputację u pewnej grupy."
+        },
+        {
+          "name": "gunBlessing",
+          "displayName": "błogosławieństwo broni",
+          "prerequsite": "Zbrojmistrz lub @trait{mechanicusImplants}",
+          "shortDesc": "Usuwa zacięcia z Int/10 sztuk broni w zasięgu 10m."
+        },
+        {
+          "name": "gunslinger",
+          "displayName": "rewolwerowiec",
+          "prerequsite": "US 40, @talent{twoWeaponWielder}",
+          "shortDesc": "Strzelanie z dwóch pistoletów nakłada karę -10."
+        },
+        {
+          "name": "hammerBlow",
+          "displayName": "uderzenie młota",
+          "prerequsite": "Astartes",
+          "shortDesc": "Bohater wykonuje jeden potężny atak wręcz."
+        },
+        {
+          "name": "hardTarget",
+          "displayName": "trudny cel",
+          "prerequsite": "Zr 40",
+          "shortDesc": "Kiedy Bohater @action{run|biegnie} lub @action{charge|szarżuje} wrogowie strzelają w niego z karą -20."
+        },
+        {
+          "name": "hardy",
+          "displayName": "wytrzymały",
+          "prerequsite": "Odp 40",
+          "shortDesc": "Bohater na potrzeby leczenia zawsze liczy się jako Lekko Ranny."
+        },
+        {
+          "name": "hatred",
+          "displayName": "nienawiść",
+          "footnote": 0,
+          "shortDesc": "+10 WW przeciwko znienawidzonym przeciwnikom."
+        },
+        {
+          "name": "heavyWeaponTraning",
+          "displayName": "trening w broni ciężkiej",
+          "footnote": 0,
+          "shortDesc": "Bohater jest biegły w broni Ciężkiej."
+        },
+        {
+          "name": "heightenedSenses",
+          "displayName": "wzmocnione zmysły",
+          "footnote": 0,
+          "shortDesc": "+10 do Testów używających danego zmysłu."
+        },
+        {
+          "name": "hipShooting",
+          "displayName": "strzał z biodra",
+          "prerequsite": "US 40, Zr 40",
+          "shortDesc": "Dodatkowy atak dystansowy podczas ruchu."
+        },
+        {
+          "name": "hotShotPilot",
+          "displayName": "wyśmienity pilot"
+        },
+        {
+          "name": "hunterOfAliens",
+          "displayName": "łowca obcych",
+          "shortDesc": "Bohater ma przewagę w walce z obcymi."
+        },
+        {
+          "name": "improvedWarpSense",
+          "displayName": "ulepszony zmysł osnowy",
+          "prerequsite": "@talent{warpSense}",
+          "shortDesc": "Pozwala na wykonywanie Testów Wiedzy Psychicznej jako Akcja Darmowa."
+        },
+        {
+          "name": "independentTargeting",
+          "displayName": "niezależne celowanie",
+          "prerequsite": "US 40",
+          "shortDesc": "Pozwala na strzelanie naraz do dwóch lub więcej celów, które oddalone są o maks. 10m od siebie."
+        },
+        {
+          "name": "infusedKnowledge",
+          "displayName": "wrodzona wiedza",
+          "prerequsite": "Int 40",
+          "shortDesc": "Pozwala na traktowanie Wiedzy Powszechnej i Akademickiej jako Umiejętności Podstawowych."
+        },
+        {
+          "name": "inspireWrath",
+          "displayName": "wzniecenie gniewu",
+          "prerequsite": "Ogd 30",
+          "shortDesc": "Pozwala wzniecać gniew w tłumach."
+        },
+        {
+          "name": "intoTheJawsOfHell",
+          "displayName": "w piekielne otchłanie",
+          "prerequsite": "@talent{ironDiscipline}",
+          "shortDesc": "Podwładni Bohatera są w jego obecności odporni na Strach i Przygwożdżenie."
+        },
+        {
+          "name": "ironDiscipline",
+          "displayName": "żelazna dyscyplina",
+          "prerequsite": "SW 30, Dowodzenie",
+          "shortDesc": "Podwładni Bohatera mogą przerzucać Testy przeciwko Strachowi i Przygwożdżeniu."
+        },
+        {
+          "name": "ironJaw",
+          "displayName": "żelazna szczęka",
+          "prerequsite": "Odp 40",
+          "shortDesc": "Pozwala wykonać Test Odporności by oprzeć się Ogłuszeniu."
+        },
+        {
+          "name": "jaded",
+          "displayName": "znużony",
+          "prerequsite": "SW 30",
+          "shortDesc": "Bohater nie otrzymuje Punktów Obłędu z powodu zwykłych okropieństw."
+        },
+        {
+          "name": "killingStrike",
+          "displayName": "zabójczy cios",
+          "prerequsite": "Astartes",
+          "shortDesc": "Pozwala wydać Punkt Przeznaczenia, by uczynić atak wręcz niemożliwym do @action{dodge|uniknięcia} i @action{parry|sparowania}."
+        },
+        {
+          "name": "lastManStanding",
+          "displayName": "ostatni na nogach",
+          "prerequsite": "@talent{nervesOfSteel}",
+          "shortDesc": "Bohater staje się niewrażliwy na Przygwożdżenie przez Pistolety i broń Zwykłą. Zwiększa premie z Osłony."
+        },
+        {
+          "name": "leapUp",
+          "displayName": "skok",
+          "prerequsite": "Zr 30",
+          "shortDesc": "Wstawanie jest Akcją Darmową."
+        },
+        {
+          "name": "lightSleeper",
+          "displayName": "lekki sen",
+          "prerequsite": "Per 30",
+          "shortDesc": "Nawet podczas snu Bohater liczy się jako przytomny."
+        },
+        {
+          "name": "lightningAttack",
+          "displayName": "błyskawiczny atak",
+          "prerequsite": "@talent{swiftAttack}",
+          "shortDesc": "Pozwala wykonać trzy ataki wręcz przy użyciu Akcji Podwójnej."
+        },
+        {
+          "name": "lightningReflexes",
+          "displayName": "błyskawiczny refleks",
+          "shortDesc": "Premia ze Zręczności do Inicjatywy jest podwojona."
+        },
+        {
+          "name": "litanyOfHate",
+          "displayName": "litania nienawiści",
+          "prerequsite": "@talent{hatred}",
+          "shortDesc": "Pozwala reszcie drużyny korzystać z Nienawiści Bohatera."
+        },
+        {
+          "name": "logisImplant",
+          "displayName": "implant logis",
+          "shortDesc": "+10 do WW i US po udanym Teście Użycia Technologii."
+        },
+        {
+          "name": "luminenBlast",
+          "displayName": "podmuch luminen",
+          "prerequsite": "Zbrojmistrz lub @trait{mechanicusImplants}",
+          "shortDesc": "Pocisk zadający @dice{1k10}+SW/10 Obrażeń od Energii. Powoduje Wyczerpanie."
+        },
+        {
+          "name": "luminenCharge",
+          "displayName": "ładunek luminen",
+          "prerequsite": "Zbrojmistrz lub @trait{mechanicusImplants}",
+          "shortDesc": "Test Odporności pozwala zasilać/naładować urządzenia. Powoduje Wyczerpanie."
+        },
+        {
+          "name": "luminenShock",
+          "displayName": "wstrząs luminen",
+          "prerequsite": "Zbrojmistrz lub @trait{mechanicusImplants}",
+          "shortDesc": "Wstrząs zadający @dice{1k10+3} obrażeń od Energii. Powoduje Wyczerpanie."
+        },
+        {
+          "name": "machinatorArray",
+          "displayName": "zestaw machinator",
+          "prerequsite": "Zbrojmistrz lub @trait{mechanicusImplants}",
+          "shortDesc": "Bohater posiada zaawansowane ulepszenia Mechanicus."
+        },
+        {
+          "name": "maglevGrace",
+          "displayName": "gracja maglev",
+          "prerequsite": "Zbrojmistrz lub @trait{mechanicusImplants}",
+          "shortDesc": "Pozwala lewitować @dice{1k10}+Wytrzymałość dziennie."
+        },
+        {
+          "name": "maglevTranscendence",
+          "displayName": "transcendencja maglev",
+          "prerequsite": "@talent{maglevGrace}, Zbrojmistrz lub @trait{mechanicusImplants}",
+          "shortDesc": "Pozwala lewitować @dice{2k10}+Wytrzymałość dziennie."
+        },
+        {
+          "name": "marksman",
+          "displayName": "strzelec wyborowy",
+          "prerequsite": "US 35",
+          "shortDesc": "Brak kar za strzelanie na Długim i Ekstremalnym Dystansie."
+        },
+        {
+          "name": "masterChirurgeon",
+          "displayName": "mistrz chirurgii",
+          "prerequsite": "Medycyna +10",
+          "shortDesc": "Pozwala wykonywać zaawansowane zabiegi medyczne."
+        },
+        {
+          "name": "masterEnginseer",
+          "displayName": "mistrz-inżynier",
+          "prerequsite": "Użycie Technologii +10, członek Mechanicus lub Zbrojmistrz lub posiada @trait{mechanicusImplants}.",
+          "shortDesc": "Pozwala użyć Punktu Przeznaczenia by zagwarantować sukces."
+        },
+        {
+          "name": "masterOrator",
+          "displayName": "mistrz przemawiania",
+          "prerequsite": "Ogd 30",
+          "shortDesc": "Testy Ogłady wywierają wpływ na dziesięciokrotnie więcej celów."
+        },
+        {
+          "name": "mechadendriteUse",
+          "displayName": "użycie mechadendrytów",
+          "prerequsite": "Zbrojmistrz lub @trait{mechanicusImplants}",
+          "footnote": 0,
+          "shortDesc": "Pozwala używać konkretnego typu Mechadentrytów."
+        },
+        {
+          "name": "meditation",
+          "displayName": "medytacja",
+          "shortDesc": "Pozwala Bohaterowi zapaść w trans by usunąć Wyczerpanie."
+        },
+        {
+          "name": "meleeWeaponTraining",
+          "displayName": "trening w broni białej",
+          "footnote": 0,
+          "shortDesc": "Bohater jest biegły w określonej grupie broni białej."
+        },
+        {
+          "name": "mentalRage",
+          "displayName": "mentalny szał",
+          "prerequsite": "@talent{frenzy}",
+          "shortDesc": "Pozwala używać Mocy Psychicznych podczas Szału."
+        },
+        {
+          "name": "mightyShot",
+          "displayName": "poteżny strzał",
+          "prerequsite": "US 40",
+          "shortDesc": "+2 do Obrażeń od broni dystansowej."
+        },
+        {
+          "name": "mimic",
+          "displayName": "mimik",
+          "shortDesc": "Pozwala naśladować głosy."
+        },
+        {
+          "name": "nervesOfSteel",
+          "displayName": "nerwy ze stali",
+          "shortDesc": "Pozwala przerzucać Testy przeciwko Przygwożdżeniu."
+        },
+        {
+          "name": "orthoproxy",
+          "displayName": "orthoproxy",
+          "shortDesc": "+20 przeciwko kontroli umysłu i przesłuchaniom."
+        },
+        {
+          "name": "paranoia",
+          "displayName": "paranoja",
+          "shortDesc": "Bohater zawsze spodziewa się niebezpieczeństwa."
+        },
+        {
+          "name": "peer",
+          "displayName": "znajomy",
+          "prerequsite": "Ogd 30",
+          "footnote": 0,
+          "shortDesc": "+10 Ogd przy interakcjach z określoną grupą."
+        },
+        {
+          "name": "pistolTraining",
+          "displayName": "trening z pistoletami",
+          "footnote": 0,
+          "shortDesc": "Bohater jest biegły w używaniu pistoletów z określonej grupy."
+        },
+        {
+          "name": "polyglot",
+          "displayName": "poliglota",
+          "prerequsite": "Int 30, Ogd 30",
+          "shortDesc": "Bohater ma wrodzony talent do języków."
+        },
+        {
+          "name": "preciseBlow",
+          "displayName": "precyzyjny cios",
+          "prerequsite": "WW 40, @talent{sureStrike}",
+          "shortDesc": "Brak kary za mierzone ataki wręcz."
+        },
+        {
+          "name": "preternaturalSpeed",
+          "displayName": "nadnasturalna szybkość",
+          "prerequsite": "WW 40, Zr 50",
+          "shortDesc": "Pozwala używać @talent{swiftAttack|szybkiego} i @talent{lightningAttack|błyskawicznego ataku} jako Akcji Pojedynczej, a także w połączeniu z @action{charge|szarżą}."
+        },
+        {
+          "name": "prosanguine",
+          "displayName": "prokrwisty",
+          "shortDesc": "Pozwala raz dziennie wyleczyć @dice{1k5} Obrażeń."
+        },
+        {
+          "name": "psyRating",
+          "displayName": "Siła Psychiczna",
+          "shortDesc": "Pozwala stać się potężniejszym Psykerem o mocy 1-10."
+        },
+        {
+          "name": "psychicTechnique",
+          "displayName": "technika psychiczna",
+          "shortDesc": "Pozwala uzyskać nową Technikę Psychiczną."
+        },
+        {
+          "name": "quickDraw",
+          "displayName": "szybkie dobycie",
+          "shortDesc": "@action{ready} jako akcja Darmowa."
+        },
+        {
+          "name": "rapidReaction",
+          "displayName": "szybka reakcja",
+          "prerequsite": "Zr 40",
+          "shortDesc": "Pozwala wykonać Test Zręczności by zanegować Zaskoczenie."
+        },
+        {
+          "name": "rapidReload",
+          "displayName": "szybkie przeładowanie",
+          "shortDesc": "Zmniejsza czas przeładowania."
+        },
+        {
+          "name": "resistance",
+          "displayName": "odporność",
+          "footnote": 0,
+          "shortDesc": "Zapewnia +10 do Testów przeciwko konkretnemu zagrożeniu."
+        },
+        {
+          "name": "riteOfAwe",
+          "displayName": "rytuał czci",
+          "prerequsite": "Zbrojmistrz lub @trait{mechanicusImplants}",
+          "shortDesc": "-10 do następnego Testu w promieniu 50m."
+        },
+        {
+          "name": "riteOfFear",
+          "displayName": "rytuał strachu",
+          "prerequsite": "Zbrojmistrz lub @trait{mechanicusImplants}",
+          "shortDesc": "Poziom Strachu 1 na 2 minuty w promieniu 50m."
+        },
+        {
+          "name": "riteOfPureThought",
+          "displayName": "rytuał czystych myśli",
+          "prerequsite": "Zbrojmistrz lub @trait{mechanicusImplants}",
+          "shortDesc": "Bohater jest niewrażliwy na emocje."
+        },
+        {
+          "name": "riteOfSanctioning",
+          "displayName": "rytuał zatwierdzenia",
+          "prerequsite": "@talent{psyRating}",
+          "shortDesc": "Zmniejsza @table{psychicPhemomenon}."
+        },
+        {
+          "name": "rival",
+          "displayName": "rywal",
+          "footnote": 0,
+          "shortDesc": "Określona grupa jest nieprzyjazna Bohaterowi."
+        },
+        {
+          "name": "scourgeOfHeretics",
+          "displayName": "zmora heretyków",
+          "shortDesc": "Bohater ma przewagę w walce ze zdrajcami i heretykami."
+        },
+        {
+          "name": "servoharnessIntegration",
+          "displayName": "integracja z serwouprzężą",
+          "prerequsite": "Implanty Zbrojmistrza, @talent{mechadendriteUse||serworamię}",
+          "shortDesc": "Pozwala używać @cybernetic{servoharness|serwouprzęży}."
+        },
+        {
+          "name": "sharpshooter",
+          "displayName": "precyzyjny strzał",
+          "prerequsite": "US 40, @talent{deadeyeShot}",
+          "shortDesc": "@action{calledShot} bez kar."
+        },
+        {
+          "name": "soundConstitution",
+          "displayName": "dobre zdrowie",
+          "shortDesc": "Bohater zyskuje dodatkowy punkt Ran."
+        },
+        {
+          "name": "signatureWargear",
+          "displayName": "osobiste wyposażenie",
+          "footnote": 0,
+          "shortDesc": "Jeden przedmiot o koszcie Pobrania maksymalnie 20 jest standardowo wydawany."
+        },
+        {
+          "name": "signatureWargearMaster",
+          "displayName": "osobiste wyposażenie (mistrz)",
+          "footnote": 0,
+          "prerequsite": "@talent{signatureWargear}",
+          "shortDesc": "Jeden przedmiot o koszcie Pobrania maksymalnie 40 jest standardowo wydawany i zyskuje dodatkową premię."
+        },
+        {
+          "name": "signatureWargearHero",
+          "displayName": "osobiste wyposażenie (bohater)",
+          "footnote": 0,
+          "shortDesc": "Jeden przedmiot o koszcie Pobrania maksymalnie 70 jest standardowo wydawany."
+        },
+        {
+          "name": "slayerOfDaemons",
+          "displayName": "zabójca demonów",
+          "shortDesc": "Bohater ma przewagę w walce ze stworzeniami Spaczni."
+        },
+        {
+          "name": "sprint",
+          "displayName": "sprint",
+          "shortDesc": "Pozwala poruszać się szybciej podczas walki."
+        },
+        {
+          "name": "stalwartDefense",
+          "displayName": "mężna obrona",
+          "prerequsite": "Astartes",
+          "shortDesc": "Pozwala bronić wybranego miejsca z niemożliwą do złamania detrminacją."
+        },
+        {
+          "name": "stepAside",
+          "displayName": "krok w bok",
+          "prerequsite": "Zr 40, Unik",
+          "shortDesc": "Dodatkowy @action{dodge} w każdej rundzie."
+        },
+        {
+          "name": "streetFighting",
+          "displayName": "walka uliczna",
+          "shortDesc": "+2 do Obrażeń Krytycznych z nożami i atakami bez broni."
+        },
+        {
+          "name": "stormOfIron",
+          "displayName": "deszcz żelaza",
+          "prerequsite": "Astartes",
+          "shortDesc": "Broń dystansowa zadaje dodatkowe Obrażenia Hordom."
+        },
+        {
+          "name": "strongMinded",
+          "displayName": "silny umysł",
+          "prerequsite": "SW 30, @talent{resistance||psychiczna}",
+          "shortDesc": "Pozwala przerzucać Testy Siły Woli przeciwko Mocom Psychicznym."
+        },
+        {
+          "name": "sureStrike",
+          "displayName": "pewny cios",
+          "prerequsite": "WW 30",
+          "shortDesc": "Pozwala wybrać lokację trafienia."
+        },
+        {
+          "name": "swiftAttack",
+          "displayName": "szybki atak",
+          "prerequsite": "WW 35",
+          "shortDesc": "Akcja Podwójna pozwala zaatakować dwukrotnie."
+        },
+        {
+          "name": "takedown",
+          "displayName": "obalenie",
+          "shortDesc": "Pozwala wykonać specjalny atak mogący Ogłuszyć przeciwnika."
+        },
+        {
+          "name": "talented",
+          "displayName": "utalentowany",
+          "footnote": 0,
+          "shortDesc": "+10 do Testów konkretnej Umiejętności."
+        },
+        {
+          "name": "targetSelection",
+          "displayName": "wybór celu",
+          "prerequsite": "US 50",
+          "shortDesc": "Pozwala strzelać w walczących w zwarciu bez kar."
+        },
+        {
+          "name": "technicalKnock",
+          "displayName": "żyłka techniczna",
+          "prerequsite": "Int 30",
+          "shortDesc": "Usuwanie zacięć to Akcja Pojedyncza."
+        },
+        {
+          "name": "theFleshIsWeak",
+          "displayName": "ciało jest słabe",
+          "shortDesc": "Część ciała Bohatera jest zastępowana przez metal i maszynerię."
+        },
+        {
+          "name": "thrownWeaponTraining",
+          "displayName": "trening w broni rzucanej",
+          "footnote": 0,
+          "shortDesc": "Bohater jest biegły w pewnej grupie broni Rzucanej."
+        },
+        {
+          "name": "thunderCharge",
+          "displayName": "grzmiąca szarża",
+          "prerequsite": "Astartes",
+          "shortDesc": "Pozwala łamać wrogie formacje potężną szarżą."
+        },
+        {
+          "name": "totalRecall",
+          "displayName": "pamięć całkowita",
+          "prerequsite": "Int 30",
+          "shortDesc": "Bohater łatwo zapamiętuje pomniejsze szczegóły i fakty."
+        },
+        {
+          "name": "trueGrit",
+          "displayName": "prawdziwa odwaga",
+          "prerequsite": "Odp 40",
+          "shortDesc": "Zmniejsza Obrażenia Krytyczne odtrzymywane przez Bohatera."
+        },
+        {
+          "name": "twoWeaponWielder",
+          "displayName": "walka dwiema brońmi",
+          "footnote": 0,
+          "prerequsite": "WW 35 lub US 35, Zr 35",
+          "shortDesc": "Pozwala zaatakować dwukrotnie przy dzierżeniu dwóch broni."
+        },
+        {
+          "name": "unarmedMaster",
+          "displayName": "mistrz walki bez broni",
+          "prerequsite": "WW 45, Zr 40, @talent{unarmedWarrior}",
+          "shortDesc": "Ataki bez broni zadają @dice{1k10}+S Obrażeń i nie są @quality{primitive|prymitywne}."
+        },
+        {
+          "name": "unarmedWarrior",
+          "displayName": "specjalista w walce bez broni",
+          "prerequsite": "WW 35, Zr 35",
+          "shortDesc": "Ataki bez broni zadają @dice{1k10-3}+S. Obrażeń."
+        },
+        {
+          "name": "unbowedAndUnbroken",
+          "displayName": "nieugięty i niezłomny",
+          "prerequsite": "Astartes, Ogd 40",
+          "shortDesc": "Pozwala wyzwać przeciwnika by odzyskać Spójność utraconą w poprzedniej rundzie."
+        },
+        {
+          "name": "unshakableFaith",
+          "displayName": "niezłomna wiara",
+          "shortDesc": "Pozwala przerzucać Testy przeciwko Strachowi."
+        },
+        {
+          "name": "wallOfSteel",
+          "displayName": "ściana stali",
+          "prerequsite": "Zr 35",
+          "shortDesc": "Bohater może w każdej Rundzie @action{parry} dodatkowy raz."
+        },
+        {
+          "name": "warpAffinity",
+          "displayName": "powinowactwo osnowy",
+          "prerequsite": "@talent{psyRating}",
+          "shortDesc": "Pozwala przerzucać @table{psychicPhemomenon}."
+        },
+        {
+          "name": "warpConduit",
+          "displayName": "ognisko osnowy",
+          "prerequsite": "@talent{psyRating}, @talent{strongMinded}, SW 50",
+          "shortDesc": "+1 do Siły Psychicznej przy używaniu Pełni Mocy."
+        },
+        {
+          "name": "warpSense",
+          "displayName": "zmysł osnowy",
+          "prerequsite": "@talent{psyRating}, Wiedza Psychiczna, Per 30",
+          "shortDesc": "Pozwala używać Wiedzy Psychicznej jako Akcji Pojedynczej."
+        },
+        {
+          "name": "weaponTech",
+          "displayName": "technolog broni",
+          "prerequsite": "Zbrojmistrz",
+          "shortDesc": "Zwiększa efektywność broni dzierżonej przez Zbrojmistrza."
+        },
+        {
+          "name": "wisdomOfTheAncients",
+          "displayName": "wiedza przodków",
+          "prerequsite": "Astartes, Int 40",
+          "shortDesc": "Pozwala wydać Punkt Przeznaczenia by uzyskać rozeznanie w sytuacji."
+        },
+        {
+          "name": "whirlwindOfDeath",
+          "displayName": "wir śmierci",
+          "prerequsite": "Astartes",
+          "shortDesc": "Bohater zadaje Hordom dodatkowe Obrażenia w walce wręcz."
+        }
+      ]
+    },
+    {
+      "name": "trait",
+      "displayName": "cechy",
+      "display": "both",
+      "table": {
+        "name": "cecha",
+        "shortDesc": "opis"
+      },
+      "content": [
+        {
+          "name": "amorphous",
+          "displayName": "amorficzny",
+          "shortDesc": "Stworzenie jest powolną kluchą."
+        },
+        {
+          "name": "armorPlating",
+          "displayName": "opancerzony",
+          "shortDesc": "Zwiększ Pancerz o 2."
+        },
+        {
+          "name": "autoStabilized",
+          "displayName": "autostabilizowany",
+          "shortDesc": "Zawsze liczy się jako @action{brace|przygotowany}."
+        },
+        {
+          "name": "bestial",
+          "displayName": "zwierzę",
+          "shortDesc": "Nie musi wykonywać Testów Sztuki Przetrwania by przeżyć w naturalnym środowisku. Test Siły Woli determinuje ucieczkę,"
+        },
+        {
+          "name": "blind",
+          "displayName": "ślepy",
+          "shortDesc": "Nie widzi."
+        },
+        {
+          "name": "bloodSoakedTide",
+          "displayName": "krwawa fala",
+          "shortDesc": "Horda zamiast się łamać wpada w @talent{frenzy} i staje się @talent{fearless}."
+        },
+        {
+          "name": "brutalCharge",
+          "displayName": "brutalna szarża",
+          "shortDesc": "+3 do Obrażeń zadawanych przy @action{charge|szarży}."
+        },
+        {
+          "name": "burrower",
+          "displayName": "kopacz",
+          "shortDesc": "Porusza się przez drążenie tuneli."
+        },
+        {
+          "name": "crawler",
+          "displayName": "pełzacz",
+          "shortDesc": "Szybkość obliczana jest na podstawie Zr/20. Brak kar za poruszanie w trydnym terenie."
+        },
+        {
+          "name": "deamonic",
+          "displayName": "demoniczny",
+          "shortDesc": "Wytrzymałość jest podwojona przeciwko normalnej broni. Odporny na trucizny i choroby."
+        },
+        {
+          "name": "darkSight",
+          "displayName": "widzenie w ciemności",
+          "shortDesc": "Widzi w ciemności."
+        },
+        {
+          "name": "disciplined",
+          "displayName": "zdyscyplinowany",
+          "shortDesc": "Horda jest odporna na złamanie."
+        },
+        {
+          "name": "fightingWithdrawal",
+          "displayName": "odwrót taktyczny",
+          "shortDesc": "Złamana Horda wycofuje się."
+        },
+        {
+          "name": "fireDrill",
+          "displayName": "wyćwiczona salwa",
+          "shortDesc": "Horda otrzymuje dodatkowy atak dystansowy."
+        },
+        {
+          "name": "fear",
+          "displayName": "strach",
+          "shortDesc": "Zmusza innych do wykonywania Testów przeciwko Złamaniu i Obłędowi."
+        },
+        {
+          "name": "flyer",
+          "displayName": "latający",
+          "shortDesc": "Może latać na dowolnej wysokości."
+        },
+        {
+          "name": "fromBeyond",
+          "displayName": "z osnowy",
+          "shortDesc": "Odporny na Strach, Przygwożdżenie, Obłęd i efekty związane z umysłem."
+        },
+        {
+          "name": "hoverer",
+          "displayName": "zawis",
+          "shortDesc": "Może latać na podanej wysokości."
+        },
+        {
+          "name": "improvedNaturalWeapon",
+          "displayName": "ulepszona broń naturalna",
+          "shortDesc": "Naturalna Broń nie jest @quality{primitive}."
+        },
+        {
+          "name": "incorporeal",
+          "displayName": "bezcielesny",
+          "shortDesc": "Stworzenie jest niematerialne."
+        },
+        {
+          "name": "instinctiveBehavior",
+          "displayName": "instynktowne zachowanie",
+          "shortDesc": "Stworzenie ma zestaw określonych reakcji na bodźce."
+        },
+        {
+          "name": "machine",
+          "displayName": "maszyna",
+          "shortDesc": "Ma pewne niewrażliwości i odporności."
+        },
+        {
+          "name": "multipleArms",
+          "displayName": "wiele ramion",
+          "shortDesc": "Dodatkowy atak, +10 Odp, +10 K przy Testach związanych z przesuwaniem przedmiotów."
+        },
+        {
+          "name": "naturalArmor",
+          "displayName": "naturalny pancerz",
+          "shortDesc": "Dodatkowy Punkt Pancerza w każdej z lokacji."
+        },
+        {
+          "name": "natural weapon",
+          "displayName": "naturalna broń",
+          "shortDesc": "Ataki bez broni zadają @dice{1k10}+S Obrażeń."
+        },
+        {
+          "name": "overwhelming",
+          "displayName": "przytłaczający",
+          "shortDesc": "Horda zadaje dodatkowe Obrażenia w zwarciu."
+        },
+        {
+          "name": "phase",
+          "displayName": "przenikanie",
+          "shortDesc": "Jako Akcja Pojedyncza może przejść między formą cielesną i @trait{incorporeal|bezcielesną}."
+        },
+        {
+          "name": "possesion",
+          "displayName": "opętanie",
+          "shortDesc": "Jest w stanie przejąć kontrolę nad innym stworzeniem."
+        },
+        {
+          "name": "quadruped",
+          "displayName": "czworonogi",
+          "shortDesc": "Szybkość obliczana jest z Zr/10x2."
+        },
+        {
+          "name": "regeneration",
+          "displayName": "regeneracja",
+          "shortDesc": "Test Odporności pozwala wyleczyć 1 punkt Obrażeń."
+        },
+        {
+          "name": "size",
+          "displayName": "rozmiar",
+          "shortDesc": "Określa wielkość stworzenia."
+        },
+        {
+          "name": "sonarSense",
+          "displayName": "zmysł sonarowy",
+          "shortDesc": "Idealnie odbiera swoje otoczenie w promieniu 30 metrów."
+        },
+        {
+          "name": "soulBound",
+          "displayName": "związany",
+          "shortDesc": "Związany z konkretną istotą lub grupą w zamian za pewne korzyści."
+        },
+        {
+          "name": "stampede",
+          "displayName": "ucieczka w popłochu",
+          "shortDesc": "Nieudany Test Siły Woli powoduje, że stworzenie ucieka i tratuje wszystko na swojej drodze."
+        },
+        {
+          "name": "strangePhysiology",
+          "displayName": "dziwna fizjologia",
+          "shortDesc": "Umiera, gdy Obrażenia zrównają się z Ranami."
+        },
+        {
+          "name": "sturdy",
+          "displayName": "wytrzymały",
+          "shortDesc": "+20 do obrony przed obaleniem i chwytami."
+        },
+        {
+          "name": "synapseCreature",
+          "displayName": "stworzenie synapsowe",
+          "shortDesc": "Zapewnia innym pobliskim Tyranidom talent @talent{fearless}."
+        },
+        {
+          "name": "touchedByTheFates",
+          "displayName": "dotknięty przez przeznaczenie",
+          "shortDesc": "Stworzenie ma Punkty Przeznaczenia i może korzystać z Prawej Furii."
+        },
+        {
+          "name": "toxic",
+          "displayName": "toksyczny",
+          "shortDesc": "Stworzenie ma trujący atak."
+        },
+        {
+          "name": "tyranid",
+          "displayName": "tyranid",
+          "shortDesc": "Stworzenie ma wiele odporności."
+        },
+        {
+          "name": "undying",
+          "displayName": "bezśmiertny",
+          "shortDesc": "Stworzenie nie musi oddychać i nie odczuwa efektów chorób, trucizn i toksyn."
+        },
+        {
+          "name": "unnaturalStrength",
+          "displayName": "nienaturalna krzepa",
+          "noDesc": true,
+          "noTable": true
+        },
+        {
+          "name": "unnaturalToughness",
+          "displayName": "nienaturalna odporność",
+          "noDesc": true,
+          "noTable": true
+        },
+        {
+          "name": "unnaturalAgility",
+          "displayName": "nienaturalna zręczność",
+          "noDesc": true,
+          "noTable": true
+        },
+        {
+          "name": "unnaturalIntelligence",
+          "displayName": "nienaturalna inteligencja",
+          "noDesc": true,
+          "noTable": true
+        },
+        {
+          "name": "unnaturalPerception",
+          "displayName": "nienaturalna percepcja",
+          "noDesc": true,
+          "noTable": true
+        },
+        {
+          "name": "unnaturalWillpower",
+          "displayName": "nienaturalna siła woli",
+          "noDesc": true,
+          "noTable": true
+        },
+        {
+          "name": "unnaturalFellowship",
+          "displayName": "nienaturalna ogłada",
+          "noDesc": true,
+          "noTable": true
+        },
+        {
+          "name": "unnaturalCharacteristic",
+          "displayName": "nienaturalna charakterystyka",
+          "shortDesc": "Zwiększa premię z charakterystyki (charakterystyka/10)."
+        },
+        {
+          "name": "unnaturalSenses",
+          "displayName": "nienaturalne zmysły",
+          "shortDesc": "Stworzenie odczuwa swoje otoczenie dziwnymi sposobami."
+        },
+        {
+          "name": "unnaturalSpeed",
+          "displayName": "nienaturalna szybkość",
+          "shortDesc": "Szybkość obliczana jest na podstawie Zr/10x2."
+        },
+        {
+          "name": "warpInstability",
+          "displayName": "niestabilność spaczni",
+          "shortDesc": "Stworzenie po otrzymaniu Obrażeń samo musi je zadać, albo wysyłane jest z powrotem do Spaczni."
+        },
+        {
+          "name": "warpWeapons",
+          "displayName": "bronie spaczni",
+          "shortDesc": "Bronie stworzenia ignorują Pancerz."
+        },
+        {
+          "name": "mechanicusImplants",
+          "displayName": "implanty mechanicus",
+          "shortDesc": "Posiada zestaw implantów."
+        }
+      ]
+    },
     {
       "displayName": "własności",
       "name": "quality",
@@ -63,7 +1425,7 @@
         },
         {
           "displayName": "pole energetyczne",
-          "name": "power field",
+          "name": "powerField",
           "content": "Pole energii otacza broń z tą Właściwością, zwiększając jej Obrażenia i Penetrację. Te modyfikatory zawarte już są w profilu broni. Jeżeli osoba dzierżąca taką broń użyje jej skutecznie do Sparowania ataku wykonanego bronią bez tej Właściwości, ma 75% szans na jej zniszczenie. Bronie z Cechą Broń Spaczni i Naturalne Bronie są odporne na ten efekt."
         },
         {
@@ -1495,7 +2857,7 @@
               },
               "penetration": 10,
               "qualities": [
-                "power field",
+                "powerField",
                 "tearing"
               ],
               "weight": 48,
@@ -1517,7 +2879,7 @@
               },
               "penetration": 8,
               "qualities": [
-                "power field",
+                "powerField",
                 "tearing"
               ],
               "weight": 30,
@@ -1539,7 +2901,7 @@
               },
               "penetration": 6,
               "qualities": [
-                "power field",
+                "powerField",
                 "unbalanced"
               ],
               "weight": 10,
@@ -1558,7 +2920,7 @@
               },
               "penetration": 9,
               "qualities": [
-                "power field",
+                "powerField",
                 "unwieldy"
               ],
               "weight": 30,
@@ -1579,7 +2941,7 @@
               },
               "penetration": 6,
               "qualities": [
-                "power field",
+                "powerField",
                 "balanced"
               ],
               "weight": 5,
@@ -1597,7 +2959,7 @@
               },
               "penetration": 8,
               "qualities": [
-                "power field",
+                "powerField",
                 "concussive",
                 "unwieldy"
               ],
@@ -1616,7 +2978,7 @@
               },
               "penetration": 6,
               "qualities": [
-                "power field",
+                "powerField",
                 "unbalanced"
               ],
               "weight": 14,
@@ -2230,7 +3592,112 @@
         "requisition": "pobranie",
         "renown": "sława"
       },
+      "footnotes": [
+        "Dla Zbrojmistrzy wymaganie Sławy spada do Odznaczonego.",
+        "Pancerz Rzemieślniczy nie jest dostępny do Pobrania na pojedynczą misję; musi zostać zdobyty jako Osobiste Wyposażenie.",
+        "Obejmuje to 60 punktów za wypożyczenie pancerza i minimum 40, które trzeba wydać na jego uzbrojenie."
+      ],
       "content": [
+        "W 41. milenium ludzkość musi mierzyć się nie tylko z zagrożeniem ze strony obcych, ale także ze zdradą przychodzącą z wewnątrz. Z każdym nowym zagrożeniem liczba środków ochronnych tylko rośnie. Choć Kosmiczni Marines polegają na swoich charakterystycznych pancerzach wspomaganych, zwykli obywatele Imperium muszą zadowolić się zdecydowanie mniej zaawansowanymi rozwiązaniami.",
+        {
+          "displayName": "pancerz wspomagany mk.VII aquila",
+          "name": "aquila",
+          "innerGrid": true,
+          "armor": {
+            "general": 8,
+            "torso": 10
+          },
+          "weight": 180,
+          "requisition": null,
+          "renown": 0,
+          "content": [
+            "Pancerz wspomagany Astartes to wysoki standard, z którym porównywane są tradycyjnie wszystkie inne dostępne w Imperium środki ochrony. Sam widok wojowników Boga-Imperatora w ich charakterytycznym wyposażeniu sprawia, że niejeden przeciwnik będzie salwował się ucieczką bez jednego wystrzału. Pancerze te oparte są o ciężkie ceramitowe płyty osadzone na ramie poruszanej przez serwomotory i wiązki włókien symulujących działanie mięśni, która idealnie odtwarza ruchy wykonywane przez zamkniętego wewnatrz Brata. Gdyby jeszcze nie wystarczyło, że wersje tych pancerzy używane przez Astartes są najlepsze w swojej klasie, to unikalne implanty wszepione w ciało każdego Marine sprawiają, że nawet w pancerzu nie traci on nic ze swojej szybkości i precyzji. Każdy z Braci sam zajmuje się konserwacją swojego pancerza, którego komponenty mogły służyć jego Zakonowi przez milienia.",
+            "Pancerz Astartes zawiera wiele złożonych systemów, których synergia z ulepszonym ciałem czyni Braci tak zabójczymi. Składają się na to następujące efekty:",
+            {
+              "title": "ceramitowe opancerzenie",
+              "content": "Zapewnia 10 Punktów Pancerza na torsie i 8 w pozostałych lokacjach."
+            },
+            {
+              "title": "zwiększona siła",
+              "content": "Zwiększa Krzepę Brata o +20. Wynikająca z tego premia do Siły jest dodawana po uwzględnieniu @talent{unnaturalStrength|nienaturalnej siły}."
+            },
+            {
+              "title": "autozmysły",
+              "content": "Marine otrzymuje Cechę @trait{darkSight} i @talent{heightenedSenses||wzrok i słuch}. Filtrowane wejście zapewnia ochronę przez @grenade{flash|granatami fotonowymi} i @grenade{stun|ogłuszającymi}. Premie te aktywne są tylko kiedy hełm jest zaczepiony na swoim miejscu i kumulują się z efektami @implant{laymansEar|ucha laymana} i @implant{occulobe}, przez co Marines wykonują testy Spostrzegawczości bazujące na wzroku lub słuchu z premią +20. Dodatkowo Autozmysły zmieniają @action{calledShot} w Akcję Zwykłą."
+            },
+            {
+              "title": "osmotyczne skrzele",
+              "content": "Kiedy Marine nosi hełm, pancerz jest uznawany za hermetyczny i jest w stanie zapewnić odpowiedni zapas tlenu tak długo, jak podtrzymywane jest zasilanie."
+            },
+            {
+              "title": "biomonitor i iniektor",
+              "content": "Jeżeli wewnętrzny kogitator wykryje jakiekolwiek zaburzenia w czynnościach życiowych noszącego, jest w stanie automatycznie podać środki przeciwbólowe, stymulanty i antytoksyny. Dzięki temu Marine otrzymuje premię +10 do Odporności na broń @quality{toxic|toksyczną} i podobne efekty. Zbiornik na środki przeciwbólowe zawiera 6 dawek, z których każdej można użyć, by zignorować Efekty Krytyczne na @dice{1k10} Rund. Dawki te mogą zostać użyte jedna po drugiej, ale można wsztrzymać ich podawanie. Dodatkowo, jeżeli noszący zostanie Ogłuszony, efekt trwa maksymalnie jedną Rundę; po upływie tego czasu bio-monitor wykrywa i neguje zaburzenie."
+            },
+            {
+              "title": "połączenie vox",
+              "content": "Służy on jako standardowy kanał komunikacyjny Drużyny lub Szwadronu, łączy się także z innymi, bardziej wyszukanymi środkami porozumiewania, do jakich ma dostęp noszący. Przekazywany jest nim również status odczytany przez bio-monitor, dzięki czemu Drużyna ma wzajemny dostęp do odczytów funkcji życiowych. Dodatkowo w hełm wbudowany jest rozgłaszacz voxu, który umożliwia komunikację z osobami niemającymi dostępu do tych łączy."
+            },
+            {
+              "title": "magnetyczne podeszwy",
+              "content": "Podeszwy pancerza wspomaganego zawierają silne elektromagnesy, które pozwalają noszącemu przywierać do ferromagnetycznych powierzchni, takich jak zewnętrzne poszycie pojazdów. Można je aktywować bądź deaktywować na początku Tury. Używanie ich powoduje zmniejszenie Szybkości tak, jak gdyby noszący miał tylko połowę normalnej zręczności, ale można dzięki nim poruszać się w otoczeniu niskiego lub nawet zerowego ciążenia w miarę normalnie, jeżeli tylko istnieje odpowiednia do chodzenia powierzchnia. Poza Adeptus Astartes znaleźć można samodzielne buty magnetyczne."
+            },
+            {
+              "title": "recykling składników odżywczych",
+              "content": "Filtry znajdujące się w pancerzu wychwytują i oczyszczają odpady odrzucane przez ciało, wydobywając z nich maksymalną nieprzetworzoną wartość odżywczą i przekazując ją z powrotem do organizmu. Dzięki temu Bracia są w stanie nie jeść przez długi czas, chociaż nie jest on nieograniczony. Za każde dwa tygodnie od ostatniego spożycia żywności należy wykonać Test Odporności - porażka oznacza jeden poziom Wyczerpania. Stopień Trudności Testu zwiększa się o jeden poziom za każde kolejne dwa tygodnie."
+            },
+            {
+              "title": "tłumienie odrzutu",
+              "content": "Umożliwia strzelanie z broni Zwykłych przy użyciu jednej ręki. Broń dystansowa niebędąca pistoletami nadal nie może być użyta w walce w zwarciu."
+            },
+            {
+              "title": "olbrzym wśród ludzi",
+              "content": "Kosmiczny Marine w pancerzu wspomaganym jest Duży. Zwiększa to jego Szybkość o 1, a @implant{blackCarapace} neguje przewagę, jaką z racji rozmiaru uzyskaliby przeciwnicy. Wszystkie inne kary do Ukrywania się i Cichego Poruszania się za ciężkie opancerzenie nadal są stosowane."
+            },
+            {
+              "title": "słaba sprawność manualna",
+              "content": "Opancerzone rękawice pancerza nie nadają się do zadań wymagających precyzji manualnej. Testy związane z zadaniami wymagającymi takiej delikatności wykonywane są z karą -10, chyba że używane wyposażenie zaprojektowane jest specjalnie na użytek Astartes. Dodatkowo broń dystansowa niedostosowana dla Braci może być dla nich zwyczajnie za mała."
+            },
+            "Przywdzianie pancerza to święty rytuał, podczas któremu trzeba oddać odpowiednie honory duchowi maszyny i historii jego mężnych czynów, a także prosić o jego dary w przyszłej bitwie. Samodzielnie można dokonać tego w 20 minut, ale niezależnie od liczby asystujących sług i Adeptów Maszyny, proces ten nie zajmuje mniej niż 5 minut, jako że trzeba zachować odpowiednie rytuały.",
+            {
+              "title": "historia pancerza",
+              "content": "Każdy komplet pancerza jest unikalny, używany w wielu różnych bitwach i często złożony z części kilku innych pancerzy, z których każdy ma swoją własną historię. Nie jest zatem dziwne, że duchy pancerzy z czasem nabywają własną osobowość. Rzuć w tabeli @table{armorHistory}, aby przekonać się o charakterze swojego pancerza. Wynik można zmodyfikować o ±1, gdzie z 1 można przejść do 2 lub 10, a z 10 do 9 lub 1."
+            },
+            {
+              "title": "uszkodzenia pancerza",
+              "content": "Jeżeli Marine otrzyma Obrażenia na tyle duże, że przekroczą wartość Pancerza w danej lokacji, cały pancerz zostaje przebity i nie jest liczony jako zahermetyzowany. Zwykle nałożenie @consumable{repairCement|cementu naprawczego} jest wystarczające by temu zaradzić, przynajmniej do czasu kiedy możliwe będzie wykonanie permanentnych napraw. Pancerze wspomagane Astartes korzystają z zamkniętych w opancerzonych plecakach generatorów fuzyjnych, które prawidłowo utrzymywane mogą zasilać pancerz przez nieograniczony okres czasu. Możliwe jest jednak uszkodzenie tego źródła energii, co ma szansę zmniejszyć efektywność całego układu, a nawet całkowicie go unieszkodliwić. Jeżeli noszący otrzyma Obrażenia Krytyczne na torsie zadane od tyłu, sprawdź tabelę @table{powerUnitCritical} dodatkowo do normalnej, by określić odpowiedni efekt krytyczny. Ewentualne problemy utrzymują się do czasu naprawienia źródła zasilania za pomocą Przeciętnego(+0) Testu Użycia Technologii."
+            }
+          ]
+        },
+        {
+          "displayName": "pancerz rzemieślniczy",
+          "name": "artificer",
+          "footnote": 0,
+          "armor": {
+            "general": 12
+          },
+          "weight": 100,
+          "requisition": "60@footnote{1}",
+          "renown": 4,
+          "content": [
+            "Pancerz rzemieślniczy, zadbany i dostosowywany pod każdego kolejnego Marine uznanego bycia godnym by go nosić, jest najrzadszą z form pancerzy wspomaganych. Technologia wykonania i ultragęste materiały użyte w celu wyprodukowania takiego kompletu nie ma sobie równych w całym Imperium. Każdy z nich jest arcydziełem rzemiosła, powierzanym w ręce jedynie prawdziwych bohaterów danego Zakonu (nie licząc Zbrojmistrzy, którzy w pocie czoła pracują nad swoimi własnymi). Pancerz rzemieślniczy jest zawsze Mistrzowsko Wykonany. Poza efektami charakterytycznymi dla zwykłego pancerza, taki komplet wyposażony jest również w @cybernetic{miu}. Niektóre z nich wykorzystują nawet rzadziej spotykane rozwiązania, takie jak samonaprawiające się adamantytowe sploty, które eliminują potrzebę wykorzystania cementu naprawczego przy większości uszkodzeń.",
+            "Do wykonania takiego pancerza potrzeba niezliczonych godzin w buchających płomieniami kuźniach Kosmicznych Marines. Unikalne inkrustacje, grawerunki i detale reprezentują wizję, która prowadziła jego twórcę przez tak monstrualne przedsięwzięcie, a jego Duch Maszyny promieniuje mądrością i mocą. By określić własności konkretnego egzemplarza rzuć dwukrotnie w tabeli @table{armorHistory}."
+          ]
+        },
+        {
+          "displayName": "pancerz zwiadowcy",
+          "name": "scout",
+          "armor": {
+            "arms": 6,
+            "body": 6
+          },
+          "weight": 30,
+          "requisition": null,
+          "renown": 0,
+          "content": [
+            "W większości Zakonów postępujących zgodnie z Kodeksem, Neofici Marines odsłużyć muszą najpierw w Dziesiątej Kompanii jako Zwiadowcy. Umieszczani są tam pod rozkazami doświadczonych sierżantów, którzy jednocześnie dowodzi drużyną i uczy Zwiadowców, co oznacza bycie Kosmicznym Marine. W tym czasie noszą oni lżejsze, mniej obciążające pancerze niż te używane przez pełnych Braci. Jest to wersja @armor{carapace|pancerza skorupowego}, która oferując pewną ochronę nadal jest lekka i znakomicie nadaje się do ukrywania się, zasadzek i rajdów.",
+            "Pancerz Zwiadowcy zapewnia premię +10 do Testów Ukrywania się, a także nie nakłada kary do Ukrywania się i Cichego Poruszania się związanej z opancerzeniem."
+          ]
+        },
         {
           "displayName": "taktyczny pancerz drednot (\"terminator\")",
           "name": "terminator",
@@ -2239,9 +3706,17 @@
             "general": 14
           },
           "weight": 400,
-          "requisition": 100,
+          "requisition": "100@footnote{2}",
           "renown": 3,
-          "content": []
+          "content": [
+            "Taktyczny Pancerz Drednot, częściej zwany Pancerzem Terminator, zmienia noszącego go Brata w niemal niemożliwą do zatrzymania siłę zniszczenia. Te niesamowicie rzadkie pancerze są najwyższą możliwą formą ochrony osobistej w arsenałach Marines i pozwalają jednemu Bratu na osiągnięcie siły ognia mogącej stawać w szranki z pojazdami bojowymi. Pancerza Terminator używa się jedynie na najniebezpieczniejszych misjach i powierza się je jedynie weteranom godnym noszenia Crux Terminatus - odznaczenia, którego większa wersja znajduje się na ramieniu każdego takiego pancerza. Mówi się, że zawiera on fragment pancerza, którego Imperator użył w ostatecznym starciu z arcyzdrajcą Horusem.",
+            "Pancerz Terminator zawiera wszystkie systemy właściwe zwykłemu pancerzowi wspomaganemu, a także kilka ulepszeń. Wzmocnione systemy stabilizacji i wspomagania ruchu umożliwiają użycie broni Ciężkich i Stałych w jednej ręce. Zapewnia to także cechę @trait{autoStabilized} i +30 do Krzepy zamiast normalnego +20. Autozmysły stanowią część sensorium, które ma te same możliwości co @tool{auspex}. Jeśli dwóch lub więcej Braci nosi takie pancerze, możliwości ich łączy zwiększają efektywny Poziom Drużyny o 1 do celów określania Zasięgu Wsparcia. Ciężkie płyty Pancerza Terminator odbić mogą trafienia nawet z najcięższej broni. Dodatkowo płyta orderu Crux Terminatux na ramieniu służy jako dodatkowa ochrona, która jest w stanie zatrzymać ciosy broni energetycznej, ogień z broni melta, a nawet energie Osnowy. Daje to ochronę równą Polu Siłowemu o Wartości Ochrony 35. Z racji na fakt, że efekt ten powodowany jest wyłącznie przez szansę na odbicie uderzenia przez najcięższe opancerzenie, nie ma ryzyka Przeciążenia. Rzuć również raz w tabeli @table{armorHistory}.",
+            "Ten masywny pancerz nie jest jednak pozbawiony pewnych ograniczeń. Terminator nie może @action{run|biegać}, noszący otrzymuje karę -20 do Zręczności, a także nie może @action{dodge|unikać} (ale wciąż jest w stanie @action{block|blokować}. Dodatkowo aby pancerz taki mógł prawidłowo trzymać, mierzyć i komunikować się z bronią, musi być ona przymocowana przy pomocy specjalnych sprzęgaczy. Uzbrajanie Pancerzy Taktycznych to pracochłonny święty rytuał, który może być wykonywany jedynie przez wysokich rangą Zbrojmistrzów z uwagi na potrzebę użycia bardzo konkretnych litanii, zapasów i innych sprzętów. Z tego powodu Terminatora nie można przezbroić w sytuacji bojowej. Niewiele jest broni, które posiadają odpowiednie łączniki; podczas Pobierania Bohater wydaje 60 punktów na sam pancerz i co najmniej 40 na jego uzbrojenie. Wybrana broń musi znajdować się na poniższej liście (nie istnieją ograniczenia dotyczące Wyposażenia i Ulepszeń).",
+            {
+              "title": "broń kompatybilna z terminatorem:",
+              "content": "@ranged{combi|bronie hybrydowe}, @melee{>power|energetyczne}, @melee{>force|psioniczne}, @ranged{stormBolter}, @field{stormShield}, @ranged{heavyFlamer}, @ranged{assaultCannon}, @ranged{cyclone}."
+            }
+          ]
         },
         {
           "displayName": "pancerz wspomagany mark x tacticus",
@@ -2257,7 +3732,7 @@
           "content": [
             {
               "title": "wzmocnione ceramitowe opancerzenie",
-              "content": "Pancerz Mark X Tacticus zapewnia nieco większą ochronę, niż poprzedni standardowy pancerz wspomagany Astartes — Mark VII Aquilla. Noszenie tego pancerza daje Bohaterowi 11 Punktów Pancerza na torsie i 9 w pozostałych lokacjach."
+              "content": "Pancerz Mark X Tacticus zapewnia nieco większą ochronę, niż poprzedni standardowy pancerz wspomagany Astartes — Mark VII Aquila. Noszenie tego pancerza daje Bohaterowi 11 Punktów Pancerza na torsie i 9 w pozostałych lokacjach."
             },
             {
               "title": "system modularny",
@@ -2356,9 +3831,1115 @@
               "content": "Przeznaczony do szturmów z wejściem z orbity i zapewniania ciężkiego wsparcia ogniowego, Omnis wyposażony jest w zintegrowany plecak skokowy, który umożliwia spowalnianie upadku, 12-metrowe skoki w dal lub ponad obiektami, a także lot przez około minutę, zanim zajdzie potrzeba schłodzenia turbin, a także w spadochron grawitacyjny, który umożliwia bezpieczne zejścia z wysokości do 120 kilometrów, precyzyjną kontrolę nad skokami, a także zawiśnięcie w miejscu przez około minutę. Koszt Wydania tego pancerza zawiera oba te urządzenia."
             }
           ]
+        },
+        {
+          "displayName": "prymitywny pancerz",
+          "name": "primitive",
+          "armor": "różne",
+          "weight": "różne",
+          "requisition": null,
+          "renown": null
+        },
+        {
+          "displayName": "pancerz skorupowy",
+          "name": "carapace",
+          "armor": {
+            "general": 6
+          },
+          "weight": 15,
+          "requisition": null,
+          "renown": 0
+        },
+        {
+          "displayName": "hełm diagnostor mk.VII",
+          "name": "diagnostorAquila",
+          "noDesc": true,
+          "armor": {
+            "head": 8
+          },
+          "weight": 30,
+          "requisition": 15,
+          "renown": 0
+        },
+        {
+          "displayName": "hełm diagnostor mk.X",
+          "name": "diagnostorTacticus",
+          "noDesc": true,
+          "armor": {
+            "head": 9
+          },
+          "weight": 40,
+          "requisition": 15,
+          "renown": 0
+        },
+        {
+          "displayName": "hełm diagnostor",
+          "name": "diagnostor",
+          "noTable": true,
+          "content": ""
+        },
+        {
+          "displayName": "ekran maskujący",
+          "name": "maskingScreen",
+          "weight": "+0,5",
+          "requisition": 25,
+          "renown": 2
+        },
+        {
+          "displayName": "pancerz flak",
+          "name": "flak",
+          "armor": {
+            "general": 4
+          },
+          "weight": 15,
+          "requisition": null,
+          "renown": 0
         }
+
+      ]
+    },
+    {
+      "name": "field",
+      "displayName": "pola siłowe",
+      "display": "both",
+      "table": {
+        "name": "nazwa",
+        "protectionRating": "wartość ochrony",
+        "overload": "przeciążenie",
+        "weight": "masa",
+        "requisition": "pobranie",
+        "renown": "sława"
+      },
+      "content": [
+        {
+          "displayName": "tarcza bojowa",
+          "name": "combatShield",
+          "protectionRating": 25,
+          "overload": 10,
+          "weight": 3,
+          "requisition": 20,
+          "renown": 2
+        },
+        {
+          "displayName": "tarcza szturmowa",
+          "name": "stormShield",
+          "protectionRating": 55,
+          "overload": 10,
+          "weight": 10,
+          "requisition": 35,
+          "renown": 2
+        },
+        {
+          "displayName": "żelazna aureola",
+          "name": "ironHalo",
+          "protectionRating": 50,
+          "overload": 1,
+          "weight": 0.5,
+          "requisition": 40,
+          "renown": 4
+        }
+      ]
+    },
+    {
+      "name": "relic",
+      "displayName": "relikty",
+      "display": "both",
+      "hasSubs": true,
+      "table": {
+        "name": "nazwa",
+        "class": "klasa",
+        "rof": "szybkostrzelność",
+        "damage": "obrażenia",
+        "penetration": "penetracja",
+        "clip": "magazynek",
+        "reload": "przeładowanie",
+        "qualities": "własności",
+        "weight": "masa",
+        "requisition": "pobranie",
+        "renown": "sława"
+      },
+      "footnotes": [
+        "Większa część profilu (do Własności) opisuje dołączony do zbroi miecz."
+      ],
+      "content": [
+        {
+          "name": "deathwatch",
+          "displayName": "relikty straży",
+          "display": "none",
+          "content": [
+            {
+              "name": "adamantineMantle",
+              "displayName": "adamantytowy płaszcz",
+              "reload": null,
+              "weight": 15,
+              "requisition": 50,
+              "renown": 4
+            },
+            {
+              "name": "relicBlade",
+              "displayName": "reliktowe ostrze straży",
+              "class": "melee",
+              "damage": {
+                "formula": "2k10+7",
+                "type": "energy"
+              },
+              "penetration": 9,
+              "reload": null,
+              "qualities": [
+                "powerField"
+              ],
+              "weight": 25,
+              "requisition": 50,
+              "renown": 4
+            },
+            {
+              "name": "skapulanBolter",
+              "displayName": "skapulański bolter",
+              "class": "basic",
+              "range": 120,
+              "rof": {
+                "single": true,
+                "burst": 2,
+                "auto":4
+              },
+              "damage": {
+                "formula": "3d10kh2+9",
+                "display": "2d10+9",
+                "type": "explosion"
+              },
+              "penetration": 7,
+              "clip": 28,
+              "reload": 1,
+              "qualities": [
+                "accurate",
+                "tearing"
+              ],
+              "weight": 16,
+              "requisition": 75,
+              "renown": 4
+            }
+          ]
+        },
+        {
+          "name": "chapter",
+          "displayName": "relikty zakonne",
+          "display": "none",
+          "content": [
+            {
+              "name": "remorselessCrusader",
+              "displayName": "pancerz bezwzględnego krzyżowca",
+              "footnote": 0,
+              "class": "melee",
+              "damage": {
+                "formula": "1k10+8",
+                "type": "rending"
+              },
+              "penetration": 6,
+              "reload": null,
+              "qualities": [
+                "sanctified"
+              ],
+              "weight": 110,
+              "requisition": 70,
+              "renown": 4
+            },
+            {
+              "name": "chaliceOfVision",
+              "displayName": "kielich wizji",
+              "reload": null, 
+              "weight": 5,
+              "requisition": 70,
+              "renown": 4
+            },
+            {
+              "name": "deathroar",
+              "displayName": "ryk śmierci",
+              "class": "pistol",
+              "range": 40,
+              "rof": {
+                "single": true
+              },
+              "damage": {
+                "formula": "2k10+13",
+                "type": "energy"
+              },
+              "penetration": 10,
+              "clip": 10,
+              "reload": 3,
+              "qualities": [
+                {
+                  "name": "blast",
+                  "value": 1
+                },
+                {
+                  "name": "felling",
+                  "value": 1
+                },
+                "volatile"
+              ],
+              "weight": 7,
+              "requisition": 70,
+              "renown": 4
+            },
+            {
+              "name": "frostBlade",
+              "displayName": "ostrze mrozu",
+              "class": "melee",
+              "damage": {
+                "formula": "2k10kh1+11",
+                "display": "1k10+11",
+                "type": "energy"
+              },
+              "penetration": 9,
+              "reload": null,
+              "qualities": [
+                "balanced",
+                "powerField",
+                "tearing"
+              ],
+              "weight": 10,
+              "requisition": 60,
+              "renown": 4
+            },
+            {
+              "name": "helmOfVarthion",
+              "displayName": "hełm varthiona",
+              "reload": null,
+              "weight": 18,
+              "requisition": 70,
+              "renown": 4
+            },
+            {
+              "name": "levinShield",
+              "displayName": "tarcza levińska",
+              "reload": null,
+              "weight": 10,
+              "requisition": 50,
+              "renown": 4
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "trapping",
+      "displayName": "pamiątki zakonne",
+      "display": "description",
+      "content": [
+        {
+          "name": "devotionChain",
+          "displayName": "łańcuch oddania",
+          "displayPost": "czarni templariusze"
+        },
+        {
+          "name": "tabard",
+          "displayName": "tabard",
+          "displayPost": "czarni templariusze"
+        },
+        {
+          "name": "bloodDrop",
+          "displayName": "amulet kropli krwi",
+          "displayPost": "krwawe anioły"
+        },
+        {
+          
+          "name": "goldenIcon",
+          "displayName": "złota ikona",
+          "displayPost": "krwawe anioły"
+        },
+        {
+          "name": "ceremonialSword",
+          "displayName": "miecz paradny",
+          "displayPost": "mroczne anioły"
+        },
+        {
+          "name": "robe",
+          "displayName": "szata",
+          "displayPost": "mroczne anioły"
+        },
+        {
+          "name": "wolfPelt",
+          "displayName": "wilcza skóra",
+          "displayPost": "kosmiczne wilki"
+        },
+        {
+          "name": "runicTotem",
+          "displayName": "totem runiczny",
+          "displayPost": "kosmiczne wilki"
+        },
+        {
+          "name": "sacrisClaymore",
+          "displayName": "claymore sacris",
+          "displayPost": "strażnicy burzy"
+        },
+        {
+          "name": "tempestAmulet",
+          "displayName": "amulet sztormu",
+          "displayPost": "strażnicy burzy"
+        },
+        {
+          "name": "cingulum",
+          "displayName": "cingulum",
+          "displayPost": "ultramarines"
+        },
+        {
+          "name": "heraldryScroll",
+          "displayName": "zwój herbowy",
+          "displayPost": "ultramarines"
+        }
+      ]
+    },
+    {
+      "name": "wargear",
+      "displayName": "sprzęt",
+      "display": "both",
+      "table": {
+        "name": "nazwa",
+        "weight": "masa",
+        "requisition": "pobranie",
+        "renown": "sława"
+      },
+      "content": [
+        {
+          "name": "harness",
+          "displayName": "uprząż",
+          "weight": 8,
+          "requisition": 4,
+          "renown": 0
+        },
+        {
+          "name": "jumpPack",
+          "displayName": "plecak skokowy",
+          "weight": 50,
+          "requisition": 15,
+          "renown": 0
+        },
+        {
+          "name": "psychicHood",
+          "displayName": "kaptur psioniczny",
+          "weight": 15,
+          "requisition": 25,
+          "renown": 2
+        },
+        {
+          "name": "backBanner",
+          "displayName": "sztandar",
+          "weight": 5,
+          "requisition": 15,
+          "renown": 0
+        },
+        {
+          "name": "charm",
+          "displayName": "talizman",
+          "requisition": 6,
+          "renown": 0
+        },
+        {
+          "name": "chrono",
+          "displayName": "chrono",
+          "requisition": 1,
+          "renown": 0
+        },
+        {
+          "name": "dilationField",
+          "displayName": "pole przyspieszające",
+          "weight": 1,
+          "requisition": 45,
+          "renown": 3
+        },
+        {
+          "name": "gravChute",
+          "displayName": "spadochron grawitacyjny",
+          "weight": 10,
+          "requisition": 8,
+          "renown": 0
+        }
+      ]
+    },
+    {
+      "name": "consumable",
+      "displayName": "zużywalne",
+      "display": "both",
+      "table": {
+        "name": "nazwa",
+        "weight": "masa",
+        "requisition": "pobranie",
+        "renown": "sława"
+      },
+      "footnotes": [
+        "Kosz Pobrania podany w celu oceny zapytań uznanych za \"nadmiarowe\"."
+      ],
+      "content": [
+        {
+          "name": "detox",
+          "displayName": "de-tox",
+          "requisition": 10,
+          "renown": 0
+        },
+        {
+          "name": "deadlock",
+          "displayName": "impas",
+          "displayPost": "toksyna",
+          "requisition": 10,
+          "renown": 0
+        },
+        {
+          "name": "delayAgent",
+          "displayName": "środek opóźniający",
+          "displayPost": "toksyna",
+          "requisition": 6,
+          "renown": 0
+        },
+        {
+          "name": "genophage",
+          "displayName": "genofag",
+          "displayPost": "toksyna",
+          "requisition": null,
+          "renown": 0
+        },
+        {
+          "name": "injector",
+          "displayName": "iniektor",
+          "requisition": 3,
+          "renown": 0
+        },
+        {
+          "name": "narthecium",
+          "displayName": "narthecium",
+          "weight": 5,
+          "requisition": 10,
+          "renown": 0
+        },
+        {
+          "name": "painSuppresant",
+          "displayName": "środek przeciwbólowy",
+          "requisition": 10,
+          "renown": 0
+        },
+        {
+          "name": "repairCement",
+          "displayName": "cement naprawczy",
+          "weight": 0.5,
+          "requisition": "1@footnote{0}",
+          "renown": 0
+        },
+        {
+          "name": "resuscitex",
+          "displayName": "resuscitex",
+          "requisition": 5,
+          "renown": 0
+        },
+        {
+          "name": "unguents",
+          "displayName": "święte maści",
+          "requisition": 20,
+          "renown": 0
+        }
+      ]
+    },
+    {
+      "name": "tool",
+      "displayName": "narzędzia",
+      "display": "both",
+      "table": {
+        "name": "nazwa",
+        "weight": "masa",
+        "requisition": "pobranie",
+        "renown": "sława"
+      },
+      "footnotes": [
+        "Kosz podany dla jednego klastra; każdy trzeba Pobrać osobno."
+      ],
+      "content": [
+        {
+          "name": "clusterMines",
+          "displayName": "miny klastrowe",
+          "weight": 4,
+          "requisition": "5@footnote{0}",
+          "renown": 0
+        },
+        {
+          "name": "signum",
+          "displayName": "signum",
+          "weight": 5,
+          "requisition": 35,
+          "renown": 2
+        },
+        {
+          "name": "signumLink",
+          "displayName": "łącze signum",
+          "weight": "+0,5",
+          "requisition": 20,
+          "renown": 0
+        },
+        {
+          "name": "targeter",
+          "displayName": "układ nawigacyjny",
+          "weight": 4,
+          "requisition": 25,
+          "renown": 2
+        },
+        {
+          "name": "auspex",
+          "displayName": "auspex",
+          "weight": 0.5,
+          "requisition": 12,
+          "renown": 0
+        },
+        {
+          "name": "cartograph",
+          "displayName": "kartogram",
+          "weight": 0.5,
+          "requisition": 5,
+          "renown": 0
+        },
+        {
+          "name": "codex",
+          "displayName": "codex astartes",
+          "weight": 0.5,
+          "renown": 0
+        },
+        {
+          "name": "combiTool",
+          "displayName": "narzędzie hybrydowe",
+          "weight": 1,
+          "requisition": 15,
+          "renown": 0
+        },
+        {
+          "name": "dataslate",
+          "displayName": "tablica danych",
+          "weight": 0.5,
+          "requisition": 5,
+          "renown": 0
+        },
+        {
+          "name": "demolitionCharges",
+          "displayName": "ładunki wybuchowe",
+          "weight": 1,
+          "requisition": 10,
+          "renown": 0
+        },
+        {
+          "name": "elucidator",
+          "displayName": "układ tłumaczący",
+          "weight": 1,
+          "requisition": 25,
+          "renown": 0
+        },
+        {
+          "name": "lamp",
+          "displayName": "lampa",
+          "weight": 0.5,
+          "requisition": 1,
+          "renown": 0
+        },
+        {
+          "name": "locus",
+          "displayName": "szukacz locus",
+          "requisition": 30,
+          "renown": 0
+        },
+        {
+          "name": "magnoculars",
+          "displayName": "lornetka",
+          "weight": 0.5,
+          "requisition": 3,
+          "renown": 0
+        },
+        {
+          "name": "meltaBomb",
+          "displayName": "bomba melta",
+          "weight": 12,
+          "requisition": 25,
+          "renown": 0
+        },
+        {
+          "name": "multikey",
+          "displayName": "multiklucz",
+          "requisition": 25,
+          "renown": 0
+        },
+        {
+          "name": "picter",
+          "displayName": "picter",
+          "weight": 1,
+          "requisition": 5,
+          "renown": 0
+        },
+        {
+          "name": "psyfocus",
+          "displayName": "ognisko psioniczne",
+          "requisition": 15,
+          "renown": 0
+        },
+        {
+          "name": "reductor",
+          "displayName": "reduktor",
+          "weight": 4,
+          "requisition": 8,
+          "renown": 0
+        },
+        {
+          "name": "restraints",
+          "displayName": "więzy",
+          "weight": 4,
+          "requisition": 10,
+          "renown": 0
+        },
+        {
+          "name": "screamer",
+          "displayName": "krzykacz",
+          "weight": 1.5,
+          "requisition": 5,
+          "renown": 0
+        },
+        {
+          "name": "stummer",
+          "displayName": "wytłumiacz",
+          "weight": 2,
+          "requisition": 5,
+          "renown": 0
+        },
+        {
+          "name": "teleportHomer",
+          "displayName": "naprowadzacz teleportacyjny",
+          "weight": 0,
+          "requisition": 10,
+          "renown": 0
+        },
+        {
+          "name": "voxcaster",
+          "displayName": "długodystansowy rozgłaszacz voxu",
+          "weight": 0.5,
+          "requisition": 10,
+          "renown": 0
+        }
+      ]
+    },
+    {
+      "name": "cybernetic",
+      "displayName": "implanty cybernetyczne",
+      "display": "both",
+      "table": {
+        "name": "nazwa",
+        "requisition": "pobranie",
+        "renown": "sława"
+      },
+      "content": [
+        {
+          "name": "servoarm",
+          "displayName": "serworamię",
+          "requisition": 30,
+          "renown": 0
+        },
+        {
+          "name": "servoharness",
+          "displayName": "serwouprząż",
+          "requisition": 50,
+          "renown": 3
+        },
+        {
+          "name": "auger",
+          "displayName": "zestaw auger",
+          "requisition": 15,
+          "renown": 0
+        },
+        {
+          "name": "bionicArm",
+          "displayName": "bioniczne ramię",
+          "requisition": 15,
+          "renown": 0
+        },
+        {
+          "name": "bionicHeart",
+          "displayName": "bioniczne serce",
+          "requisition": 15,
+          "renown": 0
+        },
+        {
+          "name": "bionicLocomotion",
+          "displayName": "bioniczny system ruchu",
+          "requisition": 15,
+          "renown": 0
+        },
+        {
+          "name": "bionicRespirator",
+          "displayName": "bioniczny układ oddechowy",
+          "requisition": 10,
+          "renown": 0
+        },
+        {
+          "name": "cyberSenses",
+          "displayName": "cybernetyczne zmysły",
+          "requisition": 15,
+          "renown": 0
+        },
+        {
+          "name": "miu",
+          "displayName": "interfejs MIU",
+          "requisition": 15,
+          "renown": 0
+        }
+      ]
+    },
+    {
+      "name": "action",
+      "displayName": "akcje",
+      "display": "both",
+      "table": {}
+    }
+  ],
+  "tables": [
+    {
+      "displayName": "efekty zagmatwania",
+      "name": "haywire",
+      "title": "siła pola",
+      "rollable": true,
+      "content": [
+        {
+          "range": {
+            "max": 20
+          },
+          "title": "nieistotne",
+          "content": "Nie da się zauważyć żadnej zmiany w zachowaniu pobliskiej technologii."
+        },
+        {
+          "range": {
+            "min": 21,
+            "max": 40
+          },
+          "title": "lekkie zakłócenie",
+          "content": "Wszystkie działania używające technologii, w tym korzystanie z nie-@quality{primitive|prymitywnej} broni, Testy Używania Technologii i wszystie fizycznie akcje wykonywane w pancerzwu wspomaganym lub przy użyciu cybernetycznych implantów wykonywane są z karą -10. Szybkość w pancerzu wspomaganym maleje o 1."
+        },
+        {
+          "range": {
+            "min": 41,
+            "max": 60
+          },
+          "title": "poważne zakłócenie",
+          "content": "Wszystkie działania używające technologii, w tym korzystanie z nie-@quality{primitive|prymitywnej} broni, Testy Używania Technologii i wszystie fizycznie akcje wykonywane w pancerzu wspomaganym lub przy użyciu cybernetycznych implantów wykonywane są z karą -20. Szybkość w pancerzu wspomaganym maleje o 3. Broń Biała używająca jakiejkolwiek zaawansowanej technologii działa jak broń Primitywna tego samego typu."
+        },
+        {
+          "range": {
+            "min": 61,
+            "max": 80
+          },
+          "title": "martwa strefa",
+          "content": "W zasięgu efektu technologia zupełnie przestaje działać. Pancerze wspomagane Tracą Zasilanie, jak w tabeli @table{powerUnitCritical}. Bohaterowie z jakimikolwiek cybernetycznymi zamiennikami organów wewnętrznych otrzymują jeden poziom Wyczerpania za każdą Rundę spędzoną w strefie zakłócenia. Broń Biała używająca jakiejkolwiek zaawansowanej technologii działa jak broń @quality{primitive} tego samego rodzaju."
+        },
+        {
+          "range": {
+            "min": 81
+          },
+          "title": "przedłużona martwa strefa",
+          "content": "Jak wyżej."
+        }
+      ]
+    },
+    {
+      "name": "armorHistory",
+      "displayName": "historia pancerza",
+      "title": "wynik",
+      "rollable": true,
+      "formula": "k10",
+      "content": [
+        {
+          "match": 1,
+          "title": "nie ukrywaj się przed wrogiem",
+          "content": "Ten pancerz nosi wiele znaków dumy, symboli heraldycznych i ozdobiony pasami, klejnotem na hełmie i sztandarami. Noszący go zawsze stoi dumnie, nie zważając na osłony czy potrzebę ukrycia się. Dodatkowo sam pancerz jak gdyby przeszkadza w takim ostrożnym postępowaniu, nakładając dodatkową karę -20 do wszystkich Testów Ukrywania się i Cichego Poruszania się (która jest doliczana do zwykłej kary za ciężkie opancerzenie) przez głośno poruszający się serwomotor, obijające się płyty, czy wypuszczenie ciepła z reaktora w najgorszym możliwym momencie. Z drugiej strony zapewnia premię +10 do Dowodzenia z powodu władczej, pełnej pewności siebie aury, którą roztacza wokół siebie noszący."
+        },
+        {
+          "match": 2,
+          "title": "nikt nie uniknie gniewu impertora",
+          "content": "Pancerz ten jest zamieszkiwany przez wysoko cenionego Ducha Wykrywania Celu Prześladowca, który cały czas szuka potencjalnych celów, wylicza dystanse, odchylenia i kąty, a także pasywnie zapisuje ich parametry, by później szybko móc wrócić do namierzania dowolnego z nich. Dokonuje on niemal niewyczuwalnych poprawek do ustawienia broni i jej szybkości prowadzenia ognia, a czasami nawet przewiduje ruchy noszącego. Wielu z początku walczy z tymi efektami, ale w końcu przyzwyczajają się do nich i uczą się z nimi współdziałać. Ta oczywista przewaga zapewnia premię +5 do US. Jednocześnie pancerz taki reaguje powoli na nieprzewidziane sytuacje, ponieważ nie toleruje zakłóceń w swoich precyzyjnych obliczeniach. Z tego powodu pancerz nakłada karę -10 do Uników przy walce w zwarciu."
+        },
+        {
+          "match": 3,
+          "title": "twe ramie będzie przekleństwem nieczystych",
+          "content": "Duch tego pancerza został przez długie lata swojej służby przekuty w prawdziwie niebezpiecznego przeciwnika i wzmocniony wieloma ulepszeniami wprowadzonymi jedynie w celi sprowadzania zniszczenia nieprzyjaciołom ludzkości we wspaniałej walce wręcz. Noszący go twierdzą, że jest w stanie przewidzieć ich intencje co do czasu i miejsca wyprowadzenia kolejnego ciosu i ufają mu w taki sam sposób jak jakżdemu ze swoich Braci. Pancerz taki zapewnia premię +5 do WW, jednak jego systemy celownicze są kapryśne i trudne do okiełznania. Z tego powodu podczas noszenia hełmu noszący otrzymuje karę -5 do US."
+        },
+        {
+          "match": 4,
+          "title": "śmierć to radość",
+          "content": "Niektórzy wojownicy wydają się wręcz stworzeni do zabijania. Pancerz ten podkreśla działania tego archetypu i choć wyprodukowany jest dość niedawno, nieprzeliczeni wrogowie nauczyli się już, że należy lękać się noszących ją Braci. Im dłużej wojownik nosi taki pancerz, tym bardziej staje się z nim jednością. Po jakimś czasie niszczenie wrogów ludzkości staje się tak łatwe i naturalne jak oddychanie. Każdy atak noszącego, który powoduje efekty krytyczne, zadaje dodatkowe 2 punkty Obrażeń, a dodatkowo każde trafienie przeciwko Hordzie zadaje jej dodatkowy 1 punkt Obrażeń do Rozmiaru."
+        },
+        {
+          "match": 5,
+          "title": "furia niczym piorun",
+          "content": "Czas reakcji AniołóW Śmierci jest znacznie lepszy niż cokolwiek, co mógłby osiągnąć normalny człowiek. Chociaż pancerze wspomagane już są cudem technologii, który nie spowalnia Braci w walce, ten egzemplarz dodaje jeszcze do ich naturalnej szybkości. Niesamowita szybkość i zakres ruchów jego stawów pozwala na zręczną manipulację ciężarem, a czujniki aktywności mięśni pozwalają na asystowanie w nawet najdrobniejszych poruszeniach. Systemy te zapewniają noszącemu premie +5 Zr i +1 do inicjatywy."
+        },
+        {
+          "match": 6,
+          "title": "twa siła niczym z legend",
+          "content": "Czysta fizyczna siła Astartes już jest legendarna, a każdy pancerz zwiększa ją jeszcze bardziej. Jednak ten egzemplarz czyni siłę noszącego naprawdę olbrzymią. Pancerze takie są źródłem opowieści o płonących pojazdach ściąganych z przygniecionych towarzyszy i rozpadających się budynkach podtrzymywanych przez jednego Brata. Noszący otrzymuje premię +10 K, która kumuluje się z normalną premią z pancerza wspomaganego. Wynikająca z niej premia do Siły jest dodawana po wzięciu pod uwagę @talent{unnaturalStrength|nienaturalnej krzepy}."
+        },
+        {
+          "match": 7,
+          "title": "strach twym przyjacielem",
+          "content": "Chociaż wszystkie komplety pancerza wspomaganego mogą zastraszać samą swoją obecnością, ten wydaje się wytwarzać aurę grożącą nieuniknioną przemocą. Jego rdzeń energetyczny czasami warczy tak, że można pomylić ten dźwięk z odgłosem wydawanym przez jakieś dzikie zwierzę. W walce dźwięk ten zmienia się w przerażające wycie, które paraliżuje zmożonych strachem przeciwników. Podjęto wiele prób wyjaśnienia tych zjawisk, ale Tech-Kapłanom nadal nie udało się uspokoić kapryśnej maszyny. Wielu noszących wzmacnia ten efekt dodając do pancerza przerażające relikwiarze i pisma głoszące potępienie, co jeszcze zwiększa działanie na duszach słabych wrogów. Noszący otrzymuje Cechę @trait{fear||1} przeciwko wrogom związanym z nim w walce wręcz lub zwiększa swój poziom Strachu o 1."
+        },
+        {
+          "match": 8,
+          "title": "prowadź z pierwszej linii",
+          "content": "Wszyscy ludzie potrzebują przywódców, a wszyscy przywódcy muszą być widziani i słyszani, żeby móc efektywnie działać. Liderzy Adeptus Astartes często działają w pierwszej linii ze swoimi podwładnymi i właśnie tacy wojownicy nosili w bitwach ten pancerz przez ostatnie stulecia. Jego wzmacniacze voxu grzmią głośno, a lśniące symbole zdają się na polu bitwy płonąć własnym blaskiem. Zaprawdę jest to niesamowity widok i na wielu planetach wzniesiono posągi dzielnych Braci, którzy nosili ten wspaniały artefakt i wrócili cało po bitwie. Dodaj +1 do Spójności Druzyny (premie z kilku pancerzy z tą historią kumulują się)."
+        },
+        {
+          "match": 9,
+          "title": "śmierć z daleka",
+          "content": "Ten pancerz, używany podczas wielkich oblężeń, przyzwyczaił się do noszenia ciężkiej broni. Nieważne, czy chodzi o tłumienie ciągłych, ostrych uderzeń, których wymaga utrzymanie ciężkiego boltera na celu, czy zapewnienie niesamowitej ilości energii, którą pochłania naładowany wystrzał z działa plazmowego, pancerz ten nigdy nie zawodzi pod obciążeniem. Noszący tę zbroję nie otrzymuje kar za poruszanie się podczas strzelania serią lub ogniem ciągłym. Dodatkowo w celu określenia tych kar może traktować broń Ciężką jako Zwykłą."
+        },
+        {
+          "match": 10,
+          "title": "zapomnieć znaczy przebaczyć. nie zapominaj",
+          "content": "Każdy kolejny brat, który nosił ten pancerz, wyrył na nim przysięgę zemsty na tych, którzy w jakiś sposób obrazili Imperatora. Niektóre zapisy zawierają pojedyncze imiona, a inne skazują całe rasy obcych czy populacje planet. Każdy noszący uznaje za sprawę honoru zemszczenie się w imieniu Imperatora na tak wielu z jeszcze nie ukaranych, jak to możliwe. Kiedy dany przestępca zostanie ukarany, jego miano zostaje na pancerzu jako przykład i ostrzeżenie dla innych. Otrzymujesz Talent @talent{hatred||wybierz jedno}."
+        }
+      ]
+    },
+    {
+      "name": "powerUnitCritical",
+      "displayName": "efekty krytyczne na jednostce zasilania",
+      "title": "wynik",
+      "content": [
+        {          
+          "pre": "1-3",
+          "title": "brak efektu",
+          "content": "Jednostka nadal działa normalnie."
+        },
+        {          
+          "pre": "4-5",
+          "title": "uszkodzony",
+          "content": "Przepływ energii jest utrudniony, co powoduje wyłączenie podsystemów i trudności w poruszaniu. Wszystkie korzyści zapewniane przez pancerz znikają (poza jego bazowymi Punktami Pancerza). Wszystkie fizyczne akcje wykonywane są z karą -10. Szybkość spada o 2."
+        },
+        {          
+          "pre": "6+",
+          "title": "utrata zasilania",
+          "content": "Pancerz całkowicie się wyłącza. Wszystkie korzyści zapewniane przez niego korzyści znikają (poza bazowymi Punktami Pancerza), nawet Historia. By choć się poruszyć, Bohater musi wykonać Niemożliwy(-40) Test Krzepy. Nawet jeżeli ten się powiedzie, Szybkość Bohatera nadal zmniejszona jest do 1, a wszystkie fizyczne akcje wykonywane są z karą -30."
+        }
+      ]
+    },
+    {
+      "name": "psychicPhenomena",
+      "displayName": "zjawiska psioniczne",
+      "title": "efekt",
+      "rollable": true,
+      "content": [
+        {
+          "range": {
+            "max": 3
+          },
+          "title": "mroczne przeczucie",
+          "content": "Lekki wiatr wieje wokół psykera i tych, którzy go otaczają; wszyscy mają przeczucie, że zaraz zdarzy się coś strasznego."
+        },
+        {
+          "range": {
+            "min": 4,
+            "max": 5
+          },
+          "title": "echo spaczni",
+          "content": "Przez kilka kolejnych sekund każdy odgłos wywołuje niepokojące echa."
+        },
+        {
+          "range": {
+            "min": 6,
+            "max": 8
+          },
+          "title": "piekielny smród",
+          "content": "Powietrze wokół psykera przenika dziwaczny nieprzyjemny zapach."
+        },
+        {
+          "range": {
+            "min": 9,
+            "max": 11
+          },
+          "title": "wypaczenie umysłu",
+          "content": "Psyker otrzymuje 1 Punkt Obłędu w powodu fobii, podejrzeń i nienawiści, które nagle wypływają na powierzchnię jego myśli w fali negatywnych emocji."
+        },
+        {
+          "range": {
+            "min": 12,
+            "max": 14
+          },
+          "title": "przymrozek",
+          "content": "Na moment temperatura znacznie spada, pokrywając cienką warstwą lodu wszystko w promieniu @dice{3k10} metrów od psykera."
+        },
+        {
+          "range": {
+            "min": 15,
+            "max": 17
+          },
+          "title": "aura spaczenia",
+          "content": "Wszystkie zwierzęta w promieniu @dice{1k100} metrów od psykera stają się niespokojne. Bohaterowie posiadający Wiedzę Psychiczną są w stanie wskazać psykera jako przyczynę tego zjawiska."
+        },
+        {
+          "range": {
+            "min": 18,
+            "max": 20
+          },
+          "title": "robak pamięci",
+          "content": "Wszyscy będący w stanie zobaczyć psykera zapominają o jakiejś prostej, nieznaczącej rzeczy."
+        },
+        {
+          "range": {
+            "min": 21,
+            "max": 23
+          },
+          "title": "zepsucie",
+          "content": "W promieniu @dice{5k10} metrów od psykera psują się jedzenie i napoje."
+        },
+        {
+          "range": {
+            "min": 24,
+            "max": 26
+          },
+          "title": "niepokojący wiatr",
+          "content": "Przez kilka sekund wokół psykera wieje silny wiatr, rzucając lekkimi przedmiotami i tłumiąc ognie w promieniu @dice{3k10} metrów."
+        },
+        {
+          "range": {
+            "min": 27,
+            "max": 29
+          },
+          "title": "osłona ciemności",
+          "content": "Przez krótką chwilę (efektywnie do końca Rundy) obszar w promieniu @dice{3k10} metrów od psykera zostaje pochłonięty przez całkowitą ciemność."
+        },
+        {
+          "range": {
+            "min": 30,
+            "max": 32
+          },
+          "title": "zniekształcone odbicia",
+          "content": "Lustra i inne podobne powierchnie w promieniu @dice{5k10} metrów od psykera zniekształcają się lub pękają."
+        },
+        {
+          "range": {
+            "min": 33,
+            "max": 35
+          },
+          "title": "kradzież oddechu",
+          "content": "Przez 1 Rundę psyker i wszyscy wokół niego tracą oddech na 1 Rundę i nie mogą @action{run|biegać} ani @action{charge|szarżować}."
+        },
+        {
+          "range": {
+            "min": 36,
+            "max": 38
+          },
+          "title": "demoniczna maska",
+          "content": "Przez krótką chwilę psyker przybiera wygląd demona, przez co do końca Rundy otrzymuje cechę @trait{fear||1}. Otrzymuje również 1 Punkt Spaczenia."
+        },
+        {
+          "range": {
+            "min": 39,
+            "max": 41
+          },
+          "title": "nienaturalny rozkład",
+          "content": "Wszystkie rośliny w promieniu @dice{3k10} od psykera więdną i giną."
+        },
+        {
+          "range": {
+            "min": 42,
+            "max": 44
+          },
+          "title": "widmowy powiew",
+          "content": "Wyjące wiatry zrywają się wokół psykera. Psyker i wszyscy w promieniu @dice{4k10} muszą wykonać Bardzo Łatwy(+30) Test Zręczności lub Krzepy, by uniknąć zostania przewróconym."
+        },
+        {
+          "range": {
+            "min": 45,
+            "max": 47
+          },
+          "title": "krwawe łzy",
+          "content": "Krew sączy się z kamienia i drewna w promieniu @dice{3k10} metrów od psykera. Jeżeli w tym obszarze są jakiekolwiek obrazy przedstawiające ludzi, wydają się oni ronić krwawe łzy."
+        },
+        {
+          "range": {
+            "min": 48,
+            "max": 50
+          },
+          "title": "ziemia protestuje",
+          "content": "Podłoże gwałtownie się trzęsie i wszyscy (włączając psykera) w promieniu @dice{5k10} od psykera muszą wykonać Prosty(+10) Test Zręczności by uniknąć przewrócenia się."
+        },
+        {
+          "range": {
+            "min": 51,
+            "max": 53
+          },
+          "title": "wyładowanie psioniczne",
+          "content": "Elektryczność wypełnia powietrze w promieniu @dice{5k10} od psykera, przez co włosy stają dęba, a niechronione urządzenia elektryczne wyłączają się. Psyker jest oświetlany przez widmowe światło."
+        },
+        {
+          "range": {
+            "min": 54,
+            "max": 56
+          },
+          "title": "duchy osnowy",
+          "content": "Podobne duchom manifestacje pojawiają się w promieniu @dice{3k10} metrów od psykera, latając i wyjąc z bólu przez krótką chwilę. Wszyscy w tym obszarze muszą wykonać Test przeciwko @trait{fear|strachowi|1}."
+        },
+        {
+          "range": {
+            "min": 57,
+            "max": 59
+          },
+          "title": "spadanie w górę",
+          "content": "Wszystko w promieniu @dice{2k10} metrów od psykera (włączając jego samego) unoszą się @dice{1k10} metrów w górę, gdy grawitacja na chwilę przestaje działać. Po sekundzie czy dwóch wszystko spada znów na ziemię."
+        },
+        {
+          "range": {
+            "min": 60,
+            "max": 62
+          },
+          "title": "wycie banshee",
+          "content": "Upiorne wycie rozlega się w pobliskim otoczeniu, tłukąc szkło i zmuszając każdą śmiertelną istotę, która może je usłyszeć do wykonania Przeciętnego(+0) Testu Odporności - porażka oznacza głuchotę przez @dice{1k10} Rund."
+        },
+        {
+          "range": {
+            "min": 63,
+            "max": 65
+          },
+          "title": "furie",
+          "content": "Psyker atakowany jest przez niemożliwe do zobaczenia siły, które ciskają nim o ziemię powodując @dice{1k5} Obrażeń (Wytrzymałość redukuje te Obrażenia, natomiast niepoświęcony pancerz nie). Dodatkowo psyker musi wykonać Test w celu uniknięcia @trait{fear|strachu|2}."
+        },
+        {
+          "range": {
+            "min": 66,
+            "max": 68
+          },
+          "title": "cień spaczni",
+          "content": "Przez ułamek sekundy świat zmienia swój wygląd i wszyscy w promieniu @dice{1k100} metrów od psykera jest w stanie wejrzeć (szczęśliwie tylko przez mgnienie oka) w Spacznię. Każdy w zasięgu efektu musi wykonać Wymagający(-10) Test Siły Woli. Nieudany powoduje zyskanie @dice{1k5} Punktów Obłędu."
+        },
+        {
+          "range": {
+            "min": 69,
+            "max": 71
+          },
+          "title": "pogarda technologii",
+          "content": "Duchy maszyny odrzucają nienaturalną egzystencję psykera. Wszystkie niepoświęcone urządzenia w promieniu @dice{5k10} metrów od psykera na moment przestają działać. Wszystkie bronie dystansowe na tym obszarze Zacinają się. Bohaterowie posiadający implanty cybernetyczne muszą wykonać Prosty(+10) Test Odporności, którego porażka oznacza otrzymanie @dice{1k5} Obrażeń."
+        },
+        {
+          "range": {
+            "min": 72,
+            "max": 74
+          },
+          "title": "obłęd spaczni",
+          "content": "Gwałtowna fala spaczonej energii powoduje, że wszystkie stworzenia w promieniu @dice{2k10} metrów od psykera (wyłączając jego samego) zyskują efekty @talent{frenzy|szału} na 1 Rundę. Każdy będący pod wpływem tego efektu musi wykonać Wymagający(-10) Test Siły Woli, którego porażka oznacza otrzymanie @dice{1k5} Punktów Obłędu."
+        },
+        {
+          "range": {
+            "min": 75
+          },
+          "title": "niebezpieczeństwa osnowy",
+          "content": "Osnowa na danym obszarze rozrywana jest przez gwałtowną burzę energii. Wykonaj rzut w tabeli @table{perilsOfTheWarp}."
+        }
+      ]
+    },
+    {
+      "name": "perilsOfTheWarp",
+      "displayName": "niebezpieczeństwa osnowy",
+      "rollable": true,
+      "title": "Efekt",
+      "content": [
+        
       ]
     }
   ]
-
 }
