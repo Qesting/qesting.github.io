@@ -44,5 +44,9 @@ main {
 }
 
 main:has(h1) {
-    @apply !justify-center;
+    @apply !justify-center items-center;
+}
+
+img {
+    @apply rounded-md;
 }

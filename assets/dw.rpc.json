@@ -1633,7 +1633,7 @@
               "weight": 17,
               "requisition": 15,
               "renown": 1,
-              "content": "Karabin typu Stalker najlepiej pokazuje, na co go stać, kiedy użyty jest w połączeniu z @ammo{stalker|amunicją stalker}, ale zawsze jest efektywną bronią snajperską. Znacząco wygłusza odgłos wystrzału, nie wytwarza także płomienia wylotowego. Testy Spostrzegawczości wykonywane w celu usłyszenia wystrzału z karabinu Stalker otrzymują dodatkową karę -30 i można spróbować je wykonać dopiero w połowie normalnej odległości."
+              "content": "Karabin typu Stalker najlepiej pokazuje, na co go stać, kiedy użyty jest w połączeniu z @specialammo{stalker|amunicją stalker}, ale zawsze jest efektywną bronią snajperską. Znacząco wygłusza odgłos wystrzału, nie wytwarza także płomienia wylotowego. Testy Spostrzegawczości wykonywane w celu usłyszenia wystrzału z karabinu Stalker otrzymują dodatkową karę -30 i można spróbować je wykonać dopiero w połowie normalnej odległości."
             },
             {
               "displayName": "broń hybrydowa",

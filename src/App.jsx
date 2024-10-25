@@ -79,7 +79,7 @@ function App() {
       <StateFunctionsContext.Provider value={stateFunctions}>
         <Navbar/>
         <div className="fixed top-20 bottom-0 left-0 right-0 overflow-y-scroll bg-inherit flex flex-col">
-          <main className="py-4 px-2 flex flex-col items-center flex-grow">
+          <main className="py-4 px-2 flex flex-col flex-grow">
               {
                 section ? (
                   <Section data={section} key={currentSection}/>
