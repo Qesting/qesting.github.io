@@ -7,10 +7,10 @@ import { Table as BIconTable, Github as BIconGithub, MoonFill as BIconMoonFill, 
 
 export default function Navbar() {
     const data = useContext(JsonData).sections;
-    const { setDarkMode, setTableVisibility } = useContext(StateFunctionsContext);
+    const { setDarkMode, setTableVisibility, setCurrentSection } = useContext(StateFunctionsContext);
     return (
         <nav className="h-20 w-full top-0 left-0 right-0 fixed bg-gray-100 dark:bg-gray-900 border-b-2 border-solid border-current z-20 flex flex-row flex-wrap-nowrap items-center p-2">
-            <div className="text-2xl">Deathwatch RPG - Kompendium</div>
+            <button className="text-2xl" onClick={() => setCurrentSection('')}>Deathwatch RPG - Kompendium</button>
             <div className="w-content h-20 pt-6 mx-10">
                 <AccordionDepthContext.Provider value={0}>
                     <Accordion title="kategorie" items={data}/>

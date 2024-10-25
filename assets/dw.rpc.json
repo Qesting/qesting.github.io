@@ -1,5 +1,5 @@
 {
-  "schema": "https://raw.githubusercontent.com/Qesting/qesting.github.io/refs/heads/main/assets/dw.schema.json",
+  "$schema": "https://raw.githubusercontent.com/Qesting/qesting.github.io/refs/heads/main/assets/dw.schema.json",
   "sections": [
     {
       "name": "implant",
@@ -327,7 +327,7 @@
           "name": "deathFromAbove",
           "displayName": "śmierć z niebios",
           "prerequsite": "Astartes, Pilotaż(Osobiste)",
-          "shortDesc": "Zwiększa Obrażenia przy @action{charge|szarży} lub desancie przy użyciu @item{jumPack|plecaka skokowego}."
+          "shortDesc": "Zwiększa Obrażenia przy @action{charge|szarży} lub desancie przy użyciu @wargear{jumpPack|plecaka skokowego}."
         },
         {
           "name": "deathwatchTraining",
@@ -1071,6 +1071,26 @@
           "displayName": "wir śmierci",
           "prerequsite": "Astartes",
           "shortDesc": "Bohater zadaje Hordom dodatkowe Obrażenia w walce wręcz."
+        },
+        {
+          "name": "astartesSquadTraining",
+          "displayName": "trening jednostek astartes",
+          "prerequsite": "Astartes",
+          "footnote": 0,
+          "noGrid": true,
+          "shortDesc": "Bohater szczególnie długo służył w jednostce konkretnego rodzaju i przyswoił sobie jej techniki walki.",
+          "content": [
+            "Kosmiczni Marines wewnątrz każdego Zakonu dzielą się na jednostki o konkretnych strategiach i uzbrojeniu, zajmujące się określonymi zadaniami. Chociaż służba w Straży Śmierci wymaga dużo większej elastyczności taktycznej, Bohater szczególnie przyswoił sobie metody prowadzenia wojny przez jeden rodzaj jednostek.",
+            "Chociaż ten opis dotyczy grupy talentów, każdy Bohater może posiadać tylko jeden Talent z tej grupy.",
+            {
+              "title": "Agresor",
+              "content": "Agresorzy na polu bitwy są chodzącymi górami ceramitu, zakutymi w ciężkie pancerze @armor{gravis|gravis}. Zajmują się prowadzeniem szturmów z bliskiej odległości, gdzie miażdżącą szarżę rozbijającą ciężko opancerzone pojazdy przy użyciu wariantów Pięści Energetycznych poprzedza burza ognia - czasami dosłownego - z ich specjalnej broni. Bohater będący Agresorem jest w stanie wypożyczyć rękawice @melee{boltstorm|boltstorm} i @melee{flamestorm|flamestorm} już na poziomie Szanowanym. Dodatkowo podczas @action{charge|szarży} może zamienić atak na wbicie się w przeciwnika całą swoją masą, co powoduje Przeciwstawny Test Krzepy (Bohater wykonuje go z premią +10). Wygrany Test odrzuca przeciwnika na odległość związaną z jego @trait{size|rozmiarem}; Mały i mniejszy na @dice{1k10} metrów, Zwykły na @dice{1k5} metrów, a Wielki na @dice{1k2} metrów. Przeciwnicy Ogromni i Masywni odporni są na tę umiejętność."
+            },
+            {
+              "title": "Supresor",
+              "content": "Supresorzy to mistrzowie długodystansowego ognia przeciwpancernego. Zakuci są w ciężkie pancerze @armor{omnis|omnis}, które jednak noszą dla potężniejszego wspomagania przy prowadzeniu ognia i dodatkowych systemów wspomagających desant orbitalny. Kiedy już cel, zasypany ogniem z szybkostrzelnych @ranged{accelerator|działek przyspieszających}, zmieni się w nie więcej niż kupę dymiącego żelastwa, zajmują szybko dogodne pozycje do ostrzelania innego miejsca dzięki wbudowanym w pancerz Spadochronom Grawitacyjnym i potężnym Plecakom Skokowym. Bohater będący Supresorem zwiększa o jeden stopień swoją Umiejętność Pilotaż(Osobiste), a także może jako Akcję Darmową na początku swojej Tury wykonać skok przy użyciu plecaka z uwagi na swoje doświadczenie w szybkim zmienianiu pozycji ostrzału. Skok taki nakłada jednak karę -10 do Umiejętności Strzeleckich. Supresor może również strzelać w trakcie skoku z karą -20."
+            }
+          ]
         }
       ]
     },
@@ -2973,6 +2993,52 @@
               "requisition": "30@footnote{1}",
               "renown": 2,
               "content": "Dzierżony zwykle przez Zbrojmistrzów, którzy chcą pokazać swoją wiarę w Omnizjasza. Broń ta ma długie drzewce podobne do laski, na którego końcu znajduje się żeleźce w formie połowy koła zębatego i czaszki, które stanowią symbol Adeptus Mechanicus. Symbol ten tworzy ostrze otoczone polem energetycznym, którego wyładowania skaczą po metalu, rozświetlając oczy czaszki niepokojącym błyskiem, co nie pozostawia wątpliwości, iż broń ta - choć pokryta zdobieniami w formie mikro-obwodów, które jasno wskazują na jej świętość dla Wyznawców Maszyny - jest śmiertelnie niebezpieczna w odpowiednich rękach. Topór ten działa również jako @tool{combiTool}."
+            },
+            {
+              "displayName": "rękawica boltstorm",
+              "name": "boltstorm",
+              "class": "melee",
+              "damage": {
+                "formula": "2k10",
+                "type": "energy",
+                "footnote": 0
+              },
+              "penetration": 9,
+              "qualities": [
+                "powerField",
+                "unwieldy"
+              ],
+              "weight": 40,
+              "requisition": "35/50",
+              "renown": 2,
+              "content": [
+                "Rękawica taka, projektu Belisariusa Cawla, odpowiada na długo istniejący problem używania broni dystansowej z pięściami energetycznymi przez wbudowanie w rękawicę boltera zasilanego z krótkiej taśmy. Chociaż trzeba się nieźle wysilić, aby wycelować w taki sposób na dystans dłuższy niż kilka metrów, uniwersalność uczyniła ją jedną z ulubionych broni Agresorów Primaris.",
+                "Wbudowany bolter ma taki sam profil jak @ranged{bolter|bolter} z następującymi zmianami: Magazynek mieści 20 sztuk amunicji, a Zasięg wynosi 30 metrów. Przy Pobraniu dwóch sztuk, koszt drugiej maleje do 15. Można mieszać z @melee{flamestorm|rękawicą flamestorm}. Bohater używający rękawic, pięści energetycznych, łańcuchowych, czy szponów na obu rękach nie może przeładować broni samodzielnie.",
+                "Rękawica Boltstorm dodaje mnożnik do Siły użytkownika (każdy Kosmiczny Marine posiada mnożnik Nienaturalnej Siły, więc broń ta po prostu zwiększa go o 1). Jest ona montowana zamiast normalnej rękawicy w pancerzu wspomaganym i nakłada te same ograniczenia co @melee{lightningClaw}."
+              ]
+            },
+            {
+              "displayName": "rękawica flamestorm",
+              "name": "flamestorm",
+              "class": "melee",
+              "damage": {
+                "formula": "2k10",
+                "type": "energy",
+                "footnote": 0
+              },
+              "penetration": 9,
+              "qualities": [
+                "powerField",
+                "unwieldy"
+              ],
+              "weight": 40,
+              "requisition": "35/50",
+              "renown": 2,
+              "content": [
+                "Druga z używanych przez Agresorów Primaris rękawic, ta poszczycić się może lepszymi osiągami w wybijaniu dużych grup słabych przeciwników i zagradzaniu dróg dzięki zamienieniu boltera na miotacz.",
+                "Wbudowany miotacz ma taki sam profil jak @ranged{flamer} z następującymi zmianami: Magazynek mieści wystarczająco paliwa na 4 strzały, a Zasięg wynosi 15 metrów. Przy Pobraniu dwóch sztuk, koszt drugiej maleje do 15. Można mieszać z @melee{boltstorm|rękawicą boltstorm}. Bohater używający rękawic, pięści energetycznych, łańcuchowych, czy szponów na obu rękach nie może przeładować broni samodzielnie.",
+                "Rękawica Flamestorm dodaje mnożnik do Siły użytkownika (każdy Kosmiczny Marine posiada mnożnik Nienaturalnej Siły, więc broń ta po prostu zwiększa go o 1). Jest ona montowana zamiast normalnej rękawicy w pancerzu wspomaganym i nakłada te same ograniczenia co @melee{lightningClaw}."
+              ]
             }
           ]
         },
@@ -2981,7 +3047,7 @@
           "name": "force",
           "display": "none",
           "content": [
-            "Obwody siatki psionicznej w tych broniach podobno zostały stworzone przez samego Imperatora w czasach, kiedy jeszcze chodził między śmiertelnikami. Uzbrojenie takie łączy te obwody z psychoreaktywnymi kryształami używanymi w @armor{psychicHood|kapturach psionicznych}, dzięki czemu użytkownik może skupić swoją mentalną moc w pole podobne do tego wytwarzanego przez broń energetyczną. Bron psioniczna przybiera wiele form o różnym stopniu wyspecjalizowania; najbardziej znaną są bronie Nemesis używane przez Szarych Rycerzy. Najłatwiej Kronikarzowi jest zdobyć psioniczny miecz lub kostur.",
+            "Obwody siatki psionicznej w tych broniach podobno zostały stworzone przez samego Imperatora w czasach, kiedy jeszcze chodził między śmiertelnikami. Uzbrojenie takie łączy te obwody z psychoreaktywnymi kryształami używanymi w @wargear{psychicHood|kapturach psionicznych}, dzięki czemu użytkownik może skupić swoją mentalną moc w pole podobne do tego wytwarzanego przez broń energetyczną. Bron psioniczna przybiera wiele form o różnym stopniu wyspecjalizowania; najbardziej znaną są bronie Nemesis używane przez Szarych Rycerzy. Najłatwiej Kronikarzowi jest zdobyć psioniczny miecz lub kostur.",
             "Jeżeli broń taka użyta jest przez osobę niebędącą psykerem, liczy się ona jako Zwykła broń wykonana dla rozmiaru Astartes i stosuje się do wszystkich zasad znajdujących się w profilu. Natomiast w rękach kogokolwiek posiadającego Siłę Psychiczną staje się dużo bardziej niebezpieczna. Za każdy punkt Siły Psychicznej Obrażenia i Penetracja broni rosną o 1. Na przykład miecz psioniczny używany przez psykera z SP 3 zadawałby @dice{1k10+5} (plus Siła} Obrażeń z Penetracją 5.",
             "Dodatkowo za każdym razem, kiedy psyker wyposażony w taką broń zada komuś Obrażenia za jej pomocą, może jako Akcja Darmowa skupić swoją moc i żądzę mordu w ostrzu, czy innej części używanej do uderzenia. Wymaga to testu Skupienia używającego przeciwstawnej Siły Woli. Za każdy Stopień Sukcesu użytkownik zadaje dodatkowe @dice{1k10} Obrażeń, które ignorują Pancerz i Wytrzymałość. Broń psioniczna nie może być zniszczona przez pole energetyczne.",
             {
@@ -3607,7 +3673,7 @@
             },
             {
               "title": "zwiększona siła",
-              "content": "Zwiększa Krzepę Brata o +20. Wynikająca z tego premia do Siły jest dodawana po uwzględnieniu @talent{unnaturalStrength|nienaturalnej siły}."
+              "content": "Zwiększa Krzepę Brata o +20. Wynikająca z tego premia do Siły jest dodawana po uwzględnieniu @trait{unnaturalStrength|nienaturalnej siły}."
             },
             {
               "title": "autozmysły",
@@ -4255,7 +4321,7 @@
         "renown": "sława"
       },
       "footnotes": [
-        "Kosz Pobrania podany w celu oceny zapytań uznanych za \"nadmiarowe\"."
+        "Koszt Pobrania podany w celu oceny zapytań uznanych za \"nadmiarowe\"."
       ],
       "content": [
         {
@@ -4336,7 +4402,7 @@
         "renown": "sława"
       },
       "footnotes": [
-        "Kosz podany dla jednego klastra; każdy trzeba Pobrać osobno."
+        "Koszt podany dla jednego klastra; każdy trzeba Pobrać osobno."
       ],
       "content": [
         {
@@ -4575,7 +4641,318 @@
       "name": "action",
       "displayName": "akcje",
       "display": "both",
-      "table": {}
+      "table": {
+        "name": "akcja",
+        "type": "typ",
+        "subtype": "podtyp",
+        "shortDesc": "opis"
+      },
+      "content": [
+        {
+          "name": "aim",
+          "displayName": "wycelowanie",
+          "type": "pojedyncza/podwójna",
+          "subtype": [
+            "koncentracja"
+          ],
+          "shortDesc": "Jako Akcja Pojedyncza +10 do trafienia, jako Podwójna +20 lub pozwala wymierzyć w konkretną lokację."
+        },
+        {
+          "name": "allOutAttack",
+          "displayName": "szaleńczy atak",
+          "type": "podwójna",
+          "subtype": [
+            "atak",
+            "wręcz"
+          ],
+          "shortDesc": "+20 do WW, ale nie można @action{dodge|unikać} ani @action{parry|parować}."
+        },
+        {
+          "name": "brace",
+          "displayName": "przygotowanie ciężkiej broni",
+          "type": "pojedyncza",
+          "subtype": [
+            "różne"
+          ],
+          "shortDesc": "Pozwala przygotować się do strzelania z broni Ciężkiej."
+        },
+        {
+          "name": "calledShot",
+          "displayName": "mierzony strzał",
+          "type": "podwójna",
+          "subtype": [
+            "atak",
+            "koncentracja",
+            "wręcz",
+            "dystansowe"
+          ],
+          "shortDesc": "Pozwala wykonać atak wymierzony w konkretną lokację z karą -20 do WW lub US."
+        },
+        {
+          "name": "charge",
+          "displayName": "szarża",
+          "type": "podwójna",
+          "subtype": [
+            "atak",
+            "wręcz",
+            "ruch"
+          ],
+          "shortDesc": "Ruch o co najmniej 4 metry, +10 do WW."
+        },
+        {
+          "name": "defensiveStance",
+          "displayName": "pozycja defensywna",
+          "type": "podwójna",
+          "subtype": [
+            "koncentracja",
+            "wręcz"
+          ],
+          "shortDesc": "Pozwala użyć dodatkowej Reakcji, wrogowie wykonują ataki z karą -20 do WW."
+        },
+        {
+          "name": "delay",
+          "displayName": "opóźnienie",
+          "type": "pojedyncze",
+          "subtype": [
+            "różne"
+          ],
+          "shortDesc": "Przed początkiem swojej następnej Tury Bohater może wykonać dowolną Akcję Pojedynczą."
+        },
+        {
+          "name": "disengage",
+          "displayName": "odwrót",
+          "type": "podwójna",
+          "subtype": [
+            "ruch"
+          ],
+          "shortDesc": "Pozwala wycofać się z walki wręcz i wykonać ruch."
+        },
+        {
+          "name": "dodge",
+          "displayName": "unik",
+          "type": "reakcja",
+          "subtype": [
+            "różne"
+          ],
+          "shortDesc": "Pozwala wykonać Test Uniku, by zanegować trafienie."
+        },
+        {
+          "name": "feint",
+          "displayName": "finta",
+          "type": "pojedyncza",
+          "subtype": [
+            "atak",
+            "wręcz"
+          ],
+          "shortDesc": "Pozwala wykonać Przeciwstawny Test WW, jeżeli Bohater wygra, jego następnego ataku nie można @action{dodge|uniknąć} ani @action{parry|sparować}."
+        },
+        {
+          "name": "focusPower",
+          "displayName": "ogniskowanie mocy",
+          "type": "różne",
+          "subtype": [
+            "koncentracja"
+          ],
+          "shortDesc": "Pozwala użyć @power{<|mocy psionicznej}."
+        },
+        {
+          "name": "fullAuto",
+          "displayName": "ogień ciągły",
+          "type": "podwójna",
+          "subtype": [
+            "atak",
+            "dystansowe"
+          ],
+          "shortDesc": "+20 US, każdy Stopień Sukcesu to dodatkowe trafienie."
+        },
+        {
+          "name": "grapple",
+          "displayName": "chwyt",
+          "type": "pojedyncza/podwójna",
+          "subtype": [
+            "atak",
+            "wręcz"
+          ],
+          "shortDesc": "Pozwala wywrzeć wpływ na Pochwyconego wroga bądź przerwać chwyt."
+        },
+        {
+          "name": "guardedAttack",
+          "displayName": "ostrożny atak",
+          "type": "podwójna",
+          "subtype": [
+            "atak",
+            "koncentracja",
+            "wręcz"
+          ],
+          "shortDesc": "-10 WW, +10 do @action{parry|parowania} i @action{dodge|uników}."
+        },
+        {
+          "name": "jump",
+          "displayName": "skok",
+          "type": "podwójna",
+          "subtype": [
+            "ruch"
+          ],
+          "shortDesc": "Pozwala skoczyć wzwyż lub w dal."
+        },
+        {
+          "name": "knockDown",
+          "displayName": "przewrócenie",
+          "type": "pojedyncza",
+          "subtype": [
+            "atak",
+            "wręcz"
+          ],
+          "shortDesc": "Pozwala przewrócić przeciwnika na ziemię."
+        },
+        {
+          "name": "maneuver",
+          "displayName": "manewr",
+          "type": "pojedyncza",
+          "subtype": [
+            "atak",
+            "wręcz",
+            "ruch"
+          ],
+          "shortDesc": "Pozwala wykonać Przeciwstawny Test WW. Jeżeli Bohater wygra, przeciwnik zostaje przesunięty o 1 metr."
+        },
+        {
+          "name": "move",
+          "displayName": "ruch",
+          "type": "pojedyncza/podwójna",
+          "subtype": [
+            "ruch"
+          ],
+          "shortDesc": "Pozwala poruszyć się Sz metrów jako Akcję Pojedynczą lub 2xSz metrów jako Akcję Podwójną."
+        },
+        {
+          "name": "multipleAttacks",
+          "displayName": "atak wielokrotny",
+          "type": "podwójna",
+          "subtype": [
+            "atak",
+            "wręcz",
+            "dystansowe"
+          ],
+          "shortDesc": "Pozwala użyć kilku ataków zapewnianych przez @talent{swiftAttack} lub @talent{lightningAttack}."
+        },
+        {
+          "name": "overwatch",
+          "displayName": "warta",
+          "type": "podwójna",
+          "subtype": [
+            "atak",
+            "koncentracja",
+            "dystansowe"
+          ],
+          "shortDesc": "Pozwala automatycznie strzelać do celów wchodzących w ustaloną strefę. -20 US."
+        },
+        {
+          "name": "parry",
+          "displayName": "parowanie",
+          "type": "reakcja",
+          "subtype": [
+            "wręcz"
+          ],
+          "shortDesc": "Pozwala wykonać Test WW by zanegować trafienie."
+        },
+        {
+          "name": "ready",
+          "displayName": "dobycie",
+          "type": "pojedyncza",
+          "subtype": [
+            "różne"
+          ],
+          "shortDesc": "Pozwala dobyć broni lub wyciągnąć przedmiot."
+        },
+        {
+          "name": "reload",
+          "displayName": "przeładowanie",
+          "type": "różne",
+          "subtype": [
+            "różne"
+          ],
+          "shortDesc": "Pozwala przeładować broń dystansową."
+        },
+        {
+          "name": "run",
+          "displayName": "bieg",
+          "type": "podwójna",
+          "subtype": [
+            "ruch"
+          ],
+          "shortDesc": "Pozwala poruszyć się o 3xSz. Wrogowie atakują z -20 US i +20 WW."
+        },
+        {
+          "name": "semiAuto",
+          "displayName": "ogień serią",
+          "type": "podwójna",
+          "subtype": [
+            "atak",
+            "dystansowe"
+          ],
+          "shortDesc": "+10 US, dodatkowe trafienie za każde dwa Stopnie Sukcesu."
+        },
+        {
+          "name": "stand",
+          "displayName": "wstań/dosiądź",
+          "type": "pojedyncza",
+          "subtype": [
+            "ruch"
+          ],
+          "shortDesc": "Pozwala wstać, dosiąść wierzchowca, lub wsiąść do pojazdu."
+        },
+        {
+          "name": "standardAttack",
+          "displayName": "atak",
+          "type": "pojedyncza",
+          "subtype": [
+            "atak",
+            "wręcz",
+            "dystansowe"
+          ],
+          "shortDesc": "Pozwala wykonać jeden atak wręcz lub dystansowy."
+        },
+        {
+          "name": "stun",
+          "displayName": "ogłuszenie",
+          "type": "podwójna",
+          "subtype": [
+            "atak",
+            "wręcz"
+          ],
+          "shortDesc": "Pozwala podjąć próbuję Ogłuszenia przeciwnika."
+        },
+        {
+          "name": "suppressingFire",
+          "displayName": "ogień zaporowy",
+          "type": "podwójna",
+          "subtype": [
+            "atak",
+            "dystansowe"
+          ],
+          "shortDesc": "Zmusza przeciwników do ukrycia się za osłoną. -20 US."
+        },
+        {
+          "name": "tacticalAdvance",
+          "displayName": "natarcie taktyczne",
+          "type": "podwójna",
+          "subtype": [
+            "koncentracja",
+            "ruch"
+          ],
+          "shortDesc": "Pozwala poruszać się między osłonami."
+        },
+        {
+          "name": "useASkill",
+          "displayName": "użycie umiejętności",
+          "type": "różna",
+          "subtype": [
+            "różne"
+          ],
+          "shortDesc": "Bohater może użyć Umiejętności."
+        }
+      ]
     }
   ],
   "tables": [
@@ -5065,6 +5442,60 @@
           "match": 100,
           "title": "zniszczenie",
           "content": "Psyker zostaje natychmiastowo i nieodwracalnie zniszczony. Może zostać wciągnięty z przerażonym krzykiem w otchłanie Spaczni lub zostać spalonym przez piekielne ognie. MG może zadecydować, że istnieje @dice{50%} szans na pojawienie się w jego miejsce Księcia Demonów."
+        }
+      ]
+    },
+    {
+      "name": "size",
+      "displayName": "rozmiar",
+      "table": {
+        "title": "rozmiar",
+        "modifier": "trafienie",
+        "concealment": "Ukrywanie się",
+        "baseMovement": "premia/kara do Szybkości"
+      },
+      "content": [
+        {
+          "title": "maleńki",
+          "modifier": "-30",
+          "concealment": "+30",
+          "baseMovement": "-3"
+        },
+        {
+          "title": "drobny",
+          "modifier": "-20",
+          "concealment": "+20",
+          "baseMovement": "-2"
+        },
+        {
+          "title": "mały",
+          "modifier": "-10",
+          "concealment": "+10",
+          "baseMovement": "-1"
+        },
+        {
+          "title": "zwykły",
+          "modifier": "0",
+          "concealment": "0",
+          "baseMovement": "0"
+        },
+        {
+          "title": "wielki",
+          "modifier": "+10",
+          "concealment": "-10",
+          "baseMovement": "+1"
+        },
+        {
+          "title": "ogromny",
+          "modifier": "+20",
+          "concealment": "-20",
+          "baseMovement": "+2"
+        },
+        {
+          "title": "masywny",
+          "modifier": "+30",
+          "concealment": "-30",
+          "baseMovement": "+3"
         }
       ]
     }

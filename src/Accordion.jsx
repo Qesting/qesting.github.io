@@ -1,9 +1,10 @@
 import { useContext, useState } from "react";
-import { linkButton } from "./parser";
+import LinkButton from "./LinkButton";
 import { AccordionDepthContext } from "./AccordionDepthContext";
 import { CaretDownFill, CaretUpFill } from "react-bootstrap-icons";
+import PropTypes from 'prop-types';
 
-export default function Accordion({title, items, previousSection, append}) {
+function Accordion({title, items, previousSection, append}) {
     const [expanded, setExpanded] = useState(false);
     const depth = useContext(AccordionDepthContext);
     const id = item => previousSection ? previousSection+`-${item.name}` : `section-${item.name}`;
@@ -33,16 +34,34 @@ export default function Accordion({title, items, previousSection, append}) {
     }
     return (
         <div className={`inline-block ${bgColor} p-1 rounded-md`}>
-            <button className='capitalize relative w-full flex flex-row justify-between items-center' onClick={() => setExpanded(!expanded)}><span>{title}</span>&nbsp;<span className="ml-2 text-sm">{expanded ? <CaretDownFill/> : <CaretUpFill/>}</span></button>
-            <div className={`flex flex-col overflow-y-hidden pt-1 ${expanded ? 'h-auto' : 'h-0'}`}>
+            <button className='capitalize relative w-full flex flex-row justify-between items-center text-center pl-4' onClick={() => setExpanded(!expanded)}><span className="text-center inline-block flex-grow">{title}</span>&nbsp;<span className="ml-2 text-sm">{expanded ? <CaretDownFill/> : <CaretUpFill/>}</span></button>
+            <div className={`flex flex-col pt-1 max-h-[calc(100vh-5rem)] no-scroll ${expanded ? 'h-auto overflow-y-scroll' : 'h-0 overflow-y-hidden'}`}>
                 <AccordionDepthContext.Provider value={depth + 1}>
                     {
-                        append ?? null
+                        append
                     }
                     {
-                        items.filter(item => item.name && item.display).map(item => (
-                            item.hasSubs ? <Accordion items={item.content} previousSection={id(item)} append={linkButton(id(item), item.displayName)} title={item.displayName}/> :
-                            linkButton(id(item), item.displayName, 'py-1')
+                        items.filter(item => item.name && item.display).map((item, index) => (
+                            item.hasSubs 
+                                ? <Accordion 
+                                    items={item.content} 
+                                    key={index} 
+                                    previousSection={id(item)} 
+                                    append={[
+                                        <LinkButton 
+                                            key={index} 
+                                            elementId={id(item)} 
+                                            innerText={item.displayName} 
+                                            additionalClasses={'py-1'}
+                                        />
+                                    ]} 
+                                    title={item.displayName}/> 
+                                : <LinkButton 
+                                    key={index} 
+                                    elementId={id(item)} 
+                                    innerText={item.displayName} 
+                                    additionalClasses={'py-1'}
+                                />
                         ))
                     }
                 </AccordionDepthContext.Provider>
@@ -51,3 +70,12 @@ export default function Accordion({title, items, previousSection, append}) {
         </div>
     );
 }
+
+Accordion.propTypes = {
+    title: PropTypes.string,
+    items: PropTypes.arrayOf(PropTypes.object),
+    previousSection: PropTypes.string,
+    append: PropTypes.arrayOf(PropTypes.object)
+};
+
+export default Accordion;

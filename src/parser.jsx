@@ -2,47 +2,19 @@ import { useContext } from "react";
 import { JsonData } from "./JsonDataContext";
 import { StateFunctionsContext } from "./StateFunctionsContext";
 import reactStringReplace from "react-string-replace";
+import PropTypes from 'prop-types';
+import rollFromString from './rollDice';
+import LinkButton from "./LinkButton";
 
-export function linkButton(elementId, innerText, additionalClasses=null) {
-    return (<a href={`#${elementId}`} className={["btn"].concat(additionalClasses).join(' ')}>{innerText}</a>)
-}
-
-export function rollFromString(str, target) {
-    const formula = (str ?? '1k100').replace(/\s+/, '').match(/(?<number>\d+)?[kd](?<type>\d+)(kh(?<highest>\d+)|kl(?<lowest>\d+))?(?<bonus>[+-]\d+)?/);
-    const {
-        number,
-        type,
-        highest,
-        lowest,
-        bonus
-    } = formula.groups.percent ? {
-        ...formula.groups,
-        number: 1,
-        type: 100
-    } : formula.groups;
-    const result = Array(+(number ?? 1)).fill(0).map(e => ({value: Math.round(Math.random() * (type - 1)) + 1}));
-    for (let i = 0; i < number - (highest ?? lowest); i++) {
-        result.find(e => e.value === (lowest ? Math.max : Math.min)(...result.filter(f => !f?.ignore).map(f => f.value)) && !e?.ignore).ignore = true;
-    }
-    return ({
-        total: result.reduce((total, e) => total + (!e?.ignore && e.value), 0) + +(bonus ?? null),
-        rolls: result,
-        highest: highest ?? null,
-        lowest: lowest ?? null,
-        bonus: bonus ?? null,
-        type: +type,
-        target: +target
-    });
-}
-
-export function parser(text, passedSection, replacementContext) {
+function Parser({text, passedSection, replacementContext}) {
     const jsonData = useContext(JsonData);
-    const { setDiceResult, setTableName } = replacementContext ?? useContext(StateFunctionsContext);
+    const receivedContext = useContext(StateFunctionsContext);
+    const { setDiceResult, setTableName } = replacementContext ?? receivedContext;
     const replacedDice = reactStringReplace(
         text,
         /@dice\{(?<display>.*?)\}/,
         match => {
-            const { formula, displayAs1, displayAs2, targetPercent} = match.match(/(?<formula>\d*[kd]\d+(k[hl]\d+)?([+-]\d+)?)(\|(?<displayAs1>[khld\d+-]+))?|(?<targetPercent>\d+)\%(\|(?<displayAs2>.+))?/)?.groups ?? {};
+            const { formula, displayAs1, displayAs2, targetPercent} = match.match(/(?<formula>\d*[kd]\d+(k[hl]\d+)?([+-]\d+)?)(\|(?<displayAs1>[khld\d+-]+))?|(?<targetPercent>\d+)%(\|(?<displayAs2>.+))?/)?.groups ?? {};
             const displayAs = displayAs2 ?? displayAs1;
             return (
                 <button className="btn !normal-case" onClick={() => {
@@ -67,7 +39,7 @@ export function parser(text, passedSection, replacementContext) {
         /@footnote\{(?<footnoteIndex>\d+)\}/,
         match => {
             const footnoteIndex = +match;
-            return linkButton(`footnote-${passedSection}-${footnoteIndex}`, '\u2020'.repeat(footnoteIndex + 1), ['italic']);
+            return (<LinkButton elementId={`footnote-${passedSection}-${footnoteIndex}`} innerText={'\u2020'.repeat(footnoteIndex + 1)} additionalClasses={['italic']}/>);
         }
     );
     const replacedSectionLinks = reactStringReplace(
@@ -80,18 +52,18 @@ export function parser(text, passedSection, replacementContext) {
                 displayAs,
                 value1,
                 value2
-            } = match.match(/@(?<section>[a-z]+)\{(?<item>\<|\>?[a-zA-Z]+)(\|{2}(?<value>.+?)|\|(?<displayAs>.*?)(\|(?<value2>.*?))?)?\}/)?.groups ?? {};
+            } = match.match(/@(?<section>[a-z]+)\{(?<item><|>?[a-zA-Z]+)(\|{2}(?<value>.+?)|\|(?<displayAs>.*?)(\|(?<value2>.*?))?)?\}/)?.groups ?? {};
             const value = value2 ?? value1;
             const foundSection = jsonData.sections.find(e => e.name === section);
             if (!foundSection) {
                 return match;
             }
             if (item === '<') {
-                return linkButton(`section-${section}`, foundSection.displayName);
+                return (<LinkButton elementId={`section-${section}`} innerText={foundSection.displayName}/>);
             }
             if (item.startsWith('>') && foundSection.hasSubs) {
                 const subSection = foundSection.content.find(e => e?.name === item.substring(1));
-                return linkButton(`section-${section}-${subSection.name}`, subSection.displayName);
+                return (<LinkButton elementId={`section-${section}-${subSection.name}`} innerText={subSection.displayName}/>);
             }
             let sectionName = section;
             let foundItem = null;
@@ -148,9 +120,27 @@ export function parser(text, passedSection, replacementContext) {
                 }
             }
             const id = `item-${sectionName}-${replacementItem ?? item}`;
-            return foundItem ? linkButton(id, value ? (foundItem.displayName.endsWith('(x)') ? foundItem.displayName.replace('(x)', `(${value})`) : `${foundItem.displayName}(${value})`) : displayAs ?? foundItem.displayName) : match;
+            return foundItem 
+                ? (
+                    <LinkButton 
+                        elementId={id} 
+                        innerText={
+                            value 
+                                ? (foundItem.displayName.endsWith('(x)') ? foundItem.displayName.replace('(x)', `(${value})`) : `${foundItem.displayName}(${value})`) 
+                                : displayAs ?? foundItem.displayName
+                        }
+                    />) 
+                : match;
         }   
     );
 
-    return replacedSectionLinks;
+    return (<>{replacedSectionLinks}</>);
 };
+
+Parser.propTypes = {
+    text: PropTypes.string,
+    passedSection: PropTypes.string,
+    replacementContext: PropTypes.object
+};
+
+export default Parser;

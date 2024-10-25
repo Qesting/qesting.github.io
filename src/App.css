@@ -2,7 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
-p:not(:has(> strong)) {
+section p:not(:has(> strong)) {
     @apply indent-4;
 }
 
@@ -23,9 +23,26 @@ td {
 }
 
 .btn {
-    @apply text-blue-700 dark:text-blue-500 underline capitalize;
+    @apply text-blue-700 dark:text-blue-500 underline capitalize inline;
 }
 
 .nav-btn {
     @apply text-xl mx-1 first:ml-0 last:mr-0 
+}
+
+.no-scroll::-webkit-scrollbar {
+    display: none;
+}
+
+.no-scroll {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+
+main {
+    @apply justify-start;
+}
+
+main:has(h1) {
+    @apply !justify-center;
 }

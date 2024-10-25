@@ -4,10 +4,13 @@ import Section from './Section';
 import { JsonData } from './JsonDataContext.js';
 import { StateFunctionsContext } from './StateFunctionsContext.js';
 import Navbar from './Navbar';
-import { parser, rollFromString } from './parser.jsx';
-import { CaretDownFill, XCircleFill, XLg } from 'react-bootstrap-icons';
+import Parser from './Parser';
+import rollFromString from './rollDice.js';
+import { CaretDownFill, XCircleFill } from 'react-bootstrap-icons';
+import Footer from './Footer.jsx';
 
 function App() {
+  const [currentSection, setCurrentSection] = useState(location.hash?.substring(1));
   const [diceResult, setDiceResult] = useState(null);
   const [tableName, setTableName] = useState(null);
   const [tableNameSearch, setTableNameSearch] = useState(null);
@@ -19,6 +22,9 @@ function App() {
   const rolledItem = useRef(null);
   const tableItemContainer = useRef(null);
 
+  useEffect(() => {
+    location.hash = currentSection;
+  }, [currentSection]);
   useEffect(() => {
     if (diceResult) diceDialog?.current?.showModal()
     else diceDialog?.current?.close()
@@ -40,7 +46,7 @@ function App() {
     if (tableName !== null && tableVisibility === false) {
       setTableVisibility(true);
     }
-  }, [tableName]);
+  }, [tableName, tableVisibility]);
   const darkModeSetter = newValue => {
     localStorage.setItem('dw-darkmode', newValue ?? !darkMode);
     setDarkMode(newValue ?? !darkMode);
@@ -49,14 +55,17 @@ function App() {
     setDiceResult: setDiceResult,
     setTableName: setTableName,
     setDarkMode: darkModeSetter,
-    setTableVisibility: setTableVisibility
+    setTableVisibility: setTableVisibility,
+    setCurrentSection: setCurrentSection
   };
 
   const { sections, tables } = useContext(JsonData);
   const table = useMemo(() => {
     return tables.find(tab => tab.name === tableName);
-  }, [tableName]);
-
+  }, [tableName, tables]);
+  const section = useMemo(() => {
+    return sections.find(sec => sec.name === currentSection);
+  }, [currentSection, sections]);
   const rollOnTable = () => {
     const mod = +self.prompt(`Rzut ${table.formula ?? 'k100'} w tabeli ${table.displayName}: podaj ewentualne modyfikatory.`)
     const roll = rollFromString(table.formula ?? 'd100').total + (isNaN(mod) ? 0 : mod);
@@ -69,13 +78,22 @@ function App() {
     <div className={darkMode ? 'dark': ''} id="app-inner-container">
       <StateFunctionsContext.Provider value={stateFunctions}>
         <Navbar/>
-        <main className="py-4 px-2 fixed top-20 bottom-0 left-0 right-0 overflow-scroll bg-inherit">
-          {
-            sections.map((e, i) => (
-              <Section key={i} data={e}/>
-            ))
-          }
-        </main>
+        <div className="fixed top-20 bottom-0 left-0 right-0 overflow-y-scroll bg-inherit flex flex-col">
+          <main className="py-4 px-2 flex flex-col items-center flex-grow">
+              {
+                section ? (
+                  <Section data={section} key={currentSection}/>
+                ) : (
+                  <>
+                    <h1 className="py-2 text-4xl mb-4 text-center relative after:w-full after:h-px after:absolute after:bottom-0 after:bg-current after:left-0 after:right-0">Witamy w Kompendium</h1>
+                    <h2 className='text-2xl px-20'>Na co czekasz? Wybierz kategorię bądź tabelę powyżej i dowiedz się wszystkiego, co potrzebne przy zwalczaniu wrogów ludzkości. Za Imperatora!</h2>
+                  </>
+                )
+              }
+            </main>
+            <Footer/>
+        </div>
+        
         {
           tableVisibility && (
             <aside>
@@ -109,7 +127,13 @@ function App() {
                         </tr>
                         <tr>
                           {
-                            table.rollable ? (
+                            table.table ? (
+                              <>
+                                {
+                                  Object.keys(table.table).map((key, index) => (<th key={index}>{table.table[key]}</th>))
+                                }
+                              </>
+                            ) : table.rollable ? (
                               <>
                                 <th><button className='btn !normal-case' onClick={rollOnTable}>{table.formula ?? 'k100'}</button></th>
                                 <th>{table.title}</th>
@@ -129,16 +153,22 @@ function App() {
                           table.content.map((item, index) => (
                             <tr key={index} ref={rolledOnTable === index ? rolledItem : null} className="scroll-mt-14">
                               {
-                                table.rollable ? (
+                                table.table ? (
+                                  Object.keys(table.table).map((key, jndex) => (<td className={`text-center ${key === 'title' ? 'capitalize' : ''}`} key={jndex}>{item[key]}</td>))
+                                ) : table.rollable ? (
                                   <td className='text-center'>{item?.match ?? `${item.range.min ?? 1}-${item.range.max ?? 100}`}</td>
                                 ) : (
                                   <td className='text-center'>{item.pre}</td>
                                 )
                               }
-                              <td>
-                                <strong className='text-bold capitalize'>{item.title}</strong>.&nbsp;
-                                <span>{parser(item.content, null, stateFunctions)}</span>
-                              </td>
+                              {
+                                !table.table && (
+                                  <td>
+                                  <strong className='text-bold capitalize'>{item.title}</strong>.&nbsp;
+                                  <span>{<Parser text={item.content} replacementContext={stateFunctions}/>}</span>
+                                </td>
+                                )
+                              }
                             </tr>
                           ))
                         }
@@ -156,7 +186,7 @@ function App() {
         <span className={diceResult?.target ? (diceResult?.total <= diceResult?.target ? 'text-green-500' : 'text-red-600') : ''}>{!!diceResult && diceResult?.target ? (diceResult?.total <= diceResult?.target ? 'Sukces' : 'Porażka') : diceResult?.total}</span>
         <div>&#x5b;
           {
-            diceResult?.rolls.map(e => (<span className={`inline-block mx-1 ${e.ignore ? 'text-gray-400' : e.value === 1 ? 'text-red-600' : e.value === diceResult.type ? 'text-green-500' : ''}`}>{e.value}</span>))
+            diceResult?.rolls.map((e, index) => (<span key={index} className={`inline-block mx-1 ${e.ignore ? 'text-gray-400' : e.value === 1 ? 'text-red-600' : e.value === diceResult.type ? 'text-green-500' : ''}`}>{e.value}</span>))
           }&#x5d;&nbsp;<span>{diceResult?.bonus}</span>
         </div>
         <button onClick={() => setDiceResult(null)} className='text-red-600 mt-4'>Zamknij</button>
