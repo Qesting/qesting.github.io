@@ -1,5 +1,5 @@
 export default function rollFromString(str, target) {
-    const formula = (str ?? '1k100').replace(/\s+/, '').match(/(?<number>\d+)?[kd](?<type>\d+)(kh(?<highest>\d+)|kl(?<lowest>\d+))?(?<bonus>[+-]\d+)?/);
+    const formula = (str ?? '1k100').replace(/\s+/, '').match(/(?<number>\d+)?[kd](?<type>\d+)(kh(?<highest>\d+)|kl(?<lowest>\d+))?(?<bonus>[+-]\d+)*?/);
     const {
         number,
         type,

@@ -10,6 +10,9 @@ function Parser({text, passedSection, replacementContext}) {
     const jsonData = useContext(JsonData);
     const receivedContext = useContext(StateFunctionsContext);
     const { setDiceResult, setTableName } = replacementContext ?? receivedContext;
+
+    const quoteRegExp = /^@quote\{(?<content>.*)\|(?<author>.*)\}$/
+    const sectionRegExp = /@(?<section>\w+)\{(?<item><|>?\w+)(-(?<variant>\w+))?(\|(?<display>[\d\p{Alpha} ]+)?)?(\|(?<value>[\p{Alpha}\d ]+))?\}/u
     const replacedDice = reactStringReplace(
         text,
         /@dice\{(?<display>.*?)\}/,
@@ -23,8 +26,24 @@ function Parser({text, passedSection, replacementContext}) {
             );
         }
     );
-    const replacedRollables = reactStringReplace(
+    const replacedQuotes = reactStringReplace(
         replacedDice,
+        /^(@quote\{.*})$/,
+        match => {
+            const {
+                content,
+                author
+            } = match.match(quoteRegExp)?.groups ?? {}
+            return (
+                <div className="rounded-md bg-gray-200 dark:bg-gray-800 py-2 px-4 mx-4 md:mx-[12.5%] lg:mx-[16.7%] xl:mx-[25%] my-4">
+                    <blockquote className="italic text-lg mb-2">{content}</blockquote>
+                    <p>{"\u2024" + author}</p>
+                </div>
+            ) 
+        }
+    )
+    const replacedRollables = reactStringReplace(
+        replacedQuotes,
         /@table\{(?<table>.*?)\}/,
         match => {
             const [ tableName, displayName ] = match.split('|');
@@ -36,10 +55,10 @@ function Parser({text, passedSection, replacementContext}) {
     );
     const replacedFootnoteLinks = reactStringReplace(
         replacedRollables,
-        /@footnote\{(?<footnoteIndex>\d+)\}/,
+        /(@footnote\{\d+(?:\|\d+)?\})/g,
         match => {
-            const footnoteIndex = +match;
-            return (<LinkButton elementId={`footnote-${passedSection}-${footnoteIndex}`} innerText={'\u2020'.repeat(footnoteIndex + 1)} additionalClasses={['italic']}/>);
+            const {footnoteIndex, display} = match.match(/@footnote\{(?<footnoteIndex>\d+)(?:\|(?<display>\d+))?\}/)?.groups ?? {};
+            return (<sup><LinkButton elementId={`footnote-${passedSection}-${footnoteIndex}`} innerText={'\u2020'.repeat(+(display ?? footnoteIndex) + 1)} additionalClasses={['italic']}/></sup>);
         }
     );
     const replacedSectionLinks = reactStringReplace(
@@ -49,11 +68,9 @@ function Parser({text, passedSection, replacementContext}) {
             const {
                 section,
                 item,
-                displayAs,
-                value1,
-                value2
-            } = match.match(/@(?<section>[a-z]+)\{(?<item><|>?[a-zA-Z]+)(\|{2}(?<value1>.+?)|\|(?<displayAs>.*?)(\|(?<value2>.*?))?)?\}/)?.groups ?? {};
-            const value = value2 ?? value1;
+                display,
+                value
+            } = match.match(sectionRegExp)?.groups ?? {};
             const foundSection = jsonData.sections.find(e => e.name === section);
             if (!foundSection) {
                 return match;
@@ -73,7 +90,7 @@ function Parser({text, passedSection, replacementContext}) {
             for (let index = 0; index < foundSection?.content?.length; index++) {
                 alias = foundSection.content[index]?.alias?.find(a => a.name === item)
                 if (foundSection.hasSubs) {
-                    for (let jndex = 0; jndex < foundSection.content[index].content.length; jndex++) {
+                    for (let jndex = 0; jndex < foundSection.content[index].content?.length; jndex++) {
                         const testedItem = foundSection.content[index].content[jndex];
                         alias = testedItem?.alias?.find(a => a.name === item);
                         if (testedItem.name === item || noDescSkipped || alias) {
@@ -127,7 +144,7 @@ function Parser({text, passedSection, replacementContext}) {
                         innerText={
                             value 
                                 ? (foundItem.displayName.endsWith('(x)') ? foundItem.displayName.replace('(x)', `(${value})`) : `${foundItem.displayName}(${value})`) 
-                                : displayAs ?? foundItem.displayName
+                                : display ?? foundItem.displayName
                         }
                     />) 
                 : match;

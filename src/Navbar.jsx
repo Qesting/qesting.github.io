@@ -7,7 +7,7 @@ import { Table as BIconTable, Github as BIconGithub, MoonFill as BIconMoonFill, 
 
 export default function Navbar() {
     const data = useContext(JsonData).sections;
-    const { setDarkMode, setTableVisibility, setCurrentSection } = useContext(StateFunctionsContext);
+    const { setDarkMode, showTableDialog, setCurrentSection } = useContext(StateFunctionsContext);
     return (
         <nav className="h-20 w-full top-0 left-0 right-0 fixed bg-gray-100 dark:bg-gray-900 border-b-2 border-solid border-current z-20 flex flex-row flex-wrap-nowrap items-center p-2">
             <button className="text-2xl" onClick={() => setCurrentSection('')}>Deathwatch RPG - Kompendium</button>
@@ -17,7 +17,7 @@ export default function Navbar() {
                 </AccordionDepthContext.Provider>
             </div>
             <div className="ml-auto flex flex-row">
-                <button className="nav-btn" onClick={() => setTableVisibility(true)} role="button" aria-label="Pokaż Tabele"><BIconTable/></button>
+                <button className="nav-btn" onClick={() => showTableDialog?.()} role="button" aria-label="Pokaż Tabele"><BIconTable/></button>
                 <a className="nav-btn" href="https://github.com/Qesting/qesting.github.io" aria-label="Repozytorium GitHub"><BIconGithub/></a>
                 <button className="nav-btn" onClick={() => setDarkMode()} role="button" aria-label="Przełącz trub ciemny">{ localStorage.getItem('dw-darkmode') === 'true' ? <BIconSunFill/> : <BIconMoonFill/> }</button>
             </div>
