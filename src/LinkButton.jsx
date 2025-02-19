@@ -6,10 +6,11 @@ function LinkButton({elementId, innerText, additionalClasses}) {
     const sectionStart = elementId.indexOf('-') + 1;
     const sectionEnd = elementId.startsWith('item') ? elementId.lastIndexOf('-') : undefined;
     const section = elementId.substring(sectionStart, sectionEnd);
-    const setCurrentSection = useContext(StateFunctionsContext).setCurrentSection;
+    const { setCurrentSection, closeTableDialog } = useContext(StateFunctionsContext);
     const scrollFunction = section === 'footnote' 
         ? (() => document.querySelector(`#${elementId}`).scrollIntoView({ behavior: "smooth" }))
         : (() => {
+            closeTableDialog()
             setCurrentSection(section.split('-')[0]);
             setTimeout(() => document.querySelector(`#${elementId}`).scrollIntoView({ behavior: "smooth" }), 100);
         })

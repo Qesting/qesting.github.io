@@ -35,7 +35,7 @@ function Accordion({title, items, previousSection, append}) {
     return (
         <div className={`inline-block ${bgColor} p-1 rounded-md`}>
             <button className='capitalize relative w-full flex flex-row justify-between items-center text-center pl-4' onClick={() => setExpanded(!expanded)}><span className="text-center inline-block flex-grow">{title}</span>&nbsp;<span className="ml-2 text-sm">{expanded ? <CaretDownFill/> : <CaretUpFill/>}</span></button>
-            <div className={`flex flex-col pt-1 max-h-[calc(100vh-5rem)] no-scroll ${expanded ? 'h-auto overflow-y-scroll' : 'h-0 overflow-y-hidden'}`}>
+            <div className={`flex flex-col mt-1 max-h-[calc(100vh-5rem)] no-scroll ${expanded ? 'h-auto overflow-y-scroll' : 'h-0 overflow-y-hidden'}`}>
                 <AccordionDepthContext.Provider value={depth + 1}>
                     {
                         append
@@ -44,7 +44,7 @@ function Accordion({title, items, previousSection, append}) {
                         items.filter(item => item.name && item.display).map((item, index) => (
                             item.hasSubs 
                                 ? <Accordion 
-                                    items={item.content} 
+                                    items={item.content.filter(i=>i?.name)} 
                                     key={index} 
                                     previousSection={id(item)} 
                                     append={[

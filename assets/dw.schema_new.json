@@ -1,0 +1,708 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$defs": {
+    "section": {
+      "type": "object",
+      "title": "section",
+      "description": "a subset of data",
+      "properties": {
+        "parentPath": {
+          "type": "string",
+          "description": "the path to section's supersection. omitted if in group or self is a root section"
+        },
+        "name": {
+          "type": "string",
+          "description": "the identifier"
+        },
+        "displayName": {
+          "type": "string",
+          "description": "the actual displayed name; if empty, will be the same as [name]"
+        },
+        "display": {
+          "type": "string",
+          "enum": ["description", "table", "both", "none"],
+          "description": "how the section will be displayed. set \"none\" in a subsection"
+        },
+        "noGrid": {
+          "type": "boolean",
+          "description": "override default grid display"
+        },
+        "table": {
+          "type": "object",
+          "description": "if the display property is 'table' or 'both' defines the table structure as an object with k-v pairs like \"jsonKey\": \"displayName\""
+        },
+        "content": {
+          "type": "array",
+          "description": "the text content as an array",
+          "items": {
+            "allOf": [
+              { "$ref": "#/$defs/descItem" },
+              {
+                "properties": {
+                  "before": {
+                    "type": "string",
+                    "pattern": "^[a-zA-Z]+$",
+                    "description": "name of subsection/item the entry will be inserted before"
+                  },
+                  "after": {
+                    "type": "string",
+                    "pattern": "^[a-zA-Z]+$",
+                    "description": "name of subsection/item the entry will be inserted after"
+                  },
+                  "if": {
+                    "required": ["before"]
+                  },
+                  "then": {
+                    "not": {
+                      "required": ["after"]
+                    }
+                  },
+                  "else": {
+                    "if": {
+                      "required": ["after"]
+                    },
+                    "then": {
+                      "not": {
+                        "required": ["before"]
+                      }
+                    }
+                  }
+                }
+              }
+            ]
+          },
+          "unevaluatedProperties": false
+        },
+        "footnotes": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "description": "an array of footnotes that will be used in the section's table"
+        }
+      },
+      "patternProperties": {
+        "^type$": {
+          "type": "string",
+          "const": "section"
+        }
+      },
+      "required": ["type", "name", "display"]
+    },
+    "item": {
+      "type": "object",
+      "title": "item",
+      "description": "a piece of data",
+      "properties": {
+        "parentPath": {
+          "type": "string",
+          "description": "the path to item's section. omitted if in group"
+        },
+        "name": {
+          "type": "string",
+          "description": "the identifier"
+        },
+        "displayName": {
+          "type": "string",
+          "description": "the actual name displayed"
+        },
+        "subName": {
+          "type": "string",
+          "description": "an additional part of the name only shown in descriptions (in parentheses)"
+        },
+        "shortDesc": {
+          "type": "string"
+        },
+        "prerequsite": {
+          "type": "string"
+        },
+        "footnotes": {
+          "type": "object",
+          "description": "an object of shape key name: footnote number (footnotes defined in root section)"
+        },
+        "image": {
+          "type": "string"
+        },
+        "alias": {
+          "type": "array",
+          "description": "alternative names for the same item",
+          "items": {
+            "type": "object",
+            "description": "an alias",
+            "properties": {
+              "name": {
+                "type": "string",
+                "description": "the name that will be used by the parser"
+              },
+              "displayName": {
+                "type": "string",
+                "description": "the name visible to the user"
+              }
+            }
+          }
+        },
+        "content": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/descItem"
+          },
+          "description": "the text content of the element"
+        },
+        "class": {
+          "type": ["string", "null"],
+          "enum": [
+            "basic",
+            "pistol",
+            "heavy",
+            "thrown",
+            "melee",
+            "mounted",
+            null
+          ],
+          "description": "the class of an item. used with weapons"
+        },
+        "range": {
+          "type": ["number", "string"]
+        },
+        "rof": {
+          "type": "object",
+          "description": "rate of fire. will be displayed as S/b/a",
+          "properties": {
+            "single": {
+              "type": "boolean",
+              "description": "whether the weapon can single fire"
+            },
+            "burst": {
+              "type": ["number", "null"],
+              "description": "the burst RoF"
+            },
+            "auto": {
+              "type": ["number", "null"],
+              "description": "the auto RoF"
+            }
+          }
+        },
+        "damage": {
+          "anyOf": [
+            {
+              "type": "object",
+              "description": "the weapon's damage",
+              "properties": {
+                "formula": {
+                  "type": "string",
+                  "description": "the dice string to roll for damage",
+                  "pattern": "^\\d*[dk]\\d+(k[hl]\\d+)?([+-]\\d+)?$"
+                },
+                "display": {
+                  "type": "string",
+                  "description": "the dice string that will be displayed",
+                  "pattern": "^\\d*[dk]\\d+(k[hl]\\d+)?([+-]\\d+)?$"
+                }
+              },
+              "patternProperties": {
+                "^type$": {
+                  "type": "string",
+                  "description": "the damage type",
+                  "enum": ["explosion", "impact", "energy", "rending"]
+                }
+              }
+            },
+            {
+              "type": "string"
+            }
+          ]
+        },
+        "penetration": {
+          "type": ["number", "string"],
+          "description": "the weapon's penetration"
+        },
+        "clip": {
+          "type": "number",
+          "description": "the weapon's clip size"
+        },
+        "reload": {
+          "type": ["string", "number", "null"],
+          "description": "how many actions the weapon takes to reload"
+        },
+        "qualities": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "array",
+              "description": "the array of qualities",
+              "items": {
+                "anyOf": [
+                  {
+                    "type": "string"
+                  },
+                  {
+                    "type": "object",
+                    "properties": {
+                      "name": {
+                        "type": "string",
+                        "description": "the quality name"
+                      },
+                      "value": {
+                        "type": "number",
+                        "description": "the value that will be displayed in paretheses, eg. Blast (2)"
+                      },
+                      "footnote": {
+                        "type": "number",
+                        "description": "the footnote identifier"
+                      },
+                      "display": {
+                        "type": "string",
+                        "description": "how the quality will be displayed"
+                      }
+                    }
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        "weight": {
+          "type": ["number", "string"],
+          "description": "the weight"
+        },
+        "requisition": {
+          "type": ["number", "string", "null"],
+          "description": "how much the item costs to requisition"
+        },
+        "renown": {
+          "type": ["number", "null"],
+          "description": "the renown level required"
+        },
+        "armor": {
+          "type": "object",
+          "description": "the protection the armor provides",
+          "properties": {
+            "general": {
+              "type": "number",
+              "description": "the protection on all locations that are not further specified"
+            },
+            "head": {
+              "type": "number",
+              "description": "the head protection"
+            },
+            "body": {
+              "type": "number",
+              "description": "the body protection"
+            },
+            "arms": {
+              "type": "number",
+              "description": "the protection on left and right arms"
+            },
+            "legs": {
+              "type": "number",
+              "description": "the protection on left and right legs"
+            },
+            "leftArm": {
+              "type": "number",
+              "description": "the left arm protection"
+            },
+            "rightArm": {
+              "type": "number",
+              "description": "the right arm protection"
+            },
+            "leftLeg": {
+              "type": "number",
+              "description": "the left leg protection"
+            },
+            "rightLeg": {
+              "type": "number",
+              "description": "the right leg protection"
+            }
+          }
+        },
+        "protectionRating": {
+          "type": "number",
+          "description": "the protection rating of a force field. will be parsed as the target of a d100 roll"
+        },
+        "overload": {
+          "type": "number",
+          "description": "the overload roll range end. will be parsed as the target of a d100 roll. if omitted, 1 will be the target instead"
+        },
+        "noDesc": {
+          "type": "boolean",
+          "const": true,
+          "description": "whether the item should be omitted in a section's description"
+        },
+        "noTable": {
+          "type": "boolean",
+          "const": true,
+          "description": "whether the item should be omitted in a section's table"
+        },
+        "noGrid": {
+          "type": "boolean",
+          "const": true,
+          "description": "the item will be full-width"
+        },
+        "variants": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "name": {
+                "type": "string"
+              },
+              "displayName": {
+                "type": "string"
+              },
+              "content": {
+                "type": "string"
+              }
+            }
+          }
+        },
+        "groups": {
+          "type": "object",
+          "description": "default set of groups. used with talents and skills. object of shape name: display"
+        },
+        "tags": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "description": "a list of tags indicating special fuctions of the item to the chracter sheet system"
+        }
+      },
+      "patternProperties": {
+        "^type$": {
+          "not": {
+            "anyOf": [
+              {
+                "type": "string",
+                "const": "section"
+              },
+              {
+                "type": "string",
+                "const": "group"
+              }
+            ]
+          }
+        }
+      }
+    },
+    "rollTable": {
+      "allOf": [{ "$ref": "#/$defs/table" }],
+      "type": "object",
+      "properties": {
+        "rollable": {
+          "type": "boolean",
+          "const": true
+        },
+        "content": {
+          "type": "array",
+          "description": "the items in the table",
+          "items": {
+            "type": "object",
+            "description": "an item in a rollable table",
+            "properties": {
+              "match": {
+                "type": "number",
+                "minimum": 1,
+                "maximum": 100,
+                "description": "used if the item corresponds to exactly one roll result"
+              },
+              "range": {
+                "type": "object",
+                "description": "the range of the roll that will result in the item being chosen",
+                "properties": {
+                  "min": {
+                    "type": "number",
+                    "minimum": 1,
+                    "maximum": 100,
+                    "description": "the range start. if not found, will be assumed as 1"
+                  },
+                  "max": {
+                    "type": "number",
+                    "minimum": 1,
+                    "maximum": 100,
+                    "description": "the range end. if not found, will be assumed as 100"
+                  }
+                }
+              },
+              "title": {
+                "type": "string",
+                "description": "the title"
+              },
+              "content": {
+                "type": "string",
+                "description": "the field content"
+              }
+            }
+          }
+        }
+      }
+    },
+    "table": {
+      "title": "table",
+      "type": "object",
+      "description": "just a table",
+      "properties": {
+        "name": {
+          "type": "string"
+        },
+        "displayName": {
+          "type": "string"
+        },
+        "table": {
+          "type": "object"
+        },
+        "content": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "title": {
+                "type": "string"
+              },
+              "content": {
+                "type": "string"
+              }
+            }
+          }
+        }
+      },
+      "patternProperties": {
+        "^type$": {
+          "type": "string",
+          "const": "table"
+        }
+      },
+      "required": ["type", "name", "content", "table"]
+    },
+    "descItem": {
+      "oneOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "object",
+          "title": "text element",
+          "properties": {
+            "title": {
+              "type": "string",
+              "description": "the title that will be displayed in bold"
+            },
+            "content": {
+              "type": "string",
+              "description": "the actual content"
+            }
+          }
+        },
+        {
+          "type": "object",
+          "title": "list",
+          "description": "represents a collection of paragraphs that form an enumeration",
+          "properties": {
+            "title": {
+              "type": "string",
+              "description": "list title"
+            },
+            "content": {
+              "type": "array",
+              "items": {
+                "$ref": "#/$defs/descItem"
+              },
+              "description": "list content"
+            },
+            "style": {
+              "type": "string",
+              "enum": [
+                "unordered",
+                "ordered"
+              ],
+              "descItem": "list style: unordered or ordered"
+            }
+          },
+          "patternProperties": {
+            "^type$": {
+              "type": "string",
+              "const": "list"
+            }
+          },
+          "required": ["type", "style", "content"]
+        },
+        {
+          "type": "object",
+          "title": "example",
+          "description": "example. can also be done with an %example inserting tag, but allows for inserting other elements into the example and multi-paragraph examples",
+          "properties": {
+            "content": {
+              "type": "array",
+              "items": {
+                "$ref": "#/$defs/descItem"
+              },
+              "description": "example content, equivalent to content enclosed in curly braces in an %example inserting tag"
+            }
+          },
+          "patternProperties": {
+            "^type$": {
+              "type": "string",
+              "const": "example",
+              "description": "the type of example. is example and never will be anything else"
+            }
+          },
+          "required": ["type", "content"]
+        },
+        {
+          "type": "object",
+          "title": "textTable",
+          "description": "a table that is not parsed, contains straight text",
+          "properties": {
+            "header": {
+              "description": "an array of header cells",
+              "type": "array",
+              "items": {
+                "type": "string",
+                "description": "a header cell"
+              }
+            },
+            "rows": {
+              "description": "an array of rows",
+              "type": "array",
+              "items": {
+                "type": "array",
+                "items": {
+                  "type": "string",
+                  "description": "a singular cells"
+                },
+                "description": "a row, an array of cells"
+              }
+            }
+          },
+          "patternProperties": {
+            "^type$": {
+              "type": "string",
+              "const": "textTable",
+              "description": "the type of element. is and always will be textTable"
+            }
+          },
+          "required": ["type", "header", "rows"]
+        }
+      ]
+    },
+    "group": {
+      "title": "group",
+      "type": "object",
+      "description": "a construct that groups sections or items with the same parent",
+      "properties": {
+        "parentPath": {
+          "type": "string",
+          "pattern": "^[a-zA-Z]+(?:-[a-zA-Z]+)*$",
+          "description": "the tree of parent sections separated with '-' signs"
+        }
+      },
+      "patternProperties": {
+        "^items$": {
+          "type": "array",
+          "items": {
+            "anyOf": [
+              {
+                "$ref": "#/$defs/section"
+              },
+              {
+                "$ref": "#/$defs/item"
+              }
+            ]
+          }
+        },
+        "^type$": {
+          "type": "string",
+          "const": "group"
+        }
+      },
+      "additionalProperties": false,
+      "required": ["parentPath", "items", "type"]
+    },
+    "head": {
+      "type": "object",
+      "properties": {
+        "displayName": {
+          "type": "string",
+          "description": "the name that will be displayed"
+        },
+        "name": {
+          "type": "string",
+          "description": "a RPC source's identifier"
+        },
+        "brewed": {
+          "type": "boolean",
+          "description": "whether the source is official content or homebrew"
+        },
+        "author": {
+          "type": "string",
+          "description": "author of the source material"
+        },
+        "transrciber": {
+          "type": "string",
+          "description": "the one who wrote the source file. empty implies the same as author"
+        },
+        "version": {
+          "type": ["number", "string"],
+          "description": "version id of shape [number] or [version string]"
+        },
+        "color": {
+          "type": "string",
+          "description": "all mentions of this source will be the [name] colored thusly. can be any color accepted in CSS or a tailwind color",
+          "oneOf": [
+            {
+              "pattern": "^#([0-9a-f]{3}){1,2}$"
+            },
+            {
+              "pattern": "^#([0-9a-f]{4}){1,2}$"
+            },
+            {
+              "pattern": "rgb\\((\\d+,){2}\\d+\\)"
+            },
+            {
+              "pattern": "rgba\\((\\d+,){3}\\(0\\.\\)?\\d+\\)"
+            },
+            {
+              "pattern": "cmyk\\((\\d+,){3}\\d+\\)"
+            },
+            {
+              "pattern": "[a-z]+-\\d+\\(!\\d+\\)?"
+            },
+            {
+              "pattern": "[a-z]+"
+            }
+          ]
+        }
+      }
+    }
+  },
+  "type": "object",
+  "required": ["head", "content"],
+  "properties": {
+    "head": {
+      "$ref": "#/$defs/head"
+    },
+    "content": {
+      "type": "array",
+      "items": {
+        "anyOf": [
+          {
+            "$ref": "#/$defs/group"
+          },
+          {
+            "$ref": "#/$defs/section"
+          },
+          {
+            "$ref": "#/$defs/table"
+          },
+          {
+            "$ref": "#/$defs/rollTable"
+          },
+          {
+            "$ref": "#/$defs/item"
+          }
+        ]
+      }
+    }
+  }
+}
