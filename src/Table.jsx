@@ -72,20 +72,20 @@ function Table({table, data, section, hasSubs, footnotes, formula, displayName})
                             {
                                 k === '$roll' ? (e.match ?? (e.range?.min ?? 1) + '-' + (e.range?.max ?? '') ) :
                                 k === '$content' ? (<><strong className="font-bold capitalize">{e.title}</strong> <Parser text={e.content}/></>) :
-                                e[k] === undefined && k !== 'covers' ? '\u2013' :
+                                (k.startsWith('$') ? e[k.substring(1)] === undefined && k !== '$covers' : e[k] === undefined) ? '\u2013' :
                                 e[k] === null ? 'N/D' :
-                                k === 'armor' && typeof e[k] !== 'string' ? Object.values(e[k]).filter(f => f !== null).join('/') : 
-                                k === 'covers' ?  (e.armor === undefined ? '\u2013' : typeof e?.armor === 'string' ? (<Parser text={e.armor}/>) : (e.armor.general ? 'wszystkie' : Object.keys(e.armor).filter(l => e.armor[l] !== null).map(l => locations[l]).join(', '))) :
-                                k === 'name' ? (<Parser text={`@${topSection}{${e.name}}`} passedSection={section}/>)  : 
-                                k === 'renown' ? renown[e.renown] :
-                                k === 'rof' ? Object.values(e.rof).map(f => f ? (typeof f === 'number' ? f : 'S') : '-').join('/') :
-                                k === 'damage' && typeof e.damage !== 'string' ? (<span>{<Parser text={`@dice{${e.damage.formula + (e.damage.display ? '|' + e.damage.display : '')}}`}/>}&nbsp;{damageType[e.damage.type]}</span>) :
-                                k === 'class' ? rangedClass[e.class] : 
-                                k === 'qualities' && typeof e.qualities !== 'string' ? (<Parser text={e.qualities.map(f => (typeof f === 'string' ? `@quality{${f}}` : f?.value ? `@quality{${f.name}||${f.value}}` : `@quality{${f.name}}`) + (f.footnote ? `@footnote{${f.footnote}|${usedFootnotes.indexOf(f.footnote)}}` : '')).join(', ')} passedSection={section}/>) :
-                                k === 'range' && typeof e.range === 'number' ? `${e.range}m`:
-                                k === 'reload' && typeof e.reload === 'number' ? `${e.reload} akcji podw.` : 
-                                k === 'protectionRating' ? (<Parser text={`@dice{${e.protectionRating}%}`}/>) : 
-                                k === 'overload' ? (<Parser text={`@dice{${e.overload}%|${e.overload === 1 ? '01' : '01-' + (e.overload+[]).padStart(2, '0')}}`}/>) :
+                                k === '$armor' && typeof e[k] !== 'string' ? Object.values(e[k]).filter(f => f !== null).join('/') : 
+                                k === '$covers' ?  (e.armor === undefined ? '\u2013' : typeof e?.armor === 'string' ? (<Parser text={e.armor}/>) : (e.armor.general ? 'wszystkie' : Object.keys(e.armor).filter(l => e.armor[l] !== null).map(l => locations[l]).join(', '))) :
+                                k === '$name' ? (<Parser text={`@${topSection}{${e.name}}`} passedSection={section}/>)  : 
+                                k === '$renown' ? renown[e.renown] :
+                                k === '$rof' ? Object.values(e.rof).map(f => f ? (typeof f === 'number' ? f : 'S') : '-').join('/') :
+                                k === '$damage' && typeof e.damage !== 'string' ? (<span>{<Parser text={`@dice{${e.damage.formula + (e.damage.display ? '|' + e.damage.display : '')}}`}/>}&nbsp;{damageType[e.damage.type]}</span>) :
+                                k === '$class' ? rangedClass[e.class] : 
+                                k === '$qualities' && typeof e.qualities !== 'string' ? (<Parser text={e.qualities.map(f => (typeof f === 'string' ? `@quality{${f}}` : f?.value ? `@quality{${f.name}||${f.value}}` : `@quality{${f.name}}`) + (f.footnote ? `@footnote{${f.footnote}|${usedFootnotes.indexOf(f.footnote)}}` : '')).join(', ')} passedSection={section}/>) :
+                                k === '$range' && typeof e.range === 'number' ? `${e.range}m`:
+                                k === '$reload' && typeof e.reload === 'number' ? `${e.reload} akcji podw.` : 
+                                k === '$protectionRating' ? (<Parser text={`@dice{${e.protectionRating}%}`}/>) : 
+                                k === '$overload' ? (<Parser text={`@dice{${e.overload}%|${e.overload === 1 ? '01' : '01-' + (e.overload+[]).padStart(2, '0')}}`}/>) :
                                 Array.isArray(e[k]) ? e[k].join(', ') : 
                                 (<Parser text={(e[k]+[])} passedSection={section}/>)
                             }

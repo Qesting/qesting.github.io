@@ -68,6 +68,10 @@
           "type": "string",
           "description": "the actual name displayed"
         },
+        "subName": {
+          "type": "string",
+          "description": "an additional part of the name only shown in descriptions (in parentheses)"
+        },
         "shortDesc": {
           "type": "string"
         },
@@ -311,23 +315,12 @@
       }
     },
     "rollTable": {
+      "allOf": [{ "$ref": "#/$defs/table" }],
       "type": "object",
       "properties": {
         "rollable": {
           "type": "boolean",
           "const": true
-        },
-        "displayName": {
-          "type": "string",
-          "description": "the actual same displayed"
-        },
-        "name": {
-          "type": "string",
-          "description": "the in-app identifier"
-        },
-        "title": {
-          "type": "string",
-          "description": "the table header"
         },
         "content": {
           "type": "array",
@@ -383,20 +376,14 @@
         "displayName": {
           "type": "string"
         },
-        "title": {
-          "type": "string"
-        },
-        "preTitle": {
-          "type": "string"
+        "table": {
+          "type": "object"
         },
         "content": {
           "type": "array",
           "items": {
             "type": "object",
             "properties": {
-              "pre": {
-                "type": "string"
-              },
               "title": {
                 "type": "string"
               },
