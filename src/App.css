@@ -23,7 +23,7 @@ td {
 }
 
 .btn {
-    @apply text-blue-700 dark:text-blue-500 underline capitalize inline;
+    @apply text-blue-700 dark:text-blue-500 underline inline;
 }
 
 .nav-btn {

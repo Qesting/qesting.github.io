@@ -1,13 +1,26 @@
 {
   "$schema": "./dw.schema_new.json",
   "head": {
-    "brewed": false,
-    "name": "CRB",
-    "author": "Ross Watson, Owen Barnes, Alan Bligh, John French, Andrea Gausman, Andy Hoare",
-    "displayName": "Księga Zasad",
-    "transcriber": "Qesting",
-    "version": 8,
-    "color": "white"
+    "sources": [
+      {
+        "brewed": false,
+        "name": "CRB",
+        "author": "Ross Watson, Owen Barnes, Alan Bligh, John French, Andrea Gausman, Andy Hoare",
+        "displayName": "Księga Zasad",
+        "transcriber": "Qesting",
+        "color": "white"
+      },
+      {
+        "brewed": true,
+        "name": "EIn",
+        "author": "Qesting",
+        "displayName": "Era Indominus",
+        "color": "blue"
+      }
+    ],
+    "author": "Qesting",
+    "version": 1,
+    "rootSource": "CRB"
   },
   "content": [
     {
@@ -149,6 +162,7 @@
     {
       "type": "group",
       "parentPath": "implant-primaris",
+      "source": "EIn",
       "items": [
         {
           "name": "sinewCoils",
@@ -163,7 +177,7 @@
         {
           "name": "belisarianFurnace",
           "displayName": "piec belizariański",
-          "shortDesc": "Po otrzymaniu Obrażeń Krytycznych +10 do fizycznych Cech na @dice{1k5} Rund. Przez następny dzień rany goją się dwukrotnie szybciej niż normalnie. Musi upłynąć tydzień, by organ się odnowił."
+          "shortDesc": "Po otrzymaniu Obrażeń Krytycznych +10 do fizycznych Charakterystyk na @dice{1k5} Rund. Przez następny dzień rany goją się dwukrotnie szybciej niż normalnie. Musi upłynąć tydzień, by organ się odnowił."
         }
       ]
     },
@@ -921,7 +935,7 @@
         },
         {
           "title": "Grupy Talentów.",
-          "content": "Niektóre Talenty reprezentują pewną ogólną umiejętność aplikowalną ledwie do podkategorii ogółu. Grupy te mogą mieć wiele podkategorii, które zostały zebrane w Grupy Talentów. Gdy Bohater zdobywa jeden z takich Talentów, prowadzący go Gracz wybiera jedną Grupę. Dla przykładu przy zdobyciu Talentu @talent{peer} Gracz wybrałby jedną organizację lub grupę, na przykład Znajomy(Inkwizycja). Za każdym razem można wybrać inną Grupę, zatem przy kolejnym zdobyciu Talentu Gracz wybrałby Znajomy(Adeptus Mechanicus). W większości przypadków podano przykładowe Grupy, zatem mimo że w Grupach Talenty Znajomy nie podano \"Strażnicy Burzy i Żelaźni Władcy\", wciąż można takową wybrać za zgodą MG."
+          "content": "Niektóre Talenty reprezentują pewną ogólną umiejętność aplikowalną ledwie do podkategorii ogółu. Grupy te mogą mieć wiele podkategorii, które zostały zebrane w Grupy Talentów. Gdy Bohater zdobywa jeden z takich Talentów, prowadzący go Gracz wybiera jedną Grupę. Dla przykładu przy zdobyciu Talentu @talent{peer} Gracz wybrałby jedną organizację lub grupę, na przykład Znajomy (Inkwizycja). Za każdym razem można wybrać inną Grupę, zatem przy kolejnym zdobyciu Talentu Gracz wybrałby Znajomy (Adeptus Mechanicus). W większości przypadków podano przykładowe Grupy, zatem mimo że w Grupach Talenty Znajomy nie podano \"Strażnicy Burzy i Żelaźni Władcy\", wciąż można takową wybrać za zgodą MG."
         },
         {
           "title": "Wymagania Talentów.",
@@ -943,7 +957,7 @@
               "title": "Wymagania:",
               "content": "${insert:prerequisite}"
             },
-            "Brat spędza czas przed bitwą nakładając duchowy pancerz przeciwko nieczystej mocy Spaczni przez recytowanie modlitw i litanii nienawiści i pogardy dla nienaturalnej mocy. Talentu tego można użyć w fazie Przysięgi podczas przygotowania do Misji. Bohater zużywa wtedy Punkt Przeznaczenia i przez całą Misję nie może go odzyskać. W czasie trwania Misji za każdym razem, gdy jest on celem @power{<|mocy psionicznej} demonicznej mocy, lub innych mocy opartych na energiach Osnowy, wykonuje Zwykły(+0) Test Siły Woli. Jeżeli się on powiedzie, moc nie ma efektu na Bracie. Efekty tego Talentu działają również przeciwko mocom zadającym pośrednie Obrażenia i tym używanym przez sprzymierzonych psykerów. Oparcie się mocy nie anuluje jej działania na innych celach."
+            "Brat spędza czas przed bitwą nakładając duchowy pancerz przeciwko nieczystej mocy Spaczni przez recytowanie modlitw i litanii nienawiści i pogardy dla nienaturalnej mocy. Talentu tego można użyć w fazie Przysięgi podczas przygotowania do Misji. Bohater zużywa wtedy Punkt Przeznaczenia i przez całą Misję nie może go odzyskać. W czasie trwania Misji za każdym razem, gdy jest on celem @power{<|mocy psionicznej} demonicznej mocy, lub innych mocy opartych na energiach Osnowy, wykonuje Przeciętny (+0) Test Siły Woli. Jeżeli się on powiedzie, moc nie ma efektu na Bracie. Efekty tego Talentu działają również przeciwko mocom zadającym pośrednie Obrażenia i tym używanym przez sprzymierzonych psykerów. Oparcie się mocy nie anuluje jej działania na innych celach."
           ]
         },
         {
@@ -1011,7 +1025,7 @@
               "title": "Wymagania:",
               "content": "${insert:prerequisite}"
             },
-            "Bracia Bitewni Astartes spędzają lata na zdobywaniu biegłości w broni wszelkiego rodzaju. Do czasu dołączenia do czynnej służby w jednej z Drużyn każdy z Braci nie tylko zapozna się z obsługą broni ciężkiej i białej, ale także użyje jej w niezliczonych potyczkach. Bohater jest biegły w broni @ranged{>bolt|boltowej}, @melee{>chain|łańcuchowej}, @ranged{>melta|melta}, @ranged{>plasma|plazmowej}, @melee{>power|energetycznej}, Prymitywnej(zasięgowej i białej), @ranged{>las|laserowej}, @ranged{>solid|palnej}, @grenade{<|rzucanej} i @ranged{>flame|miotaczach} wszystkich Klas. Tak naprawdę jedyne bronie, w których nie jest biegły, to bronie @ranged{>exotic|egzotyczne}; z tymi musi przejść dodatkowy trening, jeżeli chce ich używać."
+            "Bracia Bitewni Astartes spędzają lata na zdobywaniu biegłości w broni wszelkiego rodzaju. Do czasu dołączenia do czynnej służby w jednej z Drużyn każdy z Braci nie tylko zapozna się z obsługą broni ciężkiej i białej, ale także użyje jej w niezliczonych potyczkach. Bohater jest biegły w broni @ranged{>bolt|boltowej}, @melee{>chain|łańcuchowej}, @ranged{>melta|melta}, @ranged{>plasma|plazmowej}, @melee{>power|energetycznej}, Prymitywnej (zasięgowej i białej), @ranged{>las|laserowej}, @ranged{>solid|palnej}, @grenade{<|rzucanej} i @ranged{>flame|miotaczach} wszystkich Klas. Tak naprawdę jedyne bronie, w których nie jest biegły, to bronie @ranged{>exotic|egzotyczne}; z tymi musi przejść dodatkowy trening, jeżeli chce ich używać."
           ]
         },
         {
@@ -1023,7 +1037,7 @@
               "title": "Wymagania:",
               "content": "${insert:prerequisite}"
             },
-            "Kosmiczny Marine jest mistrzem wszelkich narzędzi prowadzenia wojny, ale przez długą praktykę i wrodzone zdolności może osiągnąć mistrzostwo w konkretnym rodzaju broni, które zamienia takie uzbrojenie w jego rękach w perfekcyjne narzędzie zniszczenia. Przy zdobywaniu tego Talentu należy zanotować Klasę i typ broni, na przykład Biała(Łańcuchowa) czy Boltowa(Pistolety). Talent ten można uzyskać wielokrotnie dla różnych typów i Klas uzbrojenia. Gdy Brat używa podanego rodzaju broni, nigdy nie otrzymuje kar sumarycznie przekraczających -30."
+            "Kosmiczny Marine jest mistrzem wszelkich narzędzi prowadzenia wojny, ale przez długą praktykę i wrodzone zdolności może osiągnąć mistrzostwo w konkretnym rodzaju broni, które zamienia takie uzbrojenie w jego rękach w perfekcyjne narzędzie zniszczenia. Przy zdobywaniu tego Talentu należy zanotować Klasę i typ broni, na przykład Biała (Łańcuchowa) czy Boltowa (Pistolety). Talent ten można uzyskać wielokrotnie dla różnych typów i Klas uzbrojenia. Gdy Brat używa podanego rodzaju broni, nigdy nie otrzymuje kar sumarycznie przekraczających -30."
           ]
         },
         {
@@ -1064,7 +1078,7 @@
           "name": "bastionOfIronWill",
           "displayName": "bastion żelaznej woli",
           "prerequisite": "@talent{psyRating}, @talent{strongMinded}, SW 40",
-          "shortDesc": "Twoja Defensywna Siła Psychiczna jest podwojona w Testach Przeciwstawnych.",
+          "shortDesc": "Twój defensywny Poziom Mocy jest podwojony w Testach Przeciwstawnych.",
           "content": [
             {
               "title": "Wymagania:",
@@ -1245,7 +1259,7 @@
           "displayName": "ukryta przestrzeń",
           "shortDesc": "Gdzieś w ciele Bohatera znajduje się tajna skrytka.",
           "content": [
-            "Ciało lub augumetryczne implanty Bohatera kryją mały schowek. Może być to sakiewka ukryta pod płatem ciała lub wbudowana w implant przestrzeń. Można tam umieścić pojedynczy mały przedmiot, nie większy niż zaciśnięta pięść. Odkrycie takiej skrytki wymaga Złożonego(-10) Testu Przeszukiwania. Jeżeli przeszukujący używa skanera medycznego lub @tool{auspex|auspexu}, wykonywany przez niego Test jest Prosty(+10)."
+            "Ciało lub augumetryczne implanty Bohatera kryją mały schowek. Może być to sakiewka ukryta pod płatem ciała lub wbudowana w implant przestrzeń. Można tam umieścić pojedynczy mały przedmiot, nie większy niż zaciśnięta pięść. Odkrycie takiej skrytki wymaga Wymagającego (-10) Testu Przeszukiwania. Jeżeli przeszukujący używa skanera medycznego lub @tool{auspex|auspexu}, wykonywany przez niego Test jest Prosty (+10)."
           ]
         },
         {
@@ -1316,7 +1330,7 @@
         {
           "name": "deathFromAbove",
           "displayName": "śmierć z niebios",
-          "prerequisite": "Astartes, Pilotaż(Osobiste)",
+          "prerequisite": "Astartes, Pilotaż (Osobiste)",
           "shortDesc": "Zwiększa Obrażenia przy @action{charge|szarży} lub desancie przy użyciu @wargear{jumpPack|plecaka skokowego}.",
           "content": [
             {
@@ -1438,7 +1452,7 @@
               "title": "Wymagania:",
               "content": "${insert:prerequisite}"
             },
-            "Bohater może zogniskować uświęcony przepływ energii ze swojej Cewki Potentia lub innego źródła energii, by wspomóc swoje ciało. W kontakcie z działającą maszyną o sprawnym zasilaniu lub naładowanym ogniwem energetycznym może on wykonać Prosty(+10) Test Odporności. Sukces powoduje usunięcie jednego Poziomu Wyczerpania i dodatkowego jednego za każdy Stopień Sukcesu. Proces ten wymaga jednej minuty medytacji i modlitw."
+            "Bohater może zogniskować uświęcony przepływ energii ze swojej Cewki Potentia lub innego źródła energii, by wspomóc swoje ciało. W kontakcie z działającą maszyną o sprawnym zasilaniu lub naładowanym ogniwem energetycznym może on wykonać Prosty (+10) Test Odporności. Sukces powoduje usunięcie jednego Poziomu Wyczerpania i dodatkowego jednego za każdy Stopień Sukcesu. Proces ten wymaga jednej minuty medytacji i modlitw."
           ]
         },
         {
@@ -1796,7 +1810,7 @@
             "heretics": "Heretycy",
             "mutants": "Mutanci",
             "psykers": "Psykerzy",
-            "xenos": "Obcy(wybrana rasa)",
+            "xenos": "Obcy (wybrana rasa)",
             "other": "inne"
           },
           "shortDesc": "+10 WW przeciwko znienawidzonym przeciwnikom.",
@@ -1851,7 +1865,7 @@
               "title": "Grupy:",
               "content": "${insertValues:groups|sep=, }"
             },
-            "Geny lub augumetryczne ulepszenia sprawiają, że dany zmysł Bohatera jest ponadprzeciętnie wyczulony. Gdy Bohater zdobywa ten Talent, wybiera jeden z pięciu zmysłów i od tej pory zyskuje premię +10 do Testów bezpośrednio związanych z tym zmysłem. Dla przykładu Talent Wzmocnione Zmysły(Wzrok) dawałby premię do Testu Spostrzegawczości wykonanego, by zobaczyć odległe stado ptaków, ale nie do testów Walki Wręcz, gdzie Bohater po prostu używa swoich oczu."
+            "Geny lub augumetryczne ulepszenia sprawiają, że dany zmysł Bohatera jest ponadprzeciętnie wyczulony. Gdy Bohater zdobywa ten Talent, wybiera jeden z pięciu zmysłów i od tej pory zyskuje premię +10 do Testów bezpośrednio związanych z tym zmysłem. Dla przykładu Talent Wzmocnione Zmysły (Wzrok) dawałby premię do Testu Spostrzegawczości wykonanego, by zobaczyć odległe stado ptaków, ale nie do testów Walki Wręcz, gdzie Bohater po prostu używa swoich oczu."
           ]
         },
         {
@@ -2307,7 +2321,7 @@
           "displayName": "mimik",
           "shortDesc": "Pozwala naśladować głosy.",
           "content": [
-            "Syntezatory voxu, odpowiedni trening, czy też wrodzone zdolności pozwalają Bohaterowi na dokładne naśladowanie obcych głosów. Musi on studiować sposób mówienia swojego celu przez co najmniej godzinę, by móc przyswoić sobie odpowiednie wzorce mowy, musi też rozumieć używany przez cel język. Talentu tego nie można użyć do naśladowania głosów obcych z powodu różnic w fizjonomii i pomijalnych z ludzkiego punktu widzenia a jednak ważnych aspektów używanych przez nich języków. By przejrzeć ten blef, osoby słuchające naśladowania muszą osiągnąć sukces w Wmagającym(-10) Teście Przejrzenia. Jeżeli Bohater nie słuchał celu osobiście, a używał nagrań voxu i konwersacji prowadzonych przez łącza komunikacyjne, trudność tego Testu Spada do Zwykłego(+0). Jeżeli słuchacze mogą zobaczyć Bohatera, oszustwo automatycznie kończy się porażką."
+            "Syntezatory voxu, odpowiedni trening, czy też wrodzone zdolności pozwalają Bohaterowi na dokładne naśladowanie obcych głosów. Musi on studiować sposób mówienia swojego celu przez co najmniej godzinę, by móc przyswoić sobie odpowiednie wzorce mowy, musi też rozumieć używany przez cel język. Talentu tego nie można użyć do naśladowania głosów obcych z powodu różnic w fizjonomii i pomijalnych z ludzkiego punktu widzenia a jednak ważnych aspektów używanych przez nich języków. By przejrzeć ten blef, osoby słuchające naśladowania muszą osiągnąć sukces w Wmagającym (-10) Teście Przejrzenia. Jeżeli Bohater nie słuchał celu osobiście, a używał nagrań voxu i konwersacji prowadzonych przez łącza komunikacyjne, trudność tego Testu Spada do Przeciętnego (+0). Jeżeli słuchacze mogą zobaczyć Bohatera, oszustwo automatycznie kończy się porażką."
           ]
         },
         {
@@ -2653,7 +2667,7 @@
           "displayName": "dobre zdrowie",
           "shortDesc": "Bohater zyskuje dodatkowy punkt Ran.",
           "content": [
-            "Bohater zyskuje dodatkowy punkt Ran. Talent ten można zakupić wielokrotnie, a maksymalna liczba instancji określona jest w Ścieżkach Kariery. Przy wielu instancjach należy zapisać ich liczbę, na przykład Dobre Zdrowie(3)."
+            "Bohater zyskuje dodatkowy punkt Ran. Talent ten można zakupić wielokrotnie, a maksymalna liczba instancji określona jest w Ścieżkach Kariery. Przy wielu instancjach należy zapisać ich liczbę, na przykład Dobre Zdrowie (3)."
           ]
         },
         {
@@ -2664,7 +2678,7 @@
           },
           "shortDesc": "Jeden przedmiot o koszcie Pobrania maksymalnie 20 jest standardowo wydawany.",
           "content": [
-            "Pewne narzędzie prowadzenia wojny służyło Bratu w wielu bitwach i zawsze znajduje się przy jego boku. Wybierz jeden przedmiot ze Zbrojowni (wyłączając @specialammo{<|specjalną amunicję} o koszcie Pobrania najwyżej 20. Może on zawierać @attachment{<} i modyfikatory Jakości (na przykład Mistrzowsko Wykonany @ranged{flamer}). Przedmiot ten przechodzi w posiadanie Brata. Wszystkie wymagania Sławy muszą zostać spełnione. Talent ten można zakupić wielokrotnie, co wyszczególniono w Ścieżce Kariery; każdą instancję należy opisać nazwą przedmiotu (na przykład Osobiste Wyposażenie(Mistrzowsko Wykonany Miotacz))."
+            "Pewne narzędzie prowadzenia wojny służyło Bratu w wielu bitwach i zawsze znajduje się przy jego boku. Wybierz jeden przedmiot ze Zbrojowni (wyłączając @specialammo{<|specjalną amunicję} o koszcie Pobrania najwyżej 20. Może on zawierać @attachment{<} i modyfikatory Jakości (na przykład Mistrzowsko Wykonany @ranged{flamer}). Przedmiot ten przechodzi w posiadanie Brata. Wszystkie wymagania Sławy muszą zostać spełnione. Talent ten można zakupić wielokrotnie, co wyszczególniono w Ścieżce Kariery; każdą instancję należy opisać nazwą przedmiotu (na przykład Osobiste Wyposażenie (Mistrzowsko Wykonany Miotacz))."
           ]
         },
         {
@@ -2702,7 +2716,7 @@
               "title": "Wymagania:",
               "content": "${insert:prerequisite}"
             },
-            "Bratu na stałe powierzono pancerz rzemieślniczy, relikt Astartes, mistrzowsko wykonaną broń, lub inne narzędzie rzadkie i prestiżowe narzędzie używane przez Kosmicznych Marines. Wybierz jeden przedmiot ze zbrojowni (z wyłączeniem @specialammo{<|specjalnej amunicji}) o koszcie Pobrania wynoszącym najwyżej 70. Zawierać on może @attachment{<|ulepszenia} i modyfikatory jakości. Przedmiot ten na stałe znajduje się pod opieką Brata, zasadniczo stając się jego standardowym wyposażeniem. Wszystkie wymagania Sławy muszą zostać spełnione. Talent ten można zakupić wielokrotnie; przy każdej instancji należy zapisać przedmiot, którego ona dotyczy, na przykład Osobiste Wyposażenie(@armor{artificer})."
+            "Bratu na stałe powierzono pancerz rzemieślniczy, relikt Astartes, mistrzowsko wykonaną broń, lub inne narzędzie rzadkie i prestiżowe narzędzie używane przez Kosmicznych Marines. Wybierz jeden przedmiot ze zbrojowni (z wyłączeniem @specialammo{<|specjalnej amunicji}) o koszcie Pobrania wynoszącym najwyżej 70. Zawierać on może @attachment{<|ulepszenia} i modyfikatory jakości. Przedmiot ten na stałe znajduje się pod opieką Brata, zasadniczo stając się jego standardowym wyposażeniem. Wszystkie wymagania Sławy muszą zostać spełnione. Talent ten można zakupić wielokrotnie; przy każdej instancji należy zapisać przedmiot, którego ona dotyczy, na przykład Osobiste Wyposażenie (@armor{artificer})."
           ]
         },
         {
@@ -2865,7 +2879,7 @@
               "title": "Wymagania:",
               "content": "${insert:prerequisite}"
             },
-            "Ciało Bohatera przeszło proces zaawansowanych ulepszeń bionicznych do takiego stopnia, że jest już bardziej maszyną niż człowiekiem. Talent ten zapewnia Cechę @trait{machine} z PP równymi liczbie jego instancji. Talent ten można zdobyć wielokrotnie i za każdym razem należy zapisać liczbę instancji, na przykład Ciało Jest Słabe(3)."
+            "Ciało Bohatera przeszło proces zaawansowanych ulepszeń bionicznych do takiego stopnia, że jest już bardziej maszyną niż człowiekiem. Talent ten zapewnia Cechę @trait{machine} z PP równymi liczbie jego instancji. Talent ten można zdobyć wielokrotnie i za każdym razem należy zapisać liczbę instancji, na przykład Ciało Jest Słabe (3)."
           ]
         },
         {
@@ -2987,7 +3001,7 @@
               "title": "Wymagania:",
               "content": "${insert:prerequisite}"
             },
-            "Brat jest źródłem inspiracji dla wszystkich wokół; gdy sytuacja zdaje się zmierzać w kierunku najgorszego, staje nieugięty i przez swoje czyny roznieca na nowo ducha walki w towarzyszach. Jeżeli w obecnej lub poprzedniej Rundzie Szwadron straci Spójnośćz powodu działań jednego z wrogów, Bohater może zadeklarować, że następną Akcją pokaże, że jest on Nieugięty i Niezłomny. Akcja ta może być atakiem wręcz lub dystansowym wymierzonym w tego wroga albo Zwykły(+0) Test Ogłady reprezentujący wyzywający okrzyk lub wezwanie do dalszej walki. Jeżeli związany z wybraną Akcją Test się powiedzie, Brat i wszyscy w jego Zasięgu Wsparcia odzyskują utraconą przed chwilą Spójność."
+            "Brat jest źródłem inspiracji dla wszystkich wokół; gdy sytuacja zdaje się zmierzać w kierunku najgorszego, staje nieugięty i przez swoje czyny roznieca na nowo ducha walki w towarzyszach. Jeżeli w obecnej lub poprzedniej Rundzie Szwadron straci Spójnośćz powodu działań jednego z wrogów, Bohater może zadeklarować, że następną Akcją pokaże, że jest on Nieugięty i Niezłomny. Akcja ta może być atakiem wręcz lub dystansowym wymierzonym w tego wroga albo Przeciętny (+0) Test Ogłady reprezentujący wyzywający okrzyk lub wezwanie do dalszej walki. Jeżeli związany z wybraną Akcją Test się powiedzie, Brat i wszyscy w jego Zasięgu Wsparcia odzyskują utraconą przed chwilą Spójność."
           ]
         },
         {
@@ -3107,7 +3121,7 @@
             },
             {
               "title": "Supresor",
-              "content": "Supresorzy to mistrzowie długodystansowego ognia przeciwpancernego. Zakuci są w ciężkie pancerze @armor{omnis|omnis}, które jednak noszą dla potężniejszego wspomagania przy prowadzeniu ognia i dodatkowych systemów wspomagających desant orbitalny. Kiedy już cel, zasypany ogniem z szybkostrzelnych @ranged{accelerator|działek przyspieszających}, zmieni się w nie więcej niż kupę dymiącego żelastwa, zajmują szybko dogodne pozycje do ostrzelania innego miejsca dzięki wbudowanym w pancerz Spadochronom Grawitacyjnym i potężnym Plecakom Skokowym. Bohater będący Supresorem zwiększa o jeden stopień swoją Umiejętność Pilotaż(Osobiste), a także może jako Akcję Darmową na początku swojej Tury (lub w trakcie Akcji @action{delay|opóźnienia}) wykonać skok od długości 12 metrów w linii prostej przy użyciu plecaka z uwagi na swoje doświadczenie w szybkim zmienianiu pozycji ostrzału. Skok taki nakłada jednak karę -10 do Umiejętności Strzeleckich. Supresor może również strzelać w trakcie skoku z karą -20. Dodatkowo ma możliwość wykonania jednego skrętu w trakcie skoku jeżeli wyposażony jest w @wargear{gravChute}."
+              "content": "Supresorzy to mistrzowie długodystansowego ognia przeciwpancernego. Zakuci są w ciężkie pancerze @armor{omnis|omnis}, które jednak noszą dla potężniejszego wspomagania przy prowadzeniu ognia i dodatkowych systemów wspomagających desant orbitalny. Kiedy już cel, zasypany ogniem z szybkostrzelnych @ranged{accelerator|działek przyspieszających}, zmieni się w nie więcej niż kupę dymiącego żelastwa, zajmują szybko dogodne pozycje do ostrzelania innego miejsca dzięki wbudowanym w pancerz Spadochronom Grawitacyjnym i potężnym Plecakom Skokowym. Bohater będący Supresorem zwiększa o jeden stopień swoją Umiejętność Pilotaż (Osobiste), a także może jako Akcję Darmową na początku swojej Tury (lub w trakcie Akcji @action{delay|opóźnienia}) wykonać skok od długości 12 metrów w linii prostej przy użyciu plecaka z uwagi na swoje doświadczenie w szybkim zmienianiu pozycji ostrzału. Skok taki nakłada jednak karę -10 do Umiejętności Strzeleckich. Supresor może również strzelać w trakcie skoku z karą -20. Dodatkowo ma możliwość wykonania jednego skrętu w trakcie skoku jeżeli wyposażony jest w @wargear{gravChute}."
             }
           ]
         }
@@ -3260,7 +3274,7 @@
         },
         {
           "name": "fromBeyond",
-          "displayName": "z osnowy",
+          "displayName": "obcy",
           "shortDesc": "Odporny na Strach, Przygwożdżenie, Obłęd i efekty związane z umysłem.",
           "content": [
             "Umysł istoty z tą Cechą nie jest ponad tak małymi zmartwieniami śmiertelnych jak obłęd. Stworzenie takie jest całkowicie niewrażliwe na Strach, Przygwożdżenie, Obłęd i Moce mogące zamglić, kontrolować lub zwieść umysł."
@@ -3310,7 +3324,7 @@
             },
             {
               "title": "Skradanie:",
-              "content": "Instynkt stworzenia nakazuje mu pozostać niezauważonym, znaleźć zdobycz, ubić ją, pożywić się, a potem wrócić w cień i polować dalej. W tym stanie stworzenie otrzymuje Umiejętność Ukrywanie się(+10). Nie zaatakuje niczego, czego nie będzie w stanie zaskoczyć ani nie ma przewagi liczebnej (w przypadku grupy stworzeń). Po zabójstwie szybko się pożywi i ucieknie. Horda z tą Cechą automatycznie się Łamie, a pojedyncze stworzenia rozpraszają się, by zwiększyć szanse powodzenia swoich łowów."
+              "content": "Instynkt stworzenia nakazuje mu pozostać niezauważonym, znaleźć zdobycz, ubić ją, pożywić się, a potem wrócić w cień i polować dalej. W tym stanie stworzenie otrzymuje Umiejętność Ukrywanie się (+10). Nie zaatakuje niczego, czego nie będzie w stanie zaskoczyć ani nie ma przewagi liczebnej (w przypadku grupy stworzeń). Po zabójstwie szybko się pożywi i ucieknie. Horda z tą Cechą automatycznie się Łamie, a pojedyncze stworzenia rozpraszają się, by zwiększyć szanse powodzenia swoich łowów."
             }
           ]
         },
@@ -3436,7 +3450,7 @@
           "displayName": "zmysł sonarowy",
           "shortDesc": "Idealnie odbiera swoje otoczenie w promieniu 30 metrów.",
           "content": [
-            "Stworzenie z tą Cechą oddczuwa swoje otoczenie przez wytwarzanie ledwo słyszalnych dźwięków, które pozwalają jej wykrywać pozycje wszelkich litych obiektów w promieniu 30 metrów. Inne stworzenia w tym promieniu mogą zwrócić uwagę na te dźwięki dzięki udanemu Złożonemu(-10) Testowi Spostrzegawczości."
+            "Stworzenie z tą Cechą oddczuwa swoje otoczenie przez wytwarzanie ledwo słyszalnych dźwięków, które pozwalają jej wykrywać pozycje wszelkich litych obiektów w promieniu 30 metrów. Inne stworzenia w tym promieniu mogą zwrócić uwagę na te dźwięki dzięki udanemu Wymagającemu (-10) Testowi Spostrzegawczości."
           ]
         },
         {
@@ -3563,17 +3577,17 @@
             {
               "type": "example",
               "content": [
-                "Kosmiczny Marine z Krzepą 42 normalnie miałby Siłę 4 (cyfra dziesiątek Krzepy). Jednak ma on również Cechę Nienaturalna Krzepa(2), jego Siła wynosi więc 8 (4 \u00d7 2 = 8).",
+                "Kosmiczny Marine z Krzepą 42 normalnie miałby Siłę 4 (cyfra dziesiątek Krzepy). Jednak ma on również Cechę Nienaturalna Krzepa (2), jego Siła wynosi więc 8 (4 \u00d7 2 = 8).",
                 "Zaznaczyć należy, że premia do Krzepy z pancerza wspomaganego brana jest pod uwagę po tym wymnożeniu. Kosmiczny Marine z Krzepą 42 w pancerzu otrzymuje premię +20 do Krzepy, przez co jego Siła finalnie wynosi 10 (4 \u00d7 2 = 8, +2 = 10).",
                 "Istnieje również Zdolność Solowa @abilitySolo{featOfStrength}, która pozwala Kosmicznym Marine na czyny wymagające legendarnej siły. Zwiększa to mnożnik o 1. Kosmiczny Marine z Krzepą 42 miałby Siłę 14 (4 \u00d7 3 = 12, +2 = 14) używając tej Zdolności."
               ]
             },
-            "Przy Przeciwstawnych Testach Charakterystyk, jeżeli stworzenie osiągnie sukces, do liczby Stopni Sukcesu dodaje się mnożnik. Jeżeli istnieją dodatkowe mnożniki, zwiększają one istniejący o 1. Na przykład jeżeli Kosmiczny Marine z Nienaturalną Krzepą(2) użyje @melee{powerFist|pięści energetycznej}, która pozwala podwoić Siłę przy ataku, potroi swoją Siłę zamiast dwukrotnego podwojenia jej.",
+            "Przy Przeciwstawnych Testach Charakterystyk, jeżeli stworzenie osiągnie sukces, do liczby Stopni Sukcesu dodaje się mnożnik. Jeżeli istnieją dodatkowe mnożniki, zwiększają one istniejący o 1. Na przykład jeżeli Kosmiczny Marine z Nienaturalną Krzepą (2) użyje @melee{powerFist|pięści energetycznej}, która pozwala podwoić Siłę przy ataku, potroi swoją Siłę zamiast dwukrotnego podwojenia jej.",
             "Przy opartych na Nienaturalnej Charakterystyce Testach Umiejętności bazowa trudność redukowana jest o jeden poziom za każdy stopień mnożnika (poczynając od +10 za 2), maksymalnie do +30.",
             {
               "type": "example",
               "content": [
-                "Arcymagos Voltaic ma pochodzący z Mrocznej Ery Technologii implant rdzeniowy zapewniający mu Cechę Nienaturalna Inteligencja(3). Wezwany jest do wykonania napraw na uszkodzonym rdzeniu plazmowym przy użyciu swojej Umiejętności Użycia Technologii opartej na Inteligencji. Zwyczajnie byłby to Test Bardzo Trudny(-30), ale z powodu jego Nienaturalnej Inteligencji(3) jest on Złożony(-10)."
+                "Arcymagos Voltaic ma pochodzący z Mrocznej Ery Technologii implant rdzeniowy zapewniający mu Cechę Nienaturalna Inteligencja (3). Wezwany jest do wykonania napraw na uszkodzonym rdzeniu plazmowym przy użyciu swojej Umiejętności Użycia Technologii opartej na Inteligencji. Zwyczajnie byłby to Test Bardzo Trudny (-30), ale z powodu jego Nienaturalnej Inteligencji (3) jest on Wymagający (-10)."
               ]
             },
             "Przy Przeciwstawnych Testach Charakterystyk sukces w swojej części Testu powoduje zwiększenie liczby Stopni Sukcesu o mnożnik Nienaturalnej Charakterystyki. Jeżeli nawet wtedy zdarzy się remis, wygrywa strona z Nienaturalną Charakterystyką.",
@@ -4008,6 +4022,34 @@
           "renown": 0,
           "content": [
             "Choć jest tak samo niszczycielski jak jego pełnowymiarowy odpowiednik, głównymi wadami pistoletu boltowego są jego mniejszy magazynek i niższa szybkostrzelność. Nadają się jednak idealnie dla jednostek Niszczycieli, kiedy przyjdzie potrzeba zając się wrogiem, który podszedł zbyt blisko, lub dla specjalistów szturmowych, którzy potrzebują prostej broni do użycia jednego z wielu specjalistycznych typów boltów, których używa Straż Śmierci."
+          ]
+        },
+        {
+          "displayName": "pistolet boltowy absolvor",
+          "name": "absolvorPistol",
+          "image": "https://static.wikia.nocookie.net/warhammer40k/images/b/b5/Ceres-Pattern_Bolt_Pistol.jpg",
+          "class": "pistol",
+          "source": "EIn",
+          "range": 30,
+          "rof": {
+            "single": true,
+            "burst": null,
+            "auto": null
+          },
+          "damage": {
+            "formula": "3k10kh2+10",
+            "display": "2k10+10",
+            "type": "explosion"
+          },
+          "penetration": 6,
+          "clip": 8,
+          "reload": 1,
+          "qualities": ["tearing"],
+          "weight": 6,
+          "requisition": 10,
+          "renown": 0,
+          "content": [
+            "Pistolet Absolvor — rozgrzeszający — należy do nowej generacji sprzętu Primaris. Jest to większy pistolet używany przez Kapelanów i Konsyliarzy Primaris jako broń boczna. Ma mniejszy magazynek niż standardowy pistolet, ale znacznie większą moc obalającą, porównywalną z ciężkim bolterem. Konsyliarze używają go do udzielania zbyt ciężko rannym Braciom Łaski Imperatora."
           ]
         },
         {
@@ -4525,6 +4567,7 @@
           "name": "accelerator",
           "image": "https://warhammer40000.com/games/wp-content/uploads/sites/2/2019/07/01-Ultramarines-Suppressor-3-128.png",
           "class": "heavy",
+          "source": "EIn",
           "range": 200,
           "rof": {
             "single": false,
@@ -4543,6 +4586,27 @@
           "renown": 1,
           "content": [
             "Potężna broń wystrzeliwująca pociski o dużo większej szybkości wylotowej niż w standardowym działku automatycznym, co zwiększa celność i ogranicza konieczność prowadzenia celu. Mimo, że jest wystarczająco lekka, by być używana przez Drużyny Tłumiące Primaris, nie należy nie doceniać jej kilkudziesięciocentymetrowej długości pocisków wybijających dziury w pancerzach pojazdów."
+          ]
+        },
+        {
+          "displayName": "pistolet reduktorowy",
+          "name": "reductorPistol",
+          "class": "pistol",
+          "rof": {
+            "single": true,
+            "burst": null,
+            "auto": null
+          },
+          "damage": {
+            "formula": "2k10+10",
+            "type": "impact"
+          },
+          "penetration": 12,
+          "weight": 4,
+          "requisition": 10,
+          "renown": 0,
+          "content": [
+            "Specjalny pistolet używany przez Konsyliarzy Primaris, który pełni u nich funkcję @tool{reductor|reduktora}. Zaprojektowany został do szybkiego dziurawienia ceramitowych pancerzy i wzmocnionych przez Ossmodulę i Magnificat żeber w celu usuwania Progenoidów, których może przechować kilka w dołączonych pojemnikach. Mimo niemal zerowego zasięgu jest w stanie równie dobrze sprawdzić się w przebijaniu na przykład czaszki rozszalałego orkowego wodza. Pistolet Reduktorowy nie wymaga amunicji ani przeładowania, ale można używać go tylko w walce w zwarciu. Dodatkowo wykorzystany może być do tych samych celów użytkowych, co Reduktor Pierworodnych."
           ]
         }
       ]
@@ -5123,7 +5187,7 @@
           "renown": 0,
           "content": [
             "Foto-wizjery i inne podobne osłony wzroku są powszechne wśród wrogów Straży. Ta potężniejsza wersja granatu błyskowego została zaprojektowana by przeciążać takie standardowe metody filtrowania obrazu. Każda kula nova zawiera nieco plazmy zawieszonej w gazowym węglu. Przy zapaleniu mieszanki następująca fuzja powoduje efekt podobny do zapadnięcia się gwiazdy, a wydzielane światło osiąga ekstremalną intensywność. Jednak ta zdolność do przeciążania autozmysłów jest mieczem obosiecznym dla Braci, przez co granaty nova muszą być strategicznie używane, by nie oślepić sprzymierzonych sił.",
-            "Oprócz otrzymania obrażeń od fali uderzeniowej każdy w zasięgu Podmuchu granatu musi wykonać Bardzo Trudny (-30) test Odporności lub zostać oślepionym na @dice{1k10} Rund. Foto-wizjery, autozmysły i inne osłony wzroku upraszczają ten test do Wymagającego (-10). Każdy w promieniu 20 metrów od eksplozji musi wykonać Zwykły (+0) test Odporności, lub zostać oślepiony na @dice{1k5} Rund (przed tym efektem normalnie chronią osłony wzroku)."
+            "Oprócz otrzymania obrażeń od fali uderzeniowej każdy w zasięgu Podmuchu granatu musi wykonać Bardzo Trudny (-30) test Odporności lub zostać oślepionym na @dice{1k10} Rund. Foto-wizjery, autozmysły i inne osłony wzroku upraszczają ten test do Wymagającego (-10). Każdy w promieniu 20 metrów od eksplozji musi wykonać Przeciętny  (+0) test Odporności, lub zostać oślepiony na @dice{1k5} Rund (przed tym efektem normalnie chronią osłony wzroku)."
           ]
         },
         {
@@ -5345,7 +5409,7 @@
           "display": "both",
           "content": [
             "Obwody siatki psionicznej w tych broniach podobno zostały stworzone przez samego Imperatora w czasach, kiedy jeszcze chodził między śmiertelnikami. Uzbrojenie takie łączy te obwody z psychoreaktywnymi kryształami używanymi w @wargear{psychicHood|kapturach psionicznych}, dzięki czemu użytkownik może skupić swoją mentalną moc w pole podobne do tego wytwarzanego przez broń energetyczną. Bron psioniczna przybiera wiele form o różnym stopniu wyspecjalizowania; najbardziej znaną są bronie Nemesis używane przez Szarych Rycerzy. Najłatwiej Kronikarzowi jest zdobyć psioniczny miecz lub kostur.",
-            "Jeżeli broń taka użyta jest przez osobę niebędącą psykerem, liczy się ona jako Zwykła broń wykonana dla rozmiaru Astartes i stosuje się do wszystkich zasad znajdujących się w profilu. Natomiast w rękach kogokolwiek posiadającego Siłę Psychiczną staje się dużo bardziej niebezpieczna. Za każdy punkt Siły Psychicznej Obrażenia i Penetracja broni rosną o 1. Na przykład miecz psioniczny używany przez psykera z SP 3 zadawałby @dice{1k10+5} (plus Siła} Obrażeń z Penetracją 5.",
+            "Jeżeli broń taka użyta jest przez osobę niebędącą psykerem, liczy się ona jako Zwykła broń wykonana dla rozmiaru Astartes i stosuje się do wszystkich zasad znajdujących się w profilu. Natomiast w rękach kogokolwiek posiadającego Poziom Mocy staje się dużo bardziej niebezpieczna. Za każdy punkt Poziomu Mocy Obrażenia i Penetracja broni rosną o 1. Na przykład miecz psioniczny używany przez psykera z PM 3 zadawałby @dice{1k10+5} (plus Siła} Obrażeń z Penetracją 5.",
             "Dodatkowo za każdym razem, kiedy psyker wyposażony w taką broń zada komuś Obrażenia za jej pomocą, może jako Akcja Darmowa skupić swoją moc i żądzę mordu w ostrzu, czy innej części używanej do uderzenia. Wymaga to testu Skupienia używającego przeciwstawnej Siły Woli. Za każdy Stopień Sukcesu użytkownik zadaje dodatkowe @dice{1k10} Obrażeń, które ignorują Pancerz i Wytrzymałość. Broń psioniczna nie może być zniszczona przez pole energetyczne."
           ]
         },
@@ -6053,7 +6117,7 @@
             "W amunicji dragonfire główny ładunek wybuchowy wymieniony jest na koncentrat, który zapala się w kontakcie z powietrzem i zalewa płynnym ogniem teren wokół celu, podobnie do wystrzału z miotacza.",
             {
               "title": "efekt:",
-              "content": "Obrażenia broni zmniejszają się o 2. Wszyscy w promieniu 2 metrów od celu (włącznie z celem) muszą wykonać Test Zręczności lub stanąć w płomieniach. Strzelec może wymierzyć w obszar zamiast w konkretny cel; w tym przypadku trafienie jest Łatwe(+20), a Test Zręczności wykonują wszyscy w promieniu 2 metrów od miejsca trafienia."
+              "content": "Obrażenia broni zmniejszają się o 2. Wszyscy w promieniu 2 metrów od celu (włącznie z celem) muszą wykonać Test Zręczności lub stanąć w płomieniach. Strzelec może wymierzyć w obszar zamiast w konkretny cel; w tym przypadku trafienie jest Łatwe (+20), a Test Zręczności wykonują wszyscy w promieniu 2 metrów od miejsca trafienia."
             },
             {
               "title": "używane przez:",
@@ -6274,7 +6338,7 @@
             },
             {
               "title": "uszkodzenia pancerza",
-              "content": "Jeżeli Marine otrzyma Obrażenia na tyle duże, że przekroczą wartość Pancerza w danej lokacji, cały pancerz zostaje przebity i nie jest liczony jako zahermetyzowany. Zwykle nałożenie @consumable{repairCement|cementu naprawczego} jest wystarczające by temu zaradzić, przynajmniej do czasu kiedy możliwe będzie wykonanie permanentnych napraw. Pancerze wspomagane Astartes korzystają z zamkniętych w opancerzonych plecakach generatorów fuzyjnych, które prawidłowo utrzymywane mogą zasilać pancerz przez nieograniczony okres czasu. Możliwe jest jednak uszkodzenie tego źródła energii, co ma szansę zmniejszyć efektywność całego układu, a nawet całkowicie go unieszkodliwić. Jeżeli noszący otrzyma Obrażenia Krytyczne na torsie zadane od tyłu, sprawdź tabelę @table{powerUnitCritical} dodatkowo do normalnej, by określić odpowiedni efekt krytyczny. Ewentualne problemy utrzymują się do czasu naprawienia źródła zasilania za pomocą Przeciętnego(+0) Testu Użycia Technologii."
+              "content": "Jeżeli Marine otrzyma Obrażenia na tyle duże, że przekroczą wartość Pancerza w danej lokacji, cały pancerz zostaje przebity i nie jest liczony jako zahermetyzowany. Zwykle nałożenie @consumable{repairCement|cementu naprawczego} jest wystarczające by temu zaradzić, przynajmniej do czasu kiedy możliwe będzie wykonanie permanentnych napraw. Pancerze wspomagane Astartes korzystają z zamkniętych w opancerzonych plecakach generatorów fuzyjnych, które prawidłowo utrzymywane mogą zasilać pancerz przez nieograniczony okres czasu. Możliwe jest jednak uszkodzenie tego źródła energii, co ma szansę zmniejszyć efektywność całego układu, a nawet całkowicie go unieszkodliwić. Jeżeli noszący otrzyma Obrażenia Krytyczne na torsie zadane od tyłu, sprawdź tabelę @table{powerUnitCritical} dodatkowo do normalnej, by określić odpowiedni efekt krytyczny. Ewentualne problemy utrzymują się do czasu naprawienia źródła zasilania za pomocą Przeciętnego (+0) Testu Użycia Technologii."
             }
           ]
         },
@@ -6337,6 +6401,7 @@
         {
           "displayName": "pancerz wspomagany mark x tacticus",
           "name": "tacticus",
+          "source": "EIn",
           "image": "https://static.wikia.nocookie.net/warhammer40k/images/f/f2/UltramarinesCesarus.jpg",
           "armor": {
             "general": 9,
@@ -6361,6 +6426,7 @@
         {
           "displayName": "pancerz wspomagany mark x phobos",
           "name": "phobos",
+          "source": "EIn",
           "image": "https://static.wikia.nocookie.net/warhammer40k/images/c/c0/UltramarinesPhobosArmour.jpg",
           "armor": {
             "general": 8,
@@ -6384,6 +6450,7 @@
         {
           "displayName": "pancerz eliminatora",
           "name": "eliminator",
+          "source": "EIn",
           "image": "https://static.wikia.nocookie.net/warhammer40k/images/d/d8/VanguardEliminatorUltramaines.jpg",
           "armor": {
             "general": 7,
@@ -6408,6 +6475,7 @@
         {
           "displayName": "pancerz wspomagany mark x gravis",
           "name": "gravis",
+          "source": "EIn",
           "image": "https://static.wikia.nocookie.net/warhammer40k/images/8/88/An_Inceptor_of_the_Ultramarines_Chapter_unleashes_the_wrath_of_the_Emperor.png",
           "armor": {
             "general": 14
@@ -6434,6 +6502,7 @@
         {
           "displayName": "pancerz wspomagany mark x omnis",
           "name": "omnis",
+          "source": "EIn",
           "image": "https://www.belloflostsouls.net/wp-content/uploads/2022/04/40k-primaris-suppressor-header.jpg",
           "armor": {
             "general": 10,
@@ -6556,7 +6625,7 @@
         "Pancerze wspomagane Astartes złożone są z płyt wykonanych z najwyższej jakości ceramitu i adamantytu, które są najsilniejszymi materiałami, jakie Imperium jest w stanie wyprodukować. Jednak przebijające opancerzenie pazury niektórych obcych i ogień ich spaczonej broni wymaga lepszej ochrony, niż może zapewnić jakikolwiek pancerz. W takich razach Astartes używają pól siłowych, których ochrona stoi na zupełnie innym poziomie. Pola siłowe stworzone są do odbijania, a nie absorbowania uderzeń, dzięki czemu są w stanie ochronić przed nawet najmocniejszymi ciosami.",
         "Rzutniki pola siłowego to zwykle małe urządzenia, które łatwo przyczepić lub wbudować w pancerz, tarcze, czy broń. Technologia pozwalająca na tak potężne wyładowania z tak małych urządzeń stanowi ściśle strzeżony sekret Adeptus Mechanicus i niemal wszystkie pola mają co najmniej setki lat. Adeptus Astartes i Straż Śmierci szczęśliwie mają dostęp do relatywnie sporych ilości tych generatorów, ale nawet oni muszą obchodzić się ostrożnie z ich użyciem.",
         "Bohater może korzystać naraz z tylko jednego pola, niezależnie ile generatorów ma na sobie. Jeżeli Bohater z aktywnym polem zostanie zaatakowany, rzucić należy @dice{1k100}. Jeżeli wynik rzutu jest mniejszy lub równy Wartości Ochrony pola, atak zostaje zanegowany i nie wywiera żadnego wpływu na Bohatera (choć cały czas może mieć efekt na otoczeniu, na przykład jeżeli została użyta broń o własności @quality{blast}.",
-        "Pole może również się przeciążyć. Porównaj wynik rzutu na aktywację pola z jego wartością Przeciążenia. Jeżeli jest on od niej mniejszy lub równy, pole zostaje przeciążone i przestaje działać do momentu, aż zostanie naładowane lub naprwawione, co wymaga Bardzo Trudnego(-30) Testu Użycia Technologii. Większość Zwyczajnych pól Astartes przeciąża się na rzutach 01-10, Nadzwyczajne na 01-05, a Mistrzowskie na 1."
+        "Pole może również się przeciążyć. Porównaj wynik rzutu na aktywację pola z jego wartością Przeciążenia. Jeżeli jest on od niej mniejszy lub równy, pole zostaje przeciążone i przestaje działać do momentu, aż zostanie naładowane lub naprwawione, co wymaga Bardzo Trudnego (-30) Testu Użycia Technologii. Większość Zwyczajnych pól Astartes przeciąża się na rzutach 01-10, Nadzwyczajne na 01-05, a Mistrzowskie na 1."
       ]
     },
     {
@@ -7085,7 +7154,7 @@
           "renown": 0,
           "content": [
             "Te duże zestawy silników odrzutowych najczęściej doczepiane są do jednostek zasilających pancerzy Astartes. Użytkownik załącza silniki plecaka, by wznieść się wysoko w powietrze i spaść na przeciwnika z góry. Plecaki skokowe są także przydatne w omijaniu wysokich przeszkód i docieraniu do znajujących się daleko przeciwników. Większość Braci przechodzi szkolenie w używaniu plecaków podczas okresu, który spędzają w Drużynie Szturmowej, gdzie hałas i dodatkowe obciążenie nie mają znaczenia w porównaniu ze zwiększoną mobilnością pozwalającą szybciej znaleźć się w pierwszej linii.",
-            "Efektywne użycie Plecaka Skokowego wymaga umiejętności Pilotaż(Osobiste). Plecak pozwala opaść bezpiecznie z dowolnej wysokości, a także wykonać dowolną liczbę krótkich skoków. Taki skok umożliwia Bratu podwojenie swojej Szybkości i poruszanie się nie zważając na przeszkody, choć wymusza lądowanie przed końcem Tury. Alternatywnie można użyć maksymalnej mocy Plecaka, by odtworzyć efekty cechy @trait{flyer||12} na minutę. Po upływie tego czasu turbiny potrzebują kolejnej minuty na schłodzenie."
+            "Efektywne użycie Plecaka Skokowego wymaga umiejętności Pilotaż (Osobiste). Plecak pozwala opaść bezpiecznie z dowolnej wysokości, a także wykonać dowolną liczbę krótkich skoków. Taki skok umożliwia Bratu podwojenie swojej Szybkości i poruszanie się nie zważając na przeszkody, choć wymusza lądowanie przed końcem Tury. Alternatywnie można użyć maksymalnej mocy Plecaka, by odtworzyć efekty cechy @trait{flyer||12} na minutę. Po upływie tego czasu turbiny potrzebują kolejnej minuty na schłodzenie."
           ]
         },
         {
@@ -7148,7 +7217,7 @@
           "renown": 0,
           "content": [
             "Spadochron Grawitacyjny to małe urządzenie, zwykle w formie plecaka, pozwalające na powolne opadanie na poduszce siły antygrawitacyjnej z dowolnej wysokości, pod warunkiem że użytkownik znajduje się w studni grawitacyjnej. Zawiera on generator wytwarzający pola zawieszające i dwa małe silniki napędzane prometium, które zwiększają manewrowość.",
-            "Aktywowany Spadochron pozwala bezpiecznie opaść z dowolnej wysokości, choć by wykorzystać jego pełny potencjał przy zrzucie z dużej wysokości Bohater potrzebuje umiejętności Pilotaż(Osobiste) i Nawigacja(Powierzchnia). Można również użyć go do zawiśnięcia na aktualnej wysokości na 1 minutę, po którym to czasie urządzenie potrzebuje kolejnej minuty na naładowanie. W przeciwieństwie do @wargear{jumpPack|plecaka skokowego}, Spadochronu nie można wykorzystać do wznoszenia."
+            "Aktywowany Spadochron pozwala bezpiecznie opaść z dowolnej wysokości, choć by wykorzystać jego pełny potencjał przy zrzucie z dużej wysokości Bohater potrzebuje umiejętności Pilotaż (Osobiste) i Nawigacja (Powierzchnia). Można również użyć go do zawiśnięcia na aktualnej wysokości na 1 minutę, po którym to czasie urządzenie potrzebuje kolejnej minuty na naładowanie. W przeciwieństwie do @wargear{jumpPack|plecaka skokowego}, Spadochronu nie można wykorzystać do wznoszenia."
           ]
         }
       ]
@@ -7168,7 +7237,7 @@
         "Koszt Pobrania podany w celu oceny zapytań uznanych za \"nadmiarowe\"."
       ],
       "content": [
-        "Zwyczajne substancje ulepszające wydolność w walce, takie jak Rzeź czy Pyłek Duchoognia dla idealnie stworzonego organizmu Astartes byłyby jedynie natychmiastowo usuniętym zanieczyszczeniem krwi. Substancje chemiczne mają jednak swoje miejsce w ich arsenalne, głównie bezpośrednio przeciwko wrogom, choć istnieją też takie, które są specjalnie zaprojektowanymi koncentratami używanymi do wspomagania Marines w boju, pomagając im zignorować nawet najcięższe obrażenia. Jeżeli nie podano inaczej, ceny podane są za jedną dawkę, a każdy opisany tutaj środek przygotowany jest dla Astartes. Takowe mogą być użyte na normalnych ludziach, ale wymaga to Prostego(+10) Testu Medycyny, by odpowiednio zmniejszyć dawkę. Porażka oprócz normalnego efektu powoduje Ogłuszenie na 1 Rundę i @dice{1k5} Poziomów Wyczerpania."
+        "Zwyczajne substancje ulepszające wydolność w walce, takie jak Rzeź czy Pyłek Duchoognia dla idealnie stworzonego organizmu Astartes byłyby jedynie natychmiastowo usuniętym zanieczyszczeniem krwi. Substancje chemiczne mają jednak swoje miejsce w ich arsenalne, głównie bezpośrednio przeciwko wrogom, choć istnieją też takie, które są specjalnie zaprojektowanymi koncentratami używanymi do wspomagania Marines w boju, pomagając im zignorować nawet najcięższe obrażenia. Jeżeli nie podano inaczej, ceny podane są za jedną dawkę, a każdy opisany tutaj środek przygotowany jest dla Astartes. Takowe mogą być użyte na normalnych ludziach, ale wymaga to Prostego (+10) Testu Medycyny, by odpowiednio zmniejszyć dawkę. Porażka oprócz normalnego efektu powoduje Ogłuszenie na 1 Rundę i @dice{1k5} Poziomów Wyczerpania."
       ]
     },
     {
@@ -7191,7 +7260,7 @@
           "requisition": 10,
           "renown": 0,
           "content": [
-            "Ta wywołująca paraliż substancja powoduje nagłe napięcie mięśni celu, czyniąc go łatwym do wyeliminowania lub schwytania bez utraty przytomności. Toksyna ta najczęściej spotykana jest w formie amunicji igłowej. Jeżeli cel ataku poniesie porażkę w Wymagającym(-10) Teście Odporności, otrzymuje @dice{1k10} Obrażeń do Krzepy i dodatkowe @dice{1k10} za każdy Stopień Porażki. Jeżeli Krzepa celu spadnie do 0, zostaje on sparaliżowany i nie jest w stanie nic zrobić. Efekt mija po @dice{2k5} minutach minus Wytrzymałość celu (minimum 1 minuta)."
+            "Ta wywołująca paraliż substancja powoduje nagłe napięcie mięśni celu, czyniąc go łatwym do wyeliminowania lub schwytania bez utraty przytomności. Toksyna ta najczęściej spotykana jest w formie amunicji igłowej. Jeżeli cel ataku poniesie porażkę w Wymagającym (-10) Teście Odporności, otrzymuje @dice{1k10} Obrażeń do Krzepy i dodatkowe @dice{1k10} za każdy Stopień Porażki. Jeżeli Krzepa celu spadnie do 0, zostaje on sparaliżowany i nie jest w stanie nic zrobić. Efekt mija po @dice{2k5} minutach minus Wytrzymałość celu (minimum 1 minuta)."
           ]
         },
         {
@@ -7212,7 +7281,7 @@
           "renown": 0,
           "content": [
             "Każda dawka Genofagu jest dostosowana do atakowania słabości w strukturze genetycznej konkretnego stworzenia. Z tego powodu substancja ta nie może zostać Pobrana, a zamiast tego musi zostać wykonana do konkretnego zadania. Ofiary Genofagu nie mają szans na oparcie się szybko działającym enzymom odcinającym ich oddychanie i krażenie.",
-            "Genofag jest tak śmiercionośny, że do wywołania efektu wystarczy kontakt ze skórą celu. Jeżeli zostanie użyty w formie broni, oznacza to, że atak musi zadać co najmniej 1 punkt Obrażeń po uwzględnieniu Pancerza, nie biorąc pod uwagę Wytrzymałości. Przy kontakcie cel musi wykonać Trudny(-20) Test Odporności. Porażka oznacza @dice{1k10+5} niemożliwych do zredukowania Obrażeń od Uderzeń. Efekt ten powtarza się co Rundę, dopóki ofiara pomyślnie wykona Test lub umrze. Jeżeli Genofag zostanie użyty na celu innym niż ten, dla którego został wykonany, ma zwykły efekt @quality{toxic|toksyczny}."
+            "Genofag jest tak śmiercionośny, że do wywołania efektu wystarczy kontakt ze skórą celu. Jeżeli zostanie użyty w formie broni, oznacza to, że atak musi zadać co najmniej 1 punkt Obrażeń po uwzględnieniu Pancerza, nie biorąc pod uwagę Wytrzymałości. Przy kontakcie cel musi wykonać Trudny (-20) Test Odporności. Porażka oznacza @dice{1k10+5} niemożliwych do zredukowania Obrażeń od Uderzeń. Efekt ten powtarza się co Rundę, dopóki ofiara pomyślnie wykona Test lub umrze. Jeżeli Genofag zostanie użyty na celu innym niż ten, dla którego został wykonany, ma zwykły efekt @quality{toxic|toksyczny}."
           ]
         },
         {
@@ -7241,7 +7310,7 @@
           "requisition": 10,
           "renown": 0,
           "content": [
-            "Środek znajdujący się w iniektorach pancerzy wspomaganych. Pozwala ignorować Efekty Krytyczne przez @dice{1k10} Rund. Dodatkowe dawki często przenosi się w @consumable{narthecium}, mogą one również być użyte w Sakramencie Odnowienia, by napełnić iniektory pancerza. Wymaga to Prostego(+10) Testu Użycia Technologii."
+            "Środek znajdujący się w iniektorach pancerzy wspomaganych. Pozwala ignorować Efekty Krytyczne przez @dice{1k10} Rund. Dodatkowe dawki często przenosi się w @consumable{narthecium}, mogą one również być użyte w Sakramencie Odnowienia, by napełnić iniektory pancerza. Wymaga to Prostego (+10) Testu Użycia Technologii."
           ]
         },
         {
@@ -7308,7 +7377,7 @@
           },
           "content": [
             "Miny Klastrowe zaprojektowano mając na względzie nie tylko czystą siłę, ale również ukrycie ich przed przeciwnikiem do ostatniego momentu. Dokonano tego wypełniając wiele mikrowęzłów potrójnie skoncentrowaną fyceliną i podłączenie ich wszystkich do jednego wyzwalacza, którym zwykle jest rodzaj linki czy fotokomórki lub płytka naciskowa. Te połączone w sieć ładunki mają efekt synergii i przy wyzwoleniu powodują ogromną eksplozję.",
-            "Zwykły zestaw min wystarczy do pokrycia dwóch metrów kwadratowych; powierzchnia ta może być zwiększona przez użycie wielu klastów, ale najmniejszy wymiar pokrytej powierzchni nie może wynosić mniej niż metr, by miny mogły zadziałać z odpowiednią siłą. Miny Klastrowe mogą być rozkładane nawet przez relatywnie niedoświadczonych Zwiadowców. Przy rozkładaniu Bohater wykonuje Test Ukrycia z premią +20 jeżeli jest również wyszkolony w Burzeniu. Należy zapisać liczbę Stopni Sukcesu osiągniętych w tym Teście, ponieważ wyznaczają one próg potrzebny do zdania Testu Spostyrzegawczości służącemu wykryciu min. Jeżeli potencjalna ofiara wygra ten Test Przeciwstawny, może zatrzymać się, by uniknąć wyzwolenia min; jeżeli przegra, otrzymuje (razem z wszystkimi innymi znajdującymi się na zaminowanym terenie) @dice{4k10} Obrażeń od Eksplozji z Penetracją 4.",
+            "Zwykły zestaw min wystarczy do pokrycia dwóch metrów kwadratowych; powierzchnia ta może być zwiększona przez użycie wielu klastów, ale najmniejszy wymiar pokrytej powierzchni nie może wynosić mniej niż metr, by miny mogły zadziałać z odpowiednią siłą. Miny Klastrowe mogą być rozkładane nawet przez relatywnie niedoświadczonych Zwiadowców. Przy rozkładaniu Bohater wykonuje Test Ukrywania się z premią +20 jeżeli jest również wyszkolony w Niszczeniu. Należy zapisać liczbę Stopni Sukcesu osiągniętych w tym Teście, ponieważ wyznaczają one próg potrzebny do zdania Testu Spostyrzegawczości służącemu wykryciu min. Jeżeli potencjalna ofiara wygra ten Test Przeciwstawny, może zatrzymać się, by uniknąć wyzwolenia min; jeżeli przegra, otrzymuje (razem z wszystkimi innymi znajdującymi się na zaminowanym terenie) @dice{4k10} Obrażeń od Eksplozji z Penetracją 4.",
             "Udany Test Burzenia wykonany przy podkładaniu min pozwala na zastosowanie bardziej zaawansowanych metod wyzwalania, takich jak zapalniki opóźnieniowe. Takie pułapki często stosowane są do uszkadzania pojazdów od wrażliwej strony podwozia. Miny Klastrowe użyte przeciwko pojazdom zadają Obrażenia z podwójną Penetracją."
           ]
         },
@@ -7361,7 +7430,7 @@
           "requisition": 5,
           "renown": 0,
           "content": [
-            "Taka wyspecjalizowana @tool{dataslate} przyjmuje dane geologiczne i nawigacyjne planety z istniejących banków danych lub z Zestawów Augur okrętu na orbicie. Jej geolokoator śledzi położenie użytkownika, pozwalając na zwrócenie kierunku i odległości do dowolnego miejsca na planecie. Zapewnia to premię +10 do Testów Nawigacji(Powierzchnia). Kartogram może również przechowywać szczegółowe mapy i schematy, które mogą być przydatne w planowaniu drogi lub działania. Wiele takich urządzeń ma również wbudowany projektor holograficzny, który wyświetla trójwymiarowe mapy."
+            "Taka wyspecjalizowana @tool{dataslate} przyjmuje dane geologiczne i nawigacyjne planety z istniejących banków danych lub z Zestawów Augur okrętu na orbicie. Jej geolokoator śledzi położenie użytkownika, pozwalając na zwrócenie kierunku i odległości do dowolnego miejsca na planecie. Zapewnia to premię +10 do Testów Nawigacji (Powierzchnia). Kartogram może również przechowywać szczegółowe mapy i schematy, które mogą być przydatne w planowaniu drogi lub działania. Wiele takich urządzeń ma również wbudowany projektor holograficzny, który wyświetla trójwymiarowe mapy."
           ]
         },
         {
@@ -7410,7 +7479,7 @@
           "requisition": 25,
           "renown": 0,
           "content": [
-            "Rubież Jerycho pełna jest planet, które kontakt z Imperium straciły milenia temu, a zawierają komórki ludzkości z Ery Cienia lub nawet z wcześniejszych czasów. Przez ten czas ich języki radykalnie odeszły od Niskiego Gotyku. Ukłąd Tłumaczący to poręczne urządzenie, które analizuje mowę i tłumaczy ją z lub na standardowy język i dialekt. Najbardziej przydatny jest w zetknięciu kulturami, których języki wywodzą się z Niskiego Gotyku, dzięki czemu działanie w takich okolicznościach nie wymaga Testu. Bohater mający Umiejętność Logika może wykonać Trudny(-20) Test, by odczytać podstawowe znaczenie naprawdę obcych języków (MG może dostosować trudność Testu biorąc pod uwagę języki, które Bohater zna). Dane wyjściowe Układu Tłumaczącego mogą być wyświetlane na ekranie, odtworzone przez wbudowany rozgłaszacz, lub przesłane na kanał voxu."
+            "Rubież Jerycho pełna jest planet, które kontakt z Imperium straciły milenia temu, a zawierają komórki ludzkości z Ery Cienia lub nawet z wcześniejszych czasów. Przez ten czas ich języki radykalnie odeszły od Niskiego Gotyku. Ukłąd Tłumaczący to poręczne urządzenie, które analizuje mowę i tłumaczy ją z lub na standardowy język i dialekt. Najbardziej przydatny jest w zetknięciu kulturami, których języki wywodzą się z Niskiego Gotyku, dzięki czemu działanie w takich okolicznościach nie wymaga Testu. Bohater mający Umiejętność Logika może wykonać Trudny (-20) Test, by odczytać podstawowe znaczenie naprawdę obcych języków (MG może dostosować trudność Testu biorąc pod uwagę języki, które Bohater zna). Dane wyjściowe Układu Tłumaczącego mogą być wyświetlane na ekranie, odtworzone przez wbudowany rozgłaszacz, lub przesłane na kanał voxu."
           ]
         },
         {
@@ -7430,7 +7499,7 @@
           "renown": 0,
           "content": [
             "Szukacz Locus tak naprawdę jest parą urządzeń. Mniejsza składowa, Wołacz Locus, to matowa metalowa kulka o średnicy kilku milimetrów. Większa to mała, przejrzysta kula z wykonaną z tego samego metalu co Wołacz igłą w tajemniczy sposób zawieszoną wewnątrz. Igła, zwana właśnie Szukaczem, zwykle wyrzeźbiona jest w kształt przygotowanych do pochwycenia czegoś szponów i bezbłędnie wskazuje na położenie Wołacza, a co do jej zasięgu nie zaobserwowano żadnych ograniczeń. Czasami wydobywane są Szukacze bez Wołacza, a niektórzy spędzają całe życie na próbach jego odszukania — tak wartościowym przedmiotem jest komplenty Szukacz.",
-            "Choć urządzenia te są rzadko spotykane, mogą być nieocenione w śledzeniu podejrzanych okrętów, towarów, czy nawet osób nie w zakresie planety, a całych sektorów. Obranie kursu we wskazywanym kierunku najczęściej wymaga odpowiedniego Testu Nawigacji o trudności opartej o dzielącą dwa elementy odległość. Przyczepienie do kogoś Wołacza wykonywane jest za pomocą Testu Ukrycia, którego Stopnie Sukcesu zapisywane są na potrzeby ewentualnych późniejszych Przeciwstawnych Testów Przeszukiwania. Wołacz można również umieścić w przedmiocie za pomocą Prostego(+10) Testu odpowiedniej Umiejętności (Użycia Technologii dla @tool{dataslate|tablicy danych}, Rzemiosła(Zbrojmistrz) dla broni, itp.)."
+            "Choć urządzenia te są rzadko spotykane, mogą być nieocenione w śledzeniu podejrzanych okrętów, towarów, czy nawet osób nie w zakresie planety, a całych sektorów. Obranie kursu we wskazywanym kierunku najczęściej wymaga odpowiedniego Testu Nawigacji o trudności opartej o dzielącą dwa elementy odległość. Przyczepienie do kogoś Wołacza wykonywane jest za pomocą Testu Ukrycia, którego Stopnie Sukcesu zapisywane są na potrzeby ewentualnych późniejszych Przeciwstawnych Testów Przeszukiwania. Wołacz można również umieścić w przedmiocie za pomocą Prostego (+10) Testu odpowiedniej Umiejętności (Użycia Technologii dla @tool{dataslate|tablicy danych}, Rzemiosła (Zbrojmistrz) dla broni, itp.)."
           ]
         },
         {
@@ -7551,12 +7620,12 @@
       "display": "both",
       "table": {
         "$name": "nazwa",
-        "$requisition": "pobranie",
-        "renown": "sława"
+        "requisition": "pobranie",
+        "$renown": "sława"
       },
       "content": [
         "%quote{Ta dłoń? Tak, wygląda mi na dobre narzędzie zemsty. Mam nadzieję, że pomoże mi odpłacić tym, którzy sprawili, że jest w ogóle potrzebna.|Brat Leonen z Mrocznych Aniołów po utracie ramienia}",
-        "Zwykle ciała Braci wzmacniane są implantami cybernetycznymi z powodu ran odniesionych w bitwie. Dla wszystkich implantów podano wymagania Sławy i Pobrania, choć z wyjątkiem Serworamion i Serwouprzęży, które podłączane są do zewnętrznych portów, są one instalowane by zastąpić funkcjonalność utraconą z powodu Obrażeń Krytycznych. Jakość wykonania tych zamienników zależy od Sławy Brata, co pokazano w tabeli @table{cyberneticCraftsmanship}. Proces instalacji może zostać przeprowadzony wyłącznie przez zaznajomionych z fizjologią Astartes Konsyliarzy w sali operacyjnej znajdującej się chociażby w jednym z Posterunków Straży. Operacja i późniejszy powrót do sił zajmują w sumie @dice{2k10}-W dni (minimum 1).",
+        "Zwykle ciała Braci wzmacniane są implantami cybernetycznymi z powodu ran odniesionych w bitwie. Dla wszystkich implantów podano wymagania Sławy i Pobrania, choć z wyjątkiem Serworamion i Serwouprzęży, które podłączane są do zewnętrznych portów, są one instalowane by zastąpić funkcjonalność utraconą z powodu Obrażeń Krytycznych. Jakość wykonania tych zamienników zależy od Sławy Brata, co pokazano w tabeli @table{cyberneticCraftsmanship}. Proces instalacji może zostać przeprowadzony wyłącznie przez zaznajomionych z fizjologią Astartes Konsyliarzy w sali operacyjnej znajdującej się chociażby w jednym z Posterunków Straży. Operacja i późniejszy powrót do sił zajmują w sumie @dice{2k10}-Wyt dni (minimum 1).",
         "Istnieją jednak wyjątki, takie jak Zakon Żelaznych Dłoni i wielu Zbrojmistrzów, którzy przyjmują tę szansę zbliżenia się do świętości maszyny. Zbrojmistrz może rozpocząć grę z Serworamieniem i jednym innym Zwyczajnym implantem (w niektórych Zakonach, takich jak Kosmiczne Wilki, by móc podążać ścieżką duchów maszyny wymagane jest poświęcenie własnego ciała). Gdy Zbrojmistrz staje się Szanowany, może zainstalować jeden Wyjątkowy implant, będący ulepszeniem istniejących systemów bądź czymś zupełnie nowym. Gdy staje się Sławny, może dodać jeden Mistrzowsko Wykonany implant.",
         "Wytrzymała konstrukcja implantów cybernetycznych dodaje 2 do Wytrzymałości posiadacza (po wzięciu pod uwagę @trait{unnaturalToughness|nienaturalnej odporności} w odpowiedniej lokacji. Obrażenia wymierzone w tę lokację liczą się jako Obrażenia zadane Bohaterowi, a Obrażenia Krytyczne działają jak normalnie. Każdy efekt, który może spowodować krwawienie ma @dice{50%} szans na uczynienie implantu bezużytecznym; w przeciwnym przypadku efekt jest negowany. Obrażenia Krytyczne w cybernetyczną kończynę, które powodują śmierć, zawsze kończą się pełnym efektem; założyć można, że wybrana kończyna eksploduje w chmurze odłamków, zapala się, lub wyładowuje gwałtownie przechowywaną energię.",
         "Zamienne czy dodatkowe kończyny — takie jak Serworamiona — mogą być wykorzystywane tylko do wykonywania zadań, które potrafi wykonać ich użytkownik. Wszystkie premie i kary nakładane przez takie kończyny stosują się tylko do Testów wykonywanych za ich pomocą; Bohater posiadający dwie takie kończyny nie podwaja zapewnianych przez nie modyfikatorów.",
@@ -7901,7 +7970,7 @@
           "name": "mindProbe",
           "displayName": "sonda umysłu",
           "cost": 750,
-          "action": "przedłużona(5)",
+          "action": "przedłużona (5)",
           "prerequisite": "@power{mindScan}",
           "opposed": true,
           "range": "$pr m",
@@ -7909,7 +7978,7 @@
           "content": [
             {
               "title": "akcja:",
-              "content": "Przedłużona(5)"
+              "content": "Przedłużona (5)"
             },
             {
               "title": "przeciwstawna:",
@@ -7994,14 +8063,14 @@
           "name": "augury",
           "displayName": "omen",
           "cost": 500,
-          "action": "przedłużona(10)",
+          "action": "przedłużona (10)",
           "opposed": false,
           "range": "specjalny",
           "sustained": false,
           "content": [
             {
               "title": "akcja:",
-              "content": "Przedłużona(10)"
+              "content": "Przedłużona (10)"
             },
             {
               "title": "przeciwstawna:",
@@ -8023,7 +8092,7 @@
           "name": "divination",
           "displayName": "wróżba",
           "cost": 750,
-          "action": "przedłużona(3)",
+          "action": "przedłużona (3)",
           "prerequisite": "SW 40+",
           "opposed": false,
           "range": "specjalna",
@@ -8031,7 +8100,7 @@
           "content": [
             {
               "title": "akcja:",
-              "content": "Przedłużona(3)"
+              "content": "Przedłużona (3)"
             },
             {
               "title": "przeciwstawna:",
@@ -8058,7 +8127,7 @@
           "name": "liftingTheVeil",
           "displayName": "Wejrzenie w Osnowę",
           "cost": 1000,
-          "action": "przedłużona(5)",
+          "action": "przedłużona (5)",
           "prerequisite": "@power{psychometry}, SW 40+",
           "opposed": false,
           "range": "^$pr 10 *^m",
@@ -8066,7 +8135,7 @@
           "content": [
             {
               "title": "akcja:",
-              "content": "Przedłużona(5)"
+              "content": "Przedłużona (5)"
             },
             {
               "title": "przeciwstawna:",
@@ -8117,14 +8186,14 @@
           "displayName": "psychometria",
           "cost": 500,
           "prerequisite": "@power{augury}",
-          "action": "przedłużona(10)",
+          "action": "przedłużona (10)",
           "opposed": false,
           "range": "dotyk",
           "sustained": false,
           "content": [
             {
               "title": "akcja:",
-              "content": "Przedłużona(10)"
+              "content": "Przedłużona (10)"
             },
             {
               "title": "przeciwstawna:",
@@ -8238,14 +8307,14 @@
           "displayName": "brama nieskończoności",
           "cost": 2000,
           "prerequisite": "Ranga 5, SW 50+",
-          "action": "przedłużona(3)",
+          "action": "przedłużona (3)",
           "opposed": false,
           "range": "samodzielny",
           "sustained": false,
           "content": [
             {
               "title": "akcja:",
-              "content": "Przedłużona(3)"
+              "content": "Przedłużona (3)"
             },
             {
               "title": "przeciwstawna:",
@@ -8431,8 +8500,8 @@
               "title": "podtrzymywana:",
               "content": "Nie"
             },
-            "Pokazując niewzruszenie regułami rządzącymi światem Kronikarz otwiera w materii rzeczywistości pojawiający się i znikający niestabilny wir. Ma on 2 metry średnicy i umieszczony może zostać w dowolnym punkcie w zasięgu, jednak poza tym momentem Kronikarz nie ma nad nim żadnej kontroli. W każdej Rundzie po stworzeniu wiru MG rzuca @table{vortexOfDoom|jedną kość}, by określić jego zachowanie, a następnie losuje @table{scatter} kierunek, w którym wir poruszy się o @dice{2k10} metrów. Jeżeli rozmiar wiru zostanie zmniejszony do 0, ten znika całkowicie. Cokolwiek co dotknie wiru, musi wykonać Zwykły(+0) Test Zręczności, w którym porażka oznacza otrzymanie @dice{1k10} \u00d7 Obrażeń od Energii. Istoty zabite przez wir zostają wessane w Spacznię i przepadają na zawsze.",
-            "Przebywanie w pobliżu otwartego wyłomu do Spaczni jest niebezpieczne dla dusz wszystkich obecnych. Gdy jakakolwiek istota, włączając samego Kronikarza, pierwszy raz znajdzie się w odległości 10 metrów od wiru, musi wykonać Trudny(-20) Test Siły Woli lunb otrzymać @dice{1k5} Punktów Spaczenia."
+            "Pokazując niewzruszenie regułami rządzącymi światem Kronikarz otwiera w materii rzeczywistości pojawiający się i znikający niestabilny wir. Ma on 2 metry średnicy i umieszczony może zostać w dowolnym punkcie w zasięgu, jednak poza tym momentem Kronikarz nie ma nad nim żadnej kontroli. W każdej Rundzie po stworzeniu wiru MG rzuca @table{vortexOfDoom|jedną kość}, by określić jego zachowanie, a następnie losuje @table{scatter} kierunek, w którym wir poruszy się o @dice{2k10} metrów. Jeżeli rozmiar wiru zostanie zmniejszony do 0, ten znika całkowicie. Cokolwiek co dotknie wiru, musi wykonać Przeciętny (+0) Test Zręczności, w którym porażka oznacza otrzymanie @dice{1k10} \u00d7 Obrażeń od Energii. Istoty zabite przez wir zostają wessane w Spacznię i przepadają na zawsze.",
+            "Przebywanie w pobliżu otwartego wyłomu do Spaczni jest niebezpieczne dla dusz wszystkich obecnych. Gdy jakakolwiek istota, włączając samego Kronikarza, pierwszy raz znajdzie się w odległości 10 metrów od wiru, musi wykonać Trudny (-20) Test Siły Woli lunb otrzymać @dice{1k5} Punktów Spaczenia."
           ]
         }
       ]
@@ -8675,7 +8744,7 @@
               "title": "podtrzymywana:",
               "content": "Nie"
             },
-            "Kronikarz przywołuje strumień psionicznego ognia, by spopielić swoich przeciwników. Może wybrać cel w zasięgu i otoczyć go chmurą płomieni o promieniu 2 metrów \u00d7 PM. Wszyscy na tym obszarze otrzymują @dice{1k10} \u00d7 Obrażeń od Energii. Dodatkowo muszą wykonać Zwykły(+0) Test Zręczności lub stanąć w płomieniach."
+            "Kronikarz przywołuje strumień psionicznego ognia, by spopielić swoich przeciwników. Może wybrać cel w zasięgu i otoczyć go chmurą płomieni o promieniu 2 metrów \u00d7 PM. Wszyscy na tym obszarze otrzymują @dice{1k10} \u00d7 Obrażeń od Energii. Dodatkowo muszą wykonać Przeciętny (+0) Test Zręczności lub stanąć w płomieniach."
           ]
         },
         {
@@ -8762,7 +8831,7 @@
               "title": "podtrzymywana:",
               "content": "Nie"
             },
-            "Efekty tej Mocy są śmiercionośne przeciwko tym z uzdolnieniami psionicznymi i są w stanie rozbić umysł psykera na kawałki. Jeżeli Kronikarz wykona atak w zwarciu przeciwko psykerowi (stworzeniu z PM co najmniej 1) w czasie do PM Rund od aktywacji tej Mocy, atak ten zada dodatkowe 2 \u00d7 PM Obrażeń, pred którymi nie chroni Wytrzymałość ani Pancerz. Dodatkowo cel musi wykonać Trudny(-20) Test Siły Woli, by nie stracić na 1 Rundę dostępu do swoich Mocy Psionicznych.",
+            "Efekty tej Mocy są śmiercionośne przeciwko tym z uzdolnieniami psionicznymi i są w stanie rozbić umysł psykera na kawałki. Jeżeli Kronikarz wykona atak w zwarciu przeciwko psykerowi (stworzeniu z PM co najmniej 1) w czasie do PM Rund od aktywacji tej Mocy, atak ten zada dodatkowe 2 \u00d7 PM Obrażeń, pred którymi nie chroni Wytrzymałość ani Pancerz. Dodatkowo cel musi wykonać Trudny (-20) Test Siły Woli, by nie stracić na 1 Rundę dostępu do swoich Mocy Psionicznych.",
             "Moc ta nie ma efektów przeciwko nie–psykerom."
           ]
         },
@@ -8855,7 +8924,7 @@
               "title": "podtrzymywana:",
               "content": "Tak"
             },
-            "Kapłan Run sięga w niebiosa i wzywa myślący piorun ciągnący się od chmur. Dopóki Moc jest aktywna, Kapłan może pokierować błyskawicę na dowolnego wroga w zasięgu, niezależnie od odległości między nim a poprzednim celem. Stworzenia trafione błyskawicą otrzymują @dice{1k10} \u00d7 PM Obrażeń od Energii z Własnością @quality{shocking}. Jeżeli cel zda Zwykły(+0) Test Zręczności, otrzymuje jedynie połowę Obrażeń zaokrąglając w górę. Mocy tej używać można wyłącznie pod otwartym niebem."
+            "Kapłan Run sięga w niebiosa i wzywa myślący piorun ciągnący się od chmur. Dopóki Moc jest aktywna, Kapłan może pokierować błyskawicę na dowolnego wroga w zasięgu, niezależnie od odległości między nim a poprzednim celem. Stworzenia trafione błyskawicą otrzymują @dice{1k10} \u00d7 PM Obrażeń od Energii z Własnością @quality{shocking}. Jeżeli cel zda Przeciętny (+0) Test Zręczności, otrzymuje jedynie połowę Obrażeń zaokrąglając w górę. Mocy tej używać można wyłącznie pod otwartym niebem."
           ]
         },
         {
@@ -8980,7 +9049,7 @@
         {
           "name": "callToArms",
           "displayName": "wezwanie do broni",
-          "action": "przedłużona(2)",
+          "action": "przedłużona (2)",
           "cost": 1500,
           "range": "promień ^$pr 10 *^m",
           "opposed": false,
@@ -8989,7 +9058,7 @@
           "content": [
             {
               "title": "akcja:",
-              "content": "Przedłużona(2)"
+              "content": "Przedłużona (2)"
             },
             {
               "title": "przeciwstawna:",
@@ -9037,7 +9106,7 @@
         {
           "name": "hammerOfTheEmperor",
           "displayName": "młot imperatora",
-          "action": "przedłużona(5)",
+          "action": "przedłużona (5)",
           "cost": 2000,
           "range": "^$pr^km",
           "opposed": false,
@@ -9046,7 +9115,7 @@
           "content": [
             {
               "title": "akcja:",
-              "content": "Przedłużona(5)"
+              "content": "Przedłużona (5)"
             },
             {
               "title": "przeciwstawna:",
@@ -9060,8 +9129,8 @@
               "title": "podtrzymywana:",
               "content": "Nie"
             },
-            "Kronikarz przywołuje potężny młot energii psionicznej, który ma siłę mogącą mierzyć się z bombardowaniem orbitalnym i jest w stanie niszczyć całe miasta. Kronikarz wybiera punkt znajdujący się w zasięgu i przywołuje Młot. Obejmuje on obszar o promieniu 100 metrów \u00d7 PM, który zostaje poddany średniej siły trzęsieniu ziemi, które zadaje @dice{3k10} \u00d7 PM Obrażeń wszystkim strukturom, co może spowodować ich zawalenie. Stworzenia na obszarze muszą wykonać Trudny(-20) Test Zręczności by ustać na nogach. Mocy tej nie można użyć na poziomie Stłumionym i nie działa ona wewnątrz budynków. Jest ona niesamowicie męcząca i użycie jej nakłada na Kronikarza @dice{1k5} Stopni Wyczerpania. Dodatkowo nie można jej użyć częściej niż raz na 24 godziny.",
-            "MG może zadecydować, że spadające gruzy zadają stworzeniom na obszarze efektu @dice{3k10} Obrażeń od Uderzeń, jeżeli nie zdadzą one Zwykłego(+0) Testu Zręczności."
+            "Kronikarz przywołuje potężny młot energii psionicznej, który ma siłę mogącą mierzyć się z bombardowaniem orbitalnym i jest w stanie niszczyć całe miasta. Kronikarz wybiera punkt znajdujący się w zasięgu i przywołuje Młot. Obejmuje on obszar o promieniu 100 metrów \u00d7 PM, który zostaje poddany średniej siły trzęsieniu ziemi, które zadaje @dice{3k10} \u00d7 PM Obrażeń wszystkim strukturom, co może spowodować ich zawalenie. Stworzenia na obszarze muszą wykonać Trudny (-20) Test Zręczności by ustać na nogach. Mocy tej nie można użyć na poziomie Stłumionym i nie działa ona wewnątrz budynków. Jest ona niesamowicie męcząca i użycie jej nakłada na Kronikarza @dice{1k5} Stopni Wyczerpania. Dodatkowo nie można jej użyć częściej niż raz na 24 godziny.",
+            "MG może zadecydować, że spadające gruzy zadają stworzeniom na obszarze efektu @dice{3k10} Obrażeń od Uderzeń, jeżeli nie zdadzą one Przeciętnego (+0) Testu Zręczności."
           ]
         },
         {
@@ -9297,7 +9366,7 @@
               "title": "podtrzymywana:",
               "content": "Nie"
             },
-            "Kronikarz recytuje modlitwę do Imperatora, wypowiadając święte słowa przepalające umysły heretyków i odrzucające duchy Spaczni. Moc ta działa na cele w liczbie PM, które zostają Ogłuszone na 1 Rundę. Na stworzeniach @trait{demonic|demoniczne} Moc ma dużo silniejszy efekt: otrzymują one @dice{1k10} \u00d7 PM Obrażeń Wybuchowych i natychmiastowo muszą wykonać Test @trait{warpInstability|nistabilności spaczni}. Dodatkowo stworzenia będące pod wpływem Opętania mogą natychmiast spróbować wyrwać się spod jego wpływu za pomocą Zwykłego(+0) Testu Siły Woli."
+            "Kronikarz recytuje modlitwę do Imperatora, wypowiadając święte słowa przepalające umysły heretyków i odrzucające duchy Spaczni. Moc ta działa na cele w liczbie PM, które zostają Ogłuszone na 1 Rundę. Na stworzeniach @trait{demonic|demoniczne} Moc ma dużo silniejszy efekt: otrzymują one @dice{1k10} \u00d7 PM Obrażeń Wybuchowych i natychmiastowo muszą wykonać Test @trait{warpInstability|nistabilności spaczni}. Dodatkowo stworzenia będące pod wpływem Opętania mogą natychmiast spróbować wyrwać się spod jego wpływu za pomocą Przeciętnego (+0) Testu Siły Woli."
           ]
         }
       ]
@@ -9424,7 +9493,7 @@
             },
             {
               "title": "Efekty:",
-              "content": "Kosmiczni Marines obdarzeni są genetycznie zwiększoną siłą, która zdecydowanie przekracza możliwości zwykłych ludzi. Gdy nadejdzie potrzeba, mogą oni popchnąć tę siłę do absolutnego maksimum, by dokonywać niesamowitych czynów. Raz na dzień w grze Bohater może wykonać Pokaz Siły. Efektywnie zwiększa to jego mnożnik @trait{unnaturalStrength|nienaturalnej krzepy} o 1, przez co na przykład Nienaturalna Krzepa(2) Pierworodnych staje się Nienaturalną Krzepą(3). Efekt utrzymuje się przez liczbę Rund równą Randze."
+              "content": "Kosmiczni Marines obdarzeni są genetycznie zwiększoną siłą, która zdecydowanie przekracza możliwości zwykłych ludzi. Gdy nadejdzie potrzeba, mogą oni popchnąć tę siłę do absolutnego maksimum, by dokonywać niesamowitych czynów. Raz na dzień w grze Bohater może wykonać Pokaz Siły. Efektywnie zwiększa to jego mnożnik @trait{unnaturalStrength|nienaturalnej krzepy} o 1, przez co na przykład Nienaturalna Krzepa (2) Pierworodnych staje się Nienaturalną Krzepą (3). Efekt utrzymuje się przez liczbę Rund równą Randze."
             },
             {
               "title": "Ulepszenia:",
@@ -9575,11 +9644,11 @@
             },
             {
               "title": "Efekty:",
-              "content": "Strażnicy Burzy często decydują się udowodnić swoją odwagę czy bronić swojego honoru przez pojedynek jeden na jednego do śmierci. Raz na Starcie jako Akcja Darmowa Brat z Zakonu Strażników Burzy może dokonać Wyzwania Gromu przeciwko jednemu przeciwnikowi, który jest w stanie zobaczyć go i usłyszeć (choć nie muszą znać wspólnego języka). Dopóki Brat nie wykona Akcji innej niż ataki wręcz przeciwko celowi lub poruszanie się w jego stronę z intencją rozpoczęcia walki w zwarciu, a żaden z jego sojuszników nie zaatakuje tego celu, otrzymuje on +10 do Testów Walki Wręcz przeciwko niemu. Dodatkowo, gdy Brat związany jest walką wręcz z celem, ten otrzymuje karę -10 do atakowania wszystkich poza samym Bratem i musi zdać Zwykły(+0) Test Zręczności, by móc się odsunąć. Zdolność ta trwa do końca Starcia lub do momentu, gdy Brat lub jego cel wycofają się z walki."
+              "content": "Strażnicy Burzy często decydują się udowodnić swoją odwagę czy bronić swojego honoru przez pojedynek jeden na jednego do śmierci. Raz na Starcie jako Akcja Darmowa Brat z Zakonu Strażników Burzy może dokonać Wyzwania Gromu przeciwko jednemu przeciwnikowi, który jest w stanie zobaczyć go i usłyszeć (choć nie muszą znać wspólnego języka). Dopóki Brat nie wykona Akcji innej niż ataki wręcz przeciwko celowi lub poruszanie się w jego stronę z intencją rozpoczęcia walki w zwarciu, a żaden z jego sojuszników nie zaatakuje tego celu, otrzymuje on +10 do Testów Walki Wręcz przeciwko niemu. Dodatkowo, gdy Brat związany jest walką wręcz z celem, ten otrzymuje karę -10 do atakowania wszystkich poza samym Bratem i musi zdać Przeciętny (+0) Test Zręczności, by móc się odsunąć. Zdolność ta trwa do końca Starcia lub do momentu, gdy Brat lub jego cel wycofają się z walki."
             },
             {
               "title": "Ulepszenia:",
-              "content": "Przy Randze 3 zdolności Brata na polu pojedynków pozwalają mu przerzucać Testy @action{parry|parowania} i @action{dodge|uników} przeciwko celowi swojego Wyzwania Gromu. Przy Randze 5 kary, które otrzymuje cel Zdolności rosną do -20, a Test Zręczności staje się Trudny(-20). Przy Randze 7 Brat może użyć Wyzwania Gromu na grupie wrogów o liczebności równej najwyżej jego Randze."
+              "content": "Przy Randze 3 zdolności Brata na polu pojedynków pozwalają mu przerzucać Testy @action{parry|parowania} i @action{dodge|uników} przeciwko celowi swojego Wyzwania Gromu. Przy Randze 5 kary, które otrzymuje cel Zdolności rosną do -20, a Test Zręczności staje się Trudny (-20). Przy Randze 7 Brat może użyć Wyzwania Gromu na grupie wrogów o liczebności równej najwyżej jego Randze."
             }
           ]
         },
@@ -9996,7 +10065,7 @@
             },
             {
               "title": "Ulepszenia:",
-              "content": "Przy Randze 4 Test Przygwożdżenia dla celów znajdujących się w strefie Warty wyznaczonej przez jednego z korzystających z tej Zdolności Braci staje się Bardzo Trudny(-30)."
+              "content": "Przy Randze 4 Test Przygwożdżenia dla celów znajdujących się w strefie Warty wyznaczonej przez jednego z korzystających z tej Zdolności Braci staje się Bardzo Trudny (-30)."
             }
           ]
         },
@@ -10117,7 +10186,7 @@
             },
             {
               "title": "Efekty:",
-              "content": "Nawet Kosmiczni Marines używają osłony w starciu z potężną bronią w rodzaju karabinów melta czy działek plazmowych. Brat może nakazać drużynie Okopanie się, jednocześnie poszukując najlepszych pozycji do prowadzenia ognia. Gdy Zdolność ta jest aktywna, Brat i wszyscy w Zasięgu Wsparcia otrzymują podwojone Punkty Pancerza z obecnie używanej Osłony. Premia ta jest aktywna dla każdego z nich dopóki nie poruszy się."
+              "content": "Nawet Kosmiczni Marines używają osłony w starciu z potężną bronią w rodzaju karabinów melta czy działek plazmowych. Brat może nakazać drużynie Okopanie się, jednocześnie poszukując najlepszych pozycji do prowadzenia ognia. Gdy Zdolność ta jest aktywna, Brat i wszyscy w Zasięgu Wsparcia otrzymują podwojone Punkty Pancerza z obecnie używanej Osłony. Premia ta jest aktywna dla każdego z nich, dopóki nie poruszy on się."
             },
             {
               "title": "Ulepszenia:",
@@ -10584,7 +10653,7 @@
               "title": "Podtyp:",
               "content": "${insertArray:subtype|sep=, }"
             },
-            "Bohater próbuje trafić w konkretny, często wrażliwy, punkt swojego celu. Deklaruje on Lokację (Głowę, Korpus, Lewe lub Prawe Ramię, albo Lewą lub Prawą Nogę) i wykonuje Trudny(-20) Test Walki Wręcz albo Umiejętności Strzeleckich. Jeżeli Test się powiedzie, trafienie dosięgło zadeklarowanej Lokacji, co powoduje pominięcie Ustalania Lokacji w rozwiązywaniu ataku."
+            "Bohater próbuje trafić w konkretny, często wrażliwy, punkt swojego celu. Deklaruje on Lokację (Głowę, Korpus, Lewe lub Prawe Ramię, albo Lewą lub Prawą Nogę) i wykonuje Trudny (-20) Test Walki Wręcz albo Umiejętności Strzeleckich. Jeżeli Test się powiedzie, trafienie dosięgło zadeklarowanej Lokacji, co powoduje pominięcie Ustalania Lokacji w rozwiązywaniu ataku."
           ]
         },
         {
@@ -10726,7 +10795,7 @@
               "title": "Podtyp:",
               "content": "${insertArray:subtype|sep=, }"
             },
-            "Akcji tej używa się do zmanifestowania Mocy. Każda Moc podaje typ i podtyp(y) Akcji."
+            "Akcji tej używa się do zmanifestowania Mocy. Każda Moc podaje typ i podtyp (y) Akcji."
           ]
         },
         {
@@ -10821,7 +10890,7 @@
                 },
                 {
                   "title": "Wyślizgnięcie:",
-                  "content": "Pochwycony może spróbować wyślizgnąć się z Chwytu wykonując Zwykły(+0) Test Przeciskania się. Jeżeli Test się uda, wyślizguje się i może wykonać dowolną Akcję Pojedynczą."
+                  "content": "Pochwycony może spróbować wyślizgnąć się z Chwytu wykonując Przeciętny (+0) Test Przeciskania się. Jeżeli Test się uda, wyślizguje się i może wykonać dowolną Akcję Pojedynczą."
                 },
                 {
                   "title": "Przejęcie Kontroli:",
@@ -10973,7 +11042,7 @@
             },
             "Bohater decyduje się strzec konkretnego celu lub obszaru i przygotowuje się do strzelania w odpowiednim momencie. Przy deklaracji Warty wybiera się strefę ognia, którą stanowi jakikolwiek obszar (na przykład granica linii drzew lub korytarz) zawarta w stożku o rozwarciu 45 stopni skierowanym tak jak Bohater.",
             "Bohater wybiera następnie @action{fullAuto}, @action{semiAuto} lub @action{suppressingFire} i ustala warunek, który pozwoli mu strzelać. W momencie, kiedy warunek zostanie spełniony przez początkiem kolejnej Tury Bohatera, może on wykonać wybrany przez siebie rodzaj ataku. Jeżeli złoży się to w czasie z Akcją innego Bohatera, pierwszy działa ten o wyższej Premii ze Zręczności. Jeżeli u obu jest ona taka sama, ustalają kolejność wykonując Przeciwstawny Test Zręczności.",
-            "Dodatkowo cele znajdujące się w ustalonej strefie w momencie wykonania ataku muszą wykonać Trudny(-20) Test Przygwożdżenia, by uniknąć tego efektu. Jeżeli pełniący Wartę Bohater przed oddaniem strzału wykona dowolną inną Akcję lub Reakcję (poza Akcjami Darmowymi takimi jak mowa), Warta natychmiast się kończy."
+            "Dodatkowo cele znajdujące się w ustalonej strefie w momencie wykonania ataku muszą wykonać Trudny (-20) Test Przygwożdżenia, by uniknąć tego efektu. Jeżeli pełniący Wartę Bohater przed oddaniem strzału wykona dowolną inną Akcję lub Reakcję (poza Akcjami Darmowymi takimi jak mowa), Warta natychmiast się kończy."
           ]
         },
         {
@@ -10991,7 +11060,7 @@
               "title": "Podtyp:",
               "content": "${insertArray:subtype|sep=, }"
             },
-            "Jeżeli Bohater dzierży broń Białą mogącą Parować, może spróbować zbić wymierzony w niego atak wręcz wykonując Zwykły(+0) Test Walki Wręcz. Jeżeli powiedzie się on, atak uznawany jest za nietrafiony, w przeciwnym przypadku atak dosięga celu i normalnie rzucane są Obrażenia. Parowanie nie wymaga żadnych specjalnych Umiejętności ani Talentów, ale pozwala zanegować tylko ataki wręcz."
+            "Jeżeli Bohater dzierży broń Białą mogącą Parować, może spróbować zbić wymierzony w niego atak wręcz wykonując Przeciętny (+0) Test Walki Wręcz. Jeżeli powiedzie się on, atak uznawany jest za nietrafiony, w przeciwnym przypadku atak dosięga celu i normalnie rzucane są Obrażenia. Parowanie nie wymaga żadnych specjalnych Umiejętności ani Talentów, ale pozwala zanegować tylko ataki wręcz."
           ]
         },
         {
@@ -11131,7 +11200,7 @@
               "title": "Podtyp:",
               "content": "${insertArray:subtype|sep=, }"
             },
-            "Jeżeli Bohater jest nieuzbrojony lub uzbrojony w broń Białą, może spróbować Ogłuszyć przeciwnika zamiast zadawać Obrażenia. Wykonuje on Trudny(-20) Test Walki Wręcz. Jeżeli atak się uda, rzuć @dice{1k10}+S. Następnie cel rzuca @dice{1k10}+W i dodaje +1 za każdy Punkt Pancerza chroniący Głowę (podwojone, jeżeli atak jest wykonany bez broni lub bronią @quality{primitive|prymitywną}. Jeżeli rzut atakującego jest wyższy lub równy rzutowi celu, cel zostaje Ogłuszony na liczbę Rund równą różnicy między rzutami i otrzymuje jeden Poziom Wyczerpania.)"
+            "Jeżeli Bohater jest nieuzbrojony lub uzbrojony w broń Białą, może spróbować Ogłuszyć przeciwnika zamiast zadawać Obrażenia. Wykonuje on Trudny (-20) Test Walki Wręcz. Jeżeli atak się uda, rzuć @dice{1k10}+S. Następnie cel rzuca @dice{1k10}+W i dodaje +1 za każdy Punkt Pancerza chroniący Głowę (podwojone, jeżeli atak jest wykonany bez broni lub bronią @quality{primitive|prymitywną}. Jeżeli rzut atakującego jest wyższy lub równy rzutowi celu, cel zostaje Ogłuszony na liczbę Rund równą różnicy między rzutami i otrzymuje jeden Poziom Wyczerpania.)"
           ]
         },
         {
@@ -11150,7 +11219,7 @@
               "title": "Podtyp:",
               "content": "${insertArray:subtype|sep=, }"
             },
-            "Bohater strzela długą serią ognia koszącego zmuszając przeciwników do schowania się za osłonami. Akcja ta wymaga broni mogącej strzelać Ogniem Ciągłym.Przy deklaracji Ognia Zaporowego wybiera się strefę ognia (lub używa strefy ustalonej dla @action{overwatch|warty}), którą stanowi jakikolwiek obszar (na przykład granica linii drzew lub korytarz) zawarta w stożku o rozwarciu 45 stopni skierowanym tak jak Bohater. Atakujący strzela następnie Ogniem Ciągłym i zużywa odpowiednią ilość amunicji. Wszystkie cele w strefie muszą wykonać Trudny(-20) Test Przygwożdżenia. Dodatkowo Bohater musi wykonać Trudny(-20) Test Umiejętności Strzeleckich by sprawdzić, czy jego seria trafi w któryś z celów. Rzut 94–00 oznacza Zacięcie. Jeżeli Test się powiedzie, MG alokuje trafienie do losowego celu w strefie. Dodatkowo każde dwa Stopnie Sukcesu oznaczają trafienie w kolejny losowy cel. Ogień Zaporowy nie zmienia własności obronnych pancerza czy Osłony. Liczba trafień nie może przekraczać właściwej dla danej broni Szybkistrzelności w ogniu ciągłym. Jeżeli któryś z celów zostanie trafiony kilkukrotnie, należy odczytać kolejne lokacje z tabeli @table{multipleHits}. Bohater może dobrowolnie ponieść porażkę w tym Teście. Zaznaczyć należy, że Ogień Zaporowy jest zupełnie odrębną Akcją niż Ogień Ciągły, więc nie otrzymuje premii +20 do Umiejętności Strzeleckich."
+            "Bohater strzela długą serią ognia koszącego zmuszając przeciwników do schowania się za osłonami. Akcja ta wymaga broni mogącej strzelać Ogniem Ciągłym.Przy deklaracji Ognia Zaporowego wybiera się strefę ognia (lub używa strefy ustalonej dla @action{overwatch|warty}), którą stanowi jakikolwiek obszar (na przykład granica linii drzew lub korytarz) zawarta w stożku o rozwarciu 45 stopni skierowanym tak jak Bohater. Atakujący strzela następnie Ogniem Ciągłym i zużywa odpowiednią ilość amunicji. Wszystkie cele w strefie muszą wykonać Trudny (-20) Test Przygwożdżenia. Dodatkowo Bohater musi wykonać Trudny (-20) Test Umiejętności Strzeleckich by sprawdzić, czy jego seria trafi w któryś z celów. Rzut 94–00 oznacza Zacięcie. Jeżeli Test się powiedzie, MG alokuje trafienie do losowego celu w strefie. Dodatkowo każde dwa Stopnie Sukcesu oznaczają trafienie w kolejny losowy cel. Ogień Zaporowy nie zmienia własności obronnych pancerza czy Osłony. Liczba trafień nie może przekraczać właściwej dla danej broni Szybkistrzelności w ogniu ciągłym. Jeżeli któryś z celów zostanie trafiony kilkukrotnie, należy odczytać kolejne lokacje z tabeli @table{multipleHits}. Bohater może dobrowolnie ponieść porażkę w tym Teście. Zaznaczyć należy, że Ogień Zaporowy jest zupełnie odrębną Akcją niż Ogień Ciągły, więc nie otrzymuje premii +20 do Umiejętności Strzeleckich."
           ]
         },
         {
@@ -11370,7 +11439,7 @@
         {
           "crit": "6+",
           "title": "utrata zasilania",
-          "content": "Pancerz całkowicie się wyłącza. Wszystkie korzyści zapewniane przez niego korzyści znikają (poza bazowymi Punktami Pancerza), nawet Historia. By choć się poruszyć, Bohater musi wykonać Niemożliwy(-40) Test Krzepy. Nawet jeżeli ten się powiedzie, Szybkość Bohatera nadal zmniejszona jest do 1, a wszystkie fizyczne akcje wykonywane są z karą -30."
+          "content": "Pancerz całkowicie się wyłącza. Wszystkie korzyści zapewniane przez niego korzyści znikają (poza bazowymi Punktami Pancerza), nawet Historia. By choć się poruszyć, Bohater musi wykonać Niemożliwy (-40) Test Krzepy. Nawet jeżeli ten się powiedzie, Szybkość Bohatera nadal zmniejszona jest do 1, a wszystkie fizyczne akcje wykonywane są z karą -30."
         }
       ]
     },
@@ -11501,7 +11570,7 @@
             "max": 44
           },
           "title": "widmowy powiew",
-          "content": "Wyjące wiatry zrywają się wokół psykera. Psyker i wszyscy w promieniu @dice{4k10} muszą wykonać Bardzo Łatwy(+30) Test Zręczności lub Krzepy, by uniknąć zostania przewróconym."
+          "content": "Wyjące wiatry zrywają się wokół psykera. Psyker i wszyscy w promieniu @dice{4k10} muszą wykonać Bardzo Łatwy (+30) Test Zręczności lub Krzepy, by uniknąć zostania przewróconym."
         },
         {
           "range": {
@@ -11517,7 +11586,7 @@
             "max": 50
           },
           "title": "ziemia protestuje",
-          "content": "Podłoże gwałtownie się trzęsie i wszyscy (włączając psykera) w promieniu @dice{5k10} od psykera muszą wykonać Prosty(+10) Test Zręczności by uniknąć przewrócenia się."
+          "content": "Podłoże gwałtownie się trzęsie i wszyscy (włączając psykera) w promieniu @dice{5k10} od psykera muszą wykonać Prosty (+10) Test Zręczności by uniknąć przewrócenia się."
         },
         {
           "range": {
@@ -11549,7 +11618,7 @@
             "max": 62
           },
           "title": "wycie banshee",
-          "content": "Upiorne wycie rozlega się w pobliskim otoczeniu, tłukąc szkło i zmuszając każdą śmiertelną istotę, która może je usłyszeć do wykonania Przeciętnego(+0) Testu Odporności - porażka oznacza głuchotę przez @dice{1k10} Rund."
+          "content": "Upiorne wycie rozlega się w pobliskim otoczeniu, tłukąc szkło i zmuszając każdą śmiertelną istotę, która może je usłyszeć do wykonania Przeciętnego (+0) Testu Odporności - porażka oznacza głuchotę przez @dice{1k10} Rund."
         },
         {
           "range": {
@@ -11565,7 +11634,7 @@
             "max": 68
           },
           "title": "cień spaczni",
-          "content": "Przez ułamek sekundy świat zmienia swój wygląd i wszyscy w promieniu @dice{1k100} metrów od psykera jest w stanie wejrzeć (szczęśliwie tylko przez mgnienie oka) w Spacznię. Każdy w zasięgu efektu musi wykonać Wymagający(-10) Test Siły Woli. Nieudany powoduje zyskanie @dice{1k5} Punktów Obłędu."
+          "content": "Przez ułamek sekundy świat zmienia swój wygląd i wszyscy w promieniu @dice{1k100} metrów od psykera jest w stanie wejrzeć (szczęśliwie tylko przez mgnienie oka) w Spacznię. Każdy w zasięgu efektu musi wykonać Wymagający (-10) Test Siły Woli. Nieudany powoduje zyskanie @dice{1k5} Punktów Obłędu."
         },
         {
           "range": {
@@ -11573,7 +11642,7 @@
             "max": 71
           },
           "title": "pogarda technologii",
-          "content": "Duchy maszyny odrzucają nienaturalną egzystencję psykera. Wszystkie niepoświęcone urządzenia w promieniu @dice{5k10} metrów od psykera na moment przestają działać. Wszystkie bronie dystansowe na tym obszarze Zacinają się. Bohaterowie posiadający implanty cybernetyczne muszą wykonać Prosty(+10) Test Odporności, którego porażka oznacza otrzymanie @dice{1k5} Obrażeń."
+          "content": "Duchy maszyny odrzucają nienaturalną egzystencję psykera. Wszystkie niepoświęcone urządzenia w promieniu @dice{5k10} metrów od psykera na moment przestają działać. Wszystkie bronie dystansowe na tym obszarze Zacinają się. Bohaterowie posiadający implanty cybernetyczne muszą wykonać Prosty (+10) Test Odporności, którego porażka oznacza otrzymanie @dice{1k5} Obrażeń."
         },
         {
           "range": {
@@ -11581,7 +11650,7 @@
             "max": 74
           },
           "title": "obłęd spaczni",
-          "content": "Gwałtowna fala spaczonej energii powoduje, że wszystkie stworzenia w promieniu @dice{2k10} metrów od psykera (wyłączając jego samego) zyskują efekty @talent{frenzy|szału} na 1 Rundę. Każdy będący pod wpływem tego efektu musi wykonać Wymagający(-10) Test Siły Woli, którego porażka oznacza otrzymanie @dice{1k5} Punktów Obłędu."
+          "content": "Gwałtowna fala spaczonej energii powoduje, że wszystkie stworzenia w promieniu @dice{2k10} metrów od psykera (wyłączając jego samego) zyskują efekty @talent{frenzy|szału} na 1 Rundę. Każdy będący pod wpływem tego efektu musi wykonać Wymagający (-10) Test Siły Woli, którego porażka oznacza otrzymanie @dice{1k5} Punktów Obłędu."
         },
         {
           "range": {
@@ -11607,7 +11676,7 @@
             "max": 5
           },
           "title": "bełkot",
-          "content": "Psyker krzyczy z bólu, czując wymykające się spod kontroli energie Osnowy wdzierające się w jego umysł. Musi wykonać Przeciętny(+0) Test Siły Woli aby uniknąć otrzymania @dice{1k5+1} Punktów Obłędu i zostania Ogłuszonym na @dice{1k5} Rund."
+          "content": "Psyker krzyczy z bólu, czując wymykające się spod kontroli energie Osnowy wdzierające się w jego umysł. Musi wykonać Przeciętny (+0) Test Siły Woli aby uniknąć otrzymania @dice{1k5+1} Punktów Obłędu i zostania Ogłuszonym na @dice{1k5} Rund."
         },
         {
           "range": {
@@ -11623,7 +11692,7 @@
             "max": 13
           },
           "title": "wstrząs psychiczny",
-          "content": "W trzasku uwalnianej energii psyker traci przytomność na @dice{1k5} Rund. Wszyscy w promieniu @dice{3k10} metrów muszą wykonać Prosty(+10) Test Siły Woli, by uniknąć Ogłuszenia na @dice{1k5} Rund."
+          "content": "W trzasku uwalnianej energii psyker traci przytomność na @dice{1k5} Rund. Wszyscy w promieniu @dice{3k10} metrów muszą wykonać Prosty (+10) Test Siły Woli, by uniknąć Ogłuszenia na @dice{1k5} Rund."
         },
         {
           "range": {
@@ -11647,7 +11716,7 @@
             "max": 30
           },
           "title": "zamknięty",
-          "content": "Moc zamyka umysł psykera w eterycznym więzieniu. Jego ciało pada na ziemię w stanie wegetatywnym. W każdej kolejnej Rundzie psyker musi zużyć Akcję Podwójną na wykonanie Wymagającego(-10) Testu Siły Woli. Sukces pozwala jego duszy uwolnić się i powrócić do ciała."
+          "content": "Moc zamyka umysł psykera w eterycznym więzieniu. Jego ciało pada na ziemię w stanie wegetatywnym. W każdej kolejnej Rundzie psyker musi zużyć Akcję Podwójną na wykonanie Wymagającego (-10) Testu Siły Woli. Sukces pozwala jego duszy uwolnić się i powrócić do ciała."
         },
         {
           "range": {
@@ -11671,7 +11740,7 @@
             "max": 55
           },
           "title": "szepty spaczni",
-          "content": "Demoniczne głosy wypełniają przestrzeń w promieniu @dice{4k10} metrów od psykera, szepcząc o okropnych sekretach i zaskakujących prawdach. Wszyscy znajdujący się na podanym obszarze muszą wykonać Trudny(-20) Test Siły Woli by uniknąć otrzymania @dice{1k10} Punktów Spaczenia."
+          "content": "Demoniczne głosy wypełniają przestrzeń w promieniu @dice{4k10} metrów od psykera, szepcząc o okropnych sekretach i zaskakujących prawdach. Wszyscy znajdujący się na podanym obszarze muszą wykonać Trudny (-20) Test Siły Woli by uniknąć otrzymania @dice{1k10} Punktów Spaczenia."
         },
         {
           "range": {
@@ -11695,7 +11764,7 @@
             "max": 72
           },
           "title": "deszcz krwi",
-          "content": "Rozpętuje się psychiczna burza, która powoduje lejące się z nieba potoki krwi na obszarze o promieniu @dice{5k10} metrów od psykera. Każdy w jego zasięgu musi wykonać Przeciętny(+0) Test Siły, by uniknąć przewrócenia się. Dodatkowo każde użycie Mocy Psychicznych na tym obszarze automatycznie powoduje @table{perilsOfTheWarp}. Efekt utrzymuje się przez @dice{1k5} Rund."
+          "content": "Rozpętuje się psychiczna burza, która powoduje lejące się z nieba potoki krwi na obszarze o promieniu @dice{5k10} metrów od psykera. Każdy w jego zasięgu musi wykonać Przeciętny (+0) Test Siły, by uniknąć przewrócenia się. Dodatkowo każde użycie Mocy Psychicznych na tym obszarze automatycznie powoduje @table{perilsOfTheWarp}. Efekt utrzymuje się przez @dice{1k5} Rund."
         },
         {
           "range": {
@@ -11719,7 +11788,7 @@
             "max": 86
           },
           "title": "zagubiony w spaczni",
-          "content": "Psyker natychmiastowo musi wykonać Bardzo Trudny(-30) Test Siły Woli. Jeżeli poniesie porażkę, zostaje natychmiast wciągnięty w Spacznię przez Demona, który opętuje go i używa jego ciała do złowieszczych celów. Psyker pojawia się @dice{1k10} dni później na zamieszkałej planecie z mętnymi wspomnieniami straszliwych czynów, których dopuścił się podczas opętania. Otrzymuje @dice{4k10} Punktów Spaczenia i może doświadczyć powikłań spowodowanych przez te czyny. Może rówież odwiedzić go Inkwizycja, jeżeli dowie się o tym wydarzeniu. Od teraz psyker dodaje +10 do wszystkich rzutów na @table{perilsOfTheWarp}."
+          "content": "Psyker natychmiastowo musi wykonać Bardzo Trudny (-30) Test Siły Woli. Jeżeli poniesie porażkę, zostaje natychmiast wciągnięty w Spacznię przez Demona, który opętuje go i używa jego ciała do złowieszczych celów. Psyker pojawia się @dice{1k10} dni później na zamieszkałej planecie z mętnymi wspomnieniami straszliwych czynów, których dopuścił się podczas opętania. Otrzymuje @dice{4k10} Punktów Spaczenia i może doświadczyć powikłań spowodowanych przez te czyny. Może rówież odwiedzić go Inkwizycja, jeżeli dowie się o tym wydarzeniu. Od teraz psyker dodaje +10 do wszystkich rzutów na @table{perilsOfTheWarp}."
         },
         {
           "range": {
@@ -12247,15 +12316,15 @@
           "modifier": "0"
         },
         {
-          "degree": "Strach(2) Straszny",
+          "degree": "Strach (2) Straszny",
           "modifier": "-10"
         },
         {
-          "degree": "Strach(3) Przerażający",
+          "degree": "Strach (3) Przerażający",
           "modifier": "-20"
         },
         {
-          "degree": "Strach(4) Koszmarny",
+          "degree": "Strach (4) Koszmarny",
           "modifier": "-30"
         }
       ]
@@ -12337,7 +12406,7 @@
           "range": {
             "min": 171
           },
-          "content": "Bohater jest tak przerażony, że jego serce się zatrzymuje. Musi wykonać Zwykły(+0) Test Odporności lub umrzeć. Nawet jeżeli Test się powiedzie, Bohater jest w stanie wegetatywnym przez @dice{1k5} godzin jak powyżej."
+          "content": "Bohater jest tak przerażony, że jego serce się zatrzymuje. Musi wykonać Przeciętny (+0) Test Odporności lub umrzeć. Nawet jeżeli Test się powiedzie, Bohater jest w stanie wegetatywnym przez @dice{1k5} godzin jak powyżej."
         }
       ]
     },
@@ -12351,23 +12420,23 @@
       },
       "content": [
         {
-          "modifier": "Prosty(+10)",
+          "modifier": "Prosty (+10)",
           "content": "Proste Ogniwo Energetyczne, Iluminator"
         },
         {
-          "modifier": "Zwykły(+0)",
+          "modifier": "Przeciętny (+0)",
           "content": "Ogniwo Energetyczne Broni, @tool{dataslate}, Terminal Mostka"
         },
         {
-          "modifier": "Złożony(-10)",
+          "modifier": "Wymagający (-10)",
           "content": "Ogniwo Energetyczne Hotshot, System Kontroli Wahadłowca, Serwoczaszka"
         },
         {
-          "modifier": "Trudny(-20)",
+          "modifier": "Trudny (-20)",
           "content": "Ogniwo Energetyczne Działa Laserowego, Serwitor, Hololit na Mostku"
         },
         {
-          "modifier": "Bardzo Trudny(-30)",
+          "modifier": "Bardzo Trudny (-30)",
           "content": "Centralny Kogitator Okrętu, Duch Maszyny Reaktora, Obca Technologia"
         }
       ]

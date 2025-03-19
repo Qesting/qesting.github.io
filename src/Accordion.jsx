@@ -52,7 +52,7 @@ function Accordion({title, items, previousSection, append}) {
                                             key={index} 
                                             elementId={id(item)} 
                                             innerText={item.displayName} 
-                                            additionalClasses={'py-1'}
+                                            additionalClasses={'py-1 block text-center'}
                                         />
                                     ]} 
                                     title={item.displayName}/> 
@@ -60,7 +60,7 @@ function Accordion({title, items, previousSection, append}) {
                                     key={index} 
                                     elementId={id(item)} 
                                     innerText={item.displayName} 
-                                    additionalClasses={'py-1'}
+                                    additionalClasses={'py-1 block text-center'}
                                 />
                         ))
                     }

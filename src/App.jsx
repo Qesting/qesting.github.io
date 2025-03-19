@@ -7,9 +7,10 @@ import Navbar from './Navbar';
 import { CaretDownFill, XCircleFill } from 'react-bootstrap-icons';
 import Footer from './Footer.jsx';
 import Table from './Table.jsx';
+import { useParams } from 'react-router';
 
 function App() {
-  const [currentSection, setCurrentSection] = useState(location.hash?.substring(1));
+  let { sectionName, itemName } = useParams()
   const [diceResult, setDiceResult] = useState(null);
   const [tableName, setTableName] = useState(null);
   const [tableNameSearch, setTableNameSearch] = useState();
@@ -19,8 +20,24 @@ function App() {
   const tableDialog = useRef(null)
 
   useEffect(() => {
-    location.hash = currentSection;
-  }, [currentSection]);
+    if (itemName) {
+      const item = self.document.querySelector(
+        itemName.startsWith(">")
+          ? `[id^=section][id$=${itemName.substring(1)}]`
+          : `[id$=${itemName}]`
+      )
+      self.document.activeElement.blur()
+      item?.scrollIntoView({
+        behavior: "smooth"
+      })
+      item?.focus()
+    }
+  }, [itemName])
+  useEffect(() => {
+    setTableName(null)
+    tableDialog.current?.close()
+  }, [itemName, sectionName])
+
   useEffect(() => {
     if (diceResult) diceDialog?.current?.showModal()
     else diceDialog?.current?.close()
@@ -39,7 +56,6 @@ function App() {
     setTableName: setTableName,
     setDarkMode: darkModeSetter,
     showTableDialog: () => tableDialog.current?.showModal(),
-    setCurrentSection: setCurrentSection,
     closeTableDialog: () => tableDialog?.current?.close()
   };
   const { sections, tables } = useContext(JsonData);
@@ -47,8 +63,8 @@ function App() {
     return tables.find(tab => tab.name === tableName);
   }, [tableName, tables]);
   const section = useMemo(() => {
-    return sections.find(sec => sec.name === currentSection);
-  }, [currentSection, sections]);
+    return sections.find(sec => sec.name === sectionName);
+  }, [sectionName, sections]);
   return (
     <div className={darkMode ? 'dark': ''} id="app-inner-container">
       <StateFunctionsContext.Provider value={stateFunctions}>
@@ -57,7 +73,7 @@ function App() {
           <main className="py-4 px-2 flex flex-col flex-grow">
               {
                 section ? (
-                  <Section data={section} key={currentSection}/>
+                  <Section data={section} key={sectionName}/>
                 ) : (
                   <>
                     <h1 className="py-2 text-4xl mb-4 text-center relative after:w-full after:h-px after:absolute after:bottom-0 after:bg-current after:left-0 after:right-0">Witamy w Kompendium</h1>

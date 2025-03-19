@@ -1,5 +1,6 @@
 import Parser from './Parser';
 import PropTypes from 'prop-types';
+import capitalize from './capitalize';
 
 function Item({data, section}) {
     const {
@@ -11,8 +12,8 @@ function Item({data, section}) {
         noGrid
     } = data;
     return (
-        <div id={`item-${section}-${name}`} className={`my-2 relative bg-gray-100 dark:bg-gray-800 rounded-md p-2 ${noGrid ? "col-span-1 md:col-span-2 lg:col-span-3 xl:col-span-4" : ""}`}>
-            <h4 className="capitalize text-xl pb-2 relative after:w-full after:h-px after:absolute after:bottom-1 after:bg-current after:left-0 after:right-0 text-center">{displayName}</h4>
+        <div id={`item-${section}-${name}`} className={`my-2 relative bg-gray-100 dark:bg-gray-800 rounded-md p-2 group/item !outline-none ${noGrid ? "col-span-1 md:col-span-2 lg:col-span-3 xl:col-span-4" : ""}`} tabIndex={-1}>
+            <h4 className="text-xl pb-2 relative after:w-full after:h-px after:absolute after:bottom-1 after:bg-current after:left-0 after:right-0 text-center group-focus/item:after:bg-accent after:transition-colors duration-300 after:duration-300 transition-colors group-focus/item:text-accent">{capitalize(displayName)}</h4>
             {
                 image && <img src={image} className="max-w-[50%] min-h-30 my-2"/>
             }

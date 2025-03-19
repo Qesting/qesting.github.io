@@ -6254,8 +6254,8 @@
       "display": "both",
       "table": {
         "$name": "nazwa",
-        "$requisition": "pobranie",
-        "renown": "sława"
+        "requisition": "pobranie",
+        "$renown": "sława"
       },
       "content": [
         "%quote{Ta dłoń? Tak, wygląda mi na dobre narzędzie zemsty. Mam nadzieję, że pomoże mi odpłacić tym, którzy sprawili, że jest w ogóle potrzebna.|Brat Leonen z Mrocznych Aniołów po utracie ramienia}",

@@ -1,4 +1,4 @@
-import { useRef, useState, useEffect, useMemo, useContext } from "react";
+import { useRef, useContext } from "react";
 import Parser from "./Parser";
 import PropTypes from 'prop-types';
 import rollFromString from "./rollDice";
@@ -38,27 +38,17 @@ function Table({table, data, section, hasSubs, footnotes, formula, displayName})
         impact: "uderzenia",
         rending: "rozrywające"
     };
-    const [rolledOnTable, setRolledOnTable] = useState(null)
     const rowContainer = useRef()
-    const rolledItem = useMemo(() => rowContainer?.current?.children?.[rolledOnTable], [rolledOnTable])
-    useEffect(() => {
-        if (rolledItem) {
-            rolledItem.classList.add('!bg-amber-500');
-            rolledItem.scrollIntoView();
-            const currentItem = rolledItem; // without this line there would be lingering highlighted trs if the user rolls again in less than a second
-            self.setTimeout(() => currentItem.classList.remove('!bg-amber-500'), 500);
-        }
-    }, [rolledItem]);
     const rollOnTable = () => {
-        const mod = +self.prompt(`Rzut ${table.formula ?? 'k100'} w tabeli ${table.displayName}: podaj ewentualne modyfikatory.`)
-        const roll = rollFromString(table.formula ?? 'd100').total + (isNaN(mod) ? 0 : mod);
-        if (rolledItem) {
-            rolledItem.classList.remove('!bg-amber-500');
-        }
-        setRolledOnTable(data.findIndex(item => item?.match ? item.match === roll : (item.range.min ?? -Infinity) <= roll && (item.range.max ?? Infinity) >= roll));
+        const roll = rollFromString(formula ?? 'd100').total;
+        const rowIndex = data.findIndex(item => item?.match ? item.match === roll : (item.range.min ?? -Infinity) <= roll && (item.range.max ?? Infinity) >= roll)
+        const row = rowContainer.current.children[rowIndex]
+        row.scrollIntoView();
+        row.classList.add('!bg-amber-500')
+        self.setTimeout(() => row.classList.remove('!bg-amber-500'), 500)
     };
     const tableNameSetter = useContext(StateFunctionsContext).closeTableDialog;
-    const topSection = section.split('-').shift()
+    const topSection = section?.split('-')?.shift()
     const usedFootnotes = footnotes?.map((f,i) => data.find(e => Object.values(e?.footnotes ?? {}).includes(i) || e?.qualities?.find?.(q => q?.footnote === i)) || f.startsWith(`{no-daggers|${section.split('-').pop()}}`) ? i : null).filter(e => e !== null)
     function tableRows(passedData) {
         return passedData?.filter(e => typeof e !== 'string' && !e?.noTable).map((e, index) => (
@@ -67,31 +57,37 @@ function Table({table, data, section, hasSubs, footnotes, formula, displayName})
                     keys.map((k, jndex) => (
                         <td 
                             key={jndex} 
-                            className={(['shortDesc', 'prerequisite', '$roll', '$content', 'content', 'result'].includes(k) ? '' : 'capitalize') + " text-center p-0.5"}
+                            className={(['shortDesc', 'prerequisite', '$roll', '$content', 'content', 'result'].includes(k) ? '' : 'capitalize') + " text-center p-0.5" + (k === "$roll" ? " whitespace-nowrap" : "")}
                         >
                             {
-                                k === '$roll' ? (e.match ?? (e.range?.min ?? 1) + '-' + (e.range?.max ?? '') ) :
-                                k === '$content' ? (<><strong className="font-bold capitalize">{e.title}</strong> <Parser text={e.content}/></>) :
+                                k === '$roll' ? (
+                                    e?.match?.toString()?.padStart(2, "0") ?? (
+                                        (e?.range?.min?.toString()?.padStart(2, "0") ?? "01")
+                                        + (e?.range?.min !== undefined && e?.range?.max !== undefined ? "\u2013" : "")
+                                        + (e?.range?.max?.toString()?.padStart(2, "0") ?? "+")
+                                    )
+                                ) :
+                                k === '$content' ? (<><strong className="font-bold capitalize">{e.title}</strong> <Parser text={e.content} passedSection={section}/></>) :
                                 (k.startsWith('$') ? e[k.substring(1)] === undefined && k !== '$covers' : e[k] === undefined) ? '\u2013' :
                                 e[k] === null ? 'N/D' :
                                 k === '$armor' && typeof e[k] !== 'string' ? Object.values(e[k]).filter(f => f !== null).join('/') : 
-                                k === '$covers' ?  (e.armor === undefined ? '\u2013' : typeof e?.armor === 'string' ? (<Parser text={e.armor}/>) : (e.armor.general ? 'wszystkie' : Object.keys(e.armor).filter(l => e.armor[l] !== null).map(l => locations[l]).join(', '))) :
+                                k === '$covers' ?  (e.armor === undefined ? '\u2013' : typeof e?.armor === 'string' ? (<Parser text={e.armor} passedSection={section}/>) : (e.armor.general ? 'wszystkie' : Object.keys(e.armor).filter(l => e.armor[l] !== null).map(l => locations[l]).join(', '))) :
                                 k === '$name' ? (<Parser text={`@${topSection}{${e.name}}`} passedSection={section}/>)  : 
                                 k === '$renown' ? renown[e.renown] :
                                 k === '$rof' ? Object.values(e.rof).map(f => f ? (typeof f === 'number' ? f : 'S') : '-').join('/') :
-                                k === '$damage' && typeof e.damage !== 'string' ? (<span>{<Parser text={`@dice{${e.damage.formula + (e.damage.display ? '|' + e.damage.display : '')}}`}/>}&nbsp;{damageType[e.damage.type]}</span>) :
+                                k === '$damage' ? (typeof e.damage !== 'string' ? (<span>{<Parser text={`@dice{${e.damage.formula + (e.damage.display ? '|' + e.damage.display : '')}}`} passedSection={section}/>}&nbsp;{damageType[e.damage.type]}</span>) : e.damage ):
                                 k === '$class' ? rangedClass[e.class] : 
                                 k === '$qualities' && typeof e.qualities !== 'string' ? (<Parser text={e.qualities.map(f => (typeof f === 'string' ? `@quality{${f}}` : f?.value ? `@quality{${f.name}||${f.value}}` : `@quality{${f.name}}`) + (f.footnote ? `@footnote{${f.footnote}|${usedFootnotes.indexOf(f.footnote)}}` : '')).join(', ')} passedSection={section}/>) :
-                                k === '$range' && typeof e.range === 'number' ? `${e.range}m`:
+                                k === '$range' ? (typeof e.range === 'number' ? `${e.range}m` : e.range) :
                                 k === '$reload' && typeof e.reload === 'number' ? `${e.reload} akcji podw.` : 
-                                k === '$protectionRating' ? (<Parser text={`@dice{${e.protectionRating}%}`}/>) : 
-                                k === '$overload' ? (<Parser text={`@dice{${e.overload}%|${e.overload === 1 ? '01' : '01-' + (e.overload+[]).padStart(2, '0')}}`}/>) :
+                                k === '$protectionRating' ? (<Parser text={`@dice{${e.protectionRating}%}`} passedSection={section}/>) : 
+                                k === '$overload' ? (<Parser text={`@dice{${e.overload}%|${e.overload === 1 ? '01' : '01-' + (e.overload+[]).padStart(2, '0')}}`} passedSection={section}/>) :
                                 Array.isArray(e[k]) ? e[k].join(', ') : 
                                 (<Parser text={(e[k]+[])} passedSection={section}/>)
                             }
                             {
                                 e?.footnotes?.[k] !== undefined && (
-                                    <Parser text={`@footnote{${e?.footnotes?.[k]}|${usedFootnotes.indexOf(e?.footnotes?.[k])}}`}/>
+                                    <Parser text={`@footnote{${e?.footnotes?.[k]}|${usedFootnotes.indexOf(e?.footnotes?.[k])}}`} passedSection={section}/>
                                 )
                             }
                         </td>
@@ -126,7 +122,7 @@ function Table({table, data, section, hasSubs, footnotes, formula, displayName})
                     {
                         !section && (
                             <button
-                                className="text-inherit transition-colors duration-200 hover:text-red-600 text-center absolute top-2 right-2"
+                                className="text-inherit transition-colors duration-200 hover:text-red-600 text-center absolute top-1 right-2"
                                 onClick={() => tableNameSetter(false)}
                             >
                                 <XCircleFill/>
@@ -153,7 +149,7 @@ function Table({table, data, section, hasSubs, footnotes, formula, displayName})
                 }
                 {
                     usedFootnotes?.map((e, index) => (
-                        <tr id={`footnote-${section}-${e}`} key={index}>
+                        <tr id={`footnote-${section}-${e}`} key={index} className="focus:text-accent transition-colors duration-300" tabIndex={-1}>
                             <td colSpan={keys.length} className="italic">{footnotes[e].startsWith('{no-daggers}') ? ' ' : '\u2020'.repeat(index + 1)+ ' '}{<Parser text={footnotes[e].replace(/\{no-daggers\|.*?\}/, '')}/>}</td>
                         </tr>
                     ))
@@ -170,7 +166,7 @@ Table.propTypes = {
     hasSubs: PropTypes.bool,
     footnotes: PropTypes.arrayOf(PropTypes.string),
     formula: PropTypes.string,
-    displayName: PropTypes.string
+    displayName: PropTypes.string,
 };
 
 export default Table;
