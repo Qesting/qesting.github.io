@@ -95,8 +95,8 @@ function App() {
                   <Section data={section} key={sectionName}/>
                 ) : (
                   <>
-                    <h1 className="py-2 text-4xl mb-4 text-center relative after:w-full after:h-px after:absolute after:bottom-0 after:bg-current after:left-0 after:right-0">Witamy w Kompendium</h1>
-                    <h2 className='text-2xl px-20'>Na co czekasz? Wybierz kategorię bądź tabelę powyżej i dowiedz się wszystkiego, co potrzebne przy zwalczaniu wrogów ludzkości. Za Imperatora!</h2>
+                    <h1 className="py-2 text-4xl mb-4 text-center relative after:w-full after:h-px after:absolute after:bottom-0 after:bg-current after:left-0 after:right-0">Codex Vigilis - Kompendium Deathwatch - wita!</h1>
+                    <h2 className='text-2xl px-20 text-center'>Na co czekasz? Wybierz kategorię bądź tabelę powyżej i dowiedz się wszystkiego, co potrzebne przy zwalczaniu wrogów ludzkości. Za Imperatora!</h2>
                   </>
                 )
               }
@@ -129,8 +129,9 @@ function App() {
             )
           }
       </dialog>
-      <dialog ref={sourcesDialog} className="text-inherit bg-gray-100 dark:bg-gray-800 rounded-md backdrop:bg-gray-950 backdrop:opacity-50 w-[30rem] md:w-[45rem] lg:w-[60rem] max-h-[calc(100vh-7rem)] p-4">
-          <h2 className="text-3xl pb-2 text-center relative after:w-full after:h-px after:absolute after:bottom-0 after:bg-current after:left-0 after:right-0">Źródła</h2>
+      <dialog ref={sourcesDialog} className="text-inherit bg-gray-100 dark:bg-gray-800 rounded-md backdrop:bg-gray-950 backdrop:opacity-50 w-[30rem] md:w-[45rem] lg:w-[60rem] max-h-[calc(100vh-7rem)] p-4 relative">
+          <button className="absolute right-2 top-2 focus:text-red-600 hover:text-red-600 transtion-colors duration-200" onClick={() => sourcesDialog.current?.close()}><XCircleFill/></button>
+          <h2 className="text-3xl pb-2 px-4 text-center relative after:w-full after:h-px after:absolute after:bottom-0 after:bg-current after:left-0 after:right-0">Źródła</h2>
           <table className="w-full text-center mt-2">
             <thead>
               <tr>
