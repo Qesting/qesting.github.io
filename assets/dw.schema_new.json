@@ -10,6 +10,10 @@
           "type": "string",
           "description": "the path to section's supersection. omitted if in group or self is a root section"
         },
+        "source": {
+          "type": "string",
+          "description": "the source id, will default to rootSource if not present"
+        },
         "name": {
           "type": "string",
           "description": "the identifier"
@@ -101,6 +105,10 @@
         "name": {
           "type": "string",
           "description": "the identifier"
+        },
+        "source": {
+          "type": "string",
+          "description": "the source id, will default to section source if not present"
         },
         "displayName": {
           "type": "string",
@@ -595,6 +603,10 @@
           "type": "string",
           "pattern": "^[a-zA-Z]+(?:-[a-zA-Z]+)*$",
           "description": "the tree of parent sections separated with '-' signs"
+        },
+        "source": {
+          "type": "string",
+          "description": "a source to be shared by all contained items"
         }
       },
       "patternProperties": {
@@ -619,8 +631,10 @@
       "additionalProperties": false,
       "required": ["parentPath", "items", "type"]
     },
-    "head": {
+    "source": {
       "type": "object",
+      "title": "source",
+      "description": "a collection of data, such as one book",
       "properties": {
         "displayName": {
           "type": "string",
@@ -638,13 +652,14 @@
           "type": "string",
           "description": "author of the source material"
         },
-        "transrciber": {
+        "transcriber": {
           "type": "string",
           "description": "the one who wrote the source file. empty implies the same as author"
         },
-        "version": {
-          "type": ["number", "string"],
-          "description": "version id of shape [number] or [version string]"
+        "core": {
+          "type": "boolean",
+          "description": "core sources are always displayed",
+          "const": true
         },
         "color": {
           "type": "string",
@@ -672,6 +687,32 @@
               "pattern": "[a-z]+"
             }
           ]
+        }
+      }
+    },
+    "head": {
+      "type": "object",
+      "title": "head",
+      "description": "the information that does not constitute actual data",
+      "properties": {
+        "sources": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/source"
+          },
+          "description": "a collection of source definitions"
+        },
+        "author": {
+          "type": "string",
+          "description": "the autor of the document"
+        },
+        "version": {
+          "type": ["number", "string"],
+          "description": "version id of shape [number] or [version string]"
+        },
+        "rootSource": {
+          "type": "string",
+          "description": "a default source to use"
         }
       }
     }

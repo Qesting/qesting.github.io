@@ -21,47 +21,56 @@
             {
               "name": "secondaryHeart",
               "displayName": "dodatkowe serce",
-              "shortDesc": "Część @trait{unnaturalStrength|nienaturalnej krzepy} i @trait{unnaturalToughness|nienaturalnej odporności}."
+              "shortDesc": "Część @trait{unnaturalStrength|nienaturalnej krzepy} i @trait{unnaturalToughness|nienaturalnej odporności}.",
+              "content": "Pierwsze w kolejności implantacji. Dzięki niemu krew pompowana jest szybciej, co zwiększa wydolność wysiłkową organizmu. Oprócz tego Marine dzięki temu organowi jest w stanie funkcjonować zwyczajnie w atmosferze zawierającej niewielkie ilości tlenu. Pełni ono również funkcję zapasu na wypadek zniszczenia pierwotnego serca, w którym to przypadku przejmuje wszystkie jego funkcje. Uniemożliwia to jednak wzmocnione działanie ciała. Drugie serce wszczepiane jest na samym początku, by podnieść metabolizm, co zwiększa szansę przeżycia kolejnych operacji."
             },
             {
               "name": "ossmodula",
               "displayName": "ossmodula",
-              "shortDesc": "Część @trait{unnaturalToughness|nienaturalnej odporności}."
+              "shortDesc": "Część @trait{unnaturalToughness|nienaturalnej odporności}.",
+              "content": "Druga w kolejności implantacji. Mały, cylindryczny organ, którego niewielki rozmiar może przekłamywać jego ważność. Ossmodula monitoruje i wydziela hormony wpływające na kształt i skład kości, a także pozwalają im wchłaniać krzemiany zawarte w dużych ilościach w posiłkach Neofity. Przez kolejne dwa lata po wszczepieniu Ossmodula będzie powodować stopniowe wzmacnianie kości długich, zwiększenie rozmiaru szkieletu i skostnienie klatki piersiowej (w postaci żeber przekształcających się w zestaw dachówkowato ułożonych płyt kostnych)."
             },
             {
               "name": "biscopea",
               "displayName": "biscopea",
-              "shortDesc": "Część @trait{unnaturalStrength|nienaturalnej krzepy}."
+              "shortDesc": "Część @trait{unnaturalStrength|nienaturalnej krzepy}.",
+              "content": "Trzecia w kolejności implantacji, choć normalnie wszepiana razem z Ossmodulą. Umieszczana jest w klatce piersiowej. Jest mała i w przybliżeniu kulista; tak jak Ossmodula pełni funkcję hormonalną. Obecność Biscopei stymuluje wzrost masy mięśniowej. Te powiększone mięśnie przyczepiają się do szybko rosnących z powodu Ossmoduli kości."
             },
             {
               "name": "haemastamen",
               "displayName": "haemastamen",
-              "shortDesc": "Część @trait{unnaturalStrength|nienaturalnej krzepy} i @trait{unnaturalToughness|nienaturalnej odporności}."
+              "shortDesc": "Część @trait{unnaturalStrength|nienaturalnej krzepy} i @trait{unnaturalToughness|nienaturalnej odporności}.",
+              "content": "Czwarty w kolejności implantacji. Haemastamen to maleńki organ umieszczany w jednym z głównych naczyń krwionośnych. Jedną z jego funkcji jest monitorowanie i do pewnego stopnia kontrola Ossmoduli i Biscopei, ale to tylko dodatek. Jego główna funkcja to zmiana składu krwi, dzięki czemu jest ona znacznie bardziej wydajna niż ta u normalnych ludzi."
             },
             {
               "name": "larramansOrgan",
               "displayName": "organy larramana",
-              "shortDesc": "Brak krwawienia, Talent @talent{trueGrit}."
+              "shortDesc": "Brak krwawienia, Talent @talent{trueGrit}.",
+              "content": "Piąte w kolejności implantacji, wszczepiane w tym samym czasie co Haemastamen. Składają się z ciemnego, mięsistego organu w kształce wątroby i skomplikowanej sieci naczyń krwionośnych. Jego funkcją jest namnażanie i przechowywanie specjalnych komórek Larramana. Jeżeli Marine zostanie zraniony, te komórki wypuszczane są do krwiobiegu, gdzie przyczepiają się do leukocytów i są transportowane z nimi do miejsca zranienia. Kiedy tylko opuszczą ciało, formują niemal natychmiast tkankę będącą chwilowym substytutem skóry, zabliźniając ranę. Proces ten zachodzi tak szybko, że postronny obserwator mógłby odnieść wrażenie, że jakakolwiek wypływająca przez krótką chwilę krew zestala się jeszcze przed spadnięciem na ziemię."
             },
             {
               "name": "catalepsanNode",
               "displayName": "węzeł catalepsan",
-              "shortDesc": "Brak kar do Spostrzegawczości za brak snu."
+              "shortDesc": "Brak kar do Spostrzegawczości za brak snu.",
+              "content": "Szósty w kolejności implantacji, która jednocześnie oznacza rozpoczęcie procesu hipnowarunkowania. Węzeł Catalepsan to implant neurologiczny wielkości ziarna grochu, zwykle umieszczany w mózgu przez otwór wywiercony w kości potylicznej, który jest w stanie zarządzać rytmem okołodobowym organizmu. W zwykłych warunkach Marine śpi jak normalni ludzie, ale kiedy zajdzie taka potrzeba, może czuwać przez długi czas kolejno wyłączając konkretne obszary mózgu, by dać im wypocząć. Proces ten nie może całkowicie zastąpić snu, ale zwiększa przeżywalność Marine w sytuacjach bojowych, pozwalając na obserwowanie otoczenia nawet podczas głębokiego odpoczynku."
             },
             {
               "name": "preomnor",
               "displayName": "preomnor",
-              "shortDesc": "+20 do Odporności przeciwko spożytej truciznie."
+              "shortDesc": "+20 do Odporności przeciwko spożytej truciznie.",
+              "content": "Siódmy w kolejności implantacji. Duży organ umieszczany w zwolnionym przez szybki wzrost ciała miejscu w klatce piersiowej. Stanowi swego rodzaju przedsionek żołądka, który pozwala na spożywanie i trawienie wielu substancji, które normalnie byłyby niemożliwe do przetrawienia bądź wręcz trujące. Preomnor nie trawi nic sam, zamiast tego wydziela substancje, które pomagają w trawieniu lub neutralizują konkretne związki. Może być w razie potrzeby odcięty od reszty układu trawiennego."
             },
             {
               "name": "omophagea",
               "displayName": "omofagea",
-              "shortDesc": "Umożliwia zdobywanie informacji przez spożywanie fragmentów tkanki przeciwników."
+              "shortDesc": "Umożliwia zdobywanie informacji przez spożywanie fragmentów tkanki przeciwników.",
+              "content": "Ósma w kolejności implantacji. Złożony organ wszepiany w rdzeń kręgowy pomiędzy odcinkiem szyjnym i piersiowym kręgosłupa, gdzie tworzy zasadniczo przedłużenie mózgu. Cztery odchodzące od niego pęczki nerwowe zwane neuroclea umieszczane są między kręgosłupem a ścianą Preomnora. Funkcją Omofagei jest absorbcja materiału genetycznego, który tworzy się w tkankach zwierzęcych jako konsekwencja funkcji pamięci. Dzięki temu Marine zyskuje niecodzienne narzędzie przetrwania - umiejętność uczenia się przez jedzenie. Jeżeli spożyje jakąś część pewnego stworzenia, pozna też fragment jego wspomnień. Jest to bardzo użyteczna umiejętność na obcym terenie. Jednak przez tę zdolność powstały różne rytuały, z których znane są Zakony takie jak Rozrywacze Ciał czy Krwiopijcy."
             },
             {
               "name": "multilung",
               "displayName": "multi-płuco",
-              "shortDesc": "Umożliwia przerzucenie nieudanych Testów Odporności przeciwko tonięciu lub duszeniu. Dodatkowo zapewnia +30 do Odporności przeciwko gazom i umożliwia przerzucenie również takich Testów. Umożliwia oddychanie pod wodą."
+              "shortDesc": "Umożliwia przerzucenie nieudanych Testów Odporności przeciwko tonięciu lub duszeniu. Dodatkowo zapewnia +30 do Odporności przeciwko gazom i umożliwia przerzucenie również takich Testów. Umożliwia oddychanie pod wodą.",
+              "content": "Dziewiąte w kolejności implantacji. Duży, cylindryczny szary organ, czasem nazywany też trzecim płucem. Krew jest przez niego pompowana siecią połączonych naczyń krwionośnych. Jeżeli wdychane powietrze zawiera toksyny lub niewielką ilość tlenu, dostęp do normalnych płuc zostaje zamknięty przez umieszczony w tchawicy zwieracz, przez co powietrze jest kierowane do Multi-Płuca, które jest w stanie bezpiecznie pobierać tlen w takich warunkach dzięki swoim wysoko wydajnym układom neutralizacji toksyn i regeneracji."
             },
             {
               "name": "occulobe",
@@ -1205,15 +1214,8 @@
         {
           "name": "jaded",
           "displayName": "znużony",
-          "prerequisite": "SW 30",
-          "shortDesc": "Bohater nie otrzymuje Punktów Obłędu z powodu zwykłych okropieństw.",
-          "content": [
-            {
-              "title": "Wymagania:",
-              "content": "${insert:prerequisite}"
-            },
-            "Liczne podróże Bohatera wystawiły go na wspaniałości ale i okropieństwa, których większość nigdy by nie zobaczyła. Galaktyka pokazała mu najgorsze, co miała do zaoferowania, a on do tego czasu jeszcze się nie wycofał. Zwykłe zdarzenia, od okropieństw śmierci do obcych abominacji, nie powodują Testów Strachu i Punktów Obłędu. Zjawiska związane z Osnową wciąż normalnie wpływają na Bohatera."
-          ]
+          "prerequsite": "SW 30",
+          "shortDesc": "Bohater nie otrzymuje Punktów Obłędu z powodu zwykłych okropieństw."
         },
         {
           "name": "killingStrike",
@@ -2338,7 +2340,7 @@
             },
             {
               "title": "Supresor",
-              "content": "Supresorzy to mistrzowie długodystansowego ognia przeciwpancernego. Zakuci są w ciężkie pancerze @armor{omnis|omnis}, które jednak noszą dla potężniejszego wspomagania przy prowadzeniu ognia i dodatkowych systemów wspomagających desant orbitalny. Kiedy już cel, zasypany ogniem z szybkostrzelnych @ranged{accelerator|działek przyspieszających}, zmieni się w nie więcej niż kupę dymiącego żelastwa, zajmują szybko dogodne pozycje do ostrzelania innego miejsca dzięki wbudowanym w pancerz Spadochronom Grawitacyjnym i potężnym Plecakom Skokowym. Bohater będący Supresorem zwiększa o jeden stopień swoją Umiejętność Pilotaż(Osobiste), a także może jako Akcję Darmową na początku swojej Tury (lub w trakcie Akcji @action{delay|opóźnienia}) wykonać skok od długości 12 metrów w linii prostej przy użyciu plecaka z uwagi na swoje doświadczenie w szybkim zmienianiu pozycji ostrzału. Skok taki nakłada jednak karę -10 do Umiejętności Strzeleckich. Supresor może również strzelać w trakcie skoku z karą -20. Dodatkowo ma możliwość wykonania jednego skrętu w trakcie skoku jeżeli wyposażony jest w @wargear{gravChute}."
+              "content": "Supresorzy to mistrzowie długodystansowego ognia przeciwpancernego. Zakuci są w ciężkie pancerze @armor{omnis|omnis}, które jednak noszą dla potężniejszego wspomagania przy prowadzeniu ognia i dodatkowych systemów wspomagających desant orbitalny. Kiedy już cel, zasypany ogniem z szybkostrzelnych @ranged{accelerator|działek przyspieszających}, zmieni się w nie więcej niż kupę dymiącego żelastwa, zajmują szybko dogodne pozycje do ostrzelania innego miejsca dzięki wbudowanym w pancerz Spadochronom Grawitacyjnym i potężnym Plecakom Skokowym. Bohater będący Supresorem zwiększa o jeden stopień swoją Umiejętność Pilotaż(Osobiste), a także może jako Akcję Darmową na początku swojej Tury wykonać skok przy użyciu plecaka z uwagi na swoje doświadczenie w szybkim zmienianiu pozycji ostrzału. Skok taki nakłada jednak karę -10 do Umiejętności Strzeleckich. Supresor może również strzelać w trakcie skoku z karą -20."
             }
           ]
         }
@@ -2582,6 +2584,11 @@
           "name": "regeneration",
           "displayName": "regeneracja",
           "shortDesc": "Test Odporności pozwala wyleczyć 1 punkt Obrażeń."
+        },
+        {
+          "name": "shadowInTheWarp",
+          "displayName": "cień w osnowie",
+          "shortDesc": "Nie-tyranidzcy psykerzy w pobliżu Ogniskują Moc z karą -20."
         },
         {
           "name": "size",
@@ -6247,8 +6254,8 @@
       "display": "both",
       "table": {
         "$name": "nazwa",
-        "$requisition": "pobranie",
-        "renown": "sława"
+        "requisition": "pobranie",
+        "$renown": "sława"
       },
       "content": [
         "%quote{Ta dłoń? Tak, wygląda mi na dobre narzędzie zemsty. Mam nadzieję, że pomoże mi odpłacić tym, którzy sprawili, że jest w ogóle potrzebna.|Brat Leonen z Mrocznych Aniołów po utracie ramienia}",

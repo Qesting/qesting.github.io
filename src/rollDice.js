@@ -1,16 +1,29 @@
-export default function rollFromString(str, target) {
-    const formula = (str ?? '1k100').replace(/\s+/, '').match(/(?<number>\d+)?[kd](?<type>\d+)(kh(?<highest>\d+)|kl(?<lowest>\d+))?(?<bonus>[+-]\d+)*?/);
+import { fullDiceRegExp } from "./ParserRegExp";
+
+export default function rollFromString(str) {
+    const formula = (str.endsWith('%') ? '1k100' : str).replace(/\s+/, '').match(fullDiceRegExp);
     const {
         number,
         type,
-        highest,
-        lowest,
+        kdOp,
         bonus
-    } = formula.groups.percent ? {
-        ...formula.groups,
-        number: 1,
-        type: 100
-    } : formula.groups;
+    } = formula.groups
+    let {
+        highest, 
+        lowest
+    } = formula.groups
+
+    if (kdOp == "d") {
+        if (highest) {
+            lowest = number - highest
+            highest = null
+        } else if (lowest) {
+            highest = number - lowest
+            lowest = null
+        }
+    } 
+    
+    const target = str.endsWith('%') ? str.substring(0, str.length - 1) : null
     const result = Array(+(number ?? 1)).fill(0).map(() => ({value: Math.round(Math.random() * (type - 1)) + 1}));
     for (let i = 0; i < number - (highest ?? lowest); i++) {
         result.find(e => e.value === (lowest ? Math.max : Math.min)(...result.filter(f => !f?.ignore).map(f => f.value)) && !e?.ignore).ignore = true;
@@ -22,6 +35,6 @@ export default function rollFromString(str, target) {
         lowest: lowest ?? null,
         bonus: bonus ?? null,
         type: +type,
-        target: +target
+        target: target
     });
 }
