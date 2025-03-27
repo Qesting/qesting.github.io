@@ -22,6 +22,27 @@
     "author": "Qesting",
     "version": 1,
     "rootSource": "CRB"
+    "sources": [
+      {
+        "brewed": false,
+        "name": "CRB",
+        "author": "Ross Watson, Owen Barnes, Alan Bligh, John French, Andrea Gausman, Andy Hoare",
+        "displayName": "Księga Zasad",
+        "transcriber": "Qesting",
+        "color": "red",
+        "core": true
+      },
+      {
+        "brewed": true,
+        "name": "EIn",
+        "author": "Qesting",
+        "displayName": "Era Indomitus",
+        "color": "blue"
+      }
+    ],
+    "author": "Qesting",
+    "version": 1,
+    "rootSource": "CRB"
   },
   "content": [
     {
