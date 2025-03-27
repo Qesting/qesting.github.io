@@ -652,9 +652,14 @@
           "type": "string",
           "description": "author of the source material"
         },
-        "transrciber": {
+        "transcriber": {
           "type": "string",
           "description": "the one who wrote the source file. empty implies the same as author"
+        },
+        "core": {
+          "type": "boolean",
+          "description": "core sources are always displayed",
+          "const": true
         },
         "color": {
           "type": "string",

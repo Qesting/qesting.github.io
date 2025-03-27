@@ -61,6 +61,17 @@ export const tableRegExp = regex`
     )?$
 `
 
+export const tableInsertRegExp = regex`
+    ^%table
+    \{
+        (?<name>\w+)
+        ( \| (?<display> [\d\p{Letter}\ ]+ ) )?
+    \}
+    (
+        \{ (?<source> [a-zA-Z]+ ) \}
+    )?$
+`
+
 export const quoteRegExp = regex`
     ^%quote
     \{
@@ -84,6 +95,13 @@ export const sectionRegExp = regex`
 `
 
 export const mathRegExp = regex`
-    ^\^ (?<equation> .*? ) [^\\]\^
+    ^\^ (?<equation> .*? ) \^
     ( \{ (?<modifiers> [a-z]+ ) \} )?
+`
+
+export const replacerRegExp = regex`
+    \$\{
+        (?<operation> \w+ ) : (?<field> \w+ ) (\.(?<subfield> \w+ ))?
+        ( \| (?<optString> .*? ) )?
+    \}
 `

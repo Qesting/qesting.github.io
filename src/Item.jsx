@@ -1,6 +1,12 @@
-import Parser from './Parser';
 import PropTypes from 'prop-types';
 import capitalize from './capitalize';
+import TextContent from './TextContent';
+import DataProviderContext from './DataProviderContext';
+import { useContext } from 'react';
+import { JsonDataContext } from './JsonDataContext';
+import { StateFunctionsContext } from './StateFunctionsContext';
+import SourceName from './SourceName';
+import CopyItemLink from './CopyItemLink';
 
 function Item({data, section}) {
     const {
@@ -9,28 +15,31 @@ function Item({data, section}) {
         content,
         image,
         innerGrid,
-        noGrid
+        noGrid,
+        source
     } = data;
+    const { sources } = useContext(JsonDataContext)
+    const foundSource = sources.find(s => s.name === (source ?? "CRB"))
+
+    const { getHiddenSources } = useContext(StateFunctionsContext)
+    if (getHiddenSources?.()?.includes(source)) return <></>
+
     return (
         <div id={`item-${section}-${name}`} className={`my-2 relative bg-gray-100 dark:bg-gray-800 rounded-md p-2 group/item !outline-none ${noGrid ? "col-span-1 md:col-span-2 lg:col-span-3 xl:col-span-4" : ""}`} tabIndex={-1}>
-            <h4 className="text-xl pb-2 relative after:w-full after:h-px after:absolute after:bottom-1 after:bg-current after:left-0 after:right-0 text-center group-focus/item:after:bg-accent after:transition-colors duration-300 after:duration-300 transition-colors group-focus/item:text-accent">{capitalize(displayName)}</h4>
+            <div className='relative'>
+                <h4 className="text-xl pb-2 relative after:w-full after:h-px after:absolute after:bottom-1 after:bg-current after:left-0 after:right-0 text-center group-focus/item:after:bg-accent after:transition-colors duration-300 after:duration-300 transition-colors group-focus/item:text-accent">{capitalize(displayName)}</h4>
+                <CopyItemLink sectionName={section.substring(0, section.indexOf("-") !== -1 ? section.indexOf("-") : section.length)} item={data}/>
+                <SourceName source={foundSource}/>
+            </div>
             {
                 image && <img src={image} className="max-w-[50%] min-h-30 my-2"/>
             }
             {
-                typeof content === "string" ? (
-                    <p>{<Parser text={content} passedSection={section}/>}</p>
-                ) : (
-                    <ul className={innerGrid ? 'grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-2' : ''}>
-                        {
-                            content?.map((e, i) => (
-                                <p key={i} className={e?.title ? '' : 'col-span-1 md:col-span-2 lg:col-span-3 xl:col-span-4'}>
-                                    { e?.title && <strong className="font-bold capitalize inline-block mr-1">{e?.title}{!e.title.endsWith(':') && '.'}</strong>}{<Parser text={e.content ?? e} passedSection={section}/>}
-                                </p>
-                            ))
-                        }
-                    </ul>
-                )
+                <div className={innerGrid ? 'grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-2' : ''}>
+                    <DataProviderContext.Provider value={data}>
+                        <TextContent content={content}/>
+                    </DataProviderContext.Provider>
+                </div>
             }
         </div>
     );

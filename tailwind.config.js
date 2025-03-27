@@ -8,7 +8,8 @@ export default {
   theme: {
     extend: {
       colors: {
-        accent: "#f00"
+        accent: "oklch(0.457 0.24 277.023)",
+        accentDark: "oklch(0.5524 0.2386 277.117)"
       }
     },
   },

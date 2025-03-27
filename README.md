@@ -1,4 +1,4 @@
-# Kompendium Deathwatch 
+# Codex Vigilis
 Zbiór najważniejszych zasad i przedmiotów do gry Deathwatch RPG z roku 2010, przetłumaczonych do mniej więcej zrozumiałej formy.
 
 Czego się nie robi jako znudzony MG...
@@ -44,21 +44,19 @@ Powodują wstawienie do tekstu tabeli. Używają składni `%table{nazwa}`. Wstaw
 #### Tagi cytatu
 Powodują wstawienie do tekstu cytatu, który zajmował będzie od niemal całego ekranu na wąskich wyświetlaczach, do około 2/3 szerokości na szerszych. Używają składni `%quote{treść|autor?}`. Treść wpisywana jest większymi, pochyłymi literami, a poniżej wstawiany jest autor — jeżeli został zdefiniowany, jako że jest to parametr opcjonalny — poprzedzony myślnikiem.
 
-#### Tagi przykładu
-Powodują wstawienie ramki z tekstem mającym obrazować przykład — *e.g.* obrazujących zastosowanie podanych w poprzedniej treści reguł. Poprzedzone są nagłówkiem o treści "Przykład" i znajdują się w takiej samej ramce co tagi cytatu. Używają składni `%example{tekst}`. Parametr `tekst` może zawierać inne tagi, ponieważ jest on wtórnie parsowany.
-
 ### Tagi tekstowe
 Nie powodują wstawiania struktur, a jedynie parsowanie samego tekstu. Operacja ta wykonywana jest przed parsowaniem tagów linkujących i wstawiających, w kolejności takiej jak wymieniono tagi.
 
 #### Tagi operacji
-Najbardziej rozbudowane składniowo. Zapisywane są `${operacja:pole|arg1=a|arg2|...}`. Operują na wartościach tzw. lokalnego dostawcy, czyli bezpośrednio na polach obiektu reprezentującego dany punkt. Argumenty podane mogą być z wartością po znaku równości, lub jako sama nazwa — parser przypisuje wtedy wartość `true`.
+Najbardziej rozbudowane składniowo. Zapisywane są `${operacja:pole.subpole|arg1=a|arg2|...}`. Operują na wartościach tzw. lokalnego dostawcy, czyli bezpośrednio na polach obiektu reprezentującego dany punkt. Argumenty podane mogą być z wartością po znaku równości, lub jako sama nazwa — parser przypisuje wtedy wartość `true`.
 
 Aktualnie wspierane operacje:
 - `bool`: enumeracja logiczna. Wstawia wartość `ifTrue: string` (domyślnie: "tak") albo `ifFalse: string` (domyślnie: "nie") na podstawie wartości podanego pola;
 - `insert`: wstawienie. Wstawia wartość podanego pola;
 - `insertKeys`: wstawienie kluczy. Wstawia listę nazw własności zawartych w podanym polu (musi być ono obiektem);
 - `insertValues`: wstawienie wartości. Wstawia listę własności zawartych w podanym polu (musi być ono obiektem);
-- `insertArray`: wstawia listę wartości pobraną z będącego tablicą pola.
+- `insertArray`: wstawia listę wartości pobraną z będącego tablicą pola;
+- `insertValueAt`: jak `insert`, ale wstawia wartość pola obiektu `pole` opisanego kluczem `subpole`. `pole` musi być obiektem.
 
 Dodatkowe wspólne argumenty:
 - `capitalize: bool`: kapitalizacja wartości wyjściowych;
@@ -67,14 +65,14 @@ Dodatkowe wspólne argumenty:
 #### Tagi substytucji specjalnej
 Zapisywane są jako `$nazwa`. Używane są nie tylko przez sam komponent parsera. W definicjach tabel `nazwa` może być nazwą pola (wtedy pole interpretowane jest w specjalny sposób, na przykład `$name` produkuje kolumnę zawierającą linki do poszczególnych punktów w sekcji) lub specjalną wartością `roll` informującą o przekształceniu tabeli w taką z możliwością wyboru wiersza przez rzut kością. Inne powodują substytucję zmiennych kontekstowych, takich jak `$parent` w opisach wariantów punktu.
 
-#### Tagi substytucji pól \[WIP\]
-Zapisywane są jako `$this.pole` i zastępowane są wartością pola `pole` dostawcy globalnego, będącego częścią znajdującego się aktualnie w budowie modułu kart postaci. Na przykład `$this.pr` zastępowane jest PM pobranym z aktualnej karty.
-
 #### Tagi obliczeniowe
 Zapisywane są pomiędzy symbolami `^` w formacie ONP (znanej w nomenklaturze anglojęzycznej jako RPN), która jest łatwym do parsowania i pozbawionym nawiasów systemem notacji. Na przykład `^5 8 * 2 +^` oznacza `(5 * 8) + 2`. Wspierane operacje to dodawanie `+`, odejmowanie `-`, mnożenie `*` i dzielenie `/`. Zaznaczyć należy *dlaczego* tagi te rozwiązywane są jako ostatnie z tekstowych: otóż wymagają działania niektórych z poprzednich. Dla przykładu z definicji punktu `grenade->blind` mamy `"range": "^$this.strength 3 *^"`. Zauważyć da się tu substutucję pola `strength`, która musi być wykonana wcześniej, jako że operacje matematyczne parsera rozpoznają wyłącznie liczby i operatory.
 Można do nich również dodawać komentarze zamknięte między `#`. Wyświetlane są one gdy parser nie ma odpowiednich danych do wykonania substytucji (co nie jest sprawdzane bezpośrednio przez moduł matematyczny, a jedynie wnioskowane, gdy resolwer natrafi na symbol niebędący liczbą ani operatorem). Podpowiada to prawidłową formę poprzedniej linijki: `"range": "^$this.strength 3 *^#S \u00d7 3#"`.
 
 ## Zmiany
+
+### 1.0
+O, to już? O ile źródła nie są jeszcze przetłumaczone w całości, to sam system jest zasadniczo kompletny. Mamy także rebrand z **Kompendium Deathwatch** na dużo bardziej poprawnie brzmiące (w kontekście uniwersum) **Codex Vigilis**.
 
 ### 0.13.0
 Czy ktoś powiedział "rozbudowa parsera i rewizja systemu tabel"? Nie? No dobrze...

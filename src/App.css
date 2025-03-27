@@ -11,7 +11,7 @@ tr {
 }
 
 th {
-    @apply capitalize px-2;
+    @apply px-2 text-center;
 }
 
 td {
@@ -23,11 +23,11 @@ td {
 }
 
 .btn {
-    @apply text-blue-700 dark:text-blue-500 underline inline;
+    @apply text-blue-700 dark:text-blue-500 underline inline duration-200 transition-colors focus:text-blue-500 active:text-blue-500 hover:text-blue-500 dark:focus:text-blue-700 dark:active:text-blue-700 dark:hover:text-blue-700;
 }
 
 .nav-btn {
-    @apply text-xl mx-1 first:ml-0 last:mr-0 
+    @apply text-xl mx-1 first:ml-0 last:mr-0 transition-[color,transform] duration-200 focus:text-accent hover:text-accent active:scale-110 focus:scale-110 hover:scale-110 active:text-accent !outline-none dark:focus:text-accentDark dark:hover:text-accentDark dark:active:text-accentDark
 }
 
 .no-scroll::-webkit-scrollbar {
@@ -49,4 +49,19 @@ main:has(h1) {
 
 img {
     @apply rounded-md;
+}
+
+body {
+    @apply duration-200 transition-colors text-justify
+}
+
+section {
+    @apply text-justify text-pretty
+}
+
+input[type="checkbox"] {
+    appearance: none;
+    font: inherit;
+    @apply bg-transparent m-0 text-current size-[1.15em] border-[0.15em] border-solid border-current rounded-[0.15em] -translate-y-[0.075em] grid place-content-center;
+    @apply before:content-[""] before:size-[0.65em] before:scale-0 before:transition-transform before:duration-200 before:ease-in-out before:bg-accent dark:before:bg-accentDark checked:before:scale-100 disabled:before:bg-gray-500
 }
