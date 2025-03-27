@@ -292,7 +292,17 @@
                 "Sam rzuca okiem na swoje Charakterystyki i zauważa, że najgorszy wynik uzyskał na Umiejętnościach Strzeleckich. Jako że zamierza rozstrzelać sporo wrogich obcych, decyduje się przerzucić właśnie tę Charakterystykę. Rzuca @dice{2k10} i wyrzuca 15! Zmienia swoje US na 45, przez co jego Charakterystyki wyglądają tak.",
                 {
                   "type": "textTable",
-                  "header": ["WW", "US", "K", "Odp", "Zr", "Int", "Per", "SW", "Ogd"],
+                  "header": [
+                    "WW",
+                    "US",
+                    "K",
+                    "Odp",
+                    "Zr",
+                    "Int",
+                    "Per",
+                    "SW",
+                    "Ogd"
+                  ],
                   "rows": [
                     ["41", "45", "46", "40", "39", "42", "45", "44", "38"]
                   ]
@@ -307,9 +317,7 @@
       "type": "section",
       "name": "skill",
       "displayName": "umiejętności",
-      "footnotes": [
-        "Grupa Umiejętności"
-      ],
+      "footnotes": ["Grupa Umiejętności"],
       "display": "description",
       "table": {
         "$name": "nazwa",
@@ -384,9 +392,7 @@
           "displayName": "umiejętności zaawansowane",
           "name": "advanced",
           "display": "both",
-          "content": [
-            
-          ]
+          "content": []
         }
       ]
     },
@@ -397,7 +403,7 @@
         {
           "name": "awareness",
           "displayName": "spostrzegawczość",
-          "subName": "${insertArray:type|sep=, |prepend=Zwykła}",
+          "subName": "${insertArray:type|sep=, }",
           "characteristic": "perception",
           "type": null,
           "content": [
@@ -415,7 +421,7 @@
         {
           "name": "carouse",
           "displayName": "mocna głowa",
-          "subName": "${insertArray:type|sep=, |prepend=Zwykła}",
+          "subName": "${insertArray:type|sep=, }",
           "characteristic": "toughness",
           "type": null,
           "content": [
@@ -433,7 +439,7 @@
         {
           "name": "charm",
           "displayName": "przekonywanie",
-          "subName": "${insertArray:type|sep=, |prepend=Zwykła}",
+          "subName": "${insertArray:type|sep=, }",
           "characteristic": "fellowship",
           "type": ["Interakcja"],
           "content": [
@@ -462,7 +468,7 @@
         {
           "name": "climb",
           "displayName": "wspinaczka",
-          "subName": "${insertArray:type|sep=, |prepend=Zwykła}",
+          "subName": "${insertArray:type|sep=, }",
           "characteristic": "strength",
           "type": ["Ruch"],
           "content": [
@@ -480,7 +486,7 @@
         {
           "name": "command",
           "displayName": "dowodzenie",
-          "subName": "${insertArray:type|sep=, |prepend=Zwykła}",
+          "subName": "${insertArray:type|sep=, }",
           "characteristic": "fellowship",
           "type": ["Interakcja"],
           "content": [
@@ -509,7 +515,7 @@
         {
           "name": "concealment",
           "displayName": "ukrywanie się",
-          "subName": "${insertArray:type|sep=, |prepend=Zwykła}",
+          "subName": "${insertArray:type|sep=, }",
           "characteristic": "agility",
           "type": null,
           "content": [
@@ -527,7 +533,7 @@
         {
           "name": "contortionist",
           "displayName": "przeciskanie się",
-          "subName": "${insertArray:type|sep=, |prepend=Zwykła}",
+          "subName": "${insertArray:type|sep=, }",
           "characteristic": "agility",
           "type": ["Ruch"],
           "content": [
@@ -556,7 +562,7 @@
                 {
                   "title": "Przeciskanie",
                   "content": "Bohater może wykonać Test Przeciskania się, by przejść przez wąską szczelinę taką jak szyb konserwacyjny okrętu czy dziura w uszkodzonej grodzi. Może również przy użyciu tego aspektu Umiejętności zmieścić swoje ciało w zbyt małej normalnie przestrzeni. MG ustala Stopień Trudności Testu biorąc pod uwagę rozmiar przejścia i może orzec, że jest ono zwyczajnie zbyt małe, by dało się je wykorzystać. Udany Test oznacza, że Bohaterowi udało się przejść przez otwór czy zmieścić w paczce. Porażka oznacza, że próba nie udała się, choć co najmniej cztery Stopnie Porażki wskazują, że utknął przy jej podejmowaniu i pozostaje w takim stanie aż zda kolejny Test Przeciskania się lub ktoś inny wyciągnie go. Takie wykorzystanie Umiejętności zajmuje 1 minutę, a każdy Stopień Sukcesu zmniejsza ten czas o 10 sekund."
-                }    
+                }
               ]
             }
           ]
@@ -564,7 +570,7 @@
         {
           "name": "deceive",
           "displayName": "oszustwo",
-          "subName": "${insertArray:type|sep=, |prepend=Zwykła}",
+          "subName": "${insertArray:type|sep=, }",
           "characteristic": "fellowship",
           "type": ["Interakcja"],
           "content": [
@@ -582,7 +588,7 @@
         {
           "name": "dodge",
           "displayName": "uniki",
-          "subName": "${insertArray:type|sep=, |prepend=Zwykła}",
+          "subName": "${insertArray:type|sep=, }",
           "characteristic": "agility",
           "type": ["Walka"],
           "content": [
@@ -600,6 +606,7 @@
         {
           "name": "evaluate",
           "displayName": "wycenianie",
+          "subName": "${insertArray:type|sep=, }",
           "characteristic": "intelligence",
           "type": ["Śledztwo"],
           "content": [
@@ -617,58 +624,133 @@
         {
           "name": "gamble",
           "displayName": "hazard",
+          "subName": "${insertArray:type|sep=, }",
           "characteristic": "perception",
           "type": null,
-          "content": []
+          "content": [
+            "Bohater używa Hazardu, gdy bierze udział w grach losowych. Każdy uczestnik zakłada się o określoną kwotę, choć zwykle każdy o tyle samo, i wykonuje Test Przeciwstawny Hazardu. Wygrywa ten, kto zdobędzie najwięcej Stopni Sukcesu. Bohater może celowo przegrać z innym uczestnikiem mającym gorszy wynik jako część próby Oszustwa.",
+            "Hazard można uzupełnić @skill{sleightOfHand|Zwinnymi Palcami}, by wygrać przez kontrolowanie rzutów kośćmi bądź ukrywanie kart. Sukces zapewnia +20 do Testu Hazardu, ale cztery lub więcej Stopni Porażki oznacza, że Bohater został złapany na gorącym uczynku.",
+            {
+              "title": "Używane Jako:",
+              "content": "Akcja Podwójna za dzień grania."
+            }
+          ]
         },
         {
           "name": "inquiry",
           "displayName": "zbieranie informacji",
+          "subName": "${insertArray:type|sep=, }",
           "characteristic": "fellowship",
-          "type": ["Śledztwo"],
-          "content": []
+          "type": ["Śledztwo", "Interakcja"],
+          "content": [
+            "Bohater może użyć Zbierania Informacji przez zadawanie pytań, prowadzenie konwersacji, czy zwyczajne podsłuchiwanie. Umiejętność ta pozwala zdobyć ogólne informacje o danym miejscu, takie jak wiadomości, ostatnie wydarzenia i inne. Dodatkowe Stopnie Sukcesu ujawniają bardziej szczegółowe lub utajnione wieści.",
+            "Zbieranie Informacji może również być wykorzystane jako Umiejętność Śledztwa w poszukiwaniu konkretnego przedmiotu lub informacji od osób lub w różnorakich zasobach, takich jak librarium zakonne. Użycie to wymaga praktycznie zawsze Testu Przedłużonego, którego Stopień Trudności i czas trwania ustala MG.",
+            {
+              "title": "Używane Jako:",
+              "content": "Akcja Przedłużona trwająca przynajmniej godzinę."
+            }
+          ]
         },
         {
           "name": "intimidate",
           "displayName": "zastraszanie",
           "characteristic": "fellowship",
+          "subName": "${insertArray:type|sep=, }",
           "type": ["Interakcja"],
-          "content": []
+          "content": [
+            "Bohater może użyć Zastraszania, by wymusić na jednostce poddanie się jego żądaniom. Testu tej Umiejętności nie wykonuje się przy każdej rzuconej pogróżce, ale tylko wtedy, gdy wiąże się to z pewnym przymusem. Choć bazowo Zastraszanie zależy od Krzepy, użyć można również Inteligencji lub Ogłady, jeżeli dana groźba używa metod bardziej subtelnych niż brutalna siła, takich jak szantaż czy upokarzanie.",
+            "Test Zastraszania może wpłynąć na cele w liczbie równej Premii z Krzepy, Inteligencji, lub Ogłady Bohatera, które muszą widzieć lub słyszeć go wyraźnie, czy to osobiście, czy przez rzutnik piktów/rozgłaszacz voxu i rozumieć używany przez niego język.",
+            {
+              "type": "list",
+              "style": "unordered",
+              "title": "Specjalne Przypadki",
+              "content": [
+                "Okrzyk Bojowy: jako część Akcji Szarży Bohater może wykonać oparty na Krzepie test Zastraszania przeciwko Sile Woli celu szarży.  Jeżeli Test ten się powiedzie, cel otrzymuje karę -10 do wszystkich prób Uników i Parowania przeciwko szarżującemu. Nie ma to wpływu na stworzenia odporne na Strach i inne efekty psychologiczne."
+              ]
+            }
+          ]
         },
         {
           "name": "logic",
           "displayName": "logika",
+          "subName": "${insertArray:type|sep=, }",
           "characteristic": "intelligence",
           "type": ["Śledztwo"],
-          "content": []
+          "content": [
+            "Bohater może użyć Logiki do rozwiązywania problemów, łamigłówek i radzenia sobie z innymi sytuacjami wymagającymi demonstracji i wnioskowania. Test Logiki może pozwolić wyciągnąć wnioski o brakującym symbolu w sekwencji lub rozwiązać kłopotliwe równanie matematyczne. Umiejętności tej można również użyć, by przygotować się  do debaty, czy dyskusji filozoficznej. Przygotowania złożonego rozumowania  lub skomplikowanych problemów to Testy Przedłużone.",
+            {
+              "title": "Używane Jako:",
+              "content": "Akcja Przedłużona trwająca 1 minutę lub więcej dla szczególnie złożonych problemów."
+            }
+          ]
         },
         {
           "name": "scrutiny",
           "displayName": "Śledztwo",
+          "subName": "${insertArray:type|sep=, }",
           "characteristic": "perception",
           "type": null,
-          "content": []
+          "content": [
+            "Śledztwo pozwala oceniać ludzi i obiekty napotykane przez Bohatera. Może on użyć Umiejętności do określenia czyjejś prawdomówności, motywów i generalnego zrozumienia osobowości i temperamentu. Użyć jej można również do zbadania szczegółów obiektu, zauważając małe detale  i cechy, które mogłyby zostać przeoczone podczas zwykłej inspekcji. Przykładowo w przypadku wyników auspexu okrętu pozwala to określić jego tonaż, prędkość i inne parametry.",
+            "Przy próbach przejrzenia fałszu i kłamstw Śledztwo Przeciwstawiane jest Oszustwu przeciwnika. Nie pozwala jednak ono zdobyć informacji na temat sekretów i starannie ukrywanych intencji i nigdy nie powinno przy interakcji zastępować dobrego odgrywania ról. Umiejętność ta Przeciwstawiana jest wynikom Testów wielu opartych na manipulacji interakcji,  takich jak Przekonywanie, Oszustwo i Zastraszanie.",
+            {
+              "title": "Używane Jako:",
+              "content": "Akcja Podwójna, choć specjalne przypadki mogą wymagać więcej czasu."
+            }
+          ]
         },
         {
           "name": "search",
           "displayName": "przeszukiwanie",
+          "subName": "${insertArray:type|sep=, }",
           "characteristic": "perception",
-          "type": null,
-          "content": []
+          "type": ["Eksploracja"],
+          "content": [
+            "Przeszukiwania używa się do odkrywania rzeczy, które są fizycznie ukryte, od ukrytego pistoletu do kodów odpalających wahadłowiec. Przeszukiwanie skupia się na aktywnym szukaniu, natomiast Spostrzegawczość odpowiada za działania pasywne i podświadome. Każdy Test Przeszukiwania obejmuje małe pomieszcze lub obszar. Jeżeli jakiś obiekt lub osoba została ukryta celowo, Test Przeszukiwania jest przeciwstawiany Ukrywaniu się celu.",
+            {
+              "title": "Używane Jako:",
+              "content": "Akcja Przedłużona trwająca 1 minutę."
+            },
+            {
+              "type": "list",
+              "style": "unordered",
+              "title": "Specjalne Przypadki",
+              "content": [
+                {
+                  "title": "Inspekcja",
+                  "content": "Przeszukiwania można również użyć, by znaleźć ukryte magazyny, kontrabandę, a nawet dowody sabotażu w pojazdach i okrętach. W zależności od rozmiaru pojazdu MG może zarządzić Test Przedłużony o odpowiednim czasie trwania."
+                }
+              ]
+            }
+          ]
         },
         {
           "name": "silentMove",
           "displayName": "ciche poruszanie się",
+          "subName": "${insertArray:type|sep=, }",
           "characteristic": "agility",
           "type": ["Ruch"],
-          "content": []
+          "content": [
+            "Skradanie się używane jest za każdym razem, gdy cisza i pozostanie niezauważonym jest kluczowe dla działań Bohatera. MG ustala  Stopień Trudności Testu w zależności od otoczenia, jako że odbijające dźwięk korytarze o stalowych ścianach wymuszają Test trudniejszy niż obite drewnem i wyłożone dywanami kwatery oficerskie. Testy Skradania się zawsze są Przeciwstawne przeciwko Spostrzegawczości lub Śledztwu przeciwnika.",
+            {
+              "title": "Używane Jako:",
+              "content": "Akcja Darmowa jako część ruchu."
+            }
+          ]
         },
         {
           "name": "swim",
           "displayName": "pływanie",
+          "subName": "${insertArray:type|sep=, }",
           "characteristic": "strength",
           "type": ["Ruch"],
-          "content": []
+          "content": [
+            "Pływanie pozwala Bohaterowi pływać w różnych cieczach. W normalnych warunkach pływanie nie wymaga Testu, choć mogą go wymusić trudniejsze wody, nadzwyczajne okoliczności, czy długie dystanse.",
+            {
+              "title": "Używane Jako:",
+              "content": "Akcja Podwójna."
+            }
+          ]
         }
       ]
     },
@@ -679,78 +761,300 @@
         {
           "name": "acrobatics",
           "displayName": "akrobatyka",
+          "subName": "${insertArray:type|sep=, }",
           "characteristic": "agility",
-          "type": ["Movement"],
-          "content": []
+          "type": ["Ruch"],
+          "content": [
+            "Trening w Akrobatyce w połączeniu z naturalną zręcznością Bohatera  pozwala na dokonywanie manewrów, o których słabsi nawet by nie pomyśleli. Możliwym staje się skakanie między wieżami imperialnych katedr, ponad głowami niższych przeciwników i mistrzowskie amortyzowanie upadków. Stopień Trudności Testu zależy od inherentnej trudności wyczynu; tańczenie między nogami rozwścieczonego Orka czy skakanie z kamienia na kamień nad rzeką rozgrzanej magmy stanowiłyby znaczące wyzwanie. Im więcej Stopni Sukcesu, tym bardziej stylowe czy dramatyczne będą rezultaty.",
+            {
+              "title": "Używane Jako:",
+              "content": "Akcja Podwójna, chyba że zaznaczono inaczej."
+            },
+            {
+              "type": "list",
+              "style": "unordered",
+              "title": "Specjalne Przypadki",
+              "content": [
+                {
+                  "title": "Odwrót",
+                  "content": "Przy używaniu w walce Akcji @action{dsengage|odwrotu}, Bohater może za pomocą Przeciętnego (+0) Testu Akrobatyki skrócić ją do Akcji Pojedynczej."
+                },
+                {
+                  "title": "Skok Wzwyż i w Dal",
+                  "content": "Test Akrobatyki może zastąpić przy skokach Testy Zręczności (skok wzwyż) i Krzepy (skok w dal)."
+                }
+              ]
+            }
+          ]
         },
         {
           "name": "chemUse",
-          "displayName": "użycie chemów",
+          "displayName": "użycie substancji",
+          "subName": "${insertArray:type|sep=, }",
           "characteristic": "intelligence",
           "type": ["Śledztwo", "Tworzenie Przedmiotów"],
-          "content": []
+          "content": [
+            "Użycie Substancji pozwala Bohaterowi na bezpieczną identyfikację, obchodzenie się i przygotowywanie różnych środków chemicznych, toksyn i leków. O ile Użycie Substancji związane jest z wykorzystaniem i podstawowym mieszaniem substancji, @skill{trade||chymist} ma związek z ich przygotowywaniem z podstawowych komponentów.",
+            "Sukces w Teście Użycia Substancji, o Stopniu Trudności zależnym od używanej substancji czy leku, oznacza, że substancja została prawidłowo podana, połączona, czy w inny sposób wykorzystana i osiąga odpowiednie rezultaty. Porażka oznacza, że dawka została utracona i nie ma efektu. Zobacz @consumable{<|Rozdział V: Zbrojownia}, by uzyskać więcej informacji na temat leków, środków chemicznych i ich efektów.",
+            {
+              "title": "Używane Jako:",
+              "content": "Akcja Podwójna; przy używaniu injektora medycznego lub @consumable{narthecium} Akcja Pojedyncza. Wykorzystanie Użycia Substancji do aplikacji szczególnie złożonych kombinacji środków wymaga Testu Przedłużonego o czasie trwania i trudności ustalonej przez MG."
+            }
+          ]
         },
         {
           "name": "ciphers",
           "displayName": "sekretne znaki",
+          "subName": "${insertArray:type|sep=, }",
           "footnotes": {
             "$name": 0
           },
+          "noGrid": true,
           "characteristic": "intelligence",
           "type": null,
-          "content": []
+          "groups": {
+            "xenosMarkings": "Znaki Xenosów",
+            "deathwatch": "Straż Śmierci",
+            "chapterRunes": "Runy Zakonne",
+            "imperialCodes": "Kody Imperialne",
+            "inquisition": "Inkwizycja",
+            "mercenaryCant": "Najemniczy Slang",
+            "underwolrd": "Półświatek"
+          },
+          "content": [
+            "Wiele grup i organizacji używa szyfrów jako tajnego kodu służącego do zwięzłego przekazywania prostych  konceptów, ostrzeżeń i informacji. Bohater rozumie i może używać sygnałów dłońmi, fizycznych znaków i innych sposobów przekazywania tych informacji. Sekretne znaki zwykle wyrażają proste pojęcia, takie jak ostrzeżenie przed niebezpieczeństwem, wyznaczenie celu, czy informacja o właścicielu czegoś. Testy Umiejętności nie są wymagane do pozostawiania lub odczytywania prostych wiadomości, ale konieczne są przy przekazywaniu złożonych komunikatów lub oczytywania znaków zaciemnionych upływem czasu.",
+            {
+              "type": "list",
+              "style": "unordered",
+              "title": "Grupy Umiejętności",
+              "content": [
+                {
+                  "title": "${insertValueAt:groups.xenosMarkings}:",
+                  "content": "Wiele Obcych, takich jak Orkowie, wykorzystują wiele symboli i ideogramów. Ich znajomość pozwala na ogólne zrozumienie znaczenia, na przykład granic danego klanu albo obszarów oznaczonych przez nich jako niebezpieczne."
+                },
+                {
+                  "title": "${insertValueAt:groups.deathwatch}:",
+                  "content": "Szwadrony Śmierci często tworzą własne systemy skrótowej komunikacji, by móc przekazywać informacje szybko i w tajemnicy przed innymi, nawet w ich obecności. Jest to szczególnie przydatne w kontaktach z innymi siłami Imperium, jako że cele Straży mogą nie pokrywać się z celami Imperialnej Gwardii czy Marynarki."
+                },
+                {
+                  "title": "${insertValueAt:groups.chapterRunes}:",
+                  "content": "Każdy Zakon Adeptus Astartes ma własne formy znaków, których Bracia Bitewni używają do komunikacji. Niemal nigdy nie ujawnia się ich tym spoza Zakonu, przez co pozwalają Braciom szybko się rozpoznać."
+                },
+                {
+                  "title": "${insertValueAt:groups.imperialCodes}:",
+                  "content": "Zarówno Marynarka jak i Gwardia Imperialna używają języków bitewnych, które w większości składają się z akronimów i liczb. Są one bezsensowne dla nieznających zasad ich działania i pozwalają szybko wzywać posiłki, identyfikować wrogów i prosić o wsparcie ogniowe."
+                },
+                {
+                  "title": "${insertValueAt:groups.inquisition}:",
+                  "content": "Kody Inkwizycji używane są w komunikacji między wybranymi agentami i są unikalne dla konkretnych Ordo. Ta Grupa oznacza wszystkie kody używane przez akolitów i agentów."
+                },
+                {
+                  "title": "${insertValueAt:groups.mercenaryCant}:",
+                  "content": "W Imperium działa wiele kompanii najemniczych i praktycznie każda używa skróconego sposobu porozumiewania się do przekazywania rozkazów. Choć zdarzają się pewne wspólne elementy, każdy z tych sposobów jest zasadniczo wyjątkowy."
+                },
+                {
+                  "title": "${insertValueAt:groups.underworld}:",
+                  "content": "Jeszcze przed nadejściem Imperatora przywódcy kryminalni używali szyfrów, a z czasem ich wyrafinowanie tylko wzrosło. Każda organizacja używa własnego kodu, by utrzymać swoje sekrety w tajemnicy przed konkurencją."
+                }
+              ]
+            },
+            {
+              "title": "Używane Jako:",
+              "content": "Akcja Podwójna."
+            }
+          ]
         },
         {
           "name": "demolition",
           "displayName": "niszczenie",
           "characteristic": "intelligence",
           "type": ["Tworzenie Przedmiotów"],
-          "content": []
+          "content": [
+            "Niszczenie pozwala Bohaterowi na użycie środków wybuchowych właściwe do uzyskania porządanego efektu, od przebicia się przez właz Land Raidera do zniszczenie przewodu plazmowego przez poważnego uszkodzenia znajdującego się za nim reaktora. Może też zostać użyte do rozbrajania ładunków podłożonych przez innych i do wytwarzania różnych komponentów jak i całych ładunków. Umiejętność ta odnosi się raczej do ładunków wybuchowych, niż granatów i innych urządzeń przeznaczonych do bezpośredniej walki.",
+            {
+              "title": "Używane Jako:",
+              "content": "Akcja Podwójna, chyba że podano inaczej."
+            },
+            {
+              "type": "list",
+              "style": "unordered",
+              "title": "Specjalne Przypadki",
+              "content": [
+                {
+                  "title": "Wytwarzanie Ładunków",
+                  "content": "Tak jak @skill{trade} Niszczenie pozwala na tworzenie ładunków wybuchowych z podstawowych komponentów. Używanie Umiejętności w taki sposób wymaga Testu Przedłużonego, którego czas trwania i trudność ustala MG na podstawie złożoności końcowego produktu i dostępnych materiałów — skonstruowanie ładunku przełamującego w dobrze zaopatrzonym składzie Munitorum jest łatwiejsze niż stworzenie improwizowanego lontu z wyschniętych pędów."
+                },
+                {
+                  "title": "Podkładanie Ładunków",
+                  "content": "Efektywność ładunków wybuchowych zależy w znacznym stopni od tego, jak dobrze zostały podłożone. Pomyślny Test Niszczenia oznacza, że Bohater pomyślnie podłożył ładunek i ustawił odpowiednio wyzwalacz zapalnika. Możliwe wyzwalacze ogranicza tylko wyobraźnia, ale kilka przykładowych to linki odciągowe, zapalniki czasowe, zbliżeniowe i aktywowane zdalnie. Porażka powoduje, że ładunek nie zadziała, choć Bohater dowie się o tym dopiero w momencie wyzwolenia zapalnika. Cztery lub więcej Stopni Porażki oznaczają, że ładunek eksploduje przy nieudanej próbie podłożenia z odpowiednimi rezultatami. Niektóre zadania, takie jak podkładanie kilku połączonych ładunków w budynku czy zniszczenie sporego mostu wymagają Testu Przedłużonego. MG określa jego czas trwania i Stopień Trudności na podstawie rodzaju i złożoności. Przy podkładaniu ładunków należy zapisać liczbę Stopni Sukcesu, jako że będzie ona istotna, gdy ktoś spróbuje rozbroić podłożony z trudem ładunek."
+                },
+                {
+                  "title": "Rozbrajanie Ładunków",
+                  "content": "Rozbrajanie również jest częścią Umiejętności Niszczenia. Wykonaj Test Przeciwstawny przeciwko Niszczeniu podkładającego; sukces po stronie Bohatera oznacza, że ładunek zostaje rozbrojony; zwyczajna porażka sprawia, że rozbrajanie się nie udało, natomiast cztery lub więcej Stopni Porażki wskazuje, że ładunek eksploduje przy próbie rozbrojenia. Rozbrajanie kilku ładunków lub takiego, który wyposażony jest w sczególnie złożony zapalnik, wymagać może Testu Przedłużonego."
+                }
+              ]
+            }
+          ]
         },
         {
           "name": "drive",
           "displayName": "prowadzenie",
+          "subName": "${insertArray:type|sep=, }",
           "characteristic": "agility",
+          "groups": {
+            "groundVehicle": "Naziemne",
+            "skimmerHover": "Skimmer",
+            "walker": "Kroczące"
+          },
           "type": ["Operacja"],
-          "content": []
+          "content": [
+            {
+              "title": "Grupy Umiejętności:",
+              "content": "${insertValues:groups|sep=, }"
+            },
+            "Pozwala prowadzić poruszające się po lub tuż nad ziemią pojazdy, na przykład Cargo–8, transportery Rhino, Land Speedery, Sentinele i inne. Zwyczajne prowadzenie nie wymaga Testu, ale wymusić mogą go trudne warunki, nadmierna szybkość, czy niebezpieczne manewry."
+          ]
         },
         {
           "name": "interrogation",
           "displayName": "przesłuchiwanie",
+          "subName": "${insertArray:type|sep=, }",
           "characteristic": "willpower",
           "type": ["Śledztwo"],
-          "content": []
+          "content": [
+            "Przesłuchiwanie pozwala Bohaterowi na wydobywanie informacji od tych, którzy nie chcą się nimi dzielić. Zastosowanie to różni się od wykorzystania tortur, gdzie poddany im cel najczęściej powie cokolwiek, byle ból ustał. Przesłuchiwanie reprezentuje raczej umiejętne wykorzystanie psychologii, różnych urządzeń, serów i innych technik. Przesłuchiwanie zawsze jest Testem Preciwstawnym preciwko Sile Woli celu. Jeżeli prowadzący przesłuchanie wygra, uzyskuje on jedną odpowiedź i jedną dodatkową za każdy Stopień Sukcesu. Jeżeli to przesłuchiwany wygra, Bohater nie dowiaduje się niczego wartego uwagi. Dwa lub więcej Stopnie Porażki zadają przesłuchiwanemu @dice{1k10} + PSW Bohatera Obrażeń, uniemożliwiając ponowienie przesłuchania przez @dice{1k5} dni. Cztery lub więcej Stopnie Porażki zadają przesłuchiwanemu takie same Obrażenia, a ten otrzymuje premię +30 do Testów Siły Woli na opieranie się przesłuchaniom Bohatera i jego sojuszników. Każdy Test Przesłuchiwania zadaje celowi jeden poziom Wyczerpania.",
+            {
+              "title": "Używane Jako:",
+              "content": "Akcja Przedłużona trwająca @dice{1k5} godzin."
+            }
+          ]
         },
         {
           "name": "invocation",
           "displayName": "inwokacja",
           "characteristic": "willpower",
+          "subName": "${insertArray:type|sep=, }",
           "type": null,
-          "content": []
-        },
-        {
-          "name": "lipReading",
-          "displayName": "czytanie z warg",
-          "characteristic": "perception",
-          "type": null,
-          "content": []
+          "content": [
+            "Test Inwokacji wymaga Akcji Podwójnej. Przez cały czas trwania Rundy Bohater oczyszcza swój umysł z zewnętrznych wpływów i koncentruje wolę. Sukces Testu wskazuje, że jego umysł jest gotowy do bardziej intensywnego ogniskowania energii Osnowy, jednocześnie nadal ograniczając wystawienie się na jej wpływ. W kolejnej Rundzie Bohater zwiększa ostateczny Poziom Mocy Testów na poziomie Spętanym o +1.",
+            "Porażka oznacza, że próba skoncentrowania się przyniosła odwrotny skutek i Bohater otrzymuje karę -1 do Spętanego Poziomu Mocy. Jeżeli zmniejszy to jego Poziom Mocy do zera, Moc nie zostanie aktywowana.",
+            {
+              "title": "Używane Jako:",
+              "content": "Akcja Podwójna."
+            }
+          ]
         },
         {
           "name": "literacy",
           "displayName": "czytanie i pisanie",
+          "subName": "${insertArray:type|sep=, }",
           "characteristic": "intelligence",
           "type": null,
-          "content": []
+          "content": [
+            "Czytanie i Pisanie pozwala Bohaterowi na czytanie i pisanie we wszystkich znanych mu językach. Codzienne aktywności nie wymagają Testów tej Umiejętności, ale sytuacje obejmujące różnice regionalne, uszkodzone manuskrypty, archaiczne użycie lub zwroty potoczne mogą czynić Test koniecznym.",
+            {
+              "title": "Używane Jako:",
+              "content": "Akcja Przedłużona trwająca 1 minutę za każdą stronę tekstu, około 750 słów."
+            }
+          ]
         },
         {
           "name": "loreCommon",
-          "displayName": "wiedza podstawowa",
+          "displayName": "wiedza powszechna",
+          "subName": "${insertArray:type|sep=, }",
+          "alias": [
+            {
+              "name": "lore",
+              "displayName": "Wiedza"
+            }
+          ],
           "footnotes": {
             "$name": 0
           },
+          "noGrid": true,
+          "groups": {
+            "adeptusArbites": "Adeptus Arbites",
+            "adeptusAstartes": "Adeptus Astartes",
+            "adeptusMechanicus": "Adeptus Mechanicus",
+            "administratum": "Administratum",
+            "deathwatch": "Straż Śmierci",
+            "ecclesiarchy": "Ekleziarchat",
+            "imperialCreed": "Credo Imperialne",
+            "imperialGuard": "Gwardia Imperialna",
+            "imperialNavy": "Marynarka Imperialna",
+            "imperium": "Imperium",
+            "jerichoReach": "Rubież Jerycho",
+            "tech": "Technologia",
+            "war": "Wojna"
+          },
           "characteristic": "intelligence",
           "type": ["Śledztwo"],
-          "content": []
+          "content": [
+            "Wiedza Powszechna pozwala Bohaterowi przypomnieć sobie ogólne informacje, procedury, dywizje, tradycje, sławne jednostki i przesądy danej planety, grupy,  organizacji lub rasy. Różni się on Wiedzy Akademickiej, która reprezentuje wiedzę typowo książkową, i Wiedzy Zakazanej, która zajmuje się ukrytą lub zakazaną wiedzą, ponieważ dotyczy podstawowych informacji nabytych przez długi kontakt z kulturą lub obszarem. MG określa, jakie dodatkowe informacje poda na podstawie  dodatkowych stopni Sukcesu.",
+            {
+              "type": "list",
+              "style": "unordered",
+              "title": "Grupy Umiejętności",
+              "content": [
+                {
+                  "title": "${insertValueAt:groups.adeptusArbites}:",
+                  "content": "Wiedza o różnorakich ramionach i podsekcjach Adeptus Arbites, w tym o strukturze rang, powszechnych procedurach i podstawowych zasadach imperialnej sprawiedliwości."
+                },
+                {
+                  "title": "${insertValueAt:groups.adeptusAstartes}:",
+                  "content": "Zrozumienie roli, funkcji i natury słynnych Kosmicznych Marines Imperium, a także wiedza o bardziej znanych Zakonach i obszarach ich działania."
+                },
+                {
+                  "title": "${insertValueAt:groups.adeptusMechanicus}:",
+                  "content": "Podstawowe zrozumienie symboliki i praktyk Adeptus Mechanicus, a także ich hierarchii, możliwych do rozróżnienia rang, jak również wiedza o istnieniu Szesnastu Praw Wszechświatowych."
+                },
+                {
+                  "title": "${insertValueAt:groups.administratum}:",
+                  "content": "Szeroko rozumiana wiedza o zawiłych niczym labirynt sposobach działania, zasadach, tradycjach i dyktatach Adeptus Administratum."
+                },
+                {
+                  "title": "${insertValueAt:groups.deathwatch}:",
+                  "content": "Wiedza o funkcji i sposobie organizacji Straży Śmierci, w tym o jej głónych założeniach i praktykach."
+                },
+                {
+                  "title": "${insertValueAt:groups.ecclesiarchy}:",
+                  "content": "Zrozumienie struktury Adeptus Ministorum i ich roli w kulcie Boga\u2013Imperatora, a także organizacji, pozdrowieniach i ogólnych praktykach."
+                },
+                {
+                  "title": "${insertValueAt:groups.imperialCreed}:",
+                  "content": "Wiedza o rytuałach i praktykach Imperialnego Kultu, najbardziej powszechnych założeniach, festiwalach i świętach ku czci Imperatora, a także o najbardziej znanych świętych."
+                },
+                {
+                  "title": "${insertValueAt:groups.imperialGuard}:",
+                  "content": "Podstawowe informacje o systemie rang, logistyce, strukturze, a także najbardziej powszechnych praktykach taktycznych i strategicznych Gwardii Imperialnej, jak i o najbardziej znanych regimentach."
+                },
+                {
+                  "title": "${insertValueAt:groups.imperialNavy}:",
+                  "content": "Podstawowe informacje o rangach, zwyczajach, mundurach i tradycjach Marynarki Imperialnej, a także o najbardziej znanych admirałach i okrętach."
+                },
+                {
+                  "title": "${insertValueAt:groups.imperium}:",
+                  "content": "Wiedza o segmentach, sektorach i najbardziej znanych planetach Imperium."
+                },
+                {
+                  "title": "${insertValueAt:groups.jerichoReach}:",
+                  "content": "Informacje o ogólnej astrografii Rubieży, w tym o znanych szerzej planetach, mieszkańcach i strefach konfliktu."
+                },
+                {
+                  "title": "${insertValueAt:groups.tech}:",
+                  "content": "Zrozumienie prostych litanii i rytuałów pozwalających uspokoić i obłaskawić duchy maszyny."
+                },
+                {
+                  "title": "${insertValueAt:groups.war}:",
+                  "content": "Wiedza o ważnych bitwach, sławnych dowódcach, bohaterach i strategiach używanych przez Imperium w jego licznych kampaniach."
+                }
+              ]
+            },
+            {
+              "title": "Używane Jako:",
+              "content": "Akcja Darmowa."
+            }
+          ]
         },
         {
           "name": "loreForbidden",
@@ -758,46 +1062,262 @@
           "footnotes": {
             "$name": 0
           },
+          "subName": "${insertArray:type|sep=, }",
           "characteristic": "intelligence",
+          "noGrid": true,
+          "groups": {
+            "adeptusAstartes": "Adeptus Astartes",
+            "adeptusMechanicus": "Adeptus Mechanicus",
+            "archeotech": "Archeotechnologia",
+            "blackLibrary": "Czarna Biblioteka",
+            "daemonology": "Demonologia",
+            "heresy": "Herezja",
+            "inquisition": "Inkwizycja",
+            "mutants": "Mutanty",
+            "psykers": "Psykerzy",
+            "traitorLegions": "Zdradzieckie Legiony",
+            "warp": "Osnowa",
+            "xenos": "Xenos"
+          },
           "type": ["Śledztwo"],
-          "content": []
+          "content": [
+            "Wiedza Zakazana reprezentuje wiedzę ukrytą, zawoalowaną lub zakazaną przez organizację lub społeczność. Samo posiadanie takiej wiedzy może powodować trudności dla osób niezwiązanych z tą grupą. Nadmierna wiedza na przykład o Zdradzieckich Legionach może okazać się bardzo szkodliwa dla zdrowia posiadającej ją osoby poza (a nawet wewnątrz) Adeptus Astartes. Udany Test Wiedzy Zakazanej oznacza, że Bohater jest w stanie przypomnieć sobie podstawowe informacje na dany temat. MG może dostarczyć dodatkowe informacje w zależności od Stopni Sukcesu Testu.",
+            {
+              "type": "list",
+              "style": "unordered",
+              "title": "Grupy:",
+              "content": [
+                {
+                  "title": "${insertValueAt:groups.adeptusAstartes}:",
+                  "content": "Szczegółowa wiedza na temat praktyk, organizacji i planet macierzystych Imperialnych Kosmicznych Marines i ich Zakonów, w tym fragmenty i plotki dotyczące ich wielu sekretnych rytuałów, a także metod rekrutacji i treningu."
+                },
+                {
+                  "title": "${insertValueAt:groups.adeptusMechanicus}:",
+                  "content": "Dogłębna wiedza na temat wiernych Boga Maszyny, w tym ich rytuałów, obrzędów, powszechnych wierzeń, podstawowych filozofii i dokładne zrozumienie Praw Wszechświatowych."
+                },
+                {
+                  "title": "${insertValueAt:groups.archeotech}:",
+                  "content": "Wiedza o wspaniałych utraconych urządzeniach z dawnych czasów i wskazówkach co do ich owianych tajemnicą funkcji i przeznaczenia."
+                },
+                {
+                  "title": "${insertValueAt:groups.blackLibrary}:",
+                  "content": "Tajemna wiedza na temat Czarnej Biblioteki, jej zawartości, okropnych strażników i niemożliwych do opisania obcych działających wewnątrz."
+                },
+                {
+                  "title": "${insertValueAt:groups.daemonology}:",
+                  "content": "Przyprawiające o ciarki informacje na temat najbardziej niesławnych stworzeniach Osnowy i ich spaczonych fizycznych manifestacjach."
+                },
+                {
+                  "title": "${insertValueAt:groups.heresy}:",
+                  "content": "Wiedza na temat czynów i praktyk uznanych przez Imperium za herezję, najbardziej godnych pogardy heretykach w historii i ich czynach."
+                },
+                {
+                  "title": "${insertValueAt:groups.inquisition}:",
+                  "content": "Zrozumienie sekretnej ogranizacji imperium, jej podstawowych zasad i wiedza o najsławniejszych Inkwizytorach."
+                },
+                {
+                  "title": "${insertValueAt:groups.mutants}:",
+                  "content": "Wiedza o stabilnych i niestabilnych mutacjach ludzkości, ich podobnym do nowotworu nasilaniu się z czasem, a także niektórych badaniach i książkach na te tematy."
+                },
+                {
+                  "title": "${insertValueAt:groups.psykers}:",
+                  "content": "Umiejętność identyfikacji psykerów, fizycznych efektów ich mocy, zrozumienie powodowanego przez nich niebezpieczeństwa i ogólnego zakresu ich możliwości."
+                },
+                {
+                  "title": "${insertValueAt:groups.traitorLegions}:",
+                  "content": "Sekrety utraconych legionów Kosmicznych Marines, ich nazwy i smutna historia ich upadku."
+                },
+                {
+                  "title": "${insertValueAt:groups.warp}:",
+                  "content": "Zrozumienie energii Osnowy, jej interakcji i powiązania z prawdziwością, a także jak jej kaprysy i pływy oddziałują na podróż międzygwiezdną."
+                },
+                {
+                  "title": "${insertValueAt:groups.xenos}:",
+                  "content": "Wiedza o bardziej i mniej ważnych gatunkach obcych znanych Imperium, stanowionym przez nich niebezpieczeństwie i ich ogólnym wyglądzie."
+                }
+              ]
+            },
+            {
+              "title": "Używane Jako:",
+              "content": "Akcja Darmowa\u2026 Choć konsekwencje posiadania takiej wiedzy mogą trwać całe życie."
+            }
+          ]
         },
         {
           "name": "loreScholastic",
           "displayName": "wiedza akademicka",
+          "subName": "${insertArray:type|sep=, }",
           "footnotes": {
             "$name": 0
           },
+          "groups": {
+            "archaic": "Archaik",
+            "astromancy": "Astromancja",
+            "beasts": "Bestie",
+            "bureaucracy": "Biurokracja",
+            "chymistry": "Chemia",
+            "codexAstartes": "Codex Astartes",
+            "cryptology": "Kryptologia",
+            "heraldry": "Heraldyka",
+            "imperialCreed": "Credo Imperialne",
+            "judgement": "Sądownictwo",
+            "legend": "Legendy",
+            "numerology": "Numerologia",
+            "occult": "Okultyzm",
+            "philosophy": "Filozofia",
+            "tacticaImperialis": "Tactica Imperialis"
+          },
           "characteristic": "intelligence",
           "type": ["Śledztwo"],
-          "content": []
+          "content": [
+            "Wiedza Akademicka daje Bohaterowi wiedzę na temat szczególnie złożony lub ezoteryczny. Udany Test pozwala na przypomnienie sobie odpowiednich  informacji lub zbadać temat, jeżeli dostępny jest odpowiedni materiał źródłowy. Wiedza Akademicka daje zrozumienie tematu dużo bardziej dogłębne niż Wiedza Powszechna i wymaga doświadczenia i nauki. Testy Wiedzy Akademickiej pozwalają na identyfikację rzeczy pokrywających się z ekspertyzą Bohatera, na przykład osób, ksiąg, okrętów i duchów maszyny. Udany Test Umiejętności pozwala uzyskać podstawowe informacje o jego celu zgodne ze specjalnością Bohatera, co pokazano w tabeli.",
+            "%table{scholasticLoreResult}",
+            "Wiedza Akademicka może pokrywać się z Wiedzą Powszechną i Zakazaną w niektórych obszarach, ale reprezentuje ona bardziej dogłębne i naukowe informacje. Bohater z Wiedzą Powszechną (Credo Imperialne) może znać zwyczajne informacje o Kulcie Imperialnym, jego różnych organizacjach i ich praktykach, ale Bohater z Wiedzą Akademicką (Credo Imperialne) byłby w stanie nazwać różne kulty w obrębie podsektora i ich rozbieżności w stosunku do Ministorum. Testy Wiedzy Akademickiej nie wymagają żadnego czasu — Bohater wie o czymś lub nie — ale zdobywanie informacji i badania wymagają odpowiedniego do zadania Testu Przedłużonego.",
+            {
+              "type": "list",
+              "style": "unordered",
+              "title": "Specjalne Przypadki:",
+              "content": [
+                {
+                  "title": "${insertValueAt:groups.archaic}:",
+                  "content": "Wiedza o mrocznej przeszłości Imperium, opisywanych erach i sposobie, w jaki długie milenia zmieniły oblicze ludzkości."
+                },
+                {
+                  "title": "${insertValueAt:groups.astromancy}:",
+                  "content": "Wiedza o gwiazdach, osobliwościach i otaczających je planetach, a także zrozumienie teorii używania teleskopów, grafów astrolitycznych i im podobnych."
+                },
+                {
+                  "title": "${insertValueAt:groups.beasts}:",
+                  "content": "Zrozumienie gatunków i rodzin zwierząt oraz wiedza o cechach i wyglądzie wielu półrozumnych stworzeń."
+                },
+                {
+                  "title": "${insertValueAt:groups.bureaucracy}:",
+                  "content": "Znajomość zasad i regulacji dotyczących rządów, zwłaszcza Adeptus Administratum i ich różnych wydziałów, biur i polityk."
+                },
+                {
+                  "title": "${insertValueAt:groups.chymistry}:",
+                  "content": "Wiedza o substancjach chemicznych, ich alchemicznych zastosowaniach na różnych polach i częstości ich występowania w Imperium."
+                },
+                {
+                  "title": "${insertValueAt:groups.codexAstartes}:",
+                  "content": "Zrozumienie i interpretacja świętego Codex Astartes i jego związku z organizacją i taktykami Zakonów Kosmicznych Marines."
+                },
+                {
+                  "title": "${insertValueAt:groups.cryptology}:",
+                  "content": "Wiedza o kodach, szyfrach, kryptogramach, sekretnych językach i kodach numerycznych, która może zostać użyta do ich tworzenia lub łamania."
+                },
+                { "title": "${insertValueAt:groups.heraldry}:", "content": "Znajomość zasad i znaków, na których opiera się heraldyka, a także wiedza o najczęściej używanych pieczęciach i herbach używanych przez szlacheckie rody Imperium." },
+                {
+                  "title": "${insertValueAt:groups.imperialCreed}:",
+                  "content": "Zrozumienie konkretnych rytuałów i praktyk Ekleziarchatu od tradycyjnych sposobów budowy świątyń do konkretnych wyjątków z ich tekstów. Informacji tych można używać do przeprowadzania rytuałów na użytek innych."
+                },
+                { "title": "${insertValueAt:groups.judgement}:", "content": "Wiedza o karach odpowiednich dla niezliczonych wykroczeń wyszczególnionych w imperialnym prawie." },
+                { "title": "${insertValueAt:groups.legend}:", "content": "Ta wiedza, która wykracza nawet poza Archaik, dotyczy niemal zapomnianych fragmentów historii, takich jak Mroczna Era Technologii, Epoka Walk, Wielka Krucjata i Herezja Horusa." },
+                {
+                  "title": "${insertValueAt:groups.numerology}:",
+                  "content": "Zrozumienie tajemniczego związku liczb z fizycznym światem, od Teorii Katastrofy do Litanii Sadleirskiej."
+                },
+                { "title": "${insertValueAt:groups.occult}:", "content": "Zrozumienie okultystycznych rytuałów, teorii i przesądów, a także najbardziej powszechnych sposobów wykorzystania związanych z okultyzmem przedmiotów." },
+                {
+                  "title": "${insertValueAt:groups.philosophy}:",
+                  "content": "Wiedza o teoriach myśli, wierzeń, istnienia i innych abstrakcyjnych pojęć. Włączona jest w nią również sztuka logiki i debatowania, dzięki czemu można użyć jej w potyczkach słownych i przy tworzeniu prac filozoficznych."
+                },
+                {
+                  "title": "${insertValueAt:groups.tacticaImperialis}:",
+                  "content": "Teorie Tactica Imperialis, a także innych systemów prowadzenia wojny, rozstawiania żołnierzy i technik bojowych używanych przez Imperium."
+                }
+              ]
+            },
+            {
+              "title": "Używane Jako:",
+              "content": "Akcja Darmowa."
+            }
+          ]
         },
         {
           "name": "medicae",
           "displayName": "medycyna",
           "characteristic": "intelligence",
+          "subName": "${insertArray:type|sep=, }",
+          "noGrid": true,
           "type": null,
-          "content": []
+          "content": [
+            "Medycyna pozwala na diagnozowanie i leczenie ran przez zszywanie, aplikowanie środków atyseptycznych i używanie różnych urządzeń medycznych, takich jak narthecium. W przypadku pojedynczych rannych Medycyna pozwala udzielić pierwszej pomocy lub długotrwałej opieki, w przypadku grup może pomóc tym, którzy jeszcze się do czegoś nadają i udzielić Łaski Imperatora tym, którzy są zbyt ciężko ranni, dzięki czemu mniejszy odsetek rannych umrze. Może również zostać użyta do diagnozowania ogólnych problemów medycznych i zastosowania środków prewencyjnych.",
+            {
+              "title": "Używane Jako:",
+              "content": "Akcja Podwójna."
+            },
+            {
+              "type": "list",
+              "style": "unordered",
+              "title": "Specjalne Przypadki:",
+              "content": [
+                {
+                  "title": "Pierwsza Pomoc:",
+                  "content": "Medycyna pozwala na udzielanie pierwszej pomocy rannym przez zszywanie rozcięć, bandażowanie otarć i zatykanie lekkich ran kłutych. Udany Test Medycyny usuwa Obrażenia równe Premii z Inteligencji Bohatera Lekko Rannym i 1 Obrażenie Ciężko lub Krytycznie Rannym. Pierwsza Pomoc to Akcja Całorundowa. Do każdego zranienia można ją zastosować tylko raz i wymaga poświęcenia całej Rundy także przez pacjenta."
+                },
+                {
+                  "title": "Opieka Długoterminowa:",
+                  "content": "Używanie Medycyny w ten sposób przyspiesza proces leczenia. Bohater może prawidłowo zajmować się liczbą pacjentów równą jego Premii z Inteligencji. Każdy kolejny pacjent nakłada kumulatywną karę -10 do Testów Medycyny w tej aplikacji. W przypadku Lekko Rannych pacjentów Test wykonuje się na koniec każdego dnia, natomiast przy Ciężko lub Krytycznie Rannych — na koniec tygodnia. Sukces pozwala pacjentowi usunąć dwukrotnie więcej Obrażeń, niż jest to zwyczajnie możliwe i dodatkowo 1 punkt Obrażeń za każdy Stopień Sukcesu, przy czym najpierw usuwane są Obrażenia Krytyczne. Porażka nie wypływa na pacjentów, którzy w takim przypadku leczą się normalnie, natomiast dwa lub trzy Stopnie Porażki oznaczają, że Lekko i Ciężko Ranni otrzymują 1 punkt Obrażeń, używając Nagłej Śmierci do rozwiązywania Obrażeń Krytycznych. Cztery lub więcej Stopnie Porażki zadają wszystkim pacjentom @dice{1k10} Obrażeń, używając Nagłej Śmierci do rozwiązywania Obrażeń Krytycznych."
+                },
+                {
+                  "title": "Diagnozowanie:",
+                  "content": "Medycyna pozwala na diagnozowanie chorób i dolegliwości, zarówno na innych Bohaterach, jak i na większych grupach. Udany Test pozwala uzyskać nazwę przypadłości i podstawowe sposoby jej leczenia."
+                },
+                {
+                  "title": "Odzyskiwanie Genoziarna:",
+                  "content": "Częścią obowiązków Konsyliarze jest odzyskiwanie genoziarna poległych Braci. Konsyliarz może użyć Testu Medycyny, by przy użyciu @tool{reductor|reduktora} odzyskać genoziarno."
+                }
+              ]
+            }
+          ]
         },
         {
           "name": "navigation",
           "displayName": "nawigacja",
+          "subName": "${insertArray:type|sep=, }",
           "footnotes": {
             "$name": 0
           },
           "characteristic": "intelligence",
           "type": null,
-          "content": []
+          "groups": {
+            "surface": "Powierzchnia",
+            "stellar": "Międzygwiezdna"
+          },
+          "content": [
+            {
+              "title": "Grupy Umiejętności:",
+              "content": "${insertValues:groups|sep=, }"
+            },
+            "Bohater może użyć Nawigacji, by wytyczyć ścieżkę między dwoma punktami. Może prowadzić ona przez kontynent, ale równie dobrze przez układ planetarny. Udany Test Nawigacji pozwala również określić przybliżony czas podróży w oparciu o geografię, kosmografię, aktualne warunki, pogodę i wiatr słoneczny. Nawigacja (Powierzchnia) używana jest do określania położenia na powierzchni planety przy użyciu logi–kompasów, odczytów z map i wiedzy o geografii. Nawigacja (Międzygwiezdna) używana jest do wytyczania kursów pomiędzy planetami używając map gwiazd i rytuałów kartomantycznych. Test Nawigacji reprezentuje kilka godzin spędzonych na wytyczanie ścieżek, przeglądanie map i wprowadzanie poprawek, jednak do ustalenia własnego położenia wystarczy 1 minuta.",
+            {
+              "title": "Używane Jako:",
+              "content": "1 minuta do ustalania położenia, @dice{1k5} godzin do wytyczenia kursu."
+            }
+          ]
         },
         {
           "name": "performer",
           "displayName": "występy",
+          "subName": "${insertArray:type|sep=, }",
           "footnotes": {
             "$name": 0
           },
+          "groups": {
+            "dancer": "Taniec",
+            "musician": "Muzyka",
+            "singer": "Śpiew",
+            "storyteller": "Opowiadanie"
+          },
           "characteristic": "fellowship",
           "type": null,
-          "content": []
+          "content": [
+            {
+              "title": "Grupy Umiejętności:"
+            },
+            "Występów można użyć, by zabawiać i zachwycać grupy widzów. Można również używać tej Umiejętności do zarabiania pieniędzy w podobny sposób, co @skill{trade}. Czas trwania Testu Występów zależy od używanej formy sztuki."
+          ]
         },
         {
           "name": "pilot",
@@ -1640,7 +2160,7 @@
               "content": "${insert:prerequisite}"
             },
             "Ten Brat szczególnie lubi używać broni potrafiących zadawać ogromne obrażenia ciała przeciwników, takich jak broń łańcuchowa. Gdy Bohater zadaje Obrażenia bronią białą @quality{tearing|rozrywającą}, rzuca dodatkową kość Obrażeń i wybiera nawyższy wynik. Przy używaniu broni zadającej kilka kości Obrażeń, rzucana jest tylko jedna dodatkowa kość.",
-            "%example{Averrus, Szturmowiec Straży Śmierci, atakuje Tyranidzkiego Harmagaunta swoim @melee{chainsword|mieczem łańcuchowym}. Ponieważ jest to broń Rozrywająca, aplikują się efekty Talentu Rozrywacz Ciał. Averrus rzuca kośćmi (uzyskując wyniki 9, 2 i 5) i wybiera największy z nich (9).}"
+            "%example{Averrus, Szturmowiec Straży Śmierci, atakuje Tyranidzkiego Hormagaunta swoim @melee{chainsword|mieczem łańcuchowym}. Ponieważ jest to broń Rozrywająca, aplikują się efekty Talentu Rozrywacz Ciał. Averrus rzuca kośćmi (uzyskując wyniki 9, 2 i 5) i wybiera największy z nich (9).}"
           ]
         },
         {
@@ -3902,7 +4422,7 @@
           "name": "bolt",
           "display": "both",
           "content": [
-            "Jeżeli zwykły obywatel Imperium wyobraża sobie pancerz wspomagany, kiedy myśli o wyglądzie Marine, to myśl o jego furii przywołuje obraz boltera. Potężne i uniwersalne, bronie boltowe są ulubionym uzbrojeniem Adeptus Astartes, a każdy rekrut otrzymuje taką, kiedy tylko zostanie Zwiadowcą. Większość modeli ma swoje początki właśnie wśród Marines, mimo że istnieją mniejsze, gorsze wersje, będące skarbami dla niektórych oficerów i szlachty. Głośne i brutalne, bronie boltowe zawsze są przerażające, ale nikt nie dzierży ich z tak zabójczą dokładnością jak Astartes.",
+            "Jeżeli zwykły obywatel Imperium wyobraża sobie pancerz wspomagany, kiedy myśli o wyglądzie Marine, to myśl o jego furii przywołuje obraz boltera. Potężne i uniwersalne, bronie boltowe są ulubionym uzbrojeniem Adeptus Astartes, a każdy rekrut otrzymuje taką, kiedy tylko zostanie Zwiadowcą. Większość modeli ma swoje początki właśnie wśród Marines, mimo że istnieją mniejsze, gorsze wersje, będące skarbami dla niektórych oficerów i szlachty. Głośne i brutalne bronie boltowe zawsze są przerażające, ale nikt nie dzierży ich z tak zabójczą dokładnością jak Astartes.",
             "Boltery wystrzeliwują pociski przeciwpancerno-odłamkowe z własnym napędem, zwane boltami, które wybuchają zaraz po wbiciu się w cel, co zapewnia możliwie maksymalną skuteczność. Są wspaniałymi urządzeniami, nawet jeżeli trochę kapryśnymi; wymagają bowiem dokładnej konserwacji przy użyciu wyłącznie najlepszych rytuałów i błogosławieństw. Standardowy pocisk boltowy ma kaliber .75 (19mm), ultragęsty metalowy rdzeń i diamantynowy czubek. Straż Śmierci używa różnych rodzajów boltów do zadań specjalnych, takich jak przebijanie grubych pancerzy, czy ciche eliminowanie celu bez zdradzania swojej pozycji. By używać broni boltowych, Bohater musi posiadać Talent @talent{pistolTraining||bolt}, @talent{basicWeaponTraining||bolt}, lub @talent{heavyWeaponTraining||bolt}."
           ]
         },
@@ -3981,7 +4501,7 @@
       "parentPath": "ranged-bolt",
       "items": [
         {
-          "displayName": "pistolet boltowy",
+          "displayName": "pistolet boltowy astartes",
           "name": "boltPistol",
           "image": "https://static.wikia.nocookie.net/warhammer40k/images/b/b5/Ceres-Pattern_Bolt_Pistol.jpg",
           "class": "pistol",
@@ -4011,7 +4531,7 @@
           ]
         },
         {
-          "displayName": "bolter (wzór godwyn)",
+          "displayName": "bolter astartes (wzór godwyn)",
           "name": "bolter",
           "image": "https://wh40k.lexicanum.com/mediawiki/images/e/ee/Bolter_-_Astartes_MK_Vb.jpg",
           "class": "basic",
@@ -4038,7 +4558,7 @@
           ]
         },
         {
-          "displayName": "karabin boltowy (wzór stalker)",
+          "displayName": "karabin boltowy astartes (wzór stalker)",
           "name": "bolterStalker",
           "image": "https://cdna.artstation.com/p/assets/images/images/046/156/562/large/david-dorn-stalker-right.jpg",
           "class": "basic",
@@ -4065,7 +4585,7 @@
           ]
         },
         {
-          "displayName": "broń hybrydowa",
+          "displayName": "broń hybrydowa astartes",
           "name": "combi",
           "image": "https://static.wikia.nocookie.net/warhammer40k/images/6/69/SalamandersCombiflamer.jpg",
           "footnote": 1,
@@ -4097,7 +4617,7 @@
           ]
         },
         {
-          "displayName": "ciężki bolter",
+          "displayName": "ciężki bolter astartes",
           "name": "heavyBolter",
           "image": "https://static.wikia.nocookie.net/warhammer40k/images/8/87/Heavy_Bolter_UM_1.png",
           "class": "heavy",
@@ -4124,7 +4644,7 @@
           ]
         },
         {
-          "displayName": "bolter szturmowy",
+          "displayName": "bolter szturmowy astartes",
           "name": "stormBolter",
           "image": "https://static.wikia.nocookie.net/space-hulk-deathwing/images/b/b2/Storm-bolter-mk2.jpg",
           "class": "basic",
@@ -4157,7 +4677,7 @@
       "parentPath": "ranged-plasma",
       "items": [
         {
-          "displayName": "działko plazmowe",
+          "displayName": "działko plazmowe astartes",
           "name": "plasmaCannon",
           "image": "https://static.wikia.nocookie.net/warhammer40k/images/1/1a/ErasmusPatternPlasmaCannon.png",
           "class": "heavy",
@@ -4189,7 +4709,7 @@
           ]
         },
         {
-          "displayName": "karabin plazmowy (wzór ragefire)",
+          "displayName": "karabin plazmowy astartes (wzór ragefire)",
           "name": "plasmaGun",
           "image": "https://static.wikia.nocookie.net/warhammer40k/images/f/f0/PlasmaIncinerator.png",
           "class": "basic",
@@ -4215,7 +4735,7 @@
           ]
         },
         {
-          "displayName": "pistolet plazmowy",
+          "displayName": "pistolet plazmowy astartes",
           "name": "plasmaPistol",
           "image": "https://static.wikia.nocookie.net/savagerun/images/e/eb/Plasma.jpg",
           "class": "pistol",
@@ -4247,7 +4767,7 @@
       "parentPath": "ranged-melta",
       "items": [
         {
-          "displayName": "pistolet infernus",
+          "displayName": "pistolet infernus astartes",
           "name": "meltaPistol",
           "image": "https://i.pinimg.com/originals/0e/75/20/0e7520d34061798ed5e67aae8e8b5b57.jpg",
           "class": "pistol",
@@ -4272,7 +4792,7 @@
           ]
         },
         {
-          "displayName": "karabin melta (wzór wulkan)",
+          "displayName": "karabin melta astartes (wzór wulkan)",
           "name": "meltagun",
           "image": "https://static.wikia.nocookie.net/warhammer40k/images/f/f0/Melta_Gun.jpg",
           "class": "basic",
@@ -4297,7 +4817,7 @@
           ]
         },
         {
-          "displayName": "multi-melta (wzór maxima)",
+          "displayName": "multi-melta astartes (wzór maxima)",
           "name": "multiMelta",
           "image": "https://static0.hardcoregamerimages.com/wordpress/wp-content/uploads/2024/09/space-marine-2-multi-melta-standard-issue.png",
           "class": "heavy",
@@ -4334,7 +4854,7 @@
       "parentPath": "ranged-flame",
       "items": [
         {
-          "displayName": "miotacz",
+          "displayName": "miotacz astartes",
           "name": "flamer",
           "image": "https://static.wikia.nocookie.net/warhammer40k/images/6/6b/Mk_IIIa_%27Heretic%27_Pattern_Novamarines.jpg",
           "class": "basic",
@@ -4360,7 +4880,7 @@
           ]
         },
         {
-          "displayName": "miotacz ręczny",
+          "displayName": "miotacz ręczny astartes",
           "name": "handFlamer",
           "image": "https://static.wikia.nocookie.net/dark-heresy-rp/images/c/c6/Hand_Flamer.jpg",
           "class": "pistol",
@@ -4386,7 +4906,7 @@
           ]
         },
         {
-          "displayName": "ciężki miotacz",
+          "displayName": "ciężki miotacz astartes",
           "name": "heavyFlamer",
           "image": "https://warhammerart.com/wp-content/uploads/2017/02/HEAVY-FLAMER.jpg",
           "class": "heavy",
@@ -4418,7 +4938,7 @@
       "parentPath": "ranged-solid",
       "items": [
         {
-          "displayName": "działko szturmowe",
+          "displayName": "działko szturmowe astartes",
           "name": "assaultCannon",
           "image": "https://static.wikia.nocookie.net/warhammer40k/images/a/a2/Assault_Cannon.jpg",
           "class": "mounted",
@@ -4445,7 +4965,7 @@
           ]
         },
         {
-          "displayName": "strzelba",
+          "displayName": "strzelba bojowa astartes",
           "name": "shotgun",
           "image": "https://static.wikia.nocookie.net/warhammer40k/images/1/16/Astartes_Assault_Shotgun.png",
           "class": "basic",
@@ -4521,7 +5041,7 @@
           ]
         },
         {
-          "displayName": "działko przyspieszające",
+          "displayName": "działko przyspieszające astartes",
           "name": "accelerator",
           "image": "https://warhammer40000.com/games/wp-content/uploads/sites/2/2019/07/01-Ultramarines-Suppressor-3-128.png",
           "class": "heavy",
@@ -4552,7 +5072,7 @@
       "parentPath": "ranged-las",
       "items": [
         {
-          "displayName": "działo laserowe",
+          "displayName": "działo laserowe astartes",
           "name": "lascannon",
           "image": "https://static.wikia.nocookie.net/warhammer40k/images/5/55/SW_Lascannon.png",
           "class": "heavy",
@@ -4573,7 +5093,7 @@
           "requisition": 30,
           "renown": 1,
           "content": [
-            "Technologia laserowa zwykle nie ma zastosowania wśród Astartes, którzy mają dostęp do potęzniejszego uzbrojenia i nie muszą spowiadać się przed Departamento Munuitorum z kosztów wykorzystanej amunicji. Wyjątkiem jest Działo Laserowe. Ta broń używa ogromnych baterii, które zapewniają wystarczająco dużo energii, by wybijać dziury w nawet najgrubszym pancerzu na długich dystansach. Beterie te nie są wbudowane w broń i zwykle przyczepiane są do plecaków Marines."
+            "Technologia laserowa zwykle nie ma zastosowania wśród Astartes, którzy mają dostęp do potężniejszego uzbrojenia i nie muszą spowiadać się przed Departamento Munitorum z kosztów wykorzystanej amunicji. Wyjątkiem jest Działo Laserowe. Ta broń używa ogromnych baterii, które zapewniają wystarczająco dużo energii, by wybijać dziury w nawet najgrubszym pancerzu na długich dystansach. Baterie te nie są wbudowane w broń i zwykle przyczepiane są do plecaków Marines."
           ]
         },
         {
@@ -4635,7 +5155,7 @@
       "parentPath": "ranged-launcher",
       "items": [
         {
-          "displayName": "wyrzutnia pocisków cyklon",
+          "displayName": "wyrzutnia pocisków astartes \"cyklon\"",
           "name": "cyclone",
           "image": "https://static.wikia.nocookie.net/warhammer40k/images/b/bc/MIssile.png",
           "class": "mounted",
@@ -4663,7 +5183,7 @@
           ]
         },
         {
-          "displayName": "wyrzutnia pocisków (wzór soundstrike)",
+          "displayName": "wyrzutnia pocisków astartes (wzór soundstrike)",
           "name": "soundstrike",
           "image": "https://static.wikia.nocookie.net/warhammer40k/images/5/53/Soundstrike_Missile_Launcher.jpg",
           "class": "heavy",
@@ -4719,7 +5239,7 @@
           ]
         },
         {
-          "displayName": "granatnik fragstorm",
+          "displayName": "granatnik astartes \"fragstorm\"",
           "name": "fragstorm",
           "image": "https://www.warhammer.com/app/resources/catalog/product/threeSixty/99120101184_PrimarisAggressors1360/41.jpg",
           "class": "mounted",
@@ -4753,7 +5273,7 @@
       "parentPath": "ranged-exotic",
       "items": [
         {
-          "displayName": "działo promienia konwersyjnego",
+          "displayName": "działo konwersyjne astartes",
           "name": "conversionBeamer",
           "class": "heavy",
           "range": 100,
@@ -4778,7 +5298,7 @@
           ]
         },
         {
-          "displayName": "digi-miotacz",
+          "displayName": "digi-miotacz astartes",
           "name": "digiFlamer",
           "class": "pistol",
           "noDesc": true,
@@ -4806,7 +5326,7 @@
           "renown": 3
         },
         {
-          "displayName": "digi-laser",
+          "displayName": "digi-laser astartes",
           "name": "digiLaser",
           "class": "pistol",
           "noDesc": true,
@@ -4829,7 +5349,7 @@
           "renown": 3
         },
         {
-          "displayName": "digi-melta",
+          "displayName": "digi-melta astartes",
           "name": "digiMelta",
           "class": "pistol",
           "noDesc": true,
@@ -4851,7 +5371,7 @@
           "renown": 3
         },
         {
-          "displayName": "digi-bronie",
+          "displayName": "digi-bronie astartes",
           "name": "digiWeapons",
           "noTable": true,
           "content": [
@@ -4859,7 +5379,7 @@
           ]
         },
         {
-          "displayName": "karabin igłowy",
+          "displayName": "karabin igłowy astartes",
           "name": "needler",
           "class": "basic",
           "range": 200,
@@ -4922,7 +5442,7 @@
       "parentPath": "grenade",
       "items": [
         {
-          "displayName": "granat oślepiający",
+          "displayName": "granat oślepiający astartes",
           "name": "blind",
           "class": "thrown",
           "range": "Sx3",
@@ -4941,7 +5461,7 @@
           ]
         },
         {
-          "displayName": "granat odłamkowy",
+          "displayName": "granat odłamkowy astartes",
           "name": "frag",
           "class": "thrown",
           "range": "Sx3",
@@ -4972,7 +5492,7 @@
           ]
         },
         {
-          "displayName": "pocisk odłamkowy",
+          "displayName": "pocisk odłamkowy astartes",
           "name": "missileFrag",
           "damage": {
             "formula": "2k10",
@@ -5000,7 +5520,7 @@
           ]
         },
         {
-          "displayName": "granat zapalający",
+          "displayName": "granat zapalający astartes",
           "name": "incendiary",
           "class": "thrown",
           "range": "Sx3",
@@ -5028,7 +5548,7 @@
           ]
         },
         {
-          "displayName": "pocisk zapalający",
+          "displayName": "pocisk zapalający astartes",
           "name": "missileIncendiary",
           "damage": {
             "formula": "1k10+3",
@@ -5049,7 +5569,7 @@
           ]
         },
         {
-          "displayName": "granat krak",
+          "displayName": "granat krak astartes",
           "name": "krak",
           "class": "thrown",
           "range": "Sx3",
@@ -5074,7 +5594,7 @@
           ]
         },
         {
-          "displayName": "pocisk krak",
+          "displayName": "pocisk krak astartes",
           "name": "missileKrak",
           "damage": {
             "formula": "4k10+6",
@@ -5098,7 +5618,7 @@
           ]
         },
         {
-          "displayName": "granat nova",
+          "displayName": "granat nova astartes",
           "name": "nova",
           "class": "thrown",
           "range": "Sx3",
@@ -5127,7 +5647,7 @@
           ]
         },
         {
-          "displayName": "granat plazmowy",
+          "displayName": "granat plazmowy astartes",
           "name": "plasma",
           "class": "thrown",
           "range": "Sx3",
@@ -5156,7 +5676,7 @@
           ]
         },
         {
-          "displayName": "pocisk plazmowy",
+          "displayName": "pocisk plazmowy astartes",
           "name": "missilePlasma",
           "damage": {
             "formula": "2k10+12",
@@ -5178,7 +5698,7 @@
           ]
         },
         {
-          "displayName": "granat wstrzymujący",
+          "displayName": "granat wstrzymujący astartes",
           "name": "stasis",
           "class": "thrown",
           "range": "Sx3",
@@ -5198,7 +5718,7 @@
           ]
         },
         {
-          "displayName": "granat ogłuszający",
+          "displayName": "granat ogłuszający astartes",
           "name": "stun",
           "class": "thrown",
           "range": "Sx3",
@@ -5345,7 +5865,7 @@
           "display": "both",
           "content": [
             "Obwody siatki psionicznej w tych broniach podobno zostały stworzone przez samego Imperatora w czasach, kiedy jeszcze chodził między śmiertelnikami. Uzbrojenie takie łączy te obwody z psychoreaktywnymi kryształami używanymi w @wargear{psychicHood|kapturach psionicznych}, dzięki czemu użytkownik może skupić swoją mentalną moc w pole podobne do tego wytwarzanego przez broń energetyczną. Bron psioniczna przybiera wiele form o różnym stopniu wyspecjalizowania; najbardziej znaną są bronie Nemesis używane przez Szarych Rycerzy. Najłatwiej Kronikarzowi jest zdobyć psioniczny miecz lub kostur.",
-            "Jeżeli broń taka użyta jest przez osobę niebędącą psykerem, liczy się ona jako Zwykła broń wykonana dla rozmiaru Astartes i stosuje się do wszystkich zasad znajdujących się w profilu. Natomiast w rękach kogokolwiek posiadającego Siłę Psychiczną staje się dużo bardziej niebezpieczna. Za każdy punkt Siły Psychicznej Obrażenia i Penetracja broni rosną o 1. Na przykład miecz psioniczny używany przez psykera z SP 3 zadawałby @dice{1k10+5} (plus Siła} Obrażeń z Penetracją 5.",
+            "Jeżeli broń taka użyta jest przez osobę niebędącą psykerem, liczy się ona jako Zwykła broń wykonana dla rozmiaru Astartes i stosuje się do wszystkich zasad znajdujących się w profilu. Natomiast w rękach kogokolwiek posiadającego Poziom Mocy staje się dużo bardziej niebezpieczna. Za każdy punkt Poziomu Mocy Obrażenia i Penetracja broni rosną o 1. Na przykład miecz psioniczny używany przez psykera z PM 3 zadawałby @dice{1k10+5} (plus Siła} Obrażeń z Penetracją 5.",
             "Dodatkowo za każdym razem, kiedy psyker wyposażony w taką broń zada komuś Obrażenia za jej pomocą, może jako Akcja Darmowa skupić swoją moc i żądzę mordu w ostrzu, czy innej części używanej do uderzenia. Wymaga to testu Skupienia używającego przeciwstawnej Siły Woli. Za każdy Stopień Sukcesu użytkownik zadaje dodatkowe @dice{1k10} Obrażeń, które ignorują Pancerz i Wytrzymałość. Broń psioniczna nie może być zniszczona przez pole energetyczne."
           ]
         },
@@ -5365,7 +5885,7 @@
       "parentPath": "melee-chain",
       "items": [
         {
-          "displayName": "miecz łańcuchowy",
+          "displayName": "miecz łańcuchowy astartes",
           "name": "chainsword",
           "class": "melee",
           "damage": {
@@ -5392,7 +5912,7 @@
       "parentPath": "melee-power",
       "items": [
         {
-          "displayName": "pięść łańcuchowa",
+          "displayName": "rękawica łańcuchowa astartes",
           "name": "chainsfist",
           "class": "mounted",
           "damage": {
@@ -5409,12 +5929,12 @@
           "requisition": 40,
           "renown": 3,
           "content": [
-            "Pięść łańcuchowa łączy niszczące pancerz pole pięści energetycznej z rozrywającymi adamantytowymi zębami ostrza łańcuchowego. Pole otacza i rękawicę i pędzący łańcuch, tworząc broń zdolną przeciąć pancerz, pojazdy, ciężkie grodzie, czy niemal dowolną substancję, jeżeli dostępna jest odpowiednia ilość czasu. Broń taka jest zbyt ciężka nawet dla Brata w pancerzu wspomaganym i efektywnie używać ich mogą tylko ci zakuci w @armor{terminator|pancerze terminator}. Ma to również sens, ponieważ w walce z przeciwnikiem tak potężnym, że wymagane jest użycie takiej broni, przydatna jest ochrona podobnego kalibru.",
-            "Pięść łańcuchowa instalowana jest zamiast normalnej rękawicy Terminatora i nakłada takie same ograniczenia jak @melee{lightningClaw}."
+            "Rękawica łańcuchowa łączy niszczące pancerz pole pięści energetycznej z rozrywającymi adamantytowymi zębami ostrza łańcuchowego. Pole otacza i rękawicę i pędzący łańcuch, tworząc broń zdolną przeciąć pancerz, pojazdy, ciężkie grodzie, czy niemal dowolną substancję, jeżeli dostępna jest odpowiednia ilość czasu. Broń taka jest zbyt ciężka nawet dla Brata w pancerzu wspomaganym i efektywnie używać ich mogą tylko ci zakuci w @armor{terminator|pancerze terminator}. Ma to również sens, ponieważ w walce z przeciwnikiem tak potężnym, że wymagane jest użycie takiej broni, przydatna jest ochrona podobnego kalibru.",
+            "Rękawica łańcuchowa instalowana jest zamiast normalnej rękawicy Terminatora i nakłada takie same ograniczenia jak @melee{lightningClaw}."
           ]
         },
         {
-          "displayName": "szpon energetyczny",
+          "displayName": "szpon energetyczny astartes",
           "name": "lightningClaw",
           "class": "melee",
           "damage": {
@@ -5434,7 +5954,7 @@
           ]
         },
         {
-          "displayName": "topór energetyczny",
+          "displayName": "topór energetyczny astartes",
           "name": "powerAxe",
           "class": "melee",
           "damage": {
@@ -5451,7 +5971,7 @@
           ]
         },
         {
-          "displayName": "pięść energetyczna",
+          "displayName": "rękawica energetyczna astartes",
           "name": "powerFist",
           "class": "melee",
           "damage": {
@@ -5467,12 +5987,12 @@
           "requisition": 30,
           "renown": 2,
           "content": [
-            "Pięść energetyczna generuje pole tak bardzo destabilizujące materię, że znajdująca się w nim broń nie ma większego znaczenia. Z tego powodu zamiast tradycyjnego oręża pole otacza powiększoną i wzmocnioną rękawicę. W połączeniu z siłą Brata pięść energetyczna może rozerwać nawet najcięższy pancerz i rozgnieść kryjące się wewnątrz ciało jak krwawy przejrzały owoc. Ładowanie tych potężnych pól wymaga ciężkich przewodów podłączonych do reaktora znajdującego się w pancerzu. Same generatory są również rzadkie i trudne do utrzymiania, przez co broń taka jest symbolem statusu nawet w Adeptus Astartes.",
-            "Pięść energetyczna dodaje mnożnik do Siły użytkownika (każdy Kosmiczny Marine posiada mnożnik Nienaturalnej Siły, więc broń ta po prostu zwiększa go o 1). Jest ona montowana zamiast normalnej rękawicy w pancerzu wspomaganym i nakłada te same ograniczenia co @melee{lightningClaw}."
+            "Rękawica energetyczna generuje pole tak bardzo destabilizujące materię, że znajdująca się w nim broń nie ma większego znaczenia. Z tego powodu zamiast tradycyjnego oręża pole otacza powiększoną i wzmocnioną rękawicę. W połączeniu z siłą Brata rękawica energetyczna może rozerwać nawet najcięższy pancerz i rozgnieść kryjące się wewnątrz ciało jak krwawy przejrzały owoc. Ładowanie tych potężnych pól wymaga ciężkich przewodów podłączonych do reaktora znajdującego się w pancerzu. Same generatory są również rzadkie i trudne do utrzymiania, przez co broń taka jest symbolem statusu nawet w Adeptus Astartes.",
+            "Rękawica energetyczna dodaje mnożnik do Siły użytkownika (każdy Kosmiczny Marine posiada mnożnik Nienaturalnej Siły, więc broń ta po prostu zwiększa go o 1). Jest ona montowana zamiast normalnej rękawicy w pancerzu wspomaganym i nakłada te same ograniczenia co @melee{lightningClaw}."
           ]
         },
         {
-          "displayName": "miecz energetyczny",
+          "displayName": "miecz energetyczny astartes",
           "name": "powerSword",
           "class": "melee",
           "damage": {
@@ -5489,7 +6009,7 @@
           ]
         },
         {
-          "displayName": "młot gromu",
+          "displayName": "młot gromu astartes",
           "name": "thunderHammer",
           "class": "melee",
           "damage": {
@@ -5542,8 +6062,8 @@
           "requisition": "35/50",
           "renown": 2,
           "content": [
-            "Rękawica taka, projektu Belisariusa Cawla, odpowiada na długo istniejący problem używania broni dystansowej z pięściami energetycznymi przez wbudowanie w rękawicę boltera zasilanego z krótkiej taśmy. Chociaż trzeba się nieźle wysilić, aby wycelować w taki sposób na dystans dłuższy niż kilka metrów, uniwersalność uczyniła ją jedną z ulubionych broni Agresorów Primaris.",
-            "Wbudowany bolter ma taki sam profil jak @ranged{bolter|bolter} z następującymi zmianami: Magazynek mieści 20 sztuk amunicji, a Zasięg wynosi 30 metrów. Przy Pobraniu dwóch sztuk, koszt drugiej maleje do 15. Można mieszać z @melee{flamestorm|rękawicą flamestorm}. Bohater używający rękawic, pięści energetycznych, łańcuchowych, czy szponów na obu rękach nie może przeładować broni samodzielnie.",
+            "Rękawica taka, projektu Belisariusa Cawla, odpowiada na długo istniejący problem używania broni dystansowej z rękawicami energetycznymi przez wbudowanie w rękawicę boltera zasilanego z krótkiej taśmy. Chociaż trzeba się nieźle wysilić, aby wycelować w taki sposób na dystans dłuższy niż kilka metrów, uniwersalność uczyniła ją jedną z ulubionych broni Agresorów Primaris.",
+            "Wbudowany bolter ma taki sam profil jak @ranged{bolter|bolter} z następującymi zmianami: Magazynek mieści 20 sztuk amunicji, a Zasięg wynosi 30 metrów. Przy Pobraniu dwóch sztuk, koszt drugiej maleje do 15. Można mieszać z @melee{flamestorm|rękawicą flamestorm}. Bohater używający rękawic energetycznych, łańcuchowych, czy szponów na obu rękach nie może przeładować broni samodzielnie.",
             "Rękawica Boltstorm dodaje mnożnik do Siły użytkownika (każdy Kosmiczny Marine posiada mnożnik Nienaturalnej Siły, więc broń ta po prostu zwiększa go o 1). Jest ona montowana zamiast normalnej rękawicy w pancerzu wspomaganym i nakłada te same ograniczenia co @melee{lightningClaw}."
           ]
         },
@@ -5565,7 +6085,7 @@
           "renown": 2,
           "content": [
             "Druga z używanych przez Agresorów Primaris rękawic, ta poszczycić się może lepszymi osiągami w wybijaniu dużych grup słabych przeciwników i zagradzaniu dróg dzięki zamienieniu boltera na miotacz.",
-            "Wbudowany miotacz ma taki sam profil jak @ranged{flamer} z następującymi zmianami: Magazynek mieści wystarczająco paliwa na 4 strzały, a Zasięg wynosi 15 metrów. Przy Pobraniu dwóch sztuk, koszt drugiej maleje do 15. Można mieszać z @melee{boltstorm|rękawicą boltstorm}. Bohater używający rękawic, pięści energetycznych, łańcuchowych, czy szponów na obu rękach nie może przeładować broni samodzielnie.",
+            "Wbudowany miotacz ma taki sam profil jak @ranged{flamer} z następującymi zmianami: Magazynek mieści wystarczająco paliwa na 4 strzały, a Zasięg wynosi 15 metrów. Przy Pobraniu dwóch sztuk, koszt drugiej maleje do 15. Można mieszać z @melee{boltstorm|rękawicą boltstorm}. Bohater używający rękawic energetycznych, łańcuchowych, czy szponów na obu rękach nie może przeładować broni samodzielnie.",
             "Rękawica Flamestorm dodaje mnożnik do Siły użytkownika (każdy Kosmiczny Marine posiada mnożnik Nienaturalnej Siły, więc broń ta po prostu zwiększa go o 1). Jest ona montowana zamiast normalnej rękawicy w pancerzu wspomaganym i nakłada te same ograniczenia co @melee{lightningClaw}."
           ]
         }
@@ -5576,7 +6096,7 @@
       "parentPath": "melee-force",
       "items": [
         {
-          "displayName": "kostur psioniczny",
+          "displayName": "kostur psioniczny astartes",
           "name": "forceStaff",
           "class": "melee",
           "damage": {
@@ -5589,11 +6109,11 @@
           "requisition": 25,
           "renown": 1,
           "content": [
-            "Kostur psioniczny zamyka siatkę w obudowie wykonanej z polerowanego metalu, kości, drewna, czy jakiegokolwiek innego wytrzymałego materiału. Na jego szczycie zwykle znajduje się wyszukana, pokryta obwodami ikona koncentracji, której wygląd jest związany z powstaniem broni. Kostur psioniczny działa jako świetne ognisko psioniczne, co zapewnia premię +15 do testów Inwokacji. Premia ta działa dopóki kostur trzymany jest w przynajmniej jednej ręce, chociaż uderzenie nim wymaga obu rąk."
+            "Kostur psioniczny zamyka siatkę w obudowie wykonanej z polerowanego metalu, kości, drewna, czy jakiegokolwiek innego wytrzymałego materiału. Na jego szczycie zwykle znajduje się wyszukana, pokryta obwodami ikona koncentracji, której wygląd jest związany z powstaniem broni. Kostur psioniczny działa jako świetne ognisko psioniczne, co zapewnia premię +15 do Testów. @skill{invocation|inwokacji}. Premia ta działa dopóki kostur trzymany jest w przynajmniej jednej ręce, chociaż uderzenie nim wymaga obu rąk."
           ]
         },
         {
-          "displayName": "miecz psioniczny",
+          "displayName": "miecz psioniczny astartes",
           "name": "focreSword",
           "class": "melee",
           "damage": {
@@ -5616,7 +6136,7 @@
       "parentPath": "melee-traditional",
       "items": [
         {
-          "displayName": "nóż taktyczny",
+          "displayName": "nóż taktyczny astartes",
           "name": "combatKnife",
           "class": "melee",
           "damage": {
@@ -9378,7 +9898,7 @@
         },
         {
           "name": "emperorsGrace",
-          "displayName": "gracja imperatora",
+          "displayName": "łaska imperatora",
           "rank": 7,
           "shortDesc": "Pozwala rzucić, by odnowić wydane Punkty Przeznaczenia",
           "content": [
@@ -9388,7 +9908,7 @@
             },
             {
               "title": "Efekty:",
-              "content": "Brat zostaje dotknięty przez boską wolę Imperatora, część Pana Ludzkości, którą otrzymał przez swojego Prymarchę i nauki Zakonu. Raz na sesję gry Bohater może wezwać Grację Imperatora, by odzyskać wydane Punkty Przeznaczenia. Przez liczbę Rund równą Randze za każdym razem, gdy wyda on Punkt Przeznaczenia, rzuca @dice{1k10}. Jeżeli wynik będzie najwyżej równy Randze, PP zostaje natychmiastowo odnowiony. Zdolność ta nie może odnowić PP, które zostały spalone."
+              "content": "Brat zostaje dotknięty przez boską wolę Imperatora, część Pana Ludzkości, którą otrzymał przez swojego Prymarchę i nauki Zakonu. Raz na sesję gry Bohater może wezwać Łaskę Imperatora, by odzyskać wydane Punkty Przeznaczenia. Przez liczbę Rund równą Randze za każdym razem, gdy wyda on Punkt Przeznaczenia, rzuca @dice{1k10}. Jeżeli wynik będzie najwyżej równy Randze, PP zostaje natychmiastowo odnowiony. Zdolność ta nie może odnowić PP, które zostały spalone."
             }
           ]
         },
