@@ -84,8 +84,11 @@ function Table({table, data, hasSubs, footnotes, formula, displayName}) {
                                     k === '$rof' ? Object.values(e.rof).map(f => f ? (typeof f === 'number' ? f : 'S') : '-').join('/') :
                                     k === '$damage' ? (typeof e.damage !== 'string' ? (<span>{<Parser text={`@dice{${e.damage.formula + (e.damage.display ? '|' + e.damage.display : '')}}`} passedSection={section}/>}&nbsp;{damageType[e.damage.type]}</span>) : e.damage ):
                                     k === '$class' ? rangedClass[e.class] : 
-                                    k === '$qualities' ? (typeof e.qualities !== 'string' ? (<Parser text={e.qualities.map(f => (typeof f === 'string' ? `@quality{${f}}` : f?.value ? `@quality{${f.name}||${f.value}}` : `@quality{${f.name}}`) + (f.footnote ? `@footnote{${f.footnote}|${usedFootnotes.indexOf(f.footnote)}}` : '')).join(', ')} passedSection={section}/>) : e.qualities) :
-                                    k === '$range' ? (typeof e.range === 'number' ? `${e.range}m` : e.range) :
+                                    k === '$qualities' ? (typeof e.qualities !== 'string' ? (<Parser text={e.qualities.map(f => {
+                                        const [ qname, qsource ] = (f.name ?? f).split("|")
+                                        return (typeof f === 'string' ? `@quality{${qname}}` : f?.value ? `@quality{${qname}||${f.value}}` : `@quality{${qname}}`) + (qsource ? `{${qsource}}` : "") + (f.footnote ? `@footnote{${f.footnote}|${usedFootnotes.indexOf(f.footnote)}}` : '')
+                                    }).join(', ')} passedSection={section}/>) : e.qualities) :
+                                    k === '$range' ? (typeof e.range === 'number' ? <>{e.range}&nbsp;<span className="normal-case">m</span></> : e.range) :
                                     k === '$reload' ? (typeof e.reload === 'number' ? `${e.reload} akcji podw.` : e.reload) : 
                                     k === '$protectionRating' ? (<Parser text={`@dice{${e.protectionRating}%}`} passedSection={section}/>) : 
                                     k === '$overload' ? (<Parser text={`@dice{${e.overload}%|${e.overload === 1 ? '01' : '01-' + (e.overload+[]).padStart(2, '0')}}`} passedSection={section}/>) :
@@ -158,7 +161,7 @@ function Table({table, data, hasSubs, footnotes, formula, displayName}) {
                 {
                     usedFootnotes?.map((e, index) => (
                         <tr id={`footnote-${section}-${e}`} key={index} className="focus:text-accent transition-colors duration-300" tabIndex={-1}>
-                            <td colSpan={keys.length} className="italic">{footnotes[e].startsWith('{no-daggers}') ? ' ' : '\u2020'.repeat(index + 1)+ ' '}{<Parser text={footnotes[e].replace(/\{no-daggers\|.*?\}/, '')}/>}</td>
+                            <td colSpan={keys.length} className="italic">{footnotes[e].startsWith('{no-daggers') ? ' ' : '\u2020'.repeat(index + 1)+ ' '}{<Parser text={footnotes[e].replace(/\{no-daggers\|.*?\}/, '')}/>}</td>
                         </tr>
                     ))
                 }

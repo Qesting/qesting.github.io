@@ -32,13 +32,17 @@ function Section({data}) {
     const contentLength = content ? content.length : 0
     const childrenLength = children ? children.length : 0
     const foundSource = sources.find(s => s.name === (source ?? "CRB"))
+    const filteredItems = items?.filter(e => !getHiddenSources?.()?.includes(e.source))
+    const filteredFootnotes = (footnotes ?? replacementFootnotes)?.filter(e => !getHiddenSources?.apply()?.includes(e?.source)).map(e => e?.content ?? e)
+
+    const contextData = {...data, footnotes: filteredFootnotes}
 
     if (getHiddenSources?.()?.includes(source)) return <></>
 
     return (
         <section id={`section-${thisName}`} tabIndex={-1} className={`${superS ? "group/section" : ""} outline-none`}>
             <SectionNameContext.Provider value={thisName}>
-                <DataProviderContext.Provider value={data}>
+                <DataProviderContext.Provider value={contextData}>
                     <div className="relative">
                         <h2 
                             className={`${superS ? 'text-2xl group-focus/section:after:bg-accent group-focus/section:text-accent' : 'text-3xl'} py-2 text-center relative after:w-full after:h-px after:absolute after:bottom-0 after:bg-current after:transition-colors duration-300 after:duration-300 transition-colors after:left-0 after:right-0`}
@@ -47,7 +51,7 @@ function Section({data}) {
                         <SourceName source={foundSource}/>
                     </div>
                     {
-                        !['description', 'none'].includes(display) && <Table table={table ?? replacementTable} data={items} footnotes={footnotes ?? replacementFootnotes}/>
+                        !['description', 'none'].includes(display) && <Table table={table ?? replacementTable} data={filteredItems} footnotes={filteredFootnotes ?? replacementFootnotes}/>
                     }
                     {
                         (!["table", 'none'].includes(display) || (display === 'none' && superS)) && <div className={!(children || noGrid) ? 'grid gap-x-4 grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4': undefined }>
@@ -58,7 +62,7 @@ function Section({data}) {
                                 Array.isArray(children) ? children.map((e, index) => <Section key={index + contentLength} data={e}/>) : []
                             }
                             {
-                                Array.isArray(items) ? items.filter(e => !e?.noDesc).map((e, index) => <Item key={index + contentLength + childrenLength} data={e} section={thisName}/>) : []
+                                Array.isArray(filteredItems) ? filteredItems.filter(e => !e?.noDesc).map((e, index) => <Item key={index + contentLength + childrenLength} data={e} section={thisName}/>) : []
                             }
                         </div>
                     }

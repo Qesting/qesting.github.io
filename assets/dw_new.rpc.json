@@ -3880,6 +3880,22 @@
           "content": [
             "Lotna materia aż buzuje od gotowej do uwolnienia energii i gwałtownie regauje przy porządnym trafieniu. Jeżeli wynikiem którejkolwiek kości w rzucie na Obrażenia od broni Lotnej jest 10, Prawa Furia występuje automatycznie, zadając dodatkowe @dice{1k10} punktów Obrażeń. Jeżeli wynik tego rzutu również wyniesie 10, możliwe jest zadanie jeszcze większej ilości Obrażeń."
           ]
+        },
+        {
+          "displayName": "ogień pośredni",
+          "name": "indirectFire",
+          "source": "EIn",
+          "content": [
+            "Broń używa specjalnej naprowadzanej amunicji, która pozwala strzelać do celów znajdujących się za osłonami. Bohater może z karą -10 (zamiast normalnej -30) pokierować pocisk na przeciwnika, którego widział w ciągu poprzedniej Rundy. Alternatywnie, jeżeli wyposażony jest w system celowniczy @tool{signum} albo @tool{signumLink|łącze}, może strzelać do celów ujawnionych przez standardowe systemy celownicze pancerzy wspomaganych (to znaczy znajdujące się w zasięgu strzału Braci, którzy dzielą się danymi), czy też przez skany @tool{auspex|auspexem}."
+          ]
+        },
+        {
+          "displayName": "szrapnele",
+          "name": "shrapnel",
+          "source": "EIn",
+          "content": [
+            "Broń używa amunicji, która nie eksploduje przy bezpośrednim trafieniu, a nad celem, zalewając go deszczem odłamków. Broń ignoruje efekty wszelkich Osłon, jeżeli nad celem jest co najmniej pięć metrów otwartej przestrzeni."
+          ]
         }
       ]
     },
@@ -3908,7 +3924,11 @@
         "Zależne od amunicji.",
         "Broń ta powierzana jest tylko Zbrojmistrzom.",
         "Do Obrażeń od podpalenia powodowanych przez tę broń należy dodać +4.",
-        "{no-daggers|exotic}Przeładowanie digi-broni wymaga @dice{1k5} godzin i udanego Przeciętnego\u00a0(+0) testu Użycia Technologii."
+        "{no-daggers|exotic}Przeładowanie digi-broni wymaga @dice{1k5} godzin i udanego Przeciętnego\u00a0(+0) testu Użycia Technologii.",
+        {
+          "source": "EIn",
+          "content": "Podłączana do podstawy obecnej na @ranged{castellanLauncher|wyrzutni castellan}."
+        }
       ],
       "content": []
     },
@@ -4035,33 +4055,6 @@
           ]
         },
         {
-          "displayName": "pistolet boltowy absolvor",
-          "name": "absolvorPistol",
-          "class": "pistol",
-          "source": "EIn",
-          "range": 30,
-          "rof": {
-            "single": true,
-            "burst": null,
-            "auto": null
-          },
-          "damage": {
-            "formula": "3k10kh2+10",
-            "display": "2k10+10",
-            "type": "explosion"
-          },
-          "penetration": 6,
-          "clip": 8,
-          "reload": 1,
-          "qualities": ["tearing"],
-          "weight": 6,
-          "requisition": 10,
-          "renown": 0,
-          "content": [
-            "Pistolet Absolvor — rozgrzeszający — należy do nowej generacji sprzętu Primaris. Jest to większy pistolet używany przez Kapelanów i Konsyliarzy Primaris jako broń boczna. Ma mniejszy magazynek niż standardowy pistolet, ale znacznie większą moc obalającą, porównywalną z ciężkim bolterem. Konsyliarze używają go do udzielania zbyt ciężko rannym Braciom Łaski Imperatora."
-          ]
-        },
-        {
           "displayName": "bolter (wzór godwyn)",
           "name": "bolter",
           "image": "https://wh40k.lexicanum.com/mediawiki/images/e/ee/Bolter_-_Astartes_MK_Vb.jpg",
@@ -4175,7 +4168,7 @@
           ]
         },
         {
-          "displayName": "bolter szturmowy",
+          "displayName": "bolter sztormu",
           "name": "stormBolter",
           "image": "https://static.wikia.nocookie.net/space-hulk-deathwing/images/b/b2/Storm-bolter-mk2.jpg",
           "class": "basic",
@@ -4199,6 +4192,198 @@
           "renown": 1,
           "content": [
             "Boltery szturmowe powstały w Zakonach Adeptus Astartes i wciąż są używane niemal wyłącznie przez nie. Bronie te przypominają dwa boltery z jednym łożem i spustem. Mogą strzelać z intensywnością dorównującom ciężkiemu uzbrojeniu przy zachowaniu dużo mniejszych rozmiarów i masy. Bolter szturmowy do zasilania swojego podwójnego mechanizmu używa dwóch połączonych magazynków."
+          ]
+        },
+        {
+          "displayName": "pistolet boltowy absolvor",
+          "name": "absolvorPistol",
+          "class": "pistol",
+          "source": "EIn",
+          "range": 30,
+          "rof": {
+            "single": true,
+            "burst": null,
+            "auto": null
+          },
+          "damage": {
+            "formula": "3k10kh2+10",
+            "display": "2k10+10",
+            "type": "explosion"
+          },
+          "penetration": 6,
+          "clip": 8,
+          "reload": 1,
+          "qualities": ["tearing"],
+          "weight": 6,
+          "requisition": 10,
+          "renown": 0,
+          "content": [
+            "Pistolet Absolvor — rozgrzeszający — należy do nowej generacji sprzętu Primaris. Jest to większy pistolet używany przez Kapelanów i Konsyliarzy Primaris jako broń boczna. Ma mniejszy magazynek niż standardowy pistolet, ale znacznie większą moc obalającą, porównywalną z ciężkim bolterem. Konsyliarze używają go do udzielania zbyt ciężko rannym Braciom Łaski Imperatora."
+          ]
+        },
+        {
+          "displayName": "bolter (wzór cawl)",
+          "name": "bolter",
+          "class": "basic",
+          "range": 120,
+          "rof": {
+            "single": true,
+            "burst": 2,
+            "auto": 4
+          },
+          "damage": {
+            "formula": "3k10kh2+6",
+            "display": "2k10+6",
+            "type": "explosion"
+          },
+          "penetration": 5,
+          "clip": 28,
+          "reload": 1,
+          "qualities": ["tearing"],
+          "weight": 18,
+          "source": "EIn",
+          "requisition": 5,
+          "renown": 0,
+          "content": [
+            "Karabin Boltowy Mark II Wzór Cawl to zasadniczo ciągle to samo uzbrojenie, jednak teraz zrewidowane i udoskonalone dla nowej generacji Marines Primaris. Ma nieco większy zasięg i trochę więcej mocy obalającej, ale jego największą zaletą — podobnie jak ma się sprawa z @armor{tacticus|pancerzem mark X}{EIn} — jest modułowość pozwalająca na wymianę kluczowych elementów i dopasowanie broni do sytuacji taktycznej."
+          ]
+        },
+        {
+          "displayName": "automatyczny karabin boltowy",
+          "name": "autoBoltRifle",
+          "class": "basic",
+          "range": 80,
+          "rof": {
+            "single": true,
+            "burst": 3,
+            "auto": 6
+          },
+          "damage": {
+            "formula": "3k10kh2+6",
+            "display": "2k10+6",
+            "type": "explosion"
+          },
+          "penetration": 5,
+          "clip": 42,
+          "reload": 1,
+          "qualities": ["tearing"],
+          "weight": 25,
+          "source": "EIn",
+          "requisition": 10,
+          "renown": 1,
+          "content": [
+            "Jest to wariant Karabinu Mark II Cawl, który korzysta z magazynka bębnowego o wysokiej pojemności i może pochwalić się zwiększoną szybkostrzelnością. Ceną za to jest jednak zmniejszony zasięg."
+          ]
+        },
+        {
+          "displayName": "ciężki automatyczny karabin boltowy",
+          "name": "heavyAutoBoltRifle",
+          "class": "basic",
+          "range": 100,
+          "rof": {
+            "single": true,
+            "burst": 3,
+            "auto": 6
+          },
+          "damage": {
+            "formula": "3k10kh2+6",
+            "display": "2k10+6",
+            "type": "explosion"
+          },
+          "penetration": 5,
+          "clip": 42,
+          "reload": 1,
+          "qualities": ["tearing"],
+          "weight": 28,
+          "source": "EIn",
+          "requisition": 15,
+          "renown": 1,
+          "content": [
+            "Wariant @ranged{autoBoltRifle|automatycznego karabinu boltowego}{EIn}, który ma zasięg bliższy zwykłemu bolterowi."
+          ]
+        },
+        {
+          "displayName": "karabinek boltowy",
+          "name": "boltCarbine",
+          "class": "basic",
+          "range": 80,
+          "rof": {
+            "single": true,
+            "burst": 2,
+            "auto": 4
+          },
+          "damage": {
+            "formula": "3k10kh2+6",
+            "display": "2k10+6",
+            "type": "explosion"
+          },
+          "penetration": 5,
+          "clip": 24,
+          "reload": 1,
+          "qualities": ["tearing"],
+          "weight": 15,
+          "source": "EIn",
+          "requisition": 8,
+          "renown": 1,
+          "content": [
+            "Bardziej kompaktowa wersja karabinu boltowego, najczęściej używana przez Rozbójników Primaris. Ma skróconą lufę i dodatkowy przedni uchwyt pod kompensatorem, który pozwala użyć obu rąk, by zmienić @action{semiAuto} i @action{fullAuto} w Akcje Pojedyncze. Choć jego zasięg jest zmniejszony, jest bardziej poręczny w ciasnych przestrzeniach, a także lżejszy."
+          ]
+        },
+        {
+          "displayName": "bolter szturmowy",
+          "name": "assaultBolter",
+          "class": "basic",
+          "range": 60,
+          "rof": {
+            "single": false,
+            "burst": null,
+            "auto": 10
+          },
+          "damage": {
+            "formula": "3k10kh2+10",
+            "display": "2k10+10",
+            "type": "explosion"
+          },
+          "penetration": 6,
+          "clip": 30,
+          "source": "EIn",
+          "reload": 1,
+          "qualities": ["tearing"],
+          "weight": 25,
+          "requisition": 20,
+          "renown": 1,
+          "content": [
+            "Bolter Szturmowy to stosunkowo niedawny dodatek do zbrojowni Adeptus Astartes. Wiele standardowych wieków ulepszeń przeprowadzonych przez Archmagosa Dominus Cawla zaowocowały między innymi tą właśnie bronią. Jest ona zasadniczo ręczną wersją standardowego Ciężkiego Boltera z dużym magazynkiem i szybkim automatem ładującym. Choć jego zasięg jest znacznie zredukowany, zachowuje on wysoką szybkostrzelność i obrażenia, a niewyobrażalny odrzut pochłaniany jest przez specjalną tarczę magnetyczną. To zabójcze uzbrojenie jest wykorzystywane często przez Drużyny Inceptorów Primaris w ich desantach w masy walczących przeciwników."
+          ]
+        },
+        {
+          "name": "boltSniperRifle",
+          "displayName": "boltowy karabin snajperski",
+          "source": "EIn",
+          "class": "basic",
+          "range": 250,
+          "rof": {
+            "single": true,
+            "burst": null,
+            "auto": null
+          },
+          "damage": {
+            "formula": "3d10kh2+12",
+            "display": "2k10+12",
+            "type": "explosion"
+          },
+          "penetration": 8,
+          "qualities": [
+            "accurate",
+            "tearing"
+          ],
+          "clip": 10,
+          "reload": 1,
+          "weight": 22,
+          "renown": 2,
+          "requisition": 35,
+          "content": [
+            "Boltowy Karabin Snajperski Mark III Wzór Shrike to główne uzbrojenie Drużyn Eliminatorów Awangardy Primaris. Karabin taki posiada zaawansowany system celowniczy, który składa się z systemu prowadzącego, który zwiększa premię za @action{aim} o kolejne +10 (kumuluje się z Własnością Celna) i naszpikowanego zaawansowanymi układami celownika, spełniającego funkcje @attachment{telescopicSight|lunety}, długodystansowego @attachment{preysense|celownika preysense} i @tool{auspex|skanera}. Dodatkowo wbudowany jest w niego @attachment{silencer} i układy pozwalające na naprowadzanie specjalnego rodzaju amunicji."
           ]
         }
       ]
@@ -4611,6 +4796,7 @@
           },
           "penetration": 12,
           "weight": 4,
+          "source": "EIn",
           "requisition": 10,
           "renown": 0,
           "content": [
@@ -4812,11 +4998,131 @@
           },
           "clip": 6,
           "reload": 2,
-          "weight": 15,
+          "weight": 20,
           "requisition": 15,
           "renown": 1,
           "content": [
             "Granatnik Fragstorm używany jest przez Drużyny Agresorów Primaris, montowany na ich @armor{gravis|pancerzach gravis}{EIn}, a także, w wersji ośmiostrzałowej, w Drednotach typu Odkupiciel. Załadować go można standardowymi granatami i wystrzelić je pojedynczo lub w miażdżącej serii."
+          ]
+        },
+        {
+          "name": "castellanLauncher",
+          "displayName": "wyrzutnia castellan",
+          "class": "heavy",
+          "range": 200,
+          "source": "EIn",
+          "rof": {
+            "single": false,
+            "burst": 3,
+            "auto": 6
+          },
+          "damage": "",
+          "penetration": "",
+          "qualities": [
+            "indirectFire|EIn",
+            "shrapnel|EIn"
+          ],
+          "footnotes": {
+            "$damage": 2,
+            "penetration": 2,
+            "$qualities": 2
+          },
+          "clip": 6,
+          "reload": 3,
+          "weight": 40,
+          "requisition": 15,
+          "renown": 1,
+          "content": [
+            "Wyrzutnia Castellan to broń przeciwpiechotna o długim zasięgu używana głównie przez Drużyny Spustoszycieli Primaris, która szczególnie dobrze radzi sobie z przeciwnikami korzystającymi z osłon. Jednocześnie zapewnia podstawę do montażu i działania innych typów wyrzutni. Faktyczna wyrzutnia znajduje się pod szyną montażową i systemami celowniczymi i zasilana jest z taśmy podającej kolejne pociski (można ją zasilać wyłącznie @grenade{missileCastellan|pociskami castellan}{EIn}). W ciągu paru sekund nawet pojedyncza wyrzutnia tego typu jest w stanie zasypać tchórzliwie chowające się za osłonami cele deszczem odłamków z eksplodujących nad ich głowami kierowanych pocisków. System celowniczy zapewnia użytkownikowi efekty Talentu @talent{marksman} przy prowadzeniu ognia bezpośredniego. Wyrzutnie Castellan wydawane są z @specialammo{backpack|plecakiem} zawierającym 60 pocisków."
+          ]
+        },
+        {
+          "name": "superfragLauncher",
+          "displayName": "wyrzutnia superfrag",
+          "class": "heavy",
+          "range": 300,
+          "source": "EIn",
+          "rof": {
+            "single": true,
+            "burst": null,
+            "auto": null
+          },
+          "damage": "",
+          "penetration": "",
+          "qualities": "",
+          "footnotes": {
+            "$name": 6,
+            "$damage": 2,
+            "penetration": 2,
+            "$qualities": 2
+          },
+          "clip": 4,
+          "reload": 3,
+          "weight": "+30",
+          "requisition": 15,
+          "renown": 1,
+          "content": [
+            "Wyrzutnia Superfrag to niesamowicie potężna długodystansowa wyrzutnia pocisków przeciwpiechotnych używana przez Drużyny Spustoszycieli Primaris. Jest bardziej niezawodna i silniejsza od starszych wyrzutni, a zasięgiem przebija nawet karabiny snajperskie; z tych powodów stanowi jedną z najpoteżniejszych broni, jakie można wystawić przeciwko piechocie. Montowana jest na szynie @ranged{castellanLauncher|wyrzutni castellan}{EIn} i choć nie ma takich samych możliwości naprowadzania, jej półkierowane i tak są w stanie korzystać z wbudowanych systemów celowniczych. Wyrzutnia Superfrag może używać tylko @grenade{missileSuperfrag|pocisków superfrag}{EIn} i wydawana jest z 4 sztukami takiej amunicji."
+          ]
+        },
+        {
+          "name": "superkrakLauncher",
+          "displayName": "wyrzutnia superkrak",
+          "class": "heavy",
+          "range": 300,
+          "source": "EIn",
+          "rof": {
+            "single": true,
+            "burst": null,
+            "auto": null
+          },
+          "damage": "",
+          "penetration": "",
+          "qualities": "",
+          "footnotes": {
+            "$name": 6,
+            "$damage": 2,
+            "penetration": 2,
+            "$qualities": 2
+          },
+          "clip": 2,
+          "reload": 3,
+          "weight": "+30",
+          "requisition": 15,
+          "renown": 1,
+          "content": [
+            "Wyrzutnia Superkrak to niesamowicie potężna długodystansowa wyrzutnia pocisków przeciwpancernych używana przez Drużyny Spustoszycieli Primaris. Jest bardziej niezawodna i silniejsza od starszych wyrzutni, a zasięgiem przebija nawet karabiny snajperskie. Gdy przeciwnik Kosmicznych Marines wystawi przeciw nim grupę potężnych, ciężko opancerzonych przeciwników, salwa z tych wyrzutni przebije się bez problemu przez każdy rodzaj zbroi — nieważne, chitynowej czy metalowej. Montowana jest na szynie @ranged{castellanLauncher|wyrzutni castellan}{EIn} i choć nie ma takich samych możliwości naprowadzania, jej półkierowane i tak są w stanie korzystać z wbudowanych systemów celowniczych. Wyrzutnia Superkrak może używać tylko @grenade{missileSuperkrak|pocisków superkrak}{EIn} i wydawana jest z 2 sztukami takiej amunicji."
+          ]
+        },
+        {
+          "name": "vengorLauncher",
+          "displayName": "wyrzutnia vengor",
+          "class": "heavy",
+          "range": 400,
+          "source": "EIn",
+          "rof": {
+            "single": true,
+            "burst": null,
+            "auto": null
+          },
+          "damage": "",
+          "penetration": "",
+          "qualities": [
+            "indirectFire|EIn"
+          ],
+          "footnotes": {
+            "$name": 6,
+            "$damage": 2,
+            "penetration": 2,
+            "$qualities": 2
+          },
+          "clip": 1,
+          "reload": 2,
+          "weight": "+30",
+          "requisition": 20,
+          "renown": 2,
+          "content": [
+            "Wyrzutnia Vengor to niesamowicie potężna długodystansowa wyrzutnia pocisków przeciwpiechotnych używana przez Sierżantów Spustoszycieli Primaris. Pojedynczy wyrzucany z niej pocisk może sięgać na ogromne dystanse, gdzie eksploduje w potężnej kuli ognia, która jest w stanie zneutralizować całą drużynę piechoty. Montowana jest na szynie @ranged{castellanLauncher|wyrzutni castellan}{EIn} i może w pełni wykorzystywać współdzielone z nią systemy celownicze. Wyrzutnia Superkrak może używać tylko @grenade{missileVengor|pocisków vengor}{EIn} i wydawana jest z 1 sztuką takiej amunicji."
           ]
         }
       ]
@@ -4962,6 +5268,32 @@
           "content": [
             "Karabin igłowy oferuje idealne połączenie zasięgu, dyskretności i zabójczości. Niskiej mocy promień laserowy wyrzuca odłamki skrystalizowanej toksyny, która wbita w ciało niemal natychmiast wnika do krwiobiegu. W takie pociski można zmienić wiele różnych substancji chemicznych przy użyciu odpowiedniego wyposażenia, a Straż używa ich całej gamy. Najbardziej powszechnym związkiem (który służy jako standardowa amunicja) jest oparta na wirusach toksyna, która zabija większość celów w kilka chwil po zranieniu. Z racji na brak płomienia wylotowego karabiny igłowe są idealnym narzędziem dla zabójców. Jedyną ich wadą jest fakt, że kruche pociski mają niemal zerową moc przebijania pancerza, przez co nie nadają się do niczego przeciwko ciężkim celom."
           ]
+        },
+        {
+          "displayName": "pistolet &neo–volkite",
+          "name": "neoVolkitePistol",
+          "class": "pistol",
+          "range": 40,
+          "rof": {
+            "single": true,
+            "burst": null,
+            "auto": null
+          },
+          "damage": {
+            "formula": "1k10+5",
+            "type": "energy"
+          },
+          "penetration": 6,
+          "clip": 10,
+          "reload": 2,
+          "weight": 6,
+          "requisition": 30,
+          "renown": 3,
+          "source": "EIn",
+          "content": [
+            "Broń Volkite to klasa opartej na starożytnej technologii broni termicznej. Pochodzi ona jeszcze z czasów przed Imperium i oferuje zdecydowanie większą siłę obalającą niż większość uzbrojenia podobnego rozmiaru. Wystrzały z broni tego typu potrafią przebić swoją wiązką nawet gruby ceramit pancerzy Kosmicznych Marines. Pistolet Neo–Volkite to jedyny jej rodzaj używany przez Astartes w 42. milenium.",
+            "Broń Volkite wytwarza skoncentrowany promień energii termicznej. Po trafieniu w cel w kolejnych Rundach strzelający może użyć Akcji Pojedynczej, by podtrzymać wiązkę na celu. Należy w takim wypadku wykonać kolejny rzut na Atak, biorąc pod uwagę wszelkie zmiany w otoczeniu, które mogłyby nałożyć inne modyfikatory. Cel może wtedy ponowić próbę Uniku. Wykonywanie Akcji wymagających gwałtownych ruchów (na przykład ataków wręcz) wymusza wykonanie Testu Zręczności dla podtrzymania wiązki. Podtrzymana wiązka zwiększa swoje Obrażenia i Penetrację o odpowiednio @dice{k10}/2 do całkowitego maksimum @dice{3k10+5}/10 (choć nadal można potrzymać wtedy wiązkę ze stałymi Obrażeniami). Cele, na których powiodło się podtrzymanie muszą ponadto zdać Test Zręczności z karą -10 \u00d7 SS trafienia, by uniknąć stanięcia w płomieniach."
+          ]
         }
       ]
     },
@@ -4983,7 +5315,11 @@
         "$renown": "sława"
       },
       "footnotes": [
-        "Granaty odłamkowe i krak są wydawane standardowo; pociski odłamkowe i krak dołączane są do wyrzutni. Wartość Pobrania podana jest tylko w celu oceniania zapytań określonych jako \"nadmiarowe\"."
+        "Granaty odłamkowe i krak są wydawane standardowo; pociski odłamkowe i krak dołączane są do wyrzutni. Wartość Pobrania podana jest tylko w celu oceniania zapytań określonych jako \"nadmiarowe\".",
+        {
+          "source": "EIn",
+          "content": "Pociski dołączane są do odpowiednich dla nich wyrzutni. Podany koszt Pobrania dotyczy dodatkowej amunicji."
+        }
       ],
       "content": [
         "Granaty odłamkowe i krak są standardowym wyposażeniem wszystkich armii Imperatora, od poborowych Gwardii aż do Adeptus Astartes, których wersja tej broni podąża za zasadą lepszego uzbrojenia. Straż Śmierci ma dostęp do jeszcze szerszego wyboru granatów, w tym tak rzadkich i egzotycznych, że większość uważa je za bajki.",
@@ -5363,6 +5699,122 @@
             "Adeptus Mechanicus zazdrośnie strzegą sekretów granatów wirowych, do tego stopnia, że niektórzy zastanawiają się, czy istnieją jeszcze jakiekolwiek Światy-Kuźnie, które są w stanie je produkować. Teorię tę popiera fakt, że ich zapas nawet w Adeptus Astartes ciągle się kurczy i jedynie najgorsze zagrożenia uzasadniają użycie tak cennej i niebezpiecznej broni. Tak jak z @grenade{stasis|granatami wstrzymującymi}, jedna sztuka może być przyznana na polecenie Kapitana Straży.",
             "Efekt granatu wirowego ma promień trzech metrów. Każdy w tym obszarze może użyć swojej Reakcji, by spróbować wykonać Unik, zanim wyłom pojawi się w pełni. Ci, którym się to nie uda, jak i wszystko, co znajduje się w tym obszarze, zostaje wciągnięte do Spaczni i nikomu już nigdy nie dane jest ich zobaczyć. W każdej Rundzie kapryśny wir pojawia się i znika. Kiedy to się dzieje, istnieje @dice{50%} szans, że wyłom się zamknie. W przeciwnym przypadku pojawia się ponownie w odległości @dice{2k10} metrów od ostatniego miejsca, w losowym kierunku."
           ]
+        },
+        {
+          "name": "missileCastellan",
+          "displayName": "pocisk castellan",
+          "damage": {
+            "formula": "2k10",
+            "type": "explosion"
+          },
+          "penetration": 2,
+          "qualities": [
+            {
+              "name": "blast",
+              "value": 6
+            }
+          ],
+          "weight": 1.2,
+          "requisition": 6,
+          "footnotes": {
+            "requisition": 1
+          },
+          "source": "EIn",
+          "renown": 1,
+          "content": [
+            "Pociski Castellan dopasowane są do @ranged{castellanLauncher|wyrzutni}{EIn} o tej samej nazwie. Pod względem efektywności leżą pomiędzy stanadardowymi @grenade{frag|granatami} i @grenade{missileFrag|pociskami odłamkowymi}, ale wystrzelone z dedykowanej wyrzutni są w stanie współpracować z systemami naprowadzania, co umożliwia ogień pośredni."
+          ]
+        },
+        {
+          "name": "missileSuperfrag",
+          "displayName": "pocisk superfrag",
+          "damage": {
+            "formula": "2k10+5",
+            "type": "explosion"
+          },
+          "penetration": 5,
+          "qualities": [
+            {
+              "name": "blast",
+              "value": 10
+            },
+            {
+              "name": "devastating",
+              "value": 2
+            }
+          ],
+          "weight": 2.5,
+          "requisition": 10,
+          "footnotes": {
+            "requisition": 1
+          },
+          "source": "EIn",
+          "renown": 1,
+          "content": [
+            "Pociski Superfrag dopasowane są do @ranged{superfragLauncher|wyrzutni}{EIn} o tej samej nazwie. Powodują one ogromne niszczycielskie eksplozje, które są w stanie nagłym gradem odłamków ściąć z nóg całe drużyny piechoty. Mają również możliwość wykonywania delikatnych korekt podczas lotu, co ułatwia trafienie, choć mogą być używane tylko w ogniu bezpośrednim."
+          ]
+        },
+        {
+          "name": "missileSuperkrak",
+          "displayName": "pocisk superkrak",
+          "damage": {
+            "formula": "4k10+10",
+            "type": "explosion"
+          },
+          "penetration": 12,
+          "qualities": [
+            {
+              "name": "blast",
+              "value": 1
+            },
+            {
+              "name": "felling",
+              "value": 2
+            }
+          ],
+          "weight": 4,
+          "requisition": 10,
+          "footnotes": {
+            "requisition": 1
+          },
+          "source": "EIn",
+          "renown": 1,
+          "content": [
+            "Pociski Superkrak dopasowane są do @ranged{superkrakLauncher|wyrzutni}{EIn} o tej samej nazwie. Stanowią prawdopodobnie najpotężniejszą przenośną broń przeciwpancerną w arsenale Astartes (a na pewno najpotęzniejszą korzystającą z technologii kumulacyjnej krak) i są w stanie jednym strzałem poważnie uszkodzić wrogi pojazd, czy zmienić szczególnie dużego i twardego przeciwnika w kupę zwęglonego mięsa. Mają również możliwość wykonywania delikatnych korekt podczas lotu, co ułatwia trafienie, choć mogą być używane tylko w ogniu bezpośrednim."
+          ]
+        },
+        {
+          "name": "missileVengor",
+          "displayName": "pocisk vengor",
+          "damage": {
+            "formula": "3k10+5",
+            "type": "explosion"
+          },
+          "penetration": 6,
+          "qualities": [
+            {
+              "name": "blast",
+              "value": 10
+            },
+            {
+              "name": "devastating",
+              "value": 2
+            },
+            {
+              "name": "felling",
+              "value": 1
+            }
+          ],
+          "weight": 10,
+          "requisition": 15,
+          "footnotes": {
+            "requisition": 1
+          },
+          "source": "EIn",
+          "renown": 2,
+          "content": [
+            "Pociski Vengor dopasowane są do @ranged{vengorLauncher|wyrzutni}{EIn} o tej samej nazwie. Ich eksplozje są nawet potężniejsze od tych powodowanych przez @grenade{missileSuperfrag|pociski superfrag} i mają znacznie większą siłę obalającą, choć są może nieco mniejsze. Dodatkowo główną zaletą Pocisków Vengor jest ich stosunkowo duża zwrotność, możliwość współpracy z systemami naprowadzania i ekstremalnie długi zasięg."
+          ]
         }
       ]
     },
@@ -5464,7 +5916,7 @@
       "parentPath": "melee-power",
       "items": [
         {
-          "displayName": "pięść łańcuchowa",
+          "displayName": "rękawica łańcuchowa",
           "name": "chainsfist",
           "class": "mounted",
           "damage": {
@@ -5481,8 +5933,8 @@
           "requisition": 40,
           "renown": 3,
           "content": [
-            "Pięść łańcuchowa łączy niszczące pancerz pole pięści energetycznej z rozrywającymi adamantytowymi zębami ostrza łańcuchowego. Pole otacza i rękawicę i pędzący łańcuch, tworząc broń zdolną przeciąć pancerz, pojazdy, ciężkie grodzie, czy niemal dowolną substancję, jeżeli dostępna jest odpowiednia ilość czasu. Broń taka jest zbyt ciężka nawet dla Brata w pancerzu wspomaganym i efektywnie używać ich mogą tylko ci zakuci w @armor{terminator|pancerze terminator}. Ma to również sens, ponieważ w walce z przeciwnikiem tak potężnym, że wymagane jest użycie takiej broni, przydatna jest ochrona podobnego kalibru.",
-            "Pięść łańcuchowa instalowana jest zamiast normalnej rękawicy Terminatora i nakłada takie same ograniczenia jak @melee{lightningClaw}."
+            "Rękawica łańcuchowa łączy niszczące pancerz pole rękawicy energetycznej z rozrywającymi adamantytowymi zębami ostrza łańcuchowego. Pole otacza i rękawicę i pędzący łańcuch, tworząc broń zdolną przeciąć pancerz, pojazdy, ciężkie grodzie, czy niemal dowolną substancję, jeżeli dostępna jest odpowiednia ilość czasu. Broń taka jest zbyt ciężka nawet dla Brata w pancerzu wspomaganym i efektywnie używać ich mogą tylko ci zakuci w @armor{terminator|pancerze terminator}. Ma to również sens, ponieważ w walce z przeciwnikiem tak potężnym, że wymagane jest użycie takiej broni, przydatna jest ochrona podobnego kalibru.",
+            "Rękawica łańcuchowa instalowana jest zamiast normalnej rękawicy Terminatora i nakłada takie same ograniczenia jak @melee{lightningClaw}."
           ]
         },
         {
@@ -5523,7 +5975,7 @@
           ]
         },
         {
-          "displayName": "pięść energetyczna",
+          "displayName": "rękawica energetyczna",
           "name": "powerFist",
           "class": "melee",
           "damage": {
@@ -5539,8 +5991,8 @@
           "requisition": 30,
           "renown": 2,
           "content": [
-            "Pięść energetyczna generuje pole tak bardzo destabilizujące materię, że znajdująca się w nim broń nie ma większego znaczenia. Z tego powodu zamiast tradycyjnego oręża pole otacza powiększoną i wzmocnioną rękawicę. W połączeniu z siłą Brata pięść energetyczna może rozerwać nawet najcięższy pancerz i rozgnieść kryjące się wewnątrz ciało jak krwawy przejrzały owoc. Ładowanie tych potężnych pól wymaga ciężkich przewodów podłączonych do reaktora znajdującego się w pancerzu. Same generatory są również rzadkie i trudne do utrzymiania, przez co broń taka jest symbolem statusu nawet w Adeptus Astartes.",
-            "Pięść energetyczna dodaje mnożnik do Siły użytkownika (każdy Kosmiczny Marine posiada mnożnik Nienaturalnej Siły, więc broń ta po prostu zwiększa go o 1). Jest ona montowana zamiast normalnej rękawicy w pancerzu wspomaganym i nakłada te same ograniczenia co @melee{lightningClaw}."
+            "Rękawica energetyczna generuje pole tak bardzo destabilizujące materię, że znajdująca się w nim broń nie ma większego znaczenia. Z tego powodu zamiast tradycyjnego oręża pole otacza powiększoną i wzmocnioną rękawicę. W połączeniu z siłą Brata rękawica energetyczna może rozerwać nawet najcięższy pancerz i rozgnieść kryjące się wewnątrz ciało jak krwawy przejrzały owoc. Ładowanie tych potężnych pól wymaga ciężkich przewodów podłączonych do reaktora znajdującego się w pancerzu. Same generatory są również rzadkie i trudne do utrzymiania, przez co broń taka jest symbolem statusu nawet w Adeptus Astartes.",
+            "Rękawica energetyczna dodaje mnożnik do Siły użytkownika (każdy Kosmiczny Marine posiada mnożnik Nienaturalnej Siły, więc broń ta po prostu zwiększa go o 1). Jest ona montowana zamiast normalnej rękawicy w pancerzu wspomaganym i nakłada te same ograniczenia co @melee{lightningClaw}."
           ]
         },
         {
@@ -5948,6 +6400,21 @@
             {
               "title": "Dozwolone:",
               "content": "jakakolwiek Zwykła broń Laserowa, Palna, Boltowa lub Plazmowa. Każda broń może mieć tylko jeden celownik naraz."
+            }
+          ]
+        },
+        {
+          "displayName": "zestaw celowniczy occulus",
+          "name": "occulus",
+          "source": "EIn",
+          "weight": "+2",
+          "requisition": 15,
+          "renown": 2,
+          "content": [
+            "Ten wysoko zaawansowany celownik łączy się bezpośrednio z systemem celowniczym wbudowanym w pancerze wspomagane. W połączeniu z @tool{auspex|auspexem} klasy Divinator jest w stanie wyświetlać przetworzone przez ducha maszyny dane na wewnętrznych wyświetlaczach hełmu. Używany jest najczęściej przez Drużyny Incursorów Primaris, które dzięki niemu mogą mierzyć do wrogów przez ściany, gęsty dym, czy w absolutnej ciemności, a także wykrywać desanty orbitalne, energetyczne flary prematerializacyjne towarzyszące teleportacji, a nawet drgania podłoża zdradzające obecność podkopujących się wrogów.",
+            {
+              "title": "Dozwolone:",
+              "content": "@ranged{boltCarbine}{EIn}."
             }
           ]
         }
@@ -7155,6 +7622,15 @@
           "content": [
             "Ta uprząż w rozmiarze przystosowanym do Astartes, oferująca więcej bezpieczeństwa niż hak, a jednocześnie mniej obciążająca i zdecydowanie cichsza niż @wargear{jumpPack}, może pomóc w bezpiecznym zejściu ze stromych wzniesień czy ścian budynków. Magnetyczny zaczep w kształcie haka można zamocować do wielu różnych powierzchni, a rozwijająca się powoli lina zapewnia bezpieczne zejście. Brat używający Uprzęży wykonuje Testy Wspinaczki z premią +30 i nie spadnie w razie porażki."
           ]
+        },
+        {
+          "name": "gravPack",
+          "displayName": "plecak skokowy ze spadochronem grawitacyjnym",
+          "source": "EIn",
+          "weight": 60,
+          "requisition": 20,
+          "renown": 1,
+          "noDesc": true
         },
         {
           "name": "jumpPack",

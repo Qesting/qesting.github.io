@@ -26,10 +26,10 @@ function Parser({text, replacementContext, insertParagraphs, className}) {
     }
 
     function resolveItem(sectionName, itemName, source) {
-        if (alreadyResolved?.[sectionName]?.[itemName]) {
-            return alreadyResolved[sectionName][itemName]
-        }
         const trueSource = source ?? "CRB"
+        if (alreadyResolved?.[trueSource]?.[sectionName]?.[itemName]) {
+            return alreadyResolved[trueSource][sectionName][itemName]
+        }
         const section = jsonData.sections.find(s => s.name === sectionName)
         if (!section) return
         if (itemName === "<") return section
@@ -67,10 +67,13 @@ function Parser({text, replacementContext, insertParagraphs, className}) {
                 break
             }
         }
-        if (!alreadyResolved[sectionName]) {
-            alreadyResolved[sectionName] = {}
+        if (!alreadyResolved[trueSource]) {
+            alreadyResolved[trueSource] = {}
         }
-        alreadyResolved[sectionName][itemName] = replacement ?? item
+        if (!alreadyResolved[trueSource][sectionName]) {
+            alreadyResolved[trueSource][sectionName] = {}
+        }
+        alreadyResolved[trueSource][sectionName][itemName] = replacement ?? item
         return replacement ?? item
     }
 
@@ -255,7 +258,7 @@ function Parser({text, replacementContext, insertParagraphs, className}) {
                 // items
                 : `item-${section}-${resolvedItem.name}`
 
-            const displayName = (display ? display : resolvedItem.displayName.replace("(x)", "")).replace(' ', '\u2004') + (value ? ( resolvedItem?.groups?.[value] ? `\u00a0(${resolvedItem.groups[value]})` : `\u00a0(${value})`) : "")
+            const displayName = (display ? display : resolvedItem.displayName.replace("(x)", "")).replace(' ', '\u2004') + (value ? ( resolvedItem?.groups?.[value] ? `(${resolvedItem.groups[value]})` : `(${value})`) : "")
             
             return (<LinkButton key={index} innerText={displayName} elementId={itemId}/>)
         } else {
