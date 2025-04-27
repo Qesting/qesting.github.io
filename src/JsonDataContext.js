@@ -22,7 +22,17 @@ function findInTree(sectionName, sectionSet = sections) {
 for (let index = 0; index < content.length; index++) {
     const examined = content[index]
     if (examined?.type === "section") {
-        sections.push(examined)
+        if (!examined?.parentPath) {
+            // a root section
+            sections.push(examined)
+        } else {
+            // an ungroupped subsection
+            const parent = findInTree(examined.parentPath)
+            if (!parent?.children) {
+                parent.children = []
+            }
+            parent.children.push(examined)
+        }
     } else if (examined?.type === "table") {
         tables.push(examined)
     } else if (examined?.type === "group") {

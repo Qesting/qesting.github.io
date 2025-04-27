@@ -4279,7 +4279,8 @@
           "displayName": "przegrzewa się",
           "name": "overheats",
           "content": [
-            "Niektóre bronie podatne są na przegrzewanie, czy to z powodu wadliwej konstrukcji, czy ponieważ wystrzeliwują niestabilną amunicję. Broń z tą właściwością przegrzewa się przy rzucie na atak wynoszącym 91 lub więcej. Gdy to się dzieje, strzelec otrzymuje obrażenia od Energii w wysokości takiej samej jak podstawowe obrażenia danej broni, z Penetracją 0 w ramię (ramię trzymające broń, jeżeli była trzymana w jednej ręce, lub w losowe, jeżeli oburącz). Strzelec może wybrać upuszczenie broni, by uniknąć tych obrażeń. Upuszczenie broni to Akcja Darmowa. Przegrzana broń musi spędzić całą następną"
+            "Niektóre bronie podatne są na przegrzewanie, czy to z powodu wadliwej konstrukcji, czy ponieważ wystrzeliwują niestabilną amunicję. Broń z tą właściwością przegrzewa się przy rzucie na atak wynoszącym 91 lub więcej. Gdy to się dzieje, strzelec otrzymuje obrażenia od Energii w wysokości takiej samej jak podstawowe obrażenia danej broni, z Penetracją 0 w ramię (ramię trzymające broń, jeżeli była trzymana w jednej ręce, lub w losowe, jeżeli oburącz). Strzelec może wybrać upuszczenie broni, by uniknąć tych obrażeń. Upuszczenie broni to Akcja Darmowa. Przegrzana broń musi spędzić całą następną Rundę na chłodzeniu.",
+            "Spopielacz może również zostać wyposażony w @attachment{redDot|kolimator} (zwany jest wtedy Szturmowym Spopielaczem)."
           ]
         },
         {
@@ -4447,7 +4448,15 @@
         "{no-daggers|exotic}Przeładowanie digi-broni wymaga @dice{1k5} godzin i udanego Przeciętnego\u00a0(+0) testu Użycia Technologii.",
         {
           "source": "EIn",
-          "content": "Podłączana do podstawy obecnej na @ranged{castellanLauncher|wyrzutni castellan}."
+          "content": "Podłączana do podstawy obecnej na @ranged{castellanLauncher|wyrzutni castellan}{EIn}."
+        },
+        {
+          "source": "EIn",
+          "content": "Używana tylko przez Konsyliarzy i Kapelanów Primaris."
+        },
+        {
+          "source": "EIn",
+          "content": "Używana tylko przez Konsyliarzy Primaris."
         }
       ],
       "content": []
@@ -4541,6 +4550,14 @@
       ]
     },
     {
+      "type": "section",
+      "displayName": "boltery rodziny cawl",
+      "name": "cawlBolter",
+      "display": "both",
+      "parentPath": "ranged-bolt",
+      "source": "EIn"
+    },
+    {
       "type": "group",
       "parentPath": "ranged-bolt",
       "items": [
@@ -4575,33 +4592,6 @@
           ]
         },
         {
-          "displayName": "pistolet boltowy absolvor",
-          "name": "absolvorPistol",
-          "class": "pistol",
-          "source": "EIn",
-          "range": 30,
-          "rof": {
-            "single": true,
-            "burst": null,
-            "auto": null
-          },
-          "damage": {
-            "formula": "3k10kh2+10",
-            "display": "2k10+10",
-            "type": "explosion"
-          },
-          "penetration": 6,
-          "clip": 8,
-          "reload": 1,
-          "qualities": ["tearing"],
-          "weight": 6,
-          "requisition": 10,
-          "renown": 0,
-          "content": [
-            "Pistolet Absolvor — rozgrzeszający — należy do nowej generacji sprzętu Primaris. Jest to większy pistolet używany przez Kapelanów i Konsyliarzy Primaris jako broń boczna. Ma mniejszy magazynek niż standardowy pistolet, ale znacznie większą moc obalającą, porównywalną z ciężkim bolterem. Konsyliarze używają go do udzielania zbyt ciężko rannym Braciom Łaski Imperatora."
-          ]
-        },
-        {
           "displayName": "bolter astartes (wzór godwyn)",
           "name": "bolter",
           "image": "https://wh40k.lexicanum.com/mediawiki/images/e/ee/Bolter_-_Astartes_MK_Vb.jpg",
@@ -4631,7 +4621,7 @@
         {
           "displayName": "karabin boltowy astartes (wzór stalker)",
           "name": "bolterStalker",
-          "image": "https://cdna.artstation.com/p/assets/images/images/046/156/562/large/david-dorn-stalker-right.jpg",
+          "image": "https://static.wikia.nocookie.net/warhammer40k/images/c/c0/Stalker_Bolter.jpg",
           "class": "basic",
           "range": 200,
           "rof": {
@@ -4717,7 +4707,7 @@
         {
           "displayName": "bolter sztormu astartes",
           "name": "stormBolter",
-          "image": "https://static.wikia.nocookie.net/space-hulk-deathwing/images/b/b2/Storm-bolter-mk2.jpg",
+          "image": "https://wh40k.lexicanum.com/mediawiki/images/9/96/SBDiagram.jpg",
           "class": "basic",
           "range": 100,
           "rof": {
@@ -4740,9 +4730,16 @@
           "content": [
             "Boltery szturmowe powstały w Zakonach Adeptus Astartes i wciąż są używane niemal wyłącznie przez nie. Bronie te przypominają dwa boltery z jednym łożem i spustem. Mogą strzelać z intensywnością dorównującom ciężkiemu uzbrojeniu przy zachowaniu dużo mniejszych rozmiarów i masy. Bolter szturmowy do zasilania swojego podwójnego mechanizmu używa dwóch połączonych magazynków."
           ]
-        },
+        }
+      ]
+    },
+    {
+      "type": "group",
+      "parentPath": "ranged-bolt-cawlBolter",
+      "items": [
         {
           "displayName": "pistolet boltowy absolvor",
+          "image": "https://wh40k.lexicanum.com/mediawiki/images/6/66/PrimarisChaplain.jpg",
           "name": "absolvorPistol",
           "class": "pistol",
           "source": "EIn",
@@ -4757,6 +4754,9 @@
             "display": "2k10+10",
             "type": "explosion"
           },
+          "footnotes": {
+            "$name": 7
+          },
           "penetration": 6,
           "clip": 8,
           "reload": 1,
@@ -4770,6 +4770,7 @@
         },
         {
           "displayName": "bolter (wzór cawl)",
+          "image": "https://static.wikia.nocookie.net/warhammer40k/images/4/4f/BoltRifleRender.jpg",
           "name": "bolter",
           "class": "basic",
           "range": 120,
@@ -4797,6 +4798,7 @@
         },
         {
           "displayName": "automatyczny karabin boltowy",
+          "image": "https://wh40k.lexicanum.com/mediawiki/images/f/fe/AutoBoltSM2.jpg",
           "name": "autoBoltRifle",
           "class": "basic",
           "range": 80,
@@ -4824,6 +4826,7 @@
         },
         {
           "displayName": "ciężki automatyczny karabin boltowy",
+          "image": "https://static.wikia.nocookie.net/warhammer40k/images/8/8f/AutoBolter.jpg",
           "name": "heavyAutoBoltRifle",
           "class": "basic",
           "range": 100,
@@ -4851,6 +4854,7 @@
         },
         {
           "displayName": "karabinek boltowy",
+          "image": "https://static.wikia.nocookie.net/warhammer40k/images/d/d7/BoltCarbine.jpg",
           "name": "boltCarbine",
           "class": "basic",
           "range": 80,
@@ -4878,6 +4882,7 @@
         },
         {
           "displayName": "bolter szturmowy",
+          "image": "https://static.wikia.nocookie.net/warhammer40k/images/a/a6/Assault_Bolter.jpg",
           "name": "assaultBolter",
           "class": "basic",
           "range": 60,
@@ -4905,6 +4910,7 @@
         },
         {
           "name": "boltSniperRifle",
+          "image": "https://static.wikia.nocookie.net/warhammer40k/images/6/6a/BoltSniperRifle.jpg",
           "displayName": "boltowy karabin snajperski",
           "source": "EIn",
           "class": "basic",
@@ -4931,6 +4937,36 @@
           "requisition": 35,
           "content": [
             "Boltowy Karabin Snajperski Mark III Wzór Shrike to główne uzbrojenie Drużyn Eliminatorów Awangardy Primaris. Karabin taki posiada zaawansowany system celowniczy, który składa się z systemu prowadzącego, który zwiększa premię za @action{aim} o kolejne +10 (kumuluje się z Własnością Celna) i naszpikowanego zaawansowanymi układami celownika, spełniającego funkcje @attachment{telescopicSight|lunety}, długodystansowego @attachment{preysense|celownika preysense} i @tool{auspex|skanera}. Dodatkowo wbudowany jest w niego @attachment{silencer} i układy pozwalające na naprowadzanie specjalnego rodzaju amunicji."
+          ]
+        },
+        {
+          "name": "executorBoltRifle",
+          "image": "https://static.wikia.nocookie.net/warhammer40k/images/d/d3/Executor_Hvy_Bolt_Rifle.png",
+          "source": "EIn",
+          "displayName": "karabin boltowy executor",
+          "class": "basic",
+          "range": 150,
+          "rof": {
+            "single": true,
+            "burst": 2,
+            "auto": 4
+          },
+          "damage": {
+            "formula": "3k10kh2+8",
+            "display": "2k10+8",
+            "type": "explosion"
+          },
+          "qualities": [
+            "tearing"
+          ],
+          "penetration": 8,
+          "requisition": 8,
+          "renown": 0,
+          "clip": 14,
+          "reload": 1,
+          "weight": 20,
+          "content": [
+            "Wariant Karabinu Mark II Cawl, którego najczęściej używają Ciężcy Orędownicy Primaris. Ma dłuższy zasięg, zadaje większe obrażenia i lepiej przebija pancerze, niż standardowy karabin boltowy. Mniej potężny wariant to Ciężki Karabin Boltowy, a taki ze zwiększoną szybkostrzelnością i pojemnością magazynka— Karabin Boltowy Hellstorm."
           ]
         }
       ]
@@ -4974,7 +5010,7 @@
         {
           "displayName": "karabin plazmowy astartes (wzór ragefire)",
           "name": "plasmaGun",
-          "image": "https://static.wikia.nocookie.net/warhammer40k/images/f/f0/PlasmaIncinerator.png",
+          "image": "https://static.wikia.nocookie.net/warhammer40k/images/6/6e/PlasmaGun.jpg",
           "class": "basic",
           "range": 100,
           "rof": {
@@ -5021,6 +5057,38 @@
           "renown": 1,
           "content": [
             "Mało który pistolet jest bardziej zabójczy od tych wykorzystujących technologię plazmową. Wielu wysokiego stopnia Astartes uważają je za warte zachodu, jakim jest ich zdobycie i ryzyka wynikającego z ich używania dzięki ich czystej wydajności w eliminacji wrogów na krótkim dystansie."
+          ]
+        },
+        {
+          "name": "plasmaIncinerator",
+          "source": "EIn",
+          "image": "https://static.wikia.nocookie.net/warhammer40k/images/f/f0/PlasmaIncinerator.png",
+          "displayName": "spopielacz plazmowy",
+          "class": "basic",
+          "range": 120,
+          "rof": {
+            "single": true,
+            "burst": 2,
+            "auto": null
+          },
+          "damage": {
+            "formula": "1k10+10",
+            "type": "energy"
+          },
+          "penetration": 8,
+          "clip": 12,
+          "reload": 3,
+          "qualities": [
+            "volatile",
+            "reliable"
+          ],
+          "weight": 8,
+          "requisition": 22,
+          "renown": 1,
+          "content": [
+            "Spopielacz Plazmowy to najnowszy typ karabinu plazmowego używany głównie przez Drużyny Piekielnego Grzmotu Primaris. Najlepszą jej wersją jest Spopielacz Mark III wzór Belisarius, który wyrzuca z siebie strumienie rozgrzanej plazmy bez ryzyka przeciążenia, po raz pierwszy od czasów Herezji. Nie można jednak \"bezpiecznym\" określić jego potężnego trybu Maksymalnego. W tym trybie (ponad wszystkie zmiany obejmujące ogólnie broń plazmową) Spopielacz zadaje kolejne dodatkowe @dice{k10} Obrażeń, ale traci Własność @quality{reliable}.",
+            "Spopielacz można wyposażyć w zintegrowany @attachment{redDot}. Koszt Pobrania rośnie wtedy do 25. Taki wariant znany jest jako Szturmowy Spopielacz.",
+            "Spopielacz można wyposażyć w potężniejszą komorę reakcyjną, która pozwala na operowanie większymi ilościami plazmy naraz. Koszt Pobrania rośnie wtedy do 28. Obrażenia zwiększone są do @dice{1k10+12}, a Penetracja do 10. Taki wariant zwany jest Ciężkim Spopielaczem i najczęściej zasilany jest z plecaka."
           ]
         }
       ]
@@ -5170,6 +5238,7 @@
         },
         {
           "displayName": "ciężki miotacz astartes",
+          "image": "https://wh40k.lexicanum.com/mediawiki/images/2/28/ProteusHF.jpg",
           "name": "heavyFlamer",
           "class": "heavy",
           "range": 30,
@@ -5330,6 +5399,7 @@
         },
         {
           "displayName": "pistolet reduktorowy",
+          "image": "https://static.wikia.nocookie.net/warhammer40k/images/e/e1/PrimarisApothecary.png",
           "name": "reductorPistol",
           "class": "pistol",
           "rof": {
@@ -5340,6 +5410,9 @@
           "damage": {
             "formula": "2k10+10",
             "type": "impact"
+          },
+          "footnotes": {
+            "$name": 8
           },
           "penetration": 12,
           "weight": 4,
@@ -5431,6 +5504,33 @@
           "renown": 0,
           "content": [
             "Pistolet laserowy używany jest często przez nieskiego stopnia oficerów i agentów Imperium. Na wielu planetach zdarza się, że niemal każdy członek społeczeństwa posiada taką broń. Prawie każdy Świat-Kuźnia produkuje swój własny wzór pistoletu laserowego, ponieważ podstawowy wariant jest tak prosty, że pozwala na szeroką modyfikację."
+          ]
+        },
+        {
+          "name": "lasFusil",
+          "displayName": "samopał laserowy",
+          "source": "EIn",
+          "image": "https://static.wikia.nocookie.net/warhammer40k/images/c/ce/EliminatorWithLasFusil.png",
+          "class": "heavy",
+          "range": 250,
+          "rof": {
+            "single": true,
+            "burst": null,
+            "auto": null
+          },
+          "damage": {
+            "formula": "4d10+6",
+            "type": "energy"
+          },
+          "penetration": 10,
+          "clip": 4,
+          "reload": 1,
+          "qualities": ["accurate"],
+          "weight": 45,
+          "requisition": 35,
+          "renown": 2,
+          "content": [
+            "Samopał Laserowy to potężna przeciwpiechotna broń laserowa używana przez Drużyny Eliminatorów Awangardy Primaris. Jest ona tak celna, że może zostać zastosowana zamiast standardowego @ranged{boltSniperRifle|boltowego karabinu snajperskiego}{EIn}. Posiada również takie same systemy celownicze, co ta broń."
           ]
         }
       ]
@@ -5555,6 +5655,7 @@
         {
           "name": "castellanLauncher",
           "displayName": "wyrzutnia castellan",
+          "image": "https://static.wikia.nocookie.net/warhammer40k/images/e/e0/VengorCastellanLauncher.jpg",
           "class": "heavy",
           "range": 200,
           "source": "EIn",
@@ -5577,7 +5678,7 @@
           "clip": 6,
           "reload": 3,
           "weight": 40,
-          "requisition": 15,
+          "requisition": 30,
           "renown": 1,
           "content": [
             "Wyrzutnia Castellan to broń przeciwpiechotna o długim zasięgu używana głównie przez Drużyny Spustoszycieli Primaris, która szczególnie dobrze radzi sobie z przeciwnikami korzystającymi z osłon. Jednocześnie zapewnia podstawę do montażu i działania innych typów wyrzutni. Faktyczna wyrzutnia znajduje się pod szyną montażową i systemami celowniczymi i zasilana jest z taśmy podającej kolejne pociski (można ją zasilać wyłącznie @grenade{missileCastellan|pociskami castellan}{EIn}). W ciągu paru sekund nawet pojedyncza wyrzutnia tego typu jest w stanie zasypać tchórzliwie chowające się za osłonami cele deszczem odłamków z eksplodujących nad ich głowami kierowanych pocisków. System celowniczy zapewnia użytkownikowi efekty Talentu @talent{marksman} przy prowadzeniu ognia bezpośredniego. Wyrzutnie Castellan wydawane są z @specialammo{backpack|plecakiem} zawierającym 60 pocisków."
@@ -5586,6 +5687,7 @@
         {
           "name": "superfragLauncher",
           "displayName": "wyrzutnia superfrag",
+          "image": "https://static.wikia.nocookie.net/warhammer40k/images/7/7c/SuperfragRocketLauncher.jpg",
           "class": "heavy",
           "range": 300,
           "source": "EIn",
@@ -5615,6 +5717,7 @@
         {
           "name": "superkrakLauncher",
           "displayName": "wyrzutnia superkrak",
+          "image": "https://static.wikia.nocookie.net/warhammer40k/images/8/86/SuperkrakRocketLauncher.jpg",
           "class": "heavy",
           "range": 300,
           "source": "EIn",
@@ -5644,6 +5747,7 @@
         {
           "name": "vengorLauncher",
           "displayName": "wyrzutnia vengor",
+          "image": "https://static.wikia.nocookie.net/warhammer40k/images/e/e0/VengorCastellanLauncher.jpg",
           "class": "heavy",
           "range": 400,
           "source": "EIn",
@@ -5681,6 +5785,7 @@
         {
           "displayName": "działo konwersyjne astartes",
           "name": "conversionBeamer",
+          "image": "https://static.wikia.nocookie.net/warhammer40k/images/6/65/Conversion_Beamer2.jpg",
           "class": "heavy",
           "range": 100,
           "rof": {
@@ -5778,6 +5883,7 @@
         },
         {
           "displayName": "digi-bronie astartes",
+          "image": "https://static.wikia.nocookie.net/warhammer40k/images/b/b8/Digital_weapons.jpg",
           "name": "digiWeapons",
           "noTable": true,
           "content": [
@@ -5786,6 +5892,7 @@
         },
         {
           "displayName": "karabin igłowy astartes",
+          "image": "https://static.wikia.nocookie.net/warhammer40k/images/e/eb/Needle_Rifle.jpg",
           "name": "needler",
           "class": "basic",
           "range": 200,
@@ -5818,6 +5925,7 @@
         },
         {
           "displayName": "pistolet &neo–volkite",
+          "image": "https://static.wikia.nocookie.net/warhammer40k/images/b/b5/Drogos_Neo-Volkite_Pistol.jpg",
           "name": "neoVolkitePistol",
           "class": "pistol",
           "range": 40,
@@ -5866,6 +5974,10 @@
         {
           "source": "EIn",
           "content": "Pociski dołączane są do odpowiednich dla nich wyrzutni. Podany koszt Pobrania dotyczy dodatkowej amunicji."
+        },
+        {
+          "source": "EIn",
+          "content": "Koszt dodatkowego plecaka zawierającego 60 pocisków."
         }
       ],
       "content": [
@@ -6262,9 +6374,9 @@
             }
           ],
           "weight": 1.2,
-          "requisition": 6,
+          "requisition": 15,
           "footnotes": {
-            "requisition": 1
+            "requisition": 2
           },
           "source": "EIn",
           "renown": 1,
@@ -6360,7 +6472,7 @@
           "source": "EIn",
           "renown": 2,
           "content": [
-            "Pociski Vengor dopasowane są do @ranged{vengorLauncher|wyrzutni}{EIn} o tej samej nazwie. Ich eksplozje są nawet potężniejsze od tych powodowanych przez @grenade{missileSuperfrag|pociski superfrag} i mają znacznie większą siłę obalającą, choć są może nieco mniejsze. Dodatkowo główną zaletą Pocisków Vengor jest ich stosunkowo duża zwrotność, możliwość współpracy z systemami naprowadzania i ekstremalnie długi zasięg."
+            "Pociski Vengor dopasowane są do @ranged{vengorLauncher|wyrzutni}{EIn} o tej samej nazwie. Ich eksplozje są nawet potężniejsze od tych powodowanych przez @grenade{missileSuperfrag|pociski superfrag}{EIn} i mają znacznie większą siłę obalającą, choć są może nieco mniejsze. Dodatkowo główną zaletą Pocisków Vengor jest ich stosunkowo duża zwrotność, możliwość współpracy z systemami naprowadzania i ekstremalnie długi zasięg."
           ]
         }
       ]
@@ -6438,6 +6550,7 @@
       "items": [
         {
           "displayName": "miecz łańcuchowy astartes",
+          "image": "https://static.wikia.nocookie.net/warhammer40k/images/b/b5/Chainsword_Schematic.jpg",
           "name": "chainsword",
           "class": "melee",
           "damage": {
@@ -6465,6 +6578,7 @@
       "items": [
         {
           "displayName": "rękawica łańcuchowa astartes",
+          "image": "https://static.wikia.nocookie.net/warhammer40k/images/5/52/DA_Chainfist.jpg",
           "name": "chainsfist",
           "class": "mounted",
           "damage": {
@@ -6487,6 +6601,7 @@
         },
         {
           "displayName": "szpon energetyczny astartes",
+          "image": "https://static.wikia.nocookie.net/warhammer40k/images/3/3d/HoD_Termis.jpg",
           "name": "lightningClaw",
           "class": "melee",
           "damage": {
@@ -6507,6 +6622,7 @@
         },
         {
           "displayName": "topór energetyczny astartes",
+          "image": "https://static.wikia.nocookie.net/warhammer40k/images/5/5b/Master-Crafted_Power_Axe2.png",
           "name": "powerAxe",
           "class": "melee",
           "damage": {
@@ -6524,6 +6640,7 @@
         },
         {
           "displayName": "rękawica energetyczna astartes",
+          "image": "https://static.wikia.nocookie.net/warhammer40k/images/0/02/White_Scars%27_Power_Fist.jpg",
           "name": "powerFist",
           "class": "melee",
           "damage": {
@@ -6545,6 +6662,7 @@
         },
         {
           "displayName": "miecz energetyczny astartes",
+          "image": "https://static.wikia.nocookie.net/warhammer40k/images/5/53/Astartes_Power_Sword2.png",
           "name": "powerSword",
           "class": "melee",
           "damage": {
@@ -6562,6 +6680,7 @@
         },
         {
           "displayName": "młot gromu astartes",
+          "image": "https://static.wikia.nocookie.net/warhammer40k/images/b/bc/Thunder_Weapon.jpg",
           "name": "thunderHammer",
           "class": "melee",
           "damage": {
@@ -6579,6 +6698,7 @@
         },
         {
           "displayName": "omnizjański topór (wzór astartes)",
+          "image": "https://static.wikia.nocookie.net/warhammer40k/images/1/1c/Black_Templar_DW_Techmarine_Brother.jpg",
           "name": "omnissianAxe",
           "class": "melee",
           "damage": {
@@ -6600,6 +6720,7 @@
         {
           "displayName": "rękawica auto boltstorm",
           "name": "boltstorm",
+          "image": "https://wh40k.lexicanum.com/mediawiki/images/0/08/AggressorArt2.jpg",
           "class": "melee",
           "source": "EIn",
           "damage": {
@@ -6622,6 +6743,7 @@
         },
         {
           "displayName": "rękawica flamestorm",
+          "image": "https://wh40k.lexicanum.com/mediawiki/images/7/71/AggressorArt.jpg",
           "name": "flamestorm",
           "class": "melee",
           "damage": {
@@ -6651,6 +6773,7 @@
       "items": [
         {
           "displayName": "kostur psioniczny astartes",
+          "image": "https://wh40k.lexicanum.com/mediawiki/images/3/36/ForceStaff.jpg",
           "name": "forceStaff",
           "class": "melee",
           "damage": {
@@ -6668,6 +6791,7 @@
         },
         {
           "displayName": "miecz psioniczny astartes",
+          "image": "https://wh40k.lexicanum.com/mediawiki/images/6/66/NemSword.jpg",
           "name": "focreSword",
           "class": "melee",
           "damage": {
@@ -6691,6 +6815,7 @@
       "items": [
         {
           "displayName": "nóż taktyczny astartes",
+          "image": "https://wh40k.lexicanum.com/mediawiki/images/3/37/Eternalcrusade-smknife.jpg",
           "name": "combatKnife",
           "class": "melee",
           "damage": {
@@ -6729,6 +6854,7 @@
         {
           "displayName": "claymore sacris",
           "name": "sacrisClaymore",
+          "image": "https://static.wikia.nocookie.net/warhammer40k/images/2/20/Tempest_Blade.jpg",
           "class": "melee",
           "damage": {
             "formula": "2k10+2",
@@ -6842,7 +6968,7 @@
         {
           "displayName": "suspensor",
           "name": "suspensor",
-          "weight": "x1/2",
+          "weight": "\u00d71/2",
           "requisition": 25,
           "renown": 0,
           "content": [

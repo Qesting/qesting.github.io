@@ -22,7 +22,7 @@ function Parser({text, replacementContext, insertParagraphs, className}) {
     const { setDiceResult, setTableName } = replacementContext ?? receivedContext;
 
     function childrenAndSelf(section, topLevel=true) {
-        return section.children ? [section].concat(section.children.map(c => childrenAndSelf(c, false))) : topLevel ? [section] : section
+        return section.children ? [section].concat(...section.children.map(c => childrenAndSelf(c, false))) : topLevel ? [section] : section
     }
 
     function resolveItem(sectionName, itemName, source) {
@@ -257,6 +257,9 @@ function Parser({text, replacementContext, insertParagraphs, className}) {
                 ? `section-${section}-${resolvedItem.name}`
                 // items
                 : `item-${section}-${resolvedItem.name}`
+                + (
+                    source ? `|${source}` : ""
+                )
 
             const displayName = (display ? display : resolvedItem.displayName.replace("(x)", "")).replace(' ', '\u2004') + (value ? ( resolvedItem?.groups?.[value] ? `(${resolvedItem.groups[value]})` : `(${value})`) : "")
             

@@ -6,6 +6,7 @@ import { XCircleFill } from "react-bootstrap-icons";
 import { StateFunctionsContext } from "./StateFunctionsContext";
 import SectionNameContext from "./SectionNameContext";
 import DataProviderContext from "./DataProviderContext";
+import { JsonDataContext } from "./JsonDataContext";
 
 function Table({table, data, hasSubs, footnotes, formula, displayName}) {
     const keys = Object.keys(table ?? {});
@@ -49,6 +50,8 @@ function Table({table, data, hasSubs, footnotes, formula, displayName}) {
         row.classList.add('!bg-amber-500')
         self.setTimeout(() => row.classList.remove('!bg-amber-500'), 500)
     };
+    const { sources } = useContext(JsonDataContext)
+    const formatter = Intl.NumberFormat('pl-PL')
     const tableNameSetter = useContext(StateFunctionsContext).closeTableDialog;
     const section = useContext(SectionNameContext)
     const topSection = section?.split('-')?.shift()
@@ -61,7 +64,7 @@ function Table({table, data, hasSubs, footnotes, formula, displayName}) {
                         keys.map((k, jndex) => (
                             <td 
                                 key={jndex} 
-                                className={(['shortDesc', 'prerequisite', '$roll', '$content', 'content', 'result'].includes(k) ? '' : 'capitalize') + " text-center p-0.5" + (k === "$roll" ? " whitespace-nowrap" : "")}
+                                className={(['shortDesc', 'prerequisite', '$roll', '$content', 'content', 'result'].includes(k) ? '' : 'capitalize') + " text-center p-0.5 relative " + (k === "$name" ? "pl-3 " : " ") + (k === "$roll" ? " whitespace-nowrap" : "")}
                             >
                                 {
                                     k.startsWith("${") ? (<DataProviderContext.Provider value={e}>
@@ -79,7 +82,10 @@ function Table({table, data, hasSubs, footnotes, formula, displayName}) {
                                     e[k] === null ? 'N/D' :
                                     k === '$armor' ? (typeof e.armor === 'string' ? e.armor : Object.values(e.armor).filter(f => f !== null).join('/')) : 
                                     k === '$covers' ?  (e.armor === undefined ? '\u2013' : typeof e?.armor === 'string' ? (<Parser text={e.armor} passedSection={section}/>) : (e.armor.general ? 'wszystkie' : Object.keys(e.armor).filter(l => e.armor[l] !== null).map(l => locations[l]).join(', '))) :
-                                    k === '$name' ? (<Parser text={`@${topSection}{${e.name}}${e?.source && e.source !== 'CRB' ? '{' + e.source + '}' : ''}`} passedSection={section}/>)  : 
+                                    k === '$name' ? (<>
+                                        <span className="absolute z-10 left-1 size-2 rounded-full top-3" style={{backgroundColor: sources.find(s => s.name == (e.source ?? 'CRB'))?.color}}></span>
+                                        <Parser text={`@${topSection}{${e.name}}${e?.source && e.source !== 'CRB' ? '{' + e.source + '}' : ''}`} passedSection={section}/></>
+                                    )  : 
                                     k === '$renown' ? ( renown[e.renown] ?? e.renown ) :
                                     k === '$rof' ? Object.values(e.rof).map(f => f ? (typeof f === 'number' ? f : 'S') : '-').join('/') :
                                     k === '$damage' ? (typeof e.damage !== 'string' ? (<span>{<Parser text={`@dice{${e.damage.formula + (e.damage.display ? '|' + e.damage.display : '')}}`} passedSection={section}/>}&nbsp;{damageType[e.damage.type]}</span>) : e.damage ):
@@ -92,6 +98,7 @@ function Table({table, data, hasSubs, footnotes, formula, displayName}) {
                                     k === '$reload' ? (typeof e.reload === 'number' ? `${e.reload} akcji podw.` : e.reload) : 
                                     k === '$protectionRating' ? (<Parser text={`@dice{${e.protectionRating}%}`} passedSection={section}/>) : 
                                     k === '$overload' ? (<Parser text={`@dice{${e.overload}%|${e.overload === 1 ? '01' : '01-' + (e.overload+[]).padStart(2, '0')}}`} passedSection={section}/>) :
+                                    k === 'weight' ? formatter.format(e.weight) :
                                     Array.isArray(e[k]) ? e[k].join(', ') : 
                                     (<Parser text={(e[k] + [])} passedSection={section}/>)
                                 }
@@ -123,7 +130,7 @@ function Table({table, data, hasSubs, footnotes, formula, displayName}) {
                 }
                 <tr className="relative">
                     {
-                        keys.map((k, index) => (<th key={index} className="capitalize">{k === '$roll' ? (
+                        keys.map((k, index) => (<th key={index} className={"capitalize " + (k === "$name" ? "pl-3" : "")}>{k === '$roll' ? (
                             <button
                                 className="btn !normal-case"
                                 onClick={rollOnTable}

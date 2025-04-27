@@ -30,14 +30,15 @@ function App() {
     if (itemName) {
       const item = self.document.querySelector(
         itemName.startsWith(">")
-          ? `[id^=section][id$=${itemName.substring(1)}]`
-          : `[id$=${itemName}]`
+          ? `[id^=section][id$=${CSS.escape(itemName.substring(1))}`
+          : `[id$=${CSS.escape(itemName)}`
       )
       self.document.activeElement.blur()
-      item?.scrollIntoView({
-        behavior: "smooth"
+      item?.scrollIntoView?.({
+        behavior: "smooth",
+        block: "start"
       })
-      item?.focus()
+      item?.focus?.()
     }
   }, [itemName])
   useEffect(() => {
@@ -158,7 +159,7 @@ function App() {
                   }
                   return (<tr key={index}>
                     <td className="text-nowrap"><span className="font-bold">{source.displayName}</span>&nbsp;(<span style={{color: source.color}}>{source.name}</span>)</td>
-                    <td><span className="inline-block mx-auto">{
+                    <td><span className="inline-block mx-auto relative top-0.5">{
                       source?.brewed ? <BIconXSquareFill aria-label="nie" className="text-red-600"/>
                         : <BIconCheckSquareFill aria-label="tak" className="text-green-500"/>
                     }</span></td>

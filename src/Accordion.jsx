@@ -9,7 +9,7 @@ import { ArrowDownUp as BIconArrowDownUp } from "react-bootstrap-icons"
 function Accordion({title, items, previousSection, append}) {
     const [expanded, setExpanded] = useState(false);
     const depth = useContext(AccordionDepthContext);
-    const id = item => previousSection ? previousSection+`-${item.name}` : `section-${item.name}`;
+    const id = item => (previousSection ? previousSection+`-${item.name}` : `section-${item.name}`) + (item.source ? `|${item.source}` : "");
     const { getHiddenSources } = useContext(StateFunctionsContext)
 
     let bgColor;

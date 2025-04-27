@@ -8,5 +8,23 @@
   <body>
     <div id="root"></div>
     <script type="module" src="/src/main.jsx"></script>
+    <svg style="visibility: hidden" width="0" height="0">
+      <defs>
+        <filter id="filter-radius">
+          <!-- Create a blur of 4px radius from the original image -->
+          <!-- (Transparent pixels are ignored, thus the blur radius starts at the corner of the image) -->
+          <feGaussianBlur in="SourceGraphic" stdDeviation="2" result="blur" />
+          <!-- Filter out the pixels where alpha values that are too low, in this case the blurred corners are filtered out -->
+          <feColorMatrix
+            in="blur"
+            mode="matrix"
+            values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 100 -50"
+            result="mask"
+          />
+          <!-- As the final result is now blurred, we need to use the mask we obtained from previous step to cut from the original source -->
+          <feComposite in="SourceGraphic" in2="mask" operator="atop" />
+        </filter>
+      </defs>
+    </svg>
   </body>
 </html>
