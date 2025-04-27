@@ -81,7 +81,7 @@ function Parser({text, replacementContext, insertParagraphs, className}) {
         return jsonData.tables?.find(t => t.name === tableName && (t.source ?? "CRB") === (source ?? "CRB"))
     }
 
-    const noOrphanLinkers = text?.replace(/(?<=\P{L}\p{L}{1,3}) /ug, "\u00a0") ?? ""
+    const noOrphanLinkers = text?.replace?.(/(?<=\P{L}\p{L}{1,3}) /ug, "\u00a0") ?? ""
 
     const textTagsReplaced = noOrphanLinkers.replace(/(\$\{.*?\})/, match => {
         const {

@@ -98,7 +98,7 @@ function Table({table, data, hasSubs, footnotes, formula, displayName}) {
                                     k === '$reload' ? (typeof e.reload === 'number' ? `${e.reload} akcji podw.` : e.reload) : 
                                     k === '$protectionRating' ? (<Parser text={`@dice{${e.protectionRating}%}`} passedSection={section}/>) : 
                                     k === '$overload' ? (<Parser text={`@dice{${e.overload}%|${e.overload === 1 ? '01' : '01-' + (e.overload+[]).padStart(2, '0')}}`} passedSection={section}/>) :
-                                    k === 'weight' ? formatter.format(e.weight) :
+                                    k === 'weight' && typeof e.weight === "number" ? formatter.format(e.weight) :
                                     Array.isArray(e[k]) ? e[k].join(', ') : 
                                     (<Parser text={(e[k] + [])} passedSection={section}/>)
                                 }

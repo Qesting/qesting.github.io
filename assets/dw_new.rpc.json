@@ -839,7 +839,7 @@
             "imperialCodes": "Kody Imperialne",
             "inquisition": "Inkwizycja",
             "mercenaryCant": "Najemniczy Slang",
-            "underwolrd": "Półświatek"
+            "underworld": "Półświatek"
           },
           "content": [
             "Wiele grup i organizacji używa szyfrów jako tajnego kodu służącego do zwięzłego przekazywania prostych  konceptów, ostrzeżeń i informacji. Bohater rozumie i może używać sygnałów dłońmi, fizycznych znaków i innych sposobów przekazywania tych informacji. Sekretne znaki zwykle wyrażają proste pojęcia, takie jak ostrzeżenie przed niebezpieczeństwem, wyznaczenie celu, czy informacja o właścicielu czegoś. Testy Umiejętności nie są wymagane do pozostawiania lub odczytywania prostych wiadomości, ale konieczne są przy przekazywaniu złożonych komunikatów lub oczytywania znaków zaciemnionych upływem czasu.",
@@ -889,6 +889,7 @@
           "displayName": "niszczenie",
           "characteristic": "intelligence",
           "type": ["Tworzenie Przedmiotów"],
+          "noGrid": true,
           "content": [
             "Niszczenie pozwala Bohaterowi na użycie środków wybuchowych właściwe do uzyskania porządanego efektu, od przebicia się przez właz Land Raidera do zniszczenie przewodu plazmowego przez poważnego uszkodzenia znajdującego się za nim reaktora. Może też zostać użyte do rozbrajania ładunków podłożonych przez innych i do wytwarzania różnych komponentów jak i całych ładunków. Umiejętność ta odnosi się raczej do ładunków wybuchowych, niż granatów i innych urządzeń przeznaczonych do bezpośredniej walki.",
             {
@@ -1167,6 +1168,7 @@
           "name": "loreScholastic",
           "displayName": "wiedza akademicka",
           "subName": "${insertArray:type|sep=, }",
+          "noGrid": true,
           "footnotes": {
             "$name": 0
           },
@@ -1196,7 +1198,7 @@
             {
               "type": "list",
               "style": "unordered",
-              "title": "Specjalne Przypadki:",
+              "title": "Grupy Umiejętności:",
               "content": [
                 {
                   "title": "${insertValueAt:groups.archaic}:",
@@ -5736,7 +5738,7 @@
             "$qualities": 2
           },
           "clip": 2,
-          "reload": 3,
+          "reload": 2,
           "weight": "+30",
           "requisition": 15,
           "renown": 1,

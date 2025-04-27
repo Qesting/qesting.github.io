@@ -4,7 +4,7 @@ import Parser from "./Parser"
 function List({title, style, content}) {
     const listContent = content?.map((e, index) => <li key={index}>
         {
-            e?.title && <><strong className="font-bold">{e.title + (!e.title.endsWith(":") && !e.title.endsWith(".") ? "." : "")}</strong>&nbsp;</>
+            e?.title && <><strong className="font-bold"><Parser text={e.title + (!e.title.endsWith(":") && !e.title.endsWith(".") ? "." : "")}/></strong>&nbsp;</>
         }
         {
             <Parser text={e.content ?? e}/>
