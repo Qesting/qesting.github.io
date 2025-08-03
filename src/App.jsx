@@ -191,10 +191,10 @@ function App() {
           {
             search.length > 0 && searchPool.filter(e => (e.name.search(search) + 1) || (e.displayName.search(search) + 1)).sort((a,b) => a.name > b.name ? 1 : a.name < b.name ? -1 : 0).map((e, index) => <div key={index} className="flex">
               <div>
-                <LinkButton elementId={(e.type === 'section' ? 'section-' : 'item-') + (e?.parentPath ? e.parentPath + '-' : '') + e.name} innerText={e.displayName}/>&nbsp;
+                <LinkButton elementId={(e.type === 'section' ? 'section-' : 'item-') + (e?.parentPath ? e.parentPath + '-' : '') + e.name + (e.source && e.source !== 'CRB' ? "|" + e.source : "")} innerText={e.displayName}/>&nbsp;
                 <span>({e.name})</span>&nbsp;
                 {
-                  e.parentPath && <span className='italic text-gray-600 dark:text-gray-400'>{capitalize(flatSections.find(s => s.name === e.parentPath.split('-')[0]).displayName)}</span>
+                  e.parentPath && <span className='italic text-gray-600 dark:text-gray-400'>{capitalize(flatSections.find(s => s.name === e.parentPath.split('-')[0] && !s?.parentPath).displayName)}</span>
                 }
               </div>
               <span className='ml-auto relative'><SourceName source={sources.find(s => s.name === (e.source ?? 'CRB'))}/></span>

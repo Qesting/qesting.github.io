@@ -28,6 +28,10 @@ for (let index = 0; index < content.length; index++) {
         } else {
             // an ungroupped subsection
             const parent = findInTree(examined.parentPath)
+            if (!parent) {
+                console.error(examined)
+                continue
+            }
             if (!parent?.children) {
                 parent.children = []
             }
@@ -38,11 +42,16 @@ for (let index = 0; index < content.length; index++) {
         tables.push(examined)
     } else if (examined?.type === "group") {
         const parent = findInTree(examined.parentPath, sections)
+        if (!parent) {
+            console.error(examined)
+            continue
+        }
         for (let jndex = 0; jndex < examined.items.length; jndex++) {
             const examinedSub = examined.items[jndex]
             if (!examined.items[jndex].source) {
                 examined.items[jndex].source = examined.source
             }
+            examinedSub.parentPath = examined.parentPath
             if (examinedSub?.type === "section") {
                 if (!parent?.children) {
                     parent.children = []
@@ -53,7 +62,6 @@ for (let index = 0; index < content.length; index++) {
                 if (!parent?.items) {
                     parent.items = []
                 }
-                examinedSub.parentPath = examined.parentPath
                 parent.items.push(examinedSub)
                 flatItems.push(examinedSub)
             }
