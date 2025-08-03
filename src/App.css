@@ -65,3 +65,7 @@ input[type="checkbox"] {
     @apply bg-transparent m-0 text-current size-[1.15em] border-[0.15em] border-solid border-current rounded-[0.15em] -translate-y-[0.075em] grid place-content-center;
     @apply before:content-[""] before:size-[0.65em] before:scale-0 before:transition-transform before:duration-200 before:ease-in-out before:bg-accent dark:before:bg-accentDark checked:before:scale-100 disabled:before:bg-gray-500
 }
+
+img.round {
+    //filter: url("#filter-radius");
+}

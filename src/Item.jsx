@@ -27,14 +27,14 @@ function Item({data, section}) {
     if (getHiddenSources?.()?.includes(source)) return <></>
 
     return (
-        <div id={`item-${section}-${name}`} className={`my-2 relative bg-gray-100 dark:bg-gray-800 rounded-md p-2 group/item !outline-none ${noGrid ? "col-span-1 md:col-span-2 lg:col-span-3 xl:col-span-4" : ""}`} tabIndex={-1}>
+        <div id={`item-${section}-${name}${source ? "|" + source : ""}`} className={`my-2 relative bg-gray-100 dark:bg-gray-800 rounded-md p-2 group/item !outline-none item ${noGrid ? "col-span-1 md:col-span-2 lg:col-span-3 xl:col-span-4" : ""}`} tabIndex={-1}>
             <div className='relative'>
                 <h4 className="text-xl pb-2 relative after:w-full after:h-px after:absolute after:bottom-1 after:bg-current after:left-0 after:right-0 text-center group-focus/item:after:bg-accent after:transition-colors duration-300 after:duration-300 transition-colors group-focus/item:text-accent px-8">{capitalize(displayName)}</h4>
                 <CopyItemLink sectionName={section.substring(0, section.indexOf("-") !== -1 ? section.indexOf("-") : section.length)} item={data}/>
                 <SourceName source={foundSource}/>
             </div>
             {
-                image && <img src={image} className="max-w-[50%] min-h-30 my-2"/>
+                image && <div className="relative size-[20rem] p-2 mx-auto pb-3 after:w-full after:h-px after:absolute after:bottom-1 after:bg-current after:left-0 after:right-0"><img src={image} className="w-full h-full object-contain round"/></div>
             }
             {
                 <div className={innerGrid ? 'grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-2' : ''}>

@@ -1,10 +1,9 @@
 import PropTypes from 'prop-types';
-import { Link, useParams } from "react-router-dom";
+import { Link } from "react-router-dom";
 import capitalize from './capitalize';
 import isInView from './isInView';
 
 function LinkButton({elementId, innerText, additionalClasses}) {
-    const { sectionName } = useParams()
     const isFootnoteLink = elementId.startsWith("footnote")
     const sectionStart = elementId.indexOf('-') + 1;
     const sectionEnd = elementId.startsWith('item') ? elementId.lastIndexOf('-') : undefined;
@@ -24,7 +23,7 @@ function LinkButton({elementId, innerText, additionalClasses}) {
     const isSubSection = elementId.startsWith("section") && item !== section    
 
     return (
-        isFootnoteLink || section === sectionName
+        isFootnoteLink
             ? <button onClick={scrollFunction} className={["btn"].concat(additionalClasses).join(' ')}>{capitalize(innerText)}</button>
             : <Link to={"/" + section.split('-')[0] + (item && isSubSection ? `/>${item}` : item !== section ? `/${item}` : "")} className={["btn"].concat(additionalClasses).join(' ')}>{capitalize(innerText)}</Link>
         )

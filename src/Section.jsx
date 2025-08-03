@@ -32,33 +32,37 @@ function Section({data}) {
     const contentLength = content ? content.length : 0
     const childrenLength = children ? children.length : 0
     const foundSource = sources.find(s => s.name === (source ?? "CRB"))
+    const filteredItems = items?.filter(e => !getHiddenSources?.()?.includes(e.source)) ?? []
+    const filteredFootnotes = (footnotes ?? replacementFootnotes)?.filter(e => !getHiddenSources?.apply()?.includes(e?.source)).map(e => e?.content ?? e)
+
+    const contextData = {...data, footnotes: filteredFootnotes, table: replacementTable ?? table}
 
     if (getHiddenSources?.()?.includes(source)) return <></>
 
     return (
-        <section id={`section-${thisName}`} tabIndex={-1} className={`${superS ? "group/section" : ""} outline-none`}>
+        <section id={`section-${thisName}${source ? "|" + source : ""}`} tabIndex={-1} className={`${superS ? "group/section" : ""} outline-none col-span-1 md:col-span-2 lg:col-span-3 xl:col-span-4`}>
             <SectionNameContext.Provider value={thisName}>
-                <DataProviderContext.Provider value={data}>
+                <DataProviderContext.Provider value={contextData}>
                     <div className="relative">
                         <h2 
-                            className={`${superS ? 'text-2xl group-focus/section:after:bg-accent group-focus/section:text-accent' : 'text-3xl'} py-2 text-center relative after:w-full after:h-px after:absolute after:bottom-0 after:bg-current after:transition-colors duration-300 after:duration-300 transition-colors after:left-0 after:right-0`}
+                            className={`${superS ? 'text-2xl group-focus/section:after:bg-accent group-focus/section:text-accent' : 'text-3xl'} py-2 text-center relative after:w-full after:h-px after:absolute after:bottom-0 after:bg-current after:transition-colors duration-300 after:duration-300 transition-colors after:left-0 after:right-0 px-4`}
                         >{capitalize(displayName)}</h2>
                         <CopyItemLink sectionName={superS ? superS.substring(0, superS.indexOf("-") !== -1 ? superS.indexOf("-") : superS.length) : name} item={superS ? data : ""}/>
                         <SourceName source={foundSource}/>
                     </div>
                     {
-                        !['description', 'none'].includes(display) && <Table table={table ?? replacementTable} data={items} footnotes={footnotes ?? replacementFootnotes}/>
+                        !['description', 'none'].includes(display) && <Table table={table ?? replacementTable} data={filteredItems} footnotes={filteredFootnotes ?? replacementFootnotes}/>
                     }
                     {
-                        (!["table", 'none'].includes(display) || (display === 'none' && superS)) && <div className={!(children || noGrid) ? 'grid gap-x-4 grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4': undefined }>
+                        (!["table", 'none'].includes(display) || (display === 'none' && superS)) && <div className={!noGrid ? 'grid gap-x-4 grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4': undefined }>
                             {
                                 <TextContent content={content}/>
                             }
                             {
-                                Array.isArray(children) ? children.map((e, index) => <Section key={index + contentLength} data={e}/>) : []
+                                Array.isArray(filteredItems) ? filteredItems.filter(e => !e?.noDesc).map((e, index) => <Item key={index + contentLength + childrenLength} data={e} section={thisName}/>) : []
                             }
                             {
-                                Array.isArray(items) ? items.filter(e => !e?.noDesc).map((e, index) => <Item key={index + contentLength + childrenLength} data={e} section={thisName}/>) : []
+                                Array.isArray(children) ? children.map((e, index) => <Section key={index + contentLength} data={e}/>) : []
                             }
                         </div>
                     }
