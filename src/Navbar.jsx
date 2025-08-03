@@ -9,12 +9,13 @@ import {
     CircleHalf as BIconCircleHalf, 
     Braces as BIconBraces, 
     QuestionCircle as BIconQuestionCircle, 
-    QuestionCircleFill as BIconQuestionCircleFill 
+    QuestionCircleFill as BIconQuestionCircleFill,
+    Search as BIconSearch
 } from "react-bootstrap-icons";
 
 export default function Navbar() {
     const data = useContext(JsonDataContext).sections;
-    const { setDarkMode, showTableDialog, setCurrentSection, showSourceDialog, toggleShowExamples, getShowExamples } = useContext(StateFunctionsContext);
+    const { setDarkMode, showTableDialog, setCurrentSection, showSourceDialog, toggleShowExamples, getShowExamples, showSearchDialog } = useContext(StateFunctionsContext);
     return (
         <nav className="h-20 w-full top-0 left-0 right-0 fixed bg-gray-100 dark:bg-gray-900 border-b-2 border-solid border-current z-20 flex flex-row flex-wrap-nowrap items-center p-2 duration-200 transition-colors">
             <button className="text-2xl" onClick={() => setCurrentSection('')}>Codex Vigilis</button>
@@ -24,6 +25,7 @@ export default function Navbar() {
                 </AccordionDepthContext.Provider>
             </div>
             <div className="ml-auto flex flex-row">
+                <button className="nav-btn" onClick={() => showSearchDialog?.()} role="button" aria-label="Pokaż panel wyszukiwania"><BIconSearch/></button>
                 <button className="nav-btn" onClick={() => toggleShowExamples?.()} role="button" aria-label={getShowExamples?.() ? "Ukryj Przykłady" : "Pokaż Przykłady"}>
                     {
                         getShowExamples?.() ? <BIconQuestionCircleFill/>

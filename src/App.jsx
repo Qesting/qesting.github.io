@@ -4,15 +4,18 @@ import Section from './Section';
 import { JsonDataContext } from './JsonDataContext.js';
 import { StateFunctionsContext } from './StateFunctionsContext';
 import Navbar from './Navbar';
-import { CaretDownFill, XCircleFill } from 'react-bootstrap-icons';
+import { CaretDownFill, XCircleFill, XLg } from 'react-bootstrap-icons';
 import Footer from './Footer.jsx';
 import Table from './Table.jsx';
-import { useParams } from 'react-router-dom';
+import { Link, useParams } from 'react-router-dom';
 import { CheckSquareFill as BIconCheckSquareFill, XSquareFill as BIconXSquareFill } from "react-bootstrap-icons"
 import capitalize from './capitalize.js';
+import LinkButton from './LinkButton.jsx';
+import SourceName from './SourceName.tsx';
 
 function App() {
-  const { sections, tables, sources } = useContext(JsonDataContext);
+  const { sections, tables, sources, flatItems, flatSections } = useContext(JsonDataContext);
+  const searchPool = flatItems.concat(flatSections)
 
   const { sectionName, itemName } = useParams()
   const [diceResult, setDiceResult] = useState(null);
@@ -25,6 +28,8 @@ function App() {
   const sourcesDialog = useRef(null)
   const [hiddenSources, setHiddenSources] = useState(sources.filter(s => !s.visible).map(s => s.name))
   const [showExamples, setShowExamples] = useState(self.localStorage.getItem("dw-hideExamples") !== "true")
+  const searchDialog = useRef(null)
+  const [search, setSearch] = useState("")
 
   useEffect(() => {
     if (itemName) {
@@ -44,6 +49,8 @@ function App() {
     setTableName(null)
     tableDialog.current?.close()
     sourcesDialog.current?.close()
+    searchDialog.current?.close()
+    setSearch("")
     if (!itemName) {
       document.querySelector("section")?.scrollIntoView({ behavior: "smooth" })
     }
@@ -76,7 +83,8 @@ function App() {
       setShowExamples(!showExamples)
     },
     getShowExamples: () => showExamples,
-    getHiddenSources: () => hiddenSources
+    getHiddenSources: () => hiddenSources,
+    showSearchDialog: () => searchDialog?.current?.showModal()
   };
   const table = useMemo(() => {
     return tables.find(tab => tab.name === tableName);
@@ -170,7 +178,28 @@ function App() {
               }
             </tbody>
           </table>
-          
+      </dialog>
+      <dialog ref={searchDialog} className='px-8 py-4 bg-inherit backdrop:bg-gray-950 backdrop-opacity-50 text-inherit rounded-md w-[50rem] relative'>
+        <button className='absolute top-2 right-2 duration-300 transition-colors hover:text-red-600 focus:text-red-600 active:text-red-600' aria-label='Zamknij wyszukiwanie' onClick={() => { setSearch(""); searchDialog?.current?.close() }}><XLg/></button>
+        <h2 className='text-3xl pb-2 px-4 text-center relative after:w-full after:h-px after:absolute after:bottom-0 after:bg-current after:left-0 after:right-0'>Wyszukiwanie</h2>
+        <div className='relative mt-4'>
+          <input type='search' placeholder='Wyszukaj...' className='pr-6 bg-gray-200 dark:bg-gray-700 w-full py-1 px-2 rounded-md !outline-none placeholder:italic' value={search} onInput={evt => setSearch(evt.target.value)}/>
+          <button className='absolute top-2 right-1' aria-label='Wyczyść' onClick={() => setSearch("")}><XCircleFill/></button>
+        </div>
+        <div className='max-h-80 overflow-y-scroll px-2'>
+          {
+            search.length > 0 && searchPool.filter(e => (e.name.search(search) + 1) || (e.displayName.search(search) + 1)).sort((a,b) => a.name > b.name ? 1 : a.name < b.name ? -1 : 0).map((e, index) => <div key={index} className="flex">
+              <div>
+                <LinkButton elementId={(e.type === 'section' ? 'section-' : 'item-') + (e?.parentPath ? e.parentPath + '-' : '') + e.name} innerText={e.displayName}/>&nbsp;
+                <span>({e.name})</span>&nbsp;
+                {
+                  e.parentPath && <span className='italic text-gray-600 dark:text-gray-400'>{capitalize(flatSections.find(s => s.name === e.parentPath.split('-')[0]).displayName)}</span>
+                }
+              </div>
+              <span className='ml-auto relative'><SourceName source={sources.find(s => s.name === (e.source ?? 'CRB'))}/></span>
+            </div>)
+          }
+        </div>
       </dialog>
       </StateFunctionsContext.Provider>
       <dialog ref={diceDialog} className='px-8 py-4 bg-inherit text-inherit backdrop:bg-gray-950 backdrop:opacity-50 rounded-md'>

@@ -13,7 +13,7 @@ import Table from "./Table";
 import capitalize from "./capitalize";
 import { generalRegExp, diceRegExp, tableRegExp, quoteRegExp, sectionRegExp, footnoteRegExp, replacerRegExp, tableInsertRegExp, mathRegExp } from "./ParserRegExp"
 
-function Parser({text, replacementContext, insertParagraphs, className}) {
+function Parser({text, replacementContext, insertParagraphs, className, cap}) {
     const jsonData = useContext(JsonDataContext);
     const passedSection = useContext(SectionNameContext)
     const receivedContext = useContext(StateFunctionsContext);
@@ -80,7 +80,9 @@ function Parser({text, replacementContext, insertParagraphs, className}) {
 
     const noOrphanLinkers = text?.replace(/(?<=\P{L}\p{L}{1,3}) /ug, "\u00a0") ?? ""
 
-    const textTagsReplaced = noOrphanLinkers.replace(/(\$\{.*?\})/, match => {
+    const parentNameReplaced = noOrphanLinkers.replace("$parent", provider.displayName)
+
+    const textTagsReplaced = parentNameReplaced.replace(/(\$\{.*?\})/, match => {
         const {
             operation,
             field,
@@ -147,6 +149,7 @@ function Parser({text, replacementContext, insertParagraphs, className}) {
     const mathTagsReplaced = textTagsReplaced.replace(/(\^.*?\^)/, match => {
         const {
             equation,
+            substituteText,
             modifiers
         } = match?.match(mathRegExp)?.groups ?? {}
         const heap = []
@@ -158,34 +161,41 @@ function Parser({text, replacementContext, insertParagraphs, className}) {
             10
         ) : 10
         const integersOnly = modifiers && modifiers?.search(/i[boh]?/) !== -1
-        while (equationParts.length) {
-            const part = equationParts.shift()
-            const partAsNumber = integersOnly ? parseInt(part, radix) : parseFloat(part)
-            if (Number.isNaN(partAsNumber)) {
-                const number2 = heap.pop()
-                const number1 = heap.pop()
+        try {
+            while (equationParts.length) {
+                const part = equationParts.shift()
+                const partAsNumber = integersOnly ? parseInt(part, radix) : parseFloat(part)
+                if (Number.isNaN(partAsNumber)) {
+                    const number2 = heap.pop()
+                    const number1 = heap.pop()
 
-                if (part === "+") {
-                    heap.push(number1 + number2)
-                } else if (part === "-") {
-                    heap.push(number1 - number2)
-                } else if (part === "*") {
-                    heap.push(number1 * number2)
-                } else if (part === "/") {
-                    heap.push(number1 / number2)
-                } else if (part === "**") {
-                    heap.push(Math.pow(number1, number2))
+                    if (part === "+") {
+                        heap.push(number1 + number2)
+                    } else if (part === "-") {
+                        heap.push(number1 - number2)
+                    } else if (part === "*") {
+                        heap.push(number1 * number2)
+                    } else if (part === "/") {
+                        heap.push(number1 / number2)
+                    } else if (part === "**") {
+                        heap.push(Math.pow(number1, number2))
+                    } else {
+                        throw new Error(`Unrecognized math operator '${part}'`)
+                    }
                 } else {
-                    throw new Error(`Unrecognized math operator '${part}'`)
+                    heap.push(partAsNumber)
                 }
-            } else {
-                heap.push(partAsNumber)
             }
+            return heap.pop().toString()
+        } catch (e) {
+            console.error(e)
+            return substituteText ?? match
         }
-        return heap.pop().toString()
     })
 
-    const replaced = reactStringReplace(mathTagsReplaced, generalRegExp, (match, index) => {
+    const capitalized = cap ? capitalize(mathTagsReplaced) : mathTagsReplaced
+
+    const replaced = reactStringReplace(capitalized, generalRegExp, (match, index) => {
         let matchData
         if (matchData = match.match(diceRegExp)) {
             const { formula, display } = matchData?.groups ?? {};
@@ -272,6 +282,7 @@ Parser.propTypes = {
     replacementContext: PropTypes.object,
     insertParagraphs: PropTypes.bool,
     className: PropTypes.string,
+    cap: PropTypes.bool
 };
 
 export default Parser;

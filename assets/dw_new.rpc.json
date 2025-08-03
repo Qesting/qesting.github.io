@@ -765,7 +765,7 @@
           "characteristic": "strength",
           "type": ["Ruch"],
           "content": [
-            "Pływanie pozwala Bohaterowi pływać w różnych cieczach. W normalnych warunkach pływanie nie wymaga Testu, choć mogą go wymusić trudniejsze wody, nadzwyczajne okoliczności, czy długie dystanse.",
+            "Choć większość Imperium zasadniczo utraciła tę Umiejętność, życie na rubieżach czasami wymaga jej użycia. Pływanie pozwala Bohaterowi pływać w różnych cieczach. W normalnych warunkach pływanie nie wymaga Testu, choć mogą go wymusić trudniejsze wody, nadzwyczajne okoliczności, czy długie dystanse.",
             {
               "title": "Używane Jako:",
               "content": "Akcja Podwójna."
@@ -1334,75 +1334,244 @@
           "type": null,
           "content": [
             {
-              "title": "Grupy Umiejętności:"
+              "title": "Grupy Umiejętności:",
+              "content": "${insertValues:groups|sep=, }"
             },
-            "Występów można użyć, by zabawiać i zachwycać grupy widzów. Można również używać tej Umiejętności do zarabiania pieniędzy w podobny sposób, co @skill{trade}. Czas trwania Testu Występów zależy od używanej formy sztuki."
+            "Występów można użyć, by zabawiać i zachwycać grupy widzów. Można również używać tej Umiejętności do zarabiania pieniędzy w podobny sposób, co @skill{trade}. Czas trwania Testu Występów zależy od używanej formy sztuki.",
+            {
+              "title": "Używane Jako:",
+              "content": "Różne."
+            },
+            {
+              "type": "list",
+              "style": "unordered",
+              "title": "Specjalne Przypadki",
+              "content": [
+                {
+                  "title": "Przekonujący Występ",
+                  "content": "Bohater może wykonać Wymagający (-10) Test Występów (Śpiew lub Opowiadanie) zamiast Przekonywania, by pozyskać sobie publiczność, co polepsza ich stosunek do niego o jeden poziom."
+                },
+                {
+                  "title": "Zachwycający Występ",
+                  "content": "Bohater może wykonać Wymagający (-10) Test Występów (Muzyka lub Śpiew), by zachwycić publiczność, odwracając na moment jej uwagę."
+                },
+                {
+                  "title": "Porywająca Opowieść",
+                  "content": "Bohater może wykonać Przeciętny (+0) Test Występów (Opowiadanie lub Śpiew), by polepszyć morale swoich podwładnych lub przekonać ich do podjęcia się trudnego zadania, takiego jak osłanianie odwrotu lub bronienie się do ostatniego."
+                }
+              ]
+            }
           ]
         },
         {
           "name": "pilot",
           "displayName": "pilotaż",
+          "subName": "${insertArray:type|sep=, }",
           "footnotes": {
             "$name": 0
           },
           "characteristic": "agility",
           "type": ["Operacja"],
-          "content": []
+          "groups": {
+            "personal": "Osobiste",
+            "flyers": "Powietrzne",
+            "spacecraft": "Próżniowe"
+          },
+          "content": [
+            {
+              "title": "Grupy Umiejętności:",
+              "content": "${insertValues:groups|sep=, }"
+            },
+            "Bohaterowie mogą używać Pilotażu do operowania pojazdami powietrznymi, od osobistych plecaków skokowych, przez małe jednostki atmosferyczne, takie jak lądowniki, do zdolnych do poruszania się w próżni myśliwców, bombowców i okrętów flagowych. W normalnych warunkach pilotowanie nie wymaga testowania, ale niecodzienne bądź trudne warunki, takie jak burze, przeszkody, czy skomplikowane manewry mogą wymusić Test Umiejętności. Przy ściganiu innego pojazdu lub walki o pozycję wykonywany jest Przeciwstawny Test Pilotażu.",
+            {
+              "title": "Używane Jako:",
+              "content": "Akcja Pojedyncza."
+            }
+          ]
         },
         {
           "name": "psyniscience",
           "displayName": "wiedza psioniczna",
           "characteristic": "perception",
+          "subName": "${insertArray:type|sep=, }",
           "type": null,
-          "content": []
+          "content": [
+            "Ci, którzy mają tę Umiejętność, wyczuwają wokół siebie prądy Osnowy. Bohaterowie mogą użyć jej, by wykryć obecność lub brak demonów i użycie mocy psionicznych. Umiejętność pozwala wykrywać także zjawiska psioniczne, zakłócenia, pustki i wszystkie inne zakłócenia w pływach Immaterium. Rezultaty Testów Wiedzy Psionicznej przedstawiono w tabeli.",
+            "%table{psyniscience}",
+            {
+              "title": "Używane Jako:",
+              "content": "Akcja Podwójna."
+            }
+          ]
         },
         {
           "name": "security",
-          "displayName": "bezpieczeństwo",
+          "displayName": "zabezpieczenia",
           "characteristic": "agility",
+          "subName": "${insertArray:type|sep=, }",
           "type": null,
-          "content": []
+          "content": [
+            "Umiejętność Zabezpieczenia używana jest do radzenia sobie z mechanicznymi zamkami i innymi fizycznymi systemami zabezpieczeń. Tworzy to granicę między nimi a systemami używającymi kodów i kogitatorów, które polegają na Użyciu Technologii. MG ustala odpowiednio Trudność Testu na podstawie złożoności mechanizmu. W większości przypadków pojedynczy Test wystarczy, ale szczególnie duże i skomplikowane systemy mogą wymagać Testu Przedłużonego. Zobacz @skill{techUse} w przypadku systemów łączących elementy mechaniczne i elektroniczne. Używanie Zabezpieczeń bez odpowiednich narzędzi jest niesamowicie trudne, przez co próby obejścia zamka czy innego fizycznego systemu zabezpieczeń bez @tool{multikey|multiklucza} czy zestawu innych odpowiednich narzędzi nakłada karę -20.",
+            {
+              "title": "Używane Jako:",
+              "content": "Akcja Przedłużona trwająca 1 minutę minus 10 sekund za każdy Stopień Sukcesu."
+            },
+            {
+              "type": "list",
+              "style": "unordered",
+              "title": "Specjalne Przypadki",
+              "content": [
+                {
+                  "title": "Strategiczne Wejście",
+                  "content": "Choć Zabezpieczenia skupiają się na fizycznym radzeniu sobie z systemami, mogą zostać użyte również do wyszukania ich słabych punktów. Ostrożne przestudiowanie budynku może ujawnić, że jeden z zamków jest słabszej jakości, czy że pola sensorów nie sięgają dziwnego zarośniętego szybu w tylnej ścianie. Umiejętność ta może pozwolić na ustalenie gdzie uderzyć, zamiast tylko jak. Można to również wykorzystać, by spróbować znaleźć słabe punkty własnych pozycji obronnych. Takie Testy Zabezpieczeń powinny być wykonywane przeciwko Spostrzegawczości zamiast Zręczności i wymagają @dice{1k5} godzin. MG może zwiększyć potrzebny czas w interwałach 1k5 godzin w przypadku szczególnie dużych i złożonych systemów."
+                }
+              ]
+            }
+          ]
         },
         {
           "name": "shadowing",
           "displayName": "śledzenie",
+          "subName": "${insertArray:type|sep=, }",
           "characteristic": "agility",
           "type": null,
-          "content": []
+          "content": [
+            "Śledzenie pozwala Bohaterom na podążanie za innymi, czy to pieszo, w pojazdach, czy nawet na pokładach wahadłowców i okrętów próżniowych. Kontrastuje z @skill{concealment|ukrywaniem się}, jako że zawiera składowe poruszania się i ciągłego wtapiania się w otoczenie. Przy poruszaniu się pieszo Śledzenie może polegać na używani fizycznych osłon, czy gęstych tłumów; w pojeżdzie może zależeć od wykorzystywania pozorowanych skrętów i chowania się za transporterem towarowym; w próżni może korzystać z asteroid i innych ciał niebieskich, a także obciążonych dużym ruchem linii lotu wokół ważnych układów. Testy Śledzenia zawsze są Przeciwstawne przeciwko Spostrzegawczości lub Śledztwu przeciwnika. Jeden udany Test pozwala podążać za celem przez 1 minutę bez wykrycia.",
+            {
+              "title": "Używane Jako:",
+              "content": "Akcja Przedłużona trwająca 1 minutę."
+            }
+          ]
         },
         {
           "name": "sleightOfHand",
           "displayName": "zwinne palce",
           "characteristic": "agility",
+          "subName": "${insertArray:type|sep=, }",
           "type": null,
-          "content": []
+          "content": [
+            "Bohaterowie mogą wykonywać Testy Zwinnych Palców, by wykonywać zadania łączące oszustwo ze zręcznością, na przykład wykonywanie sztuczek, przeszukiwanie kieszeni i niezauważone zgarnianie małych przedmiotów. MG ustala Trudność Testu, biorąc pod uwagę rozmiar obiektu i czujność otoczenia. Testy Zwinnych Palców zawsze są Przeciwstawne przeciwko Spostrzegawczości lub Śledztwu celu.",
+            "Bohater może użyć Zwinnych Palców zamiast @skill{gamble|hazardu}, by oszukiwać w grach losowych.",
+            {
+              "title": "Używane Jako:",
+              "content": "Akcja Pojedyncza lub Akcja Darmowa z karą -10."
+            }
+          ]
         },
         {
           "name": "speakLanguage",
           "displayName": "język",
+          "subName": "${insertArray:type|sep=, }",
           "footnotes": {
             "$name": 0
           },
           "characteristic": "intelligence",
           "type": null,
-          "content": []
+          "noGrid": true,
+          "groups": {
+            "eldar": "Eldarski",
+            "highGothic": "Wysoki Gotyk",
+            "kroot": "Kroot",
+            "lowGothic": "Niski Gotyk",
+            "ork": "Orkowy",
+            "technaLingua": "Techna–Lingua",
+            "tau": "T'au"
+          },
+          "content": [
+            "Język używany jest do komunikacji z innymi. Imperium ma niemal tyle samo języków, co układów gwiezdnych, ale nawet z taką różnorodnością większość populacji mówi lub chociaż rozumie jakiś wariant Niskiego Gotyku. W większości sytuacji Testy Umiejętności nie są potrzebne, jeżeli wszyscy mówią tym samym językiem, jednak komunikacja z tymi, którzy używają rzadkich dialektów, czy tajemniczych złożonych pojęć może wymagać Testu o odpowiedniej Trudności.",
+            {
+              "type": "list",
+              "style": "unordered",
+              "title": "Grupy Umiejętności:",
+              "content": [
+                {
+                  "title": "${insertValueAt:groups.eldar}",
+                  "content": "Choć żaden człowiek nie może nawet marzyć o zrozumieniu subtelnych zawiłości i tonów tego niesamowicie złożonego i starego języka, Umiejętność ta wystarcza do zrozumiałej komunikacji."
+                },
+                {
+                  "title": "${insertValueAt:groups.highGothic}",
+                  "content": "Oficjalny język Imperium, używany przez przedstawicieli, szlachtę, Ekleziarchat i uczestników negocjacji na wysokim szczeblu."
+                },
+                {
+                  "title": "${insertValueAt:groups.kroot}",
+                  "content": "Podobny do odgłosów wydawanych przez niektóre ptaki język Krootów jest dla ludzi niemal niemożliwy do naśladowania, ale z pewną dozą treningu i dobrym uchem może być zrozumiany."
+                },
+                {
+                  "title": "${insertValueAt:groups.lowGothic}",
+                  "content": "Powszechny język Imperium, którego używają niezliczone miliardy zwykłych obywateli."
+                },
+                {
+                  "title": "${insertValueAt:groups.ork}",
+                  "content": "Choć język ten składa się bardziej z pomruków i przemocy, ludzie mogą się go nauczyć, choć szanse na przeżycie konwersacji są wątpliwe."
+                },
+                {
+                  "title": "${insertValueAt:groups.technaLingua}",
+                  "content": "Ten binarny język, zoptymalizowany w kierunku szybkiego przekazu danych i programowania serwitorów, jest oficjalnym sposobem komunikacji Adeptus Mechanicus."
+                },
+                {
+                  "title": "${insertValueAt:groups.tau}",
+                  "content": "Język Imperium T'au, używany przez tę rasę i inne podległe jej gatunki."
+                }
+              ]
+            },
+            {
+              "title": "Używane Jako:",
+              "content": "Akcja Darmowa."
+            }
+          ]
         },
         {
           "name": "survival",
           "displayName": "sztuka przetrwania",
+          "subName": "${insertArray:type|sep=, }",
           "characteristic": "intelligence",
           "type": null,
-          "content": []
+          "content": [
+            "Sztuka Przetrwania pozwala Bohaterowi na przetrwanie dłuższych okresów czasu w niecodziennych lub obcych środowiskach. Jako że Kosmiczni Marines nie giną od wystawienia na żywioły, a ich implanty pozwalają pożywiać się nawet najbardziej z pozoru niejadalną florą i fauną, Umiejętność ta najczęściej wykorzystywana jest przez śmiertelnych i tych, którzy musieli się jej nauczyć przed selekcją do Zakonu. Bohater jest w stanie znajdować jadalne rośliny, polować na zwierzynę i określać, czy spożycie danej rzeczy jest bezpieczne. Może także konstruować szałasy dające schronienie przed pogodą z natywnych, improwizowanych materiałów, upewniając się, że znajdują się z dala od terenów łowieckich drapieżników. Trudność Testów zależy od środowiska; jałowa pustynia stanowi znacznie większe wyzwanie, niż bujna tropikalna puszcza. Umiejętność ta może być również używana w sztucznych środowiskach, takich jak sztuczne planety, głębie pod–ula, czy zakamarki okrętów. W takich środowiskach Umiejętność pozwala znaleźć miejsca, w których można bezpiecznie odpocząć z daleka od wyrzutów plazmy, a także rozeznać, które święte smary zapewniają także choć minimalną dawkę składników odżywczych."
+          ]
         },
         {
           "name": "tactics",
           "displayName": "taktyka",
+          "subName": "${insertArray:type|sep=, }",
           "footnotes": {
             "$name": 0
           },
+          "groups": {
+            "airCombat": "Walka Powietrzna",
+            "armoredTactics": "Taktyka Pancerna",
+            "assaultDoctrine": "Doktryna Szturmowa",
+            "defensiveDoctrine": "Doktryna Defensywna",
+            "orbitalDropProcedures": "Procedury Desantu Orbitalnego",
+            "reconAndStealth": "Zwiad i Rozpoznanie"
+          },
           "characteristic": "intelligence",
           "type": null,
-          "content": []
+          "content": [
+            "Taktyka to aplikacja teoretycznej wiedzy militarnej w praktyce, na polu bitwy. Różni się od Wiedzy tym, że zamiast szeroko zakrojonej teorii strategii związana jest z wydawaniem bezpośrednich rozkazów. Różni się też od @skill{command|dowodzenia}, które pozwala kierować poczynaniami żołnierzy, ale nie zapewnia wiedzy, jak najlepiej ich wykorzystać. Bohater może użyć Taktyki w dowolnym momencie, by ustalić najlepszy kierunek działań z militarnego punktu widzenia. Może to być cokolwiek, od najlepszej pozycji do przyparcia okopanego wroga przed szturmem, do wybrania miejsca na lądowanie pod ostrzałem. Porażka w Teście Taktyki (Doktryna Szturmowa) mogłaby na przykład oznaczać stanięcie twarzą w twarz z koncentracją wrogich sił, czy rozbicie się o silniejszą linię fortyfikacji.",
+            {
+              "type": "list",
+              "style": "unordered",
+              "title": "Grupy Umiejętności:",
+              "content": [
+                {
+                  "title": "${insertValueAt:groups.airCombat}",
+                  "content": "Zajmuje się potyczkami atmosferycznymi i na niskiej orbicie w celu uzyskania dominacji w powietrzu, a także bliskie wsparcie i bombardowanie maszynami szturmowymi."
+                },
+                {
+                  "title": "${insertValueAt:groups.armoredTactics}",
+                  "content": "Ogólne zrozumienie taktyk wojsk pancernych, najlepszych sposobów na użycie pojazdów pancernych, a także ich słabych stron."
+                },
+                {
+                  "title": "${insertValueAt:groups.assaultDoctrine",
+                  "content": "Wszystkie rodzaje szturmów, od szarż przeciwko bunkrom do desantów przez zbiorniki wodne."
+                },
+                {
+                  "title": "${insertValueAt:groups."
+                }
+              ]
+            }
+          ]
         },
         {
           "name": "techUse",
@@ -4353,10 +4522,10 @@
           ]
         },
         {
-          "displayName": "szturmowa",
+          "displayName": "sztorm",
           "name": "storm",
           "content": [
-            "Broń Szturmowa wystrzeliwuje pociski w szybkim tempie, często przez zastosowanie dwóch luf. Ta Właściwość podwaja liczbę wystrzałów i zużytej amunicji."
+            "Broń Sztormu wystrzeliwuje pociski w szybkim tempie, często przez zastosowanie dwóch luf. Ta Właściwość podwaja liczbę wystrzałów i zużytej amunicji."
           ]
         },
         {
@@ -4695,7 +4864,7 @@
           ]
         },
         {
-          "displayName": "bolter szturmowy astartes",
+          "displayName": "bolter sztormu astartes",
           "name": "stormBolter",
           "image": "https://static.wikia.nocookie.net/space-hulk-deathwing/images/b/b2/Storm-bolter-mk2.jpg",
           "class": "basic",
@@ -4718,7 +4887,7 @@
           "requisition": 20,
           "renown": 1,
           "content": [
-            "Boltery szturmowe powstały w Zakonach Adeptus Astartes i wciąż są używane niemal wyłącznie przez nie. Bronie te przypominają dwa boltery z jednym łożem i spustem. Mogą strzelać z intensywnością dorównującom ciężkiemu uzbrojeniu przy zachowaniu dużo mniejszych rozmiarów i masy. Bolter szturmowy do zasilania swojego podwójnego mechanizmu używa dwóch połączonych magazynków."
+            "Boltery sztormu powstały w Zakonach Adeptus Astartes i wciąż są używane niemal wyłącznie przez nie. Bronie te przypominają dwa boltery z jednym łożem i spustem. Mogą strzelać z intensywnością dorównującom ciężkiemu uzbrojeniu przy zachowaniu dużo mniejszych rozmiarów i masy. Bolter Sztormu do zasilania swojego podwójnego mechanizmu używa dwóch połączonych magazynków."
           ]
         }
       ]
@@ -6514,7 +6683,7 @@
             "Pełne pociski są w powszechnym użyciu w Imperium, przez co występują w wielu odmianach i kalibrach. Amunicja z broni jednego rodzaju nie może być użyta w innej, chyba że są wyprodukowane bardzo podobnie lub stosują się do jakiegoś rodzaju standardyzacji. Amunicja używana przez @ranged{autopistol|pistolety} i @ranged{autogun|karabiny automatyczne} zwykle jest wymienna, ale ta z której korzystają między innymi @ranged{assaultCannon|działka szturmowe} jest unikalna dla nich.",
             {
               "title": "Używany przez:",
-              "content": "karabiny i pistolety automatyczne, a także działa szturmowe i przyspieszające."
+              "content": "karabiny i pistolety automatyczne, a także działa szturmowe."
             }
           ]
         },
@@ -7684,7 +7853,7 @@
           "requisition": 15,
           "renown": 0,
           "content": [
-            "Te duże zestawy silników odrzutowych najczęściej doczepiane są do jednostek zasilających pancerzy Astartes. Użytkownik załącza silniki plecaka, by wznieść się wysoko w powietrze i spaść na przeciwnika z góry. Plecaki skokowe są także przydatne w omijaniu wysokich przeszkód i docieraniu do znajujących się daleko przeciwników. Większość Braci przechodzi szkolenie w używaniu plecaków podczas okresu, który spędzają w Drużynie Szturmowej, gdzie hałas i dodatkowe obciążenie nie mają znaczenia w porównaniu ze zwiększoną mobilnością pozwalającą szybciej znaleźć się w pierwszej linii.",
+            "Te duże zestawy silników odrzutowych najczęściej doczepiane są do jednostek zasilających pancerzy Astartes. Użytkownik załącza silniki plecaka, by wznieść się wysoko w powietrze i spaść na przeciwnika z góry. Plecaki skokowe są także przydatne w omijaniu wysokich przeszkód i docieraniu do znajujących się daleko przeciwników. Większość Braci przechodzi szkolenie w używaniu plecaków podczas okresu, który spędzają w Drużynie Szturmowej, gdzie hałas i dodatkowe obciążenie nie mają znaczenia w porównaniu ze zwiększoną mobilnością pozwalającą szybciej znaleźć się w pierwszej linii.",
             "Efektywne użycie Plecaka Skokowego wymaga umiejętności Pilotaż (Osobiste). Plecak pozwala opaść bezpiecznie z dowolnej wysokości, a także wykonać dowolną liczbę krótkich skoków. Taki skok umożliwia Bratu podwojenie swojej Szybkości i poruszanie się nie zważając na przeszkody, choć wymusza lądowanie przed końcem Tury. Alternatywnie można użyć maksymalnej mocy Plecaka, by odtworzyć efekty cechy @trait{flyer||12} na minutę. Po upływie tego czasu turbiny potrzebują kolejnej minuty na schłodzenie."
           ]
         },

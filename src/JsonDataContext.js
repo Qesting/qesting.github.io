@@ -1,7 +1,7 @@
 import { createContext } from "react";
 import { head, content } from '../assets/dw_new.rpc.json';
 
-const sections = [], tables = []
+const sections = [], tables = [], flatItems = [], flatSections = []
 
 function findInTree(sectionName, sectionSet = sections) {
     const divider = sectionName.indexOf("-")
@@ -23,6 +23,7 @@ for (let index = 0; index < content.length; index++) {
     const examined = content[index]
     if (examined?.type === "section") {
         sections.push(examined)
+        flatSections.push(examined)
     } else if (examined?.type === "table") {
         tables.push(examined)
     } else if (examined?.type === "group") {
@@ -37,11 +38,14 @@ for (let index = 0; index < content.length; index++) {
                     parent.children = []
                 }
                 parent.children.push(examinedSub)
+                flatSections.push(examinedSub)
             } else {
                 if (!parent?.items) {
                     parent.items = []
                 }
+                examinedSub.parentPath = examined.parentPath
                 parent.items.push(examinedSub)
+                flatItems.push(examinedSub)
             }
         }
     }
@@ -55,5 +59,7 @@ const sources = head.sources.map(source => {
 export const JsonDataContext = createContext({
     sections: sections,
     tables: tables,
-    sources: sources
+    sources: sources,
+    flatSections: flatSections,
+    flatItems: flatItems
 });

@@ -54,7 +54,7 @@ export const tableRegExp = regex`
     ^@table
     \{
         (?<name>\w+)
-        ( \| (?<display> [\d\p{Letter}\ ]+ ) )?
+        ( \| (?<display> [:\d\p{Letter}\ ]+ ) )?
     \}
     (
         \{ (?<source> [a-zA-Z]+ ) \}
@@ -65,7 +65,7 @@ export const tableInsertRegExp = regex`
     ^%table
     \{
         (?<name>\w+)
-        ( \| (?<display> [\d\p{Letter}\ ]+ ) )?
+        ( \| (?<display> [:\d\p{Letter}\ ]+ ) )?
     \}
     (
         \{ (?<source> [a-zA-Z]+ ) \}
@@ -88,7 +88,7 @@ export const sectionRegExp = regex`
     \{
         (?<item> < | >? \w+ )
         ( - (?<variant> \w+ ) )?
-        ( \| (?<display> [\d\p{Letter}\ ]* ) )?
+        ( \| (?<display> [:\d\p{Letter}\ ]* ) )?
         ( \| (?<value> [\d\p{Letter}\ ]+ ) )?
     \}
     ( \{ (?<source> [a-zA-Z]+ )\} )?$
@@ -96,6 +96,7 @@ export const sectionRegExp = regex`
 
 export const mathRegExp = regex`
     ^\^ (?<equation> .*? ) \^
+    ( \# (?<substituteText> .*?) \#)?
     ( \{ (?<modifiers> [a-z]+ ) \} )?
 `
 
