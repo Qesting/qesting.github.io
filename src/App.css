@@ -2,8 +2,14 @@
 @tailwind components;
 @tailwind utilities;
 
-section p:not(:has(> strong)) {
+section div.paragraph:not(:has(strong)) {
     @apply indent-4;
+}
+
+.paragraph, .p {
+    overflow-wrap: break-word;
+    hyphens: auto;
+    @apply text-justify;
 }
 
 tr {
@@ -67,5 +73,17 @@ input[type="checkbox"] {
 }
 
 img.round {
-    //filter: url("#filter-radius");
+    filter: url("#filter-radius");
+}
+
+.smallcaps {
+    font-variant-caps: small-caps;
+}
+
+:is(h2, h4):not(.nocaps) {
+    @apply smallcaps;
+}
+
+button + .copy-item-link {
+    @apply !left-6;
 }

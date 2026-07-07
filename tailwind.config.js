@@ -9,10 +9,13 @@ export default {
     extend: {
       colors: {
         accent: "oklch(0.457 0.24 277.023)",
-        accentDark: "oklch(0.5524 0.2386 277.117)"
+        accentDark: "oklch(0.5524 0.2386 277.117)",
+        accentLight: "oklch(62.3% 0.214 259.815)"
       }
     },
   },
-  plugins: []
+  plugins: [
+    require('@tailwindcss/container-queries')
+  ]
 }
 
