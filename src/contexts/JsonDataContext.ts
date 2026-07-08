@@ -74,7 +74,7 @@ for (let index = 0; index < content.length; index++) {
       castExamined.elementId = makeItemElementId(castExamined)
       sections.push(castExamined)
     } else {
-      // an ungroupped subsection
+      // an ungrouped subsection
       const parent = findInTree(
         castExamined.parentPath ?? '',
         { children: sections },

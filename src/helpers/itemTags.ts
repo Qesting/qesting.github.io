@@ -149,7 +149,7 @@ export function findAllTags<Type extends RPCItemTag>(
         : { name: tag }
       : tag
   return item.tags?.filter((t) => {
-    const tp = parseTag(t)
+    parseTag(t);
     for (let key in workingTag) {
       if (workingTag[key] !== t[key]) return false
     }

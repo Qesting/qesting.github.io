@@ -34,9 +34,6 @@ import { JsonDataType, JsonDataContext } from "../../contexts/JsonDataContext"
 import { StateFunctionsContext } from "../../contexts/StateFunctionsContext"
 import CopyItemLink from "../CopyItemLink"
 import SourceName from "../SourceName"
-
-const rofKeys = ["single", "burst", "auto"]
-
 const characteristicKeys = [
   "weaponSkill",
   "ballisticSkill",
@@ -331,6 +328,7 @@ export default function Vehicle({ vehicle }: { vehicle: RPCVehicle }) {
           <img
             src={vehicle.image}
             className="w-full h-full object-contain round"
+            alt=""
           />
         </div>
       )}

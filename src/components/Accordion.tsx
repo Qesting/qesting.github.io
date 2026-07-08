@@ -20,7 +20,7 @@ export default function Accordion({
   const depth: number = useContext(AccordionDepthContext)
   const { getHiddenSources } = useContext(StateFunctionsContext)
 
-  let bgColor
+  let bgColor: string
   switch (depth) {
     case 0: {
       bgColor = "bg-gray-200 dark:bg-gray-800"

@@ -90,7 +90,7 @@ function Parser({
 
   const formatted = reactStringReplace(
     capitalized,
-    /(!\[[a-z]+\]\#.+?\#)/g,
+    /(!\[[a-z]+]#.+?#)/g,
     (match, index) => {
       const { flags, inner } = match?.match(formatRegExp)?.groups ?? {}
       const flagArray = flags.split("")

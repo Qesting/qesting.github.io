@@ -1,4 +1,4 @@
-import { ChangeEvent, useEffect, useRef } from "react"
+import { ChangeEvent, useEffect, useRef, Dispatch, SetStateAction } from "react"
 import {
   CheckSquareFill,
   XCircleFill,
@@ -23,9 +23,9 @@ export default function SourceDialog({
 }: {
   jsonData: JsonDataType
   open: boolean
-  setOpen: React.Dispatch<React.SetStateAction<boolean>>
+  setOpen: Dispatch<SetStateAction<boolean>>
   hiddenSources: string[]
-  setHiddenSources: React.Dispatch<React.SetStateAction<string[]>>
+  setHiddenSources: Dispatch<SetStateAction<string[]>>
 }) {
   const ref = useRef<HTMLDialogElement>(null)
 

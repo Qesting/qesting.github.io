@@ -54,7 +54,7 @@ function Item({ data }: { data: RPCItem }) {
             className="relative size-[20rem] p-2 mx-auto pb-3 after:w-full after:h-px after:absolute after:bottom-1 after:bg-current after:left-0 after:right-0"
             tabIndex={-1}
           >
-            <img src={image} className="w-full h-full object-contain round" />
+            <img src={image} className="w-full h-full object-contain round" alt=""/>
           </div>
         )}
         {

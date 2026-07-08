@@ -1,4 +1,4 @@
-import { useEffect, useRef } from "react"
+import { useEffect, useRef, Dispatch, SetStateAction } from "react"
 import { XLg } from "react-bootstrap-icons"
 import { DiceResult } from "../../helpers/rollDice"
 
@@ -7,7 +7,7 @@ export default function DiceDialog({
   setDiceResult,
 }: {
   diceResult: DiceResult|null
-  setDiceResult: React.Dispatch<React.SetStateAction<DiceResult|null>>
+  setDiceResult: Dispatch<SetStateAction<DiceResult|null>>
 }) {
   const ref = useRef<HTMLDialogElement>(null)
 

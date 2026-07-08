@@ -1,9 +1,8 @@
-import { useContext, useState } from "react"
+import { useState } from "react"
 import {
   Clipboard2Fill as BIconClipboard2Fill,
   Clipboard2CheckFill as BIconClipboard2CheckFill,
 } from "react-bootstrap-icons"
-import { JsonDataContext } from "../contexts/JsonDataContext"
 import { RPCItem, RPCSection, rootParent } from "../helpers/types"
 
 interface CopyItemLinkProps {
@@ -20,7 +19,6 @@ export default function CopyItemLink({ item }: CopyItemLinkProps) {
       ? `>${item.name}`
       : item.name
     : null
-  const { rootSource } = useContext(JsonDataContext)
   async function handleClick() {
     await self.navigator.clipboard.writeText(
       `${self.location.origin}/#/${section?.name + "|" + section?.source}${item ? "/" + itemLink + "|" + item.source : ""}`,

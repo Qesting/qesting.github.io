@@ -1,3 +1,5 @@
+import {DamageType} from "./types";
+
 export const locations: Record<string, string> = {
   head: "Głowa",
   body: "Korpus",
@@ -30,7 +32,7 @@ export const weaponClass: Record<string, string> = {
   melee: "Biała",
   placed: "Podkładana",
 }
-export const damageType: Record<string, string> = {
+export const damageType: Record<DamageType, string> = {
   explosion: "Wybuch",
   energy: "Energia",
   impact: "Uderzenia",

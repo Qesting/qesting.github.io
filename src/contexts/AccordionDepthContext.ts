@@ -1,3 +1,3 @@
-import { createContext } from "react"
+import { createContext, Context } from "react"
 
-export const AccordionDepthContext: React.Context<number> = createContext(0);
+export const AccordionDepthContext: Context<number> = createContext(0);

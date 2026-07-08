@@ -1,4 +1,4 @@
-import { useEffect, useMemo, useRef, useState } from "react"
+import { useEffect, useMemo, useRef, useState, Dispatch, SetStateAction } from "react"
 import { XCircleFill, XLg } from "react-bootstrap-icons"
 import { RPCItem } from "../../helpers/types"
 import { ItemLinkButton } from "../LinkButton"
@@ -13,7 +13,7 @@ export default function SearchDialog({
 }: {
   jsonData: JsonDataType
   open: boolean
-  setOpen: React.Dispatch<React.SetStateAction<boolean>>
+  setOpen: Dispatch<SetStateAction<boolean>>
 }) {
   const [search, setSearch] = useState<string>("")
   const ref = useRef<HTMLDialogElement>(null)

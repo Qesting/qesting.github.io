@@ -144,12 +144,9 @@ function App() {
               ) : (
                 <>
                   <h1 className="py-2 text-4xl mb-4 text-center relative after:w-full after:h-px after:absolute after:bottom-0 after:bg-current after:left-0 after:right-0">
-                    Codex Vigilis - Kompendium Deathwatch - wita!
+                    Codex Vigilis - Kompendium Deathwatch
                   </h1>
                   <h2 className="text-2xl px-20 text-center nocaps">
-                    Na co czekasz? Wybierz kategorię bądź tabelę powyżej i
-                    dowiedz się wszystkiego, co potrzebne przy zwalczaniu wrogów
-                    ludzkości. Za Imperatora!
                   </h2>
                 </>
               )}

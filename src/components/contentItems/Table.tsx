@@ -91,9 +91,9 @@ export default function Table({
     return passedData
       ?.filter((e) => !e?.noTable)
       .map((e, index) => {
-        const eIsItem = objectIsJsonItem(e) && jsonItemIsItem(e)
+        objectIsJsonItem(e) && jsonItemIsItem(e);
         return (
-          <tr key={index}>
+            <tr key={index}>
             <DataProviderContext.Provider value={e}>
               {keys.map((k, jndex) => (
                 <td
@@ -367,7 +367,7 @@ export default function Table({
                   text={(typeof footnotes[e] === "string"
                     ? footnotes[e]
                     : footnotes[e].content
-                  ).replace(/\{no-daggers\|.*?\}/, "")}
+                  ).replace(/\{no-daggers\|.*?}/, "")}
                 />
               }
             </td>

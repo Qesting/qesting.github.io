@@ -65,7 +65,7 @@ export function textParser(
 
   const capitalized = cap ? capitalize(mathTagsReplaced) : mathTagsReplaced
 
-  return capitalized.replaceAll(generalRegExp, (match, index) => {
+  return capitalized.replaceAll(generalRegExp, (match) => {
     let matchData: RegExpMatchArray|null
     if ((matchData = match.match(diceRegExp))) {
       const { formula } = matchData?.groups ?? {}

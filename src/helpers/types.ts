@@ -77,7 +77,7 @@ export type JsonItem = {
 
 export function objectIsJsonItem(obj: { [key: string]: any }): obj is JsonItem {
   return (
-    (obj !== null && obj.parentPath) || obj.source || obj.content || obj.type
+    obj !== null && (obj.parentPath || obj.source || obj.content || obj.type)
   )
 }
 
@@ -502,5 +502,5 @@ export type RPCSource = {
   index: number
   color: string
 
-  visible: boolean // not in json
+  visible: boolean // not in JSON
 }

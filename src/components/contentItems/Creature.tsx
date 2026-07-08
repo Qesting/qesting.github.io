@@ -1,7 +1,6 @@
 import {
   Characteristic,
   itemIsWeapon,
-  rootParent as rootSection,
   RPCCreature,
   WeaponRef,
 } from "../../helpers/types"
@@ -183,6 +182,7 @@ export default function Creature({ creature }: { creature: RPCCreature }) {
           <img
             src={creature.image}
             className="w-full h-full object-contain round"
+            alt=""
           />
         </div>
       )}

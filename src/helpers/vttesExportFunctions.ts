@@ -16,7 +16,6 @@ import {
   findAllTags,
   findAnyTag,
   findFirstTag,
-  hasAnyTag,
   hasTag,
   RPCCombiTag,
   RPCGainQualityTag,
@@ -182,7 +181,9 @@ export function meleeWeapon(
         "meleeweapontype",
         typeof item.damage === "string"
           ? item.damage
-          : damageType[item.damage.type].charAt(0),
+          : typeof item.damage.type === 'string'
+              ? damageType[item.damage.type].charAt(0)
+              : item.damage.type.map(e => damageType[e].charAt(0)).join("/")
       ),
       makeRepeatingAttribute(
         type,
@@ -338,7 +339,9 @@ export function rangedWeapon(
         "rangedweapontype",
         typeof item.damage === "string"
           ? item.damage
-          : damageType[item.damage.type].charAt(0),
+          : typeof item.damage.type === 'string'
+            ? damageType[item.damage.type].charAt(0)
+            : item.damage.type.map(e => damageType[e].charAt(0)).join("/"),
       ),
       makeRepeatingAttribute(
         type,

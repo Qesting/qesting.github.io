@@ -1,15 +1,8 @@
-import { AlreadyResolvedType } from "../contexts/AlreadyResolvedContext"
-import { JsonDataType } from "../contexts/JsonDataContext"
+import {AlreadyResolvedType} from "../contexts/AlreadyResolvedContext"
+import {JsonDataType} from "../contexts/JsonDataContext"
 import capitalize from "./capitalize"
-import { mathRegExp, replacerRegExp } from "./ParserRegExp"
-import {
-  RPCSection,
-  RPCItem,
-  Alias,
-  RPCSource,
-  RPCTable,
-  itemIsSection,
-} from "./types"
+import {mathRegExp, replacerRegExp} from "./ParserRegExp"
+import {Alias, itemIsSection, RPCItem, RPCSection, RPCTable,} from "./types"
 
 export interface ResolveItemDefault {
   (sectionName: string, itemName: string, source: string): RPCItem|null
@@ -21,13 +14,12 @@ export interface GetFieldValueDefault {
 
 export function childrenAndSelf(
   section: RPCSection,
-  topLevel = true,
 ): RPCSection[] {
   return section.children
     ? [section].concat(
         ...section.children
           .filter((c) => itemIsSection(c))
-          .map((c) => childrenAndSelf(c, false)),
+          .map((c) => childrenAndSelf(c)),
       )
     : [section]
 }
@@ -119,16 +111,14 @@ export function prepare(
     ? noOrphanLinkers.replace("$parent", provider.displayName)
     : noOrphanLinkers
 
-  const indexReplaced = parentNameReplaced.replace(
-    /\$index(?:\:\d+)?/,
-    (match) => {
-      const startIndex = match.indexOf(":")
-      const start = startIndex !== -1 ? +match.substring(startIndex + 1) : 0
-      return (itemIndex ?? 0 + start).toString()
-    },
+  return parentNameReplaced.replace(
+      /\$index(?::\d+)?/,
+      (match) => {
+        const startIndex = match.indexOf(":")
+        const start = startIndex !== -1 ? +match.substring(startIndex + 1) : 0
+        return ((itemIndex ?? 0) + start).toString()
+      },
   )
-
-  return indexReplaced
 }
 
 /**
@@ -136,6 +126,7 @@ export function prepare(
  *
  * @param {Object} obj
  * @param {String} fieldPath
+ * @param resolveItemDefault
  */
 export function getFieldValue(
   obj: { [key: string]: any },
@@ -162,7 +153,7 @@ export function replaceText(
   provider: { [key: string]: any },
   getFieldValue: GetFieldValueDefault,
 ): string {
-  return text.replace(/(\$\{.*?[^\\]\})/g, (match) => {
+  return text.replace(/(\$\{.*?[^\\]})/g, (match) => {
     const { operation, field, optString } =
       match?.match(replacerRegExp)?.groups ?? {}
     const opts: { [key: string]: any } = {}
@@ -188,7 +179,7 @@ export function replaceText(
     const trueField = field.startsWith("#")
       ? fieldParts.slice(2).join(".")
       : field
-    let result
+    let result: any
     try {
       let section = opts?.section ?? passedSection
       const divider = section.indexOf("-")
