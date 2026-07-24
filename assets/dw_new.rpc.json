@@ -39,7 +39,7 @@
       "type": "section",
       "name": "implant",
       "displayName": "implanty astartes",
-      "display": "description",
+      "display": ["description", "items"],
       "selectable": false,
       "table": {
         "$name": "nazwa",
@@ -55,7 +55,7 @@
           "type": "section",
           "name": "firstborn",
           "displayName": "implanty pierworodnych",
-          "display": "both",
+          "display": "all",
           "selectable": false,
           "content": []
         },
@@ -63,7 +63,7 @@
           "type": "section",
           "name": "primaris",
           "displayName": "implanty primaris",
-          "display": "both",
+          "display": "all",
           "selectable": false,
           "content": [],
           "source": "EIn"
@@ -197,7 +197,7 @@
       "type": "section",
       "displayName": "charakterystyki",
       "name": "characteristic",
-      "display": "description",
+      "display": ["description", "items"],
       "content": [
         "%quote{„Wśród setki ludzi może nie znaleźć się ani jeden nadający się na członka Adeptus Astartes. Wśród setki Kosmicznych Marines może nie znaleźć się ani jeden nadający się na członka Straży Śmierci”.|Brand, Kapitan Straży}",
         "Charakterystyki reprezentują czyste umiejętności Bohatera w różnych polach fizycznych i mentalnych w skali od 0 do 100. Charakterystyki są ważne z różnych powodów, ale głównie dlatego, że pokazują zdolność do uzyskania sukcesu w konkretnych sytuacjach. Jako że sukces uzyskuje się rzucając poniżej wartości danej Charakterystyki, im wyższa jest ta wartość, tym większa szansa na sukces."
@@ -344,7 +344,7 @@
       "name": "skill",
       "displayName": "umiejętności",
       "footnotes": ["Grupa Umiejętności"],
-      "display": "description",
+      "display": ["description", "items"],
       "table": {
         "$name": "nazwa",
         "${insertLinkTo:characteristic|section=characteristic}": "charakterystyka",
@@ -413,7 +413,7 @@
           "type": "section",
           "displayName": "umiejętności podstawowe",
           "name": "basic",
-          "display": "both",
+          "display": "all",
           "content": [
             "Podstawowe zdolności i Charakterystyki Bohatera pozwalają podejmować nieporadne próby wykorzystywania Umiejętności Podstawowych. Oznacza to, że to podejmowania takich prób Bohater nie musi być wytrenowany w danej Umiejętności. W takim przypadku wykonuje się Test używając połowy wartości odpowiedniej Charakterystyki zaokrąglając w dół. Dzielenie to wykonuje się przed dodaniem jakichkolwiek modyfikatorów. Z pewną dozą szczęścia można uzyskać sukces, choć Bohater nie ma takich samych zdolności jak osoba z odpowiednim wyszkoleniem."
           ]
@@ -422,7 +422,7 @@
           "type": "section",
           "displayName": "umiejętności zaawansowane",
           "name": "advanced",
-          "display": "both",
+          "display": "all",
           "content": []
         }
       ]
@@ -1940,7 +1940,7 @@
       "type": "section",
       "name": "talent",
       "displayName": "talenty",
-      "display": "both",
+      "display": "all",
       "selectable": false,
       "footnotes": ["Grupa Talentów."],
       "table": {
@@ -2549,7 +2549,7 @@
               "title": "Wymagania:",
               "content": "${insert:prerequisite}"
             },
-            "Choć bioniczna struktura ciała Bohatera już wcześniej robiła wrażenie, teraz zostaje wyposażona w połączony z duchem maszyny zestaw żyroskopów sterowany przez system celowniczy. Bohater zyskuje Cechę @trait{autoStabilized}."
+            "Choć bioniczna struktura ciała Bohatera już wcześniej robiła wrażenie, teraz zostaje wyposażona w połączony z duchem maszyny zestaw żyroskopów sterowany przez system celowniczy. Bohater zyskuje Cechę @trait{autoStabilised}."
           ]
         },
         {
@@ -4136,7 +4136,7 @@
       "type": "section",
       "name": "trait",
       "displayName": "cechy",
-      "display": "both",
+      "display": "all",
       "selectable": false,
       "table": {
         "$name": "cecha",
@@ -4168,7 +4168,7 @@
           ]
         },
         {
-          "name": "autoStabilized",
+          "name": "autoStabilised",
           "displayName": "autostabilizowany",
           "shortDesc": "Zawsze liczy się jako @action{brace|przygotowany}.",
           "content": [
@@ -4678,7 +4678,7 @@
       "type": "section",
       "displayName": "własności",
       "name": "quality",
-      "display": "description",
+      "display": ["description", "items"],
       "selectable": false,
       "content": []
     },
@@ -4744,7 +4744,7 @@
         },
         {
           "displayName": "stabilizowany żyroskopowo",
-          "name": "gyroStabilized",
+          "name": "gyroStabilised",
           "content": [
             "Broń posiada małą jednostkę samostabilizacji, która zwykle znajduje się blisko wylotu lufy. Nie jest ona tak dokładna jak @attachment{suspensor}, ale jest w stanie utrzymać broń pod optymalnym kątem. Broń Stabilizowana Żyroskopowo nigdy nie liczy się jako strzelająca do celu poza Długim Zasięgiem (zwyczajny zasięg maksymalny pozostaje bez zmian). Broń Ciężka z tą właściwością powoduje karę za brak przygotowania do strzału do -20."
           ]
@@ -4906,7 +4906,7 @@
       "type": "section",
       "displayName": "uzbrojenie zasięgowe",
       "name": "ranged",
-      "display": "description",
+      "display": ["description", "items"],
       "table": {
         "$name": "nazwa",
         "$class": "klasa",
@@ -4959,7 +4959,7 @@
           "type": "section",
           "displayName": "boltowe",
           "name": "bolt",
-          "display": "both",
+          "display": "all",
           "tags": ["weapon:ranged", "usesAmmo:bolt"],
           "content": [
             "Jeżeli zwykły obywatel Imperium wyobraża sobie pancerz wspomagany, kiedy myśli o wyglądzie Marine, to myśl o jego furii przywołuje obraz boltera. Potężne i uniwersalne, bronie boltowe są ulubionym uzbrojeniem Adeptus Astartes, a każdy rekrut otrzymuje taką, kiedy tylko zostanie Zwiadowcą. Większość modeli ma swoje początki właśnie wśród Marines, mimo że istnieją mniejsze, gorsze wersje, będące skarbami dla niektórych oficerów i szlachty. Głośne i brutalne bronie boltowe zawsze są przerażające, ale nikt nie dzierży ich z tak zabójczą dokładnością jak Astartes.",
@@ -4970,7 +4970,7 @@
           "type": "section",
           "displayName": "plazmowe",
           "name": "plasma",
-          "display": "both",
+          "display": "all",
           "tags": ["weapon:ranged", "usesAmmo:plasma"],
           "content": [
             "Tajemnice broni plazmowej są niemal zapomniane poza Adeptus Astartes, a nawet wśród nich broń ta jest rzadka. Najczęściej spotykana jest wśród Mrocznych Aniołów, którzy po swoim Założeniu zachowali dużą ilość broni plazmowej, a także sekrety jej wytwarzania.",
@@ -4983,7 +4983,7 @@
           "displayName": "melta",
           "name": "melta",
           "tags": ["weapon:ranged", "usesAmmo:melta"],
-          "display": "both",
+          "display": "all",
           "content": [
             "Bronie melta emitują niszczycielsko skoncentrowane uderzenia gorąca, które efektywne są jednak tylko na krótkim dystansie, ale mogą przepalić niemal dowolny materiał. Większość typów melty wystrzeliwuje strumienie utrzymywanych pod wysokim ciśnieniem gazów pobieranych z pojemnika paliwowego, które doprowadzane są do niestabilnego stanu molekularnego przez znajdujący się wewnątrz reaktor. Wystrzałom z melty towarzyszy charakterystyczny syk powodowany przez gotowanie się i parowanie zawieszonych w powietrzu kropel wody, a następnie przeraźliwy ryk emitowany, kiedy promień zmienia cel w zwęglone szczątki albo kupę stopionego żużlu.",
             "Melta to znakomita broń przeciwpancerna i mało który pojazd może wytrzymać spotkanie z nią. Bronie melta Astartes zadają dodatkowe @dice{1k10} Obrażeń na Krótkim Dystansie i bliżej By używać broni melta Bohater musi posiadać Talent @talent{pistolTraining||melta}, @talent{basicWeaponTraining||melta}, lub @talent{heavyWeaponTraining||melta}."
@@ -4994,7 +4994,7 @@
           "displayName": "miotacze ognia",
           "name": "flame",
           "tags": ["weapon:ranged", "usesAmmo:flame"],
-          "display": "both",
+          "display": "all",
           "content": [
             "Jak podpowiada nazwa, bronie te miotają strumienie płomieni w cel i zdolne są razić naraz wiele małych celów. Z tego powodu często wykorzystywane są na misjach w Występie Orfeusz, gdzie gromadzą się Tyranidy.",
             "Miotacze używają paliwa, które zbiorczo nazywa się Prometium. Na planetach z niższym poziomem technologii mogą to być skażone innymi chemikaliami mieszanki, ale bronie Astartes używają tylko najczystszych i najbardziej skoncentrowanych przepisów, co daje stale lepsze rezultaty. Większość modeli używa paliwa zapalanego przez mały płomień znajdujący się pod lufą, ale zdarzają się też takie, które używają binarnych hipergolowych mieszanek, które zapalają się same w kontakcie z powietrzem. Po naciśnięciu spustu strumień płomieni wydobywa się z lufy, tworząc piekło, przed którym nie chroni nawet woda, pozostawiając wrogów zmuszonych do znalezienia sposobu na ugaszenie ognia.",
@@ -5007,7 +5007,7 @@
           "displayName": "palne",
           "name": "solid",
           "tags": ["weapon:ranged", "usesAmmo:solid"],
-          "display": "both",
+          "display": "all",
           "content": [
             "Mimo że kulomioty są niesamowicie rozpowszechnione w imperium, rzadko znajdują miejsce w Zakonach Marines. Większość ras obcych także ma swoje wersje, jako że zasady działania i wytwarzanie tych broni są dość proste."
           ]
@@ -5016,7 +5016,7 @@
           "type": "section",
           "displayName": "laserowe",
           "name": "las",
-          "display": "both",
+          "display": "all",
           "tags": ["weapon:ranged", "usesAmmo:las"],
           "content": [
             "Broń laserowa jest zdecydowanie najpowszechniejsza w Imperium jako przydziałowe uzbrojenie nieprzeliczonych żołnierzy Gwardii Imperialnej. Ich wzór STC jest powszechnie znany, a niezawodność i łatwość użycia czynią z niej idealną broń dla Młota Imperatora. Broń laserową można znaleźć na niemal każdej planecie, nawet poza Imperium, i wśród większości plemion obcych. Nawet z dostępem do najbardziej zaawansowanych narzędzi w zbrojowniach ludzkości, Astartes wykorzystują technologię laserową w limitowany, ale niszczycielski sposób.",
@@ -5028,7 +5028,7 @@
           "type": "section",
           "displayName": "wyrzutnie",
           "name": "launcher",
-          "display": "both",
+          "display": "all",
           "tags": ["weapon:ranged"],
           "content": [
             "Ze swoją nadludzką siłą Astartes są w stanie rzucać przedmiotami dalej niż wynosi zasięg skuteczny niektórych Imperialnych broni. Z tego powodu granatniki stanowią broń dodatkową, zwykle przymocowaną do @ranged{astartesBolter|boltera} lub znajdującą się w innym wygodnym miejscu. Wyrzutnie rakiet są zdecydowanie częściej wybierane, kiedy dana Misja wymaga dużej siły ognia na długim dystansie. Pobranie wyrzutni zawiera też wystarczająco pocisków @grenade{astartesFragGrenade|odłamkowych} i @grenade{astartesKrakGrenade|krak}, aby załadować ją do pełna. Dodatkowa amunicja, jak i ta należąca do innych typów, musi zostać Pobrana w normalny sposób.",
@@ -5039,7 +5039,7 @@
           "type": "section",
           "displayName": "egzotyczne",
           "name": "exotic",
-          "display": "both",
+          "display": "all",
           "content": [
             "Straż Śmierci ma dostęp do uzbrojenia tak rzadkiego, że zwyczajny obywatel Imperium nie byłby sobie go nawet w stanie wyobrazić. Niektóre z nich są przykładami starożytnej technologii, której produkcję i sposoby utrzymania teraz rozumieją już tylko Zbrojmistrze Adeptus Astartes, inne są unikalne dla Straży i lepiej nie zastanawiać się zbyt długo nad ich pochodzeniem. Bronie egzotyczne są nie tylko niesamowicie rzadkie, ale i szczególnie trudne w użyciu. Takie uzbrojenie wymaga specjalistycznego wyszkolenia i obsługi każdego rodzaju należy się nauczyć za pomocą osobnego Talentu z grupy @talent{exoticWeaponTraining}."
           ]
@@ -5295,7 +5295,7 @@
       "type": "section",
       "displayName": "boltery rodziny cawl",
       "name": "cawlBolter",
-      "display": "both",
+      "display": "all",
       "parentPath": "ranged-bolt",
       "source": "EIn"
     },
@@ -7016,7 +7016,7 @@
       "type": "section",
       "displayName": "granaty i pociski",
       "name": "grenade",
-      "display": "both",
+      "display": "all",
       "table": {
         "$name": "nazwa",
         "$class": "klasa",
@@ -7817,7 +7817,7 @@
       "displayName": "broń biała",
       "tags": ["weapon:melee"],
       "name": "melee",
-      "display": "description",
+      "display": ["description", "items"],
       "table": {
         "$name": "nazwa",
         "$class": "klasa",
@@ -7843,7 +7843,7 @@
           "type": "section",
           "displayName": "łańcuchowe",
           "name": "chain",
-          "display": "both",
+          "display": "all",
           "content": [
             "Różne warianty broni tego rodzaju znaleźć można w całej galaktyce. Proste w swojej zasadzie działania, bronie takie używają prowadnic, po których przesuwają się poruszające się szybko łańcuchy z poszarpanymi metalowymi zębami. Po odpaleniu silnik oznajmia głośnym rykiem swoją gotowość i wysyłając ostrzeżenie wszystkim wrogom Imperatora. Najlżejsze zahaczenie jest w stanie rozrywać odsłonięte ciało, a porządne uderzenie przebije się przez większość pancerzy. By używać broni łańcuchowej, Bohater musi posiadać talent Trening w Broni Białej (Łańcuchowe)."
           ]
@@ -7852,7 +7852,7 @@
           "type": "section",
           "displayName": "energetyczne",
           "name": "power",
-          "display": "both",
+          "display": "all",
           "content": [
             "Broń energetyczna wytwarza wokół ostrza lub obucha specjalne pole zakłócające wiązania materii, dzięki czemu może przecinać z łatwością pancerne płyty lub uwalniać fale energii przy uderzeniu. W teorii każdą broń można przerobić na energetyczną przy zastosowaniu odpowiedniej technologii, chociaż w praktyce Astartes zwykle używają konkretnego zestawu. Widok anioła zemsty szarżującego na swojego przeciwnika sam w sobie nie jest czymś, co należy traktować lekko, ale kiedy jego broń lub pięść nagle zabłyśnie elektrycznymi wyładowaniami, staje się on czymś naprawdę inspirującym — lub przerażającym, zależnie po której stronie się znajdujesz. Broni energetycznej z uszkodzonym lub wyłączonym generatorem pola wciąż można używać jako zwykłej broni białej."
           ]
@@ -7861,7 +7861,7 @@
           "type": "section",
           "displayName": "psioniczne",
           "name": "force",
-          "display": "both",
+          "display": "all",
           "content": [
             "Obwody siatki psionicznej w tych broniach podobno zostały stworzone przez samego Imperatora w czasach, kiedy jeszcze chodził między śmiertelnikami. Uzbrojenie takie łączy te obwody z psychoreaktywnymi kryształami używanymi w @wargear{psychicHood|kapturach psionicznych}, dzięki czemu użytkownik może skupić swoją mentalną moc w pole podobne do tego wytwarzanego przez broń energetyczną. Bron psioniczna przybiera wiele form o różnym stopniu wyspecjalizowania; najbardziej znaną są bronie Nemesis używane przez Szarych Rycerzy. Najłatwiej Kronikarzowi jest zdobyć psioniczny miecz lub kostur.",
             "Jeżeli broń taka użyta jest przez osobę niebędącą psykerem, liczy się ona jako Zwykła broń wykonana dla rozmiaru Astartes i stosuje się do wszystkich zasad znajdujących się w profilu. Natomiast w rękach kogokolwiek posiadającego Poziom Mocy staje się dużo bardziej niebezpieczna. Za każdy punkt Poziomu Mocy Obrażenia i Penetracja broni rosną o 1. Na przykład miecz psioniczny używany przez psykera z PM 3 zadawałby @dice{1k10+5} (plus Siła} Obrażeń z Penetracją 5.",
@@ -7872,7 +7872,7 @@
           "type": "section",
           "displayName": "tradycyjne",
           "name": "traditional",
-          "display": "both",
+          "display": "all",
           "content": [
             "Zwyczajna broń biała jest nadal powszechna w Imperium i poza nim; w większej części targanej wojną galaktyki nie do pomyślenia jest wyruszać gdziekolwiek bez takich środków obrony. Kategoria ta zawiera wszystkie bronie od prymitywnych mieczy używanych przez biednych Zwyczajnych aż do wyrafinowanych ostrzy noży Astartes."
           ]
@@ -8457,7 +8457,7 @@
       "type": "section",
       "displayName": "ulepszenia broni",
       "name": "attachment",
-      "display": "both",
+      "display": "all",
       "table": {
         "$name": "nazwa",
         "weight": "masa",
@@ -8521,7 +8521,7 @@
           "requisition": 25,
           "renown": 0,
           "content": [
-            "Ponieważ Szwadrony Śmierci często wysyłane są w pole bez wsparcia, potrzebują one dużo większej elastyczności niż inne jednostki. Antygrawitacyjne płyty suspensora dołącza się do broni lub innego elementu wyposażenia, przez co staje się ono łatwiejsze du użycia. Operacja taka zmniejsza masę broni o połowę, dzięki czemu broni Ciężkich można używać w szerszym zakresie sytuacji. Podczas strzelania z broni z suspensorem dzierżący ją Bohater zyskuje Cechę @trait{autoStabilized}, co powoduje, że zawsze liczy się jako Przygotowany, może strzelić Serią lub Ogniem Ciągłym używając Akcji Zwykłej i nigdy nie otrzymuje kar za ruch i strzał.",
+            "Ponieważ Szwadrony Śmierci często wysyłane są w pole bez wsparcia, potrzebują one dużo większej elastyczności niż inne jednostki. Antygrawitacyjne płyty suspensora dołącza się do broni lub innego elementu wyposażenia, przez co staje się ono łatwiejsze du użycia. Operacja taka zmniejsza masę broni o połowę, dzięki czemu broni Ciężkich można używać w szerszym zakresie sytuacji. Podczas strzelania z broni z suspensorem dzierżący ją Bohater zyskuje Cechę @trait{autoStabilised}, co powoduje, że zawsze liczy się jako Przygotowany, może strzelić Serią lub Ogniem Ciągłym używając Akcji Zwykłej i nigdy nie otrzymuje kar za ruch i strzał.",
             {
               "title": "Dozwolone:",
               "content": "jakakolwiek broń Ciężka."
@@ -8680,7 +8680,7 @@
       "type": "section",
       "displayName": "amunicja",
       "name": "ammo",
-      "display": "both",
+      "display": "all",
       "table": {
         "$name": "nazwa",
         "requisition": "pobranie",
@@ -8824,7 +8824,7 @@
       "type": "section",
       "displayName": "specjalna amunicja",
       "name": "specialammo",
-      "display": "both",
+      "display": "all",
       "table": {
         "$name": "nazwa",
         "requisition": "pobranie",
@@ -9135,7 +9135,7 @@
       "type": "section",
       "displayName": "pancerz",
       "name": "armour",
-      "display": "both",
+      "display": "all",
       "noGrid": true,
       "table": {
         "$name": "nazwa",
@@ -9266,7 +9266,7 @@
           "renown": 3,
           "content": [
             "Taktyczny Pancerz Drednot, częściej zwany Pancerzem Terminator, zmienia noszącego go Brata w niemal niemożliwą do zatrzymania siłę zniszczenia. Te niesamowicie rzadkie pancerze są najwyższą możliwą formą ochrony osobistej w arsenałach Marines i pozwalają jednemu Bratu na osiągnięcie siły ognia mogącej stawać w szranki z pojazdami bojowymi. Pancerza Terminator używa się jedynie na najniebezpieczniejszych misjach i powierza się je jedynie weteranom godnym noszenia Crux Terminatus - odznaczenia, którego większa wersja znajduje się na ramieniu każdego takiego pancerza. Mówi się, że zawiera on fragment pancerza, którego Imperator użył w ostatecznym starciu z arcyzdrajcą Horusem.",
-            "Pancerz Terminator zawiera wszystkie systemy właściwe zwykłemu pancerzowi wspomaganemu, a także kilka ulepszeń. Wzmocnione systemy stabilizacji i wspomagania ruchu umożliwiają użycie broni Ciężkich i Stałych w jednej ręce. Zapewnia to także cechę @trait{autoStabilized} i +30 do Krzepy zamiast normalnego +20. Autozmysły stanowią część sensorium, które ma te same możliwości co @tool{auspex}. Jeśli dwóch lub więcej Braci nosi takie pancerze, możliwości ich łączy zwiększają efektywny Poziom Drużyny o 1 do celów określania Zasięgu Wsparcia. Ciężkie płyty Pancerza Terminator odbić mogą trafienia nawet z najcięższej broni. Dodatkowo płyta orderu Crux Terminatus na ramieniu służy jako dodatkowa ochrona, która jest w stanie zatrzymać ciosy broni energetycznej, ogień z broni melta, a nawet energie Osnowy. Daje to ochronę równą Polu Siłowemu o Wartości Ochrony 35. Z racji na fakt, że efekt ten powodowany jest wyłącznie przez szansę na odbicie uderzenia przez najcięższe opancerzenie, nie ma ryzyka Przeciążenia. Rzuć również raz w tabeli @table{armourHistory}.",
+            "Pancerz Terminator zawiera wszystkie systemy właściwe zwykłemu pancerzowi wspomaganemu, a także kilka ulepszeń. Wzmocnione systemy stabilizacji i wspomagania ruchu umożliwiają użycie broni Ciężkich i Stałych w jednej ręce. Zapewnia to także cechę @trait{autoStabilised} i +30 do Krzepy zamiast normalnego +20. Autozmysły stanowią część sensorium, które ma te same możliwości co @tool{auspex}. Jeśli dwóch lub więcej Braci nosi takie pancerze, możliwości ich łączy zwiększają efektywny Poziom Drużyny o 1 do celów określania Zasięgu Wsparcia. Ciężkie płyty Pancerza Terminator odbić mogą trafienia nawet z najcięższej broni. Dodatkowo płyta orderu Crux Terminatus na ramieniu służy jako dodatkowa ochrona, która jest w stanie zatrzymać ciosy broni energetycznej, ogień z broni melta, a nawet energie Osnowy. Daje to ochronę równą Polu Siłowemu o Wartości Ochrony 35. Z racji na fakt, że efekt ten powodowany jest wyłącznie przez szansę na odbicie uderzenia przez najcięższe opancerzenie, nie ma ryzyka Przeciążenia. Rzuć również raz w tabeli @table{armourHistory}.",
             "Ten masywny pancerz nie jest jednak pozbawiony pewnych ograniczeń. Terminator nie może @action{run|biegać}, noszący otrzymuje karę -20 do Zręczności, a także nie może @action{dodge|unikać} (ale wciąż jest w stanie @action{parry|parować}. Dodatkowo aby pancerz taki mógł prawidłowo trzymać, mierzyć i komunikować się z bronią, musi być ona przymocowana przy pomocy specjalnych sprzęgaczy. Uzbrajanie Pancerzy Taktycznych to pracochłonny święty rytuał, który może być wykonywany jedynie przez wysokich rangą Zbrojmistrzów z uwagi na potrzebę użycia bardzo konkretnych litanii, zapasów i innych sprzętów. Z tego powodu Terminatora nie można przezbroić w sytuacji bojowej. Niewiele jest broni, które posiadają odpowiednie łączniki; podczas Pobierania Bohater wydaje 60 punktów na sam pancerz i co najmniej 40 na jego uzbrojenie. Wybrana broń musi znajdować się na poniższej liście (nie istnieją ograniczenia dotyczące Wyposażenia i Ulepszeń).",
             {
               "title": "broń kompatybilna z terminatorem:",
@@ -9583,7 +9583,7 @@
       "type": "section",
       "name": "field",
       "displayName": "pola siłowe",
-      "display": "both",
+      "display": "all",
       "table": {
         "$name": "nazwa",
         "$protectionRating": "wartość ochrony",
@@ -9663,7 +9663,7 @@
       "type": "section",
       "name": "relic",
       "displayName": "relikty",
-      "display": "description",
+      "display": ["description", "items"],
       "table": {
         "$name": "nazwa",
         "$class": "klasa",
@@ -9696,7 +9696,7 @@
           "type": "section",
           "name": "deathwatch",
           "displayName": "relikty straży",
-          "display": "both",
+          "display": "all",
           "content": [
             "Historia niektórych Reliktów wskazuje na pochodzenie z samej Straży. Taki przedmiot może być wykuty przez Zbrojmistrzów i rzemieślników w sercu ukrytej kuźni Fortecy, zdobyć sławę dzięki dzierżącym go Braciom, czy zostać wydobyty z tajemniczego skarbca Fortecy."
           ]
@@ -9705,7 +9705,7 @@
           "type": "section",
           "name": "chapter",
           "displayName": "relikty zakonne",
-          "display": "both",
+          "display": "all",
           "content": [
             "W rzadkich przypadkach jeden z Zakonów może przekazać Straży na stałe jeden ze swoich ważnych reliktów jako symbol odnowienia wiążących ich przysiąg. Inne takie przedmioty mogą znaleźć się w zbrojowniach Straży kiedy będący w ich posiadaniu Brat zginie przed wypełnieniem powierzonej mu misji. Nawet gdyby skarbce Straży nie były zabezpieczone rozpoznającymi kod genetyczny zamkami, żaden z Marines nie popełniłby afrontu, jakim byłoby użycie reliktu pochodzącego z Zakonu innego niż jego własny. Relikty te wydawane są tylko Braciom zgadzającym się z nimi pochodzeniem."
           ]
@@ -10354,7 +10354,7 @@
       "type": "section",
       "name": "trapping",
       "displayName": "pamiątki zakonne",
-      "display": "description",
+      "display": ["description", "items"],
       "selectable": false,
       "content": []
     },
@@ -10566,7 +10566,7 @@
       "type": "section",
       "name": "wargear",
       "displayName": "sprzęt",
-      "display": "both",
+      "display": "all",
       "table": {
         "$name": "nazwa",
         "weight": "masa",
@@ -10669,7 +10669,7 @@
       "type": "section",
       "name": "consumable",
       "displayName": "zużywalne",
-      "display": "both",
+      "display": "all",
       "table": {
         "$name": "nazwa",
         "weight": "masa",
@@ -10793,7 +10793,7 @@
       "type": "section",
       "name": "tool",
       "displayName": "narzędzia",
-      "display": "both",
+      "display": "all",
       "table": {
         "$name": "nazwa",
         "weight": "masa",
@@ -11263,7 +11263,7 @@
       "type": "section",
       "name": "cybernetic",
       "displayName": "implanty cybernetyczne",
-      "display": "both",
+      "display": "all",
       "table": {
         "$name": "nazwa",
         "requisition": "pobranie",
@@ -11388,7 +11388,7 @@
     {
       "type": "section",
       "name": "servitor",
-      "display": "both",
+      "display": "all",
       "displayName": "serwitory i towarzysze",
       "table": {
         "$name": "Nazwa",
@@ -11431,7 +11431,7 @@
       "type": "section",
       "name": "power",
       "displayName": "moce psioniczne",
-      "display": "description",
+      "display": ["description", "items"],
       "selectable": false,
       "table": {
         "$name": "moc",
@@ -11455,7 +11455,7 @@
           "type": "section",
           "name": "telepathy",
           "displayName": "moce telepatyczne",
-          "display": "both",
+          "display": "all",
           "content": [
             "Telepatia to umiejętność komunikacji na długi dystans bezpośrednio przy użyciu myśli. Jest ważną częścią obowiązków niemal każdego Kronikarza, ponieważ pozwala na utrzymanie struktury dowodzenia i natychmiastowe przekazywanie rozkazów w czasie bitwy. Telepatia pozwala psykerom również na czytanie myśli, intencji i wykradanie sekretów z umysłu. Na wyższym poziomie, umiejętność ta może zostać wykorzystana jako broń, łamiąc umysły przeciwników lub zupełnie zmieniając ich sposób myślenia."
           ]
@@ -11464,7 +11464,7 @@
           "type": "section",
           "name": "divination",
           "displayName": "wróżenie",
-          "display": "both",
+          "display": "all",
           "content": [
             "Większość psykerów posiada umiejętność wejrzenia w przyszłość, czy wywróżyć następstwa niepodjętych jeszcze działań. Kronikarze studiują tę dyscyplinę, by lepiej kierować poczynaniami swych Braci w walce lub osiągnąć głębsze zrozumienie Tarota Imperatora, który pozwoli na pojęcie złożonego znaczenia nadchodzących wydarzeń. Wróżenie pozwala też na odkrywanie ukrytych prawd i zapewnianie sojusznikom dodatkowej ochrony przez wejrzenie w bliską przyszłość."
           ]
@@ -11472,7 +11472,7 @@
         {
           "type": "section",
           "name": "codex",
-          "display": "both",
+          "display": "all",
           "displayName": "moce kodeksowe",
           "content": [
             "Przez milenia Zakony Adeptus Astartes stworzyły i doskonaliły rolę Kronikarza. W ich Librariach znajdują się niewyobrażalne ilości wiedzy, a używanie mocy Kronikarzy było dokładnie studiowane. Gdy Kronikarz jest wprowadzany do tej formacji, od tych właśnie Mocy rozpocznie swoją naukę. Dyscyplina Kodeksowa skupia się na bitwie; rozgniataniu wrogów i chronieniu sojuszników i zawiera jedne z najpotężniejszych znanych Imperium Mocy."
@@ -11482,27 +11482,27 @@
           "type": "section",
           "name": "bloodAngels",
           "displayName": "moce krwawych aniołów",
-          "display": "both",
+          "display": "all",
           "content": []
         },
         {
           "type": "section",
           "name": "darkAngels",
-          "display": "both",
+          "display": "all",
           "displayName": "moce mrocznych aniołów",
           "content": []
         },
         {
           "type": "section",
           "name": "spaceWolves",
-          "display": "both",
+          "display": "all",
           "displayName": "moce kosmicznych wilków",
           "content": []
         },
         {
           "type": "section",
           "name": "stormWardens",
-          "display": "both",
+          "display": "all",
           "displayName": "moce strażników burzy",
           "content": []
         },
@@ -11510,7 +11510,7 @@
           "type": "section",
           "name": "ultramarines",
           "displayName": "moce ultramarines",
-          "display": "both",
+          "display": "all",
           "content": []
         }
       ]
@@ -13079,7 +13079,7 @@
     {
       "type": "section",
       "name": "abilitySolo",
-      "display": "description",
+      "display": ["description", "items"],
       "displayName": "zdolności trybu solowego",
       "selectable": false,
       "table": {
@@ -13096,7 +13096,7 @@
         {
           "type": "section",
           "name": "codex",
-          "display": "both",
+          "display": "all",
           "displayName": "zdolności kodeksowe",
           "content": [
             "Zdolności te są rezultatem morderczego treningu i umiejętności danych Astartes przez samego Imperatora. Mogą się ich nauczyć wszyscy Bracia, ale tylko najpotężniejsi osiągną w nich mistrzostwo. Zdolności Kodeksowe to te najczęściej używane przez Marines i wiele z nich pokazuje ich reputację jako wojowników i uzdolnienia ukierunkowane na prowadzenie wojny. Zdolności te związane są z Rangą i rosną wraz z nią."
@@ -13105,7 +13105,7 @@
         {
           "type": "section",
           "name": "chapter",
-          "display": "both",
+          "display": "all",
           "displayName": "zdolności zakonne",
           "table": {
             "subName": "zakon",
@@ -13376,7 +13376,7 @@
     {
       "type": "section",
       "name": "abilitySquad",
-      "display": "description",
+      "display": ["description", "items"],
       "displayName": "zdolności trybu drużynowego",
       "selectable": false,
       "table": {
@@ -13394,7 +13394,7 @@
         {
           "type": "section",
           "name": "attackPatterns",
-          "display": "description",
+          "display": ["description", "items"],
           "displayName": "wzory ataku",
           "content": [
             "Wszystkie Drużyny ćwiczą sposoby wspólnego działania, które mają pomóc zwyciężyć przeciwnika. Należą do nich na przykład niszczenie umocnień, szybkie przemieszczanie się pod ostrzałem po otwartym terenie, czy unieszkodliwianie pojazdów. Wzory Ataku to Zdolności Drużynowe opisujące te taktyki ofensywne. Najlepiej nadają się do agresywnych szturmów."
@@ -13403,7 +13403,7 @@
         {
           "type": "section",
           "name": "defensiveStances",
-          "display": "description",
+          "display": ["description", "items"],
           "displayName": "pozycje obronne",
           "content": [
             "Taktyki defensywne, mające zminimalizować wystawienie Drużyny na ogień przeciwnika, umożliwić składne przegrupowanie, czy pozwolić na strategiczne wycofanie się i kontratak, są tak samo ważne, jak agresywne natarcia. Pozycje Obronne to Zdolności Drużynowe opisujące te sposoby przygotowania defensywy. Użyteczne są w ochronie spójności i zdrowia Szwadronu."
@@ -13419,7 +13419,7 @@
           "type": "section",
           "name": "codex",
           "displayName": "kodeksowe wzory ataku",
-          "display": "both",
+          "display": "all",
           "content": [
             "Tych Wzorów Ataku mogą używać Kosmiczni Marines ze wszystkich Zakonów."
           ]
@@ -13428,7 +13428,7 @@
           "type": "section",
           "name": "chapter",
           "displayName": "zakonne wzory ataku",
-          "display": "both",
+          "display": "all",
           "table": {
             "subName": "Zakon",
             "$name": "nazwa",
@@ -13449,7 +13449,7 @@
         {
           "type": "section",
           "name": "codex",
-          "display": "both",
+          "display": "all",
           "displayName": "kodeksowe pozycje obronne",
           "content": [
             "Tych Pozycji Obronnych mogą używać Kosmiczni Marines ze wszystkich Zakonów."
@@ -13458,7 +13458,7 @@
         {
           "type": "section",
           "name": "chapter",
-          "display": "both",
+          "display": "all",
           "displayName": "zakonne pozycje obronne",
           "table": {
             "subName": "zakon",
@@ -14209,7 +14209,7 @@
       "type": "section",
       "name": "action",
       "displayName": "akcje",
-      "display": "both",
+      "display": "all",
       "selectable": false,
       "table": {
         "$name": "akcja",
@@ -14921,7 +14921,7 @@
       "type": "section",
       "displayName": "zasady",
       "name": "rule",
-      "display": "description",
+      "display": ["description", "items"],
       "content": []
     },
     {
@@ -14929,7 +14929,7 @@
       "parentPath": "rule",
       "displayName": "uzbrojenie",
       "name": "armoury",
-      "display": "description",
+      "display": ["description", "items"],
       "noGrid": true,
       "content": [
         "%quote{„W tym bolterze zapisana jest historia naszego Zakonu. Dwunastokrotnie przeszedł on z rąk poległego w boju Brata do jego następcy. Niech czyny, których dokonasz, trzymając go w dłoniach, dorównają ich czynom”.|Sierżant Caelicius z Ultramarines wprowadzający Zwiadowcę do Dziesiątej Kompanii}",
@@ -15092,7 +15092,7 @@
         },
         {
           "type": "section",
-          "display": "description",
+          "display": ["description", "items"],
           "name": "armour",
           "displayName": "pancerz",
           "noGrid": true,
@@ -15171,7 +15171,7 @@
       "type": "section",
       "name": "psychicPowers",
       "displayName": "moce psioniczne",
-      "display": "description",
+      "display": ["description", "items"],
       "noGrid": true,
       "parentPath": "rule"
     },
@@ -15341,7 +15341,7 @@
       "displayName": "Testy",
       "name": "tests",
       "noGrid": true,
-      "display": "description",
+      "display": ["description", "items"],
       "parentPath": "rule",
       "content": [
         "Testy to podstawowy sposób ustalania powodzenia i porażki w ![bc]#Deathwatch#. Gdy Brat Bitewny wykonuje jakiekolwiek zadanie, które może mieć znaczące konsekwencje — takie jak wpływanie na historię, zdrowie Bohatera, honor Zakonu, bezpieczeństwo Szwadronu, i tak dalej — należy wykonać Test.",
@@ -15464,7 +15464,7 @@
       "type": "section",
       "parentPath": "rule",
       "name": "fate",
-      "display": "description",
+      "display": ["description", "items"],
       "displayName": "przeznaczenie",
       "noGrid": true,
       "content": [
@@ -15517,7 +15517,7 @@
     {
       "type": "section",
       "name": "movement",
-      "display": "description",
+      "display": ["description", "items"],
       "displayName": "ruch",
       "parentPath": "rule",
       "noGrid": true,
@@ -15581,7 +15581,7 @@
       "type": "section",
       "name": "climbing",
       "displayName": "wspinaczka",
-      "display": "description",
+      "display": ["description", "items"],
       "noGrid": true,
       "parentPath": "rule-movement",
       "content": [
@@ -15620,7 +15620,7 @@
       "type": "section",
       "name": "jumpingAndLeaping",
       "displayName": "skoki wzwyż i w dal",
-      "display": "description",
+      "display": ["description", "items"],
       "parentPath": "rule-movement",
       "noGrid": true,
       "content": [
@@ -15665,7 +15665,7 @@
       "type": "section",
       "name": "swimming",
       "displayName": "pływanie",
-      "display": "description",
+      "display": ["description", "items"],
       "noGrid": true,
       "parentPath": "rule-movement",
       "content": []
@@ -15696,7 +15696,7 @@
       "name": "carryingLiftingAndPushing",
       "parentPath": "rule",
       "displayName": "przenoszenie, podnoszenie i przesuwanie",
-      "display": "description",
+      "display": ["description", "items"],
       "noGrid": true,
       "content": [
         "W normalnych warunkach Bohaterowie w ![bc]#Deathwatch# nie muszą dokładnie obliczać, jak dużo są w stanie przenieść. Jako wyznacznik w większości sytuacji wystarczy zdrowy rozsądek. Większość Bohaterów może spokojnie przenieść jedną główną broń (na przykład bolter, karabin laserowy, albo miotacz) plus jedną lub dwie bronie boczne (na przykład pistolety czy broń białą) plus kilka dodatkowych magazynków i kilka innych przedmiotów w plecaku, sakiewkach, czy innych pojemnikach. Z drugiej strony, nie byłoby rozsądne, gdyby nawet bardzo silny Bohater biegał z trzema różnymi sztukami ciężkiej broni i kilkoma tysiącami sztuk amunicji do każdej z nich, czy żeby w jego plecaku znajdowało się po jednej sztuce każdego dostępnego do Pobrania przedmiotu. Czasami zdarza się jednak, że ważne jest, jak dużo dokładnie Bohater może podnieść lub przenieść. Zależy to od jego Siły i Wytrzymałości. Porównaj swoją wartość z poniższą tabelą. Zaznaczyć należy, że niektóre Cechy mogą zwiększyć te wartości.",
@@ -15748,7 +15748,7 @@
       "type": "section",
       "displayName": "oświetlenie",
       "name": "lighting",
-      "display": "description",
+      "display": ["description", "items"],
       "noGrid": true,
       "parentPath": "rule",
       "content": []
@@ -15770,7 +15770,7 @@
       "type": "section",
       "displayName": "latanie",
       "name": "flying",
-      "display": "description",
+      "display": ["description", "items"],
       "noGrid": true,
       "parentPath": "rule",
       "content": [
@@ -15813,7 +15813,7 @@
           "name": "flyingMovement",
           "displayName": "szybkość lotu",
           "content": [
-            "Latające stworzenia i Bohaterowie podzieleni są na dwie kategorie, każda z których jest osobną Cechą. Są to stworzenia @trait{flyer|latające} i @trait{hoverer|zawisające}. Zawisające mogą poruszać się w powietrzu, ale nie wyżej niż dwa metry nad podłożem. Latające mogą poruszać się między pułapami. Obie Cechy zawierają zawsze liczbę w nawiasie, która oznacza Szybkość Lotu. Działa ona tak, jak zwykła Szybkość, ale dotyczy ruchu w locie. Podczas lotu lub zawisu stworzenie musi użyć Akcji Ruchu w każdej Turze, by podtrzymać lot i nie spaść. Akcje Ruchu to @action{halfMove}, @action{fullMove}, @action{charge} i @action{run} — te Akcje mogą podtrzymać lot. Jeśli stworzenie na @rule{hoveringAltitude|pułapie zawisu} przestanie latać (na przykład nie wykorzysta Akcji Ruchu albo zostanie Ogłuszone), po prostu ląduje na ziemi. Jeśli jest na @rule{lowAltitude|niskim pułapie}, otrzymuje @rule{fallingDamage}, jak gdyby spadło 15 metrów. Jeżeli jest na @rule{highAltitude|wysokim pułapie}, otrzymuje Obrażenia od Upadku, jak gdyby spadło 25 metrów (lub więcej, decyzją MG)."
+            "Latające stworzenia i Bohaterowie podzieleni są na dwie kategorie, każda z których jest osobną Cechą. Są to stworzenia @trait{flyer|latające} i @trait{hoverer|zawisające}. Zawisające mogą poruszać się w powietrzu, ale nie wyżej niż dwa metry nad podłożem. Latające mogą poruszać się między pułapami. Obie Cechy zawierają zawsze liczbę w nawiasie, która oznacza Szybkość Lotu. Działa ona tak, jak zwykła Szybkość, ale dotyczy ruchu w locie. Podczas lotu lub zawisu stworzenie musi użyć Akcji Ruchu w każdej Turze, by podtrzymać lot i nie spaść. Akcje Ruchu to @action{halfMove}, @action{fullMove}, @action{charge} i @action{run} — te Akcje mogą podtrzymać lot. Jeśli stworzenie na @rule{hoveringAltitude|pułapie zawisu} przestanie latać (na przykład nie wykorzysta Akcji Ruchu albo zostanie Ogłuszone), po prostu ląduje na ziemi. Jeśli jest na @rule{lowAltitude|niskim pułapie}, otrzymuje @rule{falling}, jak gdyby spadło 15 metrów. Jeżeli jest na @rule{highAltitude|wysokim pułapie}, otrzymuje Obrażenia od Upadku, jak gdyby spadło 25 metrów (lub więcej, decyzją MG)."
           ]
         }
       ]
@@ -15822,7 +15822,7 @@
       "type": "section",
       "displayName": "efekty grawitacji",
       "name": "effectsOfGravity",
-      "display": "description",
+      "display": ["description", "items"],
       "noGrid": true,
       "parentPath": "rule",
       "content": [
@@ -15860,7 +15860,7 @@
       "type": "section",
       "displayName": "Spójność",
       "name": "cohesion",
-      "display": "description",
+      "display": ["description", "items"],
       "noGrid": true,
       "parentPath": "rule",
       "content": [
@@ -15998,7 +15998,7 @@
       "type": "section",
       "name": "squadModeAndSoloMode",
       "displayName": "tryb drużynowy i solowy",
-      "display": "description",
+      "display": ["description", "items"],
       "noGrid": true,
       "parentPath": "rule",
       "content": [
@@ -16089,7 +16089,7 @@
       "type": "section",
       "displayName": "tryb solowy",
       "name": "soloMode",
-      "display": "description",
+      "display": ["description", "items"],
       "noGrid": true,
       "parentPath": "rule",
       "content": [
@@ -16152,7 +16152,7 @@
       "type": "section",
       "displayName": "zdolności trybu drużynowego",
       "name": "squadModeAbilities",
-      "display": "description",
+      "display": ["description", "items"],
       "noGrid": true,
       "parentPath": "rule",
       "content": [
@@ -16294,7 +16294,7 @@
       "name": "missions",
       "displayName": "Misje",
       "noGrid": true,
-      "display": "description",
+      "display": ["description", "items"],
       "parentPath": "rule",
       "content": [
         "%quote{„Wysunięty przyczółek dowodzenia Tau jest chronione przez zbyt potężne tarcze, by skuteczne było bombardowanie orbitalne i zbyt daleko za linią frontu, by można było przejąć je natarciem przez Piątą Stygijską Dywizję Pancerną. Nasze dane wywiadowcze sugerują jednak, że znajduje się tam conajmniej jeden z tych tak zwanych Niebian, który koordynuje wrogie działania, co czyni bazę krytycznie ważnym celem. Rekomenduję wystawienie dostępnego Szwadronu Śmierci i uznanie sprawy za zakończoną”.|Najwyższy Taktyk Favius w Bitwie Krwawego Księżyca}",
@@ -16312,13 +16312,13 @@
           "name": "overview",
           "noGrid": true,
           "displayName": "przegląd",
-          "display": "description",
+          "display": ["description", "items"],
           "content": ["Misje podzielone są na trzy szeroko zakrojone kroki:"]
         },
         {
           "type": "section",
           "name": "preparation",
-          "display": "description",
+          "display": ["description", "items"],
           "noGrid": true,
           "displayName": "Przygotowanie",
           "content": [
@@ -16331,7 +16331,7 @@
           "name": "execution",
           "noGrid": true,
           "displayName": "Wykonanie",
-          "display": "description",
+          "display": ["description", "items"],
           "content": [
             "%quote{„Niczym anioły śmierci spadli z niebios, niszcząc wszystko na swej drodze, i przynieśli temu niegodziwemu światu sprawiedliwość Imperatora”.|Z Pamięci Wielkiej Krucjaty}"
           ]
@@ -16340,7 +16340,7 @@
           "type": "section",
           "name": "rewards",
           "displayName": "Nagrody",
-          "display": "description",
+          "display": ["description", "items"],
           "noGrid": true,
           "content": [
             "%quote{„Zginąć w bitwie i zostać zapamiętanym w chwale — to największy dar, jaki dał nam Imperator”.|Inskrypcja na Grobowcu Cierni}",
@@ -16611,7 +16611,7 @@
     {
       "type": "section",
       "name": "oath",
-      "display": "both",
+      "display": "all",
       "displayName": "przysięgi",
       "table": {
         "$name": "Nazwa",
@@ -16627,7 +16627,7 @@
       "type": "section",
       "displayName": "Walka",
       "name": "combat",
-      "display": "description",
+      "display": ["description", "items"],
       "noGrid": true,
       "parentPath": "rule",
       "content": [
@@ -16803,7 +16803,7 @@
       "type": "section",
       "displayName": "Atak",
       "name": "theAttack",
-      "display": "description",
+      "display": ["description", "items"],
       "noGrid": true,
       "parentPath": "rule-combat",
       "content": [
@@ -16885,7 +16885,7 @@
       "type": "section",
       "displayName": "Okoliczności Walki",
       "name": "combatCircumstances",
-      "display": "description",
+      "display": ["description", "items"],
       "noGrid": true,
       "parentPath": "rule-combat",
       "content": [
@@ -17014,7 +17014,7 @@
             }
           ],
           "content": [
-            "Bycie pod ostrzałem jest w najlepszym razie mrożącym krew w żyłach doświadczeniem i nawet najmniej doświadczeni żołnierze wiedzą, że należy się schować, gdy latają kule i bolty. Przygwożdżenie reprezentuje instynkt przetrwania Bohatera nakazujący mu zostać pod osłoną. Nawet jeśli chce on zaszarżować w deszcz ołowiu, musi najpierw przygotować się. Gdy Bohater jest pod ostrzałem przez @action{suppressiveFire}, nawet jeśli strzał trafił w Lokację chronioną przez osłonę, albo nie zada Obrażeń, Bohater musi wykonać ![b]#Trudny (-20) Test Przygwożdżenia#. Jest to Test Siły Woli. Sukces pozwala działać normalnie, natomiast porażka sprawia, że Bohater staje się Przygwożdżony.",
+            "Bycie pod ostrzałem jest w najlepszym razie mrożącym krew w żyłach doświadczeniem i nawet najmniej doświadczeni żołnierze wiedzą, że należy się schować, gdy latają kule i bolty. Przygwożdżenie reprezentuje instynkt przetrwania Bohatera nakazujący mu zostać pod osłoną. Nawet jeśli chce on zaszarżować w deszcz ołowiu, musi najpierw przygotować się. Gdy Bohater jest pod ostrzałem przez @action{suppressingFire}, nawet jeśli strzał trafił w Lokację chronioną przez osłonę, albo nie zada Obrażeń, Bohater musi wykonać ![b]#Trudny (-20) Test Przygwożdżenia#. Jest to Test Siły Woli. Sukces pozwala działać normalnie, natomiast porażka sprawia, że Bohater staje się Przygwożdżony.",
             "Przygwożdżeni Bohaterowie mogą wykonywać tylko Akcje Pojedyncze. Dodatkowo ich Testy Umiejętności Strzeleckich wykonywane są z karą -20. Jeśli Przygwożdżony Bohater chowa się przed atakującym za osłoną, nie może zza niej wyjść, chyba że by dokonać odwrotu. Jeśli nie znajduje się za osłoną, gdy zostanie Przygwożdżony, musi w swojej kolejnej Turze postarać się schować za osłoną. Jeśli w pobliżu nie ma żadnej osłony, musi odsunąć się od atakującego, który go Przygwoździł. Na końcu swojej Tury Bohater może spróbować oprzeć się Przygwożdżeniu. Jeśli Bohater nie jest już pod ostrzałem (np. od jego ostatniej Tury nikt nie próbował do niego strzelać), test ten jest Bardzo Łatwy (+30). Związany walką wręcz Bohater automatycznie opiera się Przygwożdżeniu. Istnieją również pewne specjalne Talenty, Umiejętności i Moce, które mogą uwolnić Bohatera od efektów Przygwożdżenia — a także rzeczy w rodzaju stymulantów bojowych i przerażających komisarzy."
           ]
         },
@@ -17086,7 +17086,7 @@
       "type": "section",
       "displayName": "Zranienia",
       "name": "injury",
-      "display": "description",
+      "display": ["description", "items"],
       "parentPath": "rule-combat",
       "noGrid": true,
       "content": [
@@ -17183,7 +17183,7 @@
       "displayName": "Stany i Obrażenia Specjalne",
       "name": "conditionsAndSpecialDamage",
       "parentPath": "rule-combat",
-      "display": "description",
+      "display": ["description", "items"],
       "noGrid": true,
       "content": [
         "Powszechne obrażenia to tylko część rzeczy, z którymi muszą mierzyć się ludzie stający twarzą w twarz z nieznanym. Kosmiczni Marines mogą zostać podpaleni, cierpieć z powodu krwotoków, czy nawet zmierzyć się z odcięciem kończyny. Wszystkie te przypadki znane są zbiorowo jako Stani i Obrażenia Specjalne."
@@ -17311,7 +17311,7 @@
       "type": "section",
       "displayName": "Leczenie",
       "name": "healing",
-      "display": "description",
+      "display": ["description", "items"],
       "noGrid": true,
       "parentPath": "rule-combat",
       "content": [
@@ -17359,7 +17359,7 @@
           "name": "death",
           "displayName": "Śmierć",
           "content": [
-            "Dla Bohaterów śmierć jest zawsze wynikiem Efektu Krytycznego. Zwykle dzieje się to gdy zbierze co najmniej 8 punktów Obrażeń Krytycznych, w zależności od trafionej Lokacji i typu Obrażeń. Jeśli Efekt Krytyczny oznacza, że Bohater ginie, może uratować go tylko spalenie @rule{fatePoints|Punktu Przeznaczenia}."
+            "Dla Bohaterów śmierć jest zawsze wynikiem Efektu Krytycznego. Zwykle dzieje się to gdy zbierze co najmniej 8 punktów Obrażeń Krytycznych, w zależności od trafionej Lokacji i typu Obrażeń. Jeśli Efekt Krytyczny oznacza, że Bohater ginie, może uratować go tylko spalenie @rule{fate|Punktu Przeznaczenia}."
           ]
         },
         {
@@ -17491,7 +17491,7 @@
       "displayName": "Adwersarze",
       "name": "adversaries",
       "parentPath": "rule",
-      "display": "description",
+      "display": ["description", "items"],
       "noGrid": true,
       "content": [
         
@@ -17542,7 +17542,7 @@
       "displayName": "Hordy",
       "name": "hordes",
       "noGrid": true,
-      "display": "description",
+      "display": ["description", "items"],
       "parentPath": "rule",
       "content": [
         "%quote{„Ich mnogość zaciemniła ziemię i przysłoniła słońce. Przybyli liczni niczym gwiazdy na niebie czy ziarna piasku na brzegu; przybyli nas zabić i wziąć to, czego broniliśmy”.|Varrus, Kapitan Trzeciej Kompanii Strażników Burzy, mówiący o drugiej obronie Karlack}",
@@ -17666,7 +17666,7 @@
       "type": "section",
       "name": "marksOfChaos",
       "displayName": "Znamiona Chaosu",
-      "display": "description",
+      "display": ["description", "items"],
       "parentPath": "rule",
       "content": [
         "Czempion Chaosu, który wykazał się nadzwyczajnym oddaniem jednemu z czterech wielkich Bogów Chaosu, może zostać naznaczony przez tego boga. MG może przyznać Znamię Chaosu Demonicznemu Księciu czy innemu słudze Chaosu, by stworzyć nowe warianty istniejących przeciwników."
@@ -17694,7 +17694,7 @@
             "Tzeentch to Wielki Czarnoksiężnik, bóg magii, konspiracji i przeznaczenia. Ci, których naznaczy, stają się subtelnymi manipulatorami i potężnymi czarownikami.",
             {
               "title": "Efekty:",
-              "content": "Noszący Znamię Tzeentcha otrzymują Cechę @trait{unnaturalWillpower||2} i efekty Cechy @trait{deamonic}. Większość otrzymuje również czarnoksięskie moce reprezentowane przez @talent{psyRating} i kilka Mocy Psionicznych. Rozważyć można Moce takie jak @power{augury}, @power{possibilityShield}, @power{liftingTheVeil}, @power{compel} i @power{dominate}."
+              "content": "Noszący Znamię Tzeentcha otrzymują Cechę @trait{unnaturalWillpower||2} i efekty Cechy @trait{daemonic}. Większość otrzymuje również czarnoksięskie moce reprezentowane przez @talent{psyRating} i kilka Mocy Psionicznych. Rozważyć można Moce takie jak @power{augury}, @power{possibilityShield}, @power{liftingTheVeil}, @power{compel} i @power{dominate}."
             }
           ]
         },
@@ -17705,7 +17705,7 @@
             "Nurgle to Pan Rozkładu, którego domeną są fizyczne zepsucie, rozkład i rozpad. Ci, których naznaczy, stają się nabrzmiali od zepsucia, a ich ciała martwieją, uodparniając ich na ból, gnijąc i będąc pożywką dla świętych zaraz ich Pana.",
             {
               "title": "Efekty:",
-              "content": "Noszący Znamię Nurgla zwiększają swoje maksymalne Rany o 25%, a także otrzymują Cechy @trait{stuffOfNightmares} i @trait{unnaturalToughness||2}. Jeśli stworzenie ma już Nienaturalną Odporność, zwiększa swój mnożnik o 1."
+              "content": "Noszący Znamię Nurgla zwiększają swoje maksymalne Rany o 25%, a także otrzymują Cechy @trait{theStuffOfNightmares} i @trait{unnaturalToughness||2}. Jeśli stworzenie ma już Nienaturalną Odporność, zwiększa swój mnożnik o 1."
             }
           ]
         },
@@ -17726,7 +17726,7 @@
       "type": "section",
       "name": "vehicles",
       "displayName": "Pojazdy",
-      "display": "description",
+      "display": ["description", "items"],
       "parentPath": "rule",
       "source": "RoB",
       "content": [
@@ -17814,7 +17814,7 @@
           "name": "vehicleCombat",
           "displayName": "Walka w Pojazdach",
           "noGrid": true,
-          "display": "description",
+          "display": ["description", "items"],
           "content": [
             "Bohaterowie używający pojazdów mogą wykonywać Akcje w swoich Turach podczas Rundy Walki. Akcje te różnią się od Akcji dostępnych dla Bohaterów poruszających się samodzielnie, ale wciąż zaliczają się do tych samych kategorii: Akcji Pojedynczych, Podwójnych, Reakcji, Akcji Darmowych i Przedłużonych.",
             "Niektóre pojazdy mają kilkuosobową załogę. W takim przypadku cała załoga dzieli Inicjatywę pilota lub kierowcy. Porządek Inicjatywy powinien zostać ułożony w taki sposób, żeby załoga ułożona była za kierowcą w kolejności zgodnie ze swoimi rzutami na Inicjatywę. Każdy członek załogi może wykonać inną Akcję, na przykład kierowca może poruszyć pojazd, gdy strzelcy zasypują pociskami swoje cele. Każdy członek załogi może wykonać maksymalnie jedną Akcję Podwójną, ale niektóre Akcje mogą ograniczać wykonywanie innych. W takim przypadku priorytet ma Akcja wykonywana przez kierowcę."
@@ -17835,7 +17835,7 @@
           "displayName": "Walka Powietrzna",
           "noGrid": true,
           "name": "aerialCombat",
-          "display": "description",
+          "display": ["description", "items"],
           "content": [
             "Walka powietrzna jest unikalnym rodzajem bitwy. Szybkie pojazdy latające pokonują w ciągu minut ogromne odległości, potężne bombowce zasypują ładunkami wybuchowymi cele naziemne, a kilometry w powietrzu starcia toczą smukłe myśliwce.",
             "Walka powietrzna w ![bc]#Deathwatch# prowadzona jest podobnie do zwyczajnej. Podczas starć powietrznych kluczem jest pozycjonowanie i manewrowanie pojazdem w odpowiedni sposób. Atakujący stara się wejść na ogon swojego celu, który natomiast próbuje wyłamać się i uciec — albo wykonać pętlę i wejść na ogon atakującego. Walka taka to prawdziwy pojedynek, o którego wyniku decydują raczej umiejętności pilotów, niż własności ich pojazdów.",
@@ -17996,7 +17996,7 @@
               "title": "Unik (Reakcja)",
               "content": [
                 "Kierowca zauważa zagrożenie i wykonuje unik, zabierając swój pojazd z linii ognia. Akcję tę można wykonać tylko jeśli pojazd poruszył się w ostatniej Turze o co najmniej Szybkość Taktyczną. Kierowca wykonuje odpowiedni Test Prowadzenia lub Pilotażu z karą równą modyfikatorowi z rozmiaru pojazdu (próba wykonania uniku Ogromną ciężarówką, która zapewnia z powodu rozmiaru premię +20 do trafienia przeciwnikom, wykonywana byłaby z karą -20). Za każdy sukces unika jednego strzału z pojedynczego źródła.",
-                "Jeśli kierowca poniesie porażkę o pięć lub więcej Stopni, traci kontrolę nad pojazdem, który się @rule{crashing|rozbija}{}."
+                "Jeśli kierowca poniesie porażkę o pięć lub więcej Stopni, traci kontrolę nad pojazdem, który się @rule{crashes|rozbija}{}."
               ]
             },
             {
@@ -18009,14 +18009,14 @@
               "title": "Manewr Defensywny (Akcja Podwójna)",
               "content": [
                 "Pojazd wykonuje nieskładne, nieprzewidywalne ruchy, przez co jest trudnym celem. Pojazd musi poruszyć się o swoją Szybkość Taktyczną (ze zwykłymi ograniczeniami; zakłada się jednak, że porusza się wężykiem, przyspiesza i zwalnia, żeby dotrzeć w to samo miejsce). Kierowca wykonuje ![b]#Przeciętny (+0) Test Prowadzenia#. W przypadku sukcesu i za każdy kolejny Stopień Sukcesu, ataki wymierzone w pojazd wykonywane są z karą -10 do trafienia do początku swojej kolejnej Tury. Ataki z pojazdu otrzymują tę samą karę.",
-                "Jeśli kierowca poniesie porażkę o pięć lub więcej Stopni, traci kontrolę nad pojazdem, który się @rule{crashing|rozbija}{}."
+                "Jeśli kierowca poniesie porażkę o pięć lub więcej Stopni, traci kontrolę nad pojazdem, który się @rule{crashes|rozbija}{}."
               ]
             },
             {
               "title": "Do Dechy! (Akcja Podwójna)",
               "content": [
                 "Pojazd porusza się o swoją podwojoną Szybkość Taktyczną i może skręcić tylko raz. Kierowca wykonuje ![b]#Przeciętny (+0) Test Prowadzenia#. W przypadku sukcesu może poruszyć się o jeszcze pięć metrów i kolejne pięć metrów za każdy Stopień Sukcesu. Jeśli poniesie porażkę, nie wykonuje dodatkowego ruchu. W każdym razie strzelanie z i w pojazd otrzymuje karę do trafienia -20. Pojazdy kroczące nie mogą używać tej Akcji.",
-                "Jeśli kierowca poniesie porażkę o pięć lub więcej Stopni, traci kontrolę nad pojazdem, który się @rule{crashing|rozbija}{}."
+                "Jeśli kierowca poniesie porażkę o pięć lub więcej Stopni, traci kontrolę nad pojazdem, który się @rule{crashes|rozbija}{}."
               ]
             },
             {
@@ -18260,7 +18260,7 @@
       "type": "section",
       "name": "adversary",
       "displayName": "adwersarze",
-      "display": "description",
+      "display": ["description", "items"],
       "content": [
         "%quote{„Imperium jest fortecą zbudowaną przeciwko wrogom ludzkości. Widziałem tych przeciwników; stanąłem na blankach murów fortecy i spojrzałem w ich puste, bezduszne oczy. Widziałem, jak roją się i mnożą w ciemności i wiem, że tylko my stoimy między nimi i końcem czasów”.|Ignatius Sable, Kapitan Czwartej Kompanii Egzorcystów, przemowa na początku Krucjaty Angevin}",
         "Przeznaczeniem Straży Śmierci jest strzec ludzkości przed najstraszniejszymi z przeciwników. Muszą mierzyć się z górującymi nad nimi potwornościami obcych i spaczonych przez Osnowę bitewnymi tyranami. Rozdział ten zapewnia Mistrzom Gry zasady dotyczące przeciwników, z którymi Bracia Bitewni muszą mierzyć się podczas gry w ![bc]#Deathwatch#. Podano tu wybrane sługi Mrocznych Bogów Chaosu, siły Umysłu Roju Tyranidów, a także mobilnych i zaawansowanych wojowników Dominium Tau. Dodatkowo w rozdziale tym zamieszczono niewielki zbiór Bohaterów Niezależnych, którzy mogą okazać się przydatni dla MG podczas przygód i kampanii ![bc]#Deathwatch#."
@@ -18274,7 +18274,7 @@
           "type": "section",
           "name": "chaos",
           "displayName": "Chaos",
-          "display": "description",
+          "display": ["description", "items"],
           "content": [
             "%quote{„Każda chwila gniewu, nienawiści, zwodzenia, bólu, cierpienia, rozkoszy i pragnienia znajduje odbicie w mocy Chaosu. Gdy jego legiony ruszają, ruszają by zgotować nam zagładę, którą sami sobie stworzyliśmy”.|Arenal, Dalekowidzący}",
             "Chaos to cierpliwie czekające potępienie ludzkości, mroczne przeznaczenie, które ryczy i łaknie ludzkich dusz w leżącej poza światem Osnowie. Nieustępujące zagrożenie Chaosu związane jest ze spaczeniem Osnowy. Wypaczonymi ciałami i spalonymi duszami podgryza materię rzeczywistości i wabi dusze słabych i niestrzegących się na potępienie.",
@@ -18287,9 +18287,23 @@
         },
         {
           "type": "section",
+          "name": "tau",
+          "displayName": "Tau",
+          "display": ["description", "items"],
+          "content": [
+            "%quote{„Oto wiadomość do ludu Imperium i do czcigodnego Imperatora tej krainy. Oferujemy wam pokój, jeśli zechcecie do nas dołączyć, albo wojnę, jeśli taka wasza wola. Oczekujemy waszej odpowiedzi, jako że w waszej rasie rozpoznajemy honor i odwagę”.|ostatnia znana transmisja Por’el Tau’n Ukos, Negocjatora Kasty Wody}",
+            "Tau pochodzą z małego, ale gęsto upakowanego klastra gwiazd na Wschodniej Rubieży. Dominium Tau jest relatywnie młode, ale dynamiczna natura ich gatunku napędza szybką ekspansję na otaczające obszary. Te właśnie nienapotykające oporu podboje układów sąsiadujących z Dominium Tau wpędziło gatunek w konflikt z ludzkością i innymi rasami. Choć ludzie i Tau czasem zawierają rozejm, gdy stawiają czoła większym niebezpieczeństwom, równie często walczą ze sobą, gdy Tau próbują włączyć kolejne i kolejne światy i kultury w swoje Dominium.",
+            "W porównaniu z innymi gatunkami spotykanymi w galaktyce Tau nie są otwarcie agresywni ani szczególnie silni fizycznie. Dominium jednak w swojej krótkiej historii bardzo szybko stworzyło wiele przykładów niesamowicie wyszukanej technologii, której spora część całkowicie niweluje słabości samych Tau. Dla przykładu, choć pojedynczy Tau nie może się równać z Kosmicznym Marine, to gdy pilotuje opancerzony kombinezon wyposażony w zestawy uzbrojenia, sensorów i innego egzotycznego sprzętu, staje się potężnym przeciwnikiem. Tau używają technologii na każdym poziomie swoich sił zbrojnych i nawet najniższy rangą Wojownik Ognia wyposażony jest w systemy czasami dorównujące tym używanym przez Kosmicznych Marines, a na pewno znacznie przewyższające sprzęt wykorzystywany przez Gwardzistów Imperialnych. Nawet standardowa broń Kasty Ognia, karabin impulsowy, jest cudem technologii, który przekracza swoją niszczycielską siłą nawet karabin boltowy Adeptus Astartes.",
+            "Każdy Tau rodzi się jako członek jednej z pięciu kast, co stanowi o jego roli w społeczeństwie. Kasta Ognia jest najbardziej agresywna i śmiała i to z ich szeregów tworzone są armie Tau. Członkowie Kasty Ognia są najliczniejszymi i najsilniejszymi wśród Tau; równie szerocy co człowiek, lecz nieco niżsi. Wojowników Ognia motywuje ściśle określony kodeks honorowy. Preferują walkę na dystans ponad rzeź bitew wręcz i wolą wygrywać bitwy przy użyciu swojego zaawansowanego uzbrojenia, nie brutalnej siły. Wojownicy Ognia Tau służą przez wiele lat i jeśli przeżyją wystarczająco długo, mogą otrzymać rangę Dowódcy, a potem zostać zwolnieni z aktywnej służby, co pozwala im zostać doradcami i mieć większy wpływ na politykę Dominium.",
+            "Technologia Tau jest dziełem Kasty Ziemi i to dzięki ich innowacjom Tau tak szybko poszerzyli granice Dominium. Technologia militarna Tau jest niesamowicie zaawansowana, a na ich uzbrojenie składają się głównie wysokoenergetyczna broń plazmowa i działa szynowe. Właśnie działo szynowe jest szczególnie potężne, a pozwalająca na jego działanie technologia — wysoce pożądana przez pewne kręgi Adeptus Mechanicus. Tau wykorzystują również technologię antygrawitacyjną podobną do tej używanej przez Eldarów, tworząc pojazdy w rodzaju czołgów Hammerhead i transporterów Devilfish. Technologia ta jest wykorzystywana również w zastosowaniach cywilnych.",
+            "Niektóre urządzenia Tau udało się przejąć Imperium; głównie jest to sprzęt rolniczy i budowlany z przygranicznych planet, których mieszkańcy handlowali z kupcami Tau. Urządzenia te transportowane są na Marsa, gdzie adepci Boga Maszyny próbują przejrzeć ich tajemnice."
+          ]
+        },
+        {
+          "type": "section",
           "name": "nonPlayerCharacters",
           "displayName": "bohaterowie niezależni",
-          "display": "description",
+          "display": ["description", "items"],
           "content": [
             "%quote{„Nic nie złamie ducha ludzkości! Imperium zwycięża — a TO MY JESTEŚMY IMPERIUM”.|Sierżant Hektor Voss z Hyrkańskiego 4. Regimentu Piechoty w Bitwie o Krwawą Grań}",
             "Poniższe wpisy mają zapewnić Mistrzowi Gry profile Bohaterów Niezależnych, których Bracia Bitewni mogą spotkać w trakcie gry ![bc]#Deathwatch#."
@@ -18799,6 +18813,338 @@
             "Maska oddechowa",
             "3 magazynki do pistoletu"
           ]
+        }
+      ]
+    },
+    {
+      "type": "group",
+      "parentPath": "adversary-tau",
+      "items": [
+        {
+          "type": "creature",
+          "name":  "tauCommanderBattlesuit",
+          "displayName": "Dowódca Tau",
+          "tier":  "master",
+          "subName": "Kombinezon XV8",
+          "content": [
+            "Dowódcy są bohaterami Dominium Tau. Poświęcają oni całe swoje życia służeniu dla tak zwanego „Większego Dobra”. Każdy z nich jest rozważny i ma dogłębne zrozumienie zasad bitwy. Czyni to z nich postacie inspirujące żołnierzy. Dowódcy utrzymują swoją heroiczną prezencję poprzez noszenie — a raczej pilotowanie — wyszukanego pancerza bitewnego. W przeciwieństwie do generałów innych ras liderzy Tau nie obserwują zmagań z położonych całe mile za liniami frontu centrów dowodzenia. Doktryna Tau stanowi, że dowódca musi być tam, gdzie go potrzebują, by w razie czego służyć jako przykład dla swoich podwładnych. W normalnych okolicznościach Dowódca byłby tak blisko walki w ogromnym niebezpieczeństwie, ale jego Kombinezon Bojowy zapewnia mu niezrównane opancerzenie, wspaniałą siłę ognia i cały zestaw najróżniejszych systemów dodatkowych, które wspomagają go w dowodzeniu i kierowaniu podwładnymi. Dowódca Tau jest przeciwnikiem, z którym należy się liczyć i którego szanować Straż Śmierci zdążyła się nauczyć."
+          ],
+          "characteristics": {
+            "weaponSkill": 35,
+            "ballisticSkill": 55,
+            "strength": {
+              "value": 50,
+              "unnatural": 2
+            },
+            "toughness": {
+              "value": 57,
+              "unnatural": 2
+            },
+            "agility": 45,
+            "intelligence": 40,
+            "perception": 55,
+            "willpower": 55,
+            "fellowship": 30
+          },
+          "movement": 2,
+          "wounds": 90,
+          "skills": [
+            {
+              "name": "acrobatics"
+            },
+            {
+              "name": "awareness"
+            },
+            {
+              "name": "command",
+              "modifier": 20
+            },
+            {
+              "name": "loreCommon",
+              "groups": ["Dominium Tau"]
+            },
+            {
+              "name": "dodge"
+            },
+            {
+              "name": "speakLanguage",
+              "groups": ["tau", "kroot", "lowGothic"]
+            }
+          ],
+          "talents": [
+            {
+              "name": "airOfAuthority"
+            },
+            {
+              "name": "ambidextrous"
+            },
+            {
+              "name": "dualShot"
+            },
+            {
+              "name": "independentTargeting"
+            },
+            {
+              "name": "meditation"
+            },
+            {
+              "name": "rapidReaction"
+            },
+            {
+              "name": "sprint"
+            }
+          ],
+          "traits": [
+            {
+              "name": "autoStabilised"
+            },
+            {
+              "name": "darkSight"
+            },
+            {
+              "name": "flier",
+              "value":  12
+            },
+            {
+              "name": "size",
+              "value": "enormous"
+            },
+            {
+              "name": "unnaturalStrength",
+              "value":  2
+            },
+            {
+              "name": "unnaturalToughness",
+              "value":  2
+            }
+          ],
+          "armour": {
+            "description": "Kombinezon XV8 Crisis",
+            "general": 9
+          },
+          "weapons": [
+            {
+              "section": "ranged",
+              "name": "plasmaRifle"
+            },
+            {
+              "section": "ranged",
+              "name": "missilePod"
+            }
+          ],
+          "gear": [
+            "Kombinezon Bojowy Crisis",
+            [
+              "(kombinezon) Detonator Awaryjny",
+              "(kombinezon) Katapulta"
+            ],
+            "mikrokoralik",
+            "auspex obcych"
+          ],
+          "rules": [
+            {
+              "title": "Detonator Awaryjny:",
+              "content": "Niektórzy z bohaterów Dominium Tau są tak oddaniu Większemu Dobru, że wyposażą się w sprzęt, który pozwoli im na dokonanie ostatecznego poświęcenia i pozwolenie towarzyszom na ucieczkę i kontynuowanie walki, jeśli porażka będzie nie do uniknięcia. Gdy Rany Dowódcy spadną do 0, nie rzucaj na Efekty Krytyczne. Zamiast tego stanie się jedna z dwóch rzeczy. Dowódca może, w momencie zaraz przed utratą przytomności, uchylić protokół Detonatora, wyłączając kombinezon i kończąc swój udział w starciu. Może też pozwolić na eksplozję ładunku wybuchowego umieszczonego w kombinezonie z nadzieją na rozprawienie się z przeciwnikami i uratowanie towarzyszy, nawet jeśli ceną będzie jego życie. Detonator Awaryjny eksploduje w momencie, gdy Rany Dowódcy spadną do 0 (jeśli nie zostanie wyłączony) i zadaje @dice{4k10} Obrażeń od Wybuchów w promieniu 10 metrów."
+            },
+            {
+              "title": "Katapulta",
+              "content": "Niektórzy Dowódcy Tau uważani są za zbyt ważnych dla Dominium, by mogli umrzeć, a jednak odmawiają oni służby gdziekolwiek poza pierwszą linią walki. Jako kompromis niektórzy pozwalają na zamontowanie w Kombinezonie Bojowym systemu wyrzutowego, który katapultuje ich, gdy kombinezon zostanie poważnie uszkodzony. Gdy Rany Dowódcy spadną do 0, Katapulta aktywuje się i wyrzuca go @dice{2k10} metrów w losowym kierunku. Dowódca, który się katapultuje, używa profilu @adversary{tauCommanderFoot}"
+            },
+            {
+              "title": "Cierpliwy Łowca:",
+              "content": "Dowódcy Tau są mistrzami starożytnych doktryn Kasty Ognia, które oparte są na roztropności i filozofii bitewnej. Rozważają oni silne i słabe strony sił swoich i przeciwnika, wybierając najlepszy moment na decydujące uderzenie. Jeśli Spójność Szwadronu zostanie zredukowana do 0, Dowódca może użyć Akcji Podwójnej, by aktywować Cierpliwego Łowcę. Wszystkie dowodzone przez niego jednostki wyposażone w mikrokoralik mogą przerzucać nietrafione ataki dystansowe wymierzone w Szwadron dopóki jego Spójność wynosi 0."
+            }
+          ]
+        },
+        {
+          "type": "creature",
+          "name":  "tauCommanderFoot",
+          "displayName": "Dowódca Tau",
+          "tier":  "master",
+          "subName": "Pieszy",
+          "content": [
+
+          ],
+          "characteristics": {
+            "weaponSkill": 35,
+            "ballisticSkill": 55,
+            "strength": 32,
+            "toughness": 37,
+            "agility": 45,
+            "intelligence": 40,
+            "perception": 55,
+            "willpower": 55,
+            "fellowship": 30
+          },
+          "movement": -1,
+          "wounds": 10,
+          "skills": [
+            {
+              "name": "acrobatics"
+            },
+            {
+              "name": "awareness"
+            },
+            {
+              "name": "command",
+              "modifier": 20
+            },
+            {
+              "name": "loreCommon",
+              "groups": ["Dominium Tau"]
+            },
+            {
+              "name": "dodge"
+            },
+            {
+              "name": "speakLanguage",
+              "groups": ["tau", "kroot", "lowGothic"]
+            }
+          ],
+          "talents": [
+            {
+              "name": "airOfAuthority"
+            },
+            {
+              "name": "ambidextrous"
+            },
+            {
+              "name": "dualShot"
+            },
+            {
+              "name": "independentTargeting"
+            },
+            {
+              "name": "meditation"
+            },
+            {
+              "name": "rapidReaction"
+            },
+            {
+              "name": "sprint"
+            }
+          ],
+          "armour": null,
+          "weapons": [
+            {
+              "section": "ranged",
+              "name": "pulsePistol"
+            }
+          ],
+          "gear": [
+            "mikrokoralik"
+          ],
+          "rules": [
+            {
+              "title": "Cierpliwy Łowca:",
+              "content": "Dowódcy Tau są mistrzami starożytnych doktryn Kasty Ognia, które oparte są na roztropności i filozofii bitewnej. Rozważają oni silne i słabe strony sił swoich i przeciwnika, wybierając najlepszy moment na decydujące uderzenie. Jeśli Spójność Szwadronu zostanie zredukowana do 0, Dowódca może użyć Akcji Podwójnej, by aktywować Cierpliwego Łowcę. Wszystkie dowodzone przez niego jednostki wyposażone w mikrokoralik mogą przerzucać nietrafione ataki dystansowe wymierzone w Szwadron dopóki jego Spójność wynosi 0."
+            }
+          ]
+        },
+        {
+          "type": "creature",
+          "name":  "tauStealthSuit",
+          "displayName": "Kombinezon Stealth Tau",
+          "tier":  "elite",
+          "content": [
+            "Kombinezony Stealth stanowią wysoce wyspecjalizowaną formę Kombinezonu Bojowego Tau, stworzoną z myślą o rekonesansie, infiltracji i zasadzkach. Są znacznie mniejsze niż Kombinezony Crisis i lżej uzbrojone. Zmniejszoną siłę ognia nadrabiają jednak swoją umiejętnością pozostania niezauważonymi do ostatniej chwili. Kombinezony Stealth działać mogą w dwóch trybach. Domyślny, pasywny, wykorzystuje cały zbiór technologii, która ma wytłumić sygnaturę elektromagnetyczną kombinezonu, przez co wrogim skanerom jest znacznie trudniej go wykryć. Nazywany jest „pasywnym”, ponieważ jego wykorzystanie jest niemożliwe do wykrycia, jako że polega on na maskowaniu samego kombinezonu bez zakłócania sprzętu wykrywającego. W trybie aktywnym włączony zostaje Generator Pola Stealth. Matowa czarna powierzchnia kombinezonu faluje i zamazuje się, ukazując niemal idealne odwzorowanie tego, co znajduje się za nim, efektywnie czyniąc go niemal całkowicie przezroczystym. Dodatkowo w trybie aktywnym systemy Kombinezonu starają się zakłócać wrogie urządzenia sensoryczne. Co prawda istnienie zakłóceń powiadomi przeciwnika o obecności Kombinezonu, ale faktyczne wykrycie go stanie się niemal niemożliwe."
+          ],
+          "characteristics": {
+            "weaponSkill": 30,
+            "strength": {
+              "value": 42,
+              "unnatural": 2
+            },
+            "willpower": 40,
+            "toughness": 47,
+            "agility": 38,
+            "fellowship": 40,
+            "ballisticSkill": 42,
+            "intelligence": 30,
+            "perception": 40
+          },
+          "movement": 1,
+          "wounds": 30,
+          "skills": [
+            {
+              "name": "acrobatics",
+              "modifier": 10
+            },
+            {
+              "name": "awareness",
+              "modifier": 20
+            },
+            {
+              "name": "loreCommon",
+              "groups": ["Dominium Tau"]
+            },
+            {
+              "name": "concealment",
+              "modifier": 20
+            },
+            {
+              "name": "dodge",
+              "modifier": 10
+            },
+            {
+              "name": "speakLanguage",
+              "groups": ["tau","kroot"]
+            },
+            {
+              "name": "tracking",
+              "modifier": 10
+            },
+            {
+              "name": "shadowing",
+              "modifier": 20
+            }
+          ],
+          "talents": [
+            {
+              "name": "hardTarget"
+            },
+            {
+              "name": "rapidReaction"
+            },
+            {
+              "name": "sprint"
+            }
+          ],
+          "traits": [
+            {
+              "name": "autoStabilised"
+            },
+            {
+              "name": "darkSight"
+            },
+            {
+              "name": "flier",
+              "value": 12
+            },
+            {
+              "name": "unnaturalStrength",
+              "value":  2
+            }
+          ],
+          "armour": {
+            "description": "Kombinezon XV15 Stealth",
+            "head": 8,
+            "body": 8,
+            "arms": 7,
+            "legs": 7
+          },
+          "weapons": [
+            {
+              "section": "ranged",
+              "name":  "burstCannon"
+            }
+          ],
+          "gear": [
+            "Kombinezon Stealth z wbudowanym generatorem pola stealth",
+            "mikrokoralik",
+            "skaner"
+          ],
+          "rules": []
         }
       ]
     },
@@ -19355,7 +19701,7 @@
               "name": "armourPlating"
             },
             {
-              "name": "autoStabilized"
+              "name": "autoStabilised"
             },
             {
               "name": "darkSight"
@@ -19536,7 +19882,7 @@
         {
           "type": "section",
           "name": "imperiumWeapons",
-          "display": "table",
+          "display": ["table"],
           "displayName": "broń imperium",
           "table": {
             "$name": "nazwa",
@@ -19554,11 +19900,11 @@
         {
           "type": "section",
           "name": "chaosWeapons",
-          "display": "table",
+          "display": ["table"],
           "displayName": "Broń Chaosu",
           "table": {
             "$name": "nazwa",
-            "class": "klasa",
+            "$class": "klasa",
             "$range": "zasięg",
             "$rof": "Szybkostrzelność",
             "$damage": "Obrażenia",
@@ -19572,11 +19918,11 @@
         {
           "type": "section",
           "name": "tauWeapons",
-          "display": "table",
+          "display": ["table", "description"],
           "displayName": "Broń Tau",
           "table": {
             "$name": "nazwa",
-            "class": "klasa",
+            "$class": "klasa",
             "$range": "zasięg",
             "$rof": "Szybkostrzelność",
             "$damage": "Obrażenia",
@@ -19585,7 +19931,19 @@
             "$reload": "Przeładowanie",
             "$qualities": "Własności",
             "weight": "masa"
-          }
+          },
+          "content": [
+            "Tau wytwarzają różnorodne uzbrojenie, poczynając od kompaktowych i wydajnych pistoletów impulsowych, a kończąc na niszczycielsko potężnym dziale szynowym. Wiele z nich wykorzystuje technologie zupełnie nieznane Techno–Kapłanom Adeptus Mechanicus i, ku przerażeniu zakonu, Tau wciąż udoskonalają swoje postępy technologiczne, by uczynić sprzęt lżejszym, mniejszym i bardziej śmiercionośnym. Doktryna bojowa Tau kładzie nacisk na podejście „wszystko naraz”, gdzie różne jednostki wspierają się nawzajem, kompensując wzajemnie swoje braki. Dla przykład Wojownicy Ognia nie przenoszą sami ciężkiego uzbrojenia, zamiast tego współpracując z innymi jednostkami, takimi jak Kombinezony Bojowe Crisis i pojazdy, i wzywając w odpowiednich momentach wsparcie ogniowe.",
+            "Większe systemy uzbrojenia montowane są na Kombinezonach Bojowych i pojazdach, które są w stanie zapewnić wystarczająco energii i amunicji, by wystarczyć na całe starcie bez potrzeby przeładowania, znacznie zwiększając osiągi takich jednostek na polu bitwy.",
+            {
+              "title": "Zintegrowane Systemy Uzbrojenia:",
+              "content": "Uzbrojenie zamontowane na Kombinezonach Bojowych jest w pełni zintegrowane i zasilane przekaźnikami wysokoenergetycznymi i podajnikami amunicji. Broń ta nie ma Masy ani Magazynka z powodu założenia, że Kombinezon ma wystarczająco amunicji na co najmniej jedno starcie. MG musi przejmować się amunicją tylko w przypadku, gdy Kombinezon przez dłuższy czas nie może powrócić do bazy."
+            },
+            {
+              "title": "Broń Impulsowa:",
+              "content": "Broń ta nazywana jest tak, ponieważ wystrzeliwuje mikroimpulsy wysoce przyspieszonej plazmy, osiągając znaczną moc i zasięg. Wyspecjalizowany @ranged{pulseCarbine} poświęca część swojego zasięgu, by zwiększyć ergonomię i ma zamontowany granatnik na @grenade{photonFlashGrenade|Granaty Fotonowe} (który należy rozważać jako @ranged{astartesAuxiliaryGrenadeLauncher} z Magazynkiem 1)."
+            }
+          ]
         }
       ]
     },
@@ -20027,12 +20385,131 @@
     },
     {
       "type": "group",
+      "parentPath": "ranged-tauWeapons",
+      "items": [
+        {
+          "name": "plasmaRifle",
+          "displayName": "Karabin Plazmowy",
+          "class": "mounted",
+          "range": 90,
+          "rof": {
+            "single": true,
+            "burst": 2
+          },
+          "damage": {
+            "formula": "3k10+9",
+            "display": "2k10+9",
+            "type": "energy"
+          },
+          "penetration": 8,
+          "qualities": [
+            "tearing"
+          ],
+          "tags": ["weapon:ranged"]
+        },
+        {
+          "name": "missilePod",
+          "displayName": "Wyrzutnia Pocisków",
+          "class": "mounted",
+          "range":  90,
+          "rof": {
+            "single": true,
+            "burst":  2
+          },
+          "damage": {
+            "formula": "2k10+6",
+            "type":  "explosion"
+          },
+          "penetration": 5,
+          "tags":  ["weapon:ranged"]
+        },
+        {
+          "name": "burstCannon",
+          "displayName": "Działo Rozrywające",
+          "class": "mounted",
+          "range": 60,
+          "rof": {
+            "auto": 10
+          },
+          "damage": {
+            "formula": "2k10+2",
+            "type": "energy"
+          },
+          "penetration": 4,
+          "clip": 500,
+          "tags": ["weapon:ranged"]
+        },
+        {
+          "name": "pulseRifle",
+          "displayName": "Karabin Impulsowy",
+          "class": "basic",
+          "range": 150,
+          "rof": {
+            "single": true,
+            "burst": 2,
+            "auto": 4
+          },
+          "damage": {
+            "formula": "2k10+2",
+            "type":  "energy"
+          },
+          "penetration": 4,
+          "clip": 36,
+          "reload": 0.5,
+          "qualities": [
+            "gyroStabilised"
+          ],
+          "tags": ["weapon:ranged"]
+        },
+        {
+          "name": "pulseCarbine",
+          "displayName": "Karabinek Impulsowy",
+          "class": "basic",
+          "range": 60,
+          "rof": {
+            "single": true,
+            "auto":  3
+          },
+          "damage": {
+            "formula": "2k10+2",
+            "type":  "energy"
+          },
+          "penetration": 4,
+          "clip":  24,
+          "reload": 1,
+          "qualities": [
+            "gyroStabilised"
+          ],
+          "tags": ["weapon:ranged"]
+        },
+        {
+          "name": "pulsePistol",
+          "displayName":  "Pistolet Impulsowy",
+          "class": "pistol",
+          "range":  30,
+          "rof": {
+            "single": true,
+            "burst": 2
+          },
+          "damage": {
+            "formula": "2k10+2",
+            "type":  "energy"
+          },
+          "penetration": 4,
+          "clip": 16,
+          "reload": 0.5,
+          "tags":  ["weapon:ranged"]
+        }
+      ]
+    },
+    {
+      "type": "group",
       "parentPath": "melee",
       "items": [
         {
           "type": "section",
           "name": "imperiumWeapons",
-          "display": "table",
+          "display": ["table"],
           "displayName": "broń imperium",
           "table": {
             "$name": "nazwa",
@@ -20045,7 +20522,7 @@
         {
           "type": "section",
           "name": "chaosWeapons",
-          "display": "table",
+          "display": ["table"],
           "displayName": "Broń Chaosu",
           "table": {
             "$name": "Nazwa",
@@ -20226,22 +20703,6 @@
           "tags": ["weapon:ranged"]
         },
         {
-          "name": "burstCannon",
-          "displayName": "Działo Rozrywające",
-          "class": "mounted",
-          "range": 60,
-          "rof": {
-            "auto": 10
-          },
-          "damage": {
-            "formula": "2k10+2",
-            "type": "energy"
-          },
-          "penetration": 4,
-          "clip": 500,
-          "tags": ["weapon:ranged"]
-        },
-        {
           "name": "railgunAP",
           "displayName": "Działo Szynowe (amunicja przeciwpancerna)",
           "class": "mounted",
@@ -20354,7 +20815,7 @@
       "type": "section",
       "displayName": "Pojazdy",
       "name": "vehicle",
-      "display": "description",
+      "display": ["description", "items"],
       "content": []
     },
     {
@@ -20366,7 +20827,7 @@
           "type": "section",
           "displayName": "Pojazdy Kosmicznych Marines",
           "name": "spaceMarine",
-          "display": "description",
+          "display": ["description", "items"],
           "content": []
         },
         {
@@ -20462,7 +20923,7 @@
         {
           "type": "section",
           "name": "chaos",
-          "display": "description",
+          "display": ["description", "items"],
           "displayName": "Pojazdy Chaosu",
           "content": [
             "Sekcja ta zawiera pojazdy używane przez siły Chaosu."
@@ -20471,7 +20932,7 @@
         {
           "type": "section",
           "name": "tau",
-          "display": "description",
+          "display": ["description", "items"],
           "displayName": "Pojazdy Tau",
           "content": [
             "Sekcja ta zawiera pojazdy używane przez obce siły Tau."
@@ -20528,7 +20989,7 @@
           "type": "section",
           "displayName": "Land Raider",
           "name": "landRaider",
-          "display": "description",
+          "display": ["description", "items"],
           "content": [
             "Podwozie Land Raidera jest dość wszechstronne i zostało zmodyfikowane w wiele wariantów używanych przez Zakony Kosmicznych Marines w całej galaktyce. Straż Śmierci nie jest wyjątkiem, a z powodu jej niezwykłej organizacji Szwadrony mają dostęp do wszystkich opisanych poniżej wersji."
           ]
@@ -20537,7 +20998,7 @@
           "type": "section",
           "displayName": "Land Speeder",
           "name": "landSpeeder",
-          "display": "description",
+          "display": ["description", "items"],
           "content": []
         },
         {
@@ -20942,7 +21403,7 @@
                   "style": "unordered",
                   "content": [
                     "Drednoty nie mogą używać następujących Akcji: @action{brace}, @action{jump}, @action{ready}, @action{reload}, @action{run}, @action{stand}, @action{stun};",
-                    "Drednoty są @trait{autoStabilized|Autostabilizowane}, przez co mogą strzelać z broni Ciężkiej brz przygotowania, a także strzelać ogniem serią i ciągłym używając Akcji Pojedynczej;",
+                    "Drednoty są @trait{autoStabilised|Autostabilizowane}, przez co mogą strzelać z broni Ciężkiej brz przygotowania, a także strzelać ogniem serią i ciągłym używając Akcji Pojedynczej;",
                     "Wyszukane zestawy sensoryczne, w które wyposażony jest Drednot, oznaczają że jego pilot zawsze liczony jest jako korzystający z autozmysłów, auspexu o zasięgu 500 metrów, systemu celowniczego i wbudowanego rozgłaszacza voxu;",
                     "Przy wykonywaniu ruchów Drednoty wyznaczają Szybkość na podstawie Szybkości Taktycznej, nie PZr;",
                     "Drednoty nie mają premii z Manewrowości;",
@@ -22466,7 +22927,6 @@
               "options": [
                 {
                   "section": "ranged",
-                  "source": "RoB",
                   "name": "burstCannon"
                 }
               ]
@@ -22507,7 +22967,6 @@
               "options": [
                 {
                   "section": "ranged",
-                  "source": "RoB",
                   "name": "burstCannon",
                   "clip": 2000
                 }
@@ -22557,7 +23016,6 @@
               "options": [
                 {
                   "section": "ranged",
-                  "source": "RoB",
                   "name": "burstCannon"
                 }
               ]
@@ -22678,7 +23136,6 @@
               "options": [
                 {
                   "section": "ranged",
-                  "source": "RoB",
                   "name": "burstCannon"
                 }
               ]
@@ -22687,12 +23144,12 @@
               "operator": "Strzelec",
               "facing": ["front"],
               "number": "2–4",
-              "info": "${insert:#ranged.manualSeekerMissile=RoB.content}",
               "options": [
                 {
                   "section": "ranged",
                   "source": "RoB",
-                  "name": "manualSeekerMissile"
+                  "name": "manualSeekerMissile",
+                  "info": "${insert:#ranged.manualSeekerMissile=RoB.content}"
                 }
               ]
             }
@@ -22810,7 +23267,6 @@
               "options": [
                 {
                   "section": "ranged",
-                  "source": "RoB",
                   "name": "burstCannon"
                 }
               ]
@@ -22960,7 +23416,6 @@
               "options": [
                 {
                   "section": "ranged",
-                  "source": "RoB",
                   "name": "burstCannon"
                 }
               ]
@@ -22989,7 +23444,7 @@
       "name": "primarisVehicles",
       "displayName": "Pojazdy Primaris",
       "source": "EIn",
-      "display": "description",
+      "display": ["description", "items"],
       "content": []
     },
     {

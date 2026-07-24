@@ -138,7 +138,7 @@ function renderWeapon(
   )
 }
 
-export default function Creature({ creature }: { creature: RPCCreature }) {
+export default function Creature({ creature, disp }: { creature: RPCCreature, disp?: boolean }) {
   const jsonData = useContext(JsonDataContext)
   const alreadyResolved = useContext(AlreadyResolvedContext)
 
@@ -163,6 +163,14 @@ export default function Creature({ creature }: { creature: RPCCreature }) {
   ]
     .filter((e) => e)
     .join("; ")
+
+  // anchor
+  if (!disp) return (
+    <div
+      id={creature.elementId}
+      tabIndex={-1}
+    ></div>
+  )
 
   return (
     <div
@@ -280,7 +288,7 @@ export default function Creature({ creature }: { creature: RPCCreature }) {
                       ?.map((e) =>
                         typeof e === "string"
                           ? e
-                          : `@trait{${e.name}${e.value ? "||" + e.value : ""}}${e.source ? "{" + e.source + "}" : ""}`,
+                          : `@trait{${e.name}${e.value ? "||" + e.value : ""}}${e.source ? "{" + e.source + "}" : ""}${e.horde ? ' (Horda)' : ''}`,
                       )
                       ?.join(", ")
                   : "Brak") + "."

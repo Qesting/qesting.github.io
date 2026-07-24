@@ -299,7 +299,7 @@ function renderWeapon(
   return result
 }
 
-export default function Vehicle({ vehicle }: { vehicle: RPCVehicle }) {
+export default function Vehicle({ vehicle, disp }: { vehicle: RPCVehicle, disp?: boolean }) {
   const jsonData = useContext(JsonDataContext)
   const alreadyResolved = useContext(AlreadyResolvedContext)
 
@@ -309,6 +309,14 @@ export default function Vehicle({ vehicle }: { vehicle: RPCVehicle }) {
 
   const { getHiddenSources } = useContext(StateFunctionsContext)
   if (getHiddenSources?.()?.includes(vehicle.source)) return <></>
+
+  // anchor
+  if (!disp) return (
+    <div
+      id={vehicle.elementId}
+      tabIndex={-1}
+    ></div>
+  )
 
   return (
     <div

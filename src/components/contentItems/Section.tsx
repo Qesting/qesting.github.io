@@ -21,7 +21,7 @@ import { StateFunctionsContext } from "../../contexts/StateFunctionsContext.js"
 import CopyItemLink from "../CopyItemLink.js"
 import SourceName from "../SourceName.js"
 
-export default function Section({ data }: { data: RPCSection }) {
+export default function Section({ data, disp }: { data: RPCSection, disp?: boolean }) {
   const {
     displayName,
     name,
@@ -67,6 +67,17 @@ export default function Section({ data }: { data: RPCSection }) {
 
   const [expanded, setExpanded] = useState(true)
   const sectionId = Math.random().toString(16).substring(2)
+  const displayItems: boolean = typeof display === 'string'
+    ? display === 'all' || (display === 'none' && !!parentPath)
+    : display.includes('items')
+
+  // anchor
+  if (!disp) return (
+    <section
+      id={elementId}
+      tabIndex={-1}
+    ></section>
+  )
 
   return (
     <section
@@ -97,7 +108,11 @@ export default function Section({ data }: { data: RPCSection }) {
             <SourceName source={foundSource} />
           </div>
           <div style={{ height: expanded ? "auto" : 0, overflowY: "hidden" }}>
-            {!["description", "none"].includes(display) && (
+            {(
+              typeof display === 'string'
+                ? display === 'all'
+                : display.includes('table')
+            ) && (
               <Table
                 table={table ?? replacementTable}
                 data={filteredItems.filter((e) => !itemIsSection(e))}
@@ -105,34 +120,37 @@ export default function Section({ data }: { data: RPCSection }) {
                 source={source}
               />
             )}
-            {(!["table", "none"].includes(display) ||
-              (display === "none" && parentPath)) && (
-              <div>
+            <div>
+              {(
+                typeof display === 'string'
+                  ? display === 'all' || (display === 'none' && parentPath)
+                  : display.includes('description')
+              ) && (
                 <div className={content ? "my-2" : ""}>
                   <TextContent content={content ?? ''} />
                 </div>
-                <div
-                  className={
-                    !noGrid
-                      ? "grid gap-x-4 grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4"
-                      : ""
-                  }
-                >
-                  {filteredItems &&
-                    filteredItems.map((e, index) =>
-                      itemIsSection(e) ? (
-                        <Section key={index} data={e} />
-                      ) : itemIsCreature(e) ? (
-                        <Creature creature={e} key={index} />
-                      ) : itemIsVehicle(e) ? (
-                        <Vehicle vehicle={e} key={index} />
-                      ) : (
-                        <Item key={index} data={e} />
-                      ),
-                    )}
-                </div>
+              )}
+              <div
+                className={
+                  !noGrid
+                    ? "grid gap-x-4 grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4"
+                    : ""
+                }
+              >
+                {filteredItems &&
+                  filteredItems.map((e, index) =>
+                    itemIsSection(e) ? (
+                      <Section key={index} data={e} disp={displayItems} />
+                    ) : itemIsCreature(e) ? (
+                      <Creature creature={e} key={index} disp={displayItems} />
+                    ) : itemIsVehicle(e) ? (
+                      <Vehicle vehicle={e} key={index} disp={displayItems} />
+                    ) : (
+                      <Item key={index} data={e} disp={displayItems} />
+                    ),
+                  )}
               </div>
-            )}
+            </div>
           </div>
         </DataProviderContext.Provider>
       </SectionNameContext.Provider>

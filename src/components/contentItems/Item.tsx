@@ -11,7 +11,7 @@ import CopyItemLink from "../CopyItemLink"
 import ExportAsComponentButton from "../ExportAsComponentButton"
 import SourceName from "../SourceName"
 
-function Item({ data }: { data: RPCItem }) {
+function Item({ data, disp }: { data: RPCItem, disp?: boolean }) {
   const {
     displayName,
     content,
@@ -29,6 +29,14 @@ function Item({ data }: { data: RPCItem }) {
 
   const { getHiddenSources } = useContext(StateFunctionsContext)
   if (getHiddenSources?.()?.includes(source)) return <></>
+
+  // anchor
+  if (!disp) return (
+    <div
+      id={elementId}
+      tabIndex={-1}
+    ></div>
+  )
 
   return (
     <div

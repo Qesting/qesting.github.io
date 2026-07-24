@@ -94,8 +94,9 @@ export function resolveTable(
   source: string,
   jsonData: JsonDataType,
 ): RPCTable|null {
+  const actualSource = source ? source : jsonData.rootSource.name
   return jsonData.tables?.find(
-    (t) => t.name === tableName && t.source === source,
+    (t) => t.name === tableName && t.source === actualSource,
   ) ?? null
 }
 

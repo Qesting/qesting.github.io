@@ -583,8 +583,19 @@
           "description": "the actual displayed name; if empty, will be the same as [name]"
         },
         "display": {
-          "type": "string",
-          "enum": ["description", "table", "both", "none"],
+          "oneOf": [
+            {
+              "type": "string",
+              "enum": ["none", "all"]
+            },
+            {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "enum": ["description", "table", "items"]
+              }
+            }
+          ],
           "description": "how the section will be displayed. set \"none\" in a subsection"
         },
         "noGrid": {

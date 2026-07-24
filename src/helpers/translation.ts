@@ -27,7 +27,7 @@ export const weaponClass: Record<string, string> = {
   basic: "Zwykła",
   pistol: "Pistolet",
   heavy: "Ciężka",
-  mounted: "Stała",
+  mounted: "Osadzona",
   thrown: "Rzucana",
   melee: "Biała",
   placed: "Podkładana",

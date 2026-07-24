@@ -152,11 +152,13 @@ export type TableTemplate = {
       }
 }
 
+export type SectionDisplayType = "table" | "description" | "items"
+
 export type RPCSection = RPCItem & {
   type: "section"
   children?: RPCItem[]
   footnotes?: Footnote[]
-  display: "table" | "description" | "both" | "none"
+  display: SectionDisplayType[]|"none"|"all"
   table: TableTemplate
 }
 
@@ -357,7 +359,8 @@ export type RPCCreature = JsonItem & {
     | {
         name: string
         source?: string
-        value?: any
+        value?: any,
+        horde?: boolean
       }
   )[]
   armour?: {
