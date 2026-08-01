@@ -335,7 +335,7 @@ export type RPCCreature = JsonItem & {
   elementId: string
   tier?: "troop" | "elite" | "master"
   characteristics: CharacteristicSet
-  movement?: number
+  movement?: number|null
   wounds: number
   skills?: (
     | string

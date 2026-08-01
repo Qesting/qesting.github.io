@@ -118,7 +118,7 @@
           }
         },
         "movement": {
-          "type": "number",
+          "type": ["number", "null"],
           "description": "movement bonus for size for half move"
         },
         "wounds": {
@@ -277,6 +277,9 @@
           "type": ["array", "null"],
           "items": {
             "oneOf": [
+              {
+                "type": "string"
+              },
               {
                 "$ref": "#/$defs/creatureWeapon"
               },

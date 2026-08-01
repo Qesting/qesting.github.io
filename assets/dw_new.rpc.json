@@ -18902,7 +18902,7 @@
               "name": "darkSight"
             },
             {
-              "name": "flier",
+              "name": "flyer",
               "value":  12
             },
             {
@@ -19118,7 +19118,7 @@
               "name": "darkSight"
             },
             {
-              "name": "flier",
+              "name": "flyer",
               "value": 12
             },
             {
@@ -19144,7 +19144,151 @@
             "mikrokoralik",
             "skaner"
           ],
-          "rules": []
+          "rules": [
+            {
+              "title": "Generator Pola Stealth:",
+              "content": [
+                "Generator Pola Stealth Kombinezonu zawsze działa w jednym z dwóch trybów — Aktywnym albo Pasywnym. Tryb można zmienić jako Akcję Darmową, a zmiana następuje w kolejnej Turze.",
+                "W Trybie Pasywnym wszystkie Testy związane z wykryciem Kombinezonu i Testy Siły Woli związane z trafieniem Kombinezonu otrzymują karę -10 (tylko dla wzroku). W Trybie Aktywnym wszystkie Testy związane z wykryciem Kombinezonu, a także Testy Walki Wręcz i Umiejętności Strzeleckich związane z jej Trafieniem otrzymują karę -30 (działa na wszystkie zmysły, w tym te ulepszone przez autozmysły, celowniki i podobne urządzenia). Każdy, kto próbuje wykryć Kombinezon, może wykonać Test Spostrzegawczości (biorąc pod uwagę powyższe kary). Sukces o co najmniej jeden Stopień pozwala Bohaterowi zauważyć, że jego zmysły lub sensory są atakowane."  
+              ]
+            }
+          ]
+        },
+        {
+          "type": "creature",
+          "name": "gunDrone",
+          "displayName": "Dron Bojowy",
+          "tier": "troop",
+          "content": [
+            "Tau wykorzystują różnorodne sztuczne inteligencje, przez co cała ich rasa jest potępiona w oczach Adeptus Mechanicus i większości hierarchii Imperium. Takie inteligencje maszynowe zainstalowane w ruchomych urządzeniach nazywane są Dronami, które mogą przyjmować najróżniejsze formy. Niektóre Drony mogą wchodzić w interakcje ze swoimi panami, wykonując proste instrukcje, a nawet przewidując zadania, jakie muszą wykonać. Tau wydają się mieć wysokie mniemanie o tych Dronach, które choć nie traktowane są jak równe statusem, to cieszą się pewnym poważaniem, być może podobnie do zaufanego zwierzęcego towarzysza. Drony Bojowe są urządzeniami w kształcie dysku, które poruszają się za pomocą małego generatora antygrawitacyjnego i wyposażone są w parę karabinków impulsowych. Choć niektóre Drony Bojowe służą konkretnym panom, najniebezpieczniejsze są w większym, niezależnym szwadronie. Przy działaniu w ten sposób Drony są w stanie połączyć swoje systemy celownicze, sensoryczne i obliczeniowe, czyniąc całość znacznie groźniejszą niż jej części."
+          ],
+          "characteristics": {
+            "weaponSkill": 20,
+            "ballisticSkill": 25,
+            "strength": 20,
+            "toughness": 40,
+            "agility": 40,
+            "intelligence": 15,
+            "perception": 25,
+            "willpower": 20,
+            "fellowship": 10
+          },
+          "movement": null,
+          "wounds": 15,
+          "skills": [
+            {
+              "name": "acrobatics"
+            },
+            {
+              "name": "awareness"
+            },
+            {
+              "name": "dodge"
+            }
+          ],
+          "talents": [
+            {
+              "name": "fearless"
+            },
+            "Trening z Bronią (Karabinek Impulsowy) — może używać tylko zamontowanej broni"
+          ],
+          "traits": [
+            {
+              "name": "fireDrill"
+            },
+            {
+              "name": "flyer",
+              "value": 12
+            },
+            {
+              "name": "machine",
+              "value": 5
+            }
+          ],
+          "weapons": [
+            "Dwa połączone @ranged{pulseCarbine|Karabinki Impulsowe} — traktowane jako jeden @quality{twinLinked|Sprzężony}"
+          ],
+          "gear": [
+            "Wbudowany mikrokoralik (tylko do odbierania)"
+          ],
+          "rules": [
+            {
+              "title": "Połączona Inteligencja Maszynowa:",
+              "content": "Za każdy Dron Bojowy w szwadronie US, Int i Per pozostałych zostają zwiększone o +2. Premie te są od razu przeliczane, jeśli któryś z Dronów zostanie zniszczony."
+            }
+          ]
+        },
+        {
+          "type": "creature",
+          "name": "tauFireWarrior",
+          "displayName": "Wojownik Ognia Tau",
+          "tier": "troop",
+          "content": [
+            "Wojownicy Ognia są regularną piechotą armii Tau. Wszyscy są członkami Kasty Ognia, hodowanymi by walczyć i bezgranicznie oddani Większemu Dobru. Drużyny Wojowników Ognia są świetnie wyposażone w karabiny albo karabinki impulsowe i świetne pancerze. Każdy z nich nosi hełm, w który wbudowano zestawy urządzeń komunikacyjnych i sensorycznych, dzięki czemu wciąż utrzymują kontakt z dowódcą i mogą odpowiedzieć na jego rozkazy niemal natychmiast. Taktyka Wojowników Ognia podkreśla znaczenie płynnej walki manewrowej, zamiast podejścia upartych armii ludzkości. Będą oddawać teren i zmieniać pozycje, jeśli sytuacja tego wymaga, starając się wydać wrogom bitwę na jak najkorzystniejszych dla siebie warunkach. Podejście to skupia się na jak najlepszym wykorzystaniu znacznej siły ognia drużyny, a Wojownicy Ognia świetnie radzą sobie z wyznaczeniem najbardziej niebezpiecznego przeciwnika, by całkowicie go zniszczyć, a następnie przejściem na kolejną pozycję, z której będą mogli określić nowy cel."
+          ],
+          "characteristics": {
+            "weaponSkill": 25,
+            "ballisticSkill": 35,
+            "strength": 30,
+            "toughness": 30,
+            "agility": 25,
+            "intelligence": 30,
+            "perception": 20,
+            "willpower": 30,
+            "fellowship": 30
+          },
+          "movement": 1,
+          "wounds": 12,
+          "skills": [
+            {
+              "name": "awareness"
+            },
+            {
+              "name": "loreCommon",
+              "groups": ["Dominium Tau"]
+            },
+            {
+              "name": "speakLanguage",
+              "groups": ["Tau"]
+            }
+          ],
+          "talents": [
+            {
+              "name": "exoticWeaponTraining",
+              "groups": ["Broń Impulsowa Tau"]
+            }
+          ],
+          "traits": [
+            {
+              "name": "fightingWithdrawal"
+            },
+            {
+              "name": "fireDrill"
+            }
+          ],
+          "armour": {
+            "description": "Pancerz Wojownika Ognia Tau",
+            "head": 6,
+            "arms": 6,
+            "body": 6,
+            "legs": 6
+          },
+          "weapons": [
+            [
+              {
+                "name": "pulseRifle",
+                "section": "ranged"
+              },
+              {
+                "name": "pulseCarbine",
+                "section": "ranged"
+              }
+            ]
+          ],
+          "gear": [
+            "Mikrokoralik",
+            "Foto–wizjer"
+          ]
         }
       ]
     },

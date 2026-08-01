@@ -140,7 +140,7 @@ function App() {
           <div className="fixed top-20 bottom-0 left-0 right-0 overflow-y-scroll bg-inherit flex flex-col">
             <main className="py-4 px-2 flex flex-col flex-grow">
               {section ? (
-                <Section data={section} key={sectionName} />
+                <Section data={section} key={sectionName} disp={true}/>
               ) : (
                 <>
                   <h1 className="py-2 text-4xl mb-4 text-center relative after:w-full after:h-px after:absolute after:bottom-0 after:bg-current after:left-0 after:right-0">
