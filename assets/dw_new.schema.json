@@ -802,7 +802,7 @@
           "type": "number"
         },
         "clip": {
-          "type": ["number", "string"],
+          "type": ["number", "string", "null"],
           "description": "the weapon's clip size"
         },
         "reload": {
@@ -830,7 +830,7 @@
                         "description": "the quality name"
                       },
                       "value": {
-                        "type": "number",
+                        "type": ["number", "string"],
                         "description": "the value that will be displayed in paretheses, eg. Blast (2)"
                       },
                       "footnote": {

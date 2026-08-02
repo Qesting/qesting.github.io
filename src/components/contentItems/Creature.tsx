@@ -2,6 +2,7 @@ import {
   Characteristic,
   itemIsWeapon,
   RPCCreature,
+  weaponIsMelee,
   WeaponRef,
 } from "../../helpers/types"
 import { useContext } from "react"
@@ -73,7 +74,14 @@ function renderWeapon(
     alreadyResolved,
     jsonData,
   )
-  if (!foundWeapon || !itemIsWeapon(foundWeapon)) return
+  if (!foundWeapon) {
+    console.warn(`Weapon not found for entry`, weapon)
+    return
+  }
+  if (!itemIsWeapon(foundWeapon)) {
+    console.warn(`Weapon not found for entry`, weapon, 'found a non–weapon item', foundWeapon)
+    return
+  }
   const strengthBonus = strength === null ? 0 : (typeof strength === "number")
     ? Math.floor(strength/10) * (foundWeapon.doublesStrengthBonus ? 2 : 1)
     : strength.bonus
@@ -82,7 +90,7 @@ function renderWeapon(
   return (
     capitalize(foundWeapon.displayName ?? '') +
     " (" +
-    (foundWeapon.class === "melee"
+    (weaponIsMelee(foundWeapon)
       ? (
           typeof foundWeapon.damage === 'string' 
             ? foundWeapon.damage : 
@@ -117,7 +125,7 @@ function renderWeapon(
                 ? damageType[foundWeapon.damage.type].charAt(0).toUpperCase()
                 : foundWeapon.damage.type.map(e => damageType[e].charAt(0)).join('/')
             }${foundWeapon.penetration ? "; Pen " + foundWeapon.penetration : ""}`
-        ) + `; Mag ${foundWeapon.clip}; Ład ${foundWeapon.reload === 1 ? "A2" : foundWeapon.reload + " AC"}`
+        ) + `; Mag ${foundWeapon.clip ?? "—"}; Ład ${foundWeapon.reload ? (foundWeapon.reload === 1 ? "A2" : foundWeapon.reload + " AC") : '—'}`
         + (
           foundWeapon.qualities
             ? "; " +

@@ -192,7 +192,7 @@ export type Quality =
   | string
   | {
       name: string
-      value?: number
+      value?: number|string
       footnote?: number
       display?: string
       noParser?: true
@@ -221,8 +221,8 @@ export type RPCRangedWeapon = RPCWeapon & {
   class?: "basic" | "pistol" | "heavy" | "thrown" | "mounted" | "placed"
   range: number | string
   rof: RateOfFire
-  clip?: number
-  reload?: number | string
+  clip?: number | null
+  reload?: number | string | null
 }
 
 export function weaponIsRanged(weapon: RPCWeapon): weapon is RPCRangedWeapon {

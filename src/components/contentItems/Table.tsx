@@ -11,6 +11,7 @@ import {
   damageType,
 } from "../../helpers/translation"
 import {
+  DamageType,
   Footnote,
   jsonItemIsItem,
   objectIsJsonItem,
@@ -204,8 +205,8 @@ export default function Table({
                           />
                         }
                         &nbsp;{typeof e.damage.type === 'string' 
-                          ? damageType[e.damage.type].charAt(0).toUpperCase()
-                          : e.damage.type.map((f: string) => damageType[f]).join('/')}
+                          ? damageType[e.damage.type as DamageType].charAt(0).toUpperCase()
+                          : e.damage.type.map((f: DamageType) => damageType[f]).join('/')}
                       </span>
                     ) : (
                       e.damage

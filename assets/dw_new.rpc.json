@@ -4315,11 +4315,16 @@
           ]
         },
         {
-          "name": "instinctiveBehavior",
+          "name": "instinctiveBehaviour",
           "displayName": "instynktowne zachowanie",
           "subName": "Tyranidy",
           "shortDesc": "Stworzenie ma zestaw określonych reakcji na bodźce.",
           "noGrid": true,
+          "groups": {
+            "feed": "Żerowanie",
+            "lurk": "Skradanie",
+            "hide": "Ukrycie"
+          },
           "content": [
             "Tyranid z tą Cechą zostanie zredukowany do podstawowych instynktów, jeżeli zostanie odcięty od kontrolującego jego działania Umysłu Roju. Zasadniczo oznacza to, że jeżeli w danym Starciu nie towarzyszy mu @trait{synapseCreature}, zachowywać się będzie w określony sposób. Zachowanie to zapisano w nawiasach i ma ono następujący efekt:",
             {
@@ -4501,7 +4506,7 @@
           "displayName": "stworzenie synapsowe",
           "shortDesc": "Zapewnia innym pobliskim Tyranidom talent @talent{fearless}.",
           "content": [
-            "Tyranid z tą Cechą jest węzłem roztaczającym kontrolującą i jednoczącą obecność Umysłu Roju, która kieruje poczynaniami wszystkich Tyranidów. Obecność Stworzenia Synapsowego w Starciu daje innym Tyranidom Talent @talent{fearless} i pozwala stłumić efekty @trait{instinctiveBehavior|instynktownego zachowania}. Jeżeli potrzebny jest konkretny zasięg, można go uznać za 10 \u00d7 Premia z Siły Woli metrów."
+            "Tyranid z tą Cechą jest węzłem roztaczającym kontrolującą i jednoczącą obecność Umysłu Roju, która kieruje poczynaniami wszystkich Tyranidów. Obecność Stworzenia Synapsowego w Starciu daje innym Tyranidom Talent @talent{fearless} i pozwala stłumić efekty @trait{instinctiveBehaviour|instynktownego zachowania}. Jeżeli potrzebny jest konkretny zasięg, można go uznać za 10 \u00d7 Premia z Siły Woli metrów."
           ]
         },
         {
@@ -8425,7 +8430,8 @@
           "renown": 0,
           "content": [
             "Bronie improwizowane mogą przybierać wiele form, ale zwykle są różnymi poręcznymi obiektami, za które można szybko chwycić. Należą do nich na przykład nogi od stołów, odcięte kończyny, czy łuski po amunicji artyleryjskiej. Uderzenie przeciwnika bronią zasięgową również liczy się jako improwizowane."
-          ]
+          ],
+          "tags": ["weapon:melee"]
         }
       ]
     },
@@ -18301,6 +18307,19 @@
         },
         {
           "type": "section",
+          "name": "tyranids",
+          "displayName": "Tyranidy",
+          "display": ["description", "items"],
+          "content": [
+            "%quote{Imperium trawi rak. Z każdą dekadą rozprzestrzenia się bardziej, zostawiając za sobą spustoszone, martwe światy. Ta potworność, ta abominacja, ma umysł i cele, które działają na niewyobrażalną, galaktyczną skalę, a my możemy tylko próbować zatrzymać roje specjalnie zaprojektowanych bio–stworów, które instynkt pcha na nas. Nadaliśmy temu czemuś nazwę, by ukoić nasze obawy; nazywamy je rasą Tyranidów, ale jeśli ono samo w jakiś sposób nas zauważa, musi myśleć o nas jedynie jako o Zdobyczy.|Inkwizytor Czevak podczas Konklave Har}",
+            "Zagrożenie ze strony Tyranidów jest niepodobne do żadnego, z którym do tej pory mierzyło się Imperium, ogromne i całkowicie obce w swojej naturze i potrzebie pożerania — nie tylko Ludzkości, ale wszelkiego życia w galaktyce. Tyranidy do ogromny rój drapieżnych stworzeń kontrolowany przez jeden Umysł Roju; jedno ciało, jedna wola i jedna biologiczna maszyna, której zadaniem jest pożeranie i absorbowanie biomasy na niewyobrażalną skalę, skupiona na próbach zaspokojenia nieskończonego głodu. Przybyły z mroźnych głębin przestrzeni między galaktykami; macki Wielkiego Pożeracza, niszczycielski rój złożony z miliardów organizmów, z których każdy jest nośnikiem ogromnej, nieśmiertelnej inteligencji. Za sobą pozostawiają tylko martwe resztki niegdyś tętniących życiem światów i jeśli Imperium nie da rady ich zatrzymać, nie ma nadziei na przyszłość.",
+            "Tyranidy, nazwane tak po zniszczonej placówce eksploracyjnej na Tyranie, która padła pod atakiem tego, co nazwane zostało później Flotą–Rojem Behemot w roku 745.M41, są zagrożeniem, które od tego czasu spustoszyło setki, jeśli nie tysiące układów gwiezdnych, głównie w Segmentum Ultima, niby olbrzymie, potworne szczęki zaciskające się na płaszczyźnie galaktyki, choć jeszcze żaden zakątek rozległego Imperium nie uchował się przed podzielonymi mackami nadchodzącej fali koszmaru. Do tego Genokrady, zagrożenie od milieniów szarpiące Imperium, okazuje się teraz zwiastunem nadejścia Tyranidów, a zaginione sekrety odległej przeszłości wydają się wskazywać na dawniejsze spotkania, ale nigdy tak powszechnie spotykane ani katastrofalnie niszczycielskie jak obecnie.",
+            "W bitwie Tyranidy są koszmarem, którego nie można zrozumieć; potworną falą bezlitosnych szponów, toksyn i kłów, z którymi nie można negocjować, przekonać, ani poddać się. Uderzają z nieustępliwą furią wściekłej bestii, a jednak wszystkimi kieruje zimna, obca inteligencja, która czyni każdy składnik roju — od przeżerających ciało pasożytów po gigantyczne stworzenia rozmiarów Tytana Bojowego — znacznie bardziej niebezpiecznymi, niż mogłoby być zwykłe zwierzę. Na pozór niewyczerpane siły Flot–Rojów, podróżujące przez próżnię w żywych bio–okrętach, wyczuwają tętniące życiem planety, tak jak wielki oceaniczny drapieżnik wyczuwa krew w wodzie. Atakują wybrany świat–ofiarę, wypuszczając toksyczne zarodniki, które zanieczyszczają atmosferę i wysyłając mordercze stworzenia łowcze, których zadaniem jest eliminacja zwierząt mogących stanowić zagrożenie dla konsumpcji. W zależności od rozmiaru i zasobów dostępnych dla konkretnej Floty–Roju, pojawić się mogą inne szybko przystosowujące się i mutujące stworzenia bojowe i przywódcze, które wydadzą wojnę ku eksterminacji całego życia; wojnę z dwoma możliwymi zakończeniami — pokonaniem i wyplenieniem Tyranidów przez obrońców albo całkowitym zniszczeniem, konsumpcją i przemianą całej żywej materii przez Flotę–Rój, która na swojej drodze pozostawi kolejny martwy świat.",
+            "Od pojawienia się zagrożenia ze strony Tyranidów Straż Śmierci i inne zbrojne siły Imperium prawidłowo zidentyfikowały je jako priorytetowy cel, który należy rozbić i pokonać, by któregoś dnia cała Ludzkość nie skończyła w jego szczękach."
+          ]
+        },
+        {
+          "type": "section",
           "name": "nonPlayerCharacters",
           "displayName": "bohaterowie niezależni",
           "display": ["description", "items"],
@@ -19294,6 +19313,501 @@
     },
     {
       "type": "group",
+      "parentPath": "adversary-tyranids",
+      "items": [
+        {
+          "type": "creature",
+          "name": "hiveTyrant",
+          "displayName": "Tyran Roju",
+          "tier": "master",
+          "content": [
+            "%quote{I spojrzałem na wielką bestię roju. I wiedziałem, że nie ma już nadziei.|cytat przypisywany Hectorowi Prime, dowódcy Adamantowej Wieży w Hethgard, straconemu za tchórzostwo}",
+            "Tyran Roju, pan bitewnych hord, jest masywnie zbudowanym i potężnym stworzeniem, które w pewnym sensie służy jako przywódca ataków Tyranidów na lądzie. W swojej mocy podobny jest do czołgu bojowego, i choć może rozrywać pancerze jak przemoczony papier i zarzynać wszystko, co rusza się wokół niego, jest również niesamowicie szybki i zwinny. Niektóre Tyrany mogą mieć skrzydła i ekstremalne mutacje biomorfowe, które często przyjmują postać okropnego uzbrojenia, palącego i duszącego ofiary na dystans. Każdy jest również potężnym psionicznym węzłem dla szerszego Umysłu Roju Tyranidów, nie tylko zapewniając reszcie roju skupienie i możliwość strategicznego działania, ale również ofensywnie używająć mocy Umysłu Roju, by doprowadzać kruche ludzkie umysły do obłędu strachem i wypalać mózgi wrogich psykerów, którzy próbowaliby dorównać mu swoimi żałosnymi mocami."
+          ],
+          "characteristics": {
+            "weaponSkill": 78,
+            "ballisticSkill": 33,
+            "strength": {
+              "value": 60,
+              "unnatural": 3
+            },
+            "toughness": {
+              "value": 53,
+              "unnatural": 3
+            },
+            "agility": 45,
+            "intelligence": 45,
+            "perception": 49,
+            "willpower": {
+              "value": 70,
+              "unnatural": 2
+            },
+            "fellowship": null
+          },
+          "movement": 3,
+          "wounds": 120,
+          "skills": [
+            {
+              "name": "awareness"
+            },
+            {
+              "name": "climb"
+            },
+            {
+              "name": "swim"
+            }
+          ],
+          "talents": [
+            {
+              "name": "ambidextrous"
+            },
+            {
+              "name": "combatMaster"
+            },
+            {
+              "name": "crushingBlow"
+            },
+            {
+              "name": "fearless"
+            },
+            {
+              "name": "heightenedSenses",
+              "groups": ["Wszystkie"]
+            },
+            {
+              "name": "psyRating",
+              "groups": ["8"]
+            },
+            {
+              "name": "twoWeaponWielder",
+              "groups": ["melee"]
+            },
+            {
+              "name": "swiftAttack"
+            },
+            {
+              "name": "lightningAttack"
+            }
+          ],
+          "traits": [
+            {
+              "name": "brutalCharge"
+            },
+            {
+              "name": "darkSight"
+            },
+            {
+              "name": "fear",
+              "value": 4
+            },
+            {
+              "name": "naturalArmour",
+              "value": "Związany Egzoszkielet"
+            },
+            {
+              "name": "multipleArms"
+            },
+            {
+              "name": "unnaturalStrength",
+              "value": 3
+            },
+            {
+              "name": "unnaturalToughness",
+              "value": 3
+            },
+            {
+              "name": "improvedNaturalWeapons",
+              "value": "Kososzpony"
+            },
+            {
+              "name": "shadowInTheWarp"
+            },
+            {
+              "name": "size",
+              "value": "Masywny"
+            },
+            {
+              "name": "synapseCreature"
+            },
+            {
+              "name": "tyranid"
+            }
+          ],
+          "armour": {
+            "description": "Związany Egzoszkielet",
+            "general": 10
+          },
+          "weapons": [
+            {
+              "name": "scythingTalons",
+              "section": "melee"
+            }
+          ],
+          "gear": null,
+          "rules": [
+            {
+              "title": "Biomorfy:",
+              "content": "Decyzją MG Tyran Roju może otrzymać Cechę @trait{toxic||k10}. Cecha ta dotyczy również ataków dystansowych i Naturalnej Broni. Może otrzymać @melee{bonesword} i @melee{lashWhip}. Może usunąć Talent Błyskawiczny Cios i dobrać jedną broń dystansową z @ranged{>tyranidWeapons|listy}."
+            },
+            {
+              "title": "Potworny Psyker Tyranidów:",
+              "content": "Tyran Roju jest psykerem, ale korzysta z mocy Umysłu Roju, zamiast manipulować bezpośrednio Osnową. Z tego powodu i dzięki ogromnej mocy Umysłu Roju, Tyran nie musi wykonywać Testów Manifestacji i nigdy nie wywołuje Zjawisk Psionicznych ani Niebezpieczeństw Osnowy. Tyran Roju może w każdej Turze użyć tylko jednej mocy."
+            },
+            {
+              "title": "Katalizator (Moc):",
+              "content": "Tyran Roju może używając Akcji Pojedynczej wysłać sygnał Umysłu Roju, który wypełnia pomniejsze Tyranidy nienaturalnym wigorem. Celem tej mocy jest jedna Horda Tyranidów w promieniu 75 metrów; do początku kolejnej Tury Tyrana Roju Horda ta otrzymuje dodatkowo @dice{k10+10} Mnogości."
+            },
+            {
+              "title": "Psioniczy Krzyk (Moc):",
+              "content": "Tyran Roju może używając Akcji Pojedynczej wydać z siebie okropny cichy krzyk, który w umysłach odbija się jako rozsadzający uszy ryk. Wszystkie świadome żywe stworzenia (nie bezduszne maszyny czy demony) w promieniu 20 metrów otrzymują trafienie w Głowę zadające @dice{k10+8} Obrażeń od Uderzeń z Własnością @quality{shocking}. Ofiary otrzymują karę -30 do Testu Odporności związanego z tą Własnością. W przypadku porażki dany cel zostaje Ogłuszony na @dice{1k5} Rund."
+            },
+            {
+              "title": "Koszmar (Moc):",
+              "content": "Tyran Roju może używając Akcji Pojedynczej wytworzyć falę psionicznego lęku, która obraca w pył determinację jego wrogów. Celem tej mocy może być Szwadron w promieniu 75 metrów. Każdy z członków Szwadronu musi wykonać Test Siły Woli z karą -30. Szwadron traci jeden punkt Spójności za każdą porażkę. Wszystkie stworzenia w zasięgu nie będące Tyranidami (ani Kosmicznymi Marines) muszą wykonać Test Strachu z karą -30, by uniknąć ucieczki w popłochu."
+            },
+            {
+              "title": "Śmiertelny Szok:",
+              "content": "Gdy Tyran Roju padnie, jego śmierć wstrząsa obecnością Umysłu Roju. Jeśli Tyran zostanie zabity, wszystkie Tyranidy w zasięgu Synapsy (Premia z Siły Woli × 10 metrów) które nie mają Talentu @talent{fearless} ani Cechy @trait{synapseCreature}, automatycznie łamią się i uciekają jak szybko są w stanie (efekt ten bierze górę nad @trait{instinctiveBehaviour|Instynktownym Zachowaniem}. Tyranidy z Talentem Nieustraszony lub Cechą Stworzenie Synapsowe muszą wykonać ![b]#Przeciętny (+0) Test Siły Woli#, by uniknąć zostania Ogłuszonymi na jedną Rundę."
+            }
+          ]
+        },
+        {
+          "type": "creature",
+          "name": "tyranidWarrior",
+          "displayName": "Wojownik Tyranidów",
+          "tier": "elite",
+          "content": [
+            "%quote{Każde z niezliczonych stworzeń–wojowników Tyranidów jest zabójczą maszyną perfekcyjnie przystosowaną do zarzynania ofiar. Są ostatecznymi drapieżnikami, a my — ich zdobyczą.|z przemyśleń nieznanego Adepta}",
+            "Wojownik Tyranidów to ucieleśnienie śmierci; biologiczna maszyna zaprojektowana do walki, nadludzka w każdym aspekcie siły, rozmiaru i odporności. Są wyśmienitymi wojownikami, każdy z nich bez trudu dorównuje Kosmicznym Marine w walce, czy to używając podobnych kosom szponóœ z wzmocnionej kości (wystarczająco ostrych, by jednym cięciem przepołowić człowieka) czy noszonych przez nich koszmarnych żywych broni, które plują pożerającymi ciało pasożytami, skazując ofiary na śmierć zbyt straszną, by się nad nią rozwodzić. Wojownicy Tyranidów są również psionicznymi przekaźnikami dla Roju, które odbierają, wzmacniają i rozgłaszają wolę i cele Umysłu Roju do otaczających ich pomniejszych stworzeń."
+          ],
+          "characteristics": {
+            "weaponSkill": 55,
+            "ballisticSkill": 30,
+            "strength": {
+              "value": 60,
+              "unnatural": 2
+            },
+            "toughness": {
+              "value": 50,
+              "unnatural": 2
+            },
+            "agility": 44,
+            "intelligence": 20,
+            "perception": 35,
+            "willpower": 50,
+            "fellowship": null
+          },
+          "movement": 2,
+          "wounds": 48,
+          "skills": [
+            {
+              "name": "awareness"
+            },
+            {
+              "name": "climb"
+            },
+            {
+              "name": "swim",
+              "modifier": 10
+            }
+          ],
+          "talents": [
+            {
+              "name": "fearless"
+            },
+            {
+              "name": "swiftAttack"
+            }
+          ],
+          "traits": [
+            {
+              "name": "darkSight"
+            },
+            {
+              "name": "fear",
+              "value": 3
+            },
+            {
+              "name": "naturalArmour",
+              "value": "Utwardzony Karapaks"
+            },
+            {
+              "name": "multipleArms"
+            },
+            {
+              "name": "unnaturalStrength",
+              "value": 2
+            },
+            {
+              "name": "unnaturalToughness",
+              "value": 2
+            },
+            {
+              "name": "improvedNaturalWeapons",
+              "value": "Kososzpony albo Drące Pazury"
+            },
+            {
+              "name": "shadowInTheWarp"
+            },
+            {
+              "name": "size",
+              "value": "enormous"
+            },
+            {
+              "name": "synapseCreature"
+            },
+            {
+              "name": "tyranid"
+            }
+          ],
+          "armour": {
+            "description": "Utwardzony Karapaks",
+            "general": 8
+          },
+          "weapons": [
+            [
+              {
+                "name": "scythingTalons",
+                "section": "melee"
+              },
+              {
+                "name": "rendingClaws",
+                "section": "melee"
+              }
+            ],
+            [
+              {
+                "name": "devourer",
+                "section": "ranged"
+              },
+              {
+                "name": "deathspitter",
+                "section": "ranged"
+              }
+            ]
+          ],
+          "gear": null,
+          "rules": [
+            {
+              "title": "Biomorfy:",
+              "content": "Decyzją MG Wojownik Tyranidów może otrzymać Cechę @trait{toxic||k10}. Cecha ta dotyczy także jego ataków z broni dystansowej i Naturalnej Broni. Może również zrezygnować z broni dystansowej i otrzymać Talent @talent{lightningAttack}."
+            }
+          ]
+        },
+        {
+          "type": "creature",
+          "name": "hormagaunt",
+          "displayName": "Hormagaunt",
+          "tier": "troop",
+          "content": [
+            "%quote{Nie możemy tego przetrzymać. Ludzkość nie może tego przetrzymać. W jeden dzień pokryły tę planetę powodzią żyjących ostrzy i paszczy o igłowatych kłach. Zabij jednego, dziesięć kolejnych zajmie jego miejsce. Jeśli naprawdę są niezliczone, nasza rasa skazana jest na brutalną śmierć, a wszystkie resztki cywilizacji zostaną wymazane przez siłę bardziej żarłoczną niż same piekielne ognie. Śmierć! Na Boga Maszyny, Śmierć przybyła!|ostatnie słowa Magos Varnak}",
+            "Hormagaunt, wydająca się stabilną mutacja Gaunta, gatunku bestii wojennej Tyranidów, jest biologiczną maszyną, żywą bronią mającą tylko jeden cel: jak najszybciej skrócić dystans do żywego przeciwnika i wypatroszyć go swoimi dłigimi szponami i zrobić to raz jeszcze i jeszcze i jeszcze, bez zastanowienia, aż nic żywego nie pozostanie w zasięgu wzroku. Hormagaunty, występujące w ogromnych, nieznających spoczynku rojach złożonych z machających szponów i ostrych chitynowych płytek, poruszają się niczym sybkie jak błyskawica ławice śmiertelnie groźnych ryb. Gdy przyciągnie je zapach krwi, biegną w stonę celu, skacząc, rycząc i pełznąc. Na ich drodze nie zostaje nic żywego."
+          ],
+          "characteristics": {
+            "weaponSkill": 45,
+            "ballisticSkill": 20,
+            "strength": 35,
+            "toughness": 30,
+            "agility": 55,
+            "intelligence": 10,
+            "perception": 40,
+            "willpower": 30,
+            "fellowship": null
+          },
+          "movement": 5,
+          "wounds": 9,
+          "skills": [
+            {
+              "name": "acrobatics",
+              "modifier": 20
+            },
+            {
+              "name": "awareness"
+            },
+            {
+              "name": "dodge",
+              "modifier": 10
+            },
+            {
+              "name": "silentMove"
+            },
+            {
+              "name": "swim",
+              "modifier": 10
+            }
+          ],
+          "talents": [
+            {
+              "name": "leapUp"
+            },
+            {
+              "name": "swiftAttack"
+            }
+          ],
+          "traits": [
+            {
+              "name": "darkSight"
+            },
+            {
+              "name": "naturalArmour",
+              "value": "Chitynowy Karapaks"
+            },
+            {
+              "name": "improvedNaturalWeapons",
+              "value": "Kososzpony"
+            },
+            {
+              "name": "instinctiveBehaviour",
+              "value": "feed"
+            },
+            {
+              "name": "tyranid"
+            },
+            {
+              "name": "overwhelming",
+              "horde": true
+            },
+            {
+              "name": "unnaturalSpeed"
+            }
+          ],
+          "armour": {
+            "description": "Chitynowy Karapaks",
+            "arms": 3,
+            "head": 3,
+            "body": 3,
+            "legs": 3,
+            "horde": 3
+          },
+          "weapons": [
+            {
+              "name": "scythingTalons",
+              "section": "melee"
+            }
+          ],
+          "gear": null,
+          "rules": [
+            {
+              "title": "Biomorfy:",
+              "content": "Decyzją MG Hormagaunt może otrzymać Cechę @trait{toxic||k10}. Cecha ta dotyczy także jego ataków Naturalną Bronią."
+            }
+          ]
+        },
+        {
+          "type": "creature",
+          "name": "termagant",
+          "displayName": "Termagant",
+          "tier": "troop",
+          "content": [
+            "%quote{Gdy spojrzałem w jego martwe czarne ślepia, ujrzałem okropną świadomość, którą miał zamiast duszy. I zobaczyłem coś wyzierające z najgłębszych zakamarków umysłu obcego; coś, co opisać mogę tylko jako nieskończony głód.|Główny Kronikarz Ultramarines Tigurius}",
+            "Termagant to jedna z podstawowych jednostek bojowych tyranidzkich rojów i jedno z najczęściej spotykanych na polu bitwy stworzeń. Hodowane i wypuszczane są w tysiącach przez Floty–Roje, tworząc ogromne fale mające przyjąć na siebie lwią część nieprzyjacielskiego ognia i ogarnąć wrogów niemożliwą do zatrzymania falą ciał i kłów. Są rozmiaru człowieka, choć zgarbione i nisko postawione; są zwinne, szybkie i niezwykle zabójcze. Termaganty zwykle uzbrojone są w najróżniejsze symbiotyczne bronie–stworzenia, a także swoje igłowate kły i rozdzierające pazury, którymi rozrywają i pożerają ofiary."
+          ],
+          "characteristics": {
+            "weaponSkill": 30,
+            "ballisticSkill": 33,
+            "strength": 32,
+            "toughness": 30,
+            "agility": 40,
+            "intelligence": 10,
+            "perception": 40,
+            "willpower": 30,
+            "fellowship": null
+          },
+          "wounds": 9,
+          "skills": [
+            {
+              "name": "awareness"
+            },
+            {
+              "name": "dodge"
+            },
+            {
+              "name": "silentMove"
+            },
+            {
+              "name": "swim",
+              "modifier": 10
+            }
+          ],
+          "talents": [
+            {
+              "name": "leapUp"
+            }
+          ],
+          "traits": [
+            {
+              "name": "darkSight"
+            },
+            {
+              "name": "naturalArmour",
+              "value": "Chitynowy Karapaks"
+            },
+            {
+              "name": "improvedNaturalWeapons",
+              "value": "Kły i Pazury"
+            },
+            {
+              "name": "instinctiveBehaviour",
+              "value": "lurk"
+            },
+            {
+              "name": "tyranid"
+            }
+          ],
+          "armour": {
+            "description": "Chitynowy Karapaks",
+            "arms": 3,
+            "head": 3,
+            "body": 3,
+            "legs": 3,
+            "horde": 3
+          },
+          "weapons": [
+            {
+              "name": "fleshborer",
+              "section": "ranged"
+            },
+            "Kły i Pazury (@dice{k10+3} R; Pen 3)"
+          ],
+          "gear": null,
+          "rules": [
+            {
+              "title": "Biomorfy:",
+              "content": "Decyzją MG Termagant może otrzymać Cechę @trait{toxic||k10}. Cecha ta dotyczy także jego ataków Naturalną Bronią i Mięsowiertaczem."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "group",
+      "parentPath": "quality",
+      "items": [
+        {
+          "name": "deadlySnare",
+          "displayName": "Śmiercionośne Sidła",
+          "content": [
+            "Broń ta zamyka swój cel w sidłach, które nie tylko więżą, ale duszą i drą. Własność ta działa jak @quality{snare}, ale cel uwięziony przez broń z tą Własnością otrzymują ponownie Obrażenia broni w każdej Turze, dopóki się nie wyrwą."
+          ]
+        },
+        {
+          "name": "drainLife",
+          "displayName": "Wyssanie Życia",
+          "content": [
+            "Gdy cel otrzyma Obrażenia od tej broni, jej użytkownik i cel wykonują Przeciwstawny Test Siły Woli. Za każdy Stopień Sukcesu użytkownik zadaje dodatkowe @dice{1k10} punktów Obrażeń, które ignorują Pancerz i Wytrzymałość."
+          ]
+        },
+        {
+          "name": "livingAmmunition",
+          "displayName": "Żywe Pociski",
+          "content": [
+            "Broń dystansowa Tyranidów używa amunicji, która jest hodowana, inkubowana, czy wydzielana przez stworzenie albo broń. Z tego powodu bronie te nie mają wartości Magazynka (jest ona nieskończona) i nie trzeba ich przeładowywać. Dodatkowo broń nigdy się nie Zacina."
+          ]
+        }
+      ]
+    },
+    {
+      "type": "group",
       "parentPath": "adversary-nonPlayerCharacters",
       "items": [
         {
@@ -20088,6 +20602,31 @@
               "content": "Broń ta nazywana jest tak, ponieważ wystrzeliwuje mikroimpulsy wysoce przyspieszonej plazmy, osiągając znaczną moc i zasięg. Wyspecjalizowany @ranged{pulseCarbine} poświęca część swojego zasięgu, by zwiększyć ergonomię i ma zamontowany granatnik na @grenade{photonFlashGrenade|Granaty Fotonowe} (który należy rozważać jako @ranged{astartesAuxiliaryGrenadeLauncher} z Magazynkiem 1)."
             }
           ]
+        },
+        {
+          "type": "section",
+          "name": "tyranidWeapons",
+          "displayName": "Broń Tyranidów",
+          "display": "all",
+          "content": [
+            "Broń Tyranidów również jest żywa. W wielu przypadkach broń dzierżona przez różne rodzaje Tyranidów to symbioty żyjące i rosnące razem z większym stworzeniem. Przedstawiono tu różne bronie używane przez Tyranidy; istnieje oczywiście więcej i mogą one pojawić się w przyszłych dodatkach do ![bc]#Deathwatch#.",
+            {
+              "title": "Trening z Bronią:",
+              "content": "Tylko stworzenia z Cechą @trait{tyranid} mogą używać tych broni. Tyranid nie potrzebuje żadnego Talentu do używania broni Tyranidów."
+            }
+          ],
+          "table": {
+            "$name": "nazwa",
+            "$class": "klasa",
+            "$range": "zasięg",
+            "$rof": "Szybkostrzelność",
+            "$damage": "Obrażenia",
+            "penetration": "Penetracja",
+            "clip": "Magazynek",
+            "$reload": "Przeładowanie",
+            "$qualities": "Własności",
+            "weight": "masa"
+          }
         }
       ]
     },
@@ -20648,6 +21187,237 @@
     },
     {
       "type": "group",
+      "parentPath": "ranged-tyranidWeapons",
+      "items": [
+        {
+          "name": "barbedStrangler",
+          "displayName": "Kolczasty Dusiciel",
+          "class": "heavy",
+          "range": 80,
+          "rof": {
+            "single": true
+          },
+          "damage": {
+            "formula": "2k10kh1+5",
+            "display": "1k10+5",
+            "type": "impact"
+          },
+          "penetration": 3,
+          "clip": null,
+          "reload": null,
+          "qualities": [
+            {
+              "name": "blast",
+              "value": 10
+            },
+            "deadlySnare",
+            "tearing",
+            "livingAmmunition"
+          ],
+          "content": [
+            "Kolczasty Dusiciel wystrzeliwuje nasiona rozmiaru ludzkiej pięści, używając skurcz mięsistej lufy broni. Przy uderzeniu nasiona te osiągają dojrzałość w ciągu kilku sekund, posyłając na wszystkie strony pokryte haczykami pędy, które wiążą i rozrywają ofiarę."
+          ],
+          "tags": ["weapon:ranged"]
+        },
+        {
+          "name": "stranglethornCannon",
+          "displayName": "Działo Cierniodusicielowe",
+          "class": "heavy",
+          "range": 80,
+          "rof": {
+            "single": true
+          },
+          "damage": {
+            "formula": "2k10kh1+5",
+            "display": "1k10+5",
+            "type": "impact"
+          },
+          "penetration": 3,
+          "clip": null,
+          "reload": null,
+          "qualities": [
+            {
+              "name": "blast",
+              "value": 10
+            },
+            "deadlySnare",
+            "tearing",
+            "livingAmmunition"
+          ],
+          "content": [
+            "Działo Cierniodusicielowe jest poteżniejszą odmianą Kolczastego Dusiciela, która wystrzeliwuje nasiona wypuszczające bardziej śmiercionośne i agresywne pędy."
+          ],
+          "tags": ["weapon:ranged"]
+        },
+        {
+          "name": "deathspitter",
+          "displayName": "Śmiercioplujec",
+          "class": "basic",
+          "range": 40,
+          "rof": {
+            "single": true,
+            "burst": 3
+          },
+          "damage": {
+            "formula": "2d10kh1+6",
+            "display": "1k10+6",
+            "type": "energy"
+          },
+          "penetration": 4,
+          "clip": null,
+          "reload": null,
+          "qualities": [
+            "livingAmmunition",
+            "tearing"
+          ],
+          "content": [
+            "Śmiercioplujec to złożony symbiot bojowy, który wystrzeliwuje agonalnymi spazmami mięśni organizmy podobne do robakowatych larw. Przy uderzeniu w cel wijący się pocisk znika w rozprysku korodującej wszystko wydzieliny."
+          ],
+          "tags": ["weapon:ranged"]
+        },
+        {
+          "name": "devourer",
+          "displayName": "Pożeracz",
+          "class": "basic",
+          "range": 30,
+          "rof": {
+            "auto": 6
+          },
+          "damage": {
+            "formula": "2k10kh1+6",
+            "display": "1k10+6",
+            "type": "rending"
+          },
+          "penetration": 0,
+          "clip": null,
+          "reload": null,
+          "qualities": [
+            "livingAmmunition",
+            "storm",
+            "tearing"
+          ],
+          "content": [
+            "Pożeracz to stożkowaty kawał mięsa, który zalewa swój cel masą robakokształtnych pasożytów, które przebijają się przez pancerz i ciało, pożerając cel żywcem."
+          ],
+          "tags": ["weapon:ranged"]
+        },
+        {
+          "name": "devourerBrainLeechWorms",
+          "displayName": "Pożeracz (Mózgopijawki)",
+          "class": "basic",
+          "range": 30,
+          "rof": {
+            "auto": 6
+          },
+          "damage": {
+            "formula": "3k10kh2+6",
+            "display": "2k10+6",
+            "type": "rending"
+          },
+          "penetration": 0,
+          "clip": null,
+          "reload": null,
+          "qualities": [
+            "livingAmmunition",
+            "storm",
+            "tearing"
+          ],
+          "content": [
+            "Pożeracz może zawierać te bardziej żarłoczne i niebezpieczne stworzenia. Pożeracz z Mózgopijawkami zadaje @dice{3k10kh2+6|2k10+6} Obrażeń R, a jeśli zada jakiekolwiek Obrażenia Szwadronowi, ten traci dodatkowy punkt Spójności."
+          ],
+          "tags": ["weapon:ranged"]
+        },
+        {
+          "name": "fleshborer",
+          "displayName": "Mięsowiertacz",
+          "class": "basic",
+          "range": 20,
+          "rof": {
+            "single": true
+          },
+          "damage": {
+            "formula": "2k10kh1+5",
+            "display": "1k10+5",
+            "type": "rending"
+          },
+          "penetration": 3,
+          "clip": null,
+          "reload": null,
+          "qualities": [
+            "livingAmmunition",
+            "tearing"
+          ],
+          "content": [
+            "Mięsowiertacz jest gniazdem wiertochrząszczy o żuwaczkach ostrych jak brzytwa, które wyrzucane są w kierunku celu."
+          ],
+          "tags": ["weapon:ranged"]
+        },
+        {
+          "name": "venomCannon",
+          "displayName": "Działo Jadowe",
+          "class": "heavy",
+          "range": 100,
+          "rof": {
+            "single": true
+          },
+          "damage": {
+            "formula": "3k10+5",
+            "type": "impact"
+          },
+          "penetration": 6,
+          "clip": null,
+          "reload": null,
+          "qualities": [
+            {
+              "name": "blast",
+              "value": 6
+            },
+            "livingAmmunition",
+            {
+              "name": "toxic",
+              "value": "1k10"
+            }
+          ],
+          "content": [
+            "Działo Jadowe wykorzystuje ładunek elektrostatyczny do wyrzucania żrących kryształów pokrytych metaliczną jadowitą substancją. Przy uderzeniu kryształy roztrzaskują się, tworząc śmiercionośną chmurę odłamków."
+          ],
+          "tags": ["weapon:ranged"]
+        },
+        {
+          "name": "heavyVenomCannon",
+          "displayName": "Ciężkie Działo Jadowe",
+          "class": "heavy",
+          "range": 100,
+          "rof": {
+            "single": true
+          },
+          "damage": {
+            "formula": "4k10+10",
+            "type": "impact"
+          },
+          "penetration": 6,
+          "clip": null,
+          "reload": null,
+          "qualities": [
+            {
+              "name": "blast",
+              "value": 6
+            },
+            "livingAmmunition",
+            {
+              "name": "toxic",
+              "value": "1k10"
+            }
+          ],
+          "content": [
+            "Niektóre większe gatunki Tyranidów używają powiększonego i poteżniejszego wariantu Działa Jadowego, które imperialne siły nazywają Ciężkim Działem Jadowym."
+          ],
+          "tags": ["weapon:ranged"]
+        }
+      ]
+    },
+    {
+      "type": "group",
       "parentPath": "melee",
       "items": [
         {
@@ -20668,6 +21438,19 @@
           "name": "chaosWeapons",
           "display": ["table"],
           "displayName": "Broń Chaosu",
+          "table": {
+            "$name": "Nazwa",
+            "$damage": "Obrażenia",
+            "penetration": "Penetracja",
+            "$qualities": "Własności",
+            "weight": "Masa"
+          }
+        },
+        {
+          "type": "section",
+          "name": "tyranidWeapons",
+          "display": ["table", "items"],
+          "displayName": "Broń Tyranidów",
           "table": {
             "$name": "Nazwa",
             "$damage": "Obrażenia",
@@ -20805,6 +21588,89 @@
             "unwieldy"
           ],
           "class": "melee",
+          "tags": ["weapon:melee"]
+        },
+        {
+          "name": "monoedgedBlade",
+          "displayName": "Broń Monoostrzowa",
+          "damage": {
+            "formula": "k10",
+            "type": "rending"
+          },
+          "penetration": 2,
+          "class": "melee",
+          "tags": ["weapon:melee"]
+        }
+      ]
+    },
+    {
+      "type": "group",
+      "parentPath": "melee-tyranidWeapons",
+      "items": [
+        {
+          "name": "bonesword",
+          "displayName": "Kościomiecz",
+          "class": "melee",
+          "damage": {
+            "formula": "1k10",
+            "type": "rending"
+          },
+          "penetration": 6,
+          "qualities": [
+            "drainLife"
+          ],
+          "content": [
+            "Kościomiecze to żywe ostrza złożone z chityny, które posiadają szczątkową świadomość podporządkowaną woli użytkownika. Dzięki temu ostrze otacza trzaskająca aura psionicznej energii, która wysysa siły życiowe ofiar."
+          ],
+          "tags": ["weapon:melee"]
+        },
+        {
+          "name": "lashWhip",
+          "displayName": "Chłoszczący Bicz",
+          "class": "melee",
+          "damage": {
+            "formula": "1k10+3",
+            "type": "rending"
+          },
+          "penetration": 3,
+          "qualities": [
+            "flexible",
+            "snare"
+          ],
+          "content": [
+            "Chłoszczący Bicz to żywa broń zbudowana z mięśni i ścięgien. Jego macki omijają zasłony przeciwnika, by zadusić i usidlić tych, których nie poszatkują kościane haki na ich końcach."
+          ],
+          "tags": ["weapon:melee"]
+        },
+        {
+          "name": "scythingTalons",
+          "displayName": "Kososzpony",
+          "class": "melee",
+          "damage": {
+            "formula": "1k10+2",
+            "type": "rending"
+          },
+          "penetration": 3,
+          "content": [
+            "Kososzpony to ostre jak brzytwa pazury złożone z warstw chityny i ząbkowanych kości, używane do dźgania i cięcia."
+          ],
+          "tags": ["weapon:melee"]
+        },
+        {
+          "name": "rendingClaws",
+          "displayName": "Drące Pazury",
+          "class": "melee",
+          "damage": {
+            "formula": "1k10",
+            "type": "rending"
+          },
+          "penetration": 5,
+          "qualities": [
+            "razorSharp"
+          ],
+          "content": [
+            "Drące Pazury to twarde niczym diament kościane wyrostki mogące kruszyć wzmocniony ceramit i rozrywać najgrubsze pancerze z budzącą przerażenie łatwością."
+          ],
           "tags": ["weapon:melee"]
         }
       ]
