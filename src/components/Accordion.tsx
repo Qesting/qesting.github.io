@@ -3,7 +3,7 @@ import { CaretDownFill, CaretUpFill } from "react-bootstrap-icons"
 import { ArrowDownUp as BIconArrowDownUp } from "react-bootstrap-icons"
 import { AccordionDepthContext } from "../contexts/AccordionDepthContext"
 import { StateFunctionsContext } from "../contexts/StateFunctionsContext"
-import capitalize from "../helpers/capitalize"
+import capitalise from "../helpers/capitalize"
 import { RPCItem, itemIsSection } from "../helpers/types"
 import { ItemLinkButton } from "./LinkButton"
 
@@ -60,7 +60,7 @@ export default function Accordion({
         onClick={() => setExpanded(!expanded)}
       >
         <span className="text-center inline-block flex-grow">
-          {capitalize(title)}
+          {capitalise(title)}
         </span>
         &nbsp;
         <span className="ml-2 text-sm">

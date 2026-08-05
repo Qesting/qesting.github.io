@@ -25,7 +25,7 @@ import {
 } from "./itemTags"
 import { weaponClass, damageType } from "./translation"
 import { resolveItem } from "./parserHelpers"
-import capitalize from "./capitalize"
+import capitalise from "./capitalize"
 import { nameAndSource } from "../components/LinkButton"
 import { textParser } from "./textParser"
 import { AlreadyResolvedType } from "../contexts/AlreadyResolvedContext"
@@ -132,7 +132,7 @@ export function meleeWeapon(
             jsonData,
           ) as RPCItem
           if (!quality) return
-          return `${capitalize(quality.displayName ?? "")} [${quality.source}]`
+          return `${capitalise(quality.displayName ?? "")} [${quality.source}]`
         }
         const quality = resolveItem(
           "quality",
@@ -160,7 +160,7 @@ export function meleeWeapon(
         type,
         id,
         "meleeweaponname",
-        `${capitalize(item.displayName ?? '')} [${item.source}]`,
+        `${capitalise(item.displayName ?? '')} [${item.source}]`,
       ),
       makeRepeatingAttribute(type, id, "meleeweaponclass", weaponClass.melee),
       makeRepeatingAttribute(
@@ -245,7 +245,7 @@ export function rangedWeapon(
               jsonData,
             ) as RPCItem
             if (!quality) return
-            return `${capitalize(quality.displayName ?? '')} [${quality.source}]`
+            return `${capitalise(quality.displayName ?? '')} [${quality.source}]`
           }
           const quality = resolveItem(
             "quality",
@@ -275,7 +275,7 @@ export function rangedWeapon(
         type,
         id,
         "rangedweaponname",
-        `${capitalize(item.displayName ?? '')} [${item.source}]`,
+        `${capitalise(item.displayName ?? '')} [${item.source}]`,
       ),
       makeRepeatingAttribute(
         type,
@@ -379,7 +379,7 @@ export function forceField(
         type,
         id,
         "fieldName",
-        `${capitalize(item.displayName ?? '')} [${item.source}]`,
+        `${capitalise(item.displayName ?? '')} [${item.source}]`,
       ),
       makeRepeatingAttribute(
         type,
@@ -410,13 +410,13 @@ export function talent(
         type,
         id,
         "Talents",
-        `${capitalize(item.displayName ?? '')} [${item.source}]`,
+        `${capitalise(item.displayName ?? '')} [${item.source}]`,
       ),
       makeRepeatingAttribute(
         type,
         id,
         "talentName",
-        `${capitalize(item.displayName ?? '')} [${item.source}]`,
+        `${capitalise(item.displayName ?? '')} [${item.source}]`,
       ),
       makeRepeatingAttribute(
         type,
@@ -453,13 +453,13 @@ export function trait(
         type,
         id,
         "Traits",
-        `${capitalize(item.displayName ?? '')} [${item.source}]`,
+        `${capitalise(item.displayName ?? '')} [${item.source}]`,
       ),
       makeRepeatingAttribute(
         type,
         id,
         "traitName",
-        `${capitalize(item.displayName ?? '')} [${item.source}]`,
+        `${capitalise(item.displayName ?? '')} [${item.source}]`,
       ),
       makeRepeatingAttribute(
         type,
@@ -509,7 +509,7 @@ export function equipment(
         type,
         id,
         "gearName",
-        `${capitalize(item.displayName ?? '')} [${item.source}]`,
+        `${capitalise(item.displayName ?? '')} [${item.source}]`,
       ),
       makeRepeatingAttribute(type, id, "gearQty", quantity.toString()),
       makeRepeatingAttribute(

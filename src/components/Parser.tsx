@@ -5,7 +5,7 @@ import SectionNameContext from "../contexts/SectionNameContext.js"
 import reactStringReplace from "react-string-replace"
 import LinkButton, { ItemLinkButton } from "./LinkButton"
 import Table from "./contentItems/Table.js"
-import capitalize from "../helpers/capitalize"
+import capitalise from "../helpers/capitalize"
 import {
   generalRegExp,
   diceRegExp,
@@ -86,7 +86,7 @@ function Parser({
 
   const mathTagsReplaced = replaceMathTags(textTagsReplaced)
 
-  const capitalized = cap ? capitalize(mathTagsReplaced) : mathTagsReplaced
+  const capitalized = cap ? capitalise(mathTagsReplaced) : mathTagsReplaced
 
   const formatted = reactStringReplace(
     capitalized,
@@ -153,7 +153,7 @@ function Parser({
         return foundTable ? (
           <div key={key}>
             <h2 className="text-xl pb-2 relative after:w-full after:h-px after:absolute after:bottom-1 after:bg-current after:left-0 after:right-0 text-center mt-4 -mb-6">
-              {capitalize(foundTable.displayName)}
+              {capitalise(foundTable.displayName)}
             </h2>
             <Table
               table={foundTable.table}
@@ -178,7 +178,7 @@ function Parser({
         }
         return (
           <button className="btn" key={key} onClick={() => setTableName(`${name}|${source}`)}>
-            {capitalize(display ?? foundTable.displayName)}
+            {capitalise(display ?? foundTable.displayName)}
           </button>
         )
       } else if ((matchData = match.match(footnoteRegExp))) {

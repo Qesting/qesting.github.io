@@ -1,6 +1,6 @@
 import { AlreadyResolvedType } from "../contexts/AlreadyResolvedContext"
 import { JsonDataType } from "../contexts/JsonDataContext"
-import capitalize from "./capitalize"
+import capitalise from "./capitalize"
 import {
   resolveItem,
   getFieldValue,
@@ -63,7 +63,7 @@ export function textParser(
 
   const mathTagsReplaced = replaceMathTags(textTagsReplaced)
 
-  const capitalized = cap ? capitalize(mathTagsReplaced) : mathTagsReplaced
+  const capitalized = cap ? capitalise(mathTagsReplaced) : mathTagsReplaced
 
   return capitalized.replaceAll(generalRegExp, (match) => {
     let matchData: RegExpMatchArray|null
@@ -80,7 +80,7 @@ export function textParser(
         source === "" ? provider.source : source,
         jsonData,
       )
-      return foundTable ? capitalize(foundTable.displayName) : match
+      return foundTable ? capitalise(foundTable.displayName) : match
     } else if ((matchData = match.match(tableRegExp))) {
       const { name, display, source } = matchData?.groups ?? {}
       const foundTable = resolveTable(
@@ -88,7 +88,7 @@ export function textParser(
         source === "" ? provider.source : source,
         jsonData,
       )
-      return foundTable ? capitalize(display ?? foundTable.displayName) : match
+      return foundTable ? capitalise(display ?? foundTable.displayName) : match
     } else if ((matchData = match.match(footnoteRegExp))) {
       const { index, displayIndex } = matchData.groups ?? {}
       return "\u2020".repeat(+(displayIndex ?? index) + 1)
@@ -119,7 +119,7 @@ export function textParser(
               .join(", ")})`
           : "")
 
-      return capitalize(displayName)
+      return capitalise(displayName)
     } else {
       return match
     }

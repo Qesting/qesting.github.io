@@ -3,7 +3,7 @@ import Parser from "../Parser"
 import { XCircleFill } from "react-bootstrap-icons"
 import SectionNameContext from "../../contexts/SectionNameContext"
 import DataProviderContext from "../../contexts/DataProviderContext"
-import capitalize from "../../helpers/capitalize"
+import capitalise from "../../helpers/capitalize"
 import {
   locations,
   renown,
@@ -219,7 +219,7 @@ export default function Table({
                         itemIndex={jndex}
                         text={e.qualities
                           .map((f: Quality) => {
-                            const [qname, qsource] = (typeof f === 'string' ? f : f.name).split("|")
+                            const [qname, qsource] = typeof f === 'string' ? f.split("|") : [f.name, f.source]
                             return (
                               (typeof f === "string"
                                 ? `@quality{${qname}}`
@@ -306,7 +306,7 @@ export default function Table({
               <SourceName source={foundSource} />
               <span>
                 {index ? `(${index.chapter}–${index.number}) ` : ""}
-                {capitalize(displayName ?? '')}
+                {capitalise(displayName ?? '')}
               </span>
             </th>
           </tr>
@@ -320,7 +320,7 @@ export default function Table({
                     "k100"}
                 </button>
               ) : (
-                capitalize(
+                capitalise(
                   typeof table[k] === "string" ? table[k] : table[k].name,
                 )
               )}

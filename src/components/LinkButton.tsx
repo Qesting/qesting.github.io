@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import capitalize from '../helpers/capitalize';
+import capitalise from '../helpers/capitalize';
 import isInView from '../helpers/isInView';
 import { itemIsSection, rootParent, RPCItem, RPCSection } from '../helpers/types';
 
@@ -26,8 +26,8 @@ export default function LinkButton({elementId, innerText, additionalClasses}: { 
 
     return (
         isFootnoteLink
-            ? <button onClick={scrollFunction} className={["btn"].concat(ac).join(' ')}>{capitalize(innerText)}</button>
-            : <Link to={"/" + section.split('-')[0] + (item && isSubSection ? `/>${item}` : item !== section ? `/${item}` : "")} className={["btn"].concat(ac).join(' ')}>{capitalize(innerText)}</Link>
+            ? <button onClick={scrollFunction} className={["btn"].concat(ac).join(' ')}>{capitalise(innerText)}</button>
+            : <Link to={"/" + section.split('-')[0] + (item && isSubSection ? `/>${item}` : item !== section ? `/${item}` : "")} className={["btn"].concat(ac).join(' ')}>{capitalise(innerText)}</Link>
         )
 }
 
@@ -50,8 +50,8 @@ export function ItemLinkButton({ item, innerText, additionalClasses } : { item: 
     const rootSection = rootParent(item)
     if (!rootSection) return
     const ac = !additionalClasses ? [] : typeof additionalClasses === 'string' ? [additionalClasses] : additionalClasses 
-    const link = "/" + nameAndSource(rootSection) + (itemIsSection(item) ? item.parent !== null ? `/>${nameAndSource(item)}` : '' : `/${nameAndSource(item)}`)
-    return <Link to={link} className={['btn'].concat(ac).join(' ')}>{capitalize(innerText ?? item.displayName ?? '')}</Link>
+    const link = "/" + nameAndSource(rootSection) + (itemIsSection(item) ? item.parent ? `/>${nameAndSource(item)}` : '' : `/${nameAndSource(item)}`)
+    return <Link to={link} className={['btn'].concat(ac).join(' ')}>{capitalise(innerText ?? item.displayName ?? '')}</Link>
 }
 
 export function makeFootnoteElementId(section: RPCSection, index: number): string {

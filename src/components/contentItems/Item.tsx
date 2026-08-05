@@ -1,4 +1,4 @@
-import capitalize from "../../helpers/capitalize"
+import capitalise from "../../helpers/capitalize"
 import TextContent from "./TextContent"
 import DataProviderContext from "../../contexts/DataProviderContext"
 import { useContext } from "react"
@@ -46,9 +46,9 @@ function Item({ data, disp }: { data: RPCItem, disp?: boolean }) {
     >
       <DataProviderContext.Provider value={data}>
         <div className="relative">
-          <h4 className="text-xl pb-2 relative after:w-full after:h-px after:absolute after:bottom-1 after:bg-current after:left-0 after:right-0 text-center group-focus/item:after:bg-accent after:transition-colors duration-300 after:duration-300 transition-colors group-focus/item:text-accent px-8">
+          <h4 className="text-xl pb-2 relative after:w-full after:h-px after:absolute after:bottom-1 after:bg-current after:left-0 after:right-0 text-center group-focus/item:after:bg-accent after:transition-colors duration-300 after:duration-300 transition-colors group-focus/item:text-accent px-12">
             <Parser
-              text={capitalize(
+              text={capitalise(
                 displayName + (subName ? `\u2004(${subName})` : ""),
               )}
             />

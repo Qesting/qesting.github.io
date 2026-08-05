@@ -9,7 +9,7 @@ import {
 } from "react-bootstrap-icons"
 import { Link } from "react-router-dom"
 import { JsonDataType } from "../../contexts/JsonDataContext"
-import capitalize from "../../helpers/capitalize"
+import capitalise from "../../helpers/capitalize"
 import { craftsmanship } from "../../helpers/translation"
 import { rootParent, RPCWeapon } from "../../helpers/types"
 import { hasTag } from "../../helpers/itemTags"
@@ -229,7 +229,7 @@ export default function ExportDialog({
                       >
                         {Object.entries(craftsmanship).map(([c, j]: [string, string]) => (
                           <option key={j} value={j}>
-                            {capitalize(c)}
+                            {capitalise(c)}
                           </option>
                         ))}
                       </select>
@@ -310,7 +310,7 @@ export default function ExportDialog({
             <XLg />
           </button>
           <h2 className="text-3xl pb-2 px-4 text-center relative after:w-full after:h-px after:absolute after:bottom-0 after:bg-current after:left-0 after:right-0">
-            Amunicja dla {capitalize(ammoSelectionInput.input.item.displayName + (ammoCombi ? '/' + ammoCombi.displayName : ''))}
+            Amunicja dla {capitalise(ammoSelectionInput.input.item.displayName + (ammoCombi ? '/' + ammoCombi.displayName : ''))}
           </h2>
           <table className="w-full">
             <thead>

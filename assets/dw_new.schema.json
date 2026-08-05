@@ -762,12 +762,12 @@
                 "formula": {
                   "type": "string",
                   "description": "the dice string to roll for damage",
-                  "pattern": "^\\d*[dk]\\d+([kd][hl]\\d*)?([+-]\\d+)?$"
+                  "pattern": "^(?:[\\+-]?(?:\\d*[kd]\\d+(?:[kd][hl]\\d+)?|\\d+))+$"
                 },
                 "display": {
                   "type": "string",
                   "description": "the dice string that will be displayed",
-                  "pattern": "^\\d*[dk]\\d+([kd][hl]\\d*)?([+-]\\d+)?$"
+                  "pattern": "^(?:[\\+-]?(?:\\d*[kd]\\d+(?:[kd][hl]\\d+)?|\\d+))+$"
                 }
               },
               "patternProperties": {

@@ -10,7 +10,7 @@ import { StateFunctionsContext } from "../../contexts/StateFunctionsContext"
 import { JsonDataContext, JsonDataType } from "../../contexts/JsonDataContext"
 import CopyItemLink from "../CopyItemLink"
 import SourceName from "../SourceName"
-import capitalize from "../../helpers/capitalize.js"
+import capitalise from "../../helpers/capitalize.js"
 import DataProviderContext from "../../contexts/DataProviderContext"
 import AlreadyResolvedContext, {
   AlreadyResolvedType,
@@ -88,7 +88,7 @@ function renderWeapon(
       ? strength.bonus + (foundWeapon.doublesStrengthBonus ? Math.floor(strength.value/10) : 0)
       : Math.floor(strength.value/10) * ((strength.unnatural ?? 1) + (foundWeapon.doublesStrengthBonus ? 1 : 0))
   return (
-    capitalize(foundWeapon.displayName ?? '') +
+    capitalise(foundWeapon.displayName ?? '') +
     " (" +
     (weaponIsMelee(foundWeapon)
       ? (
@@ -188,7 +188,7 @@ export default function Creature({ creature, disp }: { creature: RPCCreature, di
     >
       <div className="relative">
         <h4 className="text-xl pb-2 relative after:w-full after:h-px after:absolute after:bottom-1 after:bg-current after:left-0 after:right-0 text-center group-focus/item:after:bg-accent after:transition-colors duration-300 after:duration-300 transition-colors group-focus/item:text-accent px-8">
-          {capitalize(creature.displayName + (subName ? ` (${subName})` : ""))}
+          {capitalise(creature.displayName + (subName ? ` (${subName})` : ""))}
         </h4>
         <CopyItemLink item={creature} />
         <SourceName source={foundSource} />
@@ -211,7 +211,7 @@ export default function Creature({ creature, disp }: { creature: RPCCreature, di
         <table className="my-4">
           <thead>
             <tr>
-              <th colSpan={8}>Profil: {capitalize(creature.displayName)}</th>
+              <th colSpan={8}>Profil: {capitalise(creature.displayName)}</th>
             </tr>
             <tr>
               <th>WW</th>
@@ -313,7 +313,7 @@ export default function Creature({ creature, disp }: { creature: RPCCreature, di
                 .filter((k) => k !== "description")
                 .map(
                   (k) =>
-                    `${capitalize(locations[k])}\u2004${creature?.armour?.[k]}`,
+                    `${capitalise(locations[k])}\u2004${creature?.armour?.[k]}`,
                 )
                 .join(", ") +
               ")"

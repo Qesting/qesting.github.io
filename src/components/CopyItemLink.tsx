@@ -28,7 +28,7 @@ export default function CopyItemLink({ item }: CopyItemLinkProps) {
   }
   return (
     <button
-      className={`copy-item-link absolute top-0 bottom-2 left-0 !outline-none focus:text-accent hover:text-accent dark:focus:text-accentDark dark:hover:text-accentDark transition-[color,transform] duration-200 ${copied ? "dark:text-accentDark text-accent scale-150" : ""}`}
+      className={`copy-item-link absolute top-1.5 left-0 !outline-none focus:text-accent hover:text-accent dark:focus:text-accentDark dark:hover:text-accentDark transition-[color,transform] duration-200 ${copied ? "dark:text-accentDark text-accent scale-150" : ""}`}
       onClick={handleClick}
       aria-label="kopiuj link"
     >

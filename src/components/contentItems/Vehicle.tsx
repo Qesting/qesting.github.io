@@ -15,7 +15,7 @@ import {
   ContentItem,
 } from "../../helpers/types"
 import { useContext } from "react"
-import capitalize from "../../helpers/capitalize.js"
+import capitalise from "../../helpers/capitalize.js"
 import DataProviderContext from "../../contexts/DataProviderContext"
 import TextContent from "./TextContent"
 import { resolveItem } from "../../helpers/parserHelpers.js"
@@ -326,7 +326,7 @@ export default function Vehicle({ vehicle, disp }: { vehicle: RPCVehicle, disp?:
     >
       <div className="relative">
         <h4 className="text-xl pb-2 relative after:w-full after:h-px after:absolute after:bottom-1 after:bg-current after:left-0 after:right-0 text-center group-focus/item:after:bg-accent after:transition-colors duration-300 after:duration-300 transition-colors group-focus/item:text-accent px-8">
-          {capitalize(vehicle.displayName)}
+          {capitalise(vehicle.displayName)}
         </h4>
         <CopyItemLink item={vehicle} />
         <SourceName source={foundSource} />
@@ -408,7 +408,7 @@ export default function Vehicle({ vehicle, disp }: { vehicle: RPCVehicle, disp?:
           <table className="my-4">
             <thead>
               <tr>
-                <th colSpan={8}>Profil: {capitalize(vehicle.displayName)}</th>
+                <th colSpan={8}>Profil: {capitalise(vehicle.displayName)}</th>
               </tr>
               <tr>
                 <th>WW</th>

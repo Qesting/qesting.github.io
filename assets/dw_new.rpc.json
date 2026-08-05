@@ -2086,7 +2086,8 @@
             "plasma": "plazmowa",
             "primitive": "prymitywna",
             "solid": "palna",
-            "universal": "wszystkie"
+            "universal": "wszystkie",
+            "flame": "Miotacze"
           },
           "footnotes": {
             "$name": 0
@@ -2862,7 +2863,8 @@
             "melta": "Melta",
             "plasma": "Plazmowa",
             "primitive": "Prymitywna",
-            "solid": "Palna"
+            "solid": "Palna",
+            "flame": "Miotacze"
           },
           "shortDesc": "Bohater jest biegły w broni Ciężkiej.",
           "content": [
@@ -3431,7 +3433,8 @@
             "primitive": "Prymitywne",
             "plasma": "Plazmowe",
             "solid": "Palne",
-            "universal": "Wszystkie"
+            "universal": "Wszystkie",
+            "flame": "Miotacze"
           },
           "shortDesc": "Bohater jest biegły w używaniu pistoletów z określonej grupy.",
           "content": [
@@ -4706,7 +4709,8 @@
           ]
         },
         {
-          "displayName": "podmuch (x)",
+          "displayName": "podmuch",
+          "subName": "X",
           "name": "blast",
           "content": [
             "Wiele rakiet, granatów, a także niektóre bronie dystansowe powodują eksplozję przy uderzeniu. Każde stworzenie w jej zasięgu (x) w metrach także zostaje trafione. Dla każdego należy osobno rzucić miejsce trafienia oraz obrażenia."
@@ -4727,14 +4731,16 @@
           ]
         },
         {
-          "displayName": "niszczycielska (x)",
+          "displayName": "niszczycielska",
+          "subName": "X",
           "name": "devastating",
           "content": [
             "Czy to z powodu nienaturalnych właściwości psychologicznych, czy czystej miażdżącej siły, Niszczycielska broń łamie odwagę trafionej nią Drużyny. Trafienie taką bronią powoduje jeden dodatkowy punkt Obrażeń do Spójności Drużyny. Jeżeli cel jest Hordą, każde trafienie zmniejsza jej wielkość o x."
           ]
         },
         {
-          "displayName": "powalająca (x)",
+          "displayName": "powalająca",
+          "subName": "X",
           "name": "felling",
           "content": [
             "Zaprojektowana by kłuć i kaleczyć, ta broń jest w stanie powalić nawet najpotężniejszych wrogów. Każde trafienie ignoruje x poziomów Nienaturalnej Odporności. Na przykład broń Powalająca (1) ignoruje efekty Nienaturalnej Odporności (2) i zmniejszyłaby mnożnik Nienaturalnej Odporności (3) o 1."
@@ -4748,14 +4754,15 @@
           ]
         },
         {
-          "displayName": "stabilizowany żyroskopowo",
+          "displayName": "stabilizowana żyroskopowo",
           "name": "gyroStabilised",
           "content": [
             "Broń posiada małą jednostkę samostabilizacji, która zwykle znajduje się blisko wylotu lufy. Nie jest ona tak dokładna jak @attachment{suspensor}, ale jest w stanie utrzymać broń pod optymalnym kątem. Broń Stabilizowana Żyroskopowo nigdy nie liczy się jako strzelająca do celu poza Długim Zasięgiem (zwyczajny zasięg maksymalny pozostaje bez zmian). Broń Ciężka z tą właściwością powoduje karę za brak przygotowania do strzału do -20."
           ]
         },
         {
-          "displayName": "gmatwający (x)",
+          "displayName": "gmatwająca",
+          "subName": "X",
           "name": "haywire",
           "noGrid": true,
           "content": [
@@ -4883,28 +4890,12 @@
           ]
         },
         {
-          "displayName": "lotna",
+          "displayName": "niestabilna",
           "name": "volatile",
           "content": [
             "Lotna materia aż buzuje od gotowej do uwolnienia energii i gwałtownie reaguje przy porządnym trafieniu. Jeżeli wynikiem którejkolwiek kości w rzucie na Obrażenia od broni Lotnej jest 10, Prawa Furia występuje automatycznie, zadając dodatkowe @dice{1k10} punktów Obrażeń. Jeżeli wynik tego rzutu również wyniesie 10, możliwe jest zadanie jeszcze większej ilości Obrażeń."
           ]
-        },
-        {
-          "displayName": "ogień pośredni",
-          "name": "indirectFire",
-          "source": "EIn",
-          "content": [
-            "Broń używa specjalnej naprowadzanej amunicji, która pozwala strzelać do celów znajdujących się za osłonami. Bohater może z karą -10 (zamiast normalnej -30) pokierować pocisk na przeciwnika, którego widział w ciągu poprzedniej Rundy. Alternatywnie, jeżeli wyposażony jest w system celowniczy @tool{signum} albo @tool{signumLink|łącze}, może strzelać do celów ujawnionych przez standardowe systemy celownicze pancerzy wspomaganych (to znaczy znajdujące się w zasięgu strzału Braci, którzy dzielą się danymi), czy też przez skany @tool{auspex|auspexem}."
-          ]
-        },
-        {
-          "displayName": "szrapnele",
-          "name": "shrapnel",
-          "source": "EIn",
-          "content": [
-            "Broń używa amunicji, która nie eksploduje przy bezpośrednim trafieniu, a nad celem, zalewając go deszczem odłamków. Broń ignoruje efekty wszelkich Osłon, jeżeli nad celem jest co najmniej pięć metrów otwartej przestrzeni."
-          ]
-        }
+        } 
       ]
     },
     {
@@ -4927,31 +4918,31 @@
         "$renown": "sława"
       },
       "footnotes": [
-        "Za każdą dodatkową sztukę, nie licząc tej wydawanej standardowo.",
-        "Profil głównego boltera. Broń dodatkowa ma Szybkostrzelność S/-/- i Magazynek 1; wszystkie inne statystyki odpowiadają jej profilowi w tabeli.",
-        "Zależne od amunicji.",
-        "Broń ta powierzana jest tylko Zbrojmistrzom.",
-        "Do Obrażeń od podpalenia powodowanych przez tę broń należy dodać +4.",
-        "{no-daggers|exotic}Przeładowanie digi-broni wymaga @dice{1k5} godzin i udanego ![b]#Przeciętnego\u00a0(+0) testu Użycia Technologii.#",
+        "za każdą dodatkową sztukę, nie licząc tej wydawanej standardowo.",
+        "profil głównego boltera. broń dodatkowa ma szybkostrzelność s/-/- i magazynek 1; wszystkie inne statystyki odpowiadają jej profilowi w tabeli.",
+        "zależne od amunicji.",
+        "broń ta powierzana jest tylko zbrojmistrzom.",
+        "do obrażeń od podpalenia powodowanych przez tę broń należy dodać +4.",
+        "{no-daggers|exotic}przeładowanie digi-broni wymaga @dice{1k5} godzin i udanego ![b]#przeciętnego\u00a0(+0) testu użycia technologii.#",
         {
-          "source": "EIn",
-          "content": "Podłączana do podstawy obecnej na @ranged{castellanLauncher|wyrzutni castellan}{EIn}."
+          "source": "ein",
+          "content": "podłączana do podstawy obecnej na @ranged{castellanlauncher|wyrzutni castellan}{ein}."
         },
         {
-          "source": "EIn",
-          "content": "Używana tylko przez Konsyliarzy i Kapelanów Primaris."
+          "source": "ein",
+          "content": "używana tylko przez konsyliarzy i kapelanów primaris."
         },
         {
-          "source": "EIn",
-          "content": "Używana tylko przez Konsyliarzy Primaris."
+          "source": "ein",
+          "content": "używana tylko przez konsyliarzy primaris."
         },
         {
-          "source": "RoB",
-          "content": "Zadaje obrażenia tylko celom organicznym."
+          "source": "rob",
+          "content": "zadaje obrażenia tylko celom organicznym."
         },
         {
-          "source": "RoB",
-          "content": "Broni tej nie można Pobrać i dostępna jest tylko dla Ultramarines w Straży. Bracia z innych Zakonów mogą wejść w jej posiadanie tylko przez odgrywanie Bohaterów."
+          "source": "rob",
+          "content": "broni tej nie można pobrać i dostępna jest tylko dla ultramarines w straży. bracia z innych zakonów mogą wejść w jej posiadanie tylko przez odgrywanie bohaterów."
         }
       ],
       "content": []
@@ -5297,247 +5288,6 @@
       ]
     },
     {
-      "type": "section",
-      "displayName": "boltery rodziny cawl",
-      "name": "cawlBolter",
-      "display": "all",
-      "parentPath": "ranged-bolt",
-      "source": "EIn"
-    },
-    {
-      "type": "group",
-      "parentPath": "ranged-bolt-cawlBolter|EIn",
-      "items": [
-        {
-          "displayName": "pistolet boltowy absolvor",
-          "image": "https://wh40k.lexicanum.com/mediawiki/images/6/66/PrimarisChaplain.jpg",
-          "name": "absolvorPistol",
-          "class": "pistol",
-          "source": "EIn",
-          "range": 30,
-          "rof": {
-            "single": true,
-            "burst": null,
-            "auto": null
-          },
-          "damage": {
-            "formula": "3k10kh2+10",
-            "display": "2k10+10",
-            "type": "explosion"
-          },
-          "footnotes": {
-            "$name": 7
-          },
-          "penetration": 6,
-          "clip": 8,
-          "reload": 1,
-          "qualities": ["tearing"],
-          "weight": 6,
-          "requisition": 10,
-          "renown": 0,
-          "content": [
-            "Pistolet Absolvor — rozgrzeszający — należy do nowej generacji sprzętu Primaris. Jest to większy pistolet używany przez Kapelanów i Konsyliarzy Primaris jako broń boczna. Ma mniejszy magazynek niż standardowy pistolet, ale znacznie większą moc obalającą, porównywalną z ciężkim bolterem. Konsyliarze używają go do udzielania zbyt ciężko rannym Braciom Łaski Imperatora."
-          ]
-        },
-        {
-          "displayName": "karabin boltowy astartes Mark II Cawl",
-          "image": "https://static.wikia.nocookie.net/warhammer40k/images/4/4f/BoltRifleRender.jpg",
-          "name": "astartesBolter",
-          "class": "basic",
-          "range": 120,
-          "rof": {
-            "single": true,
-            "burst": 2,
-            "auto": 4
-          },
-          "damage": {
-            "formula": "3k10kh2+6",
-            "display": "2k10+6",
-            "type": "explosion"
-          },
-          "penetration": 5,
-          "clip": 28,
-          "reload": 1,
-          "qualities": ["tearing"],
-          "weight": 18,
-          "source": "EIn",
-          "requisition": 5,
-          "renown": 0,
-          "content": [
-            "Karabin Boltowy Mark II Wzór Cawl to zasadniczo ciągle to samo uzbrojenie, jednak teraz zrewidowane i udoskonalone dla nowej generacji Marines Primaris. Ma nieco większy zasięg i trochę więcej mocy obalającej, ale jego największą zaletą — podobnie jak ma się sprawa z @armour{tacticus|pancerzem mark X}{EIn} — jest modułowość pozwalająca na wymianę kluczowych elementów i dopasowanie broni do sytuacji taktycznej."
-          ]
-        },
-        {
-          "displayName": "automatyczny karabin boltowy astartes",
-          "image": "https://wh40k.lexicanum.com/mediawiki/images/f/fe/AutoBoltSM2.jpg",
-          "name": "astartesAutoBoltRifle",
-          "class": "basic",
-          "range": 80,
-          "rof": {
-            "single": true,
-            "burst": 3,
-            "auto": 6
-          },
-          "damage": {
-            "formula": "3k10kh2+6",
-            "display": "2k10+6",
-            "type": "explosion"
-          },
-          "penetration": 5,
-          "clip": 42,
-          "reload": 1,
-          "qualities": ["tearing"],
-          "weight": 25,
-          "source": "EIn",
-          "requisition": 10,
-          "renown": 1,
-          "content": [
-            "Jest to wariant Karabinu Mark II Cawl, który korzysta z magazynka bębnowego o wysokiej pojemności i może pochwalić się zwiększoną szybkostrzelnością. Ceną za to jest jednak zmniejszony zasięg."
-          ]
-        },
-        {
-          "displayName": "ciężki automatyczny karabin boltowy astartes",
-          "image": "https://static.wikia.nocookie.net/warhammer40k/images/8/8f/AutoBolter.jpg",
-          "name": "astartesHeavyAutoBoltRifle",
-          "class": "basic",
-          "range": 100,
-          "rof": {
-            "single": true,
-            "burst": 3,
-            "auto": 6
-          },
-          "damage": {
-            "formula": "3k10kh2+6",
-            "display": "2k10+6",
-            "type": "explosion"
-          },
-          "penetration": 5,
-          "clip": 42,
-          "reload": 1,
-          "qualities": ["tearing"],
-          "weight": 28,
-          "source": "EIn",
-          "requisition": 15,
-          "renown": 1,
-          "content": [
-            "Wariant @ranged{astartesAutoBoltRifle|automatycznego karabinu boltowego}{EIn}, który ma zasięg bliższy zwykłemu bolterowi."
-          ]
-        },
-        {
-          "displayName": "karabinek boltowy astartes",
-          "image": "https://static.wikia.nocookie.net/warhammer40k/images/d/d7/BoltCarbine.jpg",
-          "name": "astartesBoltCarbine",
-          "class": "basic",
-          "range": 80,
-          "rof": {
-            "single": true,
-            "burst": 2,
-            "auto": 4
-          },
-          "damage": {
-            "formula": "3k10kh2+6",
-            "display": "2k10+6",
-            "type": "explosion"
-          },
-          "penetration": 5,
-          "clip": 24,
-          "reload": 1,
-          "qualities": ["tearing"],
-          "weight": 15,
-          "source": "EIn",
-          "requisition": 8,
-          "renown": 1,
-          "content": [
-            "Bardziej kompaktowa wersja karabinu boltowego, najczęściej używana przez Rozbójników Primaris. Ma skróconą lufę i dodatkowy przedni uchwyt pod kompensatorem, który pozwala użyć obu rąk, by zmienić @action{semiAuto} i @action{fullAuto} w Akcje Pojedyncze. Choć jego zasięg jest zmniejszony, jest bardziej poręczny w ciasnych przestrzeniach, a także lżejszy."
-          ]
-        },
-        {
-          "displayName": "bolter szturmowy astartes",
-          "image": "https://static.wikia.nocookie.net/warhammer40k/images/a/a6/Assault_Bolter.jpg",
-          "name": "astartesAssaultBolter",
-          "class": "basic",
-          "range": 60,
-          "rof": {
-            "single": false,
-            "burst": null,
-            "auto": 10
-          },
-          "damage": {
-            "formula": "3k10kh2+10",
-            "display": "2k10+10",
-            "type": "explosion"
-          },
-          "penetration": 6,
-          "clip": 30,
-          "source": "EIn",
-          "reload": 1,
-          "qualities": ["tearing"],
-          "weight": 25,
-          "requisition": 20,
-          "renown": 1,
-          "content": [
-            "Bolter Szturmowy to stosunkowo niedawny dodatek do zbrojowni Adeptus Astartes. Wiele standardowych wieków ulepszeń przeprowadzonych przez Arcymagosa Dominus Cawla zaowocowały między innymi tą właśnie bronią. Jest ona zasadniczo ręczną wersją standardowego Ciężkiego Boltera z dużym magazynkiem i szybkim automatem ładującym. Choć jego zasięg jest znacznie zredukowany, zachowuje on wysoką szybkostrzelność i obrażenia, a niewyobrażalny odrzut pochłaniany jest przez specjalną tarczę magnetyczną. To zabójcze uzbrojenie jest wykorzystywane często przez Drużyny Inceptorów Primaris w ich desantach w masy walczących przeciwników."
-          ]
-        },
-        {
-          "name": "astartesBoltSniperRifle",
-          "image": "https://static.wikia.nocookie.net/warhammer40k/images/6/6a/BoltSniperRifle.jpg",
-          "displayName": "boltowy karabin snajperski astartes",
-          "source": "EIn",
-          "class": "basic",
-          "range": 250,
-          "rof": {
-            "single": true,
-            "burst": null,
-            "auto": null
-          },
-          "damage": {
-            "formula": "3d10kh2+12",
-            "display": "2k10+12",
-            "type": "explosion"
-          },
-          "penetration": 8,
-          "qualities": ["accurate", "tearing"],
-          "clip": 10,
-          "reload": 1,
-          "weight": 22,
-          "renown": 2,
-          "requisition": 35,
-          "content": [
-            "Boltowy Karabin Snajperski Mark III Wzór Shrike to główne uzbrojenie Drużyn Eliminatorów Awangardy Primaris. Karabin taki posiada zaawansowany system celowniczy, który składa się z systemu prowadzącego, który zwiększa premię za @action{aim} o kolejne +10 (kumuluje się z Własnością Celna) i naszpikowanego zaawansowanymi układami celownika, spełniającego funkcje @attachment{telescopicSight|lunety}, długodystansowego @attachment{preysense|celownika preysense} i @tool{auspex|skanera}. Dodatkowo wbudowany jest w niego @attachment{silencer} i układy pozwalające na naprowadzanie specjalnego rodzaju amunicji."
-          ]
-        },
-        {
-          "name": "astartesExecutorBoltRifle",
-          "image": "https://static.wikia.nocookie.net/warhammer40k/images/d/d3/Executor_Hvy_Bolt_Rifle.png",
-          "source": "EIn",
-          "displayName": "karabin boltowy executor astartes",
-          "class": "basic",
-          "range": 150,
-          "rof": {
-            "single": true,
-            "burst": 2,
-            "auto": 4
-          },
-          "damage": {
-            "formula": "3k10kh2+8",
-            "display": "2k10+8",
-            "type": "explosion"
-          },
-          "qualities": ["tearing"],
-          "penetration": 8,
-          "requisition": 8,
-          "renown": 0,
-          "clip": 14,
-          "reload": 1,
-          "weight": 20,
-          "content": [
-            "Wariant Karabinu Mark II Cawl, którego najczęściej używają Ciężcy Orędownicy Primaris. Ma dłuższy zasięg, zadaje większe obrażenia i lepiej przebija pancerze, niż standardowy karabin boltowy. Mniej potężny wariant to Ciężki Karabin Boltowy, a taki ze zwiększoną szybkostrzelnością i pojemnością magazynka— Karabin Boltowy Hellstorm."
-          ]
-        }
-      ]
-    },
-    {
       "type": "group",
       "parentPath": "ranged-plasma",
       "items": [
@@ -5624,35 +5374,6 @@
           "renown": 1,
           "content": [
             "Mało który pistolet jest bardziej zabójczy od tych wykorzystujących technologię plazmową. Wielu wysokiego stopnia Astartes uważają je za warte zachodu, jakim jest ich zdobycie i ryzyka wynikającego z ich używania dzięki ich czystej wydajności w eliminacji wrogów na krótkim dystansie."
-          ]
-        },
-        {
-          "name": "plasmaIncinerator",
-          "source": "EIn",
-          "image": "https://static.wikia.nocookie.net/warhammer40k/images/f/f0/PlasmaIncinerator.png",
-          "displayName": "spopielacz plazmowy astartes",
-          "class": "basic",
-          "range": 120,
-          "rof": {
-            "single": true,
-            "burst": 2,
-            "auto": null
-          },
-          "damage": {
-            "formula": "1k10+10",
-            "type": "energy"
-          },
-          "penetration": 8,
-          "clip": 12,
-          "reload": 3,
-          "qualities": ["volatile", "reliable"],
-          "weight": 8,
-          "requisition": 22,
-          "renown": 1,
-          "content": [
-            "Spopielacz Plazmowy to najnowszy typ karabinu plazmowego używany głównie przez Drużyny Piekielnego Grzmotu Primaris. Najlepszą jej wersją jest Spopielacz Mark III wzór Belisarius, który wyrzuca z siebie strumienie rozgrzanej plazmy bez ryzyka przeciążenia, po raz pierwszy od czasów Herezji. Nie można jednak „bezpieczny”. określić jego potężnego trybu Maksymalnego. W tym trybie (ponad wszystkie zmiany obejmujące ogólnie broń plazmową) Spopielacz zadaje kolejne dodatkowe @dice{k10} Obrażeń, ale traci Własność @quality{reliable}.",
-            "Spopielacz można wyposażyć w zintegrowany @attachment{redDot}. Koszt Pobrania rośnie wtedy do 25. Taki wariant znany jest jako Szturmowy Spopielacz.",
-            "Spopielacz można wyposażyć w potężniejszą komorę reakcyjną, która pozwala na operowanie większymi ilościami plazmy naraz. Koszt Pobrania rośnie wtedy do 28. Obrażenia zwiększone są do @dice{1k10+12}, a Penetracja do 10. Taki wariant zwany jest Ciężkim Spopielaczem i najczęściej zasilany jest z plecaka."
           ]
         }
       ]
@@ -6142,59 +5863,7 @@
           "content": [
             "Małe ale efektywne, pistolety automatyczne stanowią ulubioną broń wielu weteranów, będącą dobrym dodatkiem do ich standardowego @ranged{lasgun|karabinu laserowego}. Strzelają dużo szybciej niż większość pistoletów, przez co mogą pozbyć się nieopancerzonych celów jedną serią pocisków."
           ]
-        },
-        {
-          "displayName": "działko przyspieszające astartes",
-          "name": "astartesAcceleratorAutocannon",
-          "image": "https://warhammer40000.com/games/wp-content/uploads/sites/2/2019/07/01-Ultramarines-Suppressor-3-128.png",
-          "class": "heavy",
-          "source": "EIn",
-          "range": 200,
-          "rof": {
-            "single": false,
-            "burst": null,
-            "auto": 6
-          },
-          "damage": {
-            "formula": "3k10+10",
-            "type": "impact"
-          },
-          "penetration": 8,
-          "clip": 40,
-          "reload": 1,
-          "weight": 80,
-          "requisition": 20,
-          "renown": 1,
-          "content": [
-            "Potężna broń wystrzeliwująca pociski o dużo większej szybkości wylotowej niż w standardowym działku automatycznym, co zwiększa celność i ogranicza konieczność prowadzenia celu. Mimo, że jest wystarczająco lekka, by być używana przez Drużyny Tłumiące Primaris, nie należy nie doceniać jej kilkudziesięciocentymetrowej długości pocisków wybijających dziury w pancerzach pojazdów."
-          ]
-        },
-        {
-          "displayName": "pistolet reduktorowy",
-          "image": "https://static.wikia.nocookie.net/warhammer40k/images/e/e1/PrimarisApothecary.png",
-          "name": "reductorPistol",
-          "class": "pistol",
-          "rof": {
-            "single": true,
-            "burst": null,
-            "auto": null
-          },
-          "damage": {
-            "formula": "2k10+10",
-            "type": "impact"
-          },
-          "footnotes": {
-            "$name": 8
-          },
-          "penetration": 12,
-          "weight": 4,
-          "source": "EIn",
-          "requisition": 10,
-          "renown": 0,
-          "content": [
-            "Specjalny pistolet używany przez Konsyliarzy Primaris, który pełni u nich funkcję @tool{reductor|reduktora}. Zaprojektowany został do szybkiego dziurawienia ceramitowych pancerzy i wzmocnionych przez Ossmodulę i Magnificat żeber w celu usuwania Progenoidów, których może przechować kilka w dołączonych pojemnikach. Mimo niemal zerowego zasięgu jest w stanie równie dobrze sprawdzić się w przebijaniu na przykład czaszki rozszalałego orkowego wodza. Pistolet Reduktorowy nie wymaga amunicji ani przeładowania, ale można używać go tylko w walce w zwarciu. Dodatkowo wykorzystany może być do tych samych celów użytkowych, co Reduktor Pierworodnych."
-          ]
-        }
+        } 
       ]
     },
     {
@@ -6310,39 +5979,6 @@
           "content": [
             "Pistolet laserowy używany jest często przez niskiego stopnia oficerów i agentów Imperium. Na wielu planetach zdarza się, że niemal każdy członek społeczeństwa posiada taką broń. Prawie każdy Świat-Kuźnia produkuje swój własny wzór pistoletu laserowego, ponieważ podstawowy wariant jest tak prosty, że pozwala na szeroką modyfikację."
           ]
-        },
-        {
-          "name": "lasFusil",
-          "displayName": "samopał laserowy astartes",
-          "source": "EIn",
-          "image": "https://static.wikia.nocookie.net/warhammer40k/images/c/ce/EliminatorWithLasFusil.png",
-          "class": "heavy",
-          "range": 250,
-          "rof": {
-            "single": true,
-            "burst": null,
-            "auto": null
-          },
-          "damage": {
-            "formula": "4d10+6",
-            "type": "energy"
-          },
-          "penetration": 10,
-          "clip": 4,
-          "reload": 1,
-          "qualities": [
-            "accurate",
-            {
-              "name": "felling",
-              "value": 1
-            }
-          ],
-          "weight": 45,
-          "requisition": 35,
-          "renown": 2,
-          "content": [
-            "Samopał Laserowy to potężna przeciwpiechotna broń laserowa używana przez Drużyny Eliminatorów Awangardy Primaris. Jest ona tak celna, że może zostać zastosowana zamiast standardowego @ranged{astartesBoltSniperRifle|boltowego karabinu snajperskiego}{EIn}. Posiada również takie same systemy celownicze, co ta broń."
-          ]
         }
       ]
     },
@@ -6436,159 +6072,6 @@
           "renown": 1,
           "content": [
             "Gdy wzmocniona siła Brata nie wystarczy, by dorzucić granat odpowiednio daleko, może on skorzystać z dodatkowego granatnika. Ta mała tuba zawiera rząd przygotowanych do wystrzału granatów. Granatnik pomocniczy najczęściej montuje się nad lub pod lufą standardowej broni, podobnie jak jest to z @ranged{astartesCombiWeapon|bronią hybrydową}. Istnieją także modele z osobnym zespołem spustu. Jeżeli granatnik przymocowany jest do innej broni, użytkownik nie może wystrzelić z ich obu w jednej Rundzie. Można go również zamontować na ramieniu @armour{terminator|pancerza terminator}, co jednak podwaja jego koszt Pobrania."
-          ]
-        },
-        {
-          "displayName": "granatnik astartes „fragstorm”",
-          "name": "astartesFragstormGrenadeLauncher",
-          "tags": ["usesAmmo:grenade"],
-          "image": "https://www.warhammer.com/app/resources/catalog/product/threeSixty/99120101184_PrimarisAggressors1360/41.jpg",
-          "class": "mounted",
-          "range": 30,
-          "source": "EIn",
-          "rof": {
-            "single": true,
-            "burst": null,
-            "auto": 6
-          },
-          "damage": "",
-          "penetration": "",
-          "qualities": "",
-          "footnotes": {
-            "$damage": 2,
-            "penetration": 2,
-            "$qualities": 2
-          },
-          "clip": 6,
-          "reload": 2,
-          "weight": 20,
-          "requisition": 15,
-          "renown": 1,
-          "content": [
-            "Granatnik Fragstorm używany jest przez Drużyny Agresorów Primaris, montowany na ich @armour{gravis|pancerzach gravis}{EIn}, a także, w wersji ośmiostrzałowej, w Drednotach typu Odkupiciel. Załadować go można standardowymi granatami i wystrzelić je pojedynczo lub w miażdżącej serii."
-          ]
-        },
-        {
-          "name": "castellanLauncher",
-          "displayName": "wyrzutnia castellan",
-          "tags": ["usesAmmo:missile"],
-          "image": "https://static.wikia.nocookie.net/warhammer40k/images/e/e0/VengorCastellanLauncher.jpg",
-          "class": "heavy",
-          "range": 200,
-          "source": "EIn",
-          "rof": {
-            "single": false,
-            "burst": 3,
-            "auto": 6
-          },
-          "damage": "",
-          "penetration": "",
-          "qualities": ["indirectFire|EIn", "shrapnel|EIn"],
-          "footnotes": {
-            "$damage": 2,
-            "penetration": 2,
-            "$qualities": 2
-          },
-          "clip": 6,
-          "reload": 3,
-          "weight": 40,
-          "requisition": 30,
-          "renown": 1,
-          "content": [
-            "Wyrzutnia Castellan to broń przeciwpiechotna o długim zasięgu używana głównie przez Drużyny Spustoszycieli Primaris, która szczególnie dobrze radzi sobie z przeciwnikami korzystającymi z osłon. Jednocześnie zapewnia podstawę do montażu i działania innych typów wyrzutni. Faktyczna wyrzutnia znajduje się pod szyną montażową i systemami celowniczymi i zasilana jest z taśmy podającej kolejne pociski (można ją zasilać wyłącznie @grenade{missileCastellan|pociskami castellan}{EIn}). W ciągu paru sekund nawet pojedyncza wyrzutnia tego typu jest w stanie zasypać tchórzliwie chowające się za osłonami cele deszczem odłamków z eksplodujących nad ich głowami kierowanych pocisków. System celowniczy zapewnia użytkownikowi efekty Talentu @talent{marksman} przy prowadzeniu ognia bezpośredniego. Wyrzutnie Castellan wydawane są z @specialammo{backpack|plecakiem} zawierającym 60 pocisków."
-          ]
-        },
-        {
-          "name": "superfragLauncher",
-          "displayName": "wyrzutnia superfrag",
-          "tags": ["usesAmmo:missile"],
-          "image": "https://static.wikia.nocookie.net/warhammer40k/images/7/7c/SuperfragRocketLauncher.jpg",
-          "class": "heavy",
-          "range": 300,
-          "source": "EIn",
-          "rof": {
-            "single": true,
-            "burst": null,
-            "auto": null
-          },
-          "damage": "",
-          "penetration": "",
-          "qualities": "",
-          "footnotes": {
-            "$name": 6,
-            "$damage": 2,
-            "penetration": 2,
-            "$qualities": 2
-          },
-          "clip": 4,
-          "reload": 3,
-          "weight": "+30",
-          "requisition": 15,
-          "renown": 1,
-          "content": [
-            "Wyrzutnia Superfrag to niesamowicie potężna długodystansowa wyrzutnia pocisków przeciwpiechotnych używana przez Drużyny Spustoszycieli Primaris. Jest bardziej niezawodna i silniejsza od starszych wyrzutni, a zasięgiem przebija nawet karabiny snajperskie; z tych powodów stanowi jedną z najpotężniejszych broni, jakie można wystawić przeciwko piechocie. Montowana jest na szynie @ranged{castellanLauncher|wyrzutni castellan}{EIn} i choć nie ma takich samych możliwości naprowadzania, jej półkierowane i tak są w stanie korzystać z wbudowanych systemów celowniczych. Wyrzutnia Superfrag może używać tylko @grenade{missileSuperfrag|pocisków superfrag}{EIn} i wydawana jest z 4 sztukami takiej amunicji."
-          ]
-        },
-        {
-          "name": "superkrakLauncher",
-          "displayName": "wyrzutnia superkrak",
-          "tags": ["usesAmmo:missile"],
-          "image": "https://static.wikia.nocookie.net/warhammer40k/images/8/86/SuperkrakRocketLauncher.jpg",
-          "class": "heavy",
-          "range": 300,
-          "source": "EIn",
-          "rof": {
-            "single": true,
-            "burst": null,
-            "auto": null
-          },
-          "damage": "",
-          "penetration": "",
-          "qualities": "",
-          "footnotes": {
-            "$name": 6,
-            "$damage": 2,
-            "penetration": 2,
-            "$qualities": 2
-          },
-          "clip": 2,
-          "reload": 2,
-          "weight": "+30",
-          "requisition": 15,
-          "renown": 1,
-          "content": [
-            "Wyrzutnia Superkrak to niesamowicie potężna długodystansowa wyrzutnia pocisków przeciwpancernych używana przez Drużyny Spustoszycieli Primaris. Jest bardziej niezawodna i silniejsza od starszych wyrzutni, a zasięgiem przebija nawet karabiny snajperskie. Gdy przeciwnik Kosmicznych Marines wystawi przeciw nim grupę potężnych, ciężko opancerzonych przeciwników, salwa z tych wyrzutni przebije się bez problemu przez każdy rodzaj zbroi — nieważne, chitynowej czy metalowej. Montowana jest na szynie @ranged{castellanLauncher|wyrzutni castellan}{EIn} i choć nie ma takich samych możliwości naprowadzania, jej półkierowane i tak są w stanie korzystać z wbudowanych systemów celowniczych. Wyrzutnia Superkrak może używać tylko @grenade{missileSuperkrak|pocisków superkrak}{EIn} i wydawana jest z 2 sztukami takiej amunicji."
-          ]
-        },
-        {
-          "name": "vengorLauncher",
-          "displayName": "wyrzutnia vengor",
-          "tags": ["usesAmmo:missile"],
-          "image": "https://static.wikia.nocookie.net/warhammer40k/images/e/e0/VengorCastellanLauncher.jpg",
-          "class": "heavy",
-          "range": 400,
-          "source": "EIn",
-          "rof": {
-            "single": true,
-            "burst": null,
-            "auto": null
-          },
-          "damage": "",
-          "penetration": "",
-          "qualities": ["indirectFire|EIn"],
-          "footnotes": {
-            "$name": 6,
-            "$damage": 2,
-            "penetration": 2,
-            "$qualities": 2
-          },
-          "clip": 1,
-          "reload": 2,
-          "weight": "+30",
-          "requisition": 20,
-          "renown": 2,
-          "content": [
-            "Wyrzutnia Vengor to niesamowicie potężna długodystansowa wyrzutnia pocisków przeciwpiechotnych używana przez Sierżantów Spustoszycieli Primaris. Pojedynczy wyrzucany z niej pocisk może sięgać na ogromne dystanse, gdzie eksploduje w potężnej kuli ognia, która jest w stanie zneutralizować całą drużynę piechoty. Montowana jest na szynie @ranged{castellanLauncher|wyrzutni castellan}{EIn} i może w pełni wykorzystywać współdzielone z nią systemy celownicze. Wyrzutnia Vengor może używać tylko @grenade{missileVengor|pocisków vengor}{EIn} i wydawana jest z 1 sztuką takiej amunicji."
           ]
         }
       ]
@@ -6768,33 +6251,6 @@
           "content": [
             "Karabin igłowy oferuje idealne połączenie zasięgu, dyskretności i zabójczości. Niskiej mocy promień laserowy wyrzuca odłamki skrystalizowanej toksyny, która wbita w ciało niemal natychmiast wnika do krwiobiegu. W takie pociski można zmienić wiele różnych substancji chemicznych przy użyciu odpowiedniego wyposażenia, a Straż używa ich całej gamy. Najbardziej powszechnym związkiem (który służy jako standardowa amunicja) jest oparta na wirusach toksyna, która zabija większość celów w kilka chwil po zranieniu. Z racji na brak płomienia wylotowego karabiny igłowe są idealnym narzędziem dla zabójców. Jedyną ich wadą jest fakt, że kruche pociski mają niemal zerową moc przebijania pancerza, przez co nie nadają się do niczego przeciwko ciężkim celom."
           ]
-        },
-        {
-          "displayName": "pistolet &neo–volkite astartes",
-          "image": "https://static.wikia.nocookie.net/warhammer40k/images/b/b5/Drogos_Neo-Volkite_Pistol.jpg",
-          "name": "astartesNeoVolkitePistol",
-          "class": "pistol",
-          "range": 40,
-          "rof": {
-            "single": true,
-            "burst": null,
-            "auto": null
-          },
-          "damage": {
-            "formula": "1k10+5",
-            "type": "energy"
-          },
-          "penetration": 6,
-          "clip": 10,
-          "reload": 2,
-          "weight": 6,
-          "requisition": 30,
-          "renown": 3,
-          "source": "EIn",
-          "content": [
-            "Broń Volkite to klasa opartej na starożytnej technologii broni termicznej. Pochodzi ona jeszcze z czasów przed Imperium i oferuje zdecydowanie większą siłę obalającą niż większość uzbrojenia podobnego rozmiaru. Wystrzały z broni tego typu potrafią przebić swoją wiązką nawet gruby ceramit pancerzy Kosmicznych Marines. Pistolet Neo–Volkite to jedyny jej rodzaj używany przez Astartes w 42. milenium.",
-            "Broń Volkite wytwarza skoncentrowany promień energii termicznej. Po trafieniu w cel w kolejnych Rundach strzelający może użyć Akcji Pojedynczej, by podtrzymać wiązkę na celu. Należy w takim wypadku wykonać kolejny rzut na Atak, biorąc pod uwagę wszelkie zmiany w otoczeniu, które mogłyby nałożyć inne modyfikatory. Cel może wtedy ponowić próbę Uniku. Wykonywanie Akcji wymagających gwałtownych ruchów (na przykład ataków wręcz) wymusza wykonanie Testu Zręczności dla podtrzymania wiązki. Podtrzymana wiązka zwiększa swoje Obrażenia i Penetrację o odpowiednio @dice{k10}/2 do całkowitego maksimum @dice{3k10+5}/10 (choć nadal można potrzymać wtedy wiązkę ze stałymi Obrażeniami). Cele, na których powiodło się podtrzymanie muszą ponadto zdać Test Zręczności z karą -10 \u00d7 SS trafienia, by uniknąć stanięcia w płomieniach."
-          ]
         }
       ]
     },
@@ -6960,6 +6416,7 @@
         {
           "name": "ultraRifle",
           "displayName": "karabin wyborowy Mk.IX wzór ultra",
+          "noGrid": true,
           "class": "heavy",
           "range": 250,
           "rof": {
@@ -7036,14 +6493,6 @@
       },
       "footnotes": [
         "Granaty odłamkowe i krak są wydawane standardowo; pociski odłamkowe i krak dołączane są do wyrzutni. Wartość Pobrania podana jest tylko w celu oceniania zapytań określonych jako „nadmiarowe”.",
-        {
-          "source": "EIn",
-          "content": "Pociski dołączane są do odpowiednich dla nich wyrzutni. Podany koszt Pobrania dotyczy dodatkowej amunicji."
-        },
-        {
-          "source": "EIn",
-          "content": "Koszt dodatkowego plecaka zawierającego 60 pocisków."
-        },
         {
           "source": "RoB",
           "content": "Tylko przeciwko roślinom."
@@ -7453,126 +6902,6 @@
             "Ten owiany złą sławą przykład utraconej technologii rozrywa materię rzeczywistości, tworząc wyłom prowadzący do Spaczni. Nie trzeba dodawać, że rezultaty tak desperackiego czynu są bardzo nieprzewidywalne i mają wysokie prawdopodobieństwo zaszkodzenia użytkownikowi. Nawet mimo koszmarnych opowieści o demonach przenikających przez wyłomy i wirach, które wciąż pojawiają się na starych polach bitew, nawiedzając je niczym duchy, nie ma lepszego sposobu na upewnienie się, że cel jest ostatecznie zniszczony, niż zobaczenie jak wciągany jest do immaterium.",
             "Adeptus Mechanicus zazdrośnie strzegą sekretów granatów wirowych, do tego stopnia, że niektórzy zastanawiają się, czy istnieją jeszcze jakiekolwiek Światy-Kuźnie, które są w stanie je produkować. Teorię tę popiera fakt, że ich zapas nawet w Adeptus Astartes ciągle się kurczy i jedynie najgorsze zagrożenia uzasadniają użycie tak cennej i niebezpiecznej broni. Tak jak z @grenade{stasis|granatami wstrzymującymi}, jedna sztuka może być przyznana na polecenie Kapitana Straży.",
             "Efekt granatu wirowego ma promień trzech metrów. Każdy w tym obszarze może użyć swojej Reakcji, by spróbować wykonać Unik, zanim wyłom pojawi się w pełni. Ci, którym się to nie uda, jak i wszystko, co znajduje się w tym obszarze, zostaje wciągnięte do Spaczni i nikomu już nigdy nie dane jest ich zobaczyć. W każdej Rundzie kapryśny wir pojawia się i znika. Kiedy to się dzieje, istnieje @dice{50%} szans, że wyłom się zamknie. W przeciwnym przypadku pojawia się ponownie w odległości @dice{2k10} metrów od ostatniego miejsca, w losowym kierunku."
-          ]
-        },
-        {
-          "name": "missileCastellan",
-          "displayName": "pocisk castellan",
-          "tags": ["missile"],
-          "damage": {
-            "formula": "2k10",
-            "type": "explosion"
-          },
-          "penetration": 2,
-          "qualities": [
-            {
-              "name": "blast",
-              "value": 6
-            }
-          ],
-          "weight": 1.2,
-          "requisition": 15,
-          "footnotes": {
-            "requisition": 2
-          },
-          "source": "EIn",
-          "renown": 1,
-          "content": [
-            "Pociski Castellan dopasowane są do @ranged{castellanLauncher|wyrzutni}{EIn} o tej samej nazwie. Pod względem efektywności leżą pomiędzy standardowymi @grenade{astartesFragGrenade|granatami} i @grenade{missileFrag|pociskami odłamkowymi}, ale wystrzelone z dedykowanej wyrzutni są w stanie współpracować z systemami naprowadzania, co umożliwia ogień pośredni."
-          ]
-        },
-        {
-          "name": "missileSuperfrag",
-          "displayName": "pocisk superfrag",
-          "tags": ["missile"],
-          "damage": {
-            "formula": "2k10+5",
-            "type": "explosion"
-          },
-          "penetration": 5,
-          "qualities": [
-            {
-              "name": "blast",
-              "value": 10
-            },
-            {
-              "name": "devastating",
-              "value": 2
-            }
-          ],
-          "weight": 2.5,
-          "requisition": 10,
-          "footnotes": {
-            "requisition": 1
-          },
-          "source": "EIn",
-          "renown": 1,
-          "content": [
-            "Pociski Superfrag dopasowane są do @ranged{superfragLauncher|wyrzutni}{EIn} o tej samej nazwie. Powodują one ogromne niszczycielskie eksplozje, które są w stanie nagłym gradem odłamków ściąć z nóg całe drużyny piechoty. Mają również możliwość wykonywania delikatnych korekt podczas lotu, co ułatwia trafienie, choć mogą być używane tylko w ogniu bezpośrednim."
-          ]
-        },
-        {
-          "name": "missileSuperkrak",
-          "displayName": "pocisk superkrak",
-          "tags": ["missile"],
-          "damage": {
-            "formula": "4k10+10",
-            "type": "explosion"
-          },
-          "penetration": 12,
-          "qualities": [
-            {
-              "name": "blast",
-              "value": 1
-            },
-            {
-              "name": "felling",
-              "value": 2
-            }
-          ],
-          "weight": 4,
-          "requisition": 10,
-          "footnotes": {
-            "requisition": 1
-          },
-          "source": "EIn",
-          "renown": 1,
-          "content": [
-            "Pociski Superkrak dopasowane są do @ranged{superkrakLauncher|wyrzutni}{EIn} o tej samej nazwie. Stanowią prawdopodobnie najpotężniejszą przenośną broń przeciwpancerną w arsenale Astartes (a na pewno najpotężniejszą korzystającą z technologii kumulacyjnej krak) i są w stanie jednym strzałem poważnie uszkodzić wrogi pojazd, czy zmienić szczególnie dużego i twardego przeciwnika w kupę zwęglonego mięsa. Mają również możliwość wykonywania delikatnych korekt podczas lotu, co ułatwia trafienie, choć mogą być używane tylko w ogniu bezpośrednim."
-          ]
-        },
-        {
-          "name": "missileVengor",
-          "displayName": "pocisk vengor",
-          "tags": ["missile"],
-          "damage": {
-            "formula": "3k10+5",
-            "type": "explosion"
-          },
-          "penetration": 6,
-          "qualities": [
-            {
-              "name": "blast",
-              "value": 10
-            },
-            {
-              "name": "devastating",
-              "value": 2
-            },
-            {
-              "name": "felling",
-              "value": 1
-            }
-          ],
-          "weight": 10,
-          "requisition": 15,
-          "footnotes": {
-            "requisition": 1
-          },
-          "source": "EIn",
-          "renown": 2,
-          "content": [
-            "Pociski Vengor dopasowane są do @ranged{vengorLauncher|wyrzutni}{EIn} o tej samej nazwie. Ich eksplozje są nawet potężniejsze od tych powodowanych przez @grenade{missileSuperfrag|pociski superfrag}{EIn} i mają znacznie większą siłę obalającą, choć są może nieco mniejsze. Dodatkowo główną zaletą Pocisków Vengor jest ich stosunkowo duża zwrotność, możliwość współpracy z systemami naprowadzania i ekstremalnie długi zasięg."
           ]
         }
       ]
@@ -8062,110 +7391,6 @@
           "content": [
             "Dzierżony zwykle przez Zbrojmistrzów, którzy chcą pokazać swoją wiarę w Omnizjasza. Broń ta ma długie drzewce podobne do laski, na którego końcu znajduje się żeleźce w formie połowy koła zębatego i czaszki, które stanowią symbol Adeptus Mechanicus. Symbol ten tworzy ostrze otoczone polem energetycznym, którego wyładowania skaczą po metalu, rozświetlając oczy czaszki niepokojącym błyskiem, co nie pozostawia wątpliwości, iż broń ta - choć pokryta zdobieniami w formie mikro-obwodów, które jasno wskazują na jej świętość dla Wyznawców Maszyny - jest śmiertelnie niebezpieczna w odpowiednich rękach. Topór ten działa również jako @tool{combiTool}."
           ]
-        },
-        {
-          "displayName": "rękawica auto boltstorm",
-          "name": "autoBoltstormGauntlet",
-          "image": "https://wh40k.lexicanum.com/mediawiki/images/0/08/AggressorArt2.jpg",
-          "class": "melee",
-          "tags": [
-            "doublesStrengthBonus",
-            "weapon:combi,boltstorm",
-            "secondModRequisition"
-          ],
-          "source": "EIn",
-          "damage": {
-            "formula": "2k10",
-            "type": "energy"
-          },
-          "footnotes": {
-            "$damage": 0
-          },
-          "penetration": 9,
-          "doublesStrengthBonus": true,
-          "qualities": ["powerField", "unwieldy"],
-          "weight": 40,
-          "requisition": "35/50",
-          "renown": 2,
-          "content": [
-            "Rękawica taka, projektu Belisariusa Cawla, odpowiada na długo istniejący problem używania broni dystansowej z rękawicami energetycznymi przez wbudowanie w rękawicę boltera zasilanego z krótkiej taśmy. Chociaż trzeba się nieźle wysilić, aby wycelować w taki sposób na dystans dłuższy niż kilka metrów, uniwersalność uczyniła ją jedną z ulubionych broni Agresorów Primaris.",
-            "Wbudowany bolter ma taki sam profil jak @ranged{astartesBolter|bolter} z następującymi zmianami: Magazynek mieści 20 sztuk amunicji, a Zasięg wynosi 30 metrów. Przy Pobraniu dwóch sztuk, koszt drugiej maleje do 15. Można mieszać z @melee{flamestormGauntlet|rękawicą flamestorm}{}. Bohater używający rękawic energetycznych, łańcuchowych, czy szponów na obu rękach nie może przeładować broni samodzielnie.",
-            "Rękawica Boltstorm dodaje mnożnik do Siły użytkownika (każdy Kosmiczny Marine posiada mnożnik Nienaturalnej Siły, więc broń ta po prostu zwiększa go o 1). Jest ona montowana zamiast normalnej rękawicy w pancerzu wspomaganym i nakłada te same ograniczenia co @melee{astartesLightningClaw}."
-          ]
-        },
-        {
-          "displayName": "rękawica flamestorm",
-          "image": "https://wh40k.lexicanum.com/mediawiki/images/7/71/AggressorArt.jpg",
-          "name": "flamestormGauntlet",
-          "tags": [
-            "doublesStrengthBonus",
-            "weapon:combi,flamestorm",
-            "secondModRequisition"
-          ],
-          "class": "melee",
-          "damage": {
-            "formula": "2k10",
-            "type": "energy"
-          },
-          "source": "EIn",
-          "footnotes": {
-            "$damage": 0
-          },
-          "penetration": 9,
-          "doublesStrengthBonus": true,
-          "qualities": ["powerField", "unwieldy"],
-          "weight": 40,
-          "requisition": "35/50",
-          "renown": 2,
-          "content": [
-            "Druga z używanych przez Agresorów Primaris rękawic, ta poszczycić się może lepszymi osiągami w wybijaniu dużych grup słabych przeciwników i zagradzaniu dróg dzięki zamienieniu boltera na miotacz.",
-            "Wbudowany miotacz ma taki sam profil jak @ranged{astartesFlamer} z następującymi zmianami: Magazynek mieści wystarczająco paliwa na 4 strzały, a Zasięg wynosi 15 metrów. Przy Pobraniu dwóch sztuk, koszt drugiej maleje do 15. Można mieszać z @melee{autoBoltstormGauntlet|rękawicą boltstorm}{}. Bohater używający rękawic energetycznych, łańcuchowych, czy szponów na obu rękach nie może przeładować broni samodzielnie.",
-            "Rękawica Flamestorm dodaje mnożnik do Siły użytkownika (każdy Kosmiczny Marine posiada mnożnik Nienaturalnej Siły, więc broń ta po prostu zwiększa go o 1). Jest ona montowana zamiast normalnej rękawicy w pancerzu wspomaganym i nakłada te same ograniczenia co @melee{astartesLightningClaw}."
-          ]
-        }
-      ]
-    },
-    {
-      "type": "group",
-      "source": "EIn",
-      "items": [
-        {
-          "name": "boltstormBolter",
-          "displayName": "Bolter Boltstorm",
-          "tags": ["weapon:combi,boltstorm"],
-          "parentPath": "ranged|CRB-bolt|CRB-cawlBolter|EIn",
-          "class": "basic",
-          "damage": {
-            "formula": "3k10dl1+6",
-            "display": "2k10+6",
-            "type": "explosion"
-          },
-          "rof": {
-            "single": true,
-            "burst": 2,
-            "auto": 4
-          },
-          "penetration": 6,
-          "range": 30,
-          "clip": 20,
-          "qualities": ["tearing"],
-          "weight": 0
-        },
-        {
-          "name": "flamestormFlamer",
-          "displayName": "Miotacz Flamestorm",
-          "tags": ["weapon:combi,flamestorm"],
-          "parentPath": "ranged|CRB-flame|CRB",
-          "class": "basic",
-          "damage": {
-            "formula": "2k10+2",
-            "type": "energy"
-          },
-          "penetration": 3,
-          "range": 15,
-          "clip": 4,
-          "qualities": ["flame"],
-          "weight": 0
         }
       ]
     },
@@ -8629,21 +7854,6 @@
             {
               "title": "Dozwolone:",
               "content": "jakakolwiek Zwykła broń Laserowa, Palna, Boltowa lub Plazmowa. Każda broń może mieć tylko jeden celownik naraz."
-            }
-          ]
-        },
-        {
-          "displayName": "zestaw celowniczy occulus",
-          "name": "occulus",
-          "source": "EIn",
-          "weight": "+2",
-          "requisition": 15,
-          "renown": 2,
-          "content": [
-            "Ten wysoko zaawansowany celownik łączy się bezpośrednio z systemem celowniczym wbudowanym w pancerze wspomagane. W połączeniu z @tool{auspex|auspexem} klasy Divinator jest w stanie wyświetlać przetworzone przez ducha maszyny dane na wewnętrznych wyświetlaczach hełmu. Używany jest najczęściej przez Drużyny Incursorów Primaris, które dzięki niemu mogą mierzyć do wrogów przez ściany, gęsty dym, czy w absolutnej ciemności, a także wykrywać desanty orbitalne, energetyczne flary prematerializacyjne towarzyszące teleportacji, a nawet drgania podłoża zdradzające obecność podkopujących się wrogów.",
-            {
-              "title": "Dozwolone:",
-              "content": "@ranged{boltCarbine}{EIn}."
             }
           ]
         }
@@ -9277,135 +8487,6 @@
             {
               "title": "broń kompatybilna z terminatorem:",
               "content": "@ranged{astartesCombiWeapon|bronie hybrydowe}, @melee{>power|energetyczne}, @melee{>force|psioniczne}, @ranged{astartesStormBolter}, @field{stormShield}, @ranged{astartesHeavyFlamer}, @ranged{astartesAssaultCannon}, @ranged{astartesCycloneMissileLauncher}."
-            }
-          ]
-        },
-        {
-          "displayName": "pancerz wspomagany mark x tacticus",
-          "name": "tacticus",
-          "source": "EIn",
-          "image": "https://static.wikia.nocookie.net/warhammer40k/images/f/f2/UltramarinesCesarus.jpg",
-          "armour": {
-            "general": 9,
-            "body": 11
-          },
-          "weight": 200,
-          "requisition": null,
-          "renown": null,
-          "content": [
-            "Zaprojektowany przez Belisariusa Cawla podczas jego trwającej dziesięć mileniów nieobecności, która w końcu zaowocowała ukończeniem Projektu Primaris, pancerz Mark X stanowi nową generację opancerzenia dla Marines Primaris. Oparty jest na pancerzach Mark III, zwanym Żelaznym i Mark IV, zwanym Pancerzem Herezji i wyposażony został w technologie odkryte na nowo przez Arcymagosa. W połączeniu z ulepszoną fizjologią Primaris jest naprawdę potężnym narzędziem gniewu Imperatora.",
-            "Oprócz ogólnie usprawnionego działania największym atutem pancerzy Mark X jest ich modułowość, bowiem składają się z standaryzowanej serworamy, do której przyłączane są potężne syntetyczne mięśnie, ceramitowo-adamantynowe płyty pancerne i inne systemy, takie jak zaawansowane zestawy auspex, wzmocnione stacje nadawczo-odbiorcze, zintegrowane plecaki skokowe... Pozwoliło to na utworzenie ekosystemu różnych wersji pancerza, które są wzajemnie kompatybilne niemal w stu procentach. Podstawową konfiguracją jest właśnie pancerz Tacticus.",
-            {
-              "title": "wzmocnione ceramitowe opancerzenie",
-              "content": "Pancerz Mark X Tacticus zapewnia nieco większą ochronę, niż poprzedni standardowy pancerz wspomagany Astartes — Mark VII Aquila. Noszenie tego pancerza daje Bohaterowi 11 Punktów Pancerza na torsie i 9 w pozostałych lokacjach."
-            },
-            {
-              "title": "system modularny",
-              "content": "Tacticus jest tylko jednym z wariantów modularnego systemu Mark X, a więc pancerz ten można łatwo modyfikować. Z dostępem do części innego pancerza Mark X Bohater może wymieniać jego części; każda taka podmiana wymaga ![b]#Wymagającego\u00a0(-10) testu Użycia Technologii# i pięciominutowego rytuału w celu uspokojenia obu duchów maszyny. Obie te wartości mogą ulec zmianie zależnie od woli MG; na przykład kiedy Bohater spróbuje wymienić nie płytę pancerną, a system celowniczy."
-            }
-          ]
-        },
-        {
-          "displayName": "pancerz wspomagany mark x phobos",
-          "name": "phobos",
-          "source": "EIn",
-          "image": "https://static.wikia.nocookie.net/warhammer40k/images/c/c0/UltramarinesPhobosArmour.jpg",
-          "armour": {
-            "general": 8,
-            "body": 9
-          },
-          "weight": 150,
-          "requisition": 20,
-          "renown": 1,
-          "content": [
-            "Przez milenia Astartes nie mieli zbytniej możliwości działania w ukryciu i za liniami wroga, może poza strategiami wcielanymi regularnie w życie przez Kruczą Gwardię. Wariant Phobos pancerza Mark X powstał, by wypełnić tę lukę. Poświęca on część opancerzenia, zamiast tego stawiając na zwiększoną szybkość, swobodę ruchów i ogólne zdolności cichego działania. Często wyposażany jest dodatkowo w zaawansowane zestawy auspex i przekaźniki umożliwiające daleką komunikację. Noszą go jednostki takie jak zajmujący się sabotażem Rozbójnicy.",
-            {
-              "title": "lekkie opancerzenie",
-              "content": "Pancerz Phobos zaprojektowany jest dla lekkich, szybkich jednostek, oferuje więc nieco gorszą ochronę od standardowego pancerza Tacticus. Noszenie go zapewnia 9 Punktów Pancerza na torsie i 8 w pozostałych lokacjach. Dodatkowo noszący otrzymuje premię +1 do Szybkości."
-            },
-            {
-              "title": "cicha rama",
-              "content": "Z racji zadań, jakich podejmują się Astartes wyposażeni w pancerz Phobos, jego ceramitowe płyty są bardziej dopasowane, a tłoki i serwomotory ramy umożliwiają bezgłośne poruszanie. Dodatkowo pancerz wyposażony jest w miniaturowe amortyzatory wygłuszające kroki noszącego. Wszystko to razem sprawia, że noszenie pancerza Phobos nie powoduje zwyczajnej kary do Ukrywania się i Skradania się wynikającej z noszenia pancerza."
-            }
-          ]
-        },
-        {
-          "displayName": "pancerz eliminatora",
-          "name": "eliminator",
-          "source": "EIn",
-          "image": "https://static.wikia.nocookie.net/warhammer40k/images/d/d8/VanguardEliminatorUltramaines.jpg",
-          "armour": {
-            "general": 7,
-            "body": 8,
-            "head": null
-          },
-          "weight": 100,
-          "requisition": 25,
-          "renown": 2,
-          "content": [
-            "Specjalny wariant Phobos, jeszcze bardziej odchudzony, by maksymalnie postawić na szybkość i łatwość przemieszczania się, cały czas jednak zachowując wszystkie podstawowe zalety pancerza wspomaganego, takie jak szczelność, wzmocniona siła i systemy wspierające. Używany jest przez kolejny nowy w arsenale imperium typ jednostki - Eliminatorów, elitarnych snajperów używających niesamowicie zaawansowanej technologii - zwykle do pozbywania się wrogich dowódców, choć w razie potrzeby są w stanie przełączyć się na potężne muszkiety laserowe, które niemal dorównują siłą @ranged{>melta|broni melta}.",
-            {
-              "title": "ultralekkie opancerzenie",
-              "content": "Eliminatorzy noszą jeszcze lżejszą wersję pancerza Phobos w celu zmaksymalizowania mobilności i maskowania. Pancerz ten zapewnia 8 Punktów Pancerza na torsie i 7 w pozostałych lokacjach. Dodatkowo noszący otrzymuje premię +3 do szybkości."
-            },
-            {
-              "title": "płaszcz maskujący",
-              "content": "Razem z tym pancerzem wydawany jest bezkształtny i pokryty plamami kolorów typowych dla danego środowiska płaszcz maskujący, który zapewnia premię +10 do testów Ukrywania się. Dodatkowo pancerz Eliminatora w unikalny sposób współdziała z polami maskującymi, przez co koszt wydania takowego spada do 20 dla noszącego taki pancerz."
-            }
-          ]
-        },
-        {
-          "displayName": "pancerz wspomagany mark x gravis",
-          "name": "gravis",
-          "source": "EIn",
-          "image": "https://static.wikia.nocookie.net/warhammer40k/images/8/88/An_Inceptor_of_the_Ultramarines_Chapter_unleashes_the_wrath_of_the_Emperor.png",
-          "armour": {
-            "general": 14
-          },
-          "weight": 300,
-          "requisition": 20,
-          "renown": 2,
-          "content": [
-            "Wariant Mark X będący odpowiedzią na rzadkość i niesamowity nakład zarówno siły roboczej jak i materiałów potrzebny do wyprodukowania choć jednej sztuki sławnego @armour{terminator|taktycznego pancerza drednot} zmienia noszącego w chodzącą górę ceramitu będącą w stanie wytrzymać wręcz niewyobrażalne uszkodzenia. Składający się z grubych adamantynowo-ceramitowych płyt, z których najbardziej charakterystyczny jest potężny naplecznik, nadający użytkownikowi kształt porównywalny do dwunożnego żuka, a także wzmocnionych węzłów syntetycznych mięśni, używany jest przez różne typy jednostek, takie jak skupiający się na bliskim wsparciu ogniowym Ciężcy Orędownicy, specjalizujący się w przełamujących szarżach Agresorzy, czy używający nowatorskiej metody szybkiego szturmu z orbity Inkursorzy.",
-            {
-              "title": "ciężkie opancerzenie",
-              "content": "Ciężki pancerz Gravis zapewnia ochronę porównywalną niemal do Terminatora. Jego opancerzenie jest jednak wykonane z tańszego i łatwiejszego w pozyskaniu stopu, a sama zbroja nie jest tak sztywna z uwagi na swoją modułową budowę. Nie posiada również słynnego, zarezerwowanego dla najbardziej doświadczonych weteranów Crux Terminatus. Pancerz Gravis zapewnia 14 Punktów Pancerza we wszystkich lokacjach."
-            },
-            {
-              "title": "port naramienny",
-              "content": "Pancerz Gravis może zostać wyposażony w dodatkową broń umieszczoną na ramionach, najczęściej @ranged{fragstorm}{}."
-            },
-            {
-              "title": "wzmocniona rama",
-              "content": "Rama tego pancerza jest wytrzymalsza niż standardowa, zapewniając dodatkowe +10 do Krzepy (podliczane po wzięciu pod uwagę Nienaturalnej Krzepy). Nie pozwala jednak na szybką akcję; noszący ten pancerz otrzymuję karę -2 do szybkości."
-            }
-          ]
-        },
-        {
-          "displayName": "pancerz wspomagany mark x omnis",
-          "name": "omnis",
-          "source": "EIn",
-          "image": "https://www.belloflostsouls.net/wp-content/uploads/2022/04/40k-primaris-suppressor-header.jpg",
-          "armour": {
-            "general": 10,
-            "body": 13
-          },
-          "weight": 250,
-          "requisition": 35,
-          "renown": 1,
-          "content": [
-            "Jak dotąd jeden z najbardziej wyspecjalizowanych wariantów Mark X, Omnis całkowicie przystosowany jest do jednego tylko zadania, jakim jest wejście z orbity i długodystansowy ogień przeciwpancerny. Płyty jego są mieszanką tych z wariantów Gravis i Phobos, natomiast specjalny hełm niespotykany jest nigdzie indziej. Dodatkowo wyposażony jest w ulepszenia takie jak wbudowany plecak skokowy ze spadochronem grawitacyjnym, doczepione do butów amortyzatory upadku, które zwiększają maksymalną szybkość z jaką można lądować, a także specjalne systemy celowniczo-stabilizacyjne, które wspierają noszących go Supresorów w spełnianiu swojej unikalnej roli.",
-            {
-              "title": "mieszane opancerzenie",
-              "content": "Pancerz ten zapewnia noszącemu 13 Punktów Pancerza na torsie i 10 w pozostałych lokacjach."
-            },
-            {
-              "title": "plecak skokowy",
-              "content": "Przeznaczony do szturmów z wejściem z orbity i zapewniania ciężkiego wsparcia ogniowego, Omnis wyposażony jest w zintegrowany plecak skokowy, który umożliwia spowalnianie upadku, skoki w dal lub ponad obiektami, a także lot przez około minutę, zanim zajdzie potrzeba schłodzenia turbin, a także w spadochron grawitacyjny, który umożliwia bezpieczne zejścia z wysokości do 120 kilometrów, precyzyjną kontrolę nad skokami, a także zawiśnięcie w miejscu przez około minutę. Koszt Wydania tego pancerza zawiera oba te urządzenia."
-            },
-            {
-              "title": "stabilizatory ognia",
-              "content": "Odpowiedzialne za precyzyjne ruchy serwomotory w ramie pancerza połączone są z wyspecjalizowanymi kogitatorami stabilizującymi i zaawansowanymi systemami tłumienia odrzutu, dzięki czemu Supresorzy są w stanie wykonywać strzał podczas szybkiego skoku z karą zmniejszoną do -10."
             }
           ]
         },
@@ -10596,15 +9677,6 @@
           "content": [
             "Ta uprząż w rozmiarze przystosowanym do Astartes, oferująca więcej bezpieczeństwa niż hak, a jednocześnie mniej obciążająca i zdecydowanie cichsza niż @wargear{jumpPack}, może pomóc w bezpiecznym zejściu ze stromych wzniesień czy ścian budynków. Magnetyczny zaczep w kształcie haka można zamocować do wielu różnych powierzchni, a rozwijająca się powoli lina zapewnia bezpieczne zejście. Brat używający Uprzęży wykonuje Testy Wspinaczki z premią +30 i nie spadnie w razie porażki."
           ]
-        },
-        {
-          "name": "gravPack",
-          "displayName": "plecak skokowy ze spadochronem grawitacyjnym",
-          "source": "EIn",
-          "weight": 60,
-          "requisition": 20,
-          "renown": 1,
-          "noDesc": true
         },
         {
           "name": "jumpPack",
@@ -20534,8 +19606,27 @@
       ]
     },
     {
-      "type": "group",
+      "type": "section",
+      "name": "nonAstartesWeapons",
+      "displayName": "Broń Nie–Astartes",
+      "display": ["items"],
       "parentPath": "ranged",
+      "table": {
+        "$name": "nazwa",
+        "$class": "klasa",
+        "$range": "zasięg",
+        "$rof": "Szybkostrzelność",
+        "$damage": "Obrażenia",
+        "penetration": "Penetracja",
+        "clip": "Magazynek",
+        "$reload": "Przeładowanie",
+        "$qualities": "Własności",
+        "weight": "masa"
+      }
+    },
+    {
+      "type": "group",
+      "parentPath": "ranged-nonAstartesWeapons",
       "items": [
         {
           "type": "section",
@@ -20632,7 +19723,7 @@
     },
     {
       "type": "group",
-      "parentPath": "ranged-imperiumWeapons",
+      "parentPath": "ranged-nonAstartesWeapons-imperiumWeapons",
       "items": [
         {
           "name": "compactLaspistol",
@@ -20696,7 +19787,7 @@
     },
     {
       "type": "group",
-      "parentPath": "ranged-imperiumWeapons",
+      "parentPath": "ranged-nonAstartesWeapons-imperiumWeapons",
       "source": "RoB",
       "items": [
         {
@@ -21068,7 +20159,7 @@
     },
     {
       "type": "group",
-      "parentPath": "ranged-tauWeapons",
+      "parentPath": "ranged-nonAstartesWeapons-tauWeapons",
       "items": [
         {
           "name": "plasmaRifle",
@@ -21187,7 +20278,7 @@
     },
     {
       "type": "group",
-      "parentPath": "ranged-tyranidWeapons",
+      "parentPath": "ranged-nonAstartesWeapons-tyranidWeapons",
       "items": [
         {
           "name": "barbedStrangler",
@@ -21417,8 +20508,15 @@
       ]
     },
     {
+      "type": "section",
+      "name": "nonAstartesWeapons",
+      "displayName": "Broń Nie–Astartes",
+      "display": "all",
+      "parentPath": "melee"
+    },
+    {
       "type": "group",
-      "parentPath": "melee",
+      "parentPath": "melee-nonAstartesWeapons",
       "items": [
         {
           "type": "section",
@@ -21463,7 +20561,7 @@
     },
     {
       "type": "group",
-      "parentPath": "melee-imperiumWeapons",
+      "parentPath": "melee-nonAstartesWeapons-imperiumWeapons",
       "items": [
         {
           "name": "monoSword",
@@ -21568,7 +20666,7 @@
     },
     {
       "type": "group",
-      "parentPath": "melee-chaosWeapons",
+      "parentPath": "melee-nonAstartesWeapons-chaosWeapons",
       "items": [
         {
           "name": "chaosForgedSword",
@@ -21605,7 +20703,7 @@
     },
     {
       "type": "group",
-      "parentPath": "melee-tyranidWeapons",
+      "parentPath": "melee-nonAstartesWeapons-tyranidWeapons",
       "items": [
         {
           "name": "bonesword",
@@ -21677,7 +20775,7 @@
     },
     {
       "type": "group",
-      "parentPath": "ranged-tauWeapons",
+      "parentPath": "ranged-nonAstartesWeapons-tauWeapons",
       "source": "RoB",
       "items": [
         {
@@ -22807,7 +21905,7 @@
     {
       "type": "group",
       "source": "RoB",
-      "parentPath": "ranged-chaosWeapons",
+      "parentPath": "ranged-nonAstartesWeapons-chaosWeapons",
       "items": [
         {
           "name": "bombRack",
@@ -22910,7 +22008,7 @@
     {
       "type": "group",
       "source": "RoB",
-      "parentPath": "melee-chaosWeapons",
+      "parentPath": "melee-nonAstartesWeapons-chaosWeapons",
       "items": [
         {
           "name": "crushingClaw",
@@ -24448,6 +23546,1090 @@
         }
       ]
     },
+
+    {
+      "type": "group",
+      "parentPath": "quality",
+      "source": "EIn",
+      "items": [
+        {
+          "name": "acceleration",
+          "displayName": "Przyspieszająca",
+          "content": [
+            "Ta broń w jakiś sposób rozpędza pociski do większej szybkości, niż normalnie by osiągnęły. Zapewnia jej to zwiększony Zasięg, który odnotowany został w jej profilu. Dodatkowo kara za strzelanie do poruszających się celów występuje tylko na Długim i Ekstremalnym Zasięgu i nie może wynosić więcej niż odpowiednio -10 i -20."
+          ]
+        },
+        {
+          "name": "calibrated",
+          "subName": "X",
+          "displayName": "Kalibrowana",
+          "content": [
+            "Broń ta jest więcej niż celna — stworzono ją z myślą o absolutnej precyzji nawet w najtrudniejszych warunkach. Przy strzelaniu z broni Kalibrowanej zanotuj liczbę Stopni Sukcesu ataku. Jeśli broń jest również @quality{accurate}, rozwiąż tę Własność najpierw i policz pozostałe Stopnie Sukcesu. Obrażenia liczone są jakby broń była @quality{proven}{RoB} z wartością równą liczbie Stopni Sukcesu, najwyżej X. Jeśli broń już jest Sprawdzona, użyj większej wartości. Własność na nie wpływa na Prawą Furię i nie może jej wywołać."
+          ]
+        },
+        {
+          "name": "deflagrate",
+          "subName": "X",
+          "displayName": "Deflagracja",
+          "content": [
+            "Broń ta rozpala punkt trafienia do ekstremalnie wysokiej temperatury, powodując samopodtrzymujące się spalanie pancerza i ciała. Po rozwiązaniu ataków przeciwko danemu celowi rzuć k10 w liczbie równej X plus liczba trafień. Każdy rzut równy 5 lub mniej oznacza sukces, a 1 liczy się jako dwa sukcesy. Cel następnie musi wykonać Test Odporności przeciwko takiej liczbie Stopni Sukcesu. W przypadku remisu cel zwycięża. W przypadku porażki cel otrzymuje Śmiertelne Obrażenia równe liczbie sukcesów Deflagracji."
+          ]
+        },
+        {
+          "name": "guidedFire",
+          "displayName": "Ogień Kierowany",
+          "content": [
+            "Broń wystrzeliwuje specjalne kierowane pociski, które pozwalają na rażenie celów ukrytych za osłonami. Broni można używać przeciwko niewidocznym celom z karą -10 zamiast zwykłej -30, jeśli strzelec widział cel najdalej w poprzedniej Rundzie. Dodatkowo jeśli użytkownik jest częścią Sieci Signum, może normalnie strzelać do celów wskazywanych przez autozmysły pancerzy wspomaganych drużyny i skany auspexem."
+          ]
+        },
+        {
+          "name": "melta",
+          "subName": "X",
+          "displayName": "Melta",
+          "content": [
+            "Broń tę zaprojektowano do wybijania dziur w najcięższych nawet pancerzach, do czego wykorzystywany jest skoncentrowany promień niewyobrażalnie rozgrzanej materii. Atak taki pozostawia tylko kupę stopionego żużlu. Gdy broń ta strzela w Krótkim Zasięgu i bliżej, zadaje dodatkowe Xk10 Obrażeń."
+          ]
+        },
+        {
+          "name": "shrapnel",
+          "displayName": "Szrapnel",
+          "content": [
+            "Broń wystrzeliwuje eksplodujące pociski, które detonują ponad celem, zamiast przy trafieniu, zasypując go gradem zabójczych odłamków. Broń ignoruje efekty Osłony, jeśli ponad celem jest co najmniej pięć metrów otwartej przestrzeni."
+          ]
+        },
+        {
+          "name": "supercharge",
+          "displayName": "Doładowanie",
+          "subName": "X",
+          "content": [
+            "Broń można doładować, by zadawała ogromne obrażenia i przebijała pancerze jak papier, choć płaci się za to znacznie większym zagrożeniem dla użytkownika i ryzykiem przegrzania. Broń taka może strzelać w trybie zwykłym albo Doładowanym. W drugim przypadku Zasięg broni zwiększony jest o 10 metrów, a Penetracja o +2, ale strzał zużywa 3 jednostki amunicji, a broń otrzymuje tymczasowo własności @quality{recharge} i @quality{overheats}. Strzał zadaje dodatkowe Xk10 Obrażeń i zwiększa wartość @quality{blast|Podmuchu} (jeśli jest) o X. Próg Przegrzania zmniejsza się o -10 za każdy X większy niż 1 (-10 dla 2, -20 dla 3, itd.)."
+          ]
+        }
+      ]
+    },
+    {
+      "type": "section",
+      "name": "primarisWeapons",
+      "displayName": "Uzbrojenie Primaris",
+      "source": "EIn",
+      "display": ["items"],
+      "parentPath": "ranged"
+    },
+    {
+      "type": "group",
+      "parentPath": "ranged-primarisWeapons|EIn",
+      "source": "EIn",
+      "items": [
+        {
+          "type": "section",
+          "name": "cawlPatternBoltWeapons",
+          "displayName": "Broń Boltowa wzór Cawl",
+          "display": "all",
+          "tags": ["weapon:ranged", "usesAmmo:bolt"],
+          "content": [
+            "Broń Boltowa, zwana też bolterami, to klasa broni potężnej i wszechstronnej. Używa jej wiele gałęzi sił zbrojnych Imperium; znaleźć je można na pojazdach Astra Militarum i w trójcy uzbrojenia Adepta Sororitas, ale najczęściej kojarzone są z Aniołami Śmierci Imperatora. Rzeczywiście, widok Kosmicznego Marine jednym strzałem swojej potężnej broni zmieniającego cel w krwawą plamę jest rzeczą niesamowitą.",
+            "Boltery używają specjalnych wielkokalibrowych pocisków zwanych boltami. Wyrzucane są z lufy broni przez zapłon materiału pędnego zamkniętego w łusce naboju, jak w przypadku tradycyjnej broni palnej, ale bolt ma dwa niespotykane gdzie indziej komponenty. Pierwszym jest wewnętrzny zapas materiału pędnego, który ulega zapłonowi w pewnej odległości po opuszczeniu lufy i przyspiesza lot pocisku, zapewniając większy zasięg i moc przebijającą niż w przypadku litej kuli. Drugim jest ładunek wybuchowy umieszczony za czepcem o diamantynowym czubku. Znaczna część obrażeń zadawanych przez bolt nie wynika z energii kinetycznej pocisku, a raczej z detonacji po trafieniu. W idealnych warunkach bolt wbija się częściowo w cel i wtedy wybucha, zmieniając niegdyś pysznego wroga Imperatora w kilka krwawych strzępów, często krzyczących jeszcze z bólu przez kilka sekund.",
+            "Broń boltowa wzoru Cawl złożona jest z modułowych, wymiennych podzespołów, które pozwalają na dostosowanie broni do sytuacji taktycznej. Zaletą tych zestawów jest mniejsza wielkość i masa w porównaniu do noszenia ze sobą dodatkowej broni. Elementy można wymienić, wykonując ![b]#Przeciętny (+0) Test Użycia Technologii#. Umiejętność ta na potrzeby tego Testu jest traktowana jak Podstawowa, co pozwala nawet niewyszkolonym specjalnie Braciom Bitewnym na modyfikowanie broni i reprezentuje modułowość systemu. Każda broń ma pewne modyfikacje, które omówione są w jej opisie. Koszt Pobrania zestawu modyfikacyjnego danej broni to połowa jej zwykłego kosztu Pobrania.",
+            "By poprawnie używać tej broni, Bohater musi mieć Talent @talent{pistolTraining||bolt}, @talent{basicWeaponTraining||bolt} lub @talent{heavyWeaponTraining||bolt}."
+          ]
+        },
+        {
+          "type": "section",
+          "name": "plasma",
+          "displayName": "Broń Plazmowa",
+          "display": "all",
+          "tags": ["weapon:ranged", "usesAmmo:plasma"],
+          "content": [
+            "Broń plazmowa to zaawansowana, niezrozumiała forma technologii, która wykorzystuje miniaturowy rdzeń termojądrowy, by podgrzewać swoje gazowe paliwo, aż zacznie ono wchodzić w interakcję z polami magnetycznymi. Mała porcja plazmy tworzona w ten sposób jest następnie wyrzucana przez akcelerator liniowy tworzący lufę broni, tworząc palącą oczy smugę materii o niszczycielskiej mocy rozszalałej gwiazdy. Każda broń plazmowa ma Własność @quality{supercharge}{}.",
+            "By poprawnie używać tej broni, Bohater musi mieć Talent @talent{pistolTraining||plasma}, @talent{basicWeaponTraining||plasma} lub @talent{heavyWeaponTraining||plasma}."
+          ]
+        },
+        {
+          "type": "section",
+          "name": "melta",
+          "displayName": "Broń Melta",
+          "display": "all",
+          "tags": ["weapon:ranged", "usesAmmo:melta"],
+          "content": [
+            "Broń melta to typ poteżnego uzbrojenia przeciwpancernego, którego wewnętrzne działanie opiera się na podobnych założeniach jak w przypadku broni plazmowej. Broń melta wyrzuca z siebie promień plazmy wytworzonej w reakcji subcząsteczkowej wewnątrz znajdującej się pod wysokim ciśnieniem porcji niestabilnego ciekłego paliwa, natychmiastowo wygotowując wodę z ciał i zmieniając ciężko opancerzone cele w dymiący żużel. Wszystkie bronie melta mają Własność @quality{melta}{}.",
+            "By poprawnie używać tej broni, Bohater musi mieć Talent @talent{pistolTraining||melta}, @talent{basicWeaponTraining||melta} lub @talent{heavyWeaponTraining||melta}."
+          ]
+        },
+        {
+          "type": "section",
+          "name": "flame",
+          "displayName": "Miotacze",
+          "display": "all",
+          "tags": ["weapon:ranged", "usesAmmo:flame"],
+          "content": [
+            "Miotacze to uzbrojenie, które na krótkim dystansie wypluwa z siebie strugi destylowanego prometium i zapala je, pokrywając cele lepkim, gęstym płynem, który jest niemal niemożliwy do ugaszenia. Wszystkie miotacze mają Własność @quality{flame}. Miotacze Astartes używają jako paliwa poddanego ulepszonemu procesowi destylacji prometium o znacznie wyższej jakości i zadają +4 Obrażeń od podpalenia.",
+            "By poprawnie używać tej broni, Bohater musi mieć Talent @talent{pistolTraining||flame}, @talent{basicWeaponTraining||flame} lub @talent{heavyWeaponTraining||flame}."
+          ]
+        },
+        {
+          "type": "section",
+          "name": "solidProjectile",
+          "displayName": "Broń Palna",
+          "display": "all",
+          "tags": ["weapon:ranged", "usesAmmo:solid"],
+          "content": [
+            "Broń palna wyrzuca śrut i lite pociski, niemal zawsze polegając wyłącznie na pędzie nadanym przez spalenie materiału pędnego w komorze. Do tej kategorii należą powszechne pistolety i karabiny automatyczne, ale Astartes używają uzbrojenia o znacznie większej sile i lepszej jakości.",
+            "By poprawnie używać tej broni, Bohater musi mieć Talent @talent{pistolTraining||solid}, @talent{basicWeaponTraining||solid} lub @talent{heavyWeaponTraining||solid}."
+          ]
+        },
+        {
+          "type": "section",
+          "name": "las",
+          "displayName": "Broń Laserowa",
+          "display": "all",
+          "tags": ["weapon:ranged", "usesAmmo:las"],
+          "content": [
+            "Broń laserowa stanowi podstawę uzbrojenia sił zbrojnych Imperium, jako że jest dość prosta w konstrukcji, odporna na warunki atmosferyczne, a do działania potrzebuje tylko powszechnie występujących i łatwych do naładowania ogniw energetycznych. Wykorzystuje poteżny emiter laserowy i soczewkę skupiającą, by razić cele dość celnie, przecinając powietrze rozgrzanymi do białości promieniami światła z trzaskiem towarzyszącym wygotowywaniu się wody. Grupa ta obejmuje głównie karabiny i pistolety laserowe, broń zbyt słabą dla Astartes, ale ta sama technologia może zostać wykorzystana do tworzenia promieni przepalających pancerze pojazdów, które mogą przydać się Aniołom Śmierci.",
+            "By poprawnie używać tej broni, Bohater musi mieć Talent @talent{pistolTraining||las}, @talent{basicWeaponTraining||las} lub @talent{heavyWeaponTraining||las}."
+          ]
+        }
+      ]
+    },
+    {
+      "type": "group",
+      "parentPath": "ranged-primarisWeapons|EIn-cawlPatternBoltWeapons|EIn",
+      "source": "EIn",
+      "items": [
+        {
+          "name": "absolvorBoltPistol",
+          "displayName": "Pistolet Boltowy Absolvor",
+          "class": "pistol",
+          "range": 45,
+          "rof": {
+            "single": true
+          },
+          "damage": {
+            "formula": "3k10kh2+12",
+            "display": "2k10+12",
+            "type": "explosion"
+          },
+          "penetration": 6,
+          "clip": 6,
+          "reload": 1,
+          "qualities": [
+            "tearing"
+          ],
+          "weight": 6,
+          "requisition": null,
+          "renown": null,
+          "content": [
+            "Ten wariant ciężkiego pistoletu boltowego, wydawany Kapelanom i Konsyliarzom, stworzony jest specjalnie do pomagania Braciom Bitewnym, którzy są zbyt ciężko ranni, by kontynuować służbę, udzielając im Pokoju Imperatora. Służy również jako potężna broń, dorównująca zabójczością ciężkiemu bolterowi.",
+            "Broń ta nie ma zestawu konwersyjnego i nie można jej modyfikować."
+          ]
+        },
+        {
+          "name": "assaultBolter",
+          "displayName": "Bolter Szturmowy",
+          "class": "heavy",
+          "range": 60,
+          "rof": {
+            "burst": 5,
+            "auto": 10
+          },
+          "damage": {
+            "formula": "3k10kh2+10",
+            "display": "2k10+10",
+            "type": "explosion"
+          },
+          "penetration": 6,
+          "clip": 30,
+          "reload": 2,
+          "qualities": [
+            "tearing"
+          ],
+          "weight": 25,
+          "requisition": 20,
+          "renown": 1,
+          "content": [
+            "Bolter szturmowy stanowi standardowe uzbrojenie Inceptorów, mieszcząc moc ciężkiego boltera w znacznie mniejszej broni. Jest znacznie lżejszy, ale zapewnia podobną siłę ognia, za co płaci zasilaniem ze stosunkowo małych magazynków. Należy rozważnie używać tej broni, jako że może ona zużyć cały zapas amunicji w ledwie kilka sekund.",
+            "Bohaterowie noszący pancerz wspomagany Astartes traktują tę broń jako Zwykłą dzięki jej zmniejszającej odrzut osłonie magnetycznej.",
+            "Broń ta nie ma zestawu konwersyjnego i nie można jej modyfikować."
+          ]
+        },
+        {
+          "name": "boltCarbine",
+          "displayName": "Karabinek Boltowy",
+          "class": "basic",
+          "range": 80,
+          "rof": {
+            "single": true,
+            "burst": 2,
+            "auto": 4
+          },
+          "damage": {
+            "formula": "3k10kh2+6",
+            "display": "2k10+6",
+            "type": "explosion"
+          },
+          "penetration": 5,
+          "clip": 24,
+          "reload": 1,
+          "qualities": [
+            "tearing"
+          ],
+          "weight": 15,
+          "requisition": 8,
+          "renown": 0,
+          "content": [
+            "Karabinek Boltowy jest skróconą, bardziej kompaktową wersją zwyczajnego boltera. Preferują go Kosmiczni Marines Awangardy, którzy muszą podróżować ze zmniejszonym obciążeniem i szybko się poruszać.",
+            "Krótkie łoże i przedni chwyt karabinka zwiększają jego stabilność podczas strzelania. Bohater może użyć ruchu związanego z Ogniem Serią i Ciągłym po rzucie na trafienie, zmniejszając liczbę Stopni Sukcesu o 2 (minimalnie do 0). Należy zrobić to przed rozwiązaniem Obrażeń."
+          ]
+        },
+        {
+          "name": "instigatorBoltCarbine",
+          "displayName": "Karabinek Boltowy Instigator",
+          "subName": "Karabinek Boltowy",
+          "class": "basic",
+          "range": 100,
+          "rof": {
+            "single": true,
+            "burst": 2
+          },
+          "damage": {
+            "formula": "3k10kh2+8",
+            "display": "2k10+8",
+            "type": "explosion"
+          },
+          "penetration": 5,
+          "clip": 24,
+          "reload": 1,
+          "qualities": [
+            "accurate",
+            "tearing",
+            {
+              "name": "calibrated",
+              "value": 5,
+              "source": "EIn"
+            }
+          ],
+          "weight": 17,
+          "requisition": 30,
+          "renown": 2,
+          "content": [
+            "Ten wariant wyposażono w nieco dłuższą w porównaniu do standardowego karabinka boltowego lufę posiadającą wbudowany tłumik. Zamontowano na nim również krótki celownik teleskopowy.",
+            "Broń ta jest zawsze Mistrzowsko Wykonana i nie ma zestawu konwersyjnego."
+          ]
+        },
+        {
+          "name": "marksmanBoltCarbine",
+          "displayName": "Wyborowy Karabinek Boltowy",
+          "subName": "Karabinek Boltowy",
+          "class": "basic",
+          "range": 100,
+          "rof": {
+            "single": true,
+            "burst": 2
+          },
+          "damage": {
+            "formula": "3k10kh2+6",
+            "display": "2k10+6",
+            "type": "explosion"
+          },
+          "penetration": 5,
+          "clip": 24,
+          "reload": 1,
+          "qualities": [
+            "tearing",
+            {
+              "name": "calibrated",
+              "value": 3,
+              "source": "EIn"
+            }
+          ],
+          "weight": 16,
+          "requisition": 10,
+          "renown": 1,
+          "content": [
+            "Ten wariant wyposażono w wydłużoną, stabilizowaną lufę i krótki celownik teleskopowy, pozwalając zarówno na precyzyjne strzały na średnim dystansie, jak i na prowadzenie ognia zaporowego."
+          ]
+        },
+        {
+          "name": "occulusBoltCarbine",
+          "displayName": "Karabinek Boltowy Occulus",
+          "subName": "Karabinek Boltowy",
+          "class": "basic",
+          "range": 80,
+          "rof": {
+            "single": true,
+            "burst": 2,
+            "auto": 4
+          },
+          "damage": {
+            "formula": "3k10kh2+6",
+            "display": "2k10+6",
+            "type": "explosion"
+          },
+          "penetration": 5,
+          "clip": 24,
+          "reload": 1,
+          "qualities": [
+            "tearing"
+          ],
+          "weight": 17,
+          "requisition":25,
+          "renown": 2,
+          "content": [
+            "Ten wariant wyposażono w zestaw celowniczy Occulus. Usprawnia on rozpoznawanie celów i może zostać połączony z auspexami klasy Divinator, by pozwolić użytkownikowi na mierzenie przez osłony, w gęstym dymie i kompletnej ciemności. Sam w sobie umożliwia wykrycie sygnatur desantowych, flar preteleportacyjnych i tektonicznych drgań spowodowanych przez podkopujących się przeciwników."
+          ]
+        },
+        {
+          "name": "boltRifle",
+          "displayName": "Karabin Boltowy",
+          "class": "basic",
+          "range": 120,
+          "rof": {
+            "single": true,
+            "burst": 2,
+            "auto": 4
+          },
+          "damage": {
+            "formula": "3k10kh2+6",
+            "display": "2k10+6",
+            "type": "explosion"
+          },
+          "penetration": 5,
+          "clip": 28,
+          "reload": 1,
+          "qualities": [
+            "tearing"
+          ],
+          "weight": 18,
+          "requisition": null,
+          "renown": 0,
+          "content": [
+            "Karabin boltowy to podstawowa broń wszystkich Kosmicznych Marines Primaris. Przewyższa nieco starsze wzory podobnego uzbrojenia, takie jak karabin boltowy Godwyn. Jest również jednym z najłatwiejszych w modyfikacji dzięki swojej modułowej budowie. Tak naprawdę niemal wszystkie bronie boltowe wzoru Cawl i ich pochodne można sprowadzić do modyfikacji karabinu boltowego przeprowadzonych z użyciem wyspecjalizowanych podzespołów."
+          ]
+        },
+        {
+          "name": "autoBoltRifle",
+          "displayName": "Automatyczny Karabin Boltowy",
+          "subName": "Karabin Boltowy",
+          "class": "basic",
+          "range": 80,
+          "rof": {
+            "burst": 3,
+            "auto": 6
+          },
+          "damage": {
+            "formula": "3k10kh2+6",
+            "display": "2k10+6",
+            "type": "explosion"
+          },
+          "penetration": 5,
+          "clip": 42,
+          "reload": 1,
+          "qualities": [
+            "tearing"
+          ],
+          "weight": 20,
+          "requisition": 10,
+          "renown": 0,
+          "content": [
+            "Ten wariant oferuje zwiększoną szybkostrzelność kosztem zasięgu i używa magazynków bębnowych o większej pojemności."
+          ]
+        },
+        {
+          "name": "heavyAutoBoltRifle",
+          "displayName": "Ciężki Automatyczny Karabin Boltowy",
+          "subName": "Karabin Boltowy",
+          "class": "basic",
+          "range": 100,
+          "rof": {
+            "burst": 3,
+            "auto": 6
+          },
+          "damage": {
+            "formula": "3k10kh2+6",
+            "display": "2k10+6",
+            "type": "explosion"
+          },
+          "penetration": 5,
+          "clip": 42,
+          "reload": 1,
+          "qualities": [
+            "tearing"
+          ],
+          "weight": 22,
+          "requisition": 15,
+          "renown": 1,
+          "content": [
+            "Jest to zmodyfikowana wersja automatycznego karabinu boltowego, która jest cięższa i bardziej stabilna, co zwiększa jej zasięg efektywny. Przy ulepszaniu od automatycznego karabinu boltowego koszt Pobrania zestawu konwersyjnego jest zmniejszony o połowę."
+          ]
+        },
+        {
+          "name": "sniperBoltRifle",
+          "displayName": "Snajperski Karabin Boltowy",
+          "class": "heavy",
+          "range": 250,
+          "rof": {
+            "single": true
+          },
+          "damage": {
+            "formula": "3k10kh2+15",
+            "display": "2k10+15",
+            "type": "explosion"
+          },
+          "penetration": 8,
+          "clip": 4,
+          "reload": 1,
+          "qualities": [
+            "accurate",
+            "tearing",
+            {
+              "name": "calibrated",
+              "value": 9,
+              "source": "EIn"
+            }
+          ],
+          "weight": 25,
+          "requisition": 35,
+          "renown": 2,
+          "content": [
+            "Snajperski Karabin Boltowy Mark III wzór Shrike to broń wybierana przez elitarnych Eliminatorów. Jest bardzo celna, by spełnić wysokie standardy swoich użytkowników i może używać kilku typów wyspecjalizowanej amunicji. Dodatkowo wyposażona jest w tłumik i specjalny celownik teleskopowy o dużym powiększeniu, który można połączyć z różnymi urządzeniami w rodzaju modułów termicznych preysense i penetrujących auspexów punktowych.",
+            "Broń ta nie ma zestawu konwersyjnego i nie można jej modyfikować."
+          ]
+        },
+        {
+          "name": "boltstormAuxiliaryBolter",
+          "displayName": "Bolter Dodatkowy Boltstorm",
+          "class": "pistol",
+          "range": 30,
+          "rof": {
+            "single": true,
+            "burst": 3
+          },
+          "damage": {
+            "formula": "3k10kh2+8",
+            "display": "2k10+8",
+            "type": "explosion"
+          },
+          "penetration": 5,
+          "clip": 9,
+          "reload": 2,
+          "qualities": [
+            "tearing"
+          ],
+          "weight": "—",
+          "requisition": null,
+          "renown": null,
+          "content": [
+            "Ta broń stanowi jedną ze składowych rękawicy Boltstorm, potężnego połączenia rękawicy energetycznej i boltera. Jest to broń o niskiej szybkostrzelności, zasilana taśmą z małego pojemnika na plecach użytkownika, który jest zbyt mały, by nazwać go plecakiem. Przeładowanie takiego pojemnika jest trudnym procesem, ale w większości przypadków Brat Bitewny nie może sam nawet wymienić pojemnika, jako że jego dwie rękawice uniemożliwiają mu wykonywanie tak delikatnych zadań. Pojemnik na amunicję mieści 60 nabojów.",
+            "Broń ta nie ma zestawu konwersyjnego i nie można jej modyfikować."
+          ]
+        },
+        {
+          "name": "heavyBoltPistol",
+          "displayName": "Ciężki Pistolet Boltowy",
+          "class": "pistol",
+          "range": 45,
+          "rof": {
+            "single": true,
+            "burst": 2
+          },
+          "damage": {
+            "formula": "3k10kh2+8",
+            "display": "2k10+8",
+            "type": "explosion"
+          },
+          "penetration": 6,
+          "clip": 8,
+          "reload": 1,
+          "qualities": [
+            "tearing"
+          ],
+          "weight": 6,
+          "requisition": 4,
+          "renown": 0,
+          "content": [
+            "Ciężki pistolet boltowy to wariant standardowego pistoletu boltowego zaprojektowany dla potrzebujących więcej niż zapasowego uzbrojenia, oferujący większą moc przebijającą i obrażenia kosztem mniejszego magazynka i szybkostrzelności.",
+            "Broń ta nie ma zestawu konwersyjnego i nie można jej modyfikować."
+          ]
+        },
+        {
+          "name": "heavyBoltRifle",
+          "displayName": "Ciężki Karabin Boltowy",
+          "class": "basic",
+          "range": 150,
+          "rof": {
+            "single": true,
+            "burst": 2,
+            "auto": 4
+          },
+          "damage": {
+            "formula": "3k10kh2+8",
+            "display": "2k10+8",
+            "type": "explosion"
+          },
+          "penetration": 6,
+          "clip": 16,
+          "reload": 1,
+          "qualities": [
+            "tearing"
+          ],
+          "weight": 21,
+          "requisition": 8,
+          "renown": 0,
+          "content": [
+            "Ciężki karabin boltowy jest wzmocnioną wersją karabinu boltowego wyposażoną w cięższe podzespoły i wydłużoną lufę. Ma znacznie dłuższy zasięg efektywny."
+          ]
+        },
+        {
+          "name": "executorBoltRifle",
+          "displayName": "Karabin Boltowy Executor",
+          "subName": "Ciężki Karabin Boltowy",
+          "class": "basic",
+          "range": 180,
+          "rof": {
+            "single": true,
+            "burst": 2,
+            "auto": 4
+          },
+          "damage": {
+            "formula": "3k10kh2+8",
+            "display": "2k10+8",
+            "type": "explosion"
+          },
+          "penetration": 8,
+          "clip": 16,
+          "reload": 1,
+          "qualities": [
+            "tearing"
+          ],
+          "weight": 18,
+          "requisition": 10,
+          "renown": 1,
+          "content": [
+            "Ta wersja ma jeszcze większy zasięg i zwiększoną zdolność przebijania pancerza. Często zasilana jest z większego magazynka pudełkowego."
+          ]
+        },
+        {
+          "name": "hellstormBoltRifle",
+          "displayName": "Karabin Boltowy Hellstorm",
+          "subName": "Ciężki Karabin Boltowy",
+          "class": "basic",
+          "range": 120,
+          "rof": {
+            "single": true,
+            "burst": 3,
+            "auto": 6
+          },
+          "damage": {
+            "formula": "3k10kh2+6",
+            "display": "2k10+6",
+            "type": "explosion"
+          },
+          "penetration": 6,
+          "clip": 36,
+          "reload": 1,
+          "qualities": [
+            "tearing"
+          ],
+          "weight": 22,
+          "requisition": 10,
+          "renown": 1,
+          "content": [
+            "Wersję tę wyposażono w magazynek bębnowy. Poświęca ona część siły pojedynczych pocisków, by umożliwić prowadzenie szybkich wymian ognia na długim dystansie."
+          ]
+        },
+        {
+          "name": "heavyBolter",
+          "displayName": "Ciężki Bolter",
+          "class": "heavy",
+          "range": 150,
+          "rof": {
+            "auto": 10
+          },
+          "damage": {
+            "formula": "3k10kh2+12",
+            "display": "2k10+12",
+            "type": "explosion"
+          },
+          "penetration": 6,
+          "clip": 60,
+          "reload": 2,
+          "qualities": [
+            "tearing"
+          ],
+          "weight": 68,
+          "requisition": 20,
+          "renown": 0,
+          "content": [
+            "Ciężki bolter to najpotężniejsza z broni boltowych. Używana jest, by zapewnić ciężkie wsparcie ogniowe i do prowadzenia ognia zaporowego. W przeciwieństwie do większości pozostałych broni boltowych jej mechanizm opiera się o zapalnik motywny, co zmniejsza potrzebę zastosowania ciężkich podzespołów i pozwala na utrzymanie ciągłej wysokiej szybkostrzelności. Strzela też pociskami o znacznie większym kalibrze. Drużyny ciężkiego uzbrojenia Astra Militarum wykorzystują mniejszą wersję w rozmiarze dopasowanym do ludzi, zamontowaną zwykle na trójnogu, ale Kosmiczny Marine może strzelać z takiej broni sam, niosąc jednocześnie znaczny zapas amunicji — nawet bez pomocy ze strony serworamy pancerza."
+          ]
+        },
+        {
+          "name": "executorHeavyBolter",
+          "displayName": "Ciężki Bolter Executor",
+          "subName": "Ciężki Bolter",
+          "class": "basic",
+          "range": 180,
+          "rof": {
+            "auto": 8
+          },
+          "damage": {
+            "formula": "3k10kh2+12",
+            "display": "2k10+12",
+            "type": "explosion"
+          },
+          "penetration": 8,
+          "clip": 60,
+          "reload": 2,
+          "qualities": [
+            "tearing"
+          ],
+          "weight": 70,
+          "requisition": 25,
+          "renown": 1,
+          "content": [
+            "Ten wariant wyposażono w dłuższą lufę, która pozwala bardziej efektywnie wykorzystać ciśnienie wytwarzane wewnątrz broni. Szybkostrzelność jest zmniejszona, co pomaga w stabilizowaniu broni i zwiększa jej zasięg."
+          ]
+        },
+        {
+          "name": "hellstormHeavyBolter",
+          "displayName": "Ciężki Bolter Hellstorm",
+          "subName": "Ciężki Bolter",
+          "class": "basic",
+          "range": 120,
+          "rof": {
+            "auto": 12
+          },
+          "damage": {
+            "formula": "3k10kh2+10",
+            "display": "2k10+10",
+            "type": "explosion"
+          },
+          "penetration": 6,
+          "clip": 60,
+          "reload": 2,
+          "qualities": [
+            "tearing"
+          ],
+          "weight": 70,
+          "requisition": 25,
+          "renown": 1,
+          "content": [
+            "Ten wariant wyposażono w poteżniejszy zapalnik motywny i lżesze podzespoły, co pozwala na osiągnięcie większej szybkostrzelności kosztem zasięgu i mocy pojedynczego pocisku."
+          ]
+        }
+      ]
+    },
+    {
+      "type": "group",
+      "parentPath": "ranged-primarisWeapons|EIn-plasma|EIn",
+      "source": "EIn",
+      "items": [
+        {
+          "name": "assaultPlasmaIncinerator",
+          "displayName": "Szturmowy Spopielacz Plazmowy",
+          "class": "basic",
+          "range": 100,
+          "rof": {
+            "single": true,
+            "burst": 2,
+            "auto": 4
+          },
+          "damage": {
+            "formula": "1k10+10",
+            "type": "energy"
+          },
+          "penetration": 8,
+          "clip": 36,
+          "reload": 4,
+          "qualities": [
+            {
+              "name": "supercharge",
+              "source": "EIn",
+              "value": 1
+            },
+            "volatile"
+          ],
+          "weight": 28,
+          "requisition": 28,
+          "renown": 1,
+          "content": [
+            "Ta wersja powszechnego spopielacza plazmowego pochwalić się może zwiększoną szybkostrzelnością, ale płaci za to zmniejszonym zasięgiem. Może strzelać serią lub ogniem ciągłym nawet w trybie Doładowanym, ale każdy strzał po pierwszym zmniejsza próg Przegrzania o -10."
+          ]
+        },
+        {
+          "name": "heavyPlasmaIncinerator",
+          "displayName": "Ciężki Spopielacz Plazmowy",
+          "class": "heavy",
+          "range": 150,
+          "rof": {
+            "single": true
+          },
+          "damage": {
+            "formula": "2k10+12",
+            "type": "energy"
+          },
+          "penetration": 10,
+          "clip": 15,
+          "reload": 5,
+          "qualities": [
+            {
+              "name": "blast",
+              "value": 1
+            },
+            {
+              "name": "supercharge",
+              "source": "EIn",
+              "value": 1
+            },
+            "volatile"
+          ],
+          "weight": 65,
+          "requisition": 35,
+          "renown": 2,
+          "content": [
+            "Ten większy wariant spopielacza plazmowego wystrzeliwuje znacznie większą porcję plazmy; tak wielką, że jej niestabilność powoduje eksplozję i efekt flary przy uderzeniu w cel. Najcześciej zasilany jest z plecaka. Można go dodatkowo doładować, jak gdyby miał Własność @quality{supercharge||2}{}."
+          ]
+        },
+        {
+          "name": "plasmaExterminator",
+          "displayName": "Eksterminator Plazmowy",
+          "class": "basic",
+          "range": 80,
+          "rof": {
+            "single": true,
+            "burst": 2
+          },
+          "damage": {
+            "formula": "1k10+15",
+            "type": "energy"
+          },
+          "penetration": 8,
+          "clip": 24,
+          "reload": 4,
+          "qualities": [
+            {
+              "name": "supercharge",
+              "source": "EIn",
+              "value": 1
+            },
+            "volatile"
+          ],
+          "weight": 24,
+          "requisition": 24,
+          "renown": 1,
+          "content": [
+            "Broń ta jest zminiaturyzowaną wersją spopielacza plazmowego. Zaprojektowano ją do użytku Inceptorów Primaris, którzy czasem wybierają go zamiast swoich standardowych bolterów szturmowych, a więc pozbawiono ją obwodów ograniczających i dodatkowych radiatorów, by oszczędzić na dodatkowej wadze i uczynić broń bardziej poręczną. Można ją dodatkowo doładować, jak gdyby miała Własność @quality{supercharge||2}{}."
+          ]
+        },
+        {
+          "name": "plasmaIncinerator",
+          "displayName": "Spopielacz Plazmowy",
+          "class": "basic",
+          "range": 120,
+          "rof": {
+            "single": true,
+            "burst": 2
+          },
+          "damage": {
+            "formula": "1k10+10",
+            "type": "energy"
+          },
+          "penetration": 8,
+          "clip": 36,
+          "reload": 4,
+          "qualities": [
+            "reliable",
+            {
+              "name": "supercharge",
+              "source": "EIn",
+              "value": 1
+            },
+            "volatile"
+          ],
+          "weight": 30,
+          "requisition": 25,
+          "renown": 1,
+          "content": [
+            "Najpowszechniejszym wariantem broni plazmowej Primaris jest Spopielacz Plazmowy Mark III wzór Belisarius, ulepszona wersja karabinu plazmowego używanego przez Pierworodnych. Został on stworzony jako bezpieczniejsza ale i potężniejsza alternatywa swojego przodka. Można go dodatkowo Doładować, traktując go jako broń z Własnością @quality{supercharge||2}{}, ale powodując utratę Własności @quality{reliable}."
+          ]
+        }
+      ]
+    },
+    {
+      "type": "group",
+      "parentPath": "ranged-primarisWeapons|EIn-melta|EIn",
+      "source": "EIn",
+      "items": [
+        {
+          "name": "heavyMeltaRifle",
+          "displayName": "Ciężki Karabin Melta",
+          "class": "heavy",
+          "range": 60,
+          "rof": {
+            "single": true
+          },
+          "damage": {
+            "formula": "4k10+10",
+            "type": "energy"
+          },
+          "penetration": 13,
+          "clip": 6,
+          "reload": 2,
+          "qualities": [
+            {
+              "name": "blast",
+              "value": 2
+            },
+            {
+              "name": "melta",
+              "source": "EIn",
+              "value": 1
+            }
+          ],
+          "weight": 45,
+          "requisition": 35,
+          "renown": 1,
+          "content": [
+            "Ciężki karabin melta to większa i bardziej potężna wersja standardowego karabinu melta. Poddaje swoje paliwo znacznie większemu ciśnieniu, czego wynikiem jest większa moc pojedynczego strzału, który tworzy rozgrzany podmuch petroplazmy. Broń ta zwykle jest zasilana z plecaka."
+          ]
+        },
+        {
+          "name": "meltaRifle",
+          "displayName": "Karabin Melta",
+          "class": "basic",
+          "range": 60,
+          "rof": {
+            "single": true
+          },
+          "damage": {
+            "formula": "2k10+10",
+            "type": "energy"
+          },
+          "penetration": 13,
+          "clip": 6,
+          "qualities": [
+            {
+              "name": "melta",
+              "source": "EIn",
+              "value": 1
+            }
+          ],
+          "weight": 32,
+          "requisition": 22,
+          "renown": 1,
+          "content": [
+            "Karabin melta to ulepszona wersja starych wzorów, takich jak Vulkan. Główne zalety tej broni to większa szybkość propagacji reakcji i wyprofilowany port wyrzutowy, co zapewnia znacznie większy zasięg i nieco większą moc."
+          ]
+        },
+        {
+          "name": "multiMelta",
+          "displayName": "Multi–melta",
+          "class": "heavy",
+          "range": 60,
+          "rof": {
+            "single": true,
+            "burst": 2
+          },
+          "damage": {
+            "formula": "3k10+10",
+            "type": "energy"
+          },
+          "penetration": 13,
+          "clip": 12,
+          "reload": 2,
+          "qualities": [
+            {
+              "name": "blast",
+              "value": 1
+            },
+            {
+              "name": "melta",
+              "source": "EIn",
+              "value": 1
+            }
+          ],
+          "weight": 75,
+          "requisition": 35,
+          "renown": 1,
+          "content": [
+            "Multi–melta używana przez Marines Primaris jest, co zadziwiające, mniej potężna niż wersje wykorzystywane przez Pierworodnych, takie jak wzór Maxima i przewyższa ją pod tym względem nawet ciężki karabin melta. Pokazuje to zmianę priorytetów, jako że broń ta nadal zachowuje wiele z siły swoich poprzedników, a jednocześnie może strzelać raz za razem, zmuszając cel do poddania się kolejnymi trafieniami."
+          ]
+        }
+      ]
+    },
+    {
+      "type": "group",
+      "parentPath": "ranged-primarisWeapons|EIn-flame|EIn",
+      "source": "EIn",
+      "items": [
+        {
+          "name": "flamestormAuxiliaryFlamer",
+          "displayName": "Miotacz Dodatkowy Flamestorm",
+          "class": "pistol",
+          "range": 15,
+          "rof": {
+            "single": true
+          },
+          "damage": {
+            "formula": "2k10+2",
+            "type": "energy"
+          },
+          "penetration": 3,
+          "clip": 4,
+          "reload": 2,
+          "qualities": [
+            "flame"
+          ],
+          "weight": 0,
+          "requisition": null,
+          "renown": null,
+          "content": [
+            "Ta broń stanowi jedną ze składowych rękawicy Flamestorm, potężnego połączenia rękawicy energetycznej i miotacza. Jest to broń krótkiego zasięgu zasilana przewodem ze zbiornika na plecach użytkownika, który jest zbyt mały, by nazwać go plecakiem. W większości przypadków Brat Bitewny nie może sam nawet wymienić zbiornika, jako że jego dwie rękawice uniemożliwiają mu wykonywanie tak delikatnych zadań. Zbiornik zawiera dość paliwa na 15 strzałów."
+          ]
+        },
+        {
+          "name": "pyreblaster",
+          "displayName": "Stosomiotacz",
+          "class": "basic",
+          "range": 30,
+          "rof": {
+            "single": true
+          },
+          "damage": {
+            "formula": "2k10+4",
+            "type": "energy"
+          },
+          "penetration": 3,
+          "clip": 6,
+          "reload": 2,
+          "qualities": [
+            "flame"
+          ],
+          "weight": 25,
+          "requisition": 12,
+          "renown": 0,
+          "content": [
+            "Stosomiotacz jest modyfikację standardowego miotacza, wyposażoną w specjalną dyszę i usprawnioną komorę ciśnieniową, co pozwala na tworzenie bardziej zwartych strumieni prometium, zwiększając zasięg broni."
+          ]
+        },
+        {
+          "name": "pyrecannon",
+          "displayName": "Stosodziało",
+          "class": "heavy",
+          "range": 30,
+          "rof": {
+            "single": true
+          },
+          "damage": {
+            "formula": "2k10+8",
+            "type": "energy"
+          },
+          "penetration": 6,
+          "clip": 10,
+          "reload": 2,
+          "qualities": [
+            "flame"
+          ],
+          "weight": 55,
+          "requisition": 20,
+          "renown": 1,
+          "content": [
+            "Stosodziało jest tym dla stosomiotacza, czym ciężki miotacz jest dla swojego mniejszego kuzyna. Ten cięższy wariant wyposażono w jeszcze potężniejszą komorę ciśnieniową, zwiększając jego zasięg i zadawane przez niego obrażenia, a jego dwie ułożone obok siebie dysze pozwalają użytkownikowi sprowadzić piekło na znajdujących się przed nim wrogów jednym pociągnięciem spustu. Rozwartość stożka Płomienia stosomiotacza wynosi 45 stopni zamiast zwyczajowych 30."
+          ]
+        }
+      ]
+    },
+    {
+      "type": "group",
+      "parentPath": "ranged-primarisWeapons|EIn-solidProjectile|EIn",
+      "source": "EIn",
+      "items": [
+        {
+          "name": "acceleratorAutocannon",
+          "displayName": "Działko Przyspieszające",
+          "class": "heavy",
+          "range": 300,
+          "rof": {
+            "single": true,
+            "burst": 2,
+            "auto": 5
+          },
+          "damage": {
+            "formula": "2k10+15",
+            "type": "impact"
+          },
+          "penetration": 6,
+          "reload": 2,
+          "qualities": [
+            "acceleration|EIn"
+          ],
+          "weight": 60,
+          "requisition": 15,
+          "clip": 60,
+          "renown": 1,
+          "content": [
+            "Działko przyspieszające to korzystająca z tajemnej technologii wersja powszechnego działka automatycznego dużego kalibru, która wzmacnia pęd nadawany pociskom przez spalanie za pomocą serii cewek przyspieszających. Nadaje to pociskom znacznie większą prędkość, co zwiększa donośność i moc przebijającą. Jest to pomniejszona, przenośna wersja tej broni, używana głównie przez Supresorów Primaris i oparta o uzbrojenie starożytnego czołgu Sicaran."
+          ]
+        },
+        {
+          "name": "reductorPistol",
+          "displayName": "Pistolet Reduktorowy",
+          "range": "Wręcz",
+          "rof": {
+            "single": true
+          },
+          "damage": {
+            "formula": "2k10+10",
+            "type": "impact"
+          },
+          "penetration": 12,
+          "clip": null,
+          "reload": null,
+          "weight": 10,
+          "requisition": 10,
+          "renown": 0,
+          "content": [
+            "Pistolet reduktorowy służy tym samym celom co montowany na nadgarstku reduktor, pomagając Konsyliarzom w ekstrakcji genoziarna. Zaczepia się on do pancerza wspomaganego i uderza adamantynowym czubkiem ekstraktora, przebijając płyty pancerne i złączone przez ossmodulę żebra by dotrzeć do znajdujących się za nimi gruczołów, które zostają wyssane i złożone w pojemnikach kriogenicznych znajdujących się pod lufą. Pistolet reduktorowy zmniejsza czas potrzeby na ekstrakcję progenoidów do 1 Rundy na gruczoł. Do pistoletu podczepić można 2 pojemniki, z których każdy mieści parę progenoidów. W razie potrzeby można też użyć tego narzędzia jako broni. Pistolet reduktorowy nie zużywa amunicji, nie ma magazynka i nie trzeba go przeładowywać."
+          ]
+        }
+      ]
+    },
+    {
+      "type": "group",
+      "parentPath": "ranged-primarisWeapons|EIn-las|EIn",
+      "source": "EIn",
+      "items": [
+        {
+          "name": "lasFusil",
+          "displayName": "Samopał Laserowy",
+          "class": "heavy",
+          "range": 300,
+          "rof": {
+            "single": true
+          },
+          "damage": {
+            "formula": "4k10+6",
+            "type": "energy"
+          },
+          "penetration": 10,
+          "clip": 4,
+          "reload": 1,
+          "qualities": [
+            "accurate",
+            {
+              "name": "calibrated",
+              "source": "EIn",
+              "value": 6
+            }
+          ],
+          "weight": 45,
+          "requisition": 35,
+          "renown": 2,
+          "content": [
+            "Samopał laserowy jest potężną bronią używaną głównie przez Eliminatorów Primaris, gdy muszą poradzić sobie z ciężko opancerzoną piechotą. Jest mniej potężny od pełnowymiarowego działa laserowego, ale dzięki mocno skupionej wiązce jest w stanie utrzymać wysoką celność na długich dystansach."
+          ]
+        }
+      ]
+    },
     {
       "type": "section",
       "parentPath": "vehicle|RoB-spaceMarine|RoB",
@@ -25391,7 +25573,7 @@
               "range": {
                 "max": 3
               },
-              "title": "mroczne przeczucie",
+              "title": "Mroczne Przeczucie:",
               "content": "Lekki wiatr wieje wokół psykera i tych, którzy go otaczają; wszyscy mają przeczucie, że zaraz zdarzy się coś strasznego."
             },
             {
@@ -25399,7 +25581,7 @@
                 "min": 4,
                 "max": 5
               },
-              "title": "echo spaczni",
+              "title": "Echo Osnowy:",
               "content": "Przez kilka kolejnych sekund każdy odgłos wywołuje niepokojące echa."
             },
             {
@@ -25407,7 +25589,7 @@
                 "min": 6,
                 "max": 8
               },
-              "title": "piekielny smród",
+              "title": "Piekielny Smród",
               "content": "Powietrze wokół psykera przenika dziwaczny nieprzyjemny zapach."
             },
             {
@@ -25415,7 +25597,7 @@
                 "min": 9,
                 "max": 11
               },
-              "title": "wypaczenie umysłu",
+              "title": "Wypaczenie Umysłu:",
               "content": "Psyker otrzymuje 1 Punkt Obłędu w powodu fobii, podejrzeń i nienawiści, które nagle wypływają na powierzchnię jego myśli w fali negatywnych emocji."
             },
             {
@@ -25423,7 +25605,7 @@
                 "min": 12,
                 "max": 14
               },
-              "title": "przymrozek",
+              "title": "Przymrozek:",
               "content": "Na moment temperatura znacznie spada, pokrywając cienką warstwą lodu wszystko w promieniu @dice{3k10} metrów od psykera."
             },
             {
@@ -25431,15 +25613,15 @@
                 "min": 15,
                 "max": 17
               },
-              "title": "aura spaczenia",
-              "content": "Wszystkie zwierzęta w promieniu @dice{1k100} metrów od psykera stają się niespokojne. Bohaterowie posiadający Wiedzę Psychiczną są w stanie wskazać psykera jako przyczynę tego zjawiska."
+              "title": "Aura Spaczenia:",
+              "content": "Wszystkie zwierzęta w promieniu @dice{1k100} metrów od psykera stają się niespokojne. Bohaterowie posiadający Umiejętność @skill{psyniscience} są w stanie wskazać psykera jako przyczynę tego zjawiska."
             },
             {
               "range": {
                 "min": 18,
                 "max": 20
               },
-              "title": "robak pamięci",
+              "title": "Robak Pamięci:",
               "content": "Wszyscy będący w stanie zobaczyć psykera zapominają o jakiejś prostej, nieznaczącej rzeczy."
             },
             {
@@ -25447,7 +25629,7 @@
                 "min": 21,
                 "max": 23
               },
-              "title": "zepsucie",
+              "title": "Zepsucie:",
               "content": "W promieniu @dice{5k10} metrów od psykera psują się jedzenie i napoje."
             },
             {
@@ -25455,7 +25637,7 @@
                 "min": 24,
                 "max": 26
               },
-              "title": "niepokojący wiatr",
+              "title": "Niepokojący Wiatr:",
               "content": "Przez kilka sekund wokół psykera wieje silny wiatr, rzucając lekkimi przedmiotami i tłumiąc ognie w promieniu @dice{3k10} metrów."
             },
             {
@@ -25463,15 +25645,15 @@
                 "min": 27,
                 "max": 29
               },
-              "title": "osłona ciemności",
-              "content": "Przez krótką chwilę (efektywnie do końca Rundy) obszar w promieniu @dice{3k10} metrów od psykera zostaje pochłonięty przez całkowitą ciemność."
+              "title": "Osłona Ciemności:",
+              "content": "Przez krótką chwilę (to znaczy do końca Rundy) obszar w promieniu @dice{3k10} metrów od psykera zostaje pochłonięty przez całkowitą ciemność."
             },
             {
               "range": {
                 "min": 30,
                 "max": 32
               },
-              "title": "zniekształcone odbicia",
+              "title": "Zniekształcone Odbicia:",
               "content": "Lustra i inne podobne powierzchnie w promieniu @dice{5k10} metrów od psykera zniekształcają się lub pękają."
             },
             {
@@ -25479,7 +25661,7 @@
                 "min": 33,
                 "max": 35
               },
-              "title": "kradzież oddechu",
+              "title": "Kradzież Oddechu:",
               "content": "Przez 1 Rundę psyker i wszyscy wokół niego tracą oddech na 1 Rundę i nie mogą @action{run|biegać} ani @action{charge|szarżować}."
             },
             {
@@ -25487,15 +25669,15 @@
                 "min": 36,
                 "max": 38
               },
-              "title": "demoniczna maska",
-              "content": "Przez krótką chwilę psyker przybiera wygląd demona, przez co do końca Rundy otrzymuje cechę @trait{fear||1}. Otrzymuje również 1 Punkt Spaczenia."
+              "title": "Demoniczna Maska:",
+              "content": "Przez krótką chwilę psyker przybiera wygląd demona, przez co do końca Rundy otrzymuje Cechę @trait{fear||1}. Otrzymuje również 1 Punkt Spaczenia."
             },
             {
               "range": {
                 "min": 39,
                 "max": 41
               },
-              "title": "nienaturalny rozkład",
+              "title": "Nienaturalny Rozkład:",
               "content": "Wszystkie rośliny w promieniu @dice{3k10} od psykera więdną i giną."
             },
             {
@@ -25503,7 +25685,7 @@
                 "min": 42,
                 "max": 44
               },
-              "title": "widmowy powiew",
+              "title": "Widmowy Powiew:",
               "content": "Wyjące wiatry zrywają się wokół psykera. Psyker i wszyscy w promieniu @dice{4k10} muszą wykonać ![b]#Bardzo Łatwy\u00a0(+30) Test Zręczności lub Krzepy#, by uniknąć zostania przewróconym."
             },
             {
@@ -25511,7 +25693,7 @@
                 "min": 45,
                 "max": 47
               },
-              "title": "krwawe łzy",
+              "title": "Krwawe Łzy:",
               "content": "Krew sączy się z kamienia i drewna w promieniu @dice{3k10} metrów od psykera. Jeżeli w tym obszarze są jakiekolwiek obrazy przedstawiające ludzi, wydają się oni ronić krwawe łzy."
             },
             {
@@ -25519,7 +25701,7 @@
                 "min": 48,
                 "max": 50
               },
-              "title": "ziemia protestuje",
+              "title": "Ziemia Protestuje:",
               "content": "Podłoże gwałtownie się trzęsie i wszyscy (włączając psykera) w promieniu @dice{5k10} od psykera muszą wykonać ![b]#Prosty\u00a0(+10) Test Zręczności# by uniknąć przewrócenia się."
             },
             {
@@ -25527,15 +25709,15 @@
                 "min": 51,
                 "max": 53
               },
-              "title": "wyładowanie psioniczne",
-              "content": "Elektryczność wypełnia powietrze w promieniu @dice{5k10} od psykera, przez co włosy stają dęba, a niechronione urządzenia elektryczne wyłączają się. Psyker jest oświetlany przez widmowe światło."
+              "title": "Wyładowanie Psioniczne:",
+              "content": "Elektryczność strzela w powietrzu w promieniu @dice{5k10} od psykera, przez co włosy stają dęba, a niechronione urządzenia elektryczne wyłączają się. Psyker jest oświetlany przez widmowe światło."
             },
             {
               "range": {
                 "min": 54,
                 "max": 56
               },
-              "title": "duchy osnowy",
+              "title": "Duchy Osnowy:",
               "content": "Podobne duchom manifestacje pojawiają się w promieniu @dice{3k10} metrów od psykera, latając i wyjąc z bólu przez krótką chwilę. Wszyscy w tym obszarze muszą wykonać Test przeciwko @trait{fear|strachowi|1}."
             },
             {
@@ -25543,15 +25725,15 @@
                 "min": 57,
                 "max": 59
               },
-              "title": "spadanie w górę",
-              "content": "Wszystko w promieniu @dice{2k10} metrów od psykera (włączając jego samego) unoszą się @dice{1k10} metrów w górę, gdy grawitacja na chwilę przestaje działać. Po sekundzie czy dwóch wszystko spada znów na ziemię."
+              "title": "Spadanie w Górę:",
+              "content": "Wszystko w promieniu @dice{2k10} metrów od psykera (włączając jego samego) unosi się @dice{1k10} metrów w górę, gdy grawitacja na chwilę przestaje działać. Po sekundzie czy dwóch wszystko spada znów na ziemię."
             },
             {
               "range": {
                 "min": 60,
                 "max": 62
               },
-              "title": "wycie banshee",
+              "title": "Wycie Banshee:",
               "content": "Upiorne wycie rozlega się w pobliskim otoczeniu, tłukąc szkło i zmuszając każdą śmiertelną istotę, która może je usłyszeć do wykonania ![b]#Przeciętnego\u00a0(+0) Testu Odporności# - porażka oznacza głuchotę przez @dice{1k10} Rund."
             },
             {
@@ -25559,7 +25741,7 @@
                 "min": 63,
                 "max": 65
               },
-              "title": "furie",
+              "title": "Furie:",
               "content": "Psyker atakowany jest przez niemożliwe do zobaczenia siły, które ciskają nim o ziemię powodując @dice{1k5} Obrażeń (Wytrzymałość redukuje te Obrażenia, natomiast niepoświęcony pancerz nie). Dodatkowo psyker musi wykonać Test w celu uniknięcia @trait{fear|strachu|2}."
             },
             {
@@ -25567,30 +25749,30 @@
                 "min": 66,
                 "max": 68
               },
-              "title": "cień spaczni",
-              "content": "Przez ułamek sekundy świat zmienia swój wygląd i wszyscy w promieniu @dice{1k100} metrów od psykera jest w stanie wejrzeć (szczęśliwie tylko przez mgnienie oka) w Spacznię. Każdy w zasięgu efektu musi wykonać ![b]#Wymagający\u00a0(-10) Test Siły Woli#. Nieudany powoduje zyskanie @dice{1k5} Punktów Obłędu."
+              "title": "Cień Osnowy:",
+              "content": "Przez ułamek sekundy świat zmienia swój wygląd i wszyscy w promieniu @dice{1k100} metrów od psykera jest w stanie wejrzeć (szczęśliwie tylko przez mgnienie oka) w Osnowę. Każdy w zasięgu efektu musi wykonać ![b]#Wymagający\u00a0(-10) Test Siły Woli#. Nieudany powoduje otrzymanie @dice{1k5} Punktów Obłędu."
             },
             {
               "range": {
                 "min": 69,
                 "max": 71
               },
-              "title": "pogarda technologii",
-              "content": "Duchy maszyny odrzucają nienaturalną egzystencję psykera. Wszystkie niepoświęcone urządzenia w promieniu @dice{5k10} metrów od psykera na moment przestają działać. Wszystkie bronie dystansowe na tym obszarze Zacinają się. Bohaterowie posiadający implanty cybernetyczne muszą wykonać ![b]#Prosty\u00a0(+10) Test Odporności#, którego porażka oznacza otrzymanie @dice{1k5} Obrażeń."
+              "title": "Pogarda Technologii:",
+              "content": "Duchy maszyny odrzucają nienaturalną egzystencję psykera. Wszystkie niepoświęcone urządzenia w promieniu @dice{5k10} metrów od psykera na moment przestają działać. Wszystkie bronie dystansowe na tym obszarze Zacinają się. Bohaterowie posiadający implanty cybernetyczne muszą wykonać ![b]#Prosty\u00a0(+10) Test Odporności#, w którym porażka oznacza otrzymanie @dice{1k5} Obrażeń."
             },
             {
               "range": {
                 "min": 72,
                 "max": 74
               },
-              "title": "obłęd spaczni",
+              "title": "Obłęd Spaczni:",
               "content": "Gwałtowna fala spaczonej energii powoduje, że wszystkie stworzenia w promieniu @dice{2k10} metrów od psykera (wyłączając jego samego) zyskują efekty @talent{frenzy|szału} na 1 Rundę. Każdy będący pod wpływem tego efektu musi wykonać ![b]#Wymagający\u00a0(-10) Test Siły Woli#, którego porażka oznacza otrzymanie @dice{1k5} Punktów Obłędu."
             },
             {
               "range": {
                 "min": 75
               },
-              "title": "niebezpieczeństwa osnowy",
+              "title": "Niebezpieczeństwa Osnowy:",
               "content": "Osnowa na danym obszarze rozrywana jest przez gwałtowną burzę energii. Wykonaj rzut w tabeli @table{perilsOfTheWarp}."
             }
           ]
@@ -25613,7 +25795,7 @@
               "range": {
                 "max": 5
               },
-              "title": "bełkot",
+              "title": "Bełkot:",
               "content": "Psyker krzyczy z bólu, czując wymykające się spod kontroli energie Osnowy wdzierające się w jego umysł. Musi wykonać ![b]#Przeciętny\u00a0(+0) Test Siły Woli# aby uniknąć otrzymania @dice{1k5+1} Punktów Obłędu i zostania Ogłuszonym na @dice{1k5} Rund."
             },
             {
@@ -25621,7 +25803,7 @@
                 "min": 6,
                 "max": 9
               },
-              "title": "oparzenie spaczni",
+              "title": "Poparzenie Osnową:",
               "content": "Gwałtowna fala energii wdziera się w umysł psykera, parząc go. Otrzymuje on @dice{1k5} Obrażeń (które nie są redukowane przez Pancerz ani Wytrzymałość) i zostaje Ogłuszony na @dice{1k5} Rund."
             },
             {
@@ -25629,15 +25811,15 @@
                 "min": 10,
                 "max": 13
               },
-              "title": "wstrząs psychiczny",
-              "content": "W trzasku uwalnianej energii psyker traci przytomność na @dice{1k5} Rund. Wszyscy w promieniu @dice{3k10} metrów muszą wykonać ![b]#Prosty\u00a0(+10) Test Siły Woli#, by uniknąć Ogłuszenia na @dice{1k5} Rund."
+              "title": "Wstrząs Psioniczny:",
+              "content": "W akompaniamencie trzasku uwalnianej energii psyker traci przytomność na @dice{1k5} Rund. Wszyscy w promieniu @dice{3k10} metrów muszą wykonać ![b]#Prosty\u00a0(+10) Test Siły Woli#, by uniknąć Ogłuszenia na @dice{1k5} Rund."
             },
             {
               "range": {
                 "min": 14,
                 "max": 18
               },
-              "title": "podmuch psychiczny",
+              "title": "Podmuch Psioniczny:",
               "content": "Następuje eksplozja mocy, która wyrzuca psykera @dice{1k10} metrów w górę."
             },
             {
@@ -25645,23 +25827,23 @@
                 "min": 19,
                 "max": 24
               },
-              "title": "przypalenie duszy",
-              "content": "Moc Spaczni płynie przez ciało psykera, jednocześnie paląc jego duszę. Psyker nie może używać żadnych mocy przez 1 godzinę i otrzymuje 5 Punktów Spaczenia."
+              "title": "Przypalenie Duszy:",
+              "content": "Moc Osnowy płynie przez ciało psykera, jednocześnie paląc jego duszę. Psyker nie może używać żadnych mocy przez 1 godzinę i otrzymuje 5 Punktów Spaczenia."
             },
             {
               "range": {
                 "min": 25,
                 "max": 30
               },
-              "title": "zamknięty",
-              "content": "Moc zamyka umysł psykera w eterycznym więzieniu. Jego ciało pada na ziemię w stanie wegetatywnym. W każdej kolejnej Rundzie psyker musi zużyć Akcję Podwójną na wykonanie ![b]#Wymagającego\u00a0(-10) Testu Siły Woli#. Sukces pozwala jego duszy uwolnić się i powrócić do ciała."
+              "title": "Uwięziony:",
+              "content": "Moc zamyka umysł psykera w eterycznym więzieniu. Jego ciało pada na ziemię w stanie katatonii. W każdej kolejnej Rundzie psyker musi zużyć Akcję Podwójną na wykonanie ![b]#Wymagającego\u00a0(-10) Testu Siły Woli#. Sukces pozwala jego duszy uwolnić się i powrócić do ciała."
             },
             {
               "range": {
                 "min": 31,
                 "max": 38
               },
-              "title": "nietrzymanie czasu",
+              "title": "Chronologiczna Nieścisłość:",
               "content": "Czas zostaje zniekształcony wokół psykera, który znika i pojawia się ponownie po @dice{1k10} Rundach (lub poza walką po 1 minucie). Powoduje to otrzymanie @dice{1k5} Punktów Obłędu i Permanentne @dice{1k5} punktów Obrażeń do Odporności."
             },
             {
@@ -25669,7 +25851,7 @@
                 "min": 39,
                 "max": 46
               },
-              "title": "psychiczne lustro",
+              "title": "Psioniczne Lustro:",
               "content": "Moc psykera zwraca się przeciwko niemu. Rozwiąż efekty mocy jak zwykle, ale celem staje się sam psyker. Jeżeli efekt mocy jest pożyteczny, zamiast tego zadaje ona @dice{1k10+5} Obrażeń od Energii. Niepoświęcony pancerz nie chroni przez tymi Obrażeniami."
             },
             {
@@ -25677,7 +25859,7 @@
                 "min": 47,
                 "max": 55
               },
-              "title": "szepty spaczni",
+              "title": "Szepty z Osnowy:",
               "content": "Demoniczne głosy wypełniają przestrzeń w promieniu @dice{4k10} metrów od psykera, szepcząc o okropnych sekretach i zaskakujących prawdach. Wszyscy znajdujący się na podanym obszarze muszą wykonać ![b]#Trudny\u00a0(-20) Test Siły Woli# by uniknąć otrzymania @dice{1k10} Punktów Spaczenia."
             },
             {
@@ -25685,7 +25867,7 @@
                 "min": 56,
                 "max": 58
               },
-              "title": "nawzajem",
+              "title": "Vice Versa:",
               "content": "Umysł psykera zostaje wyrzucony z ciała i wepchnięty w inne pobliskie stworzenie bądź osobę. Psyker i losowo wybrane stworzenie w promieniu 50 metrów od niego (które nie jest Demonem, Pariasem, czy innym „bezduszny”.) zamieniają się świadomościami na @dice{1k10} Rund. To stworzenie może być sprzymierzeńcem, albo nawet wrogim wojownikiem. Obaj zachowują własne charakterystyki Walki Wręcz, Umiejętności Strzeleckich, Inteligencji, Percepcji, Siły Woli i Ogłady, ale muszą używać Siły i Zręczności drugiego. Jeżeli którekolwiek z ciał zostanie zabite, efekt kończy się natychmiast. Obaj znajdujący się pod wpływem efektu otrzymują @dice{1k5} Punktów Obłędu przez to doświadczenie. Jeżeli nie istnieje zgodne z powyższymi zasadami stworzenie, psyker wykonuje Test Siły Woli, by uniknąć zapadnięcia w śpiączkę na @dice{1k5} Rund, co powoduje, że jego umysł przemierza Osnowę. Wędrówka ta powoduje otrzymanie @dice{2k10} Punktów Obłędu."
             },
             {
@@ -25693,7 +25875,7 @@
                 "min": 59,
                 "max": 67
               },
-              "title": "rozerwanie zasłony",
+              "title": "Rozerwanie Zasłony:",
               "content": "Powietrze aż trzęsie się od widocznych obrazów śmiejących się Demonów, gdy Osnowa staje się na moment widoczna dla oczu. Wszystkie świadome istoty w promieniu @dice{1k100} metrów od psykera muszą wykonać Test przeciwko @trait{fear|strachowi|3}. Efekt ten utrzymuje się przez @dice{1k5} Rund."
             },
             {
@@ -25701,23 +25883,23 @@
                 "min": 68,
                 "max": 72
               },
-              "title": "deszcz krwi",
-              "content": "Rozpętuje się psychiczna burza, która powoduje lejące się z nieba potoki krwi na obszarze o promieniu @dice{5k10} metrów od psykera. Każdy w jego zasięgu musi wykonać ![b]#Przeciętny\u00a0(+0) Test Krzepy#, by uniknąć przewrócenia się. Dodatkowo każde użycie Mocy Psychicznych na tym obszarze automatycznie powoduje @table{perilsOfTheWarp}. Efekt utrzymuje się przez @dice{1k5} Rund."
+              "title": "Deszcz Krwi:",
+              "content": "Rozpętuje się psioniczna burza, która powoduje lejące się z nieba potoki krwi na obszarze o promieniu @dice{5k10} metrów od psykera. Każdy w jego zasięgu musi wykonać ![b]#Przeciętny\u00a0(+0) Test Krzepy#, by uniknąć przewrócenia się. Dodatkowo każde użycie Mocy Psychicznych na tym obszarze automatycznie powoduje @table{perilsOfTheWarp}. Efekt utrzymuje się przez @dice{1k5} Rund."
             },
             {
               "range": {
                 "min": 73,
                 "max": 78
               },
-              "title": "kataklizmiczny podmuch",
-              "content": "Moc przeciąża psykera, przez co każdy w promieniu @dice{1k10} metrów od niego otrzymuje @dice{1k10+5} Obrażeń od Energii. Psyker nie może używać swoich mocy przez kolejne @dice{1k5} godzin."
+              "title": "Kataklizmiczny Podmuch:",
+              "content": "Moc psykera okazuje się zbyt trudna do opanowania, przez co każdy w promieniu @dice{1k10} metrów od niego otrzymuje @dice{1k10+5} Obrażeń od Energii. Psyker nie może używać swoich mocy przez kolejne @dice{1k5} godzin."
             },
             {
               "range": {
                 "min": 79,
                 "max": 82
               },
-              "title": "dziura w świecie",
+              "title": "Dziura w Świecie:",
               "content": "@power{vortexOfDoom} z PM @dice{2k10} pojawia się w losowo wybranym miejscu @dice{1k10} metrów od psykera. Następnie porusza się (rzuć @dice{1d10} by określić dystans, kierunek ustal na podstawie @table{scatter|rozrzutu}.), pożerając wszystko na swojej drodze, po czym znika po @dice{1k5} Rundach."
             },
             {
@@ -25725,7 +25907,7 @@
                 "min": 83,
                 "max": 86
               },
-              "title": "zagubiony w spaczni",
+              "title": "Zagubiony w Osnowie:",
               "content": "Psyker natychmiastowo musi wykonać ![b]#Bardzo Trudny\u00a0(-30) Test Siły Woli#. Jeżeli poniesie porażkę, zostaje natychmiast wciągnięty w Spacznię przez Demona, który opętuje go i używa jego ciała do złowieszczych celów. Psyker pojawia się @dice{1k10} dni później na zamieszkałej planecie z mętnymi wspomnieniami straszliwych czynów, których dopuścił się podczas opętania. Otrzymuje @dice{4k10} Punktów Spaczenia i może doświadczyć powikłań spowodowanych przez te czyny. Może również odwiedzić go Inkwizycja, jeżeli dowie się o tym wydarzeniu. Od teraz psyker dodaje +10 do wszystkich rzutów na @table{perilsOfTheWarp}."
             },
             {
@@ -25733,7 +25915,7 @@
                 "min": 87,
                 "max": 90
               },
-              "title": "trzęsienie rzeczywistości",
+              "title": "Trzęsienie Rzeczywistości:",
               "content": "Rzeczywistość w promieniu @dice{3k10} metrów od psykera zostaje rozerwana przez moc. Przedmioty na zmianę palą się, zamarzają i gniją, a wszyscy i wszystko na tym obszarze otrzymuje @dice{2k10} Obrażeń Rozrywających. Poświęcone obiekty i Pariasi otrzymują jedynie połowę tych Obrażeń."
             },
             {
@@ -25741,12 +25923,12 @@
                 "min": 91,
                 "max": 99
               },
-              "title": "coś nadchodzi...",
+              "title": "Coś Nadchodzi...:",
               "content": "Z mrożącym krew w żyłach rykiem w rzeczywistość wdziera się Książę Demonów, pojawiając się w promieniu @dice{3k10} metrów od psykera. Atakuje on bez zwłoki głupca, który nieumyślnie go przyzwał. Wysłać go z powrotem do Spaczni może tylko zniszczenie go lub śmierć psykera."
             },
             {
               "match": 100,
-              "title": "zniszczenie",
+              "title": "Zniszczenie:",
               "content": "Psyker zostaje natychmiastowo i nieodwracalnie zniszczony. Może zostać wciągnięty z przerażonym krzykiem w otchłanie Spaczni lub zostać spalonym przez piekielne ognie. MG może zadecydować, że istnieje @dice{50%} szans na pojawienie się w jego miejsce Księcia Demonów."
             }
           ]
@@ -26341,7 +26523,7 @@
                 "min": 1,
                 "max": 20
               },
-              "content": "Bohater jest poważnie wystraszony, przez co może w swojej następnej Turze wykonać tylko jedną Akcję. Potem działa już normalnie."
+              "content": "Bohater jest poważnie wystraszony, przez co może w swojej następnej Turze wykonać tylko Akcję Pojedynczą. Potem działa już normalnie."
             },
             {
               "range": {
@@ -26397,13 +26579,13 @@
                 "min": 161,
                 "max": 170
               },
-              "content": "Umysł Bohatera poddaje się; pada on na ziemię w stanie wegetatywnym na @dice{1k5} godzin i nie da się go ocucić."
+              "content": "Umysł Bohatera poddaje się; pada on na ziemię w stanie katatonii na @dice{1k5} godzin i nie da się go ocucić."
             },
             {
               "range": {
                 "min": 171
               },
-              "content": "Bohater jest tak przerażony, że jego serce się zatrzymuje. Musi wykonać ![b]#Przeciętny\u00a0(+0) Test Odporności# lub umrzeć. Nawet jeżeli Test się powiedzie, Bohater jest w stanie wegetatywnym przez @dice{1k5} godzin jak powyżej."
+              "content": "Bohater jest tak przerażony, że jego serce się zatrzymuje. Musi wykonać ![b]#Przeciętny\u00a0(+0) Test Odporności# lub umrzeć. Nawet jeżeli Test się powiedzie, Bohater jest w stanie katatonii przez @dice{1k5} godzin jak powyżej."
             }
           ]
         },

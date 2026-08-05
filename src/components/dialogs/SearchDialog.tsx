@@ -2,7 +2,7 @@ import { useEffect, useMemo, useRef, useState, Dispatch, SetStateAction } from "
 import { XCircleFill, XLg } from "react-bootstrap-icons"
 import { RPCItem } from "../../helpers/types"
 import { ItemLinkButton } from "../LinkButton"
-import capitalize from "../../helpers/capitalize"
+import capitalise from "../../helpers/capitalize"
 import { JsonDataType } from "../../contexts/JsonDataContext"
 import SourceName from "../SourceName"
 
@@ -98,7 +98,7 @@ export default function SearchDialog({
               <span>({e.name})</span>&nbsp;
               {e.parentPath && (
                 <span className="italic text-gray-600 dark:text-gray-400">
-                  {capitalize(
+                  {capitalise(
                     jsonData.flatSections.find(
                       (s) =>
                         s.name === e.parentPath?.split("-")[0] && !s?.parentPath,

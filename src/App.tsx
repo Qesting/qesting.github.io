@@ -3,7 +3,7 @@ import "./App.css"
 import Section from "./components/contentItems/Section"
 import Navbar from "./components/Navbar"
 import { useParams } from "react-router-dom"
-import capitalize from "./helpers/capitalize"
+import capitalise from "./helpers/capitalize"
 import { RPCItem, RPCWeapon } from "./helpers/types"
 import { findAllCombi, findDefaultAmmo, VttesInput } from "./helpers/vttesExportFunctions"
 import TableDialog from "./components/dialogs/TableDialog"
@@ -74,7 +74,7 @@ function App() {
         sec.source === (sSource ?? jsonData.rootSource.name),
     )
     self.document.title =
-      (section ? `${capitalize(section.displayName ?? '')} | ` : "") + "Codex Vigilis"
+      (section ? `${capitalise(section.displayName ?? '')} | ` : "") + "Codex Vigilis"
   }, [itemName, sectionName, jsonData.sections])
   useEffect(() => {
     if (tableName && !tableDialog) {

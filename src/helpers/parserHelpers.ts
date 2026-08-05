@@ -1,6 +1,6 @@
 import {AlreadyResolvedType} from "../contexts/AlreadyResolvedContext"
 import {JsonDataType} from "../contexts/JsonDataContext"
-import capitalize from "./capitalize"
+import capitalise from "./capitalize"
 import {mathRegExp, replacerRegExp} from "./ParserRegExp"
 import {Alias, itemIsSection, RPCItem, RPCSection, RPCTable,} from "./types"
 
@@ -328,7 +328,7 @@ export function replaceText(
       console.error(e)
       return match
     }
-    return opts?.capitalize ? capitalize(result) : result
+    return opts?.capitalize ? capitalise(result) : result
   })
 }
 

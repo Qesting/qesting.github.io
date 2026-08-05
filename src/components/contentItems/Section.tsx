@@ -1,6 +1,6 @@
 import Item from "./Item.js"
 import Table from "./Table.js"
-import capitalize from "../../helpers/capitalize.js"
+import capitalise from "../../helpers/capitalize.js"
 import { useContext, useState } from "react"
 import SectionNameContext from "../../contexts/SectionNameContext.js"
 import TextContent from "./TextContent.js"
@@ -91,13 +91,13 @@ export default function Section({ data, disp }: { data: RPCSection, disp?: boole
             <h2
               className={`${parentPath ? "text-2xl group-focus/" + sectionId + ":after:bg-accent group-focus/" + sectionId + "text-accent" : "text-3xl"} py-2 text-center relative after:w-full after:h-px after:absolute after:bottom-0 after:bg-current after:transition-colors duration-300 after:duration-300 transition-colors after:left-0 after:right-0 px-4`}
             >
-              {capitalize(displayName ?? '')}
+              {capitalise(displayName ?? '')}
             </h2>
             {parentPath && (
               <button
                 type="button"
                 onClick={() => setExpanded(!expanded)}
-                className="absolute top-4 left-0"
+                className="absolute top-2 left-0"
               >
                 <span className={expanded ? "block" : "rotate-180 block"}>
                   <BIconCaretDownFill />
