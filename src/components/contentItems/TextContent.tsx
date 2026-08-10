@@ -102,11 +102,7 @@ function TextContent({ content }: { content: ContentItem[] | ContentItem }) {
             <>
               <strong className="font-bold">
                 <Parser
-                  cap={true}
-                  text={
-                    e.title +
-                    (e.title.endsWith(":") || e.title.endsWith(".") ? "" : ".")
-                  }
+                  text={e.title}
                 />
               </strong>
               &nbsp;

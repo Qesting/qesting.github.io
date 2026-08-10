@@ -2051,7 +2051,7 @@
               "title": "Wymagania:",
               "content": "${insert:prerequisite}"
             },
-            "Bracia Bitewni Astartes spędzają lata na zdobywaniu biegłości w broni wszelkiego rodzaju. Do czasu dołączenia do czynnej służby w jednej z Drużyn każdy z Braci nie tylko zapozna się z obsługą broni ciężkiej i białej, ale także użyje jej w niezliczonych potyczkach. Bohater jest biegły w broni @ranged{>bolt|boltowej}, @melee{>chain|łańcuchowej}, @ranged{>melta|melta}, @ranged{>plasma|plazmowej}, @melee{>power|energetycznej}, Prymitywnej\u00a0(zasięgowej i białej), @ranged{>las|laserowej}, @ranged{>solid|palnej}, @grenade{<|rzucanej} i @ranged{>flame|miotaczach} wszystkich Klas. Tak naprawdę jedyne bronie, w których nie jest biegły, to bronie @ranged{>exotic|egzotyczne}; z tymi musi przejść dodatkowy trening, jeżeli chce ich używać."
+            "Bracia Bitewni Astartes spędzają lata na zdobywaniu biegłości w broni wszelkiego rodzaju. Do czasu dołączenia do czynnej służby w jednej z Drużyn każdy z Braci nie tylko zapozna się z obsługą broni ciężkiej i białej, ale także użyje jej w niezliczonych potyczkach. Bohater jest biegły w broni @ranged{>bolt|boltowej}, @melee{>chain|piłowej}, @ranged{>melta|melta}, @ranged{>plasma|plazmowej}, @melee{>power|energetycznej}, Prymitywnej\u00a0(zasięgowej i białej), @ranged{>las|laserowej}, @ranged{>solid|palnej}, @grenade{<|rzucanej} i @ranged{>flame|miotaczach} wszystkich Klas. Tak naprawdę jedyne bronie, w których nie jest biegły, to bronie @ranged{>exotic|egzotyczne}; z tymi musi przejść dodatkowy trening, jeżeli chce ich używać."
           ]
         },
         {
@@ -2670,17 +2670,17 @@
           "name": "fleshRender",
           "displayName": "rozrywacz ciał",
           "prerequisite": "Astartes",
-          "shortDesc": "Broń @melee{>chain|łańcuchowa} zadaje dodatkowe Obrażenia.",
+          "shortDesc": "Broń @melee{>chain|piłowa} zadaje dodatkowe Obrażenia.",
           "content": [
             {
               "title": "Wymagania:",
               "content": "${insert:prerequisite}"
             },
-            "Ten Brat szczególnie lubi używać broni potrafiących zadawać ogromne obrażenia ciała przeciwników, takich jak broń łańcuchowa. Gdy Bohater zadaje Obrażenia bronią białą @quality{tearing|rozrywającą}, rzuca dodatkową kość Obrażeń i wybiera najwyższy wynik. Przy używaniu broni zadającej kilka kości Obrażeń, rzucana jest tylko jedna dodatkowa kość.",
+            "Ten Brat szczególnie lubi używać broni potrafiących zadawać ogromne obrażenia ciała przeciwników, takich jak broń piłowa. Gdy Bohater zadaje Obrażenia bronią białą @quality{tearing|rozrywającą}, rzuca dodatkową kość Obrażeń i wybiera najwyższy wynik. Przy używaniu broni zadającej kilka kości Obrażeń, rzucana jest tylko jedna dodatkowa kość.",
             {
               "type": "example",
               "content": [
-                "Averrus, Szturmowiec Straży Śmierci, atakuje Tyranidzkiego Hormagaunta swoim @melee{astartesChainsword|mieczem łańcuchowym}. Ponieważ jest to broń Rozrywająca, aplikują się efekty Talentu Rozrywacz Ciał. Averrus rzuca kośćmi (uzyskując wyniki 9, 2 i 5) i wybiera największy z nich\u00a0(9)."
+                "Averrus, Szturmowiec Straży Śmierci, atakuje Tyranidzkiego Hormagaunta swoim @melee{astartesChainsword|piłomieczem}. Ponieważ jest to broń Rozrywająca, aplikują się efekty Talentu Rozrywacz Ciał. Averrus rzuca kośćmi (uzyskując wyniki 9, 2 i 5) i wybiera największy z nich\u00a0(9)."
               ]
             }
           ]
@@ -3304,7 +3304,7 @@
             "$name": 0
           },
           "groups": {
-            "chain": "łańcuchowa",
+            "chain": "piłowa",
             "shock": "uderzeniowa",
             "power": "energetyczna",
             "primitive": "prymitywna",
@@ -7175,11 +7175,11 @@
       "items": [
         {
           "type": "section",
-          "displayName": "łańcuchowe",
+          "displayName": "piłowe",
           "name": "chain",
           "display": "all",
           "content": [
-            "Różne warianty broni tego rodzaju znaleźć można w całej galaktyce. Proste w swojej zasadzie działania, bronie takie używają prowadnic, po których przesuwają się poruszające się szybko łańcuchy z poszarpanymi metalowymi zębami. Po odpaleniu silnik oznajmia głośnym rykiem swoją gotowość i wysyłając ostrzeżenie wszystkim wrogom Imperatora. Najlżejsze zahaczenie jest w stanie rozrywać odsłonięte ciało, a porządne uderzenie przebije się przez większość pancerzy. By używać broni łańcuchowej, Bohater musi posiadać talent Trening w Broni Białej (Łańcuchowe)."
+            "Różne warianty broni tego rodzaju znaleźć można w całej galaktyce. Proste w swojej zasadzie działania, bronie takie używają prowadnic, po których przesuwają się poruszające się szybko łańcuchy z poszarpanymi metalowymi zębami. Po odpaleniu silnik oznajmia głośnym rykiem swoją gotowość i wysyłając ostrzeżenie wszystkim wrogom Imperatora. Najlżejsze zahaczenie jest w stanie rozrywać odsłonięte ciało, a porządne uderzenie przebije się przez większość pancerzy. By używać broni piłowej, Bohater musi posiadać talent Trening w Broni Białej (Piłowe)."
           ]
         },
         {
@@ -7218,7 +7218,7 @@
       "parentPath": "melee-chain",
       "items": [
         {
-          "displayName": "miecz łańcuchowy astartes",
+          "displayName": "Piłomiecz Astartes",
           "image": "https://static.wikia.nocookie.net/warhammer40k/images/b/b5/Chainsword_Schematic.jpg",
           "name": "astartesChainsword",
           "class": "melee",
@@ -7236,7 +7236,7 @@
           "requisition": 5,
           "renown": 0,
           "content": [
-            "Broń taka służy niejednemu Bratu odbywającemu swoją służbę w Drużynie Szturmowej. Zwykle prowadnice mieczy łańcuchowych osłonięte są ze wszystkich stron poza przodem, gdzie zęby piły mogą wgryzać się w ciało i kość."
+            "Broń taka służy niejednemu Bratu odbywającemu swoją służbę w Drużynie Szturmowej. Zwykle prowadnice piłomieczy osłonięte są ze wszystkich stron poza przodem, gdzie zęby piły mogą wgryzać się w ciało i kość."
           ],
           "tags": ["weapon:melee"]
         }
@@ -7247,7 +7247,7 @@
       "parentPath": "melee-power",
       "items": [
         {
-          "displayName": "rękawica łańcuchowa astartes",
+          "displayName": "piłorękawica astartes",
           "image": "https://static.wikia.nocookie.net/warhammer40k/images/5/52/DA_Chainfist.jpg",
           "name": "astartesChainfist",
           "class": "mounted",
@@ -7266,8 +7266,8 @@
           "renown": 3,
           "doublesStrengthBonus": true,
           "content": [
-            "Rękawica łańcuchowa łączy niszczące pancerz pole rękawicy energetycznej z rozrywającymi adamantynowymi zębami ostrza łańcuchowego. Pole otacza i rękawicę i pędzący łańcuch, tworząc broń zdolną przeciąć pancerz, pojazdy, ciężkie grodzie, czy niemal dowolną substancję, jeżeli dostępna jest odpowiednia ilość czasu. Broń taka jest zbyt ciężka nawet dla Brata w pancerzu wspomaganym i efektywnie używać ich mogą tylko ci zakuci w @armour{terminator|pancerze terminator}. Ma to również sens, ponieważ w walce z przeciwnikiem tak potężnym, że wymagane jest użycie takiej broni, przydatna jest ochrona podobnego kalibru.",
-            "Rękawica łańcuchowa instalowana jest zamiast normalnej rękawicy Terminatora i nakłada takie same ograniczenia jak @melee{astartesLightningClaw}."
+            "Piłorękawica łączy niszczące pancerz pole rękawicy energetycznej z rozrywającymi adamantynowymi zębami ostrza łańcuchowego. Pole otacza i rękawicę i pędzący łańcuch, tworząc broń zdolną przeciąć pancerz, pojazdy, ciężkie grodzie, czy niemal dowolną substancję, jeżeli dostępna jest odpowiednia ilość czasu. Broń taka jest zbyt ciężka nawet dla Brata w pancerzu wspomaganym i efektywnie używać ich mogą tylko ci zakuci w @armour{terminator|pancerze terminator}. Ma to również sens, ponieważ w walce z przeciwnikiem tak potężnym, że wymagane jest użycie takiej broni, przydatna jest ochrona podobnego kalibru.",
+            "Piłorękawica instalowana jest zamiast normalnej rękawicy Terminatora i nakłada takie same ograniczenia jak @melee{astartesLightningClaw}."
           ]
         },
         {
@@ -7726,7 +7726,7 @@
           "renown": 0
         },
         {
-          "displayName": "bagnet (łańcuch)",
+          "displayName": "bagnet (piłowy)",
           "name": "meleeChain",
           "noDesc": true,
           "weight": "+8",
@@ -7738,7 +7738,7 @@
           "name": "melee",
           "noTable": true,
           "content": [
-            "Wartość bagnetu lub innego podobnego dodatku do broni dystansowej jest niewątpliwa, ponieważ pozwala on na zajęcie się przeciwnikami znajdującymi się zbyt blisko bez zmieniania broni. Jednakże zwykłe bagnety podobne do włóczni byłyby afrontem zarówno dla samego Marine jak i jego broni. Astartes używają ostrzy monomolekularnych i łańcuchowych, które w walce w zwarciu są prawie tak samo efektywne jak dedykowana broń. Dostępne są dodatki, które w walce wręcz liczą się jako @melee{astartesCombatKnife} lub @melee{astartesChainsword}, chociaż w tym drugim przypadku broń nie jest @quality{balanced}.",
+            "Wartość bagnetu lub innego podobnego dodatku do broni dystansowej jest niewątpliwa, ponieważ pozwala on na zajęcie się przeciwnikami znajdującymi się zbyt blisko bez zmieniania broni. Jednakże zwykłe bagnety podobne do włóczni byłyby afrontem zarówno dla samego Marine jak i jego broni. Astartes używają ostrzy monomolekularnych i piłowych, które w walce w zwarciu są prawie tak samo efektywne jak dedykowana broń. Dostępne są dodatki, które w walce wręcz liczą się jako @melee{astartesCombatKnife} lub @melee{astartesChainsword}, chociaż w tym drugim przypadku broń nie jest @quality{balanced}.",
             {
               "title": "Dozwolone:",
               "content": "jakakolwiek broń Zwykła."
@@ -8923,7 +8923,7 @@
         },
         {
           "name": "theKrixianChainglaive",
-          "displayName": "krixiańska glewia łańcuchowa",
+          "displayName": "krixiańska piłoglewia",
           "class": "melee",
           "damage": {
             "formula": "2k10dl1+8",
@@ -8936,8 +8936,8 @@
           "requisition": 35,
           "renown": 3,
           "content": [
-            "Krixiańska Glewia Łańcuchowa łączy w sobie siłę długiego, zakrzywionego, dwuręcznego ostrza z rozrywającymi zębami na łańcuchu. Model ten produkowany był w tajemnicy podczas techno–schizmy na Keflan IX przez niesankcjonowany kompleks kuźni w układzie Krixis. Wzory projektowe zostały ogłoszone nienadającymi się do wykorzystania i przeniesione do archiwów Adeptus Mechanicus. Ta broń uważana jest za ostatni istniejący egzemplarz.",
-            "Profil Krixiańskiej Glewii Łańcuchowej podano w tabeli. Wymaga ona dwóch rąk do poprawnego użycia."
+            "Krixiańska piłoglewia łączy w sobie siłę długiego, zakrzywionego, dwuręcznego ostrza z rozrywającymi zębami na łańcuchu. Model ten produkowany był w tajemnicy podczas techno–schizmy na Keflan IX przez niesankcjonowany kompleks kuźni w układzie Krixis. Wzory projektowe zostały ogłoszone nienadającymi się do wykorzystania i przeniesione do archiwów Adeptus Mechanicus. Ta broń uważana jest za ostatni istniejący egzemplarz.",
+            "Profil Krixiańskiej piłoglewii podano w tabeli. Wymaga ona dwóch rąk do poprawnego użycia."
           ]
         },
         {
@@ -15436,7 +15436,7 @@
           "displayName": "Doświadczenie",
           "content": [
             "Główną nagrodą za wypełnianie Misji jest Doświadczenie. Pozwala ono Braciom Bitewnym na postęp w Rangach i zwiększanie swojej siły przez naukę nowych Umiejętności i Talentów i zdobywanie zdolności. Ilość otrzymanego przez Szwadron Doświadczenia zależy od liczby wypełnionych Celów i jakichkolwiek niesamowitych wyczynów.",
-            "Szczegóły co do przyznawania Doświadczenia i jego związek z Celami przedstawiono w sekcji @gm{experience}."
+            "Szczegóły co do przyznawania Doświadczenia i jego związek z Celami przedstawiono w sekcji @gm{experiencePoints}."
           ]
         },
         {
@@ -16800,6 +16800,346 @@
         }
       ]
     },
+
+    {
+      "type": "section",
+      "name": "gm",
+      "displayName": "Mistrz Gry",
+      "display": ["description", "items"],
+      "noGrid": true,
+      "content": [
+        "%quote{Za Imperatora!|ulubiony okrzyk bojowy Adeptus Astartes}",
+        "W grze ![bc]#Deathwatch# gracze wcielają się w rolę elitarnych wojowników Imperium i muszą mierzyć się z najróżniejszymi wrogami ludzkości na niezliczonych polach bitew i naznaczonych wojną światach. Są mniejszością wybrańców wśród nieskończonych miliardów ludzkiej populacji, stojącymi między kotłującym się mrokiem i nikłym światłem cywilizacji i porządku. Tchnienie życia w tą krwawą rzeczywistość jest zadaniem Mistrza Gry, który prowadzi przeżywających przygody graczy, gdy walczą z wrogami Imperium, tworząc misje, jakich się podejmują, tworząc koszmary, z jakimi się mierzą i podsycając płomienie wojny, które pochłoną ich świat."
+      ]
+    },
+    {
+      "type": "group",
+      "parentPath": "gm",
+      "items": [
+        {
+          "name": "theRoleOfTheGameMaster",
+          "displayName": "Rola Mistrza Gry",
+          "content": [
+            "W grze ![bc]#Deathwatch# — tak jak w wielu innych grach tego typu — jeden z graczy przyjmuje rolę Mistrza Gry (MG). Rola MG jest kluczowa, jako że jego zadaniem jest tworzenie, rozwijanie i opisywanie świata, w którym żyją Bohaterowie Graczy (BG). Rolą MG jest wskazać scenę, prowadzić fabułę i decydować o konsekwencjach czynów graczy. MG jest w wielu aspektach podobny do reżysera filmu, który decyduje o miejscu, czasie i okolicznościach akcji i przekazuje graczom (którzy są głównymi aktorami) gdzie się znajdują i co robią. W przeciwieństwie do filmu gra RPG opiera się na współpracy graczy z Mistrzem Gry i choć to MG ustala okoliczności, sami gracze decydują o działaniach podejmowanych przez swoich bohaterów.",
+            "Tutaj właśnie znacznia nabiera kluczowy aspekt roli MG. Jest on nie tylko reżyserem i gawędziarzem, ale też sędzią gry. ![bc]#Deathwatch# jest grą i wykorzystuje zasady, by moderować działania bohaterów i ustalać, czy ich przygody się powiodą. MG pomaga decydować, kiedy i gdzie poszczególne zasady są używane i jak je interpretować, by gra przebiegała tak gładko i bezproblemowo, jak to tylko możliwe. Zadaniem Mistrza Gry jest bycie sprawiedliwym i bezstronnym, jak każdy sędzia i upewnienie się, że wszyscy dobrze się bawią.",
+            "Ponieważ MG ustawia pionki na planszy i opisuje zdarzenia, tworzy on również historię albo fabułę, w obrębie której działają gracze. W grach RPG te kawałki fabuły nazywane są często przygodami albo scenariuszami. Wszystko, co gracze wiedzą lub chcą wiedzieć o tym świecie opisuje MG, grając również role innych jego mieszkańców, od szeregowego Gwardzisty po potężnego Lorda Sektora, decydując jak zareagują oni na bohaterów i jakie podejmą działania.",
+            "Choć na pierwszy rzut oka MG ma znacznie więcej zadań niż gracze, rola ta może być również jedną z najbardziej satysfakcjonujących, jako że może sprawić graczom radość i zobaczyć, jak jego świat nabiera życia."
+          ]
+        },
+        {
+          "name": "theBasics",
+          "displayName": "Podstawy",
+          "content": [
+            "Jako że rolą MG jest kształtowanie i prowadzenie opowieści, musi być przygotowany znacznie dokładniej niż inni gracze. Zanim MG zgodzi się na prowadzenie gry, powinien rozważyć trzy kluczowe aspekty.",
+            {
+              "title": "Znaj Zasady:",
+              "content": "Ważnym jest, by MG znał zasady lepiej, a przynajmniej tak samo dobrze jak gracze. Oznacza to, że MG przed poprowadzeniem pierwszej gry powinien zapoznać się z jak największą częścią tej książki. Szczególnie istotny jest ![b]#Rozdział VII: Rozgrywka# (@rule{<}), jako że opisuje szczegółowo mechaniki gry. Znajomość zasad jest ważna dla MG, jako że potrzebna jest przy sędziowaniu działań bohaterów. Zadaniem zasad jest właśnie wspomóc w tym Mistrza Gry."
+            },
+            {
+              "title": "Znaj Fabułę:",
+              "content": "W grze RPG gracze i ich bohaterowie są herosami stającymi naprzeciw mrocznemu i złowieszczemu wszechświatowi 41. milenium. Jednak to MG tworzy fabułę, w obrębie której działają i kontroluje wrogami i złoczyńcami, z którymi się mierzą. Odgrywanie ról jest procesem, w którym wszyskie strony muszą współpracować, a MG nie musi przekazywać graczom wszystkiego, co się dzieje. Zamiast tego daje im środowisko i reaguje na ich działania. Oznacza to, że MG nie musi znać wszystkich szczegółów scenariusza, ale powinien zdawać sobie przynajmniej sprawę, gdzie się on zaczyna i gdzie zmierza. Fabuła może być prosta, na przykład obrona Stacji Lodowej Alfa przed natarciem Tyranidów, albo złożona, jak wyśledzenie Slaughta powodującego zamieszanie na imperialnym świecie rolniczym, próbując zebrać wśród obywateli efektywne siły bojowe, które pozwolą odeprzeć nadchodzącą inwazję obcych. Fabuła zawierająca więcej detali zwykle ułatwia życie MG podczas gry, jako że musi mniej wymyślać na bieżąco, co pomaga utrzymać dobre tempo gry. Nieważne jednak, czy proste, czy złożone, rzadko wysiłek włożony przez MG w planowanie marnuje się. Mistrzowie Gry mogą również korzystać z opublikowanych przygód, takich jak ta opisana w ![b]#Rozdziale XIV: Ekstrakcja#. Zaletą tych przygód jest to, że większość pracy, jaką musi wykonać Mistrz Gry, została już wykonana i można od razu przystąpić do ich rozgrywania."
+            },
+            {
+              "title": "Bądź Przygotowany:",
+              "content": [
+                "Często na MG spada zadanie upewnienia się, że grupa będzie miała dostęp do materiałów potrzebnych w rozgrywce (poza tą książką). Sproawdza się to zwykle do zapasu kości, papieru i ołówków i może modeli pomagających w rozgrywaniu starć. Niektórzy MG przechowują również karty postaci graczy, by się nie zagubiły. Listę podstawowych materiałów znaleźć można na stronie 10."
+              ]
+            }
+          ]
+        },
+        {
+          "name": "choosingTheGM",
+          "displayName": "Wybór MG",
+          "content": [
+            "Przy organizowaniu gry w Deathwatch jeden gracz musi zostać wybrany na MG. Zawsze dobrze jest, jeśli MG zgłosi się sam, jako że gra będzie lepsza, jeśli prowadząca ją osoba wykazuje się entuzjazmem. Zwykle jednak Mistrz Gry jest wybierany przed rozpoczęciem gry, jako że roli MG podejmuje się osoba organizująca grę — zwykle też osoba, która przyniosła na spotkanie tę książkę. Zdarza się też, że kilku graczy zmienia się w roli MG, dzieląc się obowiązkami i prowadząc swoje przygody. Pozwala to graczom na zyskanie szansy na stworzenie swojej własnej opowieści i może być bardzo satysfakcjonujące, jako że takie historie owocują bardziej szczegółową fabułą."
+          ]
+        },
+        {
+          "name": "delegatingToPlayers",
+          "displayName": "Zadania Graczy",
+          "content": [
+            "Niewątpliwie Mistrzowi Gry przypada lwia część nakładu pracy związanego z prowadzeniem gry RPG. Nie oznacza to jednak, że musi on robić wszystko, gdy chodzi o organizację i zgromadzenie składników potrzebnych na udaną grę. W tym mogą pomóc inni gracze, na przykład sami przynosząc modele, ołówki i papier, czy też przekąski.",
+            "Najważniejszym, co gracze mogą wnieść do gry jest pomaganie MG w dodawaniu szczegółów do przedstawianego świata. Na przykład jeśli ważną częścią przeszłości jednego z bohaterów jest Bitwa o Szarą Marchię, MG może, zamiast pisać o niej samemu — poprosić tego gracza o napisanie co nieco. Oznacza to, że gracz bierze udział w tworzeniu świata, a MG ma pewne dodatkowe szczegóły, które będzie mógł wykorzystać w jednym z późniejszych scenariuszy. Jest to także zadanie, które zwykle przynosi graczom dużo satysfakcji. MG, pozwalając im na tworzenie takich detali, ułatwia własne zadanie i wzbogaca przygody grupy."
+          ]
+        }
+      ]
+    },
+
+    {
+      "parentPath": "gm",
+      "type": "section",
+      "name": "evokingTheSetting",
+      "displayName": "Ożywianie Świata",
+      "display": ["items", "description"],
+      "noGrid": true,
+      "content": [
+        "%quote{Tylko śmierć spłaca cenę powinności.|inskrypcja w Grobowcu Bohaterów}",
+        "![bc]#Deathwatch# dzieje się w uniwersum Warhammera 40.000: mrocznym i niebezpiecznym miejscu, gdzie ludzkość wciaż walczy z nadciągającą ciemnością i niezliczonymi wrogami. Tylko światłość Imperatora i potęga imperialnych armii stoją między resztkami porządku i chaosem, zniszczeniem i obłędem, które zapanowałyby, gdyby Imperium upadło. Każdego dnia, jak galaktyka długa i szeroka, wojna szaleje na niezliczonych planetach w tuzinach sektorów. Większość tych, którzy służą Imperatorowi w jego nieskończonych wojnach szybko zostaje zapomniana razem ze swoimi imionami i czynami, a ich wkład w przetrwanie Imperium jest rzadko czymś więcej niż krwią i popiołem, ich starania ledwie iskierką w nieskończonej próżni.",
+        "Straż Śmierci jest jednak inna. Są oni produktami wspaniałego genetycznego dziedzictwa wyposażonymi w starożytny, poteżny sprzęt. Są najwierniejszymi sługami Imperatora i jego najlepszymi wojownikami. W przeciwieństwie do nieliczonych mas ludzkich żołnierzy, którzy giną w imię Imperatora, Szwadron Śmierci Straży jest cenną kadrą uderzeniową, której obecność może odwrócić losy bitwy i zmienić niszczycielską porażkę w chwalebne zwycięstwo. Ich wojna jest inna i kieruje się innymi zasadami.",
+        "Jednym z zadań Mistrza Gry jest ożywienie świata na użytek graczy i danie im szansy na wsławienie się w bitwie ku chwale Imperatora. Częścią tego osiągnięcia — i tchnięcia iskierki życia w grę ![bc]#Deathwatch# — jest zrozumienie motywów kierujących tym niepowtarzalnym światem."
+      ]
+    },
+    {
+      "type": "group",
+      "parentPath": "gm-evokingTheSetting",
+      "items": [
+        {
+          "name": "themesInDeathwatch",
+          "displayName": "Motywy w Deathwatch",
+          "content": [
+            "Uniwersum Warhammera 40.000 i osadzona w nim gra ![bc]#Deathwatch# różnią się od innych światów science fiction. By lepiej opisywać to uniwersum i wplatać jego szczególne cechy do swoich gier, Mistrz Gry powinien zaznajomić się z jego głównymi motywami. Umiejętność wykorzystania ich w grze pozwala porządnie osadzić ją w świecie 41. milenium i ułatwia graczom wejście w role swoich bohaterów.",
+            {
+              "title": "Jest tylko wojna",
+              "content": [
+                "Uniwersum Warhammera 40.000 rozdarte jest nieustającym konfliktem, w którym armie ludzkości staczają krwawe wojny, by utrzymać panowanie Imperatora w galaktyce. Całe światy i regiony kosmosu od dekad czy wieków nie zaznały niczego poza wojną i trudami, podczas których pokolenia żołnierzy wysyłane są na starożytne linie frontu, by umrzeć w służbie Imperatorowi, jak ich niezliczeni poprzednicy. Jest to tło wszystkich gier w ![bc]#Deathwatch#, gdzie toczące się kampanie, bitwy i krucjaty nie są wcale daleko od siedziby graczy, a wielkie tryby imperialnej machiny wojennej są widoczne w każdym miejscu, jako że wszędzie towarzyszą im niewyczerpane potoki zasobów: ludzi i wyposażenia, które płyną przez próżnię na front. W takim świecie urodzili się bohaterowie graczy; w miejscu pełnym krwi, prochu i śmierci, gdzie nie opuszcza ich świadomość, że wrogowie Imperatora łaknąć będą ludzkiej krwi długo po tym, gdy oni sami zostaną zapomniani."
+              ]
+            },
+            {
+              "title": "Bitewni bracia broni",
+              "content": [
+                "Adeptus Astartes to potężna braterska organizacja — prawdziwa rodzina ziomków—wojowników, z których każdy uczestniczy w genetycznym dziedzictwie swojego Prymarchy. Gdy Brat Bitewny wstąpi w szeregi Straży Śmierci, tę więź należy przekuć na nowo, a więc nawet nowo utworzony Szwadron Śmierci związany jest ze sobą w sposób nieosiągalny dla zwyczajnych imperialnych żołnierzy. Więź ta wykracza nawet poza Prymarchów i Zakony, aż do samego Imperatora, dziadka wszystkich Kosmicznych Marines i Pana Ludzkości. W przeciwieństwie do innych gier i światów bohaterowie graczy nie są posklejaną bandą włóczęgów i najemników zebraną przez przeznaczenie albo żądzę przygód, a kadrą wojowników powiązanych ze sobą pochodzeniem. Bycie Kosmicznym Marine oznacza ścisłe zrozumienie tego pochodzenia i jego implikacji, a także faktu, że wszyscy Bracia Bitewni są ziomkami, zjednoczonymi w służbie Imperatorowi przeciwko ciemności."
+              ]
+            },
+            {
+              "title": "Herosi z legend",
+              "content": [
+                "W tak rozdartym wojną miejscu jak galaktyka 41. milenium wojownicy zajmują w imperialnym społeczeństwie pozycję poważaną i szanowaną, czy są potężnymi pułkownikami Gwardii Imperialnej, czy mężnymi admirałami Marynarki Imperialnej, czy też uzdolnieni asasyni Inkwizycji. Żadni z nich nie mogą się jednak równać w bitewnej sprawności z Kosmicznymi Marines. Wojownicy ci wykazują się bohaterskimi czynami w obliczu miażdżącej przewagi dzięki poczuciu powinności wobec swoich braci, Zakonu i Imperatora. W przeciwieństwie do innych światów i gier, w ![bc]#Deathwatch# gracze wcielają się w potężnych herosów i wybranych synów od momentu, gdy zostaną oni stworzeni aż do drogiego sprzedanie swojego życia za Imperatora. Jest to ważne rozróżnienie, jako że życie Kosmicznego Marine nie może zostać zmarnowane w bezsensownych bitwach jak życie Gwardzisty czy członka Marynarki, a zamiast tego powinien on w krytycznym momencie odwrócić losy bitwy. Zarówno MG jak i gracze powinni mieć świadomość ważnej i świętej roli wypełnianej przez Adeptus Astartes w obronie Imperium, jak i tego, że Brat Bitewny ma być najwspanialszym z obrońców ludzkości i stawać naprzeciw jest najpotężniejszych wrogów."
+              ]
+            },
+            {
+              "title": "Naszą nagrodą powinność",
+              "content": [
+                "Kosmiczni Marines nie są jak zwykli ludzie, żądni złota, bogactwa i namiastki władzy. Ich kultura związana jest ze starożytnymi tradycjami wojowników i istnieje tylko dla czystości walki i wykonywania powinności wobec Imperatora. Każdy Brat Bitewny poszukuje jedynie chwały w bitwie i szansy na dopełnienie swojej służby Imperatorowi przez pokonywanie wrogów ludzkości. Choć wszyscy Bracia Bitewni byli kiedyś ludźmi, lata warunkowania i treningów, a także zmiany spowodowane przez genoziarno, w większości wyeliminowały takie małostkowe żądze bogactwa i władzy. W ich miejsce zaszczepiono jednak palące pragnienie chwały i prawo uhonorowania Imperatora w ogniu bitwy. W grze ![bc]#Deathwatch# wiele czynników normalnie motywujących graczy, takich jak zdobywanie bogactwa, zastąpione zostają przez to poczucie obowiązku i szanse na udowodnienie męstwa w walce. Jako Brat Bitewny gracz zdobywa wyróżnienia na polu bitwy, chwałę w oczach swojego Zakonu i może cieszyć się wypełnianiem swoich powinności wobec Imperatora przez niszczenie jego wrogów. Dzięki tym nagrodom bohterowie mogą rosnąć w siłę i sławę, zapisując się w historii jako wspaniali herosi Imperium."
+              ]
+            }
+          ]
+        },
+        {
+          "name": "howToRunADeathwatchAdventure",
+          "displayName": "Jak Rozegrać Przygodę w Deathwatch",
+          "content": [
+            "W ![bc]#Deathwatch# gracze wcielają się w elitarnych wojowników służących Imperatorowi, najprawdziwszych bogów wśród ludzi, zdolnych dzięki swojej sile, umiejętnościom i taktykom stawać naprzeciw hordom zwyczajnych wrogów. Status ten oznacza, że powierzane im są najbardziej niebezpieczne misje i najbardziej zabójczy wrogowie, jakim czoło stawia Imperium i że zostaną wysłani w miejsca, gdzie inni by nie przeżyli, nie mówiąc już o wykonaniu zadania. Prowadzi to do tego, że przygody, w których udział biorą Szwadrony Śmierci, skupiają się zwykle wokół walki. Jest to jednak tylko wierzchołek góry lodowej jeśli chodzi o rolę Straży i możliwości swojące otworem przed członkami jej uświęconych szeregów.",
+            "Wydawałoby się, że opcje gry dla genetycznie usprawnionych superżołnierzy z fanatycznym oddaniem swoim obowiązkom mogą być mocno ograniczające. Jednak, jak w przypadku wszystkich aspektów świata Warhammera 40.000, istnieją różne ścieżki, motywy i okoliczności, które można eksplorować. Misja może być prostym zadaniem znalezienia i zniszczenia szczególnie potężnego wroga, śmiałym ratunkiem ważnej osoby w trakcie pełnowymiarowej inwazji planetarnej, sekretnym zadaniem od Inkwizycji, w trakcie którego cele i identyfikacja wrogów nie jest tak prosta, jak zwykle, czy nawet osadzoną w niestabilnej sytuacji misją dyplomatyczną na obcy świat, gdzie Bracia Bitewni będą musieli zrobić wszystko co w ich mocy, by uniknąć rozlewu krwi.",
+            "Bycie Kosmicznym Marine to nie tylko bycie poteżnym i nieustraszonym wojownikiem. Chodzi również o obronę Imperium i rządów Imperatora, gdziekolwiek i jakkolwiek będzie trzeba."
+          ]
+        },
+        {
+          "name": "stylesOfPlay",
+          "displayName": "Style Rozgrywki",
+          "content": [
+            "Istnieje wiele stylów rozgrywki, które można zastosować w grze ![bc]#Deathwatch# i które stawiają nacisk na różne rodzaje przygód, które może chcieć prowadzić Mistrz Gry. Żaden z nich nie wyklucza wykorzystania pozostałych i można je dowolnie łączyć, jeśli tego wymaga fabuła obmyślana przez MG.",
+            {
+              "title": "Wybrańcy Imperatora",
+              "content": [
+                "Kosmicznych Marines można znaleźć, z powodu ich w tej sposób ukierunkowanej natury, tam, gdzie walka jest najbardziej zażarta. Bracia Bitewni, hodowani do walki i trenowani, by celować we wszystkich aspektach walki, łatwo dopasowują się do przygód skupionych na dużej ilości walki. Często są one jakimś rodzajem misji wojskowej, gdzie bohaterowie wysyłani są, by zniszczyć cele, wypełnić zadania i przynieść Imperatorowi chwałę przemożeniem jego wrogów. Choć zarówno ten militarny motyw, jak i idea elitarnej grupy wojowników wypełniającej specjalne rozkazy, ma wiele permutacji i wariantów, wszystkie łączy zadanie anihilacji przeciwnika, zwykle nawałnicą boltów i pocisków plazmowych. Gry o stylu militarnym czxęsto kładą nacisk na pojedyncze akcje i cele w większej całości. Gdy imperialna flota posyła z wysoka salwę za salwą, a siły Gwardii pokrywają zniszczony teren niczym rój owadów, Szwadron Śmierci przemyka między płomieniami i cieniami, by uderzyć w krytycznym miejscu i czasie. Na tle pyłu, krwi i zniszczenia Bracia Bitewni brodzą w pozostałościach rzezi odlegli i wyniośli, świadomi swojej unikalnej roli na polu bitwy. W takich grach bohaterowie mogą zostać porwani przez falę trwającej imperialnej kampanii i być wysyłanymi z jednego świata albo pola bitwy na drugie wedle kaprysów nieznanych dowódców i żądnych walki generałów. Mogą wtedy szturmować księżycowe platformy obronne, następnie zeskoczyć z niskiej orbity na pole walki w dżungli, by wreszcie zostać zabranymi przez kanonierkę Thunderhawk na desant po drugiej stronie planety.",
+                "Zaletą gier w stylu militarnym jest to, że łatwo je rozpocząć i zakończyć, jako że istnieją jedynie w ramach parametrów misji; mają także szkielet imperialnej machiny wojennej, który pozwala przetransportować, zaopatrzyć i odprawić bohaterów, oszczędzając im potrzeby szukania swojego własnego transportu czy zdobywania w jakiś sposób broni i amunicji mającej zastąpić stare.",
+                "Pomysły i koncepty na misje w tym stylu, jak i więcej szczegółów na temat pozycji Braci Bitewnych w imperialnej machinie wojennej znaleźć można w sekcji @gm{>creatingMissions}."
+              ]
+            },
+            {
+              "title": "Zaangażowanie Inkwizycji",
+              "content": [
+                "Choć siły Straży Śmierci należą do Adeptus Astartes, stanowią również zbrojne ramię Ordo Xenos. Są elitarną siłą imperialnej machiny wojennej, ale w strukturze Inkwizycji zajmują specjalne miejsce (tak jak Szarzy Rycerze) i poświęcają się całkowicie tępieniu konkretnego wroga Imperium. Gry związane z zaangażowaniem Inkwizycji prawrodopodobnie wiązać się będą z bardziej subtelnym podejściem i złożonymi detalami niż te, w których Szwadron stawia czoła wrogom ludzkości w otwartej bitwie. Mogą polegać na towarzyszaniu Inkwizytorowi i jego sługom w głębinach świata–ula, w zapomnianych i starożytnych ruinach obcych, czy w mrocznych korytarzach kosmicznego wraku, daleko od wsparcia zapewnianego przez armie Imperium, gdzie Szwadron może polegać tylko na własnych umiejętnościach, by ochronić sprzymierzeńców. Nawet najbardziej arogancki Inkwizytor wie jednak, że wniosek do Mistrza Straży o pomoc Szwadronu to nie błahostka. Jeśli Bracia Bitewni dołączą do takiej misji, mogą być pewni, że Inkwizytor i jego świta liczą na ich siłę. Innym interesującym aspektem współpracy z Inkwizycją jest tworzona przez nią aura moralnej szarości, przez którą Bracia będą musieli rozmyślać nad swoimi poglądami, a nawet nad interpretacją woli Imperatora.",
+                "Zaletą gry z zaangażowaniem Inkwizycji jest to, że gra taka pozwala MG i graczom na eksplorowanie bardziej mrocznych i ukrytych aspektów Imperium, a także na lepsze zrozumienie swojej roli jako ostrza Ordo Xenos.",
+                "Więcej informacji na temat roli Inkwizycji w Straży Śmierci zawarto w ![b]#Rozdziale XII: Straż Śmierci#."
+              ]
+            },
+            {
+              "title": "Posłańcy, emisariusze, zabójcy",
+              "content": [
+                "Rozmiar, umiejętności i elastyczność Szwadronu Śmierci powodują, że znajdują się oni często w sytuacjach unikalnych z perspektywy Astartes. Często mogą zostać wysłani z woli Mistrza albo Inkwizycji jako posłańcy na zagubiony imperialny świat, a nawet do jakiegoś dominium obcych — sami albo jako część świty imperialnego emisariusza. Może to służyć różnym celom, takim jak pokaz siły, utrzymanie pomniejszych sług Imperium w szeregu, czy uhonorowanie sojusznika obecnością reprezentantów Adeptus Astartes. Bracia Bitewni muszą używać języków, nie bolterów, by wpływać na takie sytuacje.",
+                "Równie dobrze Szwadron może znaleźć się na rubieżach Imperium, zwłaszcza na granicach z agresywnymi rasami obcych. Wysadzani są na słabych światach i mogą przekonać lokalną populację ludzi do walki przeciwko kłamstwom i inwazjom obcych. Gdzie armia może zawieść, mała grupa Kosmicznych Marines często wiele zmieni. Tak jak nawet pojedynczy Marine może podnieść świat na duchu i dodać mieszkańcom odwagi, tak może zniszczyć ich wszystkich. Szwadrony mogą działać przez całe miesiące i lata bez wsparcia na światach obcych albo światach Imperium skażonych ich obecnością, siejąc okropne zniszczenie. Zakuci w czarne pancerze giganci wyłaniają się z mroku niczym stwory z koszmarów, uderzają w przywódców i infrastrukturę wojskową, bez znużenia doprowadzając cywilizację do upadku pod ciężarem własnego lęku i zmieszania.",
+                "Gry, w których Bracia Bitewni stają się posłańcami, emisariuszami, czy zabójcami, tworzą doświadczenie inne niż misje czysto militatne i oferują wyzwanie dla Szwadronu, który musi wypełnić swoje cele bez używania bolterów i piłomieczy... Przynajmniej nie od razu."
+              ]
+            }
+          ]
+        },
+        {
+          "name": "theRoleOfTheKillTeam",
+          "displayName": "Rola Szwadronu",
+          "content": [
+            "W grze Deathwatch bohaterowie tworzą niewielką jednostkę bojową, zwaną Szwadronem Śmierci. Szwadron jest elitarną formacją wojskową, która zajmuje ważne miejsce w szeregach Straży Śmierci, Inkwizycji i całej machiny wojennej Imperium. Dla MG Szwadron jest też narzędziem, dzięki któremu może wpasować grupę graczy w sztywną strukturę Adeptus Astartes, jednocześnie zapewniając im niemało autonomii i wolności. Ta niespotykana elastyczność może pozwolić im na obieranie własnych ścieżek do wykonania celów, a nawet zawieszenia misji na jakiś czas, by zająć się czymś ważniejszym bez groźby nieuniknionego sądu wojskowego i karnej egzekucji.",
+            "Szwadrony otrzymują specjalne misje, a sam Szwadron również jest specjalny; składający się na niego członkowie wybrani są ze względu na niezależność i zaradność."
+          ]
+        },
+        {
+          "name": "nonPlayerCharacters",
+          "displayName": "Bohaterowie Niezależni",
+          "content": [
+            "MG, jako część roli nadawania życia światowi i sędziowania działań graczy, zajmuje się również kontrolowaniem zachowania bohaterów, których napotykają BG. Ci Bohaterowie Niezależni (BN) są nieodłączną cześcią wszystkich rozgrywek. BN mogą być zaufanymi sojusznikami, takimi jak Bracia Bitewni i członowie Straży Śmierci, ale również rozpoznawalnymi na pierwszy rzut oka wrogami, jak żądne krwi Orki, czy spaczeni czciciele Chaosu. Kontrolowanie wrogów jest zwykle proste, jako że najczęściej spotyka się ich w walce, gdzie ich reakcjami kierują zasady dotyczące walki. Szczegóły dotyczące powszechnie spotykanych wrogów, a także ich możliwości i używanych taktyk, znaleźć można w ![bc]#Rozdziale XIII: Adwersarze# (@adversary{<}).",
+            {
+              "title": "Wskazówki do prowadzenia BN",
+              "content": [
+                "Choć każdy BN będzie inny i można rozgrywać go z niepowtarzalnym stylem, istnieje kilka wskazówek, na które MG powinien zwrócić uwagę. Mają one za zadanie pomóc MG w sytuacji, gdzie nie jest on pewny, jak BN zareagowałby na zachowanie czy słowa bohaterów graczy.",
+                {
+                  "type": "list",
+                  "style": "unordered",
+                  "content": [
+                    {
+                      "title": "Motywacja:",
+                      "content": "Najważniejszym aspektem prowadzenia jakiegokolwiek BN jest wiedza, co go motywuje. Inkwizytor współpracujący ze Szwadronem zareaguje zupełnie inaczej na czyny grupy, jeśli tak naprawdę jest knującym ich zgubę sługą Niszczycielskich Potęg. Imperialny dowódca pchany żądzą chwały (kosztem swoich podwładnych) może wydać rozkazy, czy podjąć lekkomyślne decyzje, przez które Szwadron znajdzie się w niebezpieczeństwie. Motywacje większości BN nie muszą być zbyt złożone i zwykle skupiają się wokół jednego celu, samolubnego albo altruistycznego, takiego jak bogactwo, chwała, lojalność, czy wiara w Imperatora. Liczy się, że motywacja daje MG lepszy obraz tego, jak BN zareaguje w nieprzewidzianej sytuacji (a takie zdarzają się zawsze)."
+                    },
+                    {
+                      "title": "Nie wszyscy chcą umrzeć:",
+                      "content": "Tak jak w rzeczywistości, większość ludzi żyjących w 41. milenium nie chce umierać. Oznacza to, że sporo wrogów będzie uciekać — zwłaszcza ci bez doświadczenia w boju. Inni nie będą walczyć do ostatniego tchu i zamiast tego poddadzą się Szwadronowi zamiast mierzyć się z niehybną zagładą. Nawet wrogowie nie bojący się śmierci, tacy jak fanatyczni wyznawcy Chaosu i słudzy obcych, mogą w pewnych sytuacjach sprzedać swoje życia, jako że tylko głupiec byłby ślepy na potęgę Szwadronu Śmierci. Ci wrogowie wycofają się, ukryją, a może nawet fałszywie się poddadzą, by dłużej móc służyć swoim panom."
+                    },
+                    {
+                      "title": "Reflektory na graczy:",
+                      "content": "Choć czasem ważnym jest, by BN wtrącił się i pomógł albo uratował BG, to raczej gracze powinni decydować o sukcesie i porażce swoich misji. Obecność potężnego BN ciągle ratującego BG zwykle prowadzi do niezadowolenia ze strony graczy, którzy zaczynają uważać, że ich wysiłki nie mają znaczenia, albo do zbytniej zależności od takiego BN i uciekania do niego, gdy tylko sytuacja robi się trudniejsza. Gracze powinni czuć, że zasługi ich Braci Bitewnych są owocem ich własnych czynów i wyborów, a zdobyta chwała należy tylko do nich."
+                    },
+                    {
+                      "title": "Imiona:",
+                      "content": "Warto dodać, że stworzenie listy powszechnych imion może być bardzo przydatne. Świat każdej gry zaludniony jest przez niezliczonych pomniejszych BN, których gracze mogą napotkać, a nadawanie im imion pomaga tchnąć w nich życie."
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "NPCBattleBrothers",
+          "displayName": "Bracia Bitewni—BN",
+          "content": [
+            "Unikalnym rodzajem BN, który gracze często mogą napotkać, są inni Kosmiczni Marines, czy to należący do Straży Śmierci, czy do innych Zakonów Adeptus Astartes. Wszyscy Kosmiczni Marines czują pewną więź (nawet jeśli za sobą nie przepadają), która oddziela ich od reszty ludzkości. Choć Brat Bitewny mógłby tolerować pewne zachowanie albo czyny u normalnego człowieka (niezależnie od jego pozycji), inaczej patrzyłby na robiącego to samo Kosmicznego Marine, którego uważa za równego sobie. Członkowie Zakonu, do którego należy dany BG, jeszcze mocniej przejawiają to zachowanie — uważają go za część rodziny i w ten sposób reagują na interakcje z nim. MG powinien rozważyć, jak zareagują natpotykani Bracia Bitweni — czy spotkanie nastąpi na polu bitwy, czy podczas odprawy."
+          ]
+        },
+        {
+          "name": "theImperialWarMachine",
+          "displayName": "Imperialna Machina Wojenna",
+          "content": [
+            "Prawdopodobnie najbardziej znaczącą grupą BN, z którą gracze regularnie się zadają, są członkowie ich Zakonu, Gwardii Imperialnej i Marynarki Imperialnej, a także ogólnie reprezentanci Imperium. Ci BN zbiorowo nazywani są imperialną machiną wojenną i stanowią twarz wszechobecnego, podległego Imperatorowi behemota wojny przetaczającego się przez galaktykę. Imperialna machina wojenna różni się od innych BN, których spotykają Bracia Bitewni, jako że często będą oni współpracować z nimi; pod ich dowództwem, dowodząc nimi, czy działając na równi, a ich cele często są zbieżne. Bracia Bitewni z pewnością zaczną zmieniać swoje nastawienie do pewnych gałęzi sił zbrojnych Imperium, gdy te raz po raz będą wchodzić im w drogę, równie często jak bezpośrednio im pomagać.",
+            "Imperialna machina wojenna jest łatwa do ożywienia — wystarczy myśleć po wojskowemu o jej działaniu i członkach. Tak jak w rzeczywistości wojska Imperium stanowią labirynt rozkazów, procedur i protokołów. Wszystko trzeba zrobić w dokładnie określonej kolejności; wszystkim rządzi nadrzędnie łańcuch dowodzenia. Różni dowódcy mają różną władzę w zależności od teatru zmagań, przez co różne gałęzie tej machiny, takie jak Marynarka, Gwardia i Adeptus Astartes, rzadko współpracują bez zgrzytów."
+          ]
+        }
+      ]
+    },
+    {
+      "type": "section",
+      "name": "rewardsTheMarkOfDuty",
+      "displayName": "Nagrody: Wedle Powinności",
+      "display": ["description", "items"],
+      "parentPath": "gm",
+      "noGrid": true,
+      "content": [
+        "%quote{Moje życie należy do Imperatora; jemu zawdzięczam wszystko, co osiągnę.|fragment „Przysięgi wojowników Imperatorowi”}",
+        "Bracia Bitewni nie walczą tylko dla przyjemności czerpanej z walki — walczą dla Imperatora i za szansę zdobycia w jego imię chwały. Właśnie przez swoją służbę otrzymują nagrody, rosnąc w siłę i sławę. Nagrody stanowią narzędzie, dzięki któremu MG może zaoferować graczom coś namacalnego za podejmowane przez nich wysiłki. Są także czymś, do czego gracze mogą, wraz ze swoimi bohaterami, aspirować. Istnieje kilka rodzajów nagród, które gracze mogą otrzymać, w tym Punkty Doświadczenia, Przeznaczenie i Sława."
+      ]
+    },
+    {
+      "type": "group",
+      "parentPath": "gm-rewardsTheMarkOfDuty",
+      "items": [
+        {
+          "name": "experiencePoints",
+          "displayName": "Punkty Doświadczenia",
+          "content": [
+            "Najbardziej powszechną formą nagrody są Punkty Doświadczenia (PD). PD bardziej niż wszystko inne świadczą o sile danego bohatera. Gracze mogą wykorzystać Punkty Doświadczenia, by zakupić nowe Umiejętności, Talenty i Rozwinięcia. Im więcej PD ma bohater, tym lepszy staje się w radzeniu sobie z wyzwaniami podczas rozgrywki, takimi jak walka, rozwiązywanie problemów i sytuacje socjalne. Ponieważ PD mają bezpośredni związek z siłą bohaterów, liczba wydawanych Punktów Doświadczenia i jak często MG wydaje je swoim graczom, wyznacza jak szybko ich bohaterowie urosną w siłę i przystosują się do pokonywania przeszkód.",
+            "Istnieją dwa główne sposoby przyznawania doświadczenia graczom: metoda abstrakcyjna i metoda szczegółowa.",
+            {
+              "title": "Metoda abstrakcyjna",
+              "content": [
+                "Ta metoda przyznawania Punktów Doświadczenia jest zdecydowanie najłatwiejsza i poleca się ją zwłaszcza początkującym MG. Opiera się ona bezpośrednio na czasie spędzonym na rozgrywce i zapewnia jednostajne tempo rozwoju bohaterów. Za każdą sesję gry każdy z graczy powinien otrzymać 500 PD. Zakłada się tu sesję o długości około 4 godzin; przy sesjach krótszych albo dłuższych MG może odpowiednio zmienić wymiar nagrody."
+              ]
+            },
+            {
+              "title": "Metoda szczegółowa",
+              "content": [
+                "Można użyć bardziej dokładnej metody przyznawania Punktów Doświadczenia. W tym przypadku każda nagroda obliczana jest osobno, a gracze otrzymują Punkty Doświadczenia za wypełnianie konkretnych zadań. W tym celu MG musi przyznać każdemu starciu pewną wartość. Na przykład sesja może składać się z niebezpiecznego desantu kapsułą na wrogim terytorium, bitwy przeciwko tyranidzkiemu Liktorowi i negocjacji z paranoicznymi imperialnymi osadnikami. W tym przypadku każda z tych trzech scen warta byłaby konkretną liczbę PD, które gracze otrzymują po jej zakończeniu.",
+                "Tabela @table{encounterDifficulty} zawiera przykłady trudności starć. By ocenić trudność starcia, należy wziąć pod uwagę, jak wiele kosztuje ono grupę w potencjalnie odniesionych obrażeniach, zużytych zasobach i czasie.",
+                "Przy używaniu tej metody należy pamiętać, że Punkty Doświadczenia przyznaje się tylko za pokonywanie znaczących dla fabuły przeszkód — gracze nie mogą zdobyć doświadczenia zwyczajnie mordując całe populacje. Podobnie gdy bohaterowie graczy rosną w siłę, pewne zadania nie będą stanowiły już dla nich wyzwania i nie przyniosą Punktów Doświadczenia.",
+                "%table{encounterDifficulty}"
+              ]
+            },
+            {
+              "title": "Misje i doświadczenie szczegółowe",
+              "content": [
+                "Jeszcze inną metodą przyznawania Punktów Doświadczenia jest powiązanie ich z Celami Misji. Jeśli MG używa w swojej grze Misji, może przypisać nagrodę PD do każdego Celu, rozważając jego ważność i trudność, używając tabeli @table{detailedExperienceForMissions}. By obliczyć wartość pojedynczego Celu, trzeba dodać PD za jego ważność (główny, poboczny, dodatkowy) i trudność (nowicjusza, adepta, weterana). Więcej informacji na temat tworzenia Misji i Celów można znaleźć w sekcji @gm{>creatingMissions}.",
+                "%example{Wykonanie Celu Dodatkowego Adepta warte będzie 200 PD (Adept=50 + Dodatkowy=150).}",
+                "%table{detailedExperienceForMissions}"
+              ]
+            },
+            {
+              "title": "Nagrody za odgrywanie",
+              "content": [
+                "MG może przyznać Punkty Doświadczenia za dobre odgrywanie postaci. Nagrody te mogą być tak duże lub małe, jak MG uzna za słuszne i sprawiedliwe, zwykle pomiędzy 100 i 500 PD, i otrzymują je gracze, którzy w oczach MG dobrze odegrali swoje postacie — na przykład odgrywając konsekwencje rywalizacji między Zakonami. MG powinien jednak być ostrożny i przyznawać te nagrody tylko wtedy, kiedy są naprawdę zasłużone, zwykle kiedy gracz zrobi coś wykraczającego poza normę, na przykład podejmie działanie, przez które jego bohater znajdzie się w niebezpieczeństwie, bo „tak zrobiłby mój bohater”."
+              ]
+            }
+          ]
+        },
+        {
+          "name": "renownRewards",
+          "displayName": "Nagrody w Sławie",
+          "content": [
+            "Bohaterowie mogą otrzymać nie tylko Punkty Doświadczenia, ale i Punkty Sławy. Są one miarą reputacji bohatera w Straży Śmierci i poważania, jakim darzą go inni — zwykle z powodu chwały zdobytej w bitwie. Im większa Sława bohatera, tym więcej ekwipunku, uzbrojenia i przysług Zakon mu przyzna, co predstawia ![b]#Rozdział V: Zbrojownia#. Sławę najczęściej można zdobyć jako nagrodę za wypełnianie misji.",
+            "Brat Bitewny za każdą misję, której się podejmie, powinien otrzymać:",
+            {
+              "type": "list",
+              "style": "unordered",
+              "content": [
+                "1 Punkt Sławy za wypełnienie wszystkich Celów Głównych;",
+                "1 Punkt Sławy za wypełnienie wszystkich Celów Pobocznych;",
+                "1 Punkt Sławy za wypełnienie wszystkich Celów Dodatkowych;",
+                "1 Punkt Sławy za wypełnienie co najmniej pięciu dowolnych Celów;",
+                "1 Punkt Sławy za wypełnienie co najmniej trzech Celów Weterana."
+              ]
+            },
+            "Oczywiście MG może przyznać Sławę w dowolnym momencie za akty pokazujące męstwo bohatera lub stawiające go w heroicznej roli, na przykład za pokonanie samemu potężnego wroga albo uratowanie całego Szwadronu przed niechybną śmiercią. Generalnie takie nagrody powinny mieścić się w przedziale od 1 do 3 Punktów Sławy i nie powinno się ich przyznawać częściej niż raz na sesję gry."
+          ]
+        },
+        {
+          "name": "awardingFatePoints",
+          "displayName": "Przyznawanie Punktów Przeznaczenia",
+          "content": [
+            "MG może również nagrodzić graczy permanentnym Punktem Przeznaczenia za dokonanie naprawdę niesamowitych czynów. Takie nagrody należy jednak wykorzystywać rzadko i przyznawać je tylko za wspaniałe dokonania. Przeznaczenie jest rzadkim zasobem w grze i nie powinno być lekceważone."
+          ]
+        },
+        {
+          "name": "whenToUseRewards",
+          "displayName": "Kiedy Przyznać Nagrody",
+          "content": [
+            "Większość nagród przyznaje się na końcu sesji gry, kiedy MG może podsumować dokonania BG. Jeżeli MG chce, może jednak poczekać do początku kolejnej sesji, by dokładniej określić konsekwencje czynów BG w czasie pomiędzy rozgrywkami. Niektóre nagrody można przyznawać w czasie gry, ponieważ wprowadzają natychmiastową zmianę."
+          ]
+        },
+        {
+          "name": "heroicSacrificeAndHarvestingGeneSeeds",
+          "displayName": "Heroiczne Poświęcenie i Zbieranie Genoziarna",
+          "content": [
+            "Bywa, że bohaterowie umierają, jednak to natura ich śmierci może przynieść im sławę. Jest to szczególnie prawdziwe w przypadku Kosmicznych Marines, których życia w służbie Imperium zawsze sprzedawane są drogo.",
+            "Gdy gracz wykona @rule{heroicSacrifice} i jego bohater umrze, MG może nagrodzić go (jeśli wyróżnił się i oddał życie w szlachetnej sprawie w służbie Imperatorowi) przyznając mu dodatkowe PD dla jego następnego bohatera w liczbie 200 PD za Rangę martwego bohatera. Dolicza się to do innego początkowego Doświadczenia, takiego jak PD wymagane do zrównania nowego bohatera Rangą z resztą Szwadronu.",
+            "Kiedy bohater umrze, jego Bracia Bitewni muszą zebrać jego genoziarno i zwrócić je jego Zakonowi (patrz @skill{medicae} w ![b]#Rozdziale III: Umiejętności#). Jeśli im to się uda, nowy Brat Bitewny tego gracza otrzymuje dodatkowy Punkt Przeznaczenia i +5 do jednej Charakterystyki. Dodatkowo otrzymuje PD i Sławę, które zdobyłby kończąc Misję, w trakcie której zginął jego poprzedni bohater.",
+            "Zaznaczyć należy, że bohater, który dokona Heroicznego Poświęcenia, a jego genoziarno zostanie zebrane, otrzymuje obie te premie. MG może oczywiście zmienić wymiar którejś z nich albo całkowicie je zmienić, przyznając inne premie, takie jak Talenty, Cechy, czy dodatkową Sławę."
+          ]
+        },
+        {
+          "name": "honoursRewardsOfGreatImport",
+          "displayName": "Wyróżnienia: Najważniejsze z Nagród",
+          "content": [
+            "Istnieje wiele specjalnych nagród i wyróżnień, które Kosmiczny Marine może zdobyć w trakcie służby. Nie otrzymuje on takiego wyróżnienia po prostu; musi zasłużyć na nie męstwem i znaczącymi czynami. Oczywiście musi zdobyć również sporą ilość Sławy. Poniżej zamieszczono wskazówki co do czynów, które można uznać za warte wyróżnienia:",
+            {
+              "type": "list",
+              "style": "unordered",
+              "content": [
+                "Samodzielnie zajął się potężnym przeciwnikiem (np. Księciem Demonów, Tyranem Roju);",
+                "Dokonał czynu, który zmienił znacząco przebieg bitwy (np. obronił most przed nadciągającą hordą, pokonał wrogiego dowódcę w pojedynku);",
+                "Znacząco wyróżnił się honorem i odwagą (np. nosił Sztandar Kompanii w dwunastu starciach, służył wzorowo przez sześć dekad);",
+                "Samodzielnie wypełnił ważny cel, który był krytyczny dla zakończenia misji;",
+                "Uratował całą resztę Szwadronu przed niebezpieczeństwem."
+              ]
+            },
+            "Decyzję o nadaniu wyróżnienia podejmuje zwykle MG. Alternatywnym sposobem może być nieformalne głosowanie wśród graczy, który z nich najbardziej zasługuje na wyróżnienie. Tak ważna decyzja powinna wymagać jednogłośności.",
+            "Niektóre z wyróżnień, które można nadać, to Imperialny Laur, Wyróżnienie Strzeleckie i Pieczęć Czystości. Premie zapewniane przez takie wyróżnienia i dokładne zasady co do ich przyznawania wykraczają poza zakres tego podręcznika, ale opublikowane zostaną w przyszłym dodatku. Poniżej zamieszczono przykład takiego wyróżnienia.",
+            {
+              "title": "Crux Terminatus",
+              "content": [
+                "Kosmiczny Marine, który znacznie się wyróżni, może otrzymać jedno z najważniejszych wyróżnień w strukturze Adeptus Astartes. Znane jest ono jako Crux Terminatus i oznacza nie tylko, że Marine jest doświadczonym weteranem z historią wielu heroicznych czynów, ale też że otrzymał trening niezbędny do używania starożytnych zestawów Pancerza Terminator, które zarezerwowane są dla takich herosów. Crux Terminatus nosi się jako odznakę na pancerzu Marine. Ma on kształt czaszki umieszczonej wewnątrz krzyża, często ozdobionej dodatkowo kośćmi czy piorunami. Ten sam symbol wkomponowany jest w jeden z naramienników każdego zestawu Pancerza Terminator i mówi się, że zawiera maleńki fragment niezrównanego pancerza noszonego przez samego Imperatora. Więcej informacji na temat @armour{terminator|Pancerza Terminator} można znaleźć na stronie 164. Kosmiczny Marine musi mieć co najmniej 60 Punktów Sławy, by być rozważanym do otrzymania tego wyróżnienia."
+              ]
+            }
+          ]
+        }
+      ]
+    },
+
     {
       "type": "section",
       "name": "vehicles",
@@ -20590,7 +20930,7 @@
         {
           "class": "melee",
           "name": "chainsword",
-          "displayName": "miecz łańcuchowy",
+          "displayName": "Piłomiecz",
           "damage": {
             "formula": "2k10dl1+2",
             "type": "rending",
@@ -20651,7 +20991,7 @@
         {
           "class": "melee",
           "name": "dreadnoughtChainfist",
-          "displayName": "Rękawica Łańcuchowa Drednota",
+          "displayName": "Piłorękawica Drednota",
           "damage": {
             "formula": "3k10dl1+8",
             "type": "rending",
@@ -27648,6 +27988,88 @@
           "magnitude": "120+",
           "size": "Tytaniczny (+60)",
           "content": "Wściekła fala wrogów"
+        }
+      ]
+    },
+    {
+      "type": "table",
+      "name": "encounterDifficulty",
+      "displayName": "Trudność Starcia",
+      "index": {
+        "chapter": 9,
+        "number": 1
+      },
+      "table": {
+        "difficulty": "Trudność",
+        "xp": "Nagroda PD"
+      },
+      "content": [
+        {
+          "difficulty": "Łatwe",
+          "xp": 50
+        },
+        {
+          "difficulty": "Rutynowe",
+          "xp": 70
+        },
+        {
+          "difficulty": "Zwyczajne",
+          "xp": 100
+        },
+        {
+          "difficulty": "Przeciętne",
+          "xp": 130
+        },
+        {
+          "difficulty": "Wymagające",
+          "xp": 170
+        },
+        {
+          "difficulty": "Trudne",
+          "xp": 200
+        },
+        {
+          "difficulty": "Bardzo Trudne",
+          "xp": 250
+        }
+      ]
+    },
+    {
+      "type": "table",
+      "name": "detailedExperienceForMissions",
+      "displayName": "Szczegółowe Doświadczenie za Misje",
+      "index": {
+        "chapter": 9,
+        "number": 2
+      },
+      "table": {
+        "difficulty": "Cel/Trudność",
+        "xp": "Nagroda PD"
+      },
+      "content": [
+        {
+          "difficulty": "Każdy Cel Główny",
+          "xp": 300
+        },
+        {
+          "difficulty": "Każdy Cel Poboczny",
+          "xp": 150
+        },
+        {
+          "difficulty": "Każdy Cel Dodatkowy",
+          "xp": 50
+        },
+        {
+          "difficulty": "Każdy Cel Weterana",
+          "xp": 100
+        },
+        {
+          "difficulty": "Każdy Cel Adepta",
+          "xp": 50
+        },
+        {
+          "difficulty": "Każdy Cel Nowicjusza",
+          "xp": 25
         }
       ]
     }
