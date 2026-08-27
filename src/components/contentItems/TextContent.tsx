@@ -98,6 +98,11 @@ function TextContent({ content }: { content: ContentItem[] | ContentItem }) {
             "paragraph col-span-1 md:col-span-2 lg:col-span-3 xl:col-span-4 text-justify @container"
           }
         >
+          {e?.heading && (
+            <h4 className="text-xl pb-2 relative after:w-full after:h-px after:absolute after:bottom-1 after:bg-current after:left-0 after:right-0 text-center">
+              {e.heading}
+            </h4>
+          )}
           {e?.title && (
             <>
               <strong className="font-bold">

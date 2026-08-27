@@ -1,6 +1,10 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "$defs": {
+    "diceString": {
+      "type": "string",
+      "pattern": "^(?:[\\+-]?(?:\\d*[kd]\\d+(?:[kd][hl]\\d+)?|\\d+))+$"
+    },
     "characteristic": {
       "oneOf": [
         {
@@ -759,15 +763,13 @@
               "type": "object",
               "description": "the weapon's damage",
               "properties": {
-                "formula": {
-                  "type": "string",
+                "formula": { 
                   "description": "the dice string to roll for damage",
-                  "pattern": "^(?:[\\+-]?(?:\\d*[kd]\\d+(?:[kd][hl]\\d+)?|\\d+))+$"
+                  "$ref": "#/$defs/diceString"
                 },
                 "display": {
-                  "type": "string",
                   "description": "the dice string that will be displayed",
-                  "pattern": "^(?:[\\+-]?(?:\\d*[kd]\\d+(?:[kd][hl]\\d+)?|\\d+))+$"
+                  "$ref": "#/$defs/diceString"
                 }
               },
               "patternProperties": {
@@ -979,6 +981,10 @@
               {
                 "type": "string",
                 "const": "group"
+              },
+              {
+                "type": "string",
+                "const": "table"
               }
             ]
           }
@@ -988,7 +994,7 @@
     "rollTable": {
       "title": "rollable table",
       "type": "object",
-      "description": "just a table",
+      "description": "a table that allows random retrieval of results",
       "properties": {
         "name": {
           "type": "string"
@@ -999,16 +1005,18 @@
         "table": {
           "type": "object"
         },
+        "formula": {
+          "description": "if absent, d100 will be used",
+          "$ref": "#/$defs/diceString"
+        },
         "content": {
           "type": "array",
           "items": {
             "type": "object",
-            "description": "an item in a rollable table",
+            "description": "an item in the rollable table",
             "properties": {
               "match": {
                 "type": "number",
-                "minimum": 1,
-                "maximum": 100,
                 "description": "used if the item corresponds to exactly one roll result"
               },
               "range": {
@@ -1017,19 +1025,16 @@
                 "properties": {
                   "min": {
                     "type": "number",
-                    "minimum": 1,
-                    "maximum": 100,
-                    "description": "the range start. if not found, will be assumed as 1"
+                    "description": "the range start"
                   },
                   "max": {
                     "type": "number",
-                    "minimum": 1,
-                    "maximum": 100,
-                    "description": "the range end. if not found, will be assumed as 100"
+                    "description": "the range end"
                   }
                 }
               }
-            }
+            },
+            "unevaluatedProperties": true
           }
         },
         "index": {
@@ -1067,7 +1072,10 @@
         "rollable": {
           "type": "boolean",
           "const": true
-        }
+        },
+        "source": {
+        "type": "string"
+      }
       },
       "patternProperties": {
         "^type$": {
@@ -1075,13 +1083,22 @@
           "const": "table"
         }
       },
-      "required": ["type", "name", "content", "table", "rollable"],
+      "required": ["type", "name", "table", "rollable"],
       "unevaluatedProperties": false
     },
     "table": {
       "title": "table",
       "type": "object",
       "description": "just a table",
+      "not": {
+        "properties": {
+          "rollable": {
+            "type": "boolean",
+            "const": true
+          }
+        },
+        "unevaluatedProperties": false
+      },
       "properties": {
         "name": {
           "type": "string"
@@ -1095,7 +1112,8 @@
         "content": {
           "type": "array",
           "items": {
-            "type": "object"
+            "type": "object",
+            "unevaluatedProperties": true
           }
         },
         "index": {
@@ -1129,6 +1147,9 @@
               }
             ]
           }
+        },
+        "source": {
+          "type": "string"
         }
       },
       "patternProperties": {
@@ -1137,7 +1158,7 @@
           "const": "table"
         }
       },
-      "required": ["type", "name", "content", "table"],
+      "required": ["type", "name", "table"],
       "unevaluatedProperties": false
     },
     "descItem": {
@@ -1173,7 +1194,7 @@
               "const": "list"
             }
           },
-          "required": ["type", "style", "content"]
+          "required": ["type", "style"]
         },
         {
           "type": "object",
@@ -1243,6 +1264,10 @@
             "title": {
               "type": "string",
               "description": "the title that will be displayed in bold"
+            },
+            "heading": {
+              "type": "string",
+              "description": "a bigger heading to be inserted. can be used with TITLE"
             },
             "content": {
               "description": "the actual content",

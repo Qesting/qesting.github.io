@@ -442,7 +442,7 @@
               "title": "Zależy od:",
               "content": "${insertLinkTo:characteristic|section=characteristic}"
             },
-            "Spostrzegawczość reprezentuje podświadomą zdolność Bohatera do reagowania na rzeczy, na które może nie zwracać uwagi jego świadomość. Użyć można jej do zauważenia zagrożeń (zasadzek, pułapek, kreatywnie ukrytych obiektów) czy drobnych zmian w otoczeniu (takich jak delikatne wibracje wywoływane przez Orkowego Rozgniatacza albo okropny smród Gospodarza Demonów). Przy używaniu Spostrzegawczości przeciwko komuś Test zawsze jest Przeciwstawny. Robi się tak przy zauważaniu zasadzek, pułapek i innych rzeczy związanych z akcjami innych. Zauważanie czynników środowiskowych jak zapachy czy ruch jest Testem Standardowym.",
+            "Spostrzegawczość reprezentuje podświadomą zdolność Bohatera do reagowania na rzeczy, na które może nie zwracać uwagi jego świadomość. Użyć można jej do zauważenia zagrożeń (zasadzek, pułapek, kreatywnie ukrytych obiektów) czy drobnych zmian w otoczeniu (takich jak delikatne wibracje wywoływane przez Orkowego Rozgniatacza albo okropny smród Opętańca). Przy używaniu Spostrzegawczości przeciwko komuś Test zawsze jest Przeciwstawny. Robi się tak przy zauważaniu zasadzek, pułapek i innych rzeczy związanych z akcjami innych. Zauważanie czynników środowiskowych jak zapachy czy ruch jest Testem Standardowym.",
             {
               "title": "Używane Jako:",
               "content": "Akcja Darmowa w reakcji na coś."
@@ -11678,7 +11678,7 @@
               "title": "podtrzymywana:",
               "content": "Tak"
             },
-            "Kapłan Run przyzywa duchy Wilków Grzmotu, Frekiego Zajadłego i Geri Przebiegłej, napuszczając je na swoich wrogów. Dopóki Moc jest podtrzymywana, po obu stronach Kapłana stają widmowe wilki słuchające jego słownych poleceń do ataku. Nie mogą one zostać zaatakowane ani pochwycone, ale też nie mogą wyjść poza zasięg Mocy. W każdej Rundzie, w Turze Kronikarza, każdy z wilków może wykonać jeden atak wręcz przeciwko dowolnemu znajdującemu się w zasięgu przeciwnikowi (przysuwając się w jego stronę automatycznie — nie podlegają one zasadom narzucanym przez ukształtowanie terenu). Każdy ich atak, który nie zostanie @action{dodge|uniknięty} ani @action{parry|sparowany}, automatycznie trafia. Ataki Frekiego zadają @dice{1k10} \u00d7 PM Obrażeń Rozrywających, a Geri @dice{1k5} \u00d7 PM Obrażeń Rozrywających z Penetracją 3 \u00d7 PM. Każdy cel, który otrzyma Obrażenia od tych ataków musi natychmiast rzucić w tabeli @table{shock} z modyfikatorem równym otrzymanym Obrażeniom."
+            "Kapłan Run przyzywa duchy Wilków Grzmotu, Frekiego Zajadłego i Geri Przebiegłej, napuszczając je na swoich wrogów. Dopóki Moc jest podtrzymywana, po obu stronach Kapłana stają widmowe wilki słuchające jego słownych poleceń do ataku. Nie mogą one zostać zaatakowane ani pochwycone, ale też nie mogą wyjść poza zasięg Mocy. W każdej Rundzie, w Turze Kronikarza, każdy z wilków może wykonać jeden atak wręcz przeciwko dowolnemu znajdującemu się w zasięgu przeciwnikowi (przysuwając się w jego stronę automatycznie — nie podlegają one zasadom narzucanym przez ukształtowanie terenu). Każdy ich atak, który nie zostanie @action{dodge|uniknięty} ani @action{parry|sparowany}, automatycznie trafia. Ataki Frekiego zadają @dice{1k10} \u00d7 PM Obrażeń Rozrywających, a Geri @dice{1k5} \u00d7 PM Obrażeń Rozrywających z Penetracją 3 \u00d7 PM. Każdy cel, który otrzyma Obrażenia od tych ataków musi natychmiast rzucić w tabeli @table{theShockTable} z modyfikatorem równym otrzymanym Obrażeniom."
           ]
         },
         {
@@ -15043,7 +15043,6 @@
         "modifier": "Modyfikator",
         "bonus": "Premia do Spójności"
       },
-      "footnotes": ["Liczy się tylko najwyższe", "Liczy się tylko najwyższe"],
       "content": [
         {
           "modifier": "Ranga 4+",
@@ -16889,25 +16888,25 @@
           "content": [
             "Uniwersum Warhammera 40.000 i osadzona w nim gra ![bc]#Deathwatch# różnią się od innych światów science fiction. By lepiej opisywać to uniwersum i wplatać jego szczególne cechy do swoich gier, Mistrz Gry powinien zaznajomić się z jego głównymi motywami. Umiejętność wykorzystania ich w grze pozwala porządnie osadzić ją w świecie 41. milenium i ułatwia graczom wejście w role swoich bohaterów.",
             {
-              "title": "Jest tylko wojna",
+              "heading": "Jest tylko wojna",
               "content": [
                 "Uniwersum Warhammera 40.000 rozdarte jest nieustającym konfliktem, w którym armie ludzkości staczają krwawe wojny, by utrzymać panowanie Imperatora w galaktyce. Całe światy i regiony kosmosu od dekad czy wieków nie zaznały niczego poza wojną i trudami, podczas których pokolenia żołnierzy wysyłane są na starożytne linie frontu, by umrzeć w służbie Imperatorowi, jak ich niezliczeni poprzednicy. Jest to tło wszystkich gier w ![bc]#Deathwatch#, gdzie toczące się kampanie, bitwy i krucjaty nie są wcale daleko od siedziby graczy, a wielkie tryby imperialnej machiny wojennej są widoczne w każdym miejscu, jako że wszędzie towarzyszą im niewyczerpane potoki zasobów: ludzi i wyposażenia, które płyną przez próżnię na front. W takim świecie urodzili się bohaterowie graczy; w miejscu pełnym krwi, prochu i śmierci, gdzie nie opuszcza ich świadomość, że wrogowie Imperatora łaknąć będą ludzkiej krwi długo po tym, gdy oni sami zostaną zapomniani."
               ]
             },
             {
-              "title": "Bitewni bracia broni",
+              "heading": "Bitewni bracia broni",
               "content": [
                 "Adeptus Astartes to potężna braterska organizacja — prawdziwa rodzina ziomków—wojowników, z których każdy uczestniczy w genetycznym dziedzictwie swojego Prymarchy. Gdy Brat Bitewny wstąpi w szeregi Straży Śmierci, tę więź należy przekuć na nowo, a więc nawet nowo utworzony Szwadron Śmierci związany jest ze sobą w sposób nieosiągalny dla zwyczajnych imperialnych żołnierzy. Więź ta wykracza nawet poza Prymarchów i Zakony, aż do samego Imperatora, dziadka wszystkich Kosmicznych Marines i Pana Ludzkości. W przeciwieństwie do innych gier i światów bohaterowie graczy nie są posklejaną bandą włóczęgów i najemników zebraną przez przeznaczenie albo żądzę przygód, a kadrą wojowników powiązanych ze sobą pochodzeniem. Bycie Kosmicznym Marine oznacza ścisłe zrozumienie tego pochodzenia i jego implikacji, a także faktu, że wszyscy Bracia Bitewni są ziomkami, zjednoczonymi w służbie Imperatorowi przeciwko ciemności."
               ]
             },
             {
-              "title": "Herosi z legend",
+              "heading": "Herosi z legend",
               "content": [
                 "W tak rozdartym wojną miejscu jak galaktyka 41. milenium wojownicy zajmują w imperialnym społeczeństwie pozycję poważaną i szanowaną, czy są potężnymi pułkownikami Gwardii Imperialnej, czy mężnymi admirałami Marynarki Imperialnej, czy też uzdolnieni asasyni Inkwizycji. Żadni z nich nie mogą się jednak równać w bitewnej sprawności z Kosmicznymi Marines. Wojownicy ci wykazują się bohaterskimi czynami w obliczu miażdżącej przewagi dzięki poczuciu powinności wobec swoich braci, Zakonu i Imperatora. W przeciwieństwie do innych światów i gier, w ![bc]#Deathwatch# gracze wcielają się w potężnych herosów i wybranych synów od momentu, gdy zostaną oni stworzeni aż do drogiego sprzedanie swojego życia za Imperatora. Jest to ważne rozróżnienie, jako że życie Kosmicznego Marine nie może zostać zmarnowane w bezsensownych bitwach jak życie Gwardzisty czy członka Marynarki, a zamiast tego powinien on w krytycznym momencie odwrócić losy bitwy. Zarówno MG jak i gracze powinni mieć świadomość ważnej i świętej roli wypełnianej przez Adeptus Astartes w obronie Imperium, jak i tego, że Brat Bitewny ma być najwspanialszym z obrońców ludzkości i stawać naprzeciw jest najpotężniejszych wrogów."
               ]
             },
             {
-              "title": "Naszą nagrodą powinność",
+              "heading": "Naszą nagrodą powinność",
               "content": [
                 "Kosmiczni Marines nie są jak zwykli ludzie, żądni złota, bogactwa i namiastki władzy. Ich kultura związana jest ze starożytnymi tradycjami wojowników i istnieje tylko dla czystości walki i wykonywania powinności wobec Imperatora. Każdy Brat Bitewny poszukuje jedynie chwały w bitwie i szansy na dopełnienie swojej służby Imperatorowi przez pokonywanie wrogów ludzkości. Choć wszyscy Bracia Bitewni byli kiedyś ludźmi, lata warunkowania i treningów, a także zmiany spowodowane przez genoziarno, w większości wyeliminowały takie małostkowe żądze bogactwa i władzy. W ich miejsce zaszczepiono jednak palące pragnienie chwały i prawo uhonorowania Imperatora w ogniu bitwy. W grze ![bc]#Deathwatch# wiele czynników normalnie motywujących graczy, takich jak zdobywanie bogactwa, zastąpione zostają przez to poczucie obowiązku i szanse na udowodnienie męstwa w walce. Jako Brat Bitewny gracz zdobywa wyróżnienia na polu bitwy, chwałę w oczach swojego Zakonu i może cieszyć się wypełnianiem swoich powinności wobec Imperatora przez niszczenie jego wrogów. Dzięki tym nagrodom bohterowie mogą rosnąć w siłę i sławę, zapisując się w historii jako wspaniali herosi Imperium."
               ]
@@ -16929,7 +16928,7 @@
           "content": [
             "Istnieje wiele stylów rozgrywki, które można zastosować w grze ![bc]#Deathwatch# i które stawiają nacisk na różne rodzaje przygód, które może chcieć prowadzić Mistrz Gry. Żaden z nich nie wyklucza wykorzystania pozostałych i można je dowolnie łączyć, jeśli tego wymaga fabuła obmyślana przez MG.",
             {
-              "title": "Wybrańcy Imperatora",
+              "heading": "Wybrańcy Imperatora",
               "content": [
                 "Kosmicznych Marines można znaleźć, z powodu ich w tej sposób ukierunkowanej natury, tam, gdzie walka jest najbardziej zażarta. Bracia Bitewni, hodowani do walki i trenowani, by celować we wszystkich aspektach walki, łatwo dopasowują się do przygód skupionych na dużej ilości walki. Często są one jakimś rodzajem misji wojskowej, gdzie bohaterowie wysyłani są, by zniszczyć cele, wypełnić zadania i przynieść Imperatorowi chwałę przemożeniem jego wrogów. Choć zarówno ten militarny motyw, jak i idea elitarnej grupy wojowników wypełniającej specjalne rozkazy, ma wiele permutacji i wariantów, wszystkie łączy zadanie anihilacji przeciwnika, zwykle nawałnicą boltów i pocisków plazmowych. Gry o stylu militarnym czxęsto kładą nacisk na pojedyncze akcje i cele w większej całości. Gdy imperialna flota posyła z wysoka salwę za salwą, a siły Gwardii pokrywają zniszczony teren niczym rój owadów, Szwadron Śmierci przemyka między płomieniami i cieniami, by uderzyć w krytycznym miejscu i czasie. Na tle pyłu, krwi i zniszczenia Bracia Bitewni brodzą w pozostałościach rzezi odlegli i wyniośli, świadomi swojej unikalnej roli na polu bitwy. W takich grach bohaterowie mogą zostać porwani przez falę trwającej imperialnej kampanii i być wysyłanymi z jednego świata albo pola bitwy na drugie wedle kaprysów nieznanych dowódców i żądnych walki generałów. Mogą wtedy szturmować księżycowe platformy obronne, następnie zeskoczyć z niskiej orbity na pole walki w dżungli, by wreszcie zostać zabranymi przez kanonierkę Thunderhawk na desant po drugiej stronie planety.",
                 "Zaletą gier w stylu militarnym jest to, że łatwo je rozpocząć i zakończyć, jako że istnieją jedynie w ramach parametrów misji; mają także szkielet imperialnej machiny wojennej, który pozwala przetransportować, zaopatrzyć i odprawić bohaterów, oszczędzając im potrzeby szukania swojego własnego transportu czy zdobywania w jakiś sposób broni i amunicji mającej zastąpić stare.",
@@ -16937,7 +16936,7 @@
               ]
             },
             {
-              "title": "Zaangażowanie Inkwizycji",
+              "heading": "Zaangażowanie Inkwizycji",
               "content": [
                 "Choć siły Straży Śmierci należą do Adeptus Astartes, stanowią również zbrojne ramię Ordo Xenos. Są elitarną siłą imperialnej machiny wojennej, ale w strukturze Inkwizycji zajmują specjalne miejsce (tak jak Szarzy Rycerze) i poświęcają się całkowicie tępieniu konkretnego wroga Imperium. Gry związane z zaangażowaniem Inkwizycji prawrodopodobnie wiązać się będą z bardziej subtelnym podejściem i złożonymi detalami niż te, w których Szwadron stawia czoła wrogom ludzkości w otwartej bitwie. Mogą polegać na towarzyszaniu Inkwizytorowi i jego sługom w głębinach świata–ula, w zapomnianych i starożytnych ruinach obcych, czy w mrocznych korytarzach kosmicznego wraku, daleko od wsparcia zapewnianego przez armie Imperium, gdzie Szwadron może polegać tylko na własnych umiejętnościach, by ochronić sprzymierzeńców. Nawet najbardziej arogancki Inkwizytor wie jednak, że wniosek do Mistrza Straży o pomoc Szwadronu to nie błahostka. Jeśli Bracia Bitewni dołączą do takiej misji, mogą być pewni, że Inkwizytor i jego świta liczą na ich siłę. Innym interesującym aspektem współpracy z Inkwizycją jest tworzona przez nią aura moralnej szarości, przez którą Bracia będą musieli rozmyślać nad swoimi poglądami, a nawet nad interpretacją woli Imperatora.",
                 "Zaletą gry z zaangażowaniem Inkwizycji jest to, że gra taka pozwala MG i graczom na eksplorowanie bardziej mrocznych i ukrytych aspektów Imperium, a także na lepsze zrozumienie swojej roli jako ostrza Ordo Xenos.",
@@ -16945,7 +16944,7 @@
               ]
             },
             {
-              "title": "Posłańcy, emisariusze, zabójcy",
+              "heading": "Posłańcy, emisariusze, zabójcy",
               "content": [
                 "Rozmiar, umiejętności i elastyczność Szwadronu Śmierci powodują, że znajdują się oni często w sytuacjach unikalnych z perspektywy Astartes. Często mogą zostać wysłani z woli Mistrza albo Inkwizycji jako posłańcy na zagubiony imperialny świat, a nawet do jakiegoś dominium obcych — sami albo jako część świty imperialnego emisariusza. Może to służyć różnym celom, takim jak pokaz siły, utrzymanie pomniejszych sług Imperium w szeregu, czy uhonorowanie sojusznika obecnością reprezentantów Adeptus Astartes. Bracia Bitewni muszą używać języków, nie bolterów, by wpływać na takie sytuacje.",
                 "Równie dobrze Szwadron może znaleźć się na rubieżach Imperium, zwłaszcza na granicach z agresywnymi rasami obcych. Wysadzani są na słabych światach i mogą przekonać lokalną populację ludzi do walki przeciwko kłamstwom i inwazjom obcych. Gdzie armia może zawieść, mała grupa Kosmicznych Marines często wiele zmieni. Tak jak nawet pojedynczy Marine może podnieść świat na duchu i dodać mieszkańcom odwagi, tak może zniszczyć ich wszystkich. Szwadrony mogą działać przez całe miesiące i lata bez wsparcia na światach obcych albo światach Imperium skażonych ich obecnością, siejąc okropne zniszczenie. Zakuci w czarne pancerze giganci wyłaniają się z mroku niczym stwory z koszmarów, uderzają w przywódców i infrastrukturę wojskową, bez znużenia doprowadzając cywilizację do upadku pod ciężarem własnego lęku i zmieszania.",
@@ -16968,7 +16967,7 @@
           "content": [
             "MG, jako część roli nadawania życia światowi i sędziowania działań graczy, zajmuje się również kontrolowaniem zachowania bohaterów, których napotykają BG. Ci Bohaterowie Niezależni (BN) są nieodłączną cześcią wszystkich rozgrywek. BN mogą być zaufanymi sojusznikami, takimi jak Bracia Bitewni i członowie Straży Śmierci, ale również rozpoznawalnymi na pierwszy rzut oka wrogami, jak żądne krwi Orki, czy spaczeni czciciele Chaosu. Kontrolowanie wrogów jest zwykle proste, jako że najczęściej spotyka się ich w walce, gdzie ich reakcjami kierują zasady dotyczące walki. Szczegóły dotyczące powszechnie spotykanych wrogów, a także ich możliwości i używanych taktyk, znaleźć można w ![bc]#Rozdziale XIII: Adwersarze# (@adversary{<}).",
             {
-              "title": "Wskazówki do prowadzenia BN",
+              "heading": "Wskazówki do prowadzenia BN",
               "content": [
                 "Choć każdy BN będzie inny i można rozgrywać go z niepowtarzalnym stylem, istnieje kilka wskazówek, na które MG powinien zwrócić uwagę. Mają one za zadanie pomóc MG w sytuacji, gdzie nie jest on pewny, jak BN zareagowałby na zachowanie czy słowa bohaterów graczy.",
                 {
@@ -17037,13 +17036,13 @@
             "Najbardziej powszechną formą nagrody są Punkty Doświadczenia (PD). PD bardziej niż wszystko inne świadczą o sile danego bohatera. Gracze mogą wykorzystać Punkty Doświadczenia, by zakupić nowe Umiejętności, Talenty i Rozwinięcia. Im więcej PD ma bohater, tym lepszy staje się w radzeniu sobie z wyzwaniami podczas rozgrywki, takimi jak walka, rozwiązywanie problemów i sytuacje socjalne. Ponieważ PD mają bezpośredni związek z siłą bohaterów, liczba wydawanych Punktów Doświadczenia i jak często MG wydaje je swoim graczom, wyznacza jak szybko ich bohaterowie urosną w siłę i przystosują się do pokonywania przeszkód.",
             "Istnieją dwa główne sposoby przyznawania doświadczenia graczom: metoda abstrakcyjna i metoda szczegółowa.",
             {
-              "title": "Metoda abstrakcyjna",
+              "heading": "Metoda abstrakcyjna",
               "content": [
                 "Ta metoda przyznawania Punktów Doświadczenia jest zdecydowanie najłatwiejsza i poleca się ją zwłaszcza początkującym MG. Opiera się ona bezpośrednio na czasie spędzonym na rozgrywce i zapewnia jednostajne tempo rozwoju bohaterów. Za każdą sesję gry każdy z graczy powinien otrzymać 500 PD. Zakłada się tu sesję o długości około 4 godzin; przy sesjach krótszych albo dłuższych MG może odpowiednio zmienić wymiar nagrody."
               ]
             },
             {
-              "title": "Metoda szczegółowa",
+              "heading": "Metoda szczegółowa",
               "content": [
                 "Można użyć bardziej dokładnej metody przyznawania Punktów Doświadczenia. W tym przypadku każda nagroda obliczana jest osobno, a gracze otrzymują Punkty Doświadczenia za wypełnianie konkretnych zadań. W tym celu MG musi przyznać każdemu starciu pewną wartość. Na przykład sesja może składać się z niebezpiecznego desantu kapsułą na wrogim terytorium, bitwy przeciwko tyranidzkiemu Liktorowi i negocjacji z paranoicznymi imperialnymi osadnikami. W tym przypadku każda z tych trzech scen warta byłaby konkretną liczbę PD, które gracze otrzymują po jej zakończeniu.",
                 "Tabela @table{encounterDifficulty} zawiera przykłady trudności starć. By ocenić trudność starcia, należy wziąć pod uwagę, jak wiele kosztuje ono grupę w potencjalnie odniesionych obrażeniach, zużytych zasobach i czasie.",
@@ -17052,15 +17051,18 @@
               ]
             },
             {
-              "title": "Misje i doświadczenie szczegółowe",
+              "heading": "Misje i doświadczenie szczegółowe",
               "content": [
                 "Jeszcze inną metodą przyznawania Punktów Doświadczenia jest powiązanie ich z Celami Misji. Jeśli MG używa w swojej grze Misji, może przypisać nagrodę PD do każdego Celu, rozważając jego ważność i trudność, używając tabeli @table{detailedExperienceForMissions}. By obliczyć wartość pojedynczego Celu, trzeba dodać PD za jego ważność (główny, poboczny, dodatkowy) i trudność (nowicjusza, adepta, weterana). Więcej informacji na temat tworzenia Misji i Celów można znaleźć w sekcji @gm{>creatingMissions}.",
-                "%example{Wykonanie Celu Dodatkowego Adepta warte będzie 200 PD (Adept=50 + Dodatkowy=150).}",
+                {
+                  "type": "example",
+                  "content": "Wykonanie Celu Dodatkowego Adepta warte będzie 200 PD (Adept=50 + Dodatkowy=150)."
+                },
                 "%table{detailedExperienceForMissions}"
               ]
             },
             {
-              "title": "Nagrody za odgrywanie",
+              "heading": "Nagrody za odgrywanie",
               "content": [
                 "MG może przyznać Punkty Doświadczenia za dobre odgrywanie postaci. Nagrody te mogą być tak duże lub małe, jak MG uzna za słuszne i sprawiedliwe, zwykle pomiędzy 100 i 500 PD, i otrzymują je gracze, którzy w oczach MG dobrze odegrali swoje postacie — na przykład odgrywając konsekwencje rywalizacji między Zakonami. MG powinien jednak być ostrożny i przyznawać te nagrody tylko wtedy, kiedy są naprawdę zasłużone, zwykle kiedy gracz zrobi coś wykraczającego poza normę, na przykład podejmie działanie, przez które jego bohater znajdzie się w niebezpieczeństwie, bo „tak zrobiłby mój bohater”."
               ]
@@ -17120,7 +17122,7 @@
               "type": "list",
               "style": "unordered",
               "content": [
-                "Samodzielnie zajął się potężnym przeciwnikiem (np. Księciem Demonów, Tyranem Roju);",
+                "Samodzielnie rozprawił się z potężnym przeciwnikiem (np. Księciem Demonów, Tyranem Roju);",
                 "Dokonał czynu, który zmienił znacząco przebieg bitwy (np. obronił most przed nadciągającą hordą, pokonał wrogiego dowódcę w pojedynku);",
                 "Znacząco wyróżnił się honorem i odwagą (np. nosił Sztandar Kompanii w dwunastu starciach, służył wzorowo przez sześć dekad);",
                 "Samodzielnie wypełnił ważny cel, który był krytyczny dla zakończenia misji;",
@@ -17139,6 +17141,440 @@
         }
       ]
     },
+    {
+      "type": "section",
+      "name": "creatingMissions",
+      "displayName": "Tworzenie Misji",
+      "display": ["description", "items"],
+      "noGrid": true,
+      "parentPath": "gm",
+      "content": [
+        "%quote{Rozkazy, sir!|Oficerowie voxu w całym Imperium}",
+        "Misje są sensem istnienia Szwadronu i tworzą bazę, która buduje przeżywane przez nich przygody. Zasady i wskazówki związane z tworzeniem misji mają pomóc MG w wykreowaniu scenariuszy i niebezpieczeństw, które napotkają jego gracze — takich, które mogą przekazać zagrożenie i wyróżnienie związane z członkostwem w Straży Śmierci. MG nie musi wykorzystywać w swojej grze Misji, ale Misje stanowią sposób, na który MG może jasno wyłożyć parametry celów zadania wypełnianego przez Szwadron, jednocześnie pokazując jego naturę jako elitarnej jednostki wojskowej."
+      ]
+    },
+    {
+      "type": "group",
+      "parentPath": "gm-creatingMissions",
+      "items": [
+        {
+          "name": "settingObjectives",
+          "displayName": "Ustalanie Celów",
+          "content": [
+            "Wszystkie Misje skupione są wokół @rule{missionObjectives|Celach} (więcej informacji o Celach na stronie 230 w ![b]#Rozdziale VII: Rozgrywka#), czy są one niezbędne dla jej powodzenia, czy nie. Ustalenie tych Celów to pierwszy krok, jaki MG musi wykonać przy tworzeniu Misji. Zwykle nie jest to trudne, jako że Cel związany jest bezpośrednio z rozgrywanym scenariuszem. Każda Misja powinna mieć przynajmniej po jednym Celu każdego typu, choć w zależności od planowanego stopnia trudności może ich mieć wiele więcej.",
+            {
+              "title": "Cele Główne:",
+              "content": "Tworzą rdzeń Misji i są niezbędne do jej pomyślnego zakończenia. Dla przykładu Misja polegająca na odzyskaniu niebezpiecznego artefaktu obcych mogłaby mieć Cel Główny związany z jego zabezpieczeniem."
+            },
+            {
+              "title": "Cele Poboczne:",
+              "content": "Pomagają w wypełnieniu Celów Głównych i zwiększają szanse powodzenia Misji. Na przykład w Misji takiej jak zaproponowano wyżej, Celem Pobocznym byłoby zdobycie innych artefaktów znajdujących się w tym samym miejscu."
+            },
+            {
+              "title": "Cele Dodatkowe:",
+              "content": "Nie są bezpośrednio związane z powodzeniem Misji, ale nie są przez to mniej ważne. Kontynuując przykład odzyskania artefaktu, Celem Dodatkowym byłały eksterminacja lub schwytanie tych, którzy przemycili artefakt na teren Imperium."
+            },
+            {
+              "heading": "Ustalenie trudności",
+              "content": [
+                "Gdy cele będą już ustalone, należy zastanowić się nad trudnością każdego z nich. Nie wszystkie Cele są sobie równe; eksterminacja gniazda genokradów nie może równać się z abordażem i zniszczeniem bio–okrętu Tyranidów. Trudność misji bezpośrednio wpływa na nagrody (takie jak Doświadczenie i Sława), a także ilość dostępnych dla Szwadornu zasobów (Pobranie).",
+                {
+                  "title": "Nowicjusza:",
+                  "content": "Te Cele są raczej proste i nie powinny wymagać wiele wysiłku i zasobów od Szwadronu. Dla przykładu Celem Nowicjusza byłoby odbicie strefy desantu od plutonu zdradzieckich Gwardzistów."
+                },
+                {
+                  "title": "Adepta:",
+                  "content": "Te Cele są najczęściej spotykanymi i reprezentują już pewne wyzwanie. Jeśli Gwardzistom z powyższego przykładu towarzyszyłaby drużyna Kosmicznych Marines Chaosu, Szwadron doświadczyłby prawdziwego starcia."
+                },
+                {
+                  "title": "Weterana:",
+                  "content": "Te Cele są bardzo trudne i wymagają znaczącego wysiłku ze strony Szwadronu. Kontynuując powyższy przykład, jeśli jeden z Marines Chaosu byłby Opętańcem w szponach Większego Demona Khorna, Szwadron potrzebowałby wszystkich swoich atutów i szczęścia, by mieć nadzieję na zwycięstwo."
+                },
+                "Jeśli Cel jest zbyt trudny albo złożony, MG może podzielić go na kilka Celów, możliwe że łatwiejszych. Na przykład jeśli Misja zakłada pojmanie niebianina Tau znajdującego się w sercu ich posterunku orbitalnego, MG może stworzyć kilka Celów Głównych: dostać się na posterunek, znaleźć i pojmać niebianina, uciec z posterunku."
+              ]
+            }
+          ]
+        },
+        {
+          "name": "killMarkers",
+          "displayName": "Znaczniki Zabójstw",
+          "content": [
+            "Więc kiedy Cel jest wypełniony? Zwykle rozumie się to samo przez się — bohaterowie wypełnili Cel „zniszczyć most”, niszcząc most. Niektóre Cele nie są jednak tak wyraźnie zdefiniowane, przez co MG musi mieć jakiś sposób śledzenia postępów Szwadronu. Do tego można użyć Znaczników Zabójstw. Jest to system punktów mierzących postęp danego Celu, którego aspekty warte są różną ich liczbę. Na przykład jeśli Cel polega na błyskawicznym ataku na krążownik Chaosu i wymaga 100 ZZ, MG może zadecydować, że zniszczenie znaczącego podsystemu okrętu warte jest 50 ZZ, a każde zabójstwo oficera — 25 ZZ. Oznacza to, że gdy Szwadron zniszczy dwa podsystemy albo zabije czterech oficerów (albo wykona jakąś kombinację tych dwóch, która warta będzie co najmniej 100 ZZ), Cel będzie wykonany.",
+            "Liczba Znaczników Zabójstw wymaganych do wypełnienia Celu opiera się o jego trudność, co pokazuje tabela @table{settingKillMarkers}.",
+            "%table{settingKillMarkers}"
+          ]
+        },
+        {
+          "name": "objectiveThemes",
+          "displayName": "Cele i Motywy",
+          "content": [
+            "Motywy dają MG i graczom zamysł, jak skonstruowany jest dany Cel. Związane są bezpośrednio z jego elementami, takimi jak napotykani przez Szwadron przeciwnicy i wyzwania, a także czy istnieje jakaś preferowana taktyka, pozwalająca go dobrze wypełnić, taka jak podkradanie czy frontalny atak. Główną rolą motywów jest jednak pokazać związek Celu z pewnymi Umiejętnościami, Talentami, czy sprzętem. Zwykle jeśli dana Umiejętność czy narzędzie związane jest z motywem Celu, wykorzystanie go przyniesie więcej Znaczników Zabójstw (i przyspieszy jego wykonanie), co reprezentuje zalety specjalizacji. Szczegóły dotyczące dokładnych efektów Umiejętności i przedmiotów znajdują się w odpowiednich sekcjach.",
+            "Istnieje sześć głównych motywów, które wymienioni poniżej. Lista ta nie jest żadną miarą wyczerpująca i MG może tworzyć własne motywy.",
+            {
+              "type": "list",
+              "style": "unordered",
+              "content": [
+                {
+                  "title": "Podkradanie:",
+                  "content": "Niektóre Cele wymagają od Szwadronu uniknięcia wykrycia albo przekradnięcia się przez szeregi wroga. Takie Cele zwykle związane są z misjami polegającymi na zabójstwie albo sabotażu — a każdy Brat Bitewny zna wartość dobrego ataku z zaskoczenia."
+                },
+                {
+                  "title": "Szturm:",
+                  "content": "Bracia Bitewni nie boją się wojny, a większość podejmowanych przez nich Misji prowadzi ich do niejednej walki. Cele związane ze szturmem zwykle najlepiej rozwiązać, aplikując ekstremalne dawki przemocy i siły ognia — na szczęście są to rzeczy, których większości Szwadronów nie brakuje."
+                },
+                {
+                  "title": "Obrona:",
+                  "content": "Bracia Bitewni nie zawsze atakują — czasami muszą utrzymać pozycję, zwykle przeciwko znacznej przewadze liczebnej i odcięci od wsparcia. Cele związane z obroną zwykle skupiają się na ochronie jakiegoś miejsca, osoby, czy nawet ideału, nieważne czy plującymi ogniem bolterami, czy niezłomną wolą."
+                },
+                {
+                  "title": "Zwiad:",
+                  "content": "Zbieranie danych wywiadowczych jest ważną częścią każdej Misji i może wyznaczyć granicę między sukcesem i porażką. Cele związane ze zwiadem skupiają się na pozyskiwaniu informacji, takich jak położenie wrogiej twierdzy czy szyfr wymagany do otwarcia starożytnego urządzenia obcych."
+                },
+                {
+                  "title": "Demony:",
+                  "content": "Najwięksi wrogowie ludzkości istnieją za zasłoną immaterium, obserwując, czekając i łaknąc ludzkich dusz. Cele związane z Demonami powiązane są zwykle z demonicznymi wpływami — czy to objawiającymi się zrodzonymi z Osnowy stworzeniami, czy z obłąkanymi głupcami, którzy im służą."
+                },
+                {
+                  "title": "Obcy:",
+                  "content": "Zadaniem Straży Śmierci jest zająć się każdym obcym, który swoją obecnością chciałby skazić święte ziemie Imperatora. Cele związane z obcymi zawierają zwykle znaczący element ich wpływów i często wymagają od Szwadronu mierzenia się z takimi straszliwymi potworami jak Tyrany Roju Tyranidów i watażkowie Orków."
+                },
+                "MG może dowolnie ustalać motywy Celi przy ich tworzeniu. Zaznaczyć należy, że nie wszystkie Cele potrzebują jakiegoś motywu, za to niektóre będą miały dwa albo nawet więcej, w zależności od ich znaczących elementów."
+              ]
+            }
+          ]
+        },
+        {
+          "name": "settingRequisition",
+          "displayName": "Ustalanie Pobrania",
+          "content": [
+            "Ostatnią częścią tworzenia misji jest ustalenie dostępnej puli Pobrania. Reprezentuje ona ilość zasobów, które każdy Brat Bitewny może przeznaczyć na broń, pancerz i wyposażenie ze zbrojowni Zakonu. Zwykle im trudniejsza Misja, tym więcej przeznacza się na nią Pobrania. MG może zwiększyć albo zmniejszyć podane wartości, by wskazać zewnętrzne czynniki, takie jak niedobór uzbrojenia, problemy logistyczne, naturę przełożonych Szwadronu i ich oddanie misji, czy bliskość świata–kuźni, która zaowocuje napływem nowej broni. Tabela @table{settingRequisition} wskazuje szczegółowo ilość Pobrania, którą Misja powinna mieć na podstawie Celów i ich trudności.",
+            {
+              "type": "example",
+              "content": "MG tworzy misję z jednym Celem Głównym Adepta, jednym Celem Pobocznym Weterana i dwoma Celami Dodatkowymi Nowicjusza. Podsumowanie odpowiednich wartości daje mu 62 Punkty Pobrania, które będą do dyspozycji każdego z Braci Bitewnych."
+            },
+            {
+              "heading": "Składanie Pobrania",
+              "content": "Pobranie dzieli się po równo pomiędzy Braci Bitewnych, ale jako że reprezentuje ono całość zasobów, jakimi dysponuje Szwadron, można rozdzielić je według uznania. Jeśli gracze tak zdecydują, mogą złożyć Pobranie i wspólnie pozyskać wyposażenie, które podzielą między sobą według samodzielnie wybranej metody."
+            },
+            "%table{settingRequisition}"
+          ]
+        },
+        {
+          "name": "missionArchetypes",
+          "displayName": "Archetypy Misji",
+          "content": [
+            "Choć Misje mogą przyjąć dowolną wybraną przez MG formę, Szwadrony często wysyłane są z różnymi zadaniami zależnymi od ich umiejętności. Zadania te często są niebezpieczne i wymagają najlepszych ludzi, jakich może zaoferować Imperium.",
+            "Poniżej podano sześć typowych archetypów Misji podejmowanych przez Szwadron, których MG może wykorzystać jako podstawę do tworzenia własnych Misji.",
+            {
+              "heading": "Zabójstwo",
+              "content": [
+                "Przez swoją podstawową naturę Szwadron Śmierci świetnie radzi sobie z niszczeniem niebezpiecznych i potężnych wrogów Imperium. Gdzie może zawieść cała armia, mała drużyna elitarnych wojowników może być w stanie wkraść się między szeregi wroga i zniszczyć jego dowódców. Najcześciej Misje Zabójstwa rozpoczynają się desantem za linie wroga albo na jego okręt (często w trakcie bitwy) i mają na celu znalezienie i eliminację konkretnego przeciwnika. Czasem zadanie to może mieć bardziej subtelną naturę i odbywać się w bardziej bezpiecznym otoczeniu, takich jak imperialny świat albo misja dyplomatyczna. W takim przypadku Szwadron musi postępować ostrożnie i wykorzystać swój spryt, by znaleźć przeciwnika i spuścić na niego prawą furię Imperatora, skazując go na wieczność w ciemności.",
+                "Misja Zabójstwa ma zawsze co najmniej jeden Cel Główny związany z zabiciem celu. Trudność Celu odpowiada liczbie i sile przeciwników, których należy wyeliminować. Cele Poboczne i Dodatkowe albo związane są z dodatkowymi celami zabójstwa (takimi jak ochrona czy przyboczni głównego celu) albo z przedostaniem się do lub opuszczeniem zabezpieczonego wrogiego terenu czy fortecy. Archetyp ten często wiąże się z motywami takimi jak Podkradanie, Zwiad, a nawet Demony czy Obcy, w zależności od natury celu."
+              ]
+            },
+            {
+              "heading": "Sabotaż",
+              "content": [
+                "Szwadrony Śmierci nie zawsze zajmują się wyłącznie eliminacją żołnierzy i dowódców wroga. Niektóre ważne dla wroga obiekty, wyposażenie i urządzenia również należy zniszczyć. Może być to zadanie proste, jak sabotaż znacznika teleportacyjnego czy zniszczenie ważnego mostu, ale też odcięcie zasilania całego miasta, czy nawet okaleczenie wrogiego krążownika bojowego. Misje Sabotażu skupiają się zwykle na rzuceniu Szwadronu daleko poza ochronę zapewnianą przez machinę wojenną Imperium, na terytorium kontrolowane przez wroga. Może być to część śmiałego nagłego uderzenia w próżni, albo desant na ważny świat przeciwnika.",
+                "Misja Sabotażu zawsze ma przynajmniej jeden Cel Główny związany ze zniszczeniem wrogiej struktury albo urządzenia, którego trudność zależy od wielkości i stopnia złożenia. Cele Poboczne i Dodatkowe mogą mieć związek z niszczeniem dodatkowych struktur, systemów awaryjnych i eliminacją niezbędnego do dzialania celu personelu. Mogą skupiać się również na pozyskaniu informacji, które mogłyby zainteresować Straż, Inkwizycję, czy całe Imperium. Misje Sabotażu zwykle związane są z motywami Podkradania i Zwiadu, a także — w zależności od natury celu — Demonów lub Obcych."
+              ]
+            },
+            {
+              "heading": "Awangarda",
+              "content": [
+                "Kosmiczni Marines ciągle znajdują się tam, gdzie walka jest najbardziej zażarta i udają się tam, gdzie ich umiejętności i siła przesądzą o wyniku bitwy albo ataku. Szwadron czasem zostanie zwerbowany do wypełnienia tego rodzaju zadania — oczyszczenia strefy lądowania, otwarcia bram nieprzyjacielskiej fortecy, czy odcięcia posiłków przeciwnika. Misje tego typu mogą być również wstępem do większych, bardziej złożonych misji, gdzie Straż Śmierci musi zapewnić sobie bazę na planecie albo okręcie, z której będzie mogła przeprowadzać ataki na terytorium wroga.",
+                "Cel Główny Misji Awangardy zwykle związany jest z przejęciem konkretnego terenu albo fortyfikacji i utrzymaniu go aż do przybycia większych sił Imperium. Trudność tego celu zależy od siły i rodzaju wrogów, a także wielkości obszaru i czasu, przez jaki należy go bronić. Cele Poboczne i Dodatkowe mogą prowadzić do całkowitej eliminacji przeciwnika, zdobyciu danych wywiadowczych przed jego wycofaniem się, czy zabezpieczenie większego obszaru niż jest to wymagane. Misje Awangardy posługują się motywami takimi jak Szturm i Obrona, a także Obcy i Demony."
+              ]
+            },
+            {
+              "heading": "Poszukiwanie",
+              "content": [
+                "Szwadrony Śmierci nie zawsze wysyła się z zadaniem eksterminacji wroga. Czasem Braciom Bitewnym powierza się zadanie uratowania ważnego agenta Imperium, znalezienia niezbędnego artefaktu, czy nawet schwytania wrogiego dowódcy, by Imperium mogło poddać go przesłuchaniu. Misje Poszukiwania niemal zawsze są trudniejsze od prostych Misji związanych z eliminacją przeciwnika, ponieważ Bracia Bitewni muszą zapewnić ochronę swojemu celowi, niezależnie czy jest on osobą, czy też przedmiotem. Transport schwytanego wroga albo uratowanego więźnia również może spowodować problemu, jeśli jest on ranny, niechętny (co zwykle zdarza się z dowódcami) albo niebezpieczny (w przypadku np. Herszta Orków albo Zoantropa Tyranidów).",
+                "Cel Główny Misji Poszukiwania polega zwykle na schwytaniu albo uratowaniu osoby albo przedmiotu i dostarczniu go Straży Śmierci. Trudność tego celu powinna oddawać naturę celu i jego aktualne położenie. Cele Dodatkowe i Poboczne mogą być związane z odzyskaniem dodatkowych celów związanych z głównym (takich jak rodzina i doradcy dla osób, czy szyfry i klucze dla przedmiotów). Mogą również polegać na zbieraniu informacji i eliminacji celów okazyjnych, kiedy Szwadron działa za liniami wroga. Misje Poszukiwania związane są z motywami takimi jak Podkradanie i Zwiad, a także Obcy i Demony."
+              ]
+            },
+            {
+              "heading": "Rozpoznanie",
+              "content": [
+                "Szwadrony Śmierci świetnie radzą sobie z samodzielnym działaniem niezależnym od machiny wojennej Imperium. Misje Rozpoznania to zbiorowe określenie Misji, w których Szwadron umieszczany jest na terenie wroga z zadaniem powodowania jak największego chaosu bez konkretnych rozkazów. Straż Śmierci zakłada, że jej członkowie będą w stanie reagować i dostosować się do każdej sytuacji, jaka może wystąpić na polu bitwy i wybiera ich ze względu na niezależność i inicjatywę w wykonywaniu zadań. Z tego powodu Szwadrony wysyła się czasem na terytorium wroga (czasem na miesiące albo nawet lata), by bez wsparcia zabijały kluczowych dowódców wroga, zakłócali jego linie logistyczne, albo zwyczajnie siali lęk w ich sercach.",
+                "Cele Główne Misji Zwiadu mogą być niemal dowolne, ale zwykle oparte są na jakimś wymaganiu, takim jak pozbycie się pewnej części wrogich sił, czy spowodowanie znacznej zmiany w planach wroga przez zadanie mu strat. Trudność Misji zależy od siły wroga i długości zdania. Cele Poboczne i Dodatkowe mogą być równie szeroko zdefiniowane jak Główne i mieć związek ze zwyczajnymi zadaniami bitewnymi Szwadronu, takimi jak niszczenie celów, zdobywanie informacji i artefaktów, czy też przygotowywanie obszaru na późniejszą okupację przez siły Imperium. Misje Rozpoznania zwykle związane są z motywem Zwiadu, ale w zależności od szczegółów zadania i natury wrogów mogą zawierać zasadniczo wszystkie pozostałe motywy."
+              ]
+            },
+            {
+              "heading": "Ochrona",
+              "content": [
+                "W pewnych przypadkach Szwadron Śmierci może otrzymać zadanie ochrony ważnego obywatela Imperium, na przykład Inkwizytora albo dyplomaty. Nie jest to jednak prośba, na którą Straż Śmierci odpowiada przychylnie w błahych przypadkach, przez co Bracia Bitewni mogą mieć pewność, że jeśli mają kogoś chronić, osoba ta jest niezbędna dla planów całego Imperium. Wcielający się w rolę ochroniarzy Bracia Bitewni zwykle zostaną zamieszani w machinacjach służb dyplomatycznych Imperium (czasami na światach kontrolowanych przez obcych) albo owianych tajemnicą działaniach Inkwizycji, gdzie pomagać będą w osiągnięciu celów Imkwizytorom, Agentom i Akolitom. W większości przypadków zakuty w czarny pancerz, górujący nad wszystkimi Kosmiczny Marine ze Straży Śmierci samą swoją obecnością odstraszy napastników, ale Bracia nie są werbowani do takich zadań, jeśli ich dowódca nie spodziewa się kłopotów.",
+                "Celem Głównym Misji Ochrony jest zwykle obronienie powierzonego Szwadronowi podopiecznego. Trudność zależy od siły wrogów, których mogą się spodziewać i ważności chronionej osoby. Cele Poboczne i Dodatkowe mogą być związane z ochroną osób ważnych dla podopiecznego (rodziny, przybocznych, kochanków), a także zdobywaniem informacji na temat zagrożenia. Zdarza się, że Misja Ochrony służy jako wstęp do innej Misji, takiej jak Zabójstwo albo Sabotaż, w której Szwadron wykorzysta swoją pozycję świty, by zbliżyć się do prawdziwego celu. Misje Ochrony zwykle mają motywy Obrony i Zwiadu, a także Obcych albo Demonów."
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "section",
+      "parentPath": "gm",
+      "name": "interaction",
+      "displayName": "Interakcje",
+      "display": ["description", "items"],
+      "noGrid": true,
+      "content": [
+        "%quote{Niektórych bitew nie wygra bolter.|Tactica Imperialis, tom XXV, rozdział LXVI}",
+        "Nie wszyscy, których w grze Deathwatch napotkają gracze, będą wrogami albo sojusznikami na polu bitwy. Bracia Bitewni, wypełniając swoją rolę sług Imperatora i członków zbrojnego ramienia Inkwizycji, będą zadawać się z różnorodnymi obywatelami Imperium, od sierżantów Gwardii i prostych kapłanów, aż do bezwzględnych agentów i chciwych rządców planetarnych. Wiedza o tym, jak najlepiej rozmawiać z takimi osobami, może zaważyć o sukcesie bądź porażce misji wypełnianej przez Szwadron, jako że ludzie tacy mogą służyć jako sojusznicy i źródło cennych informacji."
+      ]
+    },
+    {
+      "parentPath": "gm-interaction",
+      "name": "interactionSkills",
+      "displayName": "Umiejętności Interakcji",
+      "content": [
+        "![b]#Rozdział III: Umiejętności# (@skill{<}) prezentuje kilka Umiejętności Interakcji: @skill{charm}, @skill{command}, @skill{deceive} i @skill{intimidate}. Są to Umiejętności Podstawowe oparte na Ogładzie, dzięki czemu każdy bohater może ich używać, chociaż ze zmniejszoną szansą powodzenia, nawet jeśli ich nie posiada. Gracz użyje Przekonywania, by przychylnie się do kogoś odnieść; Dowodzenia by wydać rozkazy; Oszustwa by kogoś zmylić albo okłamać; Zastraszania by przerazić. Umiejętności te oferują mierzalny zestaw narzędzi, których można używać w interakcjach z ludem Imperium.",
+        {
+          "heading": "Używanie Zdolności Interakcji",
+          "content": [
+            "W większości sytuacji gracz nie musi wykonywać Testów Umiejętności w interakcjach z innymi bohaterami — po prostu odgrywa rolę swojego bohatera. O wyniku konwersacji decyduje interakcja między graczem wcielającym się w swojego bohatera i MG wcielającym się w BN. Jednak gdy interakcja może mieć znaczące konsekwencje — gdy sukces popchnie fabułę do przodu, a porażka będzie mieć znaczenie — gracz powinien wykonać odpowiedni Test. Zwykle następuje to przy próbie przekonania BN do czegoś, czego normalnie by nie zrobił, na przykład podzielenia się tajemnicą, przyjęcia łapówki i tak dalej. Ostatecznie o potrzebie wykonania Testu, o jego okolicznościach i konsekwencjach, decyduje MG.",
+            {
+              "type": "example",
+              "content": "Brat Helgath próbuje przekonać komandora SOP do wystawienia swoich żołnierzy przeciwko natarciu Tyranidów. Ponieważ komandor jest zmieszany, niedoświadczony i nie wie, co ma robić, MG decyduje, że Helgath musi wykonać Test Dowodzenia, by komandor wydał rozkaz i wysłał rezerwowe siły do bitwy."
+            }
+          ]
+        },
+        {
+          "heading": "Nastawienia",
+          "content": [
+            "Przy testowaniu Umiejętności Interakcji na trudność Testu wpływają okoliczności. Zaliczają się do nich atmosfera, sytuacja i działania BN. Najważniejszym czynnikiem jest jednak nastawienie BN do Bohatera Gracza — to znaczy jak bohater go postrzega i jakie emocje (lub ich brak) okazuje. Nastawienie BN, które zawsze określa MG, stanowi o podstawowej trudności Testu. Tabela @table{dispositions} zawiera przykładowe nastawienia zależne od testu i jego trudności.",
+            "W przypadku udanego Testu Nastawienie celu poprawia się o jeden poziom i kolejny jeden za każdy Stopień Sukcesu. W przypadku porażki Nastawienie spada o jeden poziom za każdy Stopień Porażki. Zasadniczo cel musi być co najmniej Obojętny by wykonać zlecone mu zadanie i pozostawiony samemu sobie zrobi to w mniej więcej 50% przypadków. Każdy poziom powyżej Obojętnego zwiększa tę szansę o 10%. Nadzór zwiększa ją o 20%.",
+            "%table{dispositions}"
+          ]
+        },
+        {
+          "heading": "Interakcja z grupami",
+          "content": [
+            "Gdy gracz używa Umiejętności Interakcji na grupie, test rozwiązywany jest w sposób opisany powyżej, ale MG ustala Nastawienie na podstawie przeciętnego nastroju grupy. Bohater normalnie wykonuje test, ale w przypadku sukcesu wpływa na liczbę osób równą jego Premii z Ogłady. Zaznaczyć należy, że niektóre Talenty wpływają na tę liczbę."
+          ]
+        }
+      ]
+    },
+    {
+      "type": "section",
+      "name": "fearAndDamnation",
+      "displayName": "Strach i Potępienie",
+      "display": ["items", "description"],
+      "parentPath": "rule",
+      "noGrid": true,
+      "content": [
+        "%quote{Wróg pozna, co to strach.|Kapitan Davian Thule z Krwawych Kruków}",
+        "41. milenium jest okropnym, mrocznym czasem, w którym niezliczone miliardy ludzkości zamieszkują galaktykę pełną niezliczonych okropieństw i niebezpieczeństw. Morderczy obcy przemierzają chłód próżni, rebelie i zdrada narastają w cieniu rozkładu potęgi Imperium, a koszmarni wrogowie wciąż rwą samo tworzywo rzeczywistości, próbując pożywić się i spaczać. Jako członek Straży Śmierci Brat Bitewny musi zmierzyć się z tymi i innymi zagrożeniami, odkryć ukryte okropieństwa i wysłać je tam, skąd przybyły.",
+        "Przedstawione tu zasady oddają zagrożenia dla umysłu i duszy i jak Bohaterowie Graczy mogą sobie z nimi radzić. Podzielone są na trzy osobne, choć przeplatające się sekcje: Strach związany jest z natychmiastowymi reakcjami bohaterów na przerażające wydarzenia i stworzenia, Obłęd — z długotrwałymi konsekwencjami dla umysłu, a Spaczenie — z wpływami Chaosu i zakazanej wiedzy. W czasie starć używa się tylko zasad dla Strachu. Efekty Obłędu i Spaczenia rozwiązywane są już po bitwie."
+      ]
+    },
+    {
+      "type": "group",
+      "parentPath": "fearAndDamnation",
+      "items": [
+        {
+          "name": "insanityAndCorruptionPoints",
+          "displayName": "Punkty Obłędu i Spaczenia",
+          "content": "Punkty Obłędu (PO) i Punkty Spaczenia (PS) są Charakterystykami, które bohater zdobywa w trakcie rozgrywki. Obie te liczby zaczynają z poziomu 0 i rosną w miarę jak raniony jest jego umysł (PO) i dusza (PS). Im wyższe te liczby, tym bardziej wypaczony, zniszczony i otumaniony staje się bohater, a jeśli którakolwiek z nich osiągnie wartość 100, dla własnego dobra zostaje zabity przez Braci Bitewnych albo upada i staje się wrogiem Imperium. W obu przypadkach nie może już służyć Straży, zostaje stracony w oczach Imperatora i musi zostać usunięty z rozgrywki. W przypadku Kosmicznych Marines liczba ta znana jest jako Próg Czystości."
+        },
+        {
+          "name": "fear",
+          "displayName": "Strach",
+          "content": [
+            "Strach ma znaczenie, gry osoba stanie twarzą w twarz z nienaturalnymi okropieństwami i wypaczającymi umysł wrogami, czy też gdy zostanie wezwana do boju przeciw przerażającym obcym, będącymi dziełem obłąkanych umysłów wypaczeniom technologii i nauki, czy nawet koszmarnym stworzeniom Osnowy. Gdy BG stanie naprzeciw takiego budzącego strach wydarzenia czy wroga, musi wykonać Test Strachu. Jest to Test Siły Woli modyfikowany przez poziom strachu. Jeśli BG zda Test, może działać normalnie. W przeciwnym przypadku wpada w szpony Strachu.",
+            {
+              "heading": "I nie poznają, co to strach...",
+              "content": [
+                "Kosmiczni Marines nie odczuwają Strachu jak inni ludzie. Budzący strach przeciwnicy wpływają na nich jedynie nieznacznie, a i tak muszą być naprawdę przerażający. Zasady co do Strachu przedstawione w tym punkcie mają zastosowanie w przypadku sojuszników graczy (takich jak imperialni agenci i obywatele) i ich przeciwników (jako że Bracia Bitewni mogą sami budzić Strach). W wypadku Strachu Bracia używają osobnych zasad i zupełnie ignorują powodujące Strach wydarzenia i okoliczności, biorąc pod uwagę tylko przeciwników.",
+                {
+                  "type": "list",
+                  "style": "unordered",
+                  "content": [
+                    "Gdy Brat Bitewny mierzy się z wywołującymi Strach wrogami, musi walczyć zarówno z jego fizyczną postacią jak i wywoływanym przez niego niepokojem. Ten efekt nakłada karę -10 jeśli Brat jest w Trybie Solowym za każdy Poziom Strachu. Jeśli Brat jest w Trybie Drużynowym, Szwadron traci jeden Punkt Spójności za każdy Poziom Strachu. Dowódca może tego uniknąć, wykonując Test Siły Woli z odpowiednim modyfikatorem. W przypadku starcia z kilkoma wrogami powodującymi Strach w każdej Rundzie liczy się tylko najwyższy Poziom Strachu. Obrażenia do Spójności za Strach występują tylko raz na starcie z danym stworzeniem.",
+                    "W przypadku walki z wywołującą Strach Hordą, jej Poziom Strachu jest traktowany jako o jeden większy."
+                  ]
+                },
+                "Inne efekty Strachu nie mają wpływu na Braci Bitewnych. Mogą oni mieć problemy ze zrozumieniem strachu u sojuszników, jako że emocja ta jest im całkowicie obca."
+              ]
+            },
+            {
+              "heading": "Poziom Strachu",
+              "content": [
+                "W przeciwieństwie do Braci Bitewnych inni bohaterowie gry Deathwatch jak najbardziej odczuwają strach w niemal wszystkich przypadkach. Strach przybiera wiele form, ale niektóre z nich są naturalnie bardziej przerażające od innych. Pojedynczy genokrad może złamać morale Gwardzisty Imperialnego, ale obecność tyrana roju złamie jego umysł. Tabela @table{fearTestDifficulties} opisuje kary do Testów Strachu związane z poziomem źródła Strachu.",
+                "%table{fearTestDifficulties}"
+              ]
+            },
+            {
+              "heading": "Bardzo złe rzeczy",
+              "content": [
+                "Testy Strachu poza starciami wykonywane są, gdy MG zadecyduje, że jest to odpowiednie. Można je wykorzystać do podkreślenia przerażającej natury miejsca albo przedmiotu, a czasem do osłabienia towarzyszy graczy — dla przykładu przerażeni agenci Inkwizycji mogą odmówić wejścia do budynku albo pomieszczenia. Poniżej zamieszczono przykłady wywołujących Strach okoliczności poza walką.",
+                {
+                  "type": "list",
+                  "style": "unordered",
+                  "content": [
+                    {
+                      "title": "Strach 1:",
+                      "content": "miejsce brutalnego morderstwa, pomniejsze nieznane nienaturalne albo psioniczne zjawiska — dziwne światła, widmowe głosy, płaczące posągi, itp."
+                    },
+                    {
+                      "title": "Strach 2:",
+                      "content": "spotkanie osoby, która powinna być martwa, pogrzebanie żywcem, większe nienaturalne albo psioniczne zjawiska — deszcz krwi, obrazy formujące krzyczące usta, itp."
+                    },
+                    {
+                      "title": "Strach 3:",
+                      "content": "nagły, niewyjaśniony, szokujący zgon (człowiek siedzący obok w wahadłowcu nagle umiera, wymiotując robakami), okropne momenty olśnienia (stoisz pośród martwych ciał, uwalany krwią, z tasakiem w dłoni i bez wspomnień na ten temat), umarli wstający z grobów na całej planecie, itp."
+                    },
+                    {
+                      "title": "Strach 4:",
+                      "content": "doświadczenie pełnowymiarowej inwazji Demonów, zdanie sobie sprawę, że własna porażka doprowadziła do śmierci milionów, spojrzenie w Osnowę bez ochrony, itp."
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "heading": "Porażka w Teście Strachu",
+              "content": [
+                "Jeśli bohater poniesie porażkę w Teście Strachu, musi natychmiast rzucić w tabeli @table{theShockTable}, dodając do wyniku +10 za każdy Stopień Porażki. Opisany efekt natychmiast dotyka bohatera. Jeśli bohater poniesie porażkę w Teście Strachu poza walką, staje się poddenerwowany i otrzymuje karę -10 do wszystkich Testów wymagających koncentracji. Kara ta ma efekt, dopóki bohater pozostaje w pobliżu źródła Strachu (odejście i powrót nie usuwa Strachu). Dodatkowo jeśli Test zakończy się co najmniej trzema Stopniami Porażki, bohater otrzymuje równieć @dice{1k5} Punktów Obłędu.",
+                "%table{theShockTable}"
+              ]
+            },
+            {
+              "heading": "Szok i Otrząśnięcie",
+              "content": [
+                "Bohater może oprzeć się części efektów Strachu, gdy minie pierwsze, najgorsze wrażenie. Tam, gdzie podano w tabeli @table{theShockTable}, że bohater może się Otrząsnąć, w kolejnej swojej Turze może on wykonać Test Siły Woli. W przypadku sukcesu odzyskuje zmysły, opiera się Strachowi i działa normalnie. w przeciwnym przypadku efekt trwa dalej, a bohater może spróbować ponownie w kolejnej Turze."
+              ]
+            }
+          ]
+        },
+        {
+          "name": "insanity",
+          "displayName": "Obłęd",
+          "content": [
+            "Choć Bracia Bitewni nie ryzykują otrzymania Punktów Obłędu za nieudane Testy Strachu, ale wciąż może wpłynąć na nich wiele innych źródeł Obłędu. Należą do nich starcia z pomiotami Osnowy albo przemierzanie miejsc spaczonych dotykiem Chaosu (z których oba zwykle powodują również Spaczenie). Innymi przykładami są zdrada Braci Bitewnych i zaufanych sojuszników i kontakt z niebezpiecznymi obcymi artefaktami i sposobami myślenia. Niektóre Moce Psioniczne i nietypowe ataki również mogą spowodować Obłęd u bohaterów. Ostatecznie jednak to MG decyduje, które wydarzenia i starcia są warte Punkty Obłędu. Jedynie największe okropieństwa powinny powodować zyskanie więcej niż kilku punktów.",
+            "Liczba Punktów Obłędu mówi, czy bohater musi testować przeciwko Traumom Bitewnym i czy cierpi z powodu Klątwy Prymarchy.",
+            {
+              "heading": "Testy Obłędu",
+              "content": [
+                "Za każde zyskane 10 Punktów Obłędu bohater musi wykonać Test Siły Woli, który określa, czy jego obłęd uzewnętrzni się w zauważalny sposób. Test ten modyfikowany jest przez liczbę już posiadanych Punktów Obłędu, co przedstawiono w tabeli @table{theInsanityTrack}. W przypadku porażki cierpi stan umysłowy bohatera. Te rany na umyśle znane są jako Traumy Bitewne i wybierane są losowo z tabeli @table{battleTrauma}. Jeśli gracz wyrzuci efekt, który jego bohater już kiedyś otrzymał, musi rzucić ponownie.",
+                "%table{theInsanityTrack}",
+                "%table{battleTrauma}",
+                {
+                  "title": "Szał bitewny",
+                  "content": [
+                    "Brat Bitewny wybiera konkretnych przeciwników, na których jego zdaniem ma spaść gniew Imperatora i obsesyjnie próbuje ich zabić. Najczęściej zdarza się to w starciu z potężnymi wrogami, takimi jak dowódcy i maszyny bojowe. Brat Bitewny musi ich zniszczyć bez baczenia na pomniejszych przeciwników i rzeczy mniej ważne niż niezbędne Cele.",
+                    "Gdy Brat Bitewny aktywuje Prawą Furię na przeciwniku, obsesyjnie dąży do jego zniszczenia. Kosmiczny Marine musi kierować swoje ataki w tego i tylko tego przeciwnika aż ten padnie martwy. Przy aktywacji szału bitewnego bohater może wykonać ![b]#Przeciętny (+0) Test Siły Woli#, by uniknąć jego efektów. MG może pozwolić na podobny Test, jeśli Brat Bitewny albo Cały Szwadron nagle staną naprzeciw potężniejszego zagrożenia."
+                  ]
+                },
+                {
+                  "title": "Ucho Imperatora",
+                  "content": [
+                    "Wszyscy Bracia Bitewni modlą się do Imperatora, by w bitwie prowadził ich dłonie i pomagał czynić ich prawą powinność. Niektórzy jednak słyszą Jego głos i rozmawiają z Nim poprzez sny i medytację. W większości nie wpływa to na codzienne życie i nawet inni Bracia nie będą widzieli niczego dziwnego w ciągłej modlitwie i religijnych recytacjach. Czasami Imperator zażąda od Brata Bitewnego niezwykłej posługi, która może nie zgadzać się z celami Szwadronu.",
+                    "Na początku Misji MG rzuca kość. Jeśli wynik jest liczbą nieparzystą, Imperator wybrał BG do wypełnienia specjalnego zadania, które MG przekazuje w tajemnicy. Jest ono Celem Dodatkowym i może być całkowicie dowolne, nawet jeśli nie zgadzałoby się z celami Misji."
+                  ]
+                },
+                {
+                  "title": "Duchy przodków",
+                  "content": [
+                    "Wszyscy Kosmiczni Marines czczą swych przodków, wywodząc długą linię bohaterów i dowódców od samego Prymarchy i założenia Zakonu. Niektórzy bardziej niż inni czują tę więź i mogą przeżywać wspomnienia rzeczy, których nie zrobili i miejsc, w których nie przebywali. Fenomen ten znany jest jako duchy przodków — wspomnienia i myśli od dawna martwego Brata Bitewnego przekazywane przez krew, które w stresowych sytuacjach mogą wypłynąć z czeluści umysłu.",
+                    "MG w tajemnicy wybiera „zapalnik” Brata Bitewnego związany z wydarzeniem albo starciem przeżytym przez jego ducha przodka. Może być to spotkanie członka konkretnego Zakonu, zmierzenie się w bitwie z pewnym przeciwnikiem, a nawet odwiedzenie jakiegoś rodzaju świata. Gdy wystąpi ten „zapalnik”, Brat Bitewny wykonuje ![b]#Przeciętny (+0) Test Siły Woli# — w przypadku porażki jego przodek wydostaje się na powierzchnię na @dice{1k5} godzin. W tym czasie wciąż ma on nad sobą kontrolę (nie jest to przecież opętanie), ale jego osobowość ulegnie zmianie, może on podejmować niepodobne do niego działania, a także w zamyśleniu wspominać bitwy sprzed stuleci.",
+                    "MG powinien zachęcić gracza do stworzenia osobowości przodka i odgrywania go, kiedy Trauma weźmie górę."
+                  ]
+                },
+                {
+                  "title": "Prawa pogarda",
+                  "content": [
+                    "Choć Kosmiczni Marines rodzą się jako ludzie, implantacja genoziarna ich Zakonu kształtuje ich ciała i umysły w coś więcej... Coś, co nie jest już całkiem ludzkie. Wszyscy Bracia Bitewni akceptują tę wyższość jako część osiągnięcia szczytu możliwości wojownika i służby Imperatorowi, ale niektórzy mogą stać się wzgardliwi i niebaczni na potrzeby „pomniejszych” bytów.",
+                    "Brat Bitewny nie ma czasu dla tych, którzy nie należą do Adeptus Astartes i częściowo stracił swoje człowieczeństwo. W kontaktach z ludźmi Ogłada bohatera jest zmniejszona o -20. Dodatkowo nigdy nie będzie on z własnej woli chciał ich pomocy, jako że w jego oczach są słabi i niegodni zaufania."
+                  ]
+                },
+                {
+                  "title": "Nieskończone odkupienie",
+                  "content": [
+                    "Niektórzy Bracia Bitewni czują na swoich barkach ciężar całego Imperium i uważają się za całkowicie odpowiedzialnych za utrzymanie rządów Imperatora i ochronę jego ziem. W takich sytuacjach linia między wypełnianiem powinności a fanatyzmem może się zatrzeć, a rzeczywistość bitwy miesza się z osobistą gorliwością. Stan ten znany jest jako nieskończone odkupienie — grzech powinności niesiony przez Brata Bitewnego, który nigdy nie może zostać zmazany i żadna ofiara z chwały i krwi w tym nie pomoże.",
+                    "Bratem Bitewnym kieruje poczucie obowiązku, które nie toleruje porażek. Podczas Misji musi on podjąć próbę wypełnienia wszystkich Celów (samodzielnie albo po zmuszeniu Szwadronu do pomocy), nie bacząc na koszty i niebezpieczeństwo. W szczególnych przypadkach MG może pozwolić na wykonanie ![b]#Przeciętnego (+0) Testu Siły Woli#, by oprzeć się temu poczuciu, jeśli wypełnienie Celu wiązałoby się z niemal pewną śmiercią."
+                  ]
+                }
+              ]
+            },
+            {
+              "heading": "Klątwa Prymarchy",
+              "content": [
+                "Wszyscy Bracia Bitewni noszą w swoim genoziarnie mocne i słabe strony Prymarchy. Czy są to ubytki na ciele, czy na umyśle, niedoskonałości pochodzące od ojca Zakonu zapisane są w jego krwi i wypływają na powierzchnię w toku życia pełnego zniszczenia i wojny. Niemal wszyscy Kosmiczni Marines, którzy żyją odpowiednio długo, zaczynają wykazywać szczególne cechy swojego Prymarchy. Dla wielu oznaczają one szczególne wyróżnienie i oznakę wspaniałości przekazanego im dziedzictwa. Prawdziwym testem nie jest to, czy te cechy się pojawią, ale jak Brat Bitewny zachowa się, gdy się to stanie.",
+                "W miarę jak Brat Bitewny przemierza Ścieżkę Obłędu, dotykają go kolejne poziomy przypisanej mu Klątwy Prymarchy, która wpływa na podejmowane przez niego decyzje i wykazywane zachowania. Żaden Test nie pozwala uniknąć Klątwy Prymarchy — osiągnięcie odpowiedniego progu Punktów Obłędu natychmiast nieodwracalnie nakłada jej efekty. Wszystkie poziomy się sumują i naraz dotykają Brata."
+              ]
+            },
+            {
+              "heading": "Usuwanie Punktów Obłędu",
+              "content": [
+                "Za zgodą MG bohater może wykorzystać PD do usunięcia cześci Punktów Obłędu. Usunięcie pojedynczego punktu warte jest 100 PD. Bohater nigdy nie może zejść na niższy stopień Obłędu, a więc nie może cofnąć efektów Klątwy Prymarchy — choć może odsunąć w czasie jej pogorszenie. Usuwanie Punktów Obłędu powinno być oddane w grze jako czas i wysiłek ze strony bohatera. Dla Braci Bitewnych oznacza to długie godziny modlitwy i rozważania, a także uwagę ze strony Kapelanów Straży."
+              ]
+            }
+          ]
+        },
+        {
+          "name": "corruption",
+          "displayName": "Spaczenie",
+          "content": [
+            "Najpodlejszym zagrożeniem czychającym na ludzkość i knującym upadek Imperium jest wypaczający wszystko dotyk Chaosu. Spotkania z demonami, mroczne rytuały, a nawet sama wiedza, że rzeczy takie są możliwe, są ścieżkami prowadzącymi do potępienia. Poza agresją i manipulacjami demonów i ich śmiertelnych sług, największym niebezpieczeństwem jest kontakt z substancją Osnowy. Wirujące prądy psychoaktywnych energii i pseudomaterii, które tworzą Osnowę, są bardziej zabójcze niż jakiekolwiek promieniowanie. Mogą one w mgnieniu oka doprowadzić do zniszczenia, ale również okrutnie wypaczyć ciało i umysł, tworząc rzeczy, jakie nie powinny powstać w materialnym wszechświecie. Niektórzy gdy tylko zrozumieją, że weszli na ścieżkę potępienia, próbują złączyć się z ciemnością.",
+            {
+              "heading": "Kosmiczni Marines i Spaczenie",
+              "content": [
+                "Kosmiczni Marines są znacznie bardziej odporni na efekty Spaczenia niż zwykli ludzie i zachowują zmysły i osobowość długo po tym, gdy inni zmieniliby się w bezmyślne potwory. Ich ciała są również niebywale odporne na mutację, wykazując zmiany dopiero po długim wystawieniu na Osnowę i zwykle po złamaniu woli Brata Bitewnego. Z tego powodu Spaczenie jest podstępnym zagrożeniem, które powoli oddziałuje na Kosmicznych Marines, pokazując się dopiero po latach czy nawet wiekach.",
+                "W Deathwatch MG może używać Punktów Spaczenia do wskazania, że kontakt z mocami Osnowy ma swoją cenę, a gracze nie mogą walczyć w nieskończoność bez bycia powoli wypaczanymi przez napotykanych wrogów.",
+                "Kosmiczni Marines używają mechaniki znanej jako Próg Czystości. W przeciwieństwie do zwykłych ludzi Kosmiczni Marines posiadają mentalny pancerz pomagający im w walce ze spaczeniem. Spaczenie nie ma bezpośrednich efektów w grze, aż Brat Bitewny osiągnie swój Próg Czystości wynoszący 100 (to znaczy zbierze 100 albo więcej Punktów Spaczenia), co powoduje jego usunięcie z rozgrywki, jako że spaczenie jest w nim zbyt wielkie, by mógł nadal służyć Imperatorowi. Zanim to nastąpi MG może pokazać wpływ Spaczenia bohatera na otaczających go ludzi. Kosmiczni Marines mogą być niechętni w stosunku do kogoś tak dotkniętego przez Osnowę, psykerzy wyczują jego spaczenie, a demony będą starały się wpłynąć na stojącego na krawędzi przepaści potężnego wojownika Imperatora."
+              ]
+            },
+            {
+              "heading": "Wypaczanie BN",
+              "content": [
+                "Choć Bracia Bitewni są odporni na najgorsze z efektów Spaczenia, wielu ich sojuszników nie ma takiej ochrony. Jeśli MG zechce zapisywać liczbę Punktów Spaczenia u ludzkich sojuszników Braci. Może do tego wykorzystać następujące wskazówki:",
+                {
+                  "type": "list",
+                  "style": "unordered",
+                  "content": [
+                    "Za każde 10 otrzymanych PS sojusznik otrzymuje @dice{1k10} Obrażeń do losowej Charakterystyki, co oddaje degradację jego ciała i duszy.",
+                    "Za każde 20 otrzymanych PS sojusznik mutuje, otrzymując losowo jedną z Cech: @trait{blind}, @trait{burrower}, @trait{darkSight}, @trait{fear||1}, @trait{multipleArms}, @trait{naturalArmour||4}, @trait{naturalWeapons}, @trait{quadruped}, @trait{regeneration}, @trait{size|Ogromny albo Drobny}, @trait{sonarSense}, @trait{toxic}."
+                  ]
+                },
+                "Jeśli sojusznik osiągnie 100 PS, staje się nieodwracalnie spaczony. Otrzymuje Cechę @trait{daemonic} i porzuca służbę bohaterom albo atakuje ich."
+              ]
+            },
+            {
+              "heading": "Źródła Spaczenia",
+              "content": [
+                "W Deathwatch istnieje wiele źródeł Spaczenia, które zwykle związane są z wpływem Niszczycielskich Potęg. Dokładny poziom Spaczenia powodowany przez konkretne wydarzenie, wiedzę albo potyczkę ustala MG. Poniżej podano kilka wskazówek.",
+                {
+                  "title": "Rozerwanie zasłony",
+                  "content": [
+                    "Bohaterowie znajdujący się obok miejsca, gdzie Osnowa wbija się w materialny świat, otrzymują Punkty Spaczenia. Dokładna liczba zależy od konkretnego wydarzenia i jak poważny jest to wyłom. Może ona wynosić od jednego punktu aż do kilku k10."
+                  ]
+                },
+                {
+                  "title": "Czarnoksięstwo",
+                  "content": [
+                    "Praktykowanie czarnoksięstwa, bycie świadkiem okrutnych rytuałów i wzywanie demonów — to wszystko źródła Spaczenia, niezależnie od powodów. Zwykle pomniejsze rytuały powodują @dice{1k10} Punktów Spaczenia, a większe ceremonie o wiele więcej."
+                  ]
+                },
+                {
+                  "title": "Bluźniercza wiedza",
+                  "content": [
+                    "Sama wiedza jest w stanie wypaczyć, a studiowanie pewnych tekstów, zapisów piktowych i okropnych malowideł może powodować Spaczenie."
+                  ]
+                },
+                {
+                  "title": "Złowieszcze argumenty",
+                  "content": [
+                    "Wiele demonów i przywódców kultów to mistrzowie podstępnych pokus, będący w stanie zasiać ziarnia zwiątpienia w wiernym sercu. Ich słowa i argumenty mogą wypaczać tam, gdzie siła by zawiodła."
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+  
 
     {
       "type": "section",
@@ -25809,14 +26245,13 @@
             "chapter": 5,
             "number": 12
           },
-          "title": "wynik",
           "rollable": true,
           "formula": "k10",
           "content": [
             {
               "match": 1,
               "title": "nie ukrywaj się przed wrogiem",
-              "content": "Ten pancerz nosi wiele znaków dumy, symboli heraldycznych i ozdobiony pasami, klejnotem na hełmie i sztandarami. Noszący go zawsze stoi dumnie, nie zważając na osłony czy potrzebę ukrycia się. Dodatkowo sam pancerz jak gdyby przeszkadza w takim ostrożnym postępowaniu, nakładając dodatkową karę -20 do wszystkich Testów Ukrywania się i Cichego Poruszania się (która jest doliczana do zwykłej kary za ciężkie opancerzenie) przez głośno poruszający się serwomotor, obijające się płyty, czy wypuszczenie ciepła z reaktora w najgorszym możliwym momencie. Z drugiej strony zapewnia premię +10 do Dowodzenia z powodu władczej, pełnej pewności siebie aury, którą roztacza wokół siebie noszący."
+              "content": "Ten pancerz nosi wiele znaków dumy, symboli heraldycznych i ozdobiony jest pasami, klejnotem na hełmie i sztandarami. Noszący go zawsze stoi dumnie, nie zważając na osłony czy potrzebę ukrycia się. Dodatkowo sam pancerz jak gdyby przeszkadza w takim ostrożnym postępowaniu, nakładając dodatkową karę -20 do wszystkich Testów Ukrywania się i Cichego Poruszania się (która jest doliczana do zwykłej kary za ciężkie opancerzenie) przez głośno poruszający się serwomotor, obijające się płyty, czy wypuszczenie ciepła z reaktora w najgorszym możliwym momencie. Z drugiej strony zapewnia premię +10 do Dowodzenia z powodu władczej, pełnej pewności siebie aury, którą roztacza wokół siebie noszący."
             },
             {
               "match": 2,
@@ -26846,13 +27281,14 @@
         },
         {
           "type": "table",
-          "name": "shock",
+          "name": "theShockTable",
           "displayName": "szok",
           "index": {
             "chapter": 9,
             "number": 7
           },
           "rollable": true,
+          "formula": "k100",
           "table": {
             "$roll": "",
             "content": "efekt"
@@ -27728,9 +28164,11 @@
           "name": "missionComplications",
           "displayName": "Powikłania Misji",
           "table": {
-            "$roll": "k10",
+            "$roll": "",
             "name": "Powikłanie"
           },
+          "rollable": true,
+          "formula": "k10",
           "index": {
             "chapter": 7,
             "number": 17
@@ -27824,6 +28262,7 @@
             "$roll": "k10/Obrażenia",
             "$content": "Wynik"
           },
+          "formula": "k10",
           "content": [
             {
               "range": {
@@ -27868,7 +28307,7 @@
             },
             {
               "range": {
-                "min": "10"
+                "min": 10
               },
               "title": "Eksploduje",
               "content": "Bezpośrednie trafienie w magazyn amunicyjny, zbiorniki paliwa, czy inną kluczową część pojazdu zamienia go w szalejącą kulę ognia. Każda osoba znajdująca się wewnątrz otrzymuje @dice{5k10} Obrażeń od Wybuchu. Wszyscy w promieniu @dice{2k10} metrów od pojazdu otrzymują @dice{2k10} Obrażeń od Wybuchu. Jeżeli pojazd nie ma dachu czy burt albo ma otwarte włazy, załoga i pasażerowie mogą wykonać Unik, by uciec w ostatniej chwili. Każdy, komu się to powiedzie, otrzymuje jedynie @dice{2k10} Obrażeń od Wybuchu. ![b]#Ważne:# Zależnie od zawartości pojazdu MG może zadecydować o zwiększeniu Obrażeń lub rozmiaru eksplozji."
@@ -27891,6 +28330,7 @@
         "$content": "Wynik"
       },
       "rollable": true,
+      "formula": "k10",
       "content": [
         {
           "range": {
@@ -28070,6 +28510,232 @@
         {
           "difficulty": "Każdy Cel Nowicjusza",
           "xp": 25
+        }
+      ]
+    },
+    {
+      "type": "table",
+      "name": "settingKillMarkers",
+      "displayName": "Ustalanie Znaczników Zabójstw",
+      "index": {
+        "chapter": 9,
+        "number": 3
+      },
+      "table": {
+        "difficulty": "Trudność Celu",
+        "km": "Znaczniki Zabójstw"
+      },
+      "content": [
+        {
+          "difficulty": "Nowicjusza",
+          "km": 25
+        },
+        {
+          "difficulty": "Adepta",
+          "km": 50
+        },
+        {
+          "difficulty": "Weterana",
+          "km": 100
+        }
+      ]
+    },
+    {
+      "type": "table",
+      "name": "settingRequisition",
+      "displayName": "Ustalanie Pobrania",
+      "table": {
+        "difficulty": "Cel/Trudność",
+        "requisition": "Pobranie"
+      },
+      "index": {
+        "chapter": 9,
+        "number": 4
+      },
+      "content": [
+        {
+          "difficulty": "Każdy Cel Główny",
+          "requisition": "+20"
+        },
+        {
+          "difficulty": "Każdy Cel Poboczny",
+          "requisition": "+15"
+        },
+        {
+          "difficulty": "Każdy Cel Dodatkowy",
+          "requisition": "+5"
+        },
+        {
+          "difficulty": "Każdy Cel Weterana",
+          "requisition": "+10"
+        },
+        {
+          "difficulty": "Każdy Cel Adepta",
+          "requisition": "+5"
+        },
+        {
+          "difficulty": "Każdy Cel Nowicjusza",
+          "requisition": "+1"
+        }
+      ]
+    },
+    {
+      "type": "table",
+      "name": "dispositions",
+      "displayName": "Nastawienia",
+      "table": {
+        "modifier": "Modyfikator Trudności",
+        "charm": "@skill{charm}",
+        "command": "@skill{command}",
+        "deceive": "@skill{deceive}",
+        "intimidate": "@skill{intimidate}"
+      },
+      "index": {
+        "chapter": 9,
+        "number": 5
+      },
+      "content": [
+        {
+          "modifier": "Bardzo Łatwy (+30)",
+          "charm": "Zauroczony",
+          "command": "Fanatyczny",
+          "deceive": "Łatwowierny",
+          "intimidate": "Przerażony"
+        },
+        {
+          "modifier": "Łatwy (+20)",
+          "charm": "Przekonany",
+          "command": "Oddany",
+          "deceive": "Ufający",
+          "intimidate": "Przestraszony"
+        },
+        {
+          "modifier": "Prosty (+10)",
+          "charm": "Słuchający",
+          "command": "Lojalny",
+          "deceive": "Przekonany",
+          "intimidate": "Poruszony"
+        },
+        {
+          "modifier": "Przeciętny (+0)",
+          "charm": "Obojętny",
+          "command": "Obojętny",
+          "deceive": "Obojętny",
+          "intimidate": "Obojętny"
+        },
+        {
+          "modifier": "Wymagający (-10)",
+          "charm": "Zamknięty",
+          "command": "Urażony",
+          "deceive": "Podejrzliwy",
+          "intimidate": "Odważny"
+        },
+        {
+          "modifier": "Trudny (-20)",
+          "charm": "Wzgardliwy",
+          "command": "Nielojalny",
+          "deceive": "Sceptyczny",
+          "intimidate": "Mężny"
+        },
+        {
+          "modifier": "Bardzo Trudny (-30)",
+          "charm": "Obrzydzony",
+          "command": "Buntowniczy",
+          "deceive": "Niedowierzający",
+          "intimidate": "Uparty"
+        }
+      ]
+    },
+    {
+      "type": "table",
+      "name": "theInsanityTrack",
+      "displayName": "Ścieżka Obłędu",
+      "table": {
+        "ip": "Punkty Obłędu",
+        "modifier": "Modyfikator Tremy",
+        "effect": "Efekt"
+      },
+      "index": {
+        "chapter": 9,
+        "number": 8
+      },
+      "content": [
+        {
+          "ip": "0–30",
+          "modifier": "+0",
+          "effect": "—"
+        },
+        {
+          "ip": "31–60",
+          "modifier": "-10",
+          "effect": "Klątwa Prymarchy poziom 1"
+        },
+        {
+          "ip": "61–90",
+          "modifier": "-20",
+          "effect": "Klątwa Prymarchy poziom 2"
+        },
+        {
+          "ip": "90–99",
+          "modifier": "-30",
+          "effect": "Klątwa Prymarchy poziom 3"
+        },
+        {
+          "ip": "100+",
+          "modifier": "—",
+          "effect": "Bohater usunięty z rozgrywki"
+        }
+      ]
+    },
+    {
+      "type": "table",
+      "rollable": true,
+      "name": "battleTrauma",
+      "displayName": "Tremy Bitewne",
+      "table": {
+        "$roll": "",
+        "trauma": "Trema Bitewna"
+      },
+      "formula": "k10",
+      "index": {
+        "chapter": 9,
+        "number": 9
+      },
+      "content": [
+        {
+          "range": {
+            "min": 1,
+            "max": 2
+          },
+          "trauma": "Szał bitewny"
+        },
+        {
+          "range": {
+            "min": 3,
+            "max": 4
+          },
+          "trauma": "Ucho Imperatora"
+        },
+        {
+          "range": {
+            "min": 5,
+            "max": 6
+          },
+          "trauma": "Duchy przodków"
+        },
+        {
+          "range": {
+            "min": 7,
+            "max": 8
+          },
+          "trauma": "Prawa pogarda"
+        },
+        {
+          "range": {
+            "min": 9,
+            "max": 10
+          },
+          "trauma": "Nieskończone odkupienie"
         }
       ]
     }

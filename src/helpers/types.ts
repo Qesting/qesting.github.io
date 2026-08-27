@@ -9,6 +9,7 @@ export type ContentItem =
 
 export type TextItem = ContentItem & {
   title?: string
+  heading?: string
   content: ContentItem[] | string
 }
 
