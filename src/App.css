@@ -6,6 +6,10 @@ section div.paragraph {
     @apply indent-4;
 }
 
+li > div.paragraph, strong {
+    @apply !indent-0;
+}
+
 .paragraph, .p {
     overflow-wrap: break-word;
     hyphens: auto;

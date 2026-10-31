@@ -134,17 +134,27 @@ export function getFieldValue(
   fieldPath: string,
   resolveItemDefault: ResolveItemDefault,
 ): any {
-  let subject = obj
-  const fieldParts = fieldPath.split(".")
-  for (let index = 0; index < fieldParts.length; index++) {
-    if (!fieldParts[index]) continue
-    const [part, partSection, partSource] = fieldParts[index].split("=")
-    if (!subject) return subject
-    subject = part.startsWith("@")
-      ? resolveItemDefault(partSection, subject[part.substring(1)], partSource)
-      : subject[part]
+  const options = fieldPath.split('?')
+  if (options.length === 1) {
+    if (fieldPath[0] === '\'') return fieldPath.substring(1, fieldPath.length - 2)
+
+    let subject = obj
+    const fieldParts = fieldPath.split(".")
+    for (let index = 0; index < fieldParts.length; index++) {
+      if (!fieldParts[index]) continue
+      const [part, partSection, partSource] = fieldParts[index].split("=")
+      if (!subject) return subject
+      subject = part.startsWith("@")
+        ? resolveItemDefault(partSection, subject[part.substring(1)], partSource)
+        : subject[part]
+    }
+    return subject
   }
-  return subject
+
+  for (let index = 0; index < options.length; index++) {
+    const result = getFieldValue(obj, options[index], resolveItemDefault)
+    if (result !== null && result && undefined) return result
+  }
 }
 
 export function replaceText(
@@ -322,6 +332,24 @@ export function replaceText(
           }
           result = resultArray.join(opts?.sep ?? ",")
           break
+        }
+        case "insertRange": {
+          const field: {
+            min?: number,
+            max?: number
+          } = getFieldValue(trueProvider, trueField)
+          const start = opts?.start 
+            ? parseInt(opts.start, 10) 
+            : 1
+          if (field.min !== undefined && field.max !== undefined) {
+            result = `${field.min}–${field.max}`
+          } else if (field.min !== undefined && field.max === undefined) {
+            result = `${field.min}+`
+          } else if (field.min === undefined && field.max !== undefined) {
+            result `${start}–${field.max}`
+          } else {
+            throw RangeError(`The range ${JSON.stringify(field)} is invalid`)
+          }
         }
       }
     } catch (e) {

@@ -92,7 +92,7 @@ W niektórych operacjach można podać ciąg pól oddzielonych znakami `?` (`pol
 ##### Aktualnie wspierane operacje
 Dla każdej operacji podano jej argumenty. Każddy argument opisano jako `(typ) nazwa=wartość domyślna`. `typ` to sposób, w jaki parser zinterpretuje wartość argumentu (`string` — tekst, `number` — liczba, `bool` — wartość logiczna, `array` — lista wartości oddzielonych przecinkami). Jeśli po znaku `=` nic nie ma, wartość domyślna jest pusta albo (dla argumentów logicznych) `false`.
 
-- `bool`: enumeracja logiczna. Wstawia odpowiednią etykietę podstawie wartości podanego pola
+- `bool`: enumeracja logiczna. Wstawia odpowiednią etykietę na podstawie wartości podanego pola
     - `(string) ifTrue=tak`: etykieta dla wartości `true`
     - `(string) ifFalse=nie`: etykieta dla wartości `false`
 - `insert`: wstawienie. Wstawia wartość podanego pola;
@@ -103,7 +103,8 @@ Dla każdej operacji podano jej argumenty. Każddy argument opisano jako `(typ) 
     - `(string) append=`: wartość dodana na koniec tablicy
     - `(string) ifUndef=`: lista wartości używana w przypadku, gdy `pole` będzie puste 
 - `insertLinkTo`: wstawia link do elementu o identyfikatorze (nazwie wewnętrznej) `pole`
-    - `(string) section=`: sekcja najwyższego poziomu, w której znajduje się poszukiwany element. Jeśli wartośc ta jest pusta, parser założy aktualnie wyświetloną sekcję
+    - `(string) section=`: sekcja najwyższego poziomu, w której znajduje się poszukiwany element. Jeśli wartość ta jest pusta, parser założy aktualnie wyświetloną sekcję
+    - `(string) source=`: źródło. Wartość interpretowana jest jako adres pola. By wstawić literał, należy zamknąć go w apostrofach, np. `source='CRB'`. Pusta wartość zakłada takie samo źródło jak obiekt kontekstu.
 - `insertItemName`: jak wyżej, ale wstawia tylko nazwę jako tekst
     - `(string) section=`: sekcja najwyższego poziomu, w której znajduje się poszukiwany element. Jeśli wartośc ta jest pusta, parser założy aktualnie wyświetloną sekcję
 - `mapArray`: jak `insertArray`, ale przetwarza wartości tablicy przed połączeniem jej w łańcuch. Używa dodatkowo składni:
@@ -113,6 +114,8 @@ Dla każdej operacji podano jej argumenty. Każddy argument opisano jako `(typ) 
     - `$e.pole`: wartość pola `pole` danego elementu. 
 - `mapObject`: podobnie jak `insertValues`, ale przetwarza wartości przed połączeniem ich w łańcuch. Używa składni `mapArray` i dodatkowo:
     - `$key`: zastępuje `$index`, klucz/nazwa pola, na którym aktualnie stoi iterator.
+- `insertRange`: wstawia zakres — podane pole musi być obiektem definiującym klucze `min` LUB `max`:
+    - `(number) start`: wartość używana, jeśli nie zostanie podane `min`.
 
 Dodatkowe wspólne argumenty:
 - `(bool) capitalize=false`: kapitalizacja wartości wyjściowych;

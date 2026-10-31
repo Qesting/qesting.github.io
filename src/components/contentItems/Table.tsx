@@ -3,7 +3,6 @@ import Parser from "../Parser"
 import { XCircleFill } from "react-bootstrap-icons"
 import SectionNameContext from "../../contexts/SectionNameContext"
 import DataProviderContext from "../../contexts/DataProviderContext"
-import capitalise from "../../helpers/capitalize"
 import {
   locations,
   renown,
@@ -62,9 +61,8 @@ export default function Table({
             (item.range.max ?? Infinity) >= roll,
       )
       const row = rowContainer.current.children[rowIndex]
-      row.scrollIntoView()
       row.classList.add("!bg-amber-500")
-      self.setTimeout(() => row.classList.remove("!bg-amber-500"), 500)
+      self.setTimeout(() => row.classList.remove("!bg-amber-500"), 1000)
     }
   }
   const tableNameSetter = useContext(StateFunctionsContext).closeTableDialog
@@ -94,24 +92,13 @@ export default function Table({
       .map((e, index) => {
         objectIsJsonItem(e) && jsonItemIsItem(e);
         return (
-            <tr key={index}>
+            <tr key={index} className="transition-colors duration-200">
             <DataProviderContext.Provider value={e}>
               {keys.map((k, jndex) => (
                 <td
                   key={jndex}
                   className={
-                    ([
-                      "shortDesc",
-                      "prerequisite",
-                      "$roll",
-                      "$content",
-                      "content",
-                      "result",
-                    ].includes(k) ||
-                    (typeof table[k] !== "string" ? table[k].noCap : false)
-                      ? ""
-                      : "capitalize") +
-                    " text-center p-0.5 relative " +
+                    "text-center p-0.5 relative " +
                     (k === "$name" ? "pl-3 " : " ") +
                     (k === "$roll" ? " whitespace-nowrap" : "")
                   }
@@ -131,12 +118,8 @@ export default function Table({
                     <>
                       <strong className="font-bold">
                         <Parser
-                          text={
-                            e.title.endsWith(":") || e.title.endsWith(".")
-                              ? e.title
-                              : e.title + "."
-                          }
-                          cap={true}
+                          text={e.title}
+                          cap={false}
                           itemIndex={jndex}
                         />
                       </strong>{" "}
@@ -306,7 +289,7 @@ export default function Table({
               <SourceName source={foundSource} />
               <span>
                 {index ? `(${index.chapter}–${index.number}) ` : ""}
-                {capitalise(displayName ?? '')}
+                {displayName ?? ''}
               </span>
             </th>
           </tr>
@@ -320,9 +303,7 @@ export default function Table({
                     "k100"}
                 </button>
               ) : (
-                capitalise(
-                  typeof table[k] === "string" ? table[k] : table[k].name,
-                )
+                typeof table[k] === "string" ? table[k] : table[k].name
               )}
             </th>
           ))}

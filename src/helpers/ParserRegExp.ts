@@ -16,6 +16,8 @@ export const generalRegExp = regex({ flags: "g", plugins: [recursion] })
   )
   # Recursive tail
   \{ ( [^\{\}] )* \}
+  # Source
+  (?:\{ [a-zA-Z]* \})?
 )`
 
 export const diceRegExp = regex
@@ -56,12 +58,7 @@ export const tableRegExp = regex
 )?$`
 
 export const tableInsertRegExp = regex
-`^%table\{
-  (?<name>\w+)
-  ( \| (?<display> [:\d\p{Letter}\ ]+ ) )?
-\}(
-  \{ (?<source> [a-zA-Z]* ) \}
-)?$`
+`^%table\{(?<name>\w+)\}(?:\{(?<source>[a-zA-Z]*)\})?$`
 
 export const quoteRegExp = regex
 `^%quote\{

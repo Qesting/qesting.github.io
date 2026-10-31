@@ -153,13 +153,14 @@ function Parser({
         return foundTable ? (
           <div key={key}>
             <h2 className="text-xl pb-2 relative after:w-full after:h-px after:absolute after:bottom-1 after:bg-current after:left-0 after:right-0 text-center mt-4 -mb-6">
-              {capitalise(foundTable.displayName)}
+              {foundTable.displayName}
             </h2>
             <Table
               table={foundTable.table}
               data={foundTable.content}
               footnotes={foundTable.footnotes}
               source={source ?? provider.source}
+              formula={foundTable?.formula}
             />
           </div>
         ) : (
